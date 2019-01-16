@@ -33,7 +33,13 @@ On the third screen, CardioBot displays a detailed heart rate chart with a 4-min
 
 ```swift
 let elements = statistics.enumerated().map {
-    let frame = CGRect(x: 0, y: CGFloat($0 * Layout.barHeight), width: bounds.width, height: Layout.barHeight)
+    let frame = CGRect(
+        x: 0, 
+        y: CGFloat($0 * Layout.barHeight), 
+        width: bounds.width, 
+        height: Layout.barHeight
+    )
+    
     let element = UIAccessibilityElement(accessibilityContainer: self)
     element.accessibilityLabel = $1.time
     element.accessibilityValue = "\(Int($1.value)), \($1.status)"
