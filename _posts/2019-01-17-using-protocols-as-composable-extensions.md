@@ -41,7 +41,7 @@ class BaseViewController: UIViewController {
 It looks straightforward and usable because most of our ViewControllers need activity indicator while downloading data from the internet and error handling in case of something goes wrong during the data download. But we don't stop with this, and we add more features to BaseViewController over a time. It starts bloating with a lot of general-purpose functions. Here we have at least two main problems:
 
 1. Our BaseViewController breaks the Single Responsibility Principle by implementing all these features in one place. Over time it will turn into Massive-View-Controller, which hard to understand and cover with tests.
-2. Every ViewController in our app inherit from BaseViewController to use these all features, and in case of a bug in BaseViewController, we will have this bug in all ViewControllers in our app even if ViewController not using buggy functionality from BaseViewController.
+2. Every ViewController in our app inherit from BaseViewController to use these all features. In case of a bug in BaseViewController, we will have this bug in all ViewControllers in our app even if ViewController is not using buggy functionality from BaseViewController.
 
 #### Protocols for the rescue.
 Protocol Extensions feature was released with Swift 2.0 and bring real power to protocol types which announce new paradigm of programming: Protocol Oriented Programming. I recommend you to watch the [talk](https://developer.apple.com/videos/play/wwdc2015/408/) from WWDC about Protocols and Protocol extensions.
@@ -99,7 +99,7 @@ extension ErrorPresentable where Self: UIViewController {
 }
 ```
 
-Now we have two reusable protocol types which respect the Single Responsibility Principle. We can add them as the extension to any ViewController which need this functionality. The nice thing is that we are adding the only extension which needed in concrete ViewController and not inherits all the stuff from the base ViewController. Here is the usage example of these protocols.
+Now we have two reusable protocol types which respect the Single Responsibility Principle. We can add them as the extension to any ViewController which need this functionality. The nice thing is that we are adding the only extension which needed in concrete ViewController and not inherits all the stuff from the BaseViewController. Here is the usage example of these protocols.
 
 ```swift
 class ViewController: UIViewController {
