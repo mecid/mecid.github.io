@@ -41,7 +41,7 @@ class BaseViewController: UIViewController {
 It looks straightforward and usable because most of our ViewControllers need activity indicator while downloading data from the internet and error handling in case of something goes wrong during the data download. But we don't stop with this, and we add more features to BaseViewController over a time. It starts bloating with a lot of general-purpose functions. Here we have at least two main problems:
 
 1. Our BaseViewController breaks the Single Responsibility Principle by implementing all these features in one place. Over time it will turn into Massive-View-Controller, which hard to understand and cover with tests.
-2. Every ViewController in our app inherit from BaseViewController to use these all features. In case of a bug in BaseViewController, we will have this bug in all ViewControllers in our app even if ViewController is not using buggy functionality from BaseViewController.
+2. Every ViewController in our app inherit from BaseViewController to use all these features. In case of a bug in BaseViewController, we will have this bug in all ViewControllers in our app even if ViewController is not using buggy functionality from BaseViewController.
 
 #### Protocols for the rescue.
 Protocol Extensions feature was released with Swift 2.0 and bring real power to protocol types which announce new paradigm of programming: Protocol Oriented Programming. I recommend you to watch the [talk](https://developer.apple.com/videos/play/wwdc2015/408/) from WWDC about Protocols and Protocol extensions.
@@ -81,7 +81,7 @@ extension ActivityPresentable where Self: UIViewController {
 }
 ```
 
-We extracted presentActivity and dismissActivity method into the particular protocol type. We add default implementation via protocol extension for cases where Type which adopt this protocol is ViewController. It gives us the opportunity of using ViewController methods and properties in our protocol extension.
+We extracted presentActivity and dismissActivity methods into the particular protocol type. We add default implementation via protocol extension for cases where Type which adopt this protocol is ViewController. It gives us the opportunity of using ViewController methods and properties in our protocol extension.
 
 Let's do the same for error presenting logic.
 
@@ -136,6 +136,6 @@ extension CustomViewController: ActivityPresentable {
 While adopting CustomViewController to ActivityPresentable protocol, we specify the custom implementation of presentActivity and dismissActivity methods.
 
 #### Conclusion
-As you can see, we can use protocols as a simple extension for our ViewController type. In the future posts, we will continue using protocols to build reusable parts of ViewController. We will touch associated type, and conditional conformance features to develop more generic data based extensions for ViewControllers. 
+As you can see, we can use protocols as simple extensions for our ViewController type. In the future posts, we will continue using protocols to build reusable parts of ViewController. We will touch associated type, and conditional conformance features to develop more generic data based extensions for ViewControllers. 
 
 Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for the reading and see you next week.
