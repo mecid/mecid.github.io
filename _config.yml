@@ -29,6 +29,7 @@ github:
 
 # Gems
 plugins:
+  - jekyll-avatar
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed

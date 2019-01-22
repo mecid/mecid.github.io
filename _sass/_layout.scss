@@ -12,4 +12,14 @@
 
 footer {
   margin-bottom: 2rem;
+	text-align: center;
+}
+
+footer img.avatar {
+	margin: 0 auto 1rem;
+  border-radius: 50%;
+}
+
+footer small {
+	display:block;
 }
