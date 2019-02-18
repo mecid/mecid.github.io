@@ -8,7 +8,7 @@ Last month I started refactoring navigation flow in my pet project. I've been us
 #### Coordinators
 Coordinator is a plain object which handles the navigation flow. It owns rootViewController, where it pushes next ViewControllers. ViewControllers and Coordinators talk with each other by delegates. It gives us an opportunity to keep ViewControllers reusable, by extracting navigation knowledge from them. More about Coordinator pattern you can read in the original [post by Soroush Khanlou](http://khanlou.com/2015/01/the-coordinator/).
 
-The one huge problem which I have with Coordinator pattern is keeping it in sync with ViewController hierarchy. Every Coordinator has a childCoordinators field which is used to keep navigation sub-flows. Users can finish sub-flow anytime they want by pressing back button in the navigation bar. Coordinators by default can't handle this situation, and our child controller will live in childCoordinators array forever, which leads to huge memory leak. 
+The one huge problem which I have with Coordinator pattern is keeping it in sync with ViewController hierarchy. Every Coordinator has a childCoordinators field which is used to keep navigation sub-flows. Users can finish sub-flow anytime they want by pressing back button in the navigation bar. Coordinators by default can't handle this situation, and our child coordinator will live in childCoordinators array forever, which leads to huge memory leak. 
 
 To fix this problem, we have to implement a navigation controller delegate in a coordinator to understand when the user finishes flow by pressing back button and remove child coordinator from the array. This solution described very well in the original [post](http://khanlou.com/2017/05/back-buttons-and-coordinators/). I think we can avoid this complexity and boilerplate by using Flow Controllers.
 
@@ -42,7 +42,7 @@ extension ProductsFlowController: ProductsFlowControllerDelegate {
 }
 ```
 
-As you can see, ProductsFlowController creates UINavigationController, add it as a child, then it pushes ProductListViewController to the NavigationController which it owns. It also sets delegate to ProductListViewController which will use it to ask FlowController to show details of the selected product.
+As you can see, ProductsFlowController creates UINavigationController, add it as a child, then it pushes ProductListViewController to the NavigationController which it owns. It also sets delegate to ProductListViewController which will be used to ask FlowController to show details of the selected product.
 
 #### Handling sub-flows with Flow Controllers
 Let's take a look at another example where we have to start sub-flow which handled by separated Flow Controller.
