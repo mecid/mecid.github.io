@@ -3,7 +3,7 @@ title: Navigation with Flow Controllers
 layout: post
 ---
 
-Last month I started refactoring navigation flow in my pet project. I've been using Coordinator pattern for a while, but now I decide to switch to a more native and simple approach like Flow Controllers. Today we will talk about Flow Controllers and why it is more native and apparent than Coordinators.
+Last month I started refactoring navigation flow in my pet project. I've been using Coordinator pattern for a while, but now I decide to switch to a more native and simple approach like Flow Controllers. Today we will talk about Flow Controllers and why it is more native than Coordinators.
 
 #### Coordinators
 Coordinator is a plain object which handles the navigation flow. It owns rootViewController, where it pushes next ViewControllers. ViewControllers and Coordinators talk with each other by delegates. It gives us an opportunity to keep ViewControllers reusable, by extracting navigation knowledge from them. More about Coordinator pattern you can read in the original [post by Soroush Khanlou](http://khanlou.com/2015/01/the-coordinator/).
@@ -43,6 +43,17 @@ extension ProductsFlowController: ProductsFlowControllerDelegate {
 ```
 
 As you can see, ProductsFlowController creates UINavigationController, add it as a child, then it pushes ProductListViewController to the NavigationController which it owns. It also sets delegate to ProductListViewController which will be used to ask FlowController to show details of the selected product.
+
+Here is my extension which I use to add child ViewControllers to a parent.
+```swift 
+extension UIViewController {
+    func add(_ child: UIViewController) {
+        addChild(child)
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
+}
+```
 
 #### Handling sub-flows with Flow Controllers
 Let's take a look at another example where we have to start sub-flow which handled by separated Flow Controller.
