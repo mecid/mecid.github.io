@@ -81,7 +81,7 @@ extension UITableView {
 We create an extension which adds a reloadChanges method to UICollectionView and UITableView. You can easily switch libraries or your implementation by making changes in a single file.
 
 ```swift
-func render(_ newData: [ShowProgress]) {
+func render(_ newData: [Show]) {
     let oldData = dataSource.posters
     dataSource.posters = newData
     collectionView.reloadChanges(from: oldData, to: newData)
