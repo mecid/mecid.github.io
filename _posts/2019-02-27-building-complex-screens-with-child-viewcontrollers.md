@@ -3,7 +3,7 @@ title: Building complex screens with Child ViewControllers
 layout: post
 ---
 
-Container view controllers are a way to combine the content from multiple ViewControllers into a single user interface. Child ViewControllers are one of the undervalued features of iOS SDK. We use it every day by use of UINavigationController or UITabBarController. [Last week](/2019/02/20/navigation-with-flow-controllers/) we talked about using ViewController containment feature to create FlowControllers. But today we are going to discuss how to use this feature to build complex screens.
+Container view controllers are a way to combine the content from multiple ViewControllers into a single user interface. Child ViewControllers are one of the undervalued features of iOS SDK. We use it every day by use of UINavigationController or UITabBarController. Last week we talked about using ViewController containment feature to create [FlowControllers](/2019/02/20/navigation-with-flow-controllers/). But today we are going to discuss how to use this feature to build complex screens.
 
 #### Complex screens
 CardioBot is Heart Rate tracker app on which I was working last two years. It uses HealthKit to read Heart Rate values, make some calculations and present Heart Rate analysis for every day in a nice way. Here is Day screen of CardioBot app.
