@@ -6,7 +6,7 @@ layout: post
 There are a lot of third-party libraries which provide Dependency Injection for Swift apps. In my opinion, Swift has a powerful type system which gives us the ability to create type-safe Dependency Injection techniques easily. Today we will talk about creating Dependency Injection in Swift with the power of protocols.
 
 #### Protocol Composition
-As I said before Protocols are one of my favorite language features in Swift, especially Protocol Composition, which gives us an opportunity to compose multiple Protocols together in one type. Let's take a look at the implementation of the "Service Locator" pattern in Swift and how we can improve it with the usage of Protocol Composition. 
+As I said before Protocols are one of [my favorite language features in Swift](/2019/01/23/maintaining-state-in-view-controllers/), especially Protocol Composition, which gives us an opportunity to compose multiple Protocols together in one type. Let's take a look at the implementation of the "Service Locator" pattern in Swift and how we can improve it with the usage of Protocol Composition. 
 
 ```swift
 protocol HasUserDefaults {
@@ -38,7 +38,7 @@ struct Dependencies: HasUserDefaults, HasUrlSession, HasHealthStore {
 }
 ```
 
-Here we have a bunch of protocols which describes our dependencies. Dependencies struct contains all of our dependencies in the app. Generally, we can create and store our Dependencies struct instance in AppDelegate or root Coordinator/FlowController. Now let's take a look at the usage of our dependency container.
+Here we have a bunch of protocols which describes our dependencies. Dependencies struct contains all of our dependencies in the app. Generally, we can create and store our Dependencies struct instance in AppDelegate or root [Coordinator/FlowController](/2019/02/20/navigation-with-flow-controllers). Now let's take a look at the usage of our dependency container.
 
 ```swift
 class ViewController: UIViewController {
