@@ -1,5 +1,5 @@
 ---
-title: Pattern matching operator ~=
+title: Deep dive into Pattern matching with ~= operator 
 layout: post
 ---
 
