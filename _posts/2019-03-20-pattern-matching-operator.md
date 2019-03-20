@@ -63,8 +63,8 @@ extension User {
 let user = User(firstName: "Majid", secondName: "Jabrayilov", age: 27)
 
 switch user {
-case 21...30: print("The user age is between 20 and 30")
-case 31...40: print("The user age is between 20 and 30")
+case 21...30: print("The user age is between 21 and 30")
+case 31...40: print("The user age is between 31 and 40")
 default: break
 }
 ```
