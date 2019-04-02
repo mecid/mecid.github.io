@@ -160,7 +160,7 @@ let rootView = stack {
 }
 ```
 
-Now we achieve declarative, tree-based and type-safe DSL for building UI for iOS.
+Now we achieve declarative, tree-based and type-safe DSL for building UI for iOS. [It is available via CocoaPods and Carthage](https://github.com/mecid/UIKitSwiftDSL).
 
 #### Conclusion
 Today we learned how powerful is Swift, and how easy we can create DSL for any specific domain. I suggest you try to develop your DSL for DispatchQueue or any other area.
