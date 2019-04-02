@@ -1,5 +1,5 @@
 ---
-title: Adapting apps for iPad with UISplitViewController
+title: Adapting app for iPad with UISplitViewController
 layout: post
 ---
 
