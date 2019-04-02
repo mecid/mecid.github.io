@@ -57,7 +57,7 @@ Apple recommends using UISplitViewController as window's root ViewController. By
 
 The UISplitViewController has several configuration properties like "preferredPrimaryColumnWidthFraction" and "maximumPrimaryColumnWidth" which give us opportunity to setup needed presentation. Another interesting property here is "preferredDisplayMode" field. It has several options like allVisible, primaryOverlay, primaryHidden and automatic. By using this property, you recommend display mode to UISplitViewController, but it can ignore it in the case when there is not enough space.
 
-![ShowBot-iPad](/public/showbot-ipad.png)
+![ShowBot-iPad](/public/showbot-ipad-land.png)
 
 UISplitViewController has a UISplitViewControllerDelegate field, where you can set your own delegate object. By using a delegate object, you can override some default behaviors of UISplitViewControllers. For example, you can replace "show" and "showDetailViewController" methods implementation with your custom one, or implement "collapseSecondary" method where you can decide when you have to collapse or expand Details UIViewController. 
 
