@@ -43,7 +43,7 @@ struct User: Codable {
 }
 ```
 
-Here we can see three structs: SearchResponse, Repository, and User. Every field of these structs represents an associated value from JSON which fetched during the search endpoint request. Next step is deserializing downloaded data into these structs.
+Here we can see three structs: SearchResponse, Repository, and User. Every field of these structs represents an associated value from JSON which fetched during the search endpoint request. Next step is fetching and deserializing downloaded data into these structs.
 
 ```swift
 class SearchLoader {
@@ -74,9 +74,9 @@ class SearchLoader {
 }
 ```
 
-In the code sample above we have SearchLoader class which make an API request to Github's search endpoint and map the data to SearchResponse struct. First of all, I want to cover with tests these data manipulations. Let's start with creating a Unit Test target in Xcode project( File -> New -> Target -> iOS Unit Testing bundle). Xcode should create it by default if you do not disable it during the project forming process.
+In the code sample above we have SearchLoader class which make an API request to Github's search endpoint and convert the data to SearchResponse struct. First of all, I want to cover with tests these data manipulations. Let's start with creating a Unit Test target in Xcode project( File -> New -> Target -> iOS Unit Testing bundle). Xcode should create it by default if you do not disable it during the project forming process.
 
-Now we add to a testing target JSON file with search endpoint response as a content. We will use it to mock network request and speed up our test by faking real network request. 
+Now we have to add JSON file with search endpoint response as a content to a testing target. We will use it to mock network request and speed up our test by faking real network request. 
 
 ```json
 {
@@ -156,9 +156,9 @@ class GithubTests: XCTestCase {
 }
 ```
 
-The important thing here is @testable import, which makes possible to access to internal fields of SearchResponse inside the Testing target. By importing XCTest, we get the XCTestCase, which is base class for all of our tests. XCTest framework also includes a bunch of helper methods to assert values. I didn't assert every field to keep it as short as possible, but in real project it nice to have all fields covered. Now we can run our tests by pressing CMD + U and check the result.
+The important thing here is @testable import, which makes possible to access to internal fields of SearchResponse inside the Testing target. By importing XCTest, we get the XCTestCase, which is base class for all of our tests. XCTest framework also includes a bunch of helper methods to assert values. I didn't assert every field to keep it as short as possible, but in real project it is nice to have all fields covered. Now we can run our tests by pressing CMD + U and check the result.
 
 #### Conclusion
-Today we discussed how to start with Unit Testing in any project which has a Model layer, most of them has it. I think it is the most comfortable place to start. Don't hesitate and start today, you will see a lot of benefits like safe refactoring, and keeping codebase stable during adding new features which can break something that you have working before.
+Today we discussed how to start with Unit Testing in any project which has a Model layer. I think it is the most comfortable place to start. Don't hesitate and start today, you will see a lot of benefits like safe refactoring, keeping codebase stable during adding new features which can break something that you have working before, and much more.
 
 Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
