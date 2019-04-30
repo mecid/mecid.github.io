@@ -41,7 +41,7 @@ class ShowCell: UICollectionViewCell {
 
 This code looks very simple, and at first glance, there are no huge problems. But there are probably a few downsides:
 
-1. We are breaking SOLID principles by mixing presentation logic with view logic inside ShowCell. Our cell is responsible for laying out views and for formatting show data into user presentable format.
+1. We are breaking SOLID principles by mixing presentation logic with view logic inside ShowCell. Our cell is responsible for laying out views and formatting show data into user presentable format.
 
 2. We want to test our data formatting logic to be sure that we are presenting the correct information to the user. But it is hard to cover UIViews with Unit Tests, and there is no clear intention on what you test, layout or presentation logic (we will talk about UI testing in next posts).
 
@@ -129,7 +129,7 @@ class ShowPresentationTests: XCTestCase {
 }
 ```
 
-Here we have a Unit Test which is checking the way of how our Presentation struct formats the data. You might have more fields and more complex logic there. This Unit Test will keep you from breaking the presentation of your data in the future during refactoring or any other changes.
+Here we have a Unit Test which is checking the way of how our Presentation struct formats the data. You might have more fields and more complex logic there. This Unit Test will keep you from breaking the presentation rules of your data in the future during refactoring or any other changes.
 
 #### Conclusion
 Today we discussed how easily we could follow the Single responsibility principle during UI development and how we can extract data presentation and formatting logic into testable and reusable pieces of code. We will continue the Unit Testing topic on my blog through the next posts. Just try to refactor your codebase by following the Single responsibility principle. 
