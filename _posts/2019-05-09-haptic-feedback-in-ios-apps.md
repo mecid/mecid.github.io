@@ -10,12 +10,12 @@ Feedback helps people know what an app is doing, discover what they can do next,
 Another benefit of the feedback engine is Accessibility. It helps to understand the result of any action without actually watching the screen.
 
 #### UIFeedbackGenerator
-Apple provides us with abstract class UIFeedbackGenerator for all type haptic feedbacks. We don't need to subclass it in our apps. Instead, we have to use Apple provided ready to use subclasses. There are three classes:
+Apple provides us with abstract class *UIFeedbackGenerator* for all type haptic feedbacks. We don't need to subclass it in our apps. Instead, we have to use Apple provided ready to use subclasses. There are three classes:
 1. [UIImpactFeedbackGenerator](https://developer.apple.com/documentation/uikit/uiimpactfeedbackgenerator)
 2. [UISelectionFeedbackGenerator](https://developer.apple.com/documentation/uikit/uiselectionfeedbackgenerator)
 3. [UINotificationFeedbackGenerator](https://developer.apple.com/documentation/uikit/uinotificationfeedbackgenerator)
 
-All of them have system predefined haptic feedback patterns, so instead of using custom vibration patterns let's use well-known haptics. All these subclasses share the same logic. First, you need to prepare the haptic engine before using it. The second is the call to the appropriate method to run this haptic. Let's take a look at simple usage of UINotificationFeedbackGenerator class.
+All of them have system predefined haptic feedback patterns, so instead of using custom vibration patterns let's use well-known haptics. All these subclasses share the same logic. First, you need to prepare the haptic engine before using it. The second is the call to the appropriate method to run this haptic. Let's take a look at simple usage of *UINotificationFeedbackGenerator* class.
 
 ```swift
 class EpisodeViewController: UIViewController {
@@ -43,7 +43,7 @@ class EpisodeViewController: UIViewController {
 
 Here we have a TV show tracking apps screen which maintains an episode. We have a button which should mark the episode as watched on click. As you can see before the request to our API service, we prepare the feedback generator, and when the result comes, we run appropriate feedback type.
 
-Another interesting subclass is UISelectionFeedbackGenerator. We can use on the same screen as a result of selection changes. For example, we can have buttons which should fetch next or previous episodes after a click.
+Another interesting subclass is *UISelectionFeedbackGenerator*. We can use on the same screen as a result of selection changes. For example, we can have buttons which should fetch next or previous episodes after a click.
 
 ```swift
     @IBAction func fetchNext() {
@@ -59,7 +59,7 @@ Another interesting subclass is UISelectionFeedbackGenerator. We can use on the 
     }
 ```
 
-As you can see on the code sample above usage of UISelectionFeedbackGenerator is very similar to UINotificationFeedbackGenerator. We prepare and run the haptic engine.
+As you can see on the code sample above usage of *UISelectionFeedbackGenerator* is very similar to *UINotificationFeedbackGenerator*. We prepare and run the haptic engine.
 
 I want to mention that these classes have UI prefix and we should run them on the main queue. To keep it crash-free I prepared a simple extension which runs methods on the main queue.
 
@@ -84,4 +84,4 @@ extension UINotificationFeedbackGenerator {
 
 #### Conclusion
 
-Today we discussed a straightforward and accessible feature of iOS SDK. Haptic Feedback can be very useful both for accessible part of your user base and for anyone who engaged in your app.
+Today we discussed a straightforward and accessible feature of iOS SDK. Haptic Feedback can be very useful both for accessible part of your user base and for anyone who engaged in your app. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
