@@ -121,7 +121,7 @@ class GameViewController: UIViewController {
 }
 ```
 
-As you can see, we pass the closure to the game class instance which handles state changes. Instead of using **weak** keyword here, we use **unowned** to break the retain cycle during closure's context capture. Another option here can be a usage of the fact that any Swift function is a closure. So instead of creating separated closure, we can pass the function name. Here is an example of how we can do that.
+As you can see, we pass the closure to the game class instance which handles state changes. Instead of using **weak** keyword here, we use **unowned** to break the retain cycle during closure's context capture. Another option here can be a usage of the fact that any Swift function is a closure. So instead of creating separated closure, we can pass the function name. However, be careful this method creates retain circle. Here is an example of how we can do that.
 
 ```swift
 class GameViewController: UIViewController {
