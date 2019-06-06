@@ -61,7 +61,7 @@ class GithubService {
 }
 ```
 
-Our *Repo* struct has only a few fields, but it is enough for our sample. If we want to use our *Repo* struct as the model which should be used by *SwiftUI* to build a View it has to conform to *Identifiable* protocol. The only requirement of *Identifiable* protocol is *id* property, which has to be a *Hashable* value.
+Our *Repo* struct has only a few fields, but it is enough for our sample. If we want to use our *Repo* struct as the model which should be used by *SwiftUI* to build a View it has to conform to *Identifiable* protocol. The only requirement of *Identifiable* protocol is id property, which has to be a *Hashable* value.
 
 Now we can start implementing view which represents *Repo* row in our list of repos. We will use a vertical stack with two text labels.
 
@@ -104,7 +104,7 @@ struct SearchView : View {
 }
 ```
 
-Here we have a query field which is marked as *@State*. It means that this view is derived from this state, and as soon as state changes, *SwiftUI* rebuilds the view. *SwiftUI* stores all the fields marked as *@State* in special separated memory, where only corresponded views can access and update them. *@State* is a new Swift feature called Property Wrapper, more about this feature you can read in [the proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-delegates.md). The exciting aspect is the usage of *$query*, It means to get a reference for property wrapper, not value itself. We use it to connect *TextField* and *query* variable in two way binding.
+Here we have a query field which is marked as *@State*. It means that this view is derived from this state, and as soon as state changes, *SwiftUI* rebuilds the view. *SwiftUI* uses diffing algorithm to understand changes and update only corresponding views. *SwiftUI* stores all the fields marked as *@State* in special separated memory, where only corresponded views can access and update them. *@State* is a new Swift feature called Property Wrapper, more about this feature you can read in [the proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-delegates.md). The exciting aspect is the usage of *$query*, It means to get a reference for property wrapper, not value itself. We use it to connect *TextField* and *query* variable in two way binding.
 
 Another interesting fact here is *@EnvironmentObject*. It is a part of feature called *Environment*. You can populate your *Environment* with all needed service classes and then access them from any view inside that *Environment*. The *Environment* is the right way of Dependency Injection with *SwiftUI*.
 
