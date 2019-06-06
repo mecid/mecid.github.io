@@ -160,5 +160,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 }
 ```
 
+And this is how we can start our *SwiftUI* app with defined *Environment*.
+
 #### Conclusion
 This week we talked about an entirely new approach in the iOS development world. I will try to cover more WWDC topics in the upcoming weeks. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
