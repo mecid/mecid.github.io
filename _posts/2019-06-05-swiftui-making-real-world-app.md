@@ -109,14 +109,17 @@ Here we have a query field which is marked as *@State*. It means that this view 
 Another interesting fact here is *@EnvironmentObject*. It is a part of feature called *Environment*. You can populate your *Environment* with all needed service classes and then access them from any view inside that *Environment*. The *Environment* is the right way of Dependency Injection with *SwiftUI*.
 
 ```swift
+import SwiftUI
+import Combine
+
 class ReposStore: BindableObject {
     var repos: [Repo] = [] {
         didSet {
-            didChange.send(repos)
+            didChange.send(())
         }
     }
 
-    var didChange = PassthroughSubject<[Repo], Never>()
+    var didChange = PassthroughSubject<Void, Never>()
 
     let service: GithubService
     init(service: GithubService) {
