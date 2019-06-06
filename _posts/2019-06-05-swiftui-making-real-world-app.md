@@ -143,5 +143,22 @@ class ReposStore: BindableObject {
 
 The main difference between *@State* and *@EnvironmentObject* is that @State is accessible only to a particular view, in opposite *@EnvironmentObject* available for every view inside the Environment. But both of them used by SwiftUI to track changes and rebuild views as soon as changes appear.
 
+```swift
+class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
+    var window: UIWindow?
+
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let store = ReposStore(service: .init())
+        window.rootViewController = UIHostingController(
+            rootView: SearchView().environmentObject(store)
+        )
+        self.window = window
+        window.makeKeyAndVisible()
+    }
+}
+```
+
 #### Conclusion
 This week we talked about an entirely new approach in the iOS development world. I will try to cover more WWDC topics in the upcoming weeks. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
