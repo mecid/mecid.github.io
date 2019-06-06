@@ -104,7 +104,7 @@ struct SearchView : View {
 }
 ```
 
-Here we have a query field which is marked as *@State*. It means that this view is derived from this state, and as soon as state changes, *SwiftUI* rebuilds the view. *SwiftUI* uses diffing algorithm to understand changes and update only corresponding views. *SwiftUI* stores all the fields marked as *@State* in special separated memory, where only corresponded views can access and update them. *@State* is a new Swift feature called Property Wrapper, more about this feature you can read in [the proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-delegates.md). The exciting aspect is the usage of *$query*, It means to get a reference for property wrapper, not value itself. We use it to connect *TextField* and *query* variable in two way binding.
+Here we have a query field which is marked as *@State*. It means that this view is derived from this state, and as soon as state changes, *SwiftUI* rebuilds the view. *SwiftUI* uses diffing algorithm to understand changes and update only corresponding views. *SwiftUI* stores all the fields marked as *@State* in special separated memory, where only corresponded view can access and update them. *@State* is a new Swift feature called Property Wrapper, more about this feature you can read in [the proposal](https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-delegates.md). The exciting aspect is the usage of *$query*, It means to get a reference for property wrapper, not value itself. We use it to connect *TextField* and *query* variable in two way binding.
 
 Another interesting fact here is *@EnvironmentObject*. It is a part of feature called *Environment*. You can populate your *Environment* with all needed service classes and then access them from any view inside that *Environment*. The *Environment* is the right way of Dependency Injection with *SwiftUI*.
 
@@ -115,11 +115,11 @@ import Combine
 class ReposStore: BindableObject {
     var repos: [Repo] = [] {
         didSet {
-            didChange.send(())
+            didChange.send(self)
         }
     }
 
-    var didChange = PassthroughSubject<Void, Never>()
+    var didChange = PassthroughSubject<ReposStore, Never>()
 
     let service: GithubService
     init(service: GithubService) {
