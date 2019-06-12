@@ -9,7 +9,7 @@ Last week we started a new series of posts about *SwiftUI* framework. Today I wa
 *Property Wrappers* feature described in [SE-0258](https://github.com/DougGregor/swift-evolution/blob/property-wrappers/proposals/0258-property-wrappers.md) proposal. The main goal here is wrapping properties with logic which can be extracted into the separated struct to reuse it across the codebase. This proposal is not accepted yet, but Apple provides *Xcode beta with Swift 5.1 snapshot*, which has it.
 
 #### @State
-*@State* is a *Property Wrapper* which we can use to mark *View*'s state. *SwiftUI* will store it in special internal framework memory outside of *View* struct. Only current related *View* and its children can access it. As soon as the value of @*State* property change *SwiftUI* rebuilds *View* to respect state changes. Here is a simple example.
+*@State* is a *Property Wrapper* which we can use to mark *View*'s state. *SwiftUI* will store it in special internal framework memory outside of *View* struct. Only related *View* and its children can access it. As soon as the value of @*State* property change *SwiftUI* rebuilds *View* to respect state changes. Here is a simple example.
 
 ```swift
 struct ProductsView: View {
@@ -37,7 +37,7 @@ struct ProductsView: View {
 In the example above we have a straightforward screen with *Button* and *List* of products. As soon as we press the button, it changes the value of state property, and *SwiftUI* recreates *View*.
 
 #### @Binding
-@*Binding* provides reference like access for a value type. Sometimes we need to make the state of our *View* accessible for its children. But we can't simply pass that value because it is a value type it and *Swift* will pass the copy of that value. And this is where we can use *@Binding Property Wrapper*.
+@*Binding* provides reference like access for a value type. Sometimes we need to make the state of our *View* accessible for its children. But we can't simply pass that value because it is a value type and *Swift* will pass the copy of that value. And this is where we can use *@Binding Property Wrapper*.
 
 ```swift
 struct FilterView: View {
@@ -174,7 +174,7 @@ struct EpisodesView: View {
 }
 ```
 
-As you can see, we have to pass *PodcastPlayer* object via *environmentObject* method on our *View*. By doing this, we can easily access to *PodcastPlayer* by defining it with *@EnvironmentObject Property Wrapper*. @*EnvironmentObject* uses dynamic member lookup feature to find *PodcastPlayer* class instance in the *Environment*, that's why you even don't need to pass it via init method of *EpisodesView*. It works like magic.
+As you can see, we have to pass *PodcastPlayer* object via *environmentObject* method on our *View*. By doing this, we can easily access to *PodcastPlayer* by defining it with *@EnvironmentObject Property Wrapper*. @*EnvironmentObject* uses dynamic member lookup feature to find *PodcastPlayer* class instance in the *Environment*, that's why you even don't need to pass it via init method of *EpisodesView*. The *Environment* is the right way of *Dependency Injection in SwiftUI*. It works like magic.
 
 #### @Environment
 As we discussed in the previous chapter, we can pass custom objects into the *Environment* of a *View* hierarchy inside *SwiftUI*. But *SwiftUI* already has an *Environment* populated with system-wide settings. We can easily access them with *@Environment Property Wrapper*.
@@ -194,4 +194,4 @@ struct CalendarView: View {
 By marking our properties with *@Environment Property Wrapper*, we access and subscribe to changes of system-wide settings. As soon as *Locale*, *Calendar* or *ColorScheme* of the system change, *SwiftUI* recreates our *CalendarView*.
 
 #### Conclusion
-Today we talked about *Property Wrappers* provided by *SwiftUI*. *@State, @Binding, @EnvironmentObject, and @ObjectBinding* play main role in *SwiftUI* development. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we talked about *Property Wrappers* provided by *SwiftUI*. *@State, @Binding, @EnvironmentObject, and @ObjectBinding* play huge role in *SwiftUI* development. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
