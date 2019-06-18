@@ -162,4 +162,4 @@ As you can see we are wrapping our layout code inside the Form component. Form c
 
 #### Conclusion
 
-I enjoy how easy we can build apps with SwiftUI. You can use Form component for making complex Form layouts with a lot of sections and choices for data entry. I hope you love SwiftUI as much as me because I'm going to cover more SwiftUI topics soon.
+I enjoy how easy we can build apps with SwiftUI. You can use Form component for making complex Form layouts with a lot of sections and choices for data entry. I hope you love SwiftUI as much as me because I'm going to cover more SwiftUI topics soon. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
