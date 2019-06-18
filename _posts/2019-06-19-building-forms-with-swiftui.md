@@ -3,12 +3,12 @@ title: Building forms with SwiftUI
 layout: post
 ---
 
-Apple finally released Xcode Beta 2 with an updated version of SwiftUI. The current version has a Form component which appeared on WWDC sessions. Today we are going to build form styled layout with SwiftUI. I want to show you a real-life example of the settings screen built with SwiftUI's new Form component.
+Apple finally released [Xcode Beta 2](http://developer.apple.com/download/) with an updated version of *SwiftUI*. The current version has a *Form* component which appeared on *WWDC* sessions. Today we are going to build form styled layout with *SwiftUI*. I want to show you a real-life example of the settings screen built with *SwiftUI*'s new Form component.
 
 I work on a sleep tracking app, which needs settings screen. Settings screen should contain multiple toggles for enabling and disabling some features, buttons for in-app purchases, and a picker for tuning sleep tracking sensitivity level. 
 
 #### BindableObject for Settings logic
-Let's start by creating BindableObject representing our Settings logic. I've talked about BindableObject in my previous post, and you can check it to learn how to use it.
+Let's start by creating *BindableObject* representing our Settings logic. I've talked about *BindableObject* in my previous [post](/2019/06/12/understanding-property-wrappers-in-swiftui/), and you can check it to learn how to use it.
 
 ```swift
 import SwiftUI
@@ -94,14 +94,14 @@ extension SettingsStore {
 }
 ```
 
-Here we have a simple SettingsStore class which conforms to BindableObject protocol. The single requirement is didChanged property. SwiftUI uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
+Here we have a simple *SettingsStore* class which conforms to *BindableObject* protocol. The single requirement is *didChanged* property. *SwiftUI* uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
 
-Another interesting point here is the usage of Combine framework. We use notification center publisher to subscribe on UserDefaults changes. As soon as UserDefault values change we get a notification and then we send it to didChange property. I will try to cover an introduction to Combine framework in future posts. But for now, you have to know that every change in UserDefaults sends Void value to didChange property, which triggers View rebuild process.
+Another interesting point here is the usage of *Combine* framework. We use notification center publisher to subscribe on *UserDefaults* changes. As soon as *UserDefault* values change we get a notification and then we send it to *didChange* property. I will try to cover an introduction to *Combine* framework in future posts. But for now, you have to know that every change in *UserDefaults* sends *Void* value to *didChange* property, which triggers *View* rebuild process.
 
-We can replace usage of NotificationCenter publisher by calling send method of didChange property in the every property setter inside the SettingsStore, but it looks like boilerplate. So let's keep it like this.
+We can replace usage of *NotificationCenter* publisher by calling send method of *didChange* property in the every property setter inside the *SettingsStore*, but it looks like boilerplate. So let's keep it like this.
 
 #### SettingsView
-Let's start to build our settings screen UI. We will use Text, Toggle, Stepper, Picker, and Button components. Here is the source code of our SettingsView.
+Let's start to build our settings screen UI. We will use *Text*, *Toggle*, *Stepper*, *Picker*, and *Button* components. Here is the source code of our *SettingsView*.
 
 ```swift
 import SwiftUI
@@ -156,10 +156,10 @@ struct SettingsView: View {
 }
 ```
 
-As you can see we are wrapping our layout code inside the Form component. Form component uses grouped List to present every child inside the cell. By wrapping layout inside the Form, SwiftUI changes the visual appearance for every element. You can simply replace the Form with VStack to check the difference between them. Even Picker looks different. It uses a separated screen with List to show the items. We don't need to do something, and we have this behavior out of the box. This is where the real power of declarative programming is coming. Every component has different adaptive appearances, which we can easily change by wrapping it into another container. Here is the screenshot of the final result.
+As you can see we are wrapping our layout code inside the *Form* component. *Form* component uses grouped *List* to present every child inside the cell. By wrapping layout inside the *Form*, *SwiftUI* changes the visual appearance for every element. You can simply replace the *Form* with *VStack* to check the difference between them. Even *Picker* looks different. It uses a separated screen with *List* to show the items. We don't need to do something, and we have this behavior out of the box. This is where the real power of declarative programming is coming. Every component has different adaptive appearances, which we can easily change by wrapping it into another container. Here is the screenshot of the final result.
 
 ![Settings screen](/public/settings.jpg)
 
 #### Conclusion
 
-I enjoy how easy we can build apps with SwiftUI. You can use Form component for making complex Form layouts with a lot of sections and choices for data entry. I hope you love SwiftUI as much as me because I'm going to cover more SwiftUI topics soon. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+I enjoy how easy we can build apps with *SwiftUI*. You can use *Form* component for making complex Form layouts with a lot of sections and choices for data entry. I hope you love *SwiftUI* as much as me because I'm going to cover more *SwiftUI* topics soon. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
