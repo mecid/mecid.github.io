@@ -94,7 +94,7 @@ extension SettingsStore {
 }
 ```
 
-Here we have a simple *SettingsStore* class which conforms to *BindableObject* protocol. The single requirement is *didChanged* property. *SwiftUI* uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
+Here we have a simple *SettingsStore* class which conforms to *BindableObject* protocol. The single requirement is *didChange* property. *SwiftUI* uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
 
 Another interesting point here is the usage of *Combine* framework. We use notification center publisher to subscribe on *UserDefaults* changes. As soon as *UserDefault* values change we get a notification and then we send it to *didChange* property. I will try to cover an introduction to *Combine* framework in future posts. But for now, you have to know that every change in *UserDefaults* sends *Void* value to *didChange* property, which triggers *View* rebuild process.
 
@@ -123,7 +123,10 @@ struct SettingsView: View {
                         Text("Sleep tracking:")
                     }
 
-                    Picker(selection: $settings.sleepTrackingMode, label: Text("Sleep tracking mode")) {
+                    Picker(
+                        selection: $settings.sleepTrackingMode,
+                        label: Text("Sleep tracking mode")
+                    ) {
                         ForEach(SettingsStore.SleepTrackingMode.allCases.identified(by: \.self)) {
                             Text($0.rawValue).tag($0)
                         }
