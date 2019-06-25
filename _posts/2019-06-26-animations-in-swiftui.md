@@ -136,7 +136,7 @@ struct ContentView : View {
 
 We created a moveAndScale transition, which is basically a combination of move and scale transitions. SwiftUI applies the current transition symmetrically according to timing or spring values which you pass into the animation method.
 
-SwiftUI provides a way of building asymmetric transitions also. Assume that you need a move transition on insertion and a scale transition on removal. For those cases, we have an asymmetric method on AnyTransition struct, which we can use to build asymmetric transitions.
+SwiftUI provides a way of building asymmetric transitions also. Assume that you need a move transition on insertion and a fade transition on removal. For those cases, we have an asymmetric method on AnyTransition struct, which we can use to build asymmetric transitions.
 
 ```swift
 extension AnyTransition {
