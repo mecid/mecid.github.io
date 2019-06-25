@@ -168,6 +168,7 @@ struct ContentView : View {
 ```
 
 As you can see, we use asymmetric method to pass two transitions, the first one for insertion and another one for removal. 
+
 **Bonus tip: We can pass here combined transition which we created before.**
 
 #### Conclusion
