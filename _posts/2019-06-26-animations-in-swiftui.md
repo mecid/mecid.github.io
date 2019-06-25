@@ -56,7 +56,7 @@ struct ContentView : View {
 }
 ```
 
-In the code sample above, we achieve the same animation by simply adding animation modifier. We use basic animation, but you can pass custom spring and timing values.
+In the code sample above, we achieve the same animation by simply adding animation modifier. We use basic animation, but you can pass custom animation properties.
 
 Sometimes we have a situation where multiple views depend on some state, and we want to animate all depending view changes together. For this case, we have animatable bindings.
 
@@ -84,7 +84,7 @@ As you can see, we can easily convert our binding into animatable binding by cal
 
 #### Transitions
 
-As I said before, *SwiftUI* uses fade in and fade out transition by default, but we can easily apply any other transition we want. Let's replace fading with moving.
+As I said before, *SwiftUI* uses fade in and fade out transition by default, but we can apply any other transition we want. Let's replace fading with moving.
 
 ```swift
 struct ContentView : View {
@@ -106,7 +106,7 @@ struct ContentView : View {
 }
 ```
 
-As you can see in the example above, we attach transition modifier to the view. *SwiftUI* has a bunch of ready to use transitions like *move*, *slide*, *scale*, *offset*, *opacity*, etc. We can easily combine them into a single transition. Let's take a look at the example.
+In the example above, we attach transition modifier to the view. *SwiftUI* has a bunch of ready to use transitions like *move*, *slide*, *scale*, *offset*, *opacity*, etc. We can combine them into a single transition. Let's take a look at the example.
 
 ```swift
 extension AnyTransition {
@@ -171,5 +171,4 @@ As you can see, we use asymmetric method to pass two transitions, the first one 
 **Bonus tip: We can pass here combined transition which we created before.**
 
 #### Conclusion
-Today we discussed multiple ways of animating changes in *SwiftUI*. It totally depends on you and on use-case which way you have to choose. 
-By spending more and more time with *SwiftUI*, I understand that it is already a compelling framework. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we discussed multiple ways of animating changes in *SwiftUI*. It totally depends on you and on use-case which way you have to choose. By spending more and more time with *SwiftUI*, I understand that it is already a compelling framework. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
