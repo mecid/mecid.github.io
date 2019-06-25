@@ -80,7 +80,7 @@ struct ContentView : View {
 }
 ```
 
-As you can see, we can easily convert our binding into animatable binding by calling animation method on it. This method wraps every change of binding value into an animation block. You can pass animation settings as parameters to this method.
+As you can see, we can easily convert our binding into animatable binding by calling animation method on it. This method wraps every change of binding value into an animation block. You can pass animation settings as parameters to this method. More about bindings you can read in my [previous post](/2019/06/12/understanding-property-wrappers-in-swiftui).
 
 #### Transitions
 
