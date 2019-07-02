@@ -6,7 +6,7 @@ layout: post
 Last week we talked about [Animations and Transitions in SwiftUI](/2019/06/26/animations-in-swiftui/). But it's time to touch the crucial aspect of every app, and it is data. All the apps have data to present or mutate. Data plays a vital role in apps using *SwiftUI*. Every view in *SwiftUI* is just a function of some state, where the state is our data.
 
 #### Fetching data from local/remote storage
-Today we will build a small app which uses core *SwiftUI* concepts like Binding and *BindableObject*. Assume that you work on the app, which has two primary responsibilities:
+Today we will build a small app which uses core *SwiftUI* concepts like *Binding* and *BindableObject*. Assume that you work on the app, which has two primary responsibilities:
 
 1. Fetch and show the list of employees from local or remote storage
 2. Edit personal information about selected employee
@@ -73,7 +73,7 @@ struct PersonsView : View {
 }
 ```
 
-We use List component to present an array of *Person* structs. Every row in *List* contains *VStack* with two *Text* components representing the name and age of a *Person*. We call *fetch* method on store object as soon as List appears. As you remember, our *PersonStore* object notifies *SwiftUI* about data change by using *Subject*, and *SwiftUI* rebuilds the view to present newly fetched data. 
+We use *List* component to present an array of *Person* structs. Every row in *List* contains *VStack* with two *Text* components representing the name and age of a *Person*. We call *fetch* method on store object as soon as List appears. As you remember, our *PersonStore* object notifies *SwiftUI* about data change by using *Subject*, and *SwiftUI* rebuilds the view to present newly fetched data. 
 
 #### Editing
 Next step is creating a new view which allows us to edit personal information of selected *Person*. We will use *Form* component to show nice form for data entry. You can check my [previous post](/2019/06/19/building-forms-with-swiftui/) to learn more about *Form* component and its advantages. Let's dive into code which represents editing view.
@@ -104,9 +104,9 @@ struct EditingView: View {
 }
 ```
 
-Here we use *Binding* for selected person item. *Binding* property wrapper allows passing a reference to a value type. By using *Binding* property, *EditingView* can read and write to the *Person* struct, but it doesn't store a copy of it. We use this *Binding* to mutate value inside *PersonsStore* and as soon as we do that *SwiftUI* will update the view with the updated list of *Persons*. If you want to learn more about *Property Wrappers* available in *SwiftUI* like @*Binding*, @*Environment*, @*EnvironmentObject*, @*ObjectBinding*, please take a look at the [dedicated post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
+Here we use *Binding* for selected person item. *Binding Property Wrapper* allows passing a reference to a value type. By using *Binding* property, *EditingView* can read and write to the *Person* struct, but it doesn't store a copy of it. We use this *Binding* to mutate value inside *PersonsStore* and as soon as we do that *SwiftUI* will update the view with the updated list of *Persons*. If you want to learn more about *Property Wrappers* available in *SwiftUI* like @*Binding*, @*Environment*, @*EnvironmentObject*, @*ObjectBinding*, please take a look at the [dedicated post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
-Now let's refactor our *PersonsView* to support editing by passing *Binding* to a selected *Person* inside *EditingView*. For that, we will use *PresentationButton* to present new beautiful cart interface in iOS 13.
+Now let's refactor our *PersonsView* to support editing by passing *Binding* to a selected *Person* inside *EditingView*. For that, we will use *PresentationButton* to present a view in a new beautiful cart interface available in iOS 13.
 
 ```swift
 struct PersonsView : View {
