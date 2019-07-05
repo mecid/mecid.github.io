@@ -62,7 +62,7 @@ struct MasterView: View {
 }
 ```
 
-Now, the user gets an excellent modal card interface which we have in iOS 13. You can dismiss it by swiping down. But what if you want to add a button which dismisses the modal? To do that we have to use *Environment Property Wrapper*.
+Now, the user gets an excellent card interface which we have in iOS 13. You can dismiss it by swiping down. But what if you want to add a button which dismisses the modal? To do that we have to use *Environment Property Wrapper*.
 
 ```swift
 struct DetailsView: View {
