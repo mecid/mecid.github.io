@@ -39,7 +39,7 @@ As a result, we have a red rectangle which scales and change color to purple dur
 
 #### DragGesture
 
-Let's try to create a Tinder-like swipeable card. We will use *DragGesture* to track panning. When the user will finish dragging we have to check if translation enough to remove the card, if not we will animate it back to the center of the screen. Here is the implementation.
+Let's try to create a Tinder-like swipeable card. We will use *DragGesture* to track dragging. When the user finishes the dragging we have to check if translation enough to remove the card, if not we will animate it back to the center of the screen. Here is the implementation.
 
 ```swift
 import SwiftUI
