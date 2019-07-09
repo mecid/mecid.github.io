@@ -82,10 +82,10 @@ struct MasterView: View {
 }
 ```
 
-In the example above, I use *@State Property Wrapper*, as soon as this property changes *SwiftUI* rebuilds view with the new value. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/). I create a modal by using the provided init method and passing there the view which represents the modal and closure which *SwiftUI* runs after dismiss. Another way of presenting *Modals* is *PresentationLink* component. We covered it in the previous [post for more information please check it](/2019/07/17/navigation-in-swiftui/).
+In the example above, I use *@State Property Wrapper*, as soon as this property changes *SwiftUI* rebuilds view with the new value. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/). I create a modal by using the provided init method and pass there the view which represents the modal and closure which *SwiftUI* runs after dismiss. Another way of presenting *Modals* is *PresentationLink* component. We covered it in the previous [post, for more information please check it](/2019/07/17/navigation-in-swiftui/).
 
 #### Popovers
-Using Popovers in *SwiftUI* very similar to *Alers* and *ActionSheets*, the only difference here is the usage of *popover* modifier instead of the *presentation*. Popover modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in popover modifier is *arrowEdge*, by *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
+Using Popovers in *SwiftUI* very similar to *Alers* and *ActionSheets*, the only difference here is the usage of *popover* modifier instead of the *presentation*. Popover modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in popover modifier is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
 
 ```swift
 struct MasterView: View {
