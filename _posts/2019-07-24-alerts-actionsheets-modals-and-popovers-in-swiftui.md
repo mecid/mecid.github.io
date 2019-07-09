@@ -33,7 +33,7 @@ struct MasterView: View {
 }
 ```
 
-It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *presentation* modifier, which uses *Optional Identifiable binding* instead of Boolean binding.
+The interesting thing here is that *SwiftUI* resets the value of *showActionSheet* property after *Alert* dismiss. It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *presentation* modifier, which uses *Optional Identifiable binding* instead of Boolean binding.
 
 ```swift
 struct Message: Identifiable {
