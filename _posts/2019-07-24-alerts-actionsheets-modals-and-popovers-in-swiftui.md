@@ -33,7 +33,7 @@ struct MasterView: View {
 }
 ```
 
-The interesting thing here is that *SwiftUI* resets the value of *showActionSheet* property after *Alert* dismiss. It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *presentation* modifier, which uses *Optional Identifiable binding* instead of Boolean binding.
+The interesting thing here is that *SwiftUI* resets the value of binding property after *Alert* dismiss. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/). It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *presentation* modifier, which uses *Optional Identifiable binding* instead of Boolean binding.
 
 ```swift
 struct Message: Identifiable {
@@ -42,15 +42,15 @@ struct Message: Identifiable {
 }
 
 struct MasterView: View {
-    @State private var showMessageAlert: Message? = nil
+    @State private var messageAlert: Message? = nil
 
     var body: some View {
         VStack {
             Button("Show alert") {
-                self.showMessageAlert = Message(id: UUID(), content: "Hi!")
+                self.messageAlert = Message(id: UUID(), content: "Hi!")
             }
         }
-            .presentation($showMessageAlert) { message in
+            .presentation($messageAlert) { message in
                 Alert(
                     title: Text(message.content),
                     dismissButton: .cancel()
@@ -60,10 +60,10 @@ struct MasterView: View {
 }
 ```
 
-As soon as *Identifiable* is not *nil* *SwiftUI* call a closure with *Identifiable* as a parameter. You can create your *Alert* or *ActionSheet* based on data passed into the closure. 
+As soon as *messageAlert* is not *nil* *SwiftUI* call a closure with *messageAlert* as a parameter. You can create your *Alert* or *ActionSheet* based on data passed into the closure. 
 
 #### Modals
-To present a modal, you have to pass an instance of *Modal* struct to *presentation* modifier and to hide you can pass a *nil* value to the same modifier.
+To present a modal, you have to pass an instance of *Modal* struct to *presentation* modifier and to hide it you can pass a *nil* value to the same modifier.
 
 ```swift
 struct MasterView: View {
@@ -82,7 +82,7 @@ struct MasterView: View {
 }
 ```
 
-In the example above, I use *@State Property Wrapper*, as soon as this property changes *SwiftUI* rebuilds view with the new value. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/). I create a modal by using the provided init method and pass there the view which represents the modal and closure which *SwiftUI* runs after dismiss. Another way of presenting *Modals* is *PresentationLink* component. We covered it in the previous [post, for more information please check it](/2019/07/17/navigation-in-swiftui/).
+In the example above, I use *@State Property Wrapper*, as soon as this property changes *SwiftUI* rebuilds view with the new value. I create a modal by using the provided *init* method and pass there the view which represents the modal and closure which *SwiftUI* runs after dismiss. Another way of presenting *Modals* is *PresentationLink* component. We covered it in the previous [post, for more information please check it](/2019/07/17/navigation-in-swiftui/).
 
 #### Popovers
 Using Popovers in *SwiftUI* very similar to *Alers* and *ActionSheets*, the only difference here is the usage of *popover* modifier instead of the *presentation*. Popover modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in popover modifier is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
