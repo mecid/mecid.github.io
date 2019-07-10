@@ -38,6 +38,7 @@ struct DetailsView: View {
 ```
 
 Here we have a list of messages, to make navigation possible we embed our *List* into a *NavigationView*, it adds standard *NavigationBar* on top of our *List*. We can also set text as a title of *NavigationBar* by adding *navigationBarTitle* modifier to a *List*. Please make sure that you add the *navigationBarTitle* modifier to a *List* component, and not to a *NavigationView* because multiple views can share same *NavigationView* and every view can have a different title. 
+
 **Hidden gem: You can embed two views into NavigationView to achieve Split on iPadOS and MacOS**
 
 Next, we embed List rows into *NavigationLink*, while creating *NavigationLink*, we have to provide a destination view. *SwiftUI* presents a destination view when the user presses the *List row*. By wrapping *List row* into a *NavigationLink*, *SwiftUI* adds trailing arrow to the view which indicates that there is a details screen next to the view. And this is where the real power of declarative programming comes. *List row* starts appearing in another way only by embedding it into *NavigationLink*. To learn more about environment-based appearance in *SwiftUI*, you can check out ["Building forms with SwiftUI" post](/2019/06/19/building-forms-with-swiftui/).
