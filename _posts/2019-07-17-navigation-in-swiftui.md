@@ -16,7 +16,7 @@ struct MasterView: View {
 
     var body: some View {
         NavigationView {
-            List(messages.identified(by: \.self)) { message in
+            List(messages, id: \.self) { message in
                 NavigationLink(destination: DetailsView(message: message)) {
                     Text(message)
                 }
@@ -54,7 +54,7 @@ struct MasterView: View {
 
     var body: some View {
         NavigationView {
-            List(messages.identified(by: \.self)) { message in
+            List(messages, id: \.self) { message in
                 PresentationLink(destination: DetailsView(message: message)) {
                     Text(message)
                 }

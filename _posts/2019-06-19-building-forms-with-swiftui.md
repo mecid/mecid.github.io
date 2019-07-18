@@ -15,7 +15,7 @@ import SwiftUI
 import Combine
 
 class SettingsStore: BindableObject {
-    var didChange = PassthroughSubject<Void, Never>()
+    let willChange = PassthroughSubject<Void, Never>()
 
     private enum Keys {
         static let pro = "pro"
@@ -40,7 +40,7 @@ class SettingsStore: BindableObject {
         cancellable = NotificationCenter.default
             .publisher(for: UserDefaults.didChangeNotification)
             .map { _ in () }
-            .subscribe(didChange)
+            .subscribe(willChange)
     }
 
     var isNotificationEnabled: Bool {
@@ -94,11 +94,11 @@ extension SettingsStore {
 }
 ```
 
-Here we have a simple *SettingsStore* class which conforms to *BindableObject* protocol. The single requirement is *didChange* property. *SwiftUI* uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
+Here we have a simple *SettingsStore* class which conforms to *BindableObject* protocol. The single requirement is *willChange* property. *SwiftUI* uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
 
-Another interesting point here is the usage of *Combine* framework. We use notification center publisher to subscribe on *UserDefaults* changes. As soon as *UserDefault* values change we get a notification and then we send it to *didChange* property. I will try to cover an introduction to *Combine* framework in future posts. But for now, you have to know that every change in *UserDefaults* sends *Void* value to *didChange* property, which triggers *View* rebuild process.
+Another interesting point here is the usage of *Combine* framework. We use notification center publisher to subscribe on *UserDefaults* changes. As soon as *UserDefault* values change we get a notification and then we send it to *willChange* property. I will try to cover an introduction to *Combine* framework in future posts. But for now, you have to know that every change in *UserDefaults* sends *Void* value to *willChange* property, which triggers *View* rebuild process.
 
-We can replace usage of *NotificationCenter* publisher by calling send method of *didChange* property in the every property setter inside the *SettingsStore*, but it looks like boilerplate. So let's keep it like this.
+We can replace usage of *NotificationCenter* publisher by calling send method of *willChange* property in the every property setter inside the *SettingsStore*, but it looks like boilerplate. So let's keep it like this.
 
 #### SettingsView
 Let's start to build our settings screen UI. We will use *Text*, *Toggle*, *Stepper*, *Picker*, and *Button* components. Here is the source code of our *SettingsView*.
@@ -127,7 +127,7 @@ struct SettingsView: View {
                         selection: $settings.sleepTrackingMode,
                         label: Text("Sleep tracking mode")
                     ) {
-                        ForEach(SettingsStore.SleepTrackingMode.allCases.identified(by: \.self)) {
+                        ForEach(SettingsStore.SleepTrackingMode.allCases, id: \.self) {
                             Text($0.rawValue).tag($0)
                         }
                     }

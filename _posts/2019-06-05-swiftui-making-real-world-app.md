@@ -114,12 +114,12 @@ import Combine
 
 class ReposStore: BindableObject {
     var repos: [Repo] = [] {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
 
-    var didChange = PassthroughSubject<ReposStore, Never>()
+    var willChange = PassthroughSubject<ReposStore, Never>()
 
     let service: GithubService
     init(service: GithubService) {
@@ -139,7 +139,7 @@ class ReposStore: BindableObject {
 }
 ```
 
-*ReposStore* class should conform *BindableObject* protocol, which requires a *didChange* property. It makes possible to use it inside *Environment* and rebuild view as soon as it changes. The *didChange* property should be a *Publisher*, which is a part of a new Apple's Reactive framework called *Combine*. The main goal of *Publisher* is to notify all subscribers when something changes. That's why in *didSet* of our repos array we tell to our subscribers that data changed. As soon as new values appear, *SwiftUI* will rebuild *ReposView*.
+*ReposStore* class should conform *BindableObject* protocol, which requires a *willChange* property. It makes possible to use it inside *Environment* and rebuild view as soon as it changes. The *willChange* property should be a *Publisher*, which is a part of a new Apple's Reactive framework called *Combine*. The main goal of *Publisher* is to notify all subscribers when something changes. That's why in *willSet* of our repos array we tell to our subscribers that data changed. As soon as new values appear, *SwiftUI* will rebuild *ReposView*.
 
 The main difference between *@State* and *@EnvironmentObject* is that @State is accessible only to a particular view, in opposite *@EnvironmentObject* available for every view inside the Environment. But both of them used by SwiftUI to track changes and rebuild views as soon as changes appear.
 

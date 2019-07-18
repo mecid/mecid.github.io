@@ -49,14 +49,14 @@ struct ContentView : View {
             if isButtonVisible {
                 Button(action: {}) {
                     Text("Hidden Button")
-                }.animation(.basic())
+                }.animation(.easeInOut)
             }
         }
     }
 }
 ```
 
-In the code sample above, we achieve the same animation by simply adding animation modifier. We use basic animation, but you can pass custom animation properties.
+In the code sample above, we achieve the same animation by simply adding animation modifier. We use *easeInOut* animation, but you can pass custom animation properties.
 
 Sometimes we have a situation where multiple views depend on some state, and we want to animate all depending view changes together. For this case, we have animatable bindings.
 

@@ -77,8 +77,8 @@ We use @*Binding* to mark *showFavorited* property inside the *FilterView*. We a
 ```swift
 final class PodcastPlayer: BindableObject {
     var isPlaying: Bool = false {
-        didSet {
-            didChange.send(self)
+        willSet {
+            willChange.send(self)
         }
     }
 
@@ -90,11 +90,11 @@ final class PodcastPlayer: BindableObject {
         isPlaying = false
     }
 
-    var didChange = PassthroughSubject<PodcastPlayer, Never>()
+    let willChange = PassthroughSubject<PodcastPlayer, Never>()
 }
 ```
 
-Here we have *PodcastPlayer* class which we share between the screens of our app. Every screen has to show floating pause button in the case when the app is playing a podcast episode. *SwiftUI* tracks changes on *BindableObject* with the help of *didChange* property, which is the single requirement of *BindableObject* protocol. More detailed information about *BindableObject* you can find in my previous [post](/2019/06/05/swiftui-making-real-world-app).
+Here we have *PodcastPlayer* class which we share between the screens of our app. Every screen has to show floating pause button in the case when the app is playing a podcast episode. *SwiftUI* tracks changes on *BindableObject* with the help of *willChange* property, which is the single requirement of *BindableObject* protocol. More detailed information about *BindableObject* you can find in my previous [post](/2019/06/05/swiftui-making-real-world-app).
 
 ```swift
 struct EpisodesView: View {

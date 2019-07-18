@@ -24,12 +24,12 @@ struct Person: Identifiable {
 }
 
 final class PersonStore: BindableObject {
-    let didChange = PassthroughSubject<Void, Never>()
+    let willChange = PassthroughSubject<Void, Never>()
 
     var persons: [Person] = [] {
-        didSet {
+        willSet {
             DispatchQueue.main.async {
-                self.didChange.send(())
+                self.willChange.send()
             }
         }
     }
@@ -47,7 +47,7 @@ final class PersonStore: BindableObject {
 
 Here we have simple *Person* struct which conforms *Identifiable* protocol. The single requirement of *Identifiable* is *Hashable* *id* field. We implement it by defining *id* as *UUID*. We also can use *Int* instead of *UUID*.
 
-Next, we can implement *PersonStore* class, which is providing data for our view. *PersonStore* type conforms to *BindableObject* it will allow *SwiftUI* to refresh the view as soon as we notify it by using *didChange* *Subject*. We send a *Void* value to *didChange* *Subject* on every mutation on *persons array*.
+Next, we can implement *PersonStore* class, which is providing data for our view. *PersonStore* type conforms to *BindableObject* it will allow *SwiftUI* to refresh the view as soon as we notify it by using *willChange* *Subject*. We send a *Void* value to *willChange* *Subject* before every mutation on *persons array*.
 
 Now let's take a look at *PersonListView*.
 
@@ -63,7 +63,7 @@ struct PersonsView : View {
                         .font(.headline)
                     Text("Age: \(person.age)")
                         .font(.subheadline)
-                        .color(.secondary)
+                        .foregroundColor(.secondary)
                 }
             }
                 .onAppear(perform: { self.store.fetch() })
@@ -122,7 +122,7 @@ struct PersonsView : View {
                                 .font(.headline)
                             Text("Age: \(self.store.persons[index].age)")
                                 .font(.subheadline)
-                                .color(.secondary)
+                                .foregroundColor(.secondary)
                             }
                     }
                 }
