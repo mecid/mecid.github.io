@@ -3,10 +3,10 @@ title: Alerts, ActionSheets, Modals and Popovers in SwiftUI
 layout: post
 ---
 
-Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*,  *ActionSheets*, and *Popovers*. *SwiftUI* views have a dedicated modifier for presenting this kind stuff called *presentation*. Let's take a look at how we can use *presentation* modifier to display *Alerts*, *ActionSheets*, and *Modals*.
+Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*, *ActionSheets*, and *Popovers*. *SwiftUI* views have a dedicated modifiers for presenting this kind stuff. Let's take a look at how we can use modifiers to display *Alerts*, *ActionSheets*, and *Modals*.
 
 #### Alerts and ActionSheets
-Both *Alerts* and *ActionSheets* use the same two ways of presenting it to the user. Let's start with a simpler one. We have to describe a *Boolean* binding which can be observed by *SwiftUI*, and as soon as *Boolean* is true, *SwiftUI* presents the *ActionSheet* or *Alert*.
+Both *Alerts* and *ActionSheets* use the similar two ways of presenting it to the user. Let's start with a simpler one. We have to describe a *Boolean* binding which can be observed by *SwiftUI*, and as soon as *Boolean* is true, *SwiftUI* presents the *ActionSheet* or *Alert*.
 
 ```swift
 struct MasterView: View {
@@ -18,7 +18,7 @@ struct MasterView: View {
                 self.showActionSheet = true
             }
         }
-            .presentation($showActionSheet) {
+            .actionSheet($showActionSheet) {
                 ActionSheet(
                     title: Text("Actions"),
                     message: Text("Available actions"),
@@ -32,60 +32,63 @@ struct MasterView: View {
     }
 }
 ```
+As you can see in the example above to present an action sheet, we use *actionSheet* modifier bound to a *Boolean* value and a closure which creates an action sheet. Alternatively, to display an alert, we need to use *alert* modifier instead.
 
-The interesting thing here is that *SwiftUI* resets the value of binding property after *Alert* dismiss. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/). It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *presentation* modifier, which uses *Optional Identifiable binding* instead of Boolean binding.
+The interesting fact here is that *SwiftUI* resets the value of binding property after *Alert* dismiss. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
+
+It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *alert* and *actionSheet* modifiers, which uses *Optional Identifiable binding* instead of *Boolean binding*.
 
 ```swift
 struct Message: Identifiable {
-    let id: UUID
-    let content: String
+    let id = UUID()
+    let text: String
 }
 
 struct MasterView: View {
-    @State private var messageAlert: Message? = nil
+    @State private var message: Message? = nil
 
     var body: some View {
         VStack {
             Button("Show alert") {
-                self.messageAlert = Message(id: UUID(), content: "Hi!")
+                self.message = Message(text: "Hi!")
             }
+        }.alert(item: $message) { message in
+            Alert(
+                title: Text(message.text),
+                dismissButton: .cancel()
+            )
         }
-            .presentation($messageAlert) { message in
-                Alert(
-                    title: Text(message.content),
-                    dismissButton: .cancel()
-                )
-            }
     }
 }
 ```
 
-As soon as *messageAlert* is not *nil* *SwiftUI* call a closure with *messageAlert* as a parameter. You can create your *Alert* or *ActionSheet* based on data passed into the closure. 
+As soon as *message* is not *nil* *SwiftUI* call a closure with *message* as a parameter. You can create your *Alert* based on data passed into the closure. 
 
 #### Modals
-To present a modal, you have to pass an instance of *Modal* struct to *presentation* modifier and to hide it you can pass a *nil* value to the same modifier.
+To present modals, *SwiftUI* provides the special view modifier called *sheet*. *Sheet* modifier is very similar to *alert* and *actionSheet*, it uses *Boolean* or *Optional Identifiable* binding to understand when to present a modal. It also needs a closure which returns a content view for a modal. Besides that, *sheet* modifier has an optional *onDismiss* closure parameter, *SwiftUI* calls this closure after modal dismiss. Like with alerts, *SwiftUI* will reset binding to the initial value after modal dismiss.
 
 ```swift
 struct MasterView: View {
-    @State private var modal: Modal? = nil
+    @State private var showModal = false
 
     var body: some View {
         VStack {
             Button("Show modal") {
-                self.modal = Modal(Text("Modal")) {
-                    self.modal = nil
-                }
+                self.showModal = true
             }
         }
-            .presentation(modal)
+        .sheet(isPresented: $showModal, onDismiss: {
+            print(self.showModal)
+        }) {
+            Text("This is Modal view")
+        }
     }
 }
+
 ```
 
-In the example above, I use *@State Property Wrapper*, as soon as this property changes *SwiftUI* rebuilds view with the new value. I create a modal by using the provided *init* method and pass there the view which represents the modal and closure which *SwiftUI* runs after dismiss. Another way of presenting *Modals* is *PresentationLink* component. We covered it in the previous [post, for more information please check it](/2019/07/17/navigation-in-swiftui/).
-
 #### Popovers
-Using Popovers in *SwiftUI* very similar to *Alers* and *ActionSheets*, the only difference here is the usage of *popover* modifier instead of the *presentation*. Popover modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in popover modifier is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
+Using Popovers in *SwiftUI* is very similar to *Alers* and *ActionSheets*. *Popover* modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in *popover modifier* is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
 
 ```swift
 struct MasterView: View {
