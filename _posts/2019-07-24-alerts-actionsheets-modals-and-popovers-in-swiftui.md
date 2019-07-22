@@ -3,7 +3,7 @@ title: Alerts, ActionSheets, Modals and Popovers in SwiftUI
 layout: post
 ---
 
-Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*, *ActionSheets*, and *Popovers*. *SwiftUI* views have a dedicated modifiers for presenting this kind stuff. Let's take a look at how we can use modifiers to display *Alerts*, *ActionSheets*, and *Modals*.
+Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*, *ActionSheets*, and *Popovers*. *SwiftUI* views have a dedicated modifiers for presenting this kind stuff. Let's take a look at how we can use modifiers to display *Modals*, *Alerts*, *ActionSheets*, and *Popovers*.
 
 #### Alerts and ActionSheets
 Both *Alerts* and *ActionSheets* use the similar two ways of presenting it to the user. Let's start with a simpler one. We have to describe a *Boolean* binding which can be observed by *SwiftUI*, and as soon as *Boolean* is true, *SwiftUI* presents the *ActionSheet* or *Alert*.
@@ -17,24 +17,23 @@ struct MasterView: View {
             Button("Show action sheet") {
                 self.showActionSheet = true
             }
+        }.actionSheet(isPresented: $showActionSheet) {
+            ActionSheet(
+                title: Text("Actions"),
+                message: Text("Available actions"),
+                buttons: [
+                    .cancel { print(self.showActionSheet) },
+                    .default(Text("Action")),
+                    .destructive(Text("Delete"))
+                ]
+            )
         }
-            .actionSheet($showActionSheet) {
-                ActionSheet(
-                    title: Text("Actions"),
-                    message: Text("Available actions"),
-                    buttons: [
-                        .cancel { self.showActionSheet = false },
-                        .default(Text("Action")),
-                        .destructive(Text("Delete"))
-                    ]
-                )
-            }
     }
 }
 ```
 As you can see in the example above to present an action sheet, we use *actionSheet* modifier bound to a *Boolean* value and a closure which creates an action sheet. Alternatively, to display an alert, we need to use *alert* modifier instead.
 
-The interesting fact here is that *SwiftUI* resets the value of binding property after *Alert* dismiss. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
+The interesting fact here is that *SwiftUI* resets the binding to initial value after *Alert* or *ActionSheet* dismiss. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
 It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *alert* and *actionSheet* modifiers, which uses *Optional Identifiable binding* instead of *Boolean binding*.
 
