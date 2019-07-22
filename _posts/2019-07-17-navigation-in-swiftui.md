@@ -85,5 +85,7 @@ struct DetailsView: View {
 
 *isPresented* is an *Environment* binding to whether *self* is part of a hierarchy that is currently being presented. In other words, *SwiftUI* uses this binding to show/hide presented views. By setting the value of this binding to false, *SwiftUI* dismisses the modal. To learn more about *Property Wrappers provided by SwiftUI and Environment values*, you can check my ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
+**Update: PresentationLink is already deprecated by Apple. To present modals use *sheet* modifier instead. To learn more about *sheet* modifier check [Alerts, ActionSheets, Modals and Popovers in SwiftUI](/2019/07/24/alerts-actionsheets-modals-and-popovers-in-swiftui)**
+
 #### Conclusion
 As you can see, there are no manual calls to push or present any views. All you need to do is wrapping your view into *NavigationLink* or *PresentationLink*, and as soon as the user presses it, *SwiftUI* moves it to next destination, and this is the really excellent declarative approach. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
