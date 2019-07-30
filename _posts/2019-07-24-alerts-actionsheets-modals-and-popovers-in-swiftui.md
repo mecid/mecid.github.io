@@ -67,6 +67,9 @@ As soon as *message* is not *nil* *SwiftUI* call a closure with *message* as a p
 To present modals, *SwiftUI* provides the special view modifier called *sheet*. *Sheet* modifier is very similar to *alert* and *actionSheet*, it uses *Boolean* or *Optional Identifiable* binding to understand when to present a modal. It also needs a closure which returns a content view for a modal. Besides that, *sheet* modifier has an optional *onDismiss* closure parameter, *SwiftUI* calls this closure after modal dismiss. Like with alerts, *SwiftUI* will reset binding to the initial value after modal dismiss.
 
 ```swift
+import SwiftUI
+import Combine
+
 struct MasterView: View {
     @State private var showModal = false
 
@@ -75,16 +78,30 @@ struct MasterView: View {
             Button("Show modal") {
                 self.showModal = true
             }
-        }
-        .sheet(isPresented: $showModal, onDismiss: {
+        }.sheet(isPresented: $showModal, onDismiss: {
             print(self.showModal)
         }) {
-            Text("This is Modal view")
+            ModalView(message: "This is Modal view")
         }
     }
 }
 
+struct ModalView: View {
+    @Environment(\.presentationMode) var presentation
+    let message: String
+
+    var body: some View {
+        VStack {
+            Text(message)
+            Button("Dismiss") {
+                self.presentation.value.dismiss()
+            }
+        }
+    }
+}
 ```
+
+*presentationMode* is an *Environment* binding to the current *PresentationMode* of this view. We can use it to programmatically dismiss the *Modal*. To learn more about *Property Wrappers provided by SwiftUI and Environment values*, you can check my ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
 #### Popovers
 Using Popovers in *SwiftUI* is very similar to *Alers* and *ActionSheets*. *Popover* modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in *popover modifier* is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.

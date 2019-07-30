@@ -3,7 +3,7 @@ title: Understanding Property Wrappers in SwiftUI
 layout: post
 ---
 
-Last week we started a new series of [posts](/2019/06/05/swiftui-making-real-world-app) about *SwiftUI* framework. Today I want to continue this topic by covering *Property Wrappers* provided by *SwiftUI*. *SwiftUI* gives us *@State*, *@Binding*, *@ObjectBinding*, *@EnvironmentObject*, and *@Environment* *Property Wrappers*. So let's try to understand the differences between them and when and why which one we have to use.
+Last week we started a new series of [posts](/2019/06/05/swiftui-making-real-world-app) about *SwiftUI* framework. Today I want to continue this topic by covering *Property Wrappers* provided by *SwiftUI*. *SwiftUI* gives us *@State*, *@Binding*, *@ObservedObject*, *@EnvironmentObject*, and *@Environment* *Property Wrappers*. So let's try to understand the differences between them and when and why which one we have to use.
 
 #### Property Wrappers
 *Property Wrappers* feature described in [SE-0258](https://github.com/DougGregor/swift-evolution/blob/property-wrappers/proposals/0258-property-wrappers.md) proposal. The main goal here is wrapping properties with logic which can be extracted into the separated struct to reuse it across the codebase. This proposal is not accepted yet, but Apple provides *Xcode beta with Swift 5.1 snapshot*, which has it.
@@ -71,16 +71,14 @@ struct ProductsView: View {
 
 We use @*Binding* to mark *showFavorited* property inside the *FilterView*. We also use *$* to pass a binding reference, because without *$* *Swift* will pass a copy of the property's value instead of passing bindable reference. *FilterView* can read and write the value of *ProductsView*'s *showFavorited* property, but it can't observe the changes using this binding. As soon as *FilterView* changes value of *showFavorited* property, *SwiftUI* will recreate the *ProductsView* and *FilterView* as its child.
 
-#### @ObjectBinding
-@*ObjectBinding* work very similarly to @*State* *Property Wrapper*, but the main difference is that we can share it between multiple independent *Views* which can subscribe and observe changes on that object, and as soon as changes appear *SwiftUI* rebuild all *Views* bound to this object. Let's take a look at an example.
+#### @ObservedObject
+@*ObservedObject* work very similarly to @*State* *Property Wrapper*, but the main difference is that we can share it between multiple independent *Views* which can subscribe and observe changes on that object, and as soon as changes appear *SwiftUI* rebuild all *Views* bound to this object. Let's take a look at an example.
 
 ```swift
-final class PodcastPlayer: BindableObject {
-    var isPlaying: Bool = false {
-        willSet {
-            willChange.send(self)
-        }
-    }
+import Combine
+
+final class PodcastPlayer: ObservableObject {
+    @Published private(set) var isPlaying: Bool = false
 
     func play() {
         isPlaying = true
@@ -89,16 +87,14 @@ final class PodcastPlayer: BindableObject {
     func pause() {
         isPlaying = false
     }
-
-    let willChange = PassthroughSubject<PodcastPlayer, Never>()
 }
 ```
 
-Here we have *PodcastPlayer* class which we share between the screens of our app. Every screen has to show floating pause button in the case when the app is playing a podcast episode. *SwiftUI* tracks changes on *BindableObject* with the help of *willChange* property, which is the single requirement of *BindableObject* protocol. More detailed information about *BindableObject* you can find in my previous [post](/2019/06/05/swiftui-making-real-world-app).
+Here we have *PodcastPlayer* class which we share between the screens of our app. Every screen has to show floating pause button in the case when the app is playing a podcast episode. *SwiftUI* tracks changes on *ObservableObject* with the help of *@Published* property wrapper, when property marked as *@Published* changes *SwiftUI* rebuilds the view.
 
 ```swift
 struct EpisodesView: View {
-    @ObjectBinding var player: PodcastPlayer
+    @ObservedObject var player: PodcastPlayer
     let episodes: [Episode]
 
     var body: some View {
@@ -122,10 +118,10 @@ struct EpisodesView: View {
 }
 ```
 
-Here we use *@ObjectBinding Property Wrapper* to bind our *EpisodesView* to *PodcastPlayer* class, and as soon as current *View* or any other *View* attached to *PodcastPlayer* object change it, *SwiftUI* will rebuild all *Views* bound to that *PodcastPlayer* object.
+Here we use *@ObservedObject Property Wrapper* to bind our *EpisodesView* to *PodcastPlayer* class, and as soon as current *View* or any other *View* attached to *PodcastPlayer* object change it, *SwiftUI* will rebuild all *Views* bound to that *PodcastPlayer* object.
 
 #### @EnvironmentObject
-Instead of passing *BindableObject* via init method of our View we can implicitly inject it into *Environment* of our *View* hierarchy. By doing this, we create the opportunity for all child *View* of current *Environment* access to this *BindableObject*.
+Instead of passing *ObservedObject* via init method of our View we can implicitly inject it into *Environment* of our *View* hierarchy. By doing this, we create the opportunity for all child *View* of current *Environment* access to this *ObservableObject*.
 
 ```swift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -194,4 +190,4 @@ struct CalendarView: View {
 By marking our properties with *@Environment Property Wrapper*, we access and subscribe to changes of system-wide settings. As soon as *Locale*, *Calendar* or *ColorScheme* of the system change, *SwiftUI* recreates our *CalendarView*.
 
 #### Conclusion
-Today we talked about *Property Wrappers* provided by *SwiftUI*. *@State, @Binding, @EnvironmentObject, and @ObjectBinding* play huge role in *SwiftUI* development. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we talked about *Property Wrappers* provided by *SwiftUI*. *@State, @Binding, @EnvironmentObject, and @ObservedObject* play huge role in *SwiftUI* development. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  

@@ -7,16 +7,14 @@ Apple finally released [Xcode Beta 2](http://developer.apple.com/download/) with
 
 I work on a sleep tracking app, which needs settings screen. Settings screen should contain multiple toggles for enabling and disabling some features, buttons for in-app purchases, and a picker for tuning sleep tracking sensitivity level. 
 
-#### BindableObject for Settings logic
-Let's start by creating *BindableObject* representing our Settings logic. I've talked about *BindableObject* in my previous [post](/2019/06/12/understanding-property-wrappers-in-swiftui/), and you can check it to learn how to use it.
+#### ObservableObject for Settings logic
+Let's start by creating *ObservableObject* representing our Settings logic. I've talked about *ObservableObject* in my previous post ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/), and you can check it to learn how to use it.
 
 ```swift
 import SwiftUI
 import Combine
 
-class SettingsStore: BindableObject {
-    let willChange = PassthroughSubject<Void, Never>()
-
+final class SettingsStore: ObservableObject {
     private enum Keys {
         static let pro = "pro"
         static let sleepGoal = "sleep_goal"
@@ -27,6 +25,8 @@ class SettingsStore: BindableObject {
 
     private let cancellable: Cancellable
     private let defaults: UserDefaults
+
+    let objectWillChange = PassthroughSubject<Void, Never>()
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
@@ -40,7 +40,7 @@ class SettingsStore: BindableObject {
         cancellable = NotificationCenter.default
             .publisher(for: UserDefaults.didChangeNotification)
             .map { _ in () }
-            .subscribe(willChange)
+            .subscribe(objectWillChange)
     }
 
     var isNotificationEnabled: Bool {
@@ -94,11 +94,11 @@ extension SettingsStore {
 }
 ```
 
-Here we have a simple *SettingsStore* class which conforms to *BindableObject* protocol. The single requirement is *willChange* property. *SwiftUI* uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
+Here we have a simple *SettingsStore* class which conforms to *ObservableObject* protocol. The single requirement is *objectWillChange* property. *SwiftUI* uses this property to understand when something is changed, and as soon as changes appear, it rebuilds the depending views.
 
-Another interesting point here is the usage of *Combine* framework. We use notification center publisher to subscribe on *UserDefaults* changes. As soon as *UserDefault* values change we get a notification and then we send it to *willChange* property. I will try to cover an introduction to *Combine* framework in future posts. But for now, you have to know that every change in *UserDefaults* sends *Void* value to *willChange* property, which triggers *View* rebuild process.
+Another interesting point here is the usage of *Combine* framework. We use notification center publisher to subscribe on *UserDefaults* changes. As soon as *UserDefault* values change we get a notification and then we send it to *willChange* property. I will try to cover an introduction to *Combine* framework in future posts. But for now, you have to know that every change in *UserDefaults* sends *Void* value to *objectWillChange* property, which triggers *View* rebuild process.
 
-We can replace usage of *NotificationCenter* publisher by calling send method of *willChange* property in the every property setter inside the *SettingsStore*, but it looks like boilerplate. So let's keep it like this.
+We can replace usage of *NotificationCenter* publisher by calling send method of *objectWillChange* property in the every property setter inside the *SettingsStore*, but it looks like boilerplate. So let's keep it like this.
 
 #### SettingsView
 Let's start to build our settings screen UI. We will use *Text*, *Toggle*, *Stepper*, *Picker*, and *Button* components. Here is the source code of our *SettingsView*.
