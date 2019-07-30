@@ -143,7 +143,8 @@ Container views should do things only related to data-flow:
 Rendering views should do things only related to rendering:
 1. Build User Interface using primitive components provided by SwiftUI.
 2. Compose User Interface by using other Rendering views.
+3. Use data as input to render User Interface and don't store any state.
 
 #### Conclusion
-Today we discussed a way of decomposing your complex view into small and reusable pieces. I try to follow this approach as much as possible to make a clean separation between fetching and displaying data. Try to use this approach and share with me your thoughts about it.  Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we discussed a way of decomposing your complex view into small and reusable pieces. I try to follow this approach as much as possible to make a clean separation between fetching and displaying data. Try to use this method and share with me your thoughts about it.  Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
 
