@@ -3,9 +3,9 @@ title: Introducing Container views in SwiftUI
 layout: post
 ---
 
-During app development using *SwiftUI*, you can see that your views very coupled with the data flow. Views fetch and render the data, handle user input and actions, etc. By doing so many things views become very fat and we can't reuse them across the app. Let's take a look at a different way of decomposing views by using *Container* views.
+During app development using *SwiftUI*, you can see that your views are very coupled with the data flow. Views fetch and render the data, handle user input and actions, etc. By doing so many things views become very fat and we can't reuse them across the app. Let's take a look at a different way of decomposing views by using *Container* views.
 
-In my first post about *SwiftUI*, we build a Github app. Let's take a look at that.
+In my first post about *SwiftUI*, we build a Github app.
 
 ```swift
 import SwiftUI
@@ -70,7 +70,7 @@ struct ReposView : View {
 Now we have a simple *ReposView*, which accepts an array of repos and render them. That's it. We can use anywhere across the app where we need to display a repos list.
 
 #### Introducing Container views
-But now we have another question, where we can do data-flow stuff like fetching data and handling user actions. Let's introduce *Container* view concept. *Container* view fetches data and passes it to a simple *Rendering* view. *Container* view didn't render any UI itself. It just passes the data to the *Rendering* view.
+But now we have another question, where we can do data-flow stuff like fetching data and handling user actions. Let's introduce *Container* view concept. *Container* view fetches data and passes it to a simple *Rendering* view. *Container* view didn't render any User Interface itself. It just passes the data to the *Rendering* view.
 
 ```swift
 import SwiftUI
@@ -91,7 +91,46 @@ struct FavoritesContainerView: View {
 
 In the example above, we have a FavoritesContainerView which handles the data fetching and passes repos array to ReposView. By doing this, we have a clear separation between our Data-Flow and Data-Rendering. Let's take a look at a more complicated example.
 
-=================================================
+```swift
+import SwiftUI
+
+struct SearchContainerView: View {
+    @EnvironmentObject var store: ReposStore
+    @State private var query: String = "Swift"
+
+    var body: some View {
+        SearchView(query: $query, repos: store.repos, onCommit: fetch)
+            .onAppear(perform: fetch)
+    }
+
+    private func fetch() {
+        store.fetch(matching: query)
+    }
+}
+
+struct SearchView : View {
+    @Binding var query: String
+    
+    let repos: [Repo]
+    let onCommit: () -> Void
+
+    var body: some View {
+        List {
+            TextField("Type something", text: $query, onCommit: onCommit)
+            ForEach(repos) { repo in
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Text(repo.name)
+                            .font(.headline)
+                        Text(repo.description ?? "")
+                            .font(.subheadline)
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
 Here we have a more complex example, where ContainerView provides an acton handling closure and state binding to Rendering view. Let's summarize our thoughts about Container and Rendering views in SwiftUI.
 
