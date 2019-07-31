@@ -67,7 +67,7 @@ struct ReposView : View {
 }
 ```
 
-Now we have a simple *ReposView*, which accepts an array of repos and render them. That's it. We can use anywhere across the app where we need to display a repos list.
+Now we have a simple *ReposView*, which accepts an array of repos and render them. That's it. We can use it anywhere across the app where we need to display a repos list.
 
 #### Introducing Container views
 But now we have another question, where we can do data-flow stuff like fetching data and handling user actions. Let's introduce *Container* view concept. *Container* view fetches data and passes it to a simple *Rendering* view. *Container* view didn't render any User Interface itself. It just passes the data to the *Rendering* view.
@@ -89,7 +89,7 @@ struct FavoritesContainerView: View {
 }
 ```
 
-In the example above, we have a FavoritesContainerView which handles the data fetching and passes repos array to ReposView. By doing this, we have a clear separation between our Data-Flow and Data-Rendering. Let's take a look at a more complicated example.
+In the example above, we have a FavoritesContainerView which handles the data fetching and passes repos array to ReposView. By doing this, we have a clear separation between our data-flow and data rendering. Let's take a look at a more complicated example.
 
 ```swift
 import SwiftUI
@@ -132,7 +132,7 @@ struct SearchView : View {
 }
 ```
 
-Here we have a more complex example, where ContainerView provides an acton handling closure and state binding to Rendering view. Let's summarize our thoughts about Container and Rendering views in SwiftUI.
+Here we have a more complex example, where Container view provides an acton handling closure and state binding to Rendering view. Let's summarize our thoughts about Container and Rendering views in SwiftUI.
 
 Container views should do things only related to data-flow:
 1. Store the state of the view
@@ -146,5 +146,5 @@ Rendering views should do things only related to rendering:
 3. Use data as input to render User Interface and don't store any state.
 
 #### Conclusion
-Today we discussed a way of decomposing your complex view into small and reusable pieces. I try to follow this approach as much as possible to make a clean separation between fetching and displaying data. Try to use this method and share with me your thoughts about it.  Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we discussed a way of decomposing your complex view into small and reusable pieces. I try to follow this approach as much as possible to make a clean separation between data-flow and displaying data. Try to use this method and share with me your thoughts about it.  Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
 
