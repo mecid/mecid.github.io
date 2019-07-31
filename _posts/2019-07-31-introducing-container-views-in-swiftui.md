@@ -136,7 +136,7 @@ Here we have a more complex example, where ContainerView provides an acton handl
 
 Container views should do things only related to data-flow:
 1. Store the state of the view
-2. Handle life cycle handling (onAppear/onDisappear)
+2. Handle life cycle (onAppear/onDisappear)
 3. Fetch data using ObservableObject
 4. Provide action handlers to the Rendering view
 
