@@ -146,5 +146,5 @@ Rendering views should do things only related to rendering:
 3. Use data as input to render User Interface and don't store any state.
 
 #### Conclusion
-Today we discussed a way of decomposing your complex view into small and reusable pieces. I try to follow this approach as much as possible to make a clean separation between data-flow and displaying data. Try to use this method and share with me your thoughts about it.  Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we discussed a way of decomposing your complex view into small and reusable pieces. I try to follow this approach as much as possible to make a clean separation between data-flow and displaying data. Try to use this method and share with me your thoughts about it. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
 
