@@ -63,11 +63,12 @@ struct RepoRow: View {
     }
 }
 ```
+As you can see in the example, we use *SubheadlineModifier* by creating *ModifiedContent* struct with original *View* and *SubheadlineModifier* instance as parameters.
 
 #### ViewModifiers can have a @State like Views
 Another interesting fact about *ViewModifiers* is that it conforms to View protocol. It means you can use inside *ViewModifiers* property wrappers like *@State, @Binding, @Environment, @ObservableObject and @EnvironmentObject*. To learn more about property wrappers provided by *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
-*Swift* has a lot of great libraries for loading and caching remote images. Let's integrate one of them with *SwiftUI*. Most of my projects use *Kingfisher* library for loading and caching remote images, but it doesn't support *SwiftUI* for now. We will try to integrate them by creating *ViewModifier* which loads remote images with *Kingfisher*.
+*Swift* has a lot of great libraries for loading and caching remote images. Let's integrate one of them with *SwiftUI*. Most of my projects use *Kingfisher* library for loading and caching remote images, but it doesn't support *SwiftUI* for now. We will try to integrate it by creating *ViewModifier* which loads remote images with *Kingfisher*.
 
 ```swift
 import class Kingfisher.KingfisherManager
@@ -109,7 +110,7 @@ extension View {
 }
 ```
 
-As you can see in the example above, we use @*State* property wrapper inside *RemoteImageModifier*. It creates an opportunity to reload the *View* as soon as we set something to *fetchedImage* property. We also create here small utility methods to simplify the usage of new *RemoteImageModifier*. Now we can easily use new *ViewModifier* with any Image to load remote images.
+As you can see in the example above, we use @*State* property wrapper inside *RemoteImageModifier*. It creates an opportunity to reload the *View* as soon as we set something to *fetchedImage* property. We also create here small utility methods to simplify the usage of new *RemoteImageModifier*. Now we can easily use new *ViewModifier* with any *Image* to load remote images.
 
 ```swift
 import SwiftUI
