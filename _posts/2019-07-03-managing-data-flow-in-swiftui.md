@@ -72,7 +72,7 @@ Next step is creating a new view which allows us to edit personal information of
 
 ```swift
 struct EditingView: View {
-    @Environment(\.isPresented) var isPresented: Binding<Bool>
+    @Environment(\.presentationMode) var presentation
     @Binding var person: Person
 
     var body: some View {
@@ -86,8 +86,8 @@ struct EditingView: View {
                 }
 
                 Section {
-                    Button(action: { self.isPresented?.value.toggle() }) {
-                        Text("Save")
+                    Button("Save") {
+                        self.presentation.value.dismiss()
                     }
                 }
             }.navigationBarTitle(Text(person.name))
