@@ -110,7 +110,7 @@ extension View {
 }
 ```
 
-As you can see in the example above, we use @*State* property wrapper inside *RemoteImageModifier*. It creates an opportunity to reload the *View* as soon as we set something to *fetchedImage* property. We also create here small utility methods to simplify the usage of new *RemoteImageModifier*. Now we can easily use new *ViewModifier* with any *Image* to load remote images.
+As you can see in the example above, we use @*State* property wrapper inside *RemoteImageModifier*. It creates an opportunity to reload the *View* as soon as we set something to *fetchedImage* property. We also create here some utility methods to simplify the usage of new *RemoteImageModifier*. Now we can easily use new *ViewModifier* with any *Image* to load remote images.
 
 ```swift
 import SwiftUI
