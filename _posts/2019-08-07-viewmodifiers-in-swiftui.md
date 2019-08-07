@@ -9,8 +9,6 @@ layout: post
 Assume that we are working on Github repositories search app, and we need some *View* to display a single repository in the search results screen. Here we go.
 
 ```swift
-import SwiftUI
-
 struct RepoRow: View {
     let repo: Repo
 
@@ -20,6 +18,7 @@ struct RepoRow: View {
                 Text(repo.name)
                     .font(.headline)
                 Text(repo.description ?? "")
+                    .foregroundColor(.secondary)
                     .font(.subheadline)
             }
         }
