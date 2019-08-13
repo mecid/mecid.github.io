@@ -3,10 +3,10 @@ title: Building BarChart with Shape API in SwiftUI
 layout: post
 ---
 
-This week I want to show you how to use *Shape* API in *SwiftUI*. We will take a look at ready to use shapes like *Circle, Capsule, Rectangle*, etc. We will learn how to draw super custom shapes by using *Path* struct and *GeometryReader*. In the end, we will build *BarChart* implementation ultimately in *SwiftUI*.
+This week I want to show you how to use *Shape* API in *SwiftUI*. We will take a look at ready to use shapes like *Circle, Capsule, Rectangle*, etc. We will learn how to draw super custom shapes by using *Path* and *GeometryReader*. In the end, we will build *BarChart* implementation ultimately in *SwiftUI*.
 
 #### Shape protocol
-*SwiftUI* provides *Shape* protocol which has a single requirement path function. We use path function to describe our shape inside a provided rectangle. Let's try to use it to draw a progress ring.
+*SwiftUI* provides *Shape* protocol which has a single requirement *path* function. We use *path* function to describe our shape inside a provided rectangle. Let's try to use it to draw a progress ring.
 
 ```swift
 struct ProgressShape: Shape {
@@ -26,7 +26,7 @@ struct ProgressShape: Shape {
 }
 ```
 
-Here we use a little math to calculate arc which describes our progress. *Shape* protocol conforms to *View* protocol that's why we can easily use it inside *Stack* or *Group*. We can also customize default drawing by setting custom *StrokeStyle*.
+Here we use a little math to calculate *arc* which describes our progress. *Shape* protocol conforms to *View* protocol that's why we can easily use it inside *Stack* or *Group*. We can also customize default drawing by setting custom *StrokeStyle*.
 
 ```swift
 struct ProgressView: View {
@@ -147,7 +147,7 @@ struct BarChartView: View {
 }
 ```
 
-Here we have *BarChartView* which puts inside the *VStack BarsView and LegendsView*. We also use accessibility identifier to hide *LegendsView* in the *Accessibility tree*.
+Here we have *BarChartView* which puts *BarsView and LegendsView* inside the *VStack*. We also use accessibility modifier to hide *LegendsView* in the *Accessibility tree*.
 
 #### Real-life example
 I use the source code from this post to implement *BarChart* in my *SleepBot* app. Besides the implementation which we have in the current post, I've added *LabelsView*. *LabelsView* presents the *BarChart* labels below the chart itself. Here is the implementation of that view.
@@ -183,4 +183,4 @@ Take a look at the final version of *BarChartView* in *SleepBot* app.
 ![chart](/public/chart.jpg)
 
 #### Conclusion
-Today we talked about *Shape* API which we have in *SwiftUI*. We also build *BarChart* experience by using ready to use *Capsule* and *Circle* shapes. We made our chart accessible by providing label and values for our bars. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+Today we talked about *Shape* API which we have in *SwiftUI*. We also build *BarChart* experience by using ready to use *Capsule* and *Circle* shapes. We made our chart accessible by providing labels and values for our bars. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
