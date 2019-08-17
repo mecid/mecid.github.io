@@ -119,7 +119,7 @@ struct EpisodesView: View {
 ```
 
 #### @EnvironmentObject
-Instead of passing *ObservedObject* via init method of our View we can implicitly inject it into *Environment* of our *View* hierarchy. By doing this, we create the opportunity for all child *Views* of current *Environment* access this *ObservableObject*.
+Instead of passing *ObservableObject* via init method of our View we can implicitly inject it into *Environment* of our *View* hierarchy. By doing this, we create the opportunity for all child *Views* of current *Environment* access this *ObservableObject*.
 
 ```swift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
