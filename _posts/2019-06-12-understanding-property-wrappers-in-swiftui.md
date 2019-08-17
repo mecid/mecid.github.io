@@ -9,7 +9,7 @@ Last week we started a new series of [posts](/2019/06/05/swiftui-making-real-wor
 *Property Wrappers* feature described in [SE-0258](https://github.com/DougGregor/swift-evolution/blob/property-wrappers/proposals/0258-property-wrappers.md) proposal. The main goal here is wrapping properties with logic which can be extracted into the separated struct to reuse it across the codebase.
 
 #### @State
-*@State* is a *Property Wrapper* which we can use to mark *View*'s state. *SwiftUI* will store it in special internal memory outside of *View* struct. Only related *View* and its children can access it. As soon as the value of @*State* property change *SwiftUI* rebuilds *View* to respect state changes. Here is a simple example.
+*@State* is a *Property Wrapper* which we can use to mark *View*'s state. *SwiftUI* will store it in special internal memory outside of *View* struct. Only the related *View* can access it. As soon as the value of @*State* property changes *SwiftUI* rebuilds *View* to respect state changes. Here is a simple example.
 
 ```swift
 struct ProductsView: View {
@@ -69,7 +69,7 @@ struct ProductsView: View {
 }
 ```
 
-We use @*Binding* to mark *showFavorited* property inside the *FilterView*. We also use *$* to pass a binding reference, because without *$* *Swift* will pass a copy of the property's value instead of passing bindable reference. *FilterView* can read and write the value of *ProductsView*'s *showFavorited* property, but it can't observe the changes using this binding. As soon as *FilterView* changes value of *showFavorited* property, *SwiftUI* will recreate the *ProductsView* and *FilterView* as its child.
+We use @*Binding* to mark *showFavorited* property inside the *FilterView*. We also use *$* to pass a binding reference, because without *$* *Swift* will pass a copy of the value instead of passing bindable reference. *FilterView* can read and write the value of *ProductsView*'s *showFavorited* property, but it can't observe the changes using this binding. As soon as *FilterView* changes value of *showFavorited* property, *SwiftUI* will recreate the *ProductsView* and *FilterView* as its child.
 
 #### @ObservedObject
 @*ObservedObject* work very similarly to @*State* *Property Wrapper*, but the main difference is that we can share it between multiple independent *Views* which can subscribe and observe changes on that object, and as soon as changes appear *SwiftUI* rebuilds all *Views* bound to this object. Let's take a look at an example.
@@ -168,7 +168,7 @@ struct EpisodesView: View {
 }
 ```
 
-As you can see, we have to pass *PodcastPlayer* object via *environmentObject* method on our *View*. By doing this, we can easily access to *PodcastPlayer* by defining it with *@EnvironmentObject Property Wrapper*. @*EnvironmentObject* uses dynamic member lookup feature to find *PodcastPlayer* class instance in the *Environment*, that's why you even don't need to pass it via init method of *EpisodesView*. The *Environment* is the right way of *Dependency Injection in SwiftUI*. It works like magic.
+As you can see, we have to pass *PodcastPlayer* object via *environmentObject* modifier of our *View*. By doing this, we can easily access *PodcastPlayer* by defining it with *@EnvironmentObject Property Wrapper*. @*EnvironmentObject* uses dynamic member lookup feature to find *PodcastPlayer* class instance in the *Environment*, that's why you don't need to pass it via init method of *EpisodesView*. The *Environment* is the right way of *Dependency Injection in SwiftUI*. It works like magic.
 
 #### @Environment
 As we discussed in the previous chapter, we can pass custom objects into the *Environment* of a *View* hierarchy inside *SwiftUI*. But *SwiftUI* already has an *Environment* populated with system-wide settings. We can easily access them with *@Environment Property Wrapper*.
