@@ -3,7 +3,7 @@ title: The power of Environment in SwiftUI
 layout: post
 ---
 
-Environment is one of the unique features of SwiftUI which we didn't have before in UIKit. Today I would like to show you all the benefits of using Environment in your apps.  Let's start with describing the idea of Environment. We already discussed it previously in "Understanding Property Wrappers in SwiftUI", but I want to start with basics.
+Environment is one of the unique features of SwiftUI which we didn't have before in UIKit. Today I would like to show you all the benefits of using Environment in your apps.  Let's start with describing the idea of Environment. We already discussed it previously in ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/), but I want to start with basics.
 
 #### Environment
 When you create and start your very first View in SwiftUI, the framework generates Environment for it. SwiftUI creates it automatically, and we don't need to do something. SwiftUI uses Environment to pass system-wide settings like ContentSizeCategory, LayoutDirection, ColorScheme, etc. Environment also contains app-specific stuff like UndoManager and NSManagedObjectContext. Full list of the passed values you can find in EnvironmentValues struct documentation. Let's take a look at an example where we access Environment values.
