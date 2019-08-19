@@ -113,7 +113,7 @@ struct CalendarView : View {
                         CalendarRow(sleep: sleep)
                     }
                 }
-            }.listStyle(GroupedListStyle())
+            }
         }.navigationBarTitle("calendar")
     }
 }
