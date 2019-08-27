@@ -20,7 +20,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
     }
 ```
 
-*SwiftUI* uses *Environment* feature to pass the values implicitly inside any child view. This how we can give an accent color to every view across the app. To learn more about *Environment* feature of *SwiftUI*, check my dedicated post ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/).
+*SwiftUI* uses *Environment* feature to pass the values implicitly inside any child view. This is how we can give an accent color to every view across the app. To learn more about *Environment* feature of *SwiftUI*, check my dedicated post ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/).
 
 Another must-have option which I want to enable on every view in my app is line limit. I want to make every text in my app multi-lined in the case when it is too long. I also need it when a user enables extra large font size for *Dynamic Type*. It is also straightforward to achieve by adding *lineLimit* modifier to my root view.
 
@@ -38,7 +38,7 @@ Another must-have option which I want to enable on every view in my app is line 
 ```
 
 #### Button styles
-I often have a few button types which I reuse across the app. Before *SwiftUI*, I was using inheritance to apply my styling to *UIButtons* in *UIKit*. But *SwiftUI* relies on composition instead of inheritance, that's why it provides us with *ButtonStyle* protocol which we can implement to reuse our button styles across the app. 
+I often have a few button types which I reuse across the app. Before *SwiftUI*, I was using inheritance to apply my styling to *UIButtons* in *UIKit*. But *SwiftUI* relies on composition instead of inheritance, that's why it provides us *ButtonStyle* protocol which we can implement to reuse our button styles across the app. 
 
 ```swift
 import SwiftUI
@@ -65,7 +65,7 @@ struct FillStyle: ButtonStyle {
 }
 ```
 
-As you can see in the example above, we implement two button styles: *OutlinedButton* and *FilledButton*. To apply it to a button in *SwiftUI*, we have to use button style modifier. Let's see how we can use them.
+As you can see in the example above, we implement two button styles: *OutlinedButton* and *FilledButton*. To apply them to a button in *SwiftUI*, we have to use button style modifier. Let's see how we can use them.
 
 ```swift
 HStack {
