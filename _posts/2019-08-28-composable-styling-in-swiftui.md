@@ -85,7 +85,7 @@ HStack {
 }.padding()
 ```
 
-I want to note that you can use *buttonStyle* modifier on any view in *SwiftUI* and it utilizes *Environment* feature to share the style with any button inside it. 
+**I want to note that you can use *buttonStyle* modifier on any view in *SwiftUI* and it utilizes *Environment* feature to share the style with any button inside it.** 
 
 #### Text styles
 Similar to buttons, I have a few different styling options for my text representation. Unfortunately, *SwiftUI* doesn't provide something like *TextStyle* protocol. But instead, it gives us a much more powerful composition concept, and it is *ViewModifier*. Let's take a look at how we can use *ViewModifiers* to style our Text views.
@@ -127,7 +127,7 @@ VStack {
 }
 ```
 
-*ViewModifiers* allow us to create highly reusable and composable components. To learn more about *ViewModifiers*, take a look at my dedicated post ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/).
+*ViewModifiers* allow us to encapsulate and reuse any logic across the *Views*. To learn more about *ViewModifiers*, take a look at my dedicated post ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/).
 
 #### Conclusion
 Today we learned how to create highly reusable styling components for *SwiftUI* by using features like *ViewModifiers* and *Environment*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
