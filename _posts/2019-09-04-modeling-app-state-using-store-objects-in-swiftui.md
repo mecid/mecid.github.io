@@ -170,9 +170,9 @@ extension RandomAccessCollection {
 }
 ```
 
-The environment is a perfect candidate to keep store objects. The environment can share it between multiple views without explicit injection via init method. To learn more about the benefits of *Environment* in *SwiftUI*, take a look at "[The power of Environment in SwiftUI](/2019/08/21/the-power-of-environment-in-swiftui/)" post.
+The environment is a perfect candidate to keep store objects. Environment can share it between multiple views without explicit injection via init method. To learn more about the benefits of *Environment* in *SwiftUI*, take a look at "[The power of Environment in SwiftUI](/2019/08/21/the-power-of-environment-in-swiftui/)" post.
 
 ![todos-screenshots](/public/todo.jpeg)
 
 #### Conclusion
-Today we talked about the way of modeling app state by using multiple store objects. I really enjoy the simplicity of this approach and how easily you can scale your app by injecting more store objects into the environment.
+Today we talked about the way of modeling app state by using multiple store objects. I really enjoy the simplicity of this approach and how easily you can scale your app by injecting more store objects into the environment. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
