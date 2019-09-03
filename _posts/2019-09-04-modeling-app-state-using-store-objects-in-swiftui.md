@@ -70,7 +70,7 @@ final class TodosStore: ObservableObject {
 }
 ```
 
-Here we have a *TodosStore* class which conforms to *ObservableObject* protocol. By default, *SwiftUI* updates the views whenever @*Published* field changes. That's why we marked our array of Todo items as @*Published*. As soon as we insert or remove items from that array, *SwiftUI* will update views subscribed to the *TodosStore*.
+Here we have a *TodosStore* class which conforms to *ObservableObject* protocol. *TodosStore* provides few actions to mutate its state, we can use these methods from our views. By default, *SwiftUI* updates the views whenever @*Published* field changes. That's why we marked our array of Todo items as @*Published*. As soon as we insert or remove items from that array, *SwiftUI* will update views subscribed to the *TodosStore*.
 
 Now, we can create a view which represents the list of tasks and provides actions like marking a task as completed, deleting, and reordering. Let's start by creating a view which shows the title of the task and a toggle to mark the task as completed.
 
