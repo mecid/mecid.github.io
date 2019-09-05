@@ -67,14 +67,20 @@ struct Master: View {
 }
 
 struct Details: View {
+    @Environment(\.presentationMode) var presentation
+
     var body: some View {
-        Text("Details")
+        Group {
+            Text("Details")
+            Button("pop back") {
+                self.presentation.wrappedValue.dismiss()
+            }
+        }
     }
 }
 ```
 
-As you can see in the example above, we create *NavigationLink* by passing destination view and two additional parameters *Hashable* tag and binding to the *Hashable*. As soon as the value of binding is equal to tag, *NavigationView* pushes *NavigationLink*.
-
+As you can see in the example above, we create *NavigationLink* by passing destination view and two additional parameters *Hashable* tag and binding to the *Hashable*. As soon as the value of binding is equal to tag, *NavigationView* pushes *NavigationLink*. You can programmatically pop back by using *dismiss* method on *EnvironmentValue* called *presentationMode*.
 
 #### Conclusion
 As you can see, *SwiftUI* provides both imperative and declarative ways of pushing views into navigation stack by using *NavigationLink*. Feel free to use a way of navigation which fits best to your app requirements. Follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
