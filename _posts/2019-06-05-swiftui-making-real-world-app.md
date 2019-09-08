@@ -3,7 +3,7 @@ title: Making real-world app with SwiftUI
 layout: post
 ---
 
-That is WWDC week, and everybody so excited about so many new things we have this year like SwiftUI, Dark Mode, Updateable CoreML models, etc. I will try to cover all the new stuff during the upcoming weeks. Let's start with *SwiftUI*. *SwiftUI* is an entirely new approach to building apps for the Apple ecosystem.
+That is WWDC week: everybody is so excited about so many new things like SwiftUI, Dark Mode, updateable Core ML models, etc. I will try to cover all the new stuff during the upcoming weeks. Let's start with *SwiftUI*. *SwiftUI* is an entirely new approach to building apps for the Apple ecosystem.
 
 *SwiftUI* is a declarative Component-Oriented framework. You have to forget about MVC where you have controllers mediating between view and model. All we have in *SwiftUI* is a state and view derived from the state. As soon as your state changes *SwiftUI* rebuild UI for that state changes. Apple team did an excellent job by providing so beautiful [tutorial page](https://developer.apple.com/tutorials/swiftui/) for *SwiftUI*. It covers a lot of stuff like Layout, Interfacing with UIKit, etc. 
 
