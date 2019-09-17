@@ -108,7 +108,7 @@ enum AppAction: Action {
             return dependencies.githubService
                 .searchPublisher(matching: query)
                 .replaceError(with: [])
-                .map { AppMutation.searchResults(repos: $0) }
+                .map { AppMutation.setSearchResults(repos: $0) }
                 .eraseToAnyPublisher()
         }
     }
