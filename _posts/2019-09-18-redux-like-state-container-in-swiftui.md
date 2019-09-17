@@ -3,7 +3,7 @@ title: Redux-like state container in SwiftUI
 layout: post
 ---
 
-This week we will talk about building a *Redux-like* state container which provides a single source of truth for your app. A single state for the whole app makes it easier to debug and inspect. Single source of truth eliminates tons of bugs produced by creating multiple states across the app.
+This week we will talk about building a state container similar to *Redux* which provides a single source of truth for your app. A single state for the whole app makes it easier to debug and inspect. Single source of truth eliminates tons of bugs produced by creating multiple states across the app.
 
 #### Single source of truth
 The main idea here is describing the whole app state by using a single struct or composition of structs. Assume that we are working on a Github repos search app where the state is a repos array which we fetch matching some query using Github API.
