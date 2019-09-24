@@ -3,10 +3,10 @@ title: Redux-like state container in SwiftUI. Part 2
 layout: post
 ---
 
-Last week we talked about [building a state container similar to Redux in SwiftUI](/2019/09/18/redux-like-state-container-in-swiftui/). Redux provides a single source of truth, which eliminates tons of bugs produced by multiple states across the app. This week we will talk about best practices in building Redux-based apps which allows us to keep our codebase simple and clean.
+Last week we talked about [building a state container similar to Redux in SwiftUI](/2019/09/18/redux-like-state-container-in-swiftui/). *Redux* provides a single source of truth, which eliminates tons of bugs produced by multiple states across the app. This week we will talk about best practices in building *Redux-based* apps which allows us to keep our codebase simple and clean.
 
 #### State normalization
-Redux stores the whole app's state as a single source of truth. It allows us to keep our User Interface in sync with the app state. But to achieve this, we have to normalize our state. Let's take a look at the example.
+*Redux* stores the whole app's state as a single source of truth. It allows us to keep our *User Interface* in sync with the app state. But to achieve this, we have to normalize our state. Let's take a look at the example.
 
 ```swift
 struct AppState {
@@ -15,9 +15,9 @@ struct AppState {
 }
 ```
 
-Here we have an AppState struct which stores a task list and favorited tasks. It looks straightforward, but it has one big downside. Assume that you have the edit task screen where you can modify the selected task. Whenever the user hits the save button, you have to find and update a particular task in the allTasks list and favorited list. It can be error-prone and lead to a performance issue as soon as you have a long list of tasks.
+Here we have an *AppState* struct which stores a task list and favorited tasks. It looks straightforward, but it has one big downside. Assume that you have the edit task screen where you can modify the selected task. Whenever the user hits the save button, you have to find and update a particular task in the allTasks list and favorited list. It can be error-prone and lead to a performance issue as soon as you have a long list of tasks.
 
-Let's improve performance by normalizing our state struct. First of all, we need to store our tasks in Dictionary where task id is the key and task itself is the value. Dictionary can retrieve the value by key in constant (O(1)) time, but it doesn't keep the order. We can create an array with ids to save the order. Let's take a look at the normalized version of our state.
+Let's improve performance by normalizing our state struct. First of all, we need to store our tasks in *Dictionary* where task id is the key and task itself is the value. *Dictionary* can retrieve the value by key in constant **(O(1))** time, but it doesn't keep the order. We can create an array with ids to save the order. Let's take a look at the normalized version of our state.
 
 ```swift
 struct AppState {
