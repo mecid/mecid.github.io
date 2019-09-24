@@ -1,6 +1,6 @@
 ---
-layout: page
 title: About
+layout: page
 ---
 
 Hi there! My name is Majid.
