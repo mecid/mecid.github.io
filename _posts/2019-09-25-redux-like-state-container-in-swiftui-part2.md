@@ -27,7 +27,7 @@ struct AppState {
 }
 ```
 
-As you can see in the example above, we have store our tasks in the Dictionary where task id is the key, and the task is the value. We also store arrays of identifiers for all tasks and favorited ones. By using identifiers instead of copies, we achieve a centralized state persistence which keeps our UI and data in sync.
+As you can see in the example above, we store our tasks in the Dictionary where task id is the key, and the task is the value. We also store arrays of identifiers for all tasks and favorited ones. By using identifiers instead of copies, we achieve a centralized state persistence which keeps our UI and data in sync.
 
 #### State composition
 It is very natural to store your app's state as a single struct, but it simply can blow up as soon as you add more and more fields to your state struct. We can use state composition to solve this issue. Let's take a look at the example.
@@ -46,6 +46,11 @@ In the example above, we divide our state into three dedicated pieces and compos
 Another important component of our Redux-like state container is Reducer. We can extract and compose it as we do with state struct. It will allow us to respect a Single Responsibility principle and keep our reducers small and clean.
 
 ```swift
+enum AppMutation {
+    case calendar(mutation: CalendarMutation)
+    case trends(mutation: TrendsMutation)
+}
+
 let trendsReducer: Reducer<TrendsState, TrendsAction.Mutation> = { state, mutation in
     // Implement your state changes here
 }
