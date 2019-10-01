@@ -1,5 +1,5 @@
 ---
-title: Redux-like state container in SwiftUI
+title: Redux-like state container in SwiftUI. Basics.
 layout: post
 ---
 
