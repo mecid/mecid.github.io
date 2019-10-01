@@ -1,5 +1,5 @@
 ---
-title: Redux-like state container in SwiftUI. Part 2
+title: Redux-like state container in SwiftUI. Best practices.
 layout: post
 ---
 
