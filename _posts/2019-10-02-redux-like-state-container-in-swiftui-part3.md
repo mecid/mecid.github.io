@@ -3,9 +3,9 @@ title: Redux-like state container in SwiftUI. Container Views.
 layout: post
 ---
 
-This week I want to continue the topic of using a Redux-like state container in SwiftUI. I'm delighted with the new approach and already finished the refactoring of the NapBot app in this way. 
+This week I want to continue the topic of using a *Redux-like state container in SwiftUI*. I'm delighted with the new approach and already finished the refactoring of the [NapBot app](https://napbotapp.com/) in this way. 
 
-In previous weeks we already discussed the basics and some good practices while using Redux-like state containers. If you are not familiar with Redux, please take a look at those posts to understand how to build it in SwiftUI and which benefits you get by using it.
+In previous weeks we already discussed the basics and some good practices while using *Redux-like state containers*. If you are not familiar with *Redux*, please take a look at those posts to understand how to build it in *SwiftUI* and which benefits you get by using it.
 
 1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
@@ -13,11 +13,11 @@ In previous weeks we already discussed the basics and some good practices while 
 The container which holds the whole app's state as a single source of truth simplifies my codebase and eliminates a bunch of bugs that I had during manual sync between multiple states across the app screens. To learn more about modeling app state using multiple store objects, check my dedicated [post](/2019/07/31/introducing-container-views-in-swiftui/).
 
 #### Container Views
-Today, I want to touch another subject from my previous posts which play very nice in conjunction with a Redux-like state container, and this is Container Views. Container Views help us to keep our SwiftUI views simple and responsible for only one job.
+Today, I want to touch another subject from my previous posts which play very nice in conjunction with a *Redux-like state container*, and this is *Container Views*. *Container Views* help us to keep our *SwiftUI* views simple and responsible for only one job.
 
-The main idea is dividing your views into two types: Container Views and Rendering Views. The Rendering View is responsible for drawing the content, and that's all. So basically it should not store the state or handle lifecycle events. It usually renders the data which you pass via the init method.
+The main idea is dividing your views into two types: *Container Views and Rendering Views*. The *Rendering View* is responsible for drawing the content, and that's all. So basically it should not store the state or handle lifecycle events. It usually renders the data which you pass via the init method.
 
-Container View, on another hand, is responsible for handling lifecycle events and providing the functions/closures to a Rendering View which it can use as user input handlers. Let's take a look at a simple example.
+*Container View*, on another hand, is responsible for handling lifecycle events and providing the functions/closures to a *Rendering View* which it can use as user input handlers. Let's take a look at a simple example.
 
 ```swift
 import SwiftUI
@@ -68,10 +68,10 @@ struct ReposView: View {
 }
 ```
 
-In the example above, you can see how we build a connection between Container and Rendering views. The Container View provides the data to Rendering Views. By doing this, we can easily reuse our ReposView anywhere across the app. ReposView doesn't have any dependency on some state or datastore and gets all the needed data via the init method. To learn more about Container Views, take a look at ["Introducing Container views in SwiftUI" post](/2019/07/31/introducing-container-views-in-swiftui/).
+In the example above, you can see how we build a connection between *Container and Rendering views*. *Container View* provides the data to *Rendering Views*. By doing this, we can easily reuse our *ReposView* anywhere across the app. *ReposView* doesn't have any dependency on some state or datastore and gets all the needed data via the init method. To learn more about *Container Views*, take a look at ["Introducing Container views in SwiftUI" post](/2019/07/31/introducing-container-views-in-swiftui/).
 
 #### Using Container Views with Redux-like state container
-During my transition from multiple stores to a single source of truth, I realize that Container Views play a significant role in this approach. I mainly use them for sending actions to the store and mapping the global app state to Rendering View properties. Container Views perfectly fit into my current app architecture. Let's take a look at the example.
+During my transition from multiple stores to a single source of truth, I realize that *Container Views* play a significant role in this approach. I mainly use them for sending actions to the store and mapping the global app state to *Rendering View* properties. *Container Views* perfectly fit into my current app architecture. Let's take a look at the example.
 
 ```swift
 import SwiftUI
@@ -108,10 +108,10 @@ struct SearchView: View {
 }
 ```
 
-As you can see in the example above, Container View helps us to keep Rendering Views small and independent.
+As you can see in the example above, *Container View* helps us to keep *Rendering Views* small and independent.
 
 #### Conclusion
-Today we talked about the benefits of using Container Views with Redux-like state containers. I love this approach and use it as my main way to go while building apps with SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+Today we talked about the benefits of using *Container Views with Redux-like state containers*. I love this approach and use it as my main way to go while building apps with *SwiftUI*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
 
 
 
