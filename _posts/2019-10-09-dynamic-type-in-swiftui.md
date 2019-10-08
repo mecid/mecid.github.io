@@ -31,6 +31,8 @@ struct PostView: View {
 }
 ```
 
+To learn how to adapt custom fonts to *Dynamic Type* take a look at Paul Hudson's ["How to use Dynamic Type with a custom font"](https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-dynamic-type-with-a-custom-font) post.
+
 #### Content size category
 In the previous paragraph, I said that *SwiftUI* supports *Dynamic Type* out of the box, and that's true. But to support *Dynamic Type*, we need to keep in mind that every text can be multiline even when it has just two words. It all depends on user-defined font size, which can be extra-extra-large. *SwiftUI* provides a special environment value describing the user-defined size category. Let's take a look at how we can use it.
 
