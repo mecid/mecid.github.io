@@ -3,12 +3,12 @@ title: Dynamic Type in SwiftUI
 layout: post
 ---
 
-This week I want to talk to you about Dynamic Type support in SwiftUI. I think there is no way to create an excellent user experience without Dynamic Type support in your apps. SwiftUI provides Dynamic Type out of the box for any text representation and simplifies our job. But we still need to do some work, so let's talk about it.
+This week I want to talk to you about *Dynamic Type* support in *SwiftUI*. I think there is no way to create an excellent user experience without *Dynamic Type* support in your apps. *SwiftUI* provides *Dynamic Type* out of the box for any text representation and simplifies our job. But we still need to do some work, so let's talk about it.
 
 #### Dynamic Type basics
-The Dynamic Type feature allows users to choose the size of textual content displayed on the screen. It helps users who need larger text for better readability. It also accommodates those who can read a smaller text, allowing more information to appear on the screen. Apps that support Dynamic Type also provide a more consistent reading experience.
+The *Dynamic Type* feature allows users to choose the size of textual content displayed on the screen. It helps users who need larger text for better readability. It also accommodates those who can read a smaller text, allowing more information to appear on the screen. Apps that support *Dynamic Type also* provide a more consistent reading experience.
 
-You don't need to do anything to support Dynamic Type in your SwiftUI views, because by default, all the components representing text are multiline. Apple's Human Interface Guidelines have a special section about Typography, which provides common text styles. These text styles describe font configuration for different types of text content like title, headline, body, subhead, caption, footnote. These styles are shared between all the apps. Try to use these predefined text styles as much as possible. Here is a small example of how to use HIG defined text styles in SwiftUI.
+You don't need to do anything to support Dynamic Type in your *SwiftUI* views, because by default, all the components representing text are multiline. Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/) have a special section about *Typography*, which provides common text styles. These text styles describe font configuration for different types of text content like *title, headline, body, subhead, caption, footnote*. These styles are shared between all the apps. Try to use these predefined text styles as much as possible. Here is a small example of how to use *HIG* defined text styles in *SwiftUI*.
 
 ```swift
 struct PostView: View {
@@ -32,7 +32,7 @@ struct PostView: View {
 ```
 
 #### Content size category
-In the previous paragraph, I said that SwiftUI supports Dynamic Type out of the box, and that's true. But to support Dynamic Type, we need to keep in mind that every text can be multiline even when it has just two words. It all depends on user-defined font size, which can be extra-extra-large. SwiftUI provides a special environment value describing the user-defined size category. Let's take a look at how we can use it.
+In the previous paragraph, I said that *SwiftUI* supports *Dynamic Type* out of the box, and that's true. But to support *Dynamic Type*, we need to keep in mind that every text can be multiline even when it has just two words. It all depends on user-defined font size, which can be extra-extra-large. *SwiftUI* provides a special environment value describing the user-defined size category. Let's take a look at how we can use it.
 
 ```swift
 import SwiftUI
@@ -57,12 +57,11 @@ struct ContentView: View {
         }
     }
 }
-
 ```
 
-By using sizeCategory value of the environment, we can read the defined font size and decide on how to render our content. By using the environment, our app will subscribe to system settings, and as soon as the user changes the font size, our view will reload. To learn more about environment feature, take a look at "The power of Environment in SwiftUI" post.
+By using *sizeCategory* value of the environment, we can read the defined font size and decide on how to render our content. By using the environment, our app will subscribe to system settings, and as soon as the user changes the font size, our view will reload. To learn more about environment feature, take a look at ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
-Let's go ahead and create an extension for Group component, which embeds it into a horizontal or vertical stack depending on the user-defined size category.
+Let's go ahead and create an extension for *Group* component, which embeds it into a horizontal or vertical stack depending on the user-defined size category.
 
 ```swift
 import SwiftUI
@@ -93,13 +92,29 @@ extension Group where Content: View {
 }
 ```
 
-In the example above, we use ViewModifier, which wraps the Group of views into a stack. One of the benefits of ViewModifiers is the possibility to have a state or subscribe to environment value. To learn more about ViewModifiers, check "ViewModifiers in SwiftUI" post.
+In the example above, we use *ViewModifier*, which wraps the *Group* of views into a stack. One of the benefits of *ViewModifiers* is the possibility to have a state or subscribe to environment value. To learn more about *ViewModifiers*, check ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/) post.
 
 #### ScrollViews
 The possibility of short text to be multiline brings another requirement. We need to embed our root views into the scroll view to allow the user to scroll the content when it doesn't fit the screen. It quickly turns into boilerplate, that's why I've created a special extension to reuse this functionality.
 
-===============================================
+```swift
+import SwiftUI
+
+extension View {
+    func embedInScrollView(alignment: Alignment = .center) -> some View {
+        GeometryReader { proxy in
+            ScrollView {
+                self.frame(
+                    idealHeight: proxy.size.height,
+                    maxHeight: .infinity,
+                    alignment: alignment
+                )
+            }
+        }
+    }
+}
+```
 
 #### Conclusion
-Dynamic Type is a super important feature, and every app should support it. SwiftUI does much stuff out of the box to support Dynamic Type, but it requires some boilerplate. Today we learned how to reduce it by creating special view extensions. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+*Dynamic Type* is a super important feature, and every app should support it. *SwiftUI* does much stuff out of the box to support *Dynamic Type*, but it requires some boilerplate. Today we learned how to reduce it by creating special view extensions. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
 
