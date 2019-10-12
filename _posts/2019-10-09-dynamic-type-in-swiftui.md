@@ -107,7 +107,7 @@ extension View {
         GeometryReader { proxy in
             ScrollView {
                 self.frame(
-                    idealHeight: proxy.size.height,
+                    minHeight: proxy.size.height,
                     maxHeight: .infinity,
                     alignment: alignment
                 )
