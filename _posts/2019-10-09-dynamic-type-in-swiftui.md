@@ -88,7 +88,7 @@ fileprivate struct EmbedInStack: ViewModifier {
 }
 
 extension Group where Content: View {
-    func embedInStack() {
+    func embedInStack() -> some View {
         ModifiedContent(content: self, modifier: EmbedInStack())
     }
 }
