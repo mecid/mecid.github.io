@@ -3,7 +3,7 @@ title: Introducing Container views in SwiftUI
 layout: post
 ---
 
-During app development using *SwiftUI*, you can see that your views are very coupled with the data flow. Views fetch and render the data, handle user input and actions, etc. By doing so many things views become very fat and we can't reuse them across the app. Let's take a look at a different way of decomposing views by using *Container* views.
+During app development using *SwiftUI*, you can see that your views are very coupled with the data flow. Views fetch and render the data, handle user input and actions, etc. By doing so many things views become very fat and we can't reuse them across the app. Let's take a look at a different way of decomposing views by using *Container Views*.
 
 In my first post about *SwiftUI*, we build a Github app.
 
@@ -39,10 +39,10 @@ struct FavoritesView : View {
 }
 ```
 
-Here we have a simple view which fetches and renders my starred repositories. It looks very straightforward, but there is a massive problem. FavoritesView mixes data fetching plus rendering, and because of that, we can't reuse this view. For example, I want to use it to render a user's repositories or repos search result. To make it possible, let's start our refactoring process.
+Here we have a simple view which fetches and renders my starred repositories. It looks very straightforward, but there is a massive problem. *FavoritesView* mixes data fetching plus rendering, and because of that, we can't reuse this view. For example, I want to use it to render a user's repositories or repos search result. To make it possible, let's start our refactoring process.
 
 #### Composition
-As you can see, *SwiftUI* uses mainly value types instead of classes and built on top *Composition over Inheritance* principle. Let's follow this way by decomposing our *FavoritesView* into few small composable views.
+As you can see, *SwiftUI* uses mainly value types instead of classes and built on top *Composition over Inheritance* principle. Let's follow this way by decomposing our *FavoritesView* into a few small composable views.
 
 ```swift
 import SwiftUI
@@ -70,7 +70,7 @@ struct ReposView : View {
 Now we have a simple *ReposView*, which accepts an array of repos and render them. That's it. We can use it anywhere across the app where we need to display a repos list.
 
 #### Introducing Container views
-But now we have another question, where we can do data-flow stuff like fetching data and handling user actions. Let's introduce *Container* view concept. *Container* view fetches data and passes it to a simple *Rendering* view. *Container* view didn't render any User Interface itself. It just passes the data to the *Rendering* view.
+But now we have another question, where we can do data-flow stuff like data fetching and user actions handling. Let's introduce *Container View* concept. *Container View* fetches data and passes it to a simple *Rendering View*. *Container View* doesn't present any User Interface itself. It is just managing data-flow and passes the data to the *Rendering View*.
 
 ```swift
 import SwiftUI
@@ -89,7 +89,7 @@ struct FavoritesContainerView: View {
 }
 ```
 
-In the example above, we have a FavoritesContainerView which handles the data fetching and passes repos array to ReposView. By doing this, we have a clear separation between our data-flow and data rendering. Let's take a look at a more complicated example.
+In the example above, we have a *FavoritesContainerView* which handles the data fetching and passes repos array to *ReposView*. By doing this, we have a clear separation between our data-flow and data rendering. Let's take a look at a more complicated example.
 
 ```swift
 import SwiftUI
@@ -132,16 +132,16 @@ struct SearchView : View {
 }
 ```
 
-Here we have a more complex example, where Container view provides an acton handling closure and state binding to Rendering view. Let's summarize our thoughts about Container and Rendering views in SwiftUI.
+Here we have a more complex example, where *Container View* provides an acton handling closure and state binding to *Rendering View*. Let's summarize our thoughts about *Container and Rendering views in SwiftUI*.
 
-Container views should do things only related to data-flow:
-1. Store the state of the view
-2. Handle life cycle (onAppear/onDisappear)
-3. Fetch data using ObservableObject
-4. Provide action handlers to the Rendering view
+*Container Views* should do things only related to data-flow:
+1. Store the state of the *Rendering View*
+2. Fetch data using *ObservableObject*
+3. Handle life cycle (onAppear/onDisappear)
+4. Provide action handlers to the *Rendering View*
 
-Rendering views should do things only related to rendering:
-1. Build User Interface using primitive components provided by SwiftUI.
+*Rendering Views* should do things only related to rendering:
+1. Build User Interface using primitive components provided by *SwiftUI*.
 2. Compose User Interface by using other Rendering views.
 3. Use data as input to render User Interface and don't store any state.
 
