@@ -134,13 +134,13 @@ struct SearchView : View {
 
 Here we have a more complex example, where *Container View* provides an acton handling closure and state binding to *Rendering View*. Let's summarize our thoughts about *Container and Rendering views in SwiftUI*.
 
-*Container Views* should do things only related to data-flow:
+***Container Views* should do things only related to data-flow:**
 1. Store the state of the *Rendering View*
 2. Fetch data using *ObservableObject*
 3. Handle life cycle (onAppear/onDisappear)
 4. Provide action handlers to the *Rendering View*
 
-*Rendering Views* should do things only related to rendering:
+***Rendering Views* should do things only related to rendering:**
 1. Build User Interface using primitive components provided by *SwiftUI*.
 2. Compose User Interface by using other Rendering views.
 3. Use data as input to render User Interface and don't store any state.
