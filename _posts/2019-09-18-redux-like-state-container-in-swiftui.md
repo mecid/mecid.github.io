@@ -6,7 +6,7 @@ layout: post
 This week we will talk about building a state container similar to *Redux* which provides a single source of truth for your app. A single state for the whole app makes it easier to debug and inspect. Single source of truth eliminates tons of bugs produced by creating multiple states across the app.
 
 #### Single source of truth
-The main idea here is describing the whole app state by using a single struct or composition of structs. Assume that we are working on a Github repos search app where the state is a repos array which we fetch matching some query using Github API.
+The main idea here is describing the whole app state by using a single struct or composition of structs. Assume that we are working on a Github repos search app where the state is repos array which we fetch matching some query using Github API.
 
 ```swift
 struct AppState {
@@ -22,37 +22,27 @@ final class Store: ObservableObject {
 }
 ```
 
-In the example above, we create a store object which stores the app state and provide read-only access to it. State property uses *@Published* property wrapper, which notifies *SwiftUI* during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
+In the example above, we create a store object which stores the app state and provides read-only access to it. State property uses *@Published* property wrapper, which notifies *SwiftUI* during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 
-#### Actions, Mutations, and Reducer
-It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing user actions like repos search, add to favorites, fork the repo, etc. *Mutation* is another enum type which describes a state change. For example, set loading value during data fetch, assign fetched repositories to a state's property, etc. *Mutation* usually comes from *Action*. Let's take a looks at an example code for *Action and Mutation* enums.
+#### Reducer and Actions
+It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing a state change. For example, set loading value during data fetch, assign fetched repositories to a state's property, etc. Let's take a look at an example code for *Action* enum.
 
 ```swift
-enum AppMutation {
-    case setSearchResults(repos: [Repo])
-}
-
-protocol Action {
-    associatedtype Mutation
-    func mapToMutation() -> Mutation
-}
-
-enum AppAction: Action {
+enum AppAction {
     case search(query: String)
-
-    func mapToMutation() -> Mutation {
-        // implement your mapping here
-    }
+    case setSearchResult(repos: [Repo])
 }
 ```
 
-*Reducer* is a function which takes current state, applies *mutation* to the state, and generates a new state. Generally, *reducer* or *composition of reducers* is the single place where your app mutates the state. The fact that the only one function can modify the whole app state is super simple, debuggable, and testable. Here is an example of our reduce function.
+*Reducer* is a function which takes current state, applies *Action* to the state, and generates a new state. Generally, *reducer* or *composition of reducers* is a single place where your app mutates the state. The fact that the only one function can modify the whole app state is super simple, debuggable, and testable. Here is an example of our reduce function.
 
 ```swift
-typealias Reducer<State, Mutation> = (inout State, Mutation) -> Void
+struct Reducer<State, Action> {
+    let reduce: (inout State, Action) -> Void
+}
 
-let appReducer: Reducer<AppState, AppMutation> = { state, mutation in
-    switch mutation {
+let appReducer: Reducer<AppState, AppAction> = Reducer { state, action in
+    switch action {
     case let .setSearchResults(repos):
         state.searchResult = repos
     }
@@ -60,29 +50,25 @@ let appReducer: Reducer<AppState, AppMutation> = { state, mutation in
 ```
 
 #### Unidirectional flow
-Let's talk about a data flow now. Every view has read-only access to a state via store object. Views can send *actions* to a store object. Store object generates a *mutation* from the *action* and passes it to the *reducer*. *Reducer* modifies the state, and then *SwiftUI* notifies all the views about state changes. *SwiftUI* has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works very fast.
+Let's talk about a data flow now. Every view has read-only access to a state via store object. Views can send *actions* to a store object. *Reducer* modifies the state, and then *SwiftUI* notifies all the views about state changes. *SwiftUI* has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works very fast.
 
 **State -> View -> Action -> State -> View**
 
-This architecture revolves around a strict **unidirectional** data flow. It means that all data in an application follows the same lifecycle pattern, making the logic of your app more predictable and easier to understand. Let's modify our store object to support sending *actions* and state *mutations* via *reducer*.
+This architecture revolves around a strict **unidirectional** data flow. It means that all the data in the application follows the same pattern, making the logic of your app more predictable and easier to understand. Let's modify our store object to support sending *actions*.
 
 ```swift
-final class Store<AppState, AppAction: Action>: ObservableObject {
-    @Published private(set) var state: AppState
+final class Store<State, Action>: ObservableObject {
+    @Published private(set) var state: State
 
-    private let appReducer: Reducer<AppState, AppAction.Mutation>
+    private let appReducer: Reducer<State, Action>
 
-    init(
-        initialState: AppState,
-        appReducer: @escaping Reducer<AppState, AppAction.Mutation>
-    ) {
+    init(initialState: State, appReducer: @escaping Reducer<State, Action>) {
         self.state = initialState
         self.appReducer = appReducer
     }
 
-    func send(_ action: AppAction) {
-        let mutation = action.mapToMutation()
-        appReducer(&state, mutation)
+    func send(_ action: Action) {
+        appReducer(&state, action)
     }
 }
 ```
@@ -94,51 +80,50 @@ We already implemented a *unidirectional* flow which accepts user actions and mo
 import Foundation
 import Combine
 
-protocol Action {
-    associatedtype Mutation
-    func mapToMutation() -> AnyPublisher<Mutation, Never>
+protocol Effect {
+    associatedtype Action
+    func mapToAction() -> AnyPublisher<Action, Never>
 }
 
-enum AppAction: Action {
+enum SideEffect: Effect {
     case search(query: String)
 
-    func mapToMutation() -> AnyPublisher<AppMutation, Never> {
+    func mapToAction() -> AnyPublisher<Action, Never> {
         switch self {
         case let .search(query):
             return dependencies.githubService
                 .searchPublisher(matching: query)
                 .replaceError(with: [])
-                .map { AppMutation.setSearchResults(repos: $0) }
+                .map { AppAction.setSearchResults(repos: $0) }
                 .eraseToAnyPublisher()
         }
     }
 }
 ```
 
-We add support for *async tasks* by changing the signature of the *Action* protocol. Instead of mapping *State* to a *Mutation*, we map it to a *Mutation Publisher*. It allows us to handle async jobs using *Combine* and then publish a *mutation* which will be used by *reducer* to apply on the current state.
+We add support for *async tasks* by introducing *Effect* protocol. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish a *mutation* which will be used by *reducer* to apply on the current state.
 
 ```swift
-typealias Reducer<State, Mutation> = (inout State, Mutation) -> Void
+final class Store<State, Action>: ObservableObject {
+    @Published private(set) var state: State
 
-final class Store<AppState, AppAction: Action>: ObservableObject {
-    @Published private(set) var state: AppState
-
-    private let appReducer: Reducer<AppState, AppAction.Mutation>
+    private let appReducer: Reducer<State, Action>
     private var cancellables: Set<AnyCancellable> = []
 
-    init(
-        initialState: AppState,
-        appReducer: @escaping Reducer<AppState, AppAction.Mutation>
-    ) {
+    init(initialState: State, appReducer: Reducer<State, Action>) {
         self.state = initialState
         self.appReducer = appReducer
     }
 
-    func send(_ action: AppAction) {
-        action
-            .mapToMutation()
+    func send(_ action: Action) {
+        appReducer.reduce(&state, action)
+    }
+
+    func send<E: Effect>(_ effect: E) where E.Action == Action {
+        effect
+            .mapToAction()
             .receive(on: DispatchQueue.main)
-            .sink { self.appReducer(&self.state, $0) }
+            .sink(receiveValue: send)
             .store(in: &cancellables)
     }
 }
@@ -161,7 +146,7 @@ struct SearchContainerView: View {
     }
 
     private func fetch() {
-        store.send(.search(query: query))
+        store.send(SideEffect.search(query: query))
     }
 }
 
@@ -192,4 +177,3 @@ We divide our screen into two views: *Container View* and *Rendering View*. *Con
 
 #### Conclusion
 Today we learned how to build *Redux-like* state container with *side-effects* in mind. To achieve that we used *SwiftUI's Environment* feature and *Combine* framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
-
