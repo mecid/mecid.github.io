@@ -89,7 +89,7 @@ struct SearchContainerView: View {
     }
 
     private func fetch() {
-        store.send(.search(query))
+        store.send(SideEffect.search(query))
     }
 }
 
