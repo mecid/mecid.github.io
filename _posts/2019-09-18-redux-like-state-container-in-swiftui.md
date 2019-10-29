@@ -101,7 +101,7 @@ enum SideEffect: Effect {
 }
 ```
 
-We add support for *async tasks* by introducing *Effect* protocol. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish a *mutation* which will be used by *reducer* to apply on the current state.
+We add support for *async tasks* by introducing *Effect* protocol. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish *actions* which will be used by *reducer* to apply on the current state.
 
 ```swift
 final class Store<State, Action>: ObservableObject {
