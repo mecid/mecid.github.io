@@ -68,7 +68,7 @@ final class Store<State, Action>: ObservableObject {
     }
 
     func send(_ action: Action) {
-        appReducer(&state, action)
+        appReducer.reduce(&state, action)
     }
 }
 ```
