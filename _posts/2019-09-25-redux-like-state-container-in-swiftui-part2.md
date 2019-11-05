@@ -71,3 +71,7 @@ let appReducer: Reducer<AppState, AppAction> = Reducer { state, action in
 
 #### Conclusion
 Today we talked about two important strategies which we should use during app development using *Redux-like* state containers in *SwiftUI*. Both normalization and composition keep our app state simple and maintainable. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+
+1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)
+2. Redux-like state container in SwiftUI. Best practices
+3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)

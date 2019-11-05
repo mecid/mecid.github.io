@@ -112,3 +112,7 @@ As you can see in the example above, *Container View* helps us to keep *Renderin
 
 #### Conclusion
 Today we talked about the benefits of using *Container Views with Redux-like state containers*. I love this approach and use it as my main way to go with *SwiftUI*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+
+1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)
+2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
+3. Redux-like state container in SwiftUI. Container Views.

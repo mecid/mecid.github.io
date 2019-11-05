@@ -177,3 +177,7 @@ We divide our screen into two views: *Container View* and *Rendering View*. *Con
 
 #### Conclusion
 Today we learned how to build *Redux-like* state container with *side-effects* in mind. To achieve that we used *SwiftUI's Environment* feature and *Combine* framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+
+1. Redux-like state container in SwiftUI. Basics
+2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
+3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)
