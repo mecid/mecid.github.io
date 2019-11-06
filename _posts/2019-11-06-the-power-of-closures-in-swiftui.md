@@ -85,6 +85,7 @@ I refactored our *ItemsView* to accept a closure which maps an item to a destina
 ```swift
 struct ItemsContainerView: View {
     @State private var items: [Item] = [.init(), .init(), .init()]
+    
     var body: some View {
         ItemsView(items: items) { item in
             // build your destination view here
