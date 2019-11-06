@@ -64,14 +64,14 @@ struct ItemsView: View {
 As you can see in the example above, we simply wrap our list item into a *NavigationLink*, which navigates to the *DetailsView* after a click on any list item. The logic here is very straightforward, but it has at least one downside. *ItemsView* knows about *DetailsView* and depends on it, and because of that, we can't reuse it somewhere in our app, or we can't use it with a different destination in other parts of the app. Let's see how we can solve the problem by using closures.
 
 ```swift
-struct ItemsView: View {
+struct ItemsView<Destination>: View where Destination: View {
     let items: [Item]
-    let buildDestination: (Item) -> AnyView
+    let destination: (Item) -> Destination
 
     var body: some View {
         NavigationView {
             List(items) { item in
-                NavigationLink(destination: self.buildDestination(item)) {
+                NavigationLink(destination: self.destination(item)) {
                     Text(item.id.uuidString)
                 }
             }
@@ -88,7 +88,7 @@ struct ItemsContainerView: View {
     var body: some View {
         ItemsView(items: items) { item in
             // build your destination view here
-            AnyView(Text(item.id.uuidString))
+            Text(item.id.uuidString)
         }
     }
 }
