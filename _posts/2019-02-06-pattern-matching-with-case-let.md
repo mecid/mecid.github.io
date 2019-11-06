@@ -6,7 +6,7 @@ layout: post
 Today we will talk about Pattern Matching, one of my favorite features in Swift.  Pattern Matching is the act of checking a given sequence of tokens for the presence of the constituents of some pattern. Swift has a particular keyword for applying Pattern Matching: case let. Let's dive into examples.
 
 #### Enums
-Pattern Matching is very useful while working with enums. As a part of ["Maintaining State in Your ViewControllers" post](https://mecid.github.io/2019/01/23/maintaining-state-in-view-controllers/), we talk about State enum, which describes the state of ViewController. Let's see how we can efficiently use Pattern Matching with it.
+Pattern Matching is very useful while working with enums. As a part of ["Maintaining State in Your ViewControllers" post](/2019/01/23/maintaining-state-in-view-controllers/), we talk about State enum, which describes the state of ViewController. Let's see how we can efficiently use Pattern Matching with it.
 
 ```swift
 enum State<Data> {

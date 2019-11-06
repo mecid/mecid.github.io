@@ -122,7 +122,7 @@ extension StatePresentable {
 }
 ```
 
-Here we have StatePresentable protocol which extends from Activity and Error Presentable protocols. We described these two protocols in the previous [post](https://mecid.github.io/2019/01/17/using-protocols-as-composable-extensions/).
+Here we have StatePresentable protocol which extends from Activity and Error Presentable protocols. We described these two protocols in the previous [post](/2019/01/17/using-protocols-as-composable-extensions/).
 StatePresentable protocol has associated type Data, which we use as generic constraint for State enum, to make it usable for any type of data. We also added the default implementation for render method which handles state changes.
 
 Here is the usage example of StatePresentable protocol.
