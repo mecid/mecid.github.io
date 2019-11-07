@@ -4,7 +4,7 @@ permalink:           pretty
 # Setup
 title:               Majid's
 tagline:             Blog about Swift development
-url:                 https://mecid.github.io
+url:                 https://swiftwithmajid.com
 paginate:            10
 baseurl:             ""
 analytics_id:        UA-18491817-18
