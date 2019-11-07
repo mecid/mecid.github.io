@@ -17,7 +17,7 @@ I think it's a little bit complicated, and that's why not so many apps use this 
 There are a lot of third-party libraries which provide fast diffing algorithm implementations. Here is a list of the most famous.
 
 * [DeepDiff](https://github.com/onmyway133/DeepDiff)
-* [Differ](http://github.com/tonyarnold/Differ)
+* [Differ](https://github.com/tonyarnold/Differ)
 * [ListDiff](https://github.com/lxcid/ListDiff)
 
 I prefer the second one. It works super fast with my dataset. As a part of this post, we will use Differ library, but you can choose any library you want because usually, it provides a similar API.

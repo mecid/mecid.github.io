@@ -3,7 +3,7 @@ title: Building forms with SwiftUI
 layout: post
 ---
 
-Apple finally released [Xcode Beta 2](http://developer.apple.com/download/) with an updated version of *SwiftUI*. The current version has a *Form* component which appeared on *WWDC* sessions. Today we are going to build form styled layout with *SwiftUI*. I want to show you a real-life example of the settings screen built with *SwiftUI*'s new Form component.
+Apple finally released [Xcode Beta 2](https://developer.apple.com/download/) with an updated version of *SwiftUI*. The current version has a *Form* component which appeared on *WWDC* sessions. Today we are going to build form styled layout with *SwiftUI*. I want to show you a real-life example of the settings screen built with *SwiftUI*'s new Form component.
 
 I work on a sleep tracking app, which needs settings screen. Settings screen should contain multiple toggles for enabling and disabling some features, buttons for in-app purchases, and a picker for tuning sleep tracking sensitivity level. 
 

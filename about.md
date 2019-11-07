@@ -4,7 +4,7 @@ layout: page
 ---
 
 Hi there! My name is Majid.
-I'm Swift developer 👨🏻‍💻 Creator of [CardioBot](http://cardiobotapp.com) app for ⌚ and 📱. Changing the world app by app💝.
+I'm Swift developer 👨🏻‍💻 Creator of [CardioBot](https://cardiobotapp.com) app for ⌚ and 📱. Changing the world app by app💝.
 
 You can find me on internet:
 * [Twitter](https://twitter.com/mecid)
