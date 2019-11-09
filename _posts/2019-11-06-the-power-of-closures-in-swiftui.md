@@ -66,12 +66,12 @@ As you can see in the example above, we simply wrap our list item into a *Naviga
 ```swift
 struct ItemsView<Destination: View>: View {
     let items: [Item]
-    let destination: (Item) -> Destination
+    let buildDestination: (Item) -> Destination
 
     var body: some View {
         NavigationView {
             List(items) { item in
-                NavigationLink(destination: self.destination(item)) {
+                NavigationLink(destination: self.buildDestination(item)) {
                     Text(item.id.uuidString)
                 }
             }
