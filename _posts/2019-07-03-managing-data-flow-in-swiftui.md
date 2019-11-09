@@ -24,15 +24,11 @@ struct Person: Identifiable {
 }
 
 final class PersonStore: ObservableObject {
-    @Published var persons: [Person] = []
-
-    func fetch() {
-        persons = [
-            .init(id: .init(), name: "Majid", age: 27),
-            .init(id: .init(), name: "John", age: 31),
-            .init(id: .init(), name: "Fred", age: 25)
-        ]
-    }
+    @Published var persons: [Person] = [
+        .init(id: .init(), name: "Majid", age: 27),
+        .init(id: .init(), name: "John", age: 31),
+        .init(id: .init(), name: "Fred", age: 25)
+    ]
 }
 ```
 
@@ -57,9 +53,7 @@ struct PersonsView : View {
                         .foregroundColor(.secondary)
                 }
             }
-        }
-        .onAppear(perform: store.fetch)
-        .navigationBarTitle(Text("Persons"))
+        }.navigationBarTitle(Text("Persons"))
     }
 }
 ```
