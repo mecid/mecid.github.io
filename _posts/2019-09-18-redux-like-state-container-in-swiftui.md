@@ -60,15 +60,15 @@ This architecture revolves around a strict **unidirectional** data flow. It mean
 final class Store<State, Action>: ObservableObject {
     @Published private(set) var state: State
 
-    private let appReducer: Reducer<State, Action>
+    private let reducer: Reducer<State, Action>
 
-    init(initialState: State, appReducer: @escaping Reducer<State, Action>) {
+    init(initialState: State, reducer: @escaping Reducer<State, Action>) {
         self.state = initialState
-        self.appReducer = appReducer
+        self.reducer = reducer
     }
 
     func send(_ action: Action) {
-        appReducer.reduce(&state, action)
+        reducer.reduce(&state, action)
     }
 }
 ```
@@ -107,16 +107,16 @@ We add support for *async tasks* by introducing *Effect* protocol. *Effect* is a
 final class Store<State, Action>: ObservableObject {
     @Published private(set) var state: State
 
-    private let appReducer: Reducer<State, Action>
+    private let reducer: Reducer<State, Action>
     private var cancellables: Set<AnyCancellable> = []
 
-    init(initialState: State, appReducer: Reducer<State, Action>) {
+    init(initialState: State, reducer: Reducer<State, Action>) {
         self.state = initialState
-        self.appReducer = appReducer
+        self.reducer = reducer
     }
 
     func send(_ action: Action) {
-        appReducer.reduce(&state, action)
+        reducer.reduce(&state, action)
     }
 
     func send<E: Effect>(_ effect: E) where E.Action == Action {
