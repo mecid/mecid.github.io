@@ -24,6 +24,8 @@ struct ContentView: View {
 }
 ```
 
+![example1](/public/l1.png)
+
 As you can see, LinearGradient applies red to white transition from top to bottom as we pointed it in the code. Start and end points are the cases of UnitPoint enum. These points can take the following values: .zero, .center, leading, trailing, top, bottom, topLeading, topTrailing, bottomLeading, bottomTrailing. SwiftUI uses these unit point values to convert the declarative description into real coordinates of the view. Let's check another unit point values.
 
 ```swift
@@ -42,7 +44,7 @@ struct ContentView: View {
 
 I've changed the start and end points to leading and trailing. It will help us to understand the meaning of unit points better, and here is the result.
 
-===============================================
+![example2](/public/l2.png)
 
 LinearGradient is a commonly used gradient type. You can use it as a background for a Text component, which you might want to draw ahead of an Image.
 
@@ -64,6 +66,8 @@ struct ContentView: View {
 }
 ```
 
+![example3](/public/r1.png)
+
 I suggest you play around the RadialGradient with more colors and different center positions to understand it even better.
 
 ```swift
@@ -81,6 +85,8 @@ struct ContentView: View {
 }
 ```
 
+![example4](/public/r2.png)
+
 #### AngularGradient
 The last type of Gradient which we have in SwiftUI is AngularGradient. I'm not using it very ofter, but it has a very nice color transformation effect. AngularGradient also is known as the conic Gradient. This Gradient type applies color transformation as the angle changes, relative to a center point. Let's check out the code sample and resulting image.
 
@@ -96,6 +102,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![example5](/public/a1.png)
 
 Let's take a look at a different example by adding more colors to the Gradient.
 
@@ -115,6 +123,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![example6](/public/a2.png)
 
 By default, SwiftUI provides us AngularGradient with start and end angles, which equal to zero, but you can adjust them by using another overload of the initializer.
 
