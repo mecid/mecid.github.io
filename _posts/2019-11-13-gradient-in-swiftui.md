@@ -87,6 +87,8 @@ struct ContentView: View {
 
 ![example4](/public/r2.png)
 
+Sometimes we need to use *RadialGradient* inside the *GeometryReader* to calculate proper radius value relative to the parent's size. To learn more about *GeometryReader*, take a look at ["Building BarChart with Shape API in SwiftUI"](/2019/08/14/building-barchart-with-shape-api-in-swiftui/) post.
+
 #### AngularGradient
 The last type of *Gradient* which we have in *SwiftUI* is *AngularGradient*. I'm not using it very ofter, but it has a very nice color transformation effect. *AngularGradient* also is known as the conic *Gradient*. This *Gradient* type applies color transformation as the angle changes, relative to a center point. Let's check out the code sample and resulting image.
 
