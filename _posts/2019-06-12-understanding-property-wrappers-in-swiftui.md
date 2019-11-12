@@ -9,7 +9,7 @@ Last week we started a new series of [posts](/2019/06/05/swiftui-making-real-wor
 *Property Wrappers* feature described in [SE-0258](https://github.com/DougGregor/swift-evolution/blob/property-wrappers/proposals/0258-property-wrappers.md) proposal. The main goal here is wrapping properties with logic which can be extracted into the separated struct to reuse it across the codebase.
 
 #### @State
-*@State* is a *Property Wrapper* which we can use to mark *View*'s state. *SwiftUI* will store it in special internal memory outside of *View* struct. Only the related *View* can access it. As soon as the value of @*State* property changes *SwiftUI* rebuilds *View* to respect state changes. Here is a simple example.
+*@State* is a *Property Wrapper* which we can use to describe *View*'s state. *SwiftUI* will store it in special internal memory outside of *View* struct. Only the related *View* can access it. As soon as the value of @*State* property changes *SwiftUI* rebuilds *View* to respect state changes. Here is a simple example.
 
 ```swift
 struct ProductsView: View {
@@ -37,7 +37,7 @@ struct ProductsView: View {
 In the example above we have a straightforward screen with *Button* and *List* of products. As soon as we press the button, it changes the value of the state property, and *SwiftUI* recreates *View*.
 
 #### @Binding
-@*Binding* provides reference like access for a value type. Sometimes we need to make the state of our *View* accessible for its children. But we can't simply pass that value because it is a value type and *Swift* will pass the copy of that value. And this is where we can use *@Binding Property Wrapper*.
+@*Binding* provides *reference* like access for a **value** type. Sometimes we need to make the state of our *View* accessible for its children. But we can't simply pass that value because it is a value type and *Swift* will pass the copy of that value. And this is where we can use *@Binding Property Wrapper*.
 
 ```swift
 struct FilterView: View {
@@ -70,6 +70,8 @@ struct ProductsView: View {
 ```
 
 We use @*Binding* to mark *showFavorited* property inside the *FilterView*. We also use *$* to pass a binding reference, because without *$* *Swift* will pass a copy of the value instead of passing bindable reference. *FilterView* can read and write the value of *ProductsView*'s *showFavorited* property, but it can't observe the changes using this binding. As soon as *FilterView* changes value of *showFavorited* property, *SwiftUI* will recreate the *ProductsView* and *FilterView* as its child.
+
+> @*Binding* provides a *reference* like access for a `value` type. That's why it should be used only with value types. If `Value` of Binding is not value semantic, the updating behavior for any views that make use of the resulting `Binding` is unspecified.
 
 #### @ObservedObject
 @*ObservedObject* work very similarly to @*State* *Property Wrapper*, but the main difference is that we can share it between multiple independent *Views* which can subscribe and observe changes on that object, and as soon as changes appear *SwiftUI* rebuilds all *Views* bound to this object. Let's take a look at an example.
@@ -117,6 +119,7 @@ struct EpisodesView: View {
     }
 }
 ```
+> Remember, we can share `ObservableObject` between multiple views, that's why it must be a `reference type/class`.
 
 #### @EnvironmentObject
 Instead of passing *ObservableObject* via init method of our View we can implicitly inject it into *Environment* of our *View* hierarchy. By doing this, we create the opportunity for all child *Views* of current *Environment* access this *ObservableObject*.
