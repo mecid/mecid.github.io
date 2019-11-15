@@ -96,9 +96,9 @@ Instead of using @*GestureState* we use @*State* here because when the gesture e
 #### Composing gestures
 Sometimes we need to add more than one gesture to a *View*, and for this special case, *SwiftUI* provides three ways of gesture composition.
 
-1.Simultaneous
-2.Sequenced
-3.Exclusive
+1. Simultaneous
+2. Sequenced
+3. Exclusive
 
 Let's add a dragging gesture simultaneously with a long-press gesture to our red rectangle sample.
 
