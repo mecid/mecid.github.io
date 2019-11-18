@@ -10,7 +10,9 @@ Last week I saw that the community tries to move *UIKit* development patterns to
 
 *SwiftUI* is a declarative framework for building User Interfaces on Apple platforms. The keyword here is declarative. Declarative means that you need to declare what you want to achieve, and the framework takes care of it. Framework knows the best way to render the User Interface.
 
-The User Interface in *SwiftUI* is a function of its state. It means whenever the view's state changes, it recomputes its body property and generates a new view. Let's take a look at a quick sample.
+> `UI = f(state)`
+
+The User Interface in *SwiftUI* is a function of its state. It means whenever the view's state changes, it recomputes its **body property** and generates a new view. Let's take a look at a quick sample.
 
 ```swift
 struct ContentView: View {
@@ -41,9 +43,10 @@ The best way to understand the complex view hierarchies in *SwiftUI* is by print
 
 ```swift
 print(Mirror(reflecting: ContentView(store: .init()).body))
+// Mirror for Group<_ConditionalContent<Text, ModifiedContent<Image, _EnvironmentKeyWritingModifier<Optional<Font>>>>>
 ```
 
-By using *Mirror* struct, we can print the real type of the *ContentView*'s body.
+By using *Mirror* struct, we can print the real type of the *ContentView*'s body and learn how *SwiftUI* works under the hood.
 
 #### Conclusion
 This week we learned the main difference between *UIKit* and *SwiftUI* and took an in-depth look at the diffing algorithm in *SwiftUI*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
