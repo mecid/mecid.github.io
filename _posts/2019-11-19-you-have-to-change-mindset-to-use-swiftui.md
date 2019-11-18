@@ -43,7 +43,7 @@ The best way to understand the complex view hierarchies in *SwiftUI* is by print
 
 ```swift
 print(Mirror(reflecting: ContentView(store: .init()).body))
-// Mirror for Group<_ConditionalContent<Text, ModifiedContent<Image, _EnvironmentKeyWritingModifier<Optional<Font>>>>>
+// Group<_ConditionalContent<Text, ModifiedContent<Image, _EnvironmentKeyWritingModifier<Optional<Font>>>>>
 ```
 
 By using *Mirror* struct, we can print the real type of the *ContentView*'s body and learn how *SwiftUI* works under the hood.
