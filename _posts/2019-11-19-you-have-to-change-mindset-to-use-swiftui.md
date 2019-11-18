@@ -39,7 +39,7 @@ Let's take a more in-depth look at what happens when the view's state changes. *
 #### View hierarchy
 Let's talk about view hierarchy now, and how actually *SwiftUI* renders your view struct. The very first thing which I want to mention that *SwiftUI* doesn't render your view struct by doing the one-to-one mapping. You can use as many view containers as you want, but in the end, *SwiftUI* renders only views that make sense. It means that you can extract you view logic into small views and then compose and reuse them across the app. Don't worry, performance, in this case, won't be affected. To learn more about view composition in *SwiftUI* take a look at [the dedicated post](/2019/10/30/view-composition-in-swiftui/).
 
-The best way to understand the complex view hierarchies in *SwiftUI* is by printing its type. *SwiftUI* uses the static type system of Swift to make diffing so fast. First of all, it checks the type of view, and then if it's changed, it checks the values of the view components. I'm not a fan of using reflections in production code, but it is very helpful during the learning process.
+The best way to understand the complex view hierarchies in *SwiftUI* is by printing its type. *SwiftUI* uses the static type system of *Swift* to make diffing so fast. First of all, it checks the type of the view, and then checks its values of the view components. I'm not a fan of using reflections in production code, but it is very helpful during the learning process.
 
 ```swift
 print(Mirror(reflecting: ContentView(store: .init()).body))
