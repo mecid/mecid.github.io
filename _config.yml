@@ -2,8 +2,7 @@
 permalink:           pretty
 
 # Setup
-title:               Majid's
-tagline:             Blog about Swift development
+title:               Majid's blog about Swift development
 url:                 https://swiftwithmajid.com
 paginate:            10
 baseurl:             ""
