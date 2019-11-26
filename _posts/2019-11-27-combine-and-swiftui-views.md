@@ -4,14 +4,14 @@ layout: post
 image: /public/combine-and-swiftui-views.png
 ---
 
-*Combine* is one of the new frameworks released during WWDC 2019. It provides a declarative *Swift API* for processing values over time. Today we will talk about one of the hidden features of *SwiftUI* views, which is *onReceive* modifier. It allows views to react as soon as the publisher emits the value.
+*Combine* is one of the new frameworks released during WWDC 2019. It provides a declarative *Swift API* for processing values over time. Today we will talk about one of the hidden features of *SwiftUI* views, which is *onReceive* modifier. It allows views to subscribe and react as soon as the publisher emits the value.
 
 #### Combine
 We didn't talk much about Combine on my blog, but I mainly use it for handling asynchronous work. Usually, we have a data layer that is responsible for all operations in the app, like fetching or saving, and this is the place where all asynchronous operations take place. To learn more about the modeling app state, please take a look at ["Redux-like state container in SwiftUI" post](/2019/09/18/redux-like-state-container-in-swiftui/).
 
-But sometimes it is very handful to receive some system-wide notifications in the view layer. An excellent example of this type of notifications can be *keyboardWillShowNotification*. Framework emits this notification as soon as the system keyboard appears. By listening to this notification, we can understand when to add some bottom padding to the root view to keep it visible above the keyboard.
+But sometimes it is very handy to receive some system-wide notifications in the view layer. An excellent example of this type of notifications can be *keyboardWillShowNotification*. Framework emits this notification as soon as the system keyboard appears. By listening to this notification, we can understand when to add some bottom padding to the root view to keep it visible above the keyboard.
 
-Let's take a look at how we can subscribe to the notification center using the Combine framework and react to the changes.
+Let's take a look at how we can subscribe to the *Notification Center* using the Combine framework and react to the changes.
 
 ```swift
 NotificationCenter.default
@@ -99,9 +99,9 @@ Another good example of handling system-wide notifications can be *userDidTakeSc
 import SwiftUI
 
 struct ProductContainerView: View {
-    @State private var shareShown = false
     let product: Product
-
+    
+    @State private var shareShown = false
     private var screenshotPublisher: AnyPublisher<Notification, Never> {
         NotificationCenter.default
             .publisher(for: UIApplication.userDidTakeScreenshotNotification)
