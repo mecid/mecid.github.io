@@ -77,31 +77,30 @@ final class Store<State, Action>: ObservableObject {
 We already implemented a *unidirectional* flow which accepts user actions and modifies the state, but what about *async action* which we usually call *side effects*. How to add support for an async task to our store type? I think it is a time to introduce the usage of *Combine framework* which perfectly fits async task processing.
 
 ```swift
-import Foundation
 import Combine
 
-protocol Effect {
-    associatedtype Action
-    func mapToAction() -> AnyPublisher<Action, Never>
+struct Effect<Action> {
+    let publisher: AnyPublisher<Action, Never>
 }
 
-enum SideEffect: Effect {
-    case search(query: String)
+extension Effect {
+    static func search(query: String) -> Effect<AppAction> {
+        return Current.githubService
+            .searchPublisher(matching: query)
+            .replaceError(with: [])
+            .map { AppAction.setSearchResults(repos: $0) }
+            .eraseToEffect()
+    }
+}
 
-    func mapToAction() -> AnyPublisher<Action, Never> {
-        switch self {
-        case let .search(query):
-            return dependencies.githubService
-                .searchPublisher(matching: query)
-                .replaceError(with: [])
-                .map { AppAction.setSearchResults(repos: $0) }
-                .eraseToAnyPublisher()
-        }
+extension Publisher where Failure == Never {
+    func eraseToEffect() -> Effect<Output> {
+        Effect(publisher: eraseToAnyPublisher())
     }
 }
 ```
 
-We add support for *async tasks* by introducing *Effect* protocol. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish *actions* which will be used by *reducer* to apply on the current state.
+We add support for *async tasks* by introducing *Effect* struct. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish *actions* which will be used by *reducer* to apply on the current state.
 
 ```swift
 final class Store<State, Action>: ObservableObject {
@@ -119,9 +118,9 @@ final class Store<State, Action>: ObservableObject {
         reducer.reduce(&state, action)
     }
 
-    func send<E: Effect>(_ effect: E) where E.Action == Action {
+    func send(_ effect: Effect<Action>) {
         effect
-            .mapToAction()
+            .publisher
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: send)
             .store(in: &cancellables)
@@ -146,7 +145,7 @@ struct SearchContainerView: View {
     }
 
     private func fetch() {
-        store.send(SideEffect.search(query: query))
+        store.send(.search(query: query))
     }
 }
 
