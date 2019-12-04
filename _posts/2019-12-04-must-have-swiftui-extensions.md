@@ -191,7 +191,7 @@ struct NotesView: View {
 
 As you can see in the example above, we can get both index and element of the collection. It allows us to provide both Id for the list and binding for the *EditView*.
 
-#### Bonus
+#### Bonus tip
 
 ```swift
 extension View {
