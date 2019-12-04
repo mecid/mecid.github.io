@@ -74,6 +74,7 @@ Here we use our new extension for erasing views. I think it looks much better, e
 
 >AnyView allows changing the type of view used in a given view hierarchy. Whenever the type of view used with AnyView changes, SwiftUI destroys old hierarchy and creates a new hierarchy the new type.
 
+To learn more about diffing process in SwiftUI take a look at my ["You have to change mindset to use SwiftUI"](/2019/11/19/you-have-to-change-mindset-to-use-swiftui/) post.
 That's why it is better to avoid usage of *AnyView* and replace it with *Group* whenever it is possible. Let's see how we can replace *AnyView* with the *Group* component in the previous example.
 
 ```swift
@@ -96,6 +97,8 @@ struct ContentView: View {
     }
 }
 ```
+
+To learn more about hidden benefits of *Group* component take a look at ["View composition in SwiftUI"](/2019/10/30/view-composition-in-swiftui/) post.
 
 #### IndexedCollection
 Assume that you are working on a note-taking app, you have a store object where you keep all the notes, you have a notes list screen, and you have a note editing screen. Let's try to implement it.
