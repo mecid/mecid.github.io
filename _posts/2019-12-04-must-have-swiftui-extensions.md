@@ -1,6 +1,7 @@
 ---
 title: Must-have SwiftUI extensions
 layout: post
+image: /public/anyview.png
 ---
 
 Currently, I have three ongoing SwiftUI projects. During my work on these projects, I find myself in copying some extension files, which are very helpful in any SwiftUI based project.  That's why I decide to share with you that small foundation of useful extensions.
