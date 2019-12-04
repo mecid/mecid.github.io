@@ -4,10 +4,10 @@ layout: post
 image: /public/anyview.png
 ---
 
-Currently, I have three ongoing SwiftUI projects. During my work on these projects, I find myself in copying some extension files, which are very helpful in any SwiftUI based project.  That's why I decide to share with you that small foundation of useful extensions.
+Currently, I have three ongoing *SwiftUI* projects. During my work on these projects, I find myself in copying some extension files, which are very helpful in any *SwiftUI* based project.  That's why I decide to share with you that small foundation of useful extensions.
 
 #### AnyView
-AnyView is a type-erased view. It allows us to hide the real type of view inside the erased box. Usually, we might use it whenever we want to return different types of views. Let's take a look at a quick example.
+*AnyView* is a type-erased view. It allows us to hide the real type of view inside the erased box. Usually, we might use it whenever we want to return different types of views. Let's take a look at a quick example.
 
 ```swift
 import SwiftUI
@@ -41,7 +41,7 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we have a list that shows two types of items, and because of @ViewBuilder, we can return only the one kind of view. We use AnyView to erase our views to the single AnyView type. It looks like we are going to use AnyView a lot of times across the codebase because many views use @ViewBuilder to build its content. Let's introduce the extension on View type, which can erase it to AnyView.
+In the example above, we have a list that shows two types of items, and because of *@ViewBuilder*, we can return only the one kind of view. We use *AnyView* to erase our views to the single *AnyView* type. It looks like we are going to use *AnyView* a lot of times across the codebase because many views use *@ViewBuilder* to build its content. Let's introduce the extension on *View* type, which can erase it to *AnyView*.
 
 ```swift
 extension View {
@@ -70,11 +70,11 @@ struct ContentView: View {
 }
 ```
 
-Here we use our new extension for erasing views. I think it looks much better, even with this simple example. But remember that AnyView has an impact on performance.
+Here we use our new extension for erasing views. I think it looks much better, even with this simple example. But remember that *AnyView* has an impact on performance.
 
-AnyView allows changing the type of view used in a given view hierarchy. Whenever the type of view used with AnyView changes, SwiftUI destroys old hierarchy and creates a new hierarchy the new type.
+>AnyView allows changing the type of view used in a given view hierarchy. Whenever the type of view used with AnyView changes, SwiftUI destroys old hierarchy and creates a new hierarchy the new type.
 
-That's why it is better to avoid usage of AnyView and replace it with Group whenever it is possible. Let's see how we can replace AnyView with the Group component in the previous example.
+That's why it is better to avoid usage of *AnyView* and replace it with *Group* whenever it is possible. Let's see how we can replace *AnyView* with the *Group* component in the previous example.
 
 ```swift
 struct ContentView: View {
@@ -131,7 +131,7 @@ struct EditView: View {
 }
 ```
 
-Here is a straightforward implementation of the idea. It looks simple, but it doesn't compile. The problem here is that EditView needs a binding to the note to alter it, but instead, we pass a copy of the note. We can't provide both binding and item while using an array. Let's introduce the IndexedCollection type.
+Here is a straightforward implementation of the idea. It looks simple, but it doesn't compile. The problem here is that *EditView* needs a binding to the note to alter it, but instead, we pass a copy of the note. We can't provide both binding and item while using an array. Let's introduce the *IndexedCollection* type.
 
 ```swift
 struct IndexedCollection<Base: RandomAccessCollection>: RandomAccessCollection {
@@ -168,7 +168,7 @@ extension RandomAccessCollection {
 }
 ```
 
-IndexedCollection is a wrapper for any RandomAccessCollection, and it provides both index and element via subscript. Now let's take a look at how we can use this collection type.
+*IndexedCollection* is a wrapper for any *RandomAccessCollection*, and it provides both index and element via subscript. Now let's take a look at how we can use this collection type.
 
 ```swift
 struct NotesView: View {
@@ -186,7 +186,7 @@ struct NotesView: View {
 }
 ```
 
-As you can see in the example above, we can get both index and element of the collection. It allows us to provide both Id for the list and binding for the EditView.
+As you can see in the example above, we can get both index and element of the collection. It allows us to provide both Id for the list and binding for the *EditView*.
 
 #### Conclusion
-Today we talked about the most useful SwiftUI extensions from my codebase. I hope you will find it valuable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+Today we talked about the most useful *SwiftUI* extensions from my codebase. I hope you will find it valuable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
