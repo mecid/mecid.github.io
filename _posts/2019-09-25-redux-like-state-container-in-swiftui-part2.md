@@ -51,20 +51,20 @@ enum AppAction {
     case trends(action: TrendsAction)
 }
 
-let trendsReducer: Reducer<TrendsState, TrendsAction> = Reducer { state, action in
+func trendsReducer(state: inout TrendsState, action: TrendsAction) {
     // Implement your state changes here
 }
 
-let calendarReducer: Reducer<CalendarState, CalendarAction> = Reducer { state, action in
+func calendarReducer(state: inout CalendarState, action: CalendarAction) {
     // Implement your state changes here
 }
 
-let appReducer: Reducer<AppState, AppAction> = Reducer { state, action in
+func appReducer(state: inout AppState, action: AppAction) {
     switch action {
     case let .calendar(action):
-        calendarReducer.reduce(&state.calendar, action)
+        calendarReducer(&state.calendar, action)
     case let .trends(action):
-        trendsReducer.reduce(&state.trends, action)
+        trendsReducer(&state.trends, action)
     }
 }
 ```
