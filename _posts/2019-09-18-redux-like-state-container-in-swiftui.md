@@ -37,11 +37,9 @@ enum AppAction {
 *Reducer* is a function which takes current state, applies *Action* to the state, and generates a new state. Generally, *reducer* or *composition of reducers* is a single place where your app mutates the state. The fact that the only one function can modify the whole app state is super simple, debuggable, and testable. Here is an example of our reduce function.
 
 ```swift
-struct Reducer<State, Action> {
-    let reduce: (inout State, Action) -> Void
-}
+typealias Reducer<State, Action> = (inout State, Action) -> Void
 
-let appReducer: Reducer<AppState, AppAction> = Reducer { state, action in
+func appReducer(state: inout AppState, action: AppAction) {
     switch action {
     case let .setSearchResults(repos):
         state.searchResult = repos
@@ -68,9 +66,8 @@ final class Store<State, Action>: ObservableObject {
     }
 
     func send(_ action: Action) {
-        reducer.reduce(&state, action)
+        reducer(&state, action)
     }
-}
 ```
 
 #### Side effects
@@ -109,13 +106,13 @@ final class Store<State, Action>: ObservableObject {
     private let reducer: Reducer<State, Action>
     private var cancellables: Set<AnyCancellable> = []
 
-    init(initialState: State, reducer: Reducer<State, Action>) {
+    init(initialState: State, reducer: @escaping Reducer<State, Action>) {
         self.state = initialState
         self.reducer = reducer
     }
 
     func send(_ action: Action) {
-        reducer.reduce(&state, action)
+        reducer(&state, action)
     }
 
     func send(_ effect: Effect<Action>) {
