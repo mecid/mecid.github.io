@@ -76,31 +76,20 @@ We already implemented a *unidirectional* flow which accepts user actions and mo
 ```swift
 import Combine
 
-struct Effect<Action> {
-    let publisher: AnyPublisher<Action, Never>
-}
-
-extension Effect {
-    static func search(query: String) -> Effect<AppAction> {
-        return Current.githubService
-            .searchPublisher(matching: query)
-            .replaceError(with: [])
-            .map { AppAction.setSearchResults(repos: $0) }
-            .eraseToEffect()
-    }
-}
-
-extension Publisher where Failure == Never {
-    func eraseToEffect() -> Effect<Output> {
-        Effect(publisher: eraseToAnyPublisher())
-    }
+func search(query: String) -> AnyPublisher<AppAction, Never> {
+    Current.searchRepos(query)
+        .replaceError(with: [])
+        .map { AppAction.setSearchResults(repos: $0) }
+        .eraseToAnyPublisher()
 }
 ```
 
-We add support for *async tasks* by introducing *Effect* struct. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish *actions* which will be used by *reducer* to apply on the current state.
+We add support for *async tasks* by introducing *Effect* typealias. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish *actions* which will be used by *reducer* to apply on the current state.
 
 ```swift
 final class Store<State, Action>: ObservableObject {
+    typealias Effect = AnyPublisher<Action, Never>
+
     @Published private(set) var state: State
 
     private let reducer: Reducer<State, Action>
@@ -115,9 +104,8 @@ final class Store<State, Action>: ObservableObject {
         reducer(&state, action)
     }
 
-    func send(_ effect: Effect<Action>) {
+    func send(_ effect: Effect) {
         effect
-            .publisher
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: send)
             .store(in: &cancellables)
