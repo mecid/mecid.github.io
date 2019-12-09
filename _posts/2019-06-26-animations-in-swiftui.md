@@ -167,9 +167,7 @@ struct ContentView : View {
 }
 ```
 
-As you can see, we use *asymmetric* method to pass two transitions, the first one for insertion and another one for removal. 
-
-**Bonus tip: We can pass here combined transition which we created before.**
+As you can see, we use *asymmetric* method to pass two transitions, the first one for insertion and another one for removal. We can pass here combined transition which we created.
 
 #### Conclusion
 Today we discussed multiple ways of animating changes in *SwiftUI*. It totally depends on you and on use-case which way you have to choose. By spending more and more time with *SwiftUI*, I understand that it is already a compelling framework. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
