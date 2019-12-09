@@ -35,7 +35,7 @@ struct ContentView : View {
 
 Here we use @*GestureState Property Wrapper* to bind gesture value changes to *isLongPressed* property. To attach gesture changes to @*GestureState* property, we have to call *updating* method on gesture instance and pass property wrapper with closure where we implement binding. In the current sample, we just bind a value to the state, but in more complex gestures, we can have here any calculations before assigning a new value to the state. Now we can use *isLongPressed* while declaring the view to animate changes based on the gesture. *SwiftUI* will rebuild the view whenever *isLongPressed* changes. The critical point here is that *SwiftUI* reset property marked with @*GestureState* when gesture ended. Keep it in mind and use @*State* whenever you need to store value after gesture finish. If you want to learn more about *Property Wrappers* provided by *SwiftUI*, take a look at my ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
-As a result, we have a red rectangle which scales and change color to purple during a long-press gesture. As soon as gesture finishes *SwiftUI* resets *isLongPressed* to initial false value rebuilds view to show red rectangle again. All these transitions nicely animated by adding animation modifier with fluid spring.
+As a result, we have a red rectangle which scales and change color to purple during a long-press gesture. As soon as gesture finishes *SwiftUI* resets *isLongPressed* to initial false value rebuilds view to show red rectangle again. All these transitions nicely animated by adding animation modifier with interactive spring.
 
 #### DragGesture
 
@@ -67,7 +67,7 @@ struct ContentView : View {
             .padding()
             .offset(x: offset.width, y: offset.height)
             .gesture(drag)
-            .animation(.spring())
+            .animation(.interactiveSpring())
     }
 }
 
@@ -127,7 +127,7 @@ struct ContentView : View {
             .scaleEffect(isLongPressed ? 1.1 : 1)
             .offset(x: offset.width, y: offset.height)
             .gesture(longPressAndDrag)
-            .animation(.fluidSpring())
+            .animation(.interactiveSpring())
     }
 }
 ```
