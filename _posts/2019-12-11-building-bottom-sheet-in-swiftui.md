@@ -4,11 +4,11 @@ layout: post
 image: /public/bottom-sheet.png
 ---
 
-This week I want to start a series of posts about building custom view components that Apple heavily uses in its apps but doesn't include it into the SDK. Let's begin with the bottom sheet. I think everybody used the Apple Maps app. There is a draggable sheet at the bottom of the screen. Apple also uses this component in Shortcut and Apple Music apps. It looks like bottom sheet is going to be a must-use component, so let's try to implement it in *SwiftUI*.
+This week I want to start a series of posts about building interactive view components that Apple heavily uses in its apps but doesn't include them into the SDK. Let's begin with the bottom sheet. I think everybody used Apple Maps, Shortcut or Apple Music apps. There is a draggable sheet at the bottom of the screen. It looks like bottom sheet is going to be a must-use component, so let's try to implement it in *SwiftUI*.
 
 ![apple-maps](/public/apple-maps.png)
 
-Usually, when I deal with interactive components, I start with implementing components in different states. After that, we can add the gesture which manipulates the state of the component. In our case, we deal with the bottom sheet. It has two different states: *open* and *closed*. Let's start by describing our view and all the needed properties which should be passed by the parent view.
+Usually, when I deal with interactive components, I start with implementing the component in different states. After that, we can add the gesture which manipulates the state of the component. In our case, we deal with the bottom sheet. It has two different states: *open* and *closed*. Let's start by describing our view and all the needed properties which should be passed by the parent view.
 
 ```swift
 import SwiftUI
@@ -29,7 +29,7 @@ struct BottomSheetView<Content: View>: View {
 }
 ```
 
-As you can see, we started with defining a few properties of *BottomSheetView*. First of all, it needs a binding to its state. By using binding, we extract the state from the bottom sheet itself and allow to the parent view to open/close the sheet. 
+As you can see, we started with defining a few properties of *BottomSheetView*. First of all, it needs a binding to its state. By using binding, we extract the state from the bottom sheet itself and allow the parent view to open/close the sheet. 
 
 > To learn more about the benefits of *@Binding* take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
@@ -72,7 +72,7 @@ The vertical stack is all we need to place the dragging indicator and content of
 
 > To learn more about *Shape API* and *GeometryReader* take a look at ["Building BarChart with Shape API in SwiftUI"](/2019/08/14/building-barchart-with-shape-api-in-swiftui/) post.
 
-The last step is to attach the drag gesture and move the view whenever the user drags the finger. Let's see ho we can do that.
+The last step is to attach the drag gesture and move the view whenever the user drags the finger. Let's see how we can do that.
 
 ```swift
 @GestureState private var translation: CGFloat = 0
@@ -126,6 +126,8 @@ struct ContentView: View {
 ```
 
 ![bottom-sheet](/public/bottom-sheet.png)
+
+> Full source code available [here](https://gist.github.com/mecid/78eab34d05498d6c60ae0f162bfd81ee)
 
 #### Conclusion
 Today we learned how we could build a draggable bottom sheet component, which Apple uses a lot in its apps. Building interactive components is really straightforward in *SwiftUI*. All you need to do is defining the state and the gesture which modifies the state. *SwiftUI* animates all the transitions between state changes for free for you. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
