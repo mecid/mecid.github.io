@@ -65,7 +65,11 @@ var body: some View {
 }
 ```
 
-The vertical stack is all we need to place the dragging indicator and content of the bottom sheet. We also use *Shapes API* to draw the dragging symbol programmatically, which is really simple. *GeometryReader* provides all the needed information about the size of the parent view that allows us properly place our view. We use the offset modifier to move our view, depending on its state. The last step is to attach the drag gesture and move the view whenever the user drags the finger. Let's see ho we can do that.
+The vertical stack is all we need to place the dragging indicator and content of the bottom sheet. We also use *Shape API* to draw the dragging symbol programmatically, which is really simple. *GeometryReader* provides all the needed information about the size of the parent view that allows us properly place our view. We use the *offset* modifier to move our view, depending on its state.
+
+> To learn more about *Shape API* and *GeometryReader* take a look at ["Building BarChart with Shape API in SwiftUI"](/2019/08/14/building-barchart-with-shape-api-in-swiftui/) post.
+
+The last step is to attach the drag gesture and move the view whenever the user drags the finger. Let's see ho we can do that.
 
 ```swift
 @GestureState private var translation: CGFloat = 0
@@ -95,6 +99,8 @@ var body: some View {
 ```
 
 In the code sample above, we attach the drag gesture to the view and modify its state as soon as it ends. Besides that, we update the gesture state to make it interactive. The main benefit of *@GestureState* is its behavior. *SwiftUI* resets the value of the *@GestureState* to its initial value as soon as it ends. We use the value of *@GestureState* by adding it to the offset, which allows us to drive our view interactively.
+
+> To learn more about *gestures* and *@GestureState* take a look at ["Gestures in SwiftUI"](/2019/07/10/gestures-in-swiftui/) post.
 
 Let's finally use our bottom sheet to check how it works.
 
