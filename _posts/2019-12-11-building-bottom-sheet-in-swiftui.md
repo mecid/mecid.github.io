@@ -1,6 +1,7 @@
 ---
 title: Building bottom sheet in SwiftUI
 layout: post
+image: /public/bottom-sheet.png
 ---
 
 This week I want to start a series of posts about building custom view components that Apple heavily uses in its apps but doesn't include it into the SDK. Let's begin with the bottom sheet. I think everybody used the Apple Maps app. There is a draggable sheet at the bottom of the screen. Apple also uses this component in Shortcut and Apple Music apps. It looks like bottom sheet is going to be a must-use component, so let's try to implement it in *SwiftUI*.
@@ -125,4 +126,4 @@ struct ContentView: View {
 ![bottom-sheet](/public/bottom-sheet.png)
 
 #### Conclusion
-Today we learned how we could build a draggable bottom sheet component, which Apple uses a lot in its apps. Building interactive components is really straightforward in *SwiftUI*. All you need to do is defining the state and the gesture which modifies the state. *SwiftUI* animates all the transitions between state changes for free for you. I hope you will find it valuable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+Today we learned how we could build a draggable bottom sheet component, which Apple uses a lot in its apps. Building interactive components is really straightforward in *SwiftUI*. All you need to do is defining the state and the gesture which modifies the state. *SwiftUI* animates all the transitions between state changes for free for you. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
