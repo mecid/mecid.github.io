@@ -195,7 +195,7 @@ As you can see in the example above, we can get both index and element of the co
 
 ```swift
 extension View {
-    func embedInNavigation() {
+    func embedInNavigation() -> some View {
         NavigationView { self }
     }
 }
