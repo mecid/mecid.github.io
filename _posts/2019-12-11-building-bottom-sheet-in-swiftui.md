@@ -29,7 +29,9 @@ struct BottomSheetView<Content: View>: View {
 }
 ```
 
-As you can see, we started with defining a few properties of *BottomSheetView*. First of all, it needs a binding to its state. By using binding, we extract the state from the bottom sheet itself and allow to the parent view to open/close the sheet. To learn more about the benefits of *@Binding* and other property wrappers in *SwiftUI*, take a look at my dedicated post.
+As you can see, we started with defining a few properties of *BottomSheetView*. First of all, it needs a binding to its state. By using binding, we extract the state from the bottom sheet itself and allow to the parent view to open/close the sheet. 
+
+> To learn more about the benefits of *@Binding* take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
 We also require the maximum height which we will use whenever the sheet is open, and we calculate the minimum height to use it whenever the sheet is closed.
 
