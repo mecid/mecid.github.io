@@ -1,5 +1,5 @@
 ---
-title: Building bottom sheet in SwiftUI
+title: Building Bottom sheet in SwiftUI
 layout: post
 image: /public/bottom-sheet.png
 ---
