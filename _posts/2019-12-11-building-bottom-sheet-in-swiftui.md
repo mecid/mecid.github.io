@@ -101,7 +101,7 @@ var body: some View {
 }
 ```
 
-In the code sample above, we attach the drag gesture to the view and modify its state as soon as it ends. Besides that, we update the gesture state to make it interactive. The main benefit of *@GestureState* is its behavior. *SwiftUI* resets the value of the *@GestureState* to its initial value as soon as it ends. We use the value of *@GestureState* by adding it to the offset, which allows us to drive our view interactively.
+In the code sample above, we attach the drag gesture to the view and modify its state as soon as it ends. Besides that, we update the gesture state to make it interactive. The main benefit of *@GestureState* is its behavior. *SwiftUI* resets the value of the *@GestureState* to its initial value as soon as gesture ends. We use the value of *@GestureState* by adding it to the offset, which allows us to drive our view interactively.
 
 > To learn more about *gestures* and *@GestureState* take a look at ["Gestures in SwiftUI"](/2019/07/10/gestures-in-swiftui/) post.
 
