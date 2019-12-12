@@ -94,7 +94,10 @@ var body: some View {
                 state = value.translation.height
             }.onEnded { value in
                 let snapDistance = self.maxHeight * Constants.snapRatio
-                self.isOpen = value.translation.height < snapDistance
+                guard abs(value.translation.height) > snapDistance else {
+                    return
+                }
+                self.isOpen = value.translation.height < 0
             }
         )
     }
