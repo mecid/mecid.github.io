@@ -116,7 +116,7 @@ struct ContentView: View {
 }
 ```
 
-We also used the ability to build custom views via *@ViewBuilder* during the last post, where we made the *BottomSheetView* in *SwiftUI*. 
+> We also used the ability to build custom views via *@ViewBuilder* during ["Building Bottom sheet in SwiftUI"](/2019/12/11/building-bottom-sheet-in-swiftui/) post.
 
 #### Conclusion
 This week we talked about the benefits of function builders and used *@ViewBuilder* as a concrete example. *@ViewBuilder* allows us to build super reusable *SwiftUI* views by separating its presentation logic and content. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
