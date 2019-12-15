@@ -23,7 +23,7 @@ struct PagerView<Content: View>: View {
 }
 ```
 
-Again, we use binding to extract the state of the view. It allows us to store the state in the parent view and react to page changes. We also use *@ViewBuilder* for the content close. *@ViewBuilder* enables us to encapsulate the presentation logic by keeping content descriptions outside the view. It is a pretty popular technique for any container view in *SwiftUI*.
+Again, we use binding to extract the state of the view. It allows us to store the state in the parent view and react to page changes. We also use *@ViewBuilder* for the content closure. *@ViewBuilder* enables encapsulation of the presentation logic by keeping content descriptions outside the view. It is a pretty popular technique for any container view in *SwiftUI*.
 
 > To learn more about the benefits of @ViewBuilder while building custom SwiftUI view take a look at [my dedicated post](/2019/12/18/the-power-of-viewbuilder-in-swiftui/).
 
@@ -41,11 +41,11 @@ var body: some View {
 }
 ```
 
-In the example above, we use *GeometryReader* to get information about the parent view's size and fill the entire place. We also need to set alignment to leading because, by default, frame place the child view in the center. We also use offset to place an active page in the visible area.
+In the example above, we use *GeometryReader* to get information about the parent view's size and fill the entire place. We also need to set alignment to leading because, by default, frame place the child view in the center. We also use *offset* modifier to place an active page in the visible area.
 
 > To learn more about GeometryReader, take a look at ["Building BarChart with Shape API in SwiftUI" post](/2019/08/14/building-barchart-with-shape-api-in-swiftui/).
 
-Let's move to the final step and attach the drag gesture to *HStack* to swipe pages interactively. We need to declare a new view-local state for the gesture to store translation while the gesture is active. We can use translation value to add offset to the *HStack* to implement interactive page dragging.
+Let's move to the final step and attach the drag gesture to *HStack* to swipe pages interactively. We need to declare a new view-local state for the gesture to store translation while the gesture is active. We can use translation value to add offset to the *HStack* to achieve interactive page dragging.
 
 ```swift
 @GestureState private var translation: CGFloat = 0
@@ -95,4 +95,4 @@ I enjoy the snapping effect which we have in our view, and it is all possible by
 > To learn more about animations and transitions in SwiftUI, take a look at my ["Animations in SwiftUI" post](/2019/06/26/animations-in-swiftui/).
 
 #### Conclusion
-This week we built another missing interactive view component in *SwiftUI*. I feel like it is so easy to build interactive views, all you need to do is declare your state, statically render the state and then attach a gesture which modifies that state. *SwiftUI* handles all the transitions between states automatically by adding very fluid animations. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+This week we built another interactive view component in *SwiftUI*. I feel like it is so easy to build interactive views, all you need to do is declare your state, statically render the state and then attach a gesture which modifies that state. *SwiftUI* handles all the transitions between states automatically by adding very fluid animations. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
