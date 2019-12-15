@@ -41,7 +41,7 @@ extension ViewBuilder {
 }
 ```
 
-As you can see, *@ViewBuilder* has a static *buildBlock* method that accepts two views, combine them and return *TupleView*. It also has other declarations of *buildBlock* method, which takes from one to ten child view, and all of them combine child view into a *TupleView*. That's why *@ViewBuilder* can accept only ten views inside the closure.
+As you can see, *@ViewBuilder* has a static *buildBlock* method that accepts two views, combine them and return *TupleView*. It also has other declarations of *buildBlock* method, which takes from one to ten child views, and all of them combine child views into a *TupleView*. That's why *@ViewBuilder* can accept only ten views inside the closure.
 
 > To learn how to avoid ten views limitation, take a look at my ["View Composition in SwiftUI"](/2019/10/30/view-composition-in-swiftui/) post.
 
@@ -65,7 +65,7 @@ print(Mirror(reflecting: ContentView().body))
 *TupleView* is a view created from a swift tuple of view values. *TupleView* doesn't have any logic inside. It just holds the views. *TupleView* completely transparent and behaves like its parent view. It means when you put it inside the *HStack*, *TupleView* places the views from the tuple in a horizontal direction.
 
 #### Using @ViewBuilder
-Now we know all the needed things to build our own custom view container, which uses *@ViewBuilder*. Assume that our app needs a notification view. The notification view should have a consistent design and appear from the top of the screen, but content can be various. It is a perfect use case for *@ViewBuilder*. Let's see how we can utilize it.
+Now we know all the needed things to build our own custom view container, which uses *@ViewBuilder*. Assume that our app needs a notification view. The notification view should have a consistent design and appear in the top of the screen, but content can be various. It is a perfect use case for *@ViewBuilder*. Let's see how we can utilize it.
 
 ```swift
 import SwiftUI
