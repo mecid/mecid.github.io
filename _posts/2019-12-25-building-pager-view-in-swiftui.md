@@ -1,6 +1,7 @@
 ---
 title: Building Pager view in SwiftUI
 layout: post
+image: /public/pager.png
 ---
 
 This week I want to continue the series of posts about building custom interactive views in *SwiftUI*. Today we will create a pager view. *ScrollView* in *SwiftUI* support only scrolling content and doesn't have paging behavior. That's why we will build a pager view that supports paging mode.
