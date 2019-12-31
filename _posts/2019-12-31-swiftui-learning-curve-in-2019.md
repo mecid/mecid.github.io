@@ -4,7 +4,7 @@ layout: post
 image: /public/swiftui.png
 ---
 
-This year we had a massive change in iOS development world. We got a *SwiftUI* framework. *SwiftUI* is a brand new declarative way of building apps for Apple ecosystem. Let's build our learning curve. I want to share with you the list of all the needed posts, videos, and books to learn *SwiftUI*.
+This year we had a massive change in iOS development world. We got a *SwiftUI* framework. *SwiftUI* is a brand new declarative way of building apps for Apple ecosystem. Let's build our learning curve. I want to share with you the list of all the needed posts to learn *SwiftUI*.
 
 #### Basics
 Apple did an excellent job this year by creating the *SwiftUI* [tutorials page](https://developer.apple.com/tutorials/swiftui/). I suggest starting with those tutorials to learn the basics of *SwiftUI*. 
@@ -14,7 +14,7 @@ One of the new features of the *Swift* language powering *SwiftUI* framework is 
 Another post that I wrote about the mechanics of *SwiftUI* is ["You have to change mindset to use SwiftUI"](/2019/11/19/you-have-to-change-mindset-to-use-swiftui/). It should help you to understand how *SwiftUI* works under the hood.
 
 #### Layout system
-*SwiftUI* also has a brand new layout system, which I enjoy much more than AutoLayout. The new layout system is very powerful and straightforward. I highly suggest you read these posts to understand the new layout system and its 
+*SwiftUI* also has a brand new layout system, which I enjoy much more than AutoLayout. The new layout system is very powerful and straightforward. I highly suggest you read these posts to understand the new layout system and its benefits.
 
 1. [SwiftUI Layout System](https://kean.github.io/post/swiftui-layout-system)
 2. [Inspecting the View Tree – Part 1: PreferenceKey](https://swiftui-lab.com/communicating-with-the-view-tree-part-1/)
