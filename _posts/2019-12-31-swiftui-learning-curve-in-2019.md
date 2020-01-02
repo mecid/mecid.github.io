@@ -34,6 +34,8 @@ Another post that I wrote about the mechanics of *SwiftUI* is ["You have to chan
 1. [Building forms with SwiftUI](/2019/06/19/building-forms-with-swiftui/)
 2. [View composition in SwiftUI](/2019/10/30/view-composition-in-swiftui/)
 3. [Reusing SwiftUI views across Apple platforms](/2019/10/23/reusing-swiftui-views-across-apple-platforms/)
+4. [ViewModifiers in SwiftUI](/2019/08/07/viewmodifiers-in-swiftui/)
+5. [Composable styling in SwiftUI](/2019/08/28/composable-styling-in-swiftui/)
 
 #### Animations and interactions
 *SwiftUI* handles all the state changes using animations just for free for you. It allows us to build interactive views in a very straightforward and nice way. I covered this topic many times on my blog.
