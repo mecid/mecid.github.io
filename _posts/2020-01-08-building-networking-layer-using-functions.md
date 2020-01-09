@@ -59,7 +59,7 @@ struct FeedService {
     }
 }
 
-let feedService = FeedService(networking: networking)
+let feedService = FeedService(networking: URLSession.shared.erasedDataTaskPublisher)
 feedService.fetchFeed()
 ```
 
