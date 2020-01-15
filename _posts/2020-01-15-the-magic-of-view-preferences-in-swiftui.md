@@ -95,7 +95,7 @@ struct SizeModifier: ViewModifier {
 
 Here we have a *SizeModifier* struct, which attaches a geometry reader to a view as a background to read its size. It is a pretty useful technique that allows us to calculate the size of the view. Now we can understand the size of the view using *onPreferenceChange* modifier.
 
-> To learn more about the benefits of the view modifiers take a look at [ViewModifiers in SwiftUI](/2019/08/07/viewmodifiers-in-swiftui/).
+> To learn more about the benefits of the view modifiers take a look at ["ViewModifiers in SwiftUI" post](/2019/08/07/viewmodifiers-in-swiftui/).
 
 ```swift
 struct ScrollView<Content: View>: View {
