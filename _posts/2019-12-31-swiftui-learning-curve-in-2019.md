@@ -65,5 +65,11 @@ I also want to mention the excellent series of posts by [Javier](https://swiftui
 2. [Gradient in SwiftUI](/2019/11/13/gradient-in-swiftui/)
 3. [GeometryReader to the Rescue](https://swiftui-lab.com/geometryreader-to-the-rescue/)
 
+#### Unique features 
+*SwiftUI* has unique features like *Environment* and *Preferences*, which we don't have in *UIKit*. To learn more about these features, take a look at the next posts.
+1. [The power of Environment in SwiftUI](/2019/08/21/the-power-of-environment-in-swiftui/)
+2. [The magic of view preferences in SwiftUI](/2020/01/15/the-magic-of-view-preferences-in-swiftui/)
+3. [The power of @ViewBuilder in SwiftUI](/2019/12/18/the-power-of-viewbuilder-in-swiftui/)
+
 #### Conclusion
 It was a huge year, and I hope we will get *SwiftUI* 2.0 with a lot of new features during WWDC 2020. We have many things to learn until the next release of *SwiftUI*. Let's say thanks to our awesome community which wrote all these articles. Merry Christmas and Happy New Year!
