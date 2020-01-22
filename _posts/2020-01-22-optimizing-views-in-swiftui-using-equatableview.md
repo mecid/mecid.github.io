@@ -9,7 +9,7 @@ image: /public/equatable.png
 I have good news for you. *SwiftUI* allows us to replace the standalone diffing algorithm with our custom logic. This week we will talk about optimizing our *SwiftUI* layouts using the equatable modifier.
 
 #### Diffing in SwiftUI
-As you remember, we already talked about diffing in *SwiftUI*, but let me remind how it works. Whenever you change the source of truth for your views like *@State* or *@ObservableObject*, *SwiftUI* runs body property of your view to generate a new one. As the last step, *SwiftUI* renders a new view if something changed. The process of calculating a new body depends on how deep is your view hierarchy. Happily, we can replace *SwiftUI* diffing with our simplified version whenever we know the better way to determine changes.
+As you remember, we already talked about diffing in *SwiftUI*, but let me remind how it works. Whenever you change the source of truth for your views like *@State* or *@ObservableObject*, *SwiftUI* runs *body* property of your view to generate a new one. As the last step, *SwiftUI* renders a new view if something changed. The process of calculating a new *body* depends on how deep is your view hierarchy. Happily, we can replace *SwiftUI* diffing with our simplified version whenever we know the better way to determine changes.
 
 >To learn more about diffing, take a look at ["You have to change mindset to use SwiftUI" post](/2019/11/19/you-have-to-change-mindset-to-use-swiftui/).
 
@@ -87,4 +87,5 @@ It is so easy to add *Equatable* conformance to your view when it only renders s
 > To learn more about *Container and Rendering views*, take a look at my ["Introducing Container views in SwiftUI" post](/2019/07/31/introducing-container-views-in-swiftui/).
 
 #### Conclusion
-*SwiftUI* allows us to build our apps in a very new way, where the framework itself applies a lot of magic behind the scene. But I'm delighted that *SwiftUI* provides so many capabilities to customize default behavior. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+*SwiftUI* allows us to build our apps in a very new way, where the framework itself applies a lot of magic behind the scene. But I'm delighted that *SwiftUI* provides so many capabilities to customize default behavior. *EquatableView* can can boost performance when *body* computation is longer than your equality check.
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
