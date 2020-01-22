@@ -35,7 +35,17 @@ struct CalendarView: View, Equatable {
 }
 ```
 
-In the example above, you see the code from my NapBot app. It is a calendar view that represents your sleep per day. I decide to replace *SwiftUI* diffing with my own by adding *Equatable* conformance. As you can see, it is a straightforward process. You can go further by overriding *== function* and adding your logic there. Now we can wrap our *CalendarView* with *EquatableView*.
+In the example above, you see the code from my NapBot app. It is a calendar view that represents your sleep per day. I decide to replace *SwiftUI* diffing with my own by adding *Equatable* conformance. As you can see, it is a straightforward process. You can go further by overriding *== function* and adding your custom logic there. 
+
+```swift
+struct CalendarView: View, Equatable {
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.sleeps.count == rhs.sleeps.count
+    }
+}
+```
+
+Now we can wrap our *CalendarView* with *EquatableView*.
 
 **Remember, you have to wrap your view with EquatableView to replace standalone diffing with yours.**
 
