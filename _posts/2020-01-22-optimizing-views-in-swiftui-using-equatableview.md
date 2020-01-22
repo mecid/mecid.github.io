@@ -39,6 +39,21 @@ In the example above, you see the code from my NapBot app. It is a calendar view
 
 ```swift
 struct CalendarView: View, Equatable {
+    let sleeps: [Date: [Sleep]]
+    let dates: [Date]
+
+    var body: some View {
+        List {
+            ForEach(dates, id: \.self) { date in
+                Section(header: Text("\(date, formatter: DateFormatter.mediumDate)")) {
+                    ForEach(self.sleeps[date, default: []], id: \.id) { sleep in
+                        CalendarRow(sleep: sleep)
+                    }
+                }
+            }
+        }.listStyle(GroupedListStyle())
+    }
+
     static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.sleeps.count == rhs.sleeps.count
     }
