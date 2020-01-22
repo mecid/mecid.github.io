@@ -59,7 +59,7 @@ struct CalendarContainerView: View {
     @EnvironmentObject var store: CalendarStore
 
     var body: some View {
-        CalendarView(sleeps: store.sleeps, dates: [])
+        CalendarView(sleeps: store.sleeps, dates: store.dates)
             .equatable()
             .onAppear(perform: store.fetch)
     }
