@@ -102,5 +102,5 @@ It is so easy to add *Equatable* conformance to your view when it only renders s
 > To learn more about *Container and Rendering views*, take a look at my ["Introducing Container views in SwiftUI" post](/2019/07/31/introducing-container-views-in-swiftui/).
 
 #### Conclusion
-*SwiftUI* allows us to build our apps in a very new way, where the framework itself applies a lot of magic behind the scene. But I'm delighted that *SwiftUI* provides so many capabilities to customize default behavior. *EquatableView* can can boost performance when *body* computation is longer than your equality check.
+*SwiftUI* allows us to build our apps in a very new way, where the framework itself applies a lot of magic behind the scene. But I'm delighted that *SwiftUI* provides so many capabilities to customize default behavior. *EquatableView* can boost performance when *body* computation is longer than your equality check.
 I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
