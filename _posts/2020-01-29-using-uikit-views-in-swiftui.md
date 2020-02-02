@@ -4,7 +4,7 @@ layout: post
 image: /public/map.png
 ---
 
-A few weeks ago, we talked about building views like *PagerView* and *BottomSheetView* from scratch in *SwiftUI*. *SwiftUI* is pretty young and misses some components that we expect to have out of the box. But it provides all the needed APIs to build whatever we want. However, sometimes we need to reuse *UIKit* views instead of making the *SwiftUI* versions. This week I want to talk to you about using *UIKit* views in *SwiftUI*.
+A few weeks ago, we talked about building views like [*PagerView*](/2019/12/25/building-pager-view-in-swiftui/) and [*BottomSheetView*](/2019/12/11/building-bottom-sheet-in-swiftui/) from scratch in *SwiftUI*. *SwiftUI* is pretty young and misses some components that we expect to have out of the box. But it provides all the needed APIs to build whatever we want. However, sometimes we need to reuse *UIKit* views instead of making the *SwiftUI* versions. This week I want to talk to you about using *UIKit* views in *SwiftUI*.
 
 #### UIViewRepresentable
 One of the good examples of *UIKit* views that we don't want to recreate in *SwiftUI* is *MKMapView*. Do you have any ideas on how to implement it in *SwiftUI* from scratch? Happily, we don't need to do that. We can easily use *MKMapView* in *SwiftUI* by simply creating a wrapper view.
