@@ -106,5 +106,7 @@ final class PostsViewController: UIViewController {
 
 Here we have a refactored version of our *PostsViewController*. Please take a look at how we changed *bindViewModel* function. It subscribes to *$posts* now, and it allows us to update our view only when specific properties change. You will see the benefits as soon as your *ViewModel* has more and more fields which can affect the view.
 
+> Apple also mentioned ViewModels during ["Mastering Xcode Previews" session on WWDC 19](https://developer.apple.com/wwdc19/233).
+
 #### Conclusion
 We can easily implement the very same logic using *RxSwift*, *ReactiveSwift*, or any other reactive framework like *Bond*. But I feel like *MVVM* is going to be a default choice in architecting iOS apps. At least now, when Apple provides us all the needed tools to build it out of the box. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
