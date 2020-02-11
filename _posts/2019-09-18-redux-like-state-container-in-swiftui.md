@@ -77,7 +77,8 @@ We already implemented a *unidirectional* flow which accepts user actions and mo
 import Combine
 
 func search(query: String) -> AnyPublisher<AppAction, Never> {
-    Current.searchRepos(query)
+    Current.service
+        .searchRepos(query)
         .replaceError(with: [])
         .map { AppAction.setSearchResults(repos: $0) }
         .eraseToAnyPublisher()
