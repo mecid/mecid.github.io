@@ -4,7 +4,7 @@ layout: post
 image: /public/mask.png
 ---
 
-*SwiftUI* provides us several exciting ways to change the shape of our views. It allows clipping, masking, and a few other operations on view shape. This week I want to talk to you about altering view shapes in *SwiftUI*.
+*SwiftUI* provides us several exciting ways to change the shape of our views. It allows clipping, masking, and a few other operations on the shape of views. This week I want to talk to you about altering view's shape in *SwiftUI*.
 
 #### Clipping
 Sometimes we use the frame modifier to limit the size of our view. It might be useful when you want to set the size to the image that should be scaled. In case when the scaled image bigger than the provided frame, it can exceed it and overlap other views. To fix this issue, *SwiftUI* allows us to clip the content of the view to its frame. Let's take a look at a quick example.
@@ -32,12 +32,12 @@ KFImage(user.avatar)
     .clipShape(Circle())
 ```
 
-We can easily apply clipShape to any view by providing the shape we want. There are plenty of ready to use shapes like *Rectangle, Capsule, Circle, etc*. provided by *SwiftUI*. But anytime you want something unique, for example, a star form, you can quickly implement it by creating a struct conforming *Shape* protocol. You can apply any shape you want by doing your math in *path* function.
+We can easily apply *clipShape* to any view by providing the shape we want. There are plenty of ready to use shapes like *Rectangle, Capsule, Circle, etc*. provided by *SwiftUI*. But anytime you want something unique, for example, a star form, you can quickly implement it by creating a struct conforming *Shape* protocol. You can apply any shape you want by doing your math in *path* function.
 
 > To learn more about Shape protocol, take a look at my ["Building BarChart with Shape API in SwiftUI" post](/2019/08/14/building-barchart-with-shape-api-in-swiftui/).
 
 ### Masking
-Let's take a look at more complex examples. Assume that you have a text component that should use a gradient as the text color. You can't implement it by using the *foregroundColor* modifier because it accepts only colors. It is the exact case where we might use masking. Let's take a look at how we can use masking to use a gradient as the text color.
+Let's take a look at more complex examples. Assume that you have a text component that should use a gradient as the text color. You can't implement it by using the *foregroundColor* modifier because it accepts only colors. It is the exact case where we might use masking. Let's take a look at how we can apply masking to use a gradient as the text color.
 
 ```swift
 struct MaskSample: View {
