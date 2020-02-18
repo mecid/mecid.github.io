@@ -70,7 +70,7 @@ struct ReposView : View {
 Now we have a simple *ReposView*, which accepts an array of repos and render them. That's it. We can use it anywhere across the app where we need to display a repos list.
 
 #### Introducing Container views
-But now we have another question, where we can do data-flow stuff like data fetching and user actions handling. Let's introduce *Container View* concept. *Container View* fetches data and passes it to a simple *Rendering View*. *Container View* doesn't present any User Interface itself. It is just managing data-flow and passes the data to the *Rendering View*.
+But now we have another question, where we can do data-flow stuff like data fetching and user actions handling. Let's introduce *Container View* concept. *Container View* fetches data and passes it to a *Rendering View* or another *Container View*. *Container View* doesn't present any User Interface itself. It is just managing data-flow and passes the data to the *Rendering View*.
 
 ```swift
 import SwiftUI
