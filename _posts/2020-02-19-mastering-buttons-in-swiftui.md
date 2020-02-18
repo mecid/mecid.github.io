@@ -68,7 +68,7 @@ struct FilledButton: ButtonStyle {
 }
 ```
 
-As you can see in the example above, *ButtonStyle* protocol has the only one requirement. We need to implement *makeBody* function. This function provides a configuration that we can use to understand whenever user presses the button.
+As you can see in the example above, *ButtonStyle* protocol has the only one requirement. We need to implement *makeBody* function. This function provides a configuration that we can use to obtain the label of the button and understand whenever user presses it.
 
 ```swift
 Button("Button 1") {}
