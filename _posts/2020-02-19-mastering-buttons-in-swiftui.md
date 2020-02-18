@@ -33,7 +33,7 @@ Button("Button 2") {}
 
 ![button](/public/button1.png)
 
-Now my button looks like I need. My app has a lot of actions represented by buttons, and I don't want to copy-paste these styling code every time. We can solve the issue by introducing a new view.
+Now my button looks like I need, but my app has a lot of actions represented by buttons, and I don't want to copy-paste these styling code every time. We can solve the issue by introducing a new view.
 
 ```swift
 struct FilledButton: View {
@@ -52,8 +52,8 @@ struct FilledButton: View {
 
 Now we can use *FilledButton* everywhere in the app. We create a new view that renders our button, but this approach has one downside. We can't modify the label of our button. For example, we can't change the text color while the user presses the button.
 
-#### Button styles
-*SwiftUI* allows us to customize buttons in our apps without introducing new views or copy-pasting the styling code. *SwiftUI* provides us the special *ButtonStyle* protocol. We can implement our *FilledButton* struct that conforms to *ButtonStyle* instead of *View* protocol. Let's see what benefits we have by using *ButtonStyle* protocol.
+#### ButtonStyle protocol
+*SwiftUI* allows us to customize buttons in our apps without introducing new views or copy-pasting the styling code. *SwiftUI* provides the special *ButtonStyle* protocol. We can implement *FilledButton* struct that conforms to *ButtonStyle* instead of *View* protocol. Let's see what benefits we have by using *ButtonStyle* protocol.
 
 ```swift
 struct FilledButton: ButtonStyle {
@@ -68,7 +68,7 @@ struct FilledButton: ButtonStyle {
 }
 ```
 
-As you can see in the example above, *ButtonStyle* protocol has the only one requirement. We need to implement *makeBody* function. This function provides us a configuration that we can use to understand whenever user presses the button.
+As you can see in the example above, *ButtonStyle* protocol has the only one requirement. We need to implement *makeBody* function. This function provides a configuration that we can use to understand whenever user presses the button.
 
 ```swift
 Button("Button 1") {}
@@ -140,7 +140,7 @@ let rootView = RootView()
 PlaygroundPage.current.setLiveView(rootView)
 ```
 
-#### PrimitiveButtonStyle
+#### PrimitiveButtonStyle protocol
 Sometimes we need to implement super custom buttons. For example, assume that we need a button that acts only after a long press. We can't achieve that with *ButtonStyle* protocol because it doesn't provide us control on triggering the button action. Instead, *SwiftUI* gives us *PrimitiveButtonStyle* protocol that looks very similar to *ButtonStyle* but provides all the needed API to build a super custom button. Let's build our button that acts after a long press.
 
 ```swift
