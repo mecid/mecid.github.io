@@ -145,5 +145,7 @@ struct LongPressButton: PrimitiveButtonStyle {
 
 As you can see in the example above, *PrimitiveButtonStyle* looks very similar to our good friend *ButtonStyle*, but instead of *isPressed* property configuration provides us a *trigger* closure that represents the action of the button. We can trigger the button using that closure whenever we want. We can apply our *PrimitiveButtonStyle* in the same way by using the *buttonStyle* modifier.
 
+![buttons](/public/buttons.png)
+
 #### Conclusion
 This week we learned a few ways of customizing buttons in our apps. I am delighted with this protocol based styling approach in *SwiftUI* and love it. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
