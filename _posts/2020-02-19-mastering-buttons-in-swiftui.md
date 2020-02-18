@@ -19,6 +19,8 @@ struct RootView: View {
 }
 ```
 
+![button](/public/button.png)
+
 Pretty easy, right? Now we can move forward, I want to style my buttons in Apple way. Buttons should be filled with the accent color of my app and have a corner radius. Let's take a look at the quick implementation.
 
 ```swift
@@ -28,6 +30,8 @@ Button("Button 2") {}
     .background(Color.accentColor)
     .cornerRadius(8)
 ```
+
+![button](/public/button1.png)
 
 Now my button looks like I need. My app has a lot of actions represented by buttons, and I don't want to copy-paste these styling code every time. We can solve the issue by introducing a new view.
 
