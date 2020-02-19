@@ -140,6 +140,8 @@ let rootView = RootView()
 PlaygroundPage.current.setLiveView(rootView)
 ```
 
+> SwiftUI uses environment to pass system-wide and application-related information. You can also populate environment with your custom objects. To learn more about environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+
 #### PrimitiveButtonStyle protocol
 Sometimes we need to implement super custom buttons. For example, assume that we need a button that acts only after a long press. We can't achieve that with *ButtonStyle* protocol because it doesn't provide us control on triggering the button action. Instead, *SwiftUI* gives us *PrimitiveButtonStyle* protocol that looks very similar to *ButtonStyle* but provides all the needed API to build a super custom button. Let's build our button that acts after a long press.
 
