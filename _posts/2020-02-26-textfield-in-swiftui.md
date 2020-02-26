@@ -53,7 +53,11 @@ struct ContentView: View {
     @State private var price = 99
 
     var body: some View {
-        TextField("type something...", value: $price, formatter: NumberFormatter.currency)
+        TextField(
+            "type something...",
+            value: $price,
+            formatter: NumberFormatter.currency
+        )
     }
 }
 ```
