@@ -67,6 +67,8 @@ struct ContentView: View {
 #### Styling
 *SwiftUI* provides us a few styles and the *textFieldStyle* modifier that we can use to apply styles to our *TextFields* in the app. *textFieldStyle* modifier uses the environment to pass the style to every view inside the environment. It looks very similar to the *buttonStyle* modifier that discussed in the previous post.
 
+> To learn more about *buttonStyle* modifier, take a look at my ["Mastering buttons in SwiftUI post"](/2020/02/19/mastering-buttons-in-swiftui/).
+
 ```swift
 struct ContentView: View {
     @State private var text = ""
@@ -101,6 +103,8 @@ struct ContentView: View {
 ```
 
 It looks like there is some compiler magic behind this protocol because it works with *_body* function, which is not a part of *TextFieldStyle*. 
+
+> SwiftUI uses environment to pass system-wide and application-related information. You can also populate environment with your custom objects. To learn more about environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 #### Conclusion
 This week we learned the things behind the *TextField* component. It provides us an interesting raw data formatting feature that we don't have in *UIKit*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
