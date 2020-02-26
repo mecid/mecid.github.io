@@ -1,7 +1,7 @@
 ---
 title: TextField in SwiftUI
 layout: post
-image: /public/textfield.png
+image: /public/swiftui.png
 ---
 This week I want to talk to you about a *TextField* component in *SwiftUI*.  It might look like an elementary tutorial, but *TextField* has pretty exciting features like out of the box formatting that we don't have in *UIKit*. But let's start with the basics of the *TextField* component.
 
