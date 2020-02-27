@@ -72,7 +72,6 @@ struct ContentView: View {
 ```swift
 struct ContentView: View {
     @State private var text = ""
-    @State private var price = 99
 
     var body: some View {
         TextField("type something...", text: $text)
