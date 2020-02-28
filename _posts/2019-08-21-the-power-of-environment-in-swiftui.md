@@ -95,6 +95,38 @@ struct ModalView: View {
 
 Here we use current view specific environment values to dismiss presented modal view.
 
+#### Custom Environment keys
+Now we know that *SwiftUI* provides us plenty of system-wide or view-specific values via the environment. However, I have to mention that we can create a custom environment key and push any value we want into the environment. Let's take a look at how we can insert custom values into the environment.
+
+```swift
+import SwiftUI
+
+struct ItemsPerPageKey: EnvironmentKey {
+    static var defaultValue: Int = 10
+}
+
+extension EnvironmentValues {
+    var itemsPerPage: Int {
+        get { self[ItemsPerPageKey.self] }
+        set { self[ItemsPerPageKey.self] = newValue }
+    }
+}
+
+struct RelatedProductsView: View {
+    @Environment(\.itemsPerPage) var count
+
+    let products: [Product]
+
+    var body: some View {
+        ForEach(products[..<count], id: \.id) { product in
+            Text(product.title)
+        }
+    }
+}
+```
+
+In the example above, we create a custom key that represents a count of items that can be presented per screen. We also implement a view that uses that environment value. You can easily pass that value to any view you want by using the *environment modifier*.
+
 #### Dependency Injection via Environment
 Another great use-case for *Environment* is Dependency Injection. Every view has its copy of the parent's *Environment*, and we can use it to add all *ObservableObjects* related to the current view.
 
