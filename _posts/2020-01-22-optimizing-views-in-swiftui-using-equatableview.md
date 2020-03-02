@@ -79,7 +79,7 @@ struct CalendarContainerView: View {
 }
 ```
 
-#### equatable modifier 
+#### Equatable modifier 
 *SwiftUI* allows us to avoid wrapping with *EquatableView* by using an equatable modifier. Basically, it does the same thing but in a short way.
 
 ```swift
