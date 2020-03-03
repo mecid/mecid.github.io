@@ -4,7 +4,7 @@ layout: post
 image: /public/toggle.png
 ---
 
-This week we will continue mastering *SwiftUI* components by learning *Toggle*. *Toggle* is a component that we can use to allow users to toggle any boolean state in the app. *SwiftUI* enables us to customize toggles in a very convenient way by providing *ToggleStyle* protocol.
+This week we will continue mastering *SwiftUI* components by learning *Toggle*. *Toggle* is a view that we can use to allow users to toggle any boolean state in the app. *SwiftUI* enables us to customize toggles in a very convenient way by providing *ToggleStyle* protocol.
 
 #### Basics
 Let's start with the basics of the *Toggle* component. To use *Toggle*, we need to create it by providing a binding to a boolean value that it is going to toggle and a label view that can be any combination of views. Let's take a look at the very quick example of using a toggle.
@@ -57,9 +57,9 @@ public protocol ToggleStyle {
 }
 ```
 
-> It is so awesome that *SwiftUI* allows us to style views in a consistent way. *SwiftUI* also provides *ButtonStyle* protocols that we can use to design buttons. To learn more, take a look at my ["Mastering buttons in *SwiftUI*"](/2020/02/19/mastering-buttons-in-swiftui/) post.
+> It is so awesome that *SwiftUI* allows us to style views in a consistent way. *SwiftUI* also provides *ButtonStyle* protocol that we can use to design buttons. To learn more, take a look at my ["Mastering buttons in *SwiftUI*"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
-The only requirement of *ToggleStyle* protocol is *makeBody* function that should return some view. makeBody function has a single parameter that we can use to access a user-defined label to place it according to our design and binding that we can toggle when the user alters the state.
+The only requirement of *ToggleStyle* protocol is *makeBody* function that should return some view. *makeBody* function has a single parameter that we can use to access a user-defined label to place it according to our design and binding that we can toggle when the user alters the state.
 Let's create our very first *Toggle* style that will render it as a checkbox.
 
 ```swift
@@ -81,7 +81,7 @@ As you can see in the example above, we create a *CheckboxToggleStyle* struct th
 
 ![toggle](/public/toggle.png)
 
-We can easily apply our *CheckboxToggleStyle* to every *Toggle* in our app by using the *toggleStyle* modifier. It uses the environment feature of *SwiftUI* to share the style with all views in the current environment. But remember that you can easily use the same modifier on the concrete *Toggle* instance to don't share with other views.
+We can easily apply our *CheckboxToggleStyle* to every *Toggle* in our app by using the *toggleStyle* modifier. It uses the environment feature of *SwiftUI* to share the style with all views in the current environment. But remember that you can easily use this modifier on the concrete *Toggle* instance also.
 
 ```swift
 struct ContentView: View {
