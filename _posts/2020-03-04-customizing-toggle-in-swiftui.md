@@ -79,6 +79,8 @@ struct CheckboxToggleStyle: ToggleStyle {
 
 As you can see in the example above, we create a *CheckboxToggleStyle* struct that conforms *ToggleStyle* protocol. We place a user-defined label in an *HStack* with the *Image* that uses *SF Symbols* to display checkmark in a square whenever binding is true or an empty square when binding is false.
 
+![toggle](/public/toggle.png)
+
 We can easily apply our *CheckboxToggleStyle* to every *Toggle* in our app by using the *toggleStyle* modifier. It uses the environment feature of *SwiftUI* to share the style with all views in the current environment. But remember that you can easily use the same modifier on the concrete *Toggle* instance to don't share with other views.
 
 ```swift
