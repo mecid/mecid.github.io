@@ -1,6 +1,7 @@
 ---
 title: Customizing Toggle in SwiftUI
 layout: post
+image: /public/toggle.png
 ---
 
 This week we will continue mastering *SwiftUI* components by learning *Toggle*. *Toggle* is a component that we can use to allow users to toggle any boolean state in the app. *SwiftUI* enables us to customize toggles in a very convenient way by providing *ToggleStyle* protocol.
