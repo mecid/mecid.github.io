@@ -20,7 +20,7 @@ struct ContentView: View {
 }
 ```
 
-> *Binding* is a property wrapper that allows us to access value types in a reference like manner. To learn more about binding and other property wrappers provided by *SwiftUI*, take a look at my "Understanding Property Wrappers in SwiftUI" post.
+> *Binding* is a property wrapper that allows us to access value types in a reference like manner. To learn more about binding and other property wrappers provided by *SwiftUI*, take a look at my ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
 By default, *SwiftUI* uses the *UISwitch* view from *UIKit* to represent a *Toggle*. There is no way to change the tint color of *Toggle* from *SwiftUI*, but we can use *UIAppearance API* from *UIKit* to set the tint color for all *UISwitch* instances across the app. You can paste this line in *AppDelegate* to configure the color before you create a view.
 
@@ -56,7 +56,7 @@ public protocol ToggleStyle {
 }
 ```
 
-> It is so awesome that *SwiftUI* allows us to style views in a consistent way. *SwiftUI* also provides *ButtonStyle* protocols that we can use to design buttons. To learn more, take a look at my "Mastering buttons in *SwiftUI*" post.
+> It is so awesome that *SwiftUI* allows us to style views in a consistent way. *SwiftUI* also provides *ButtonStyle* protocols that we can use to design buttons. To learn more, take a look at my ["Mastering buttons in *SwiftUI*"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
 The only requirement of *ToggleStyle* protocol is *makeBody* function that should return some view. makeBody function has a single parameter that we can use to access a user-defined label to place it according to our design and binding that we can toggle when the user alters the state.
 Let's create our very first *Toggle* style that will render it as a checkbox.
