@@ -43,6 +43,8 @@ func appReducer(state: inout AppState, action: AppAction) {
     switch action {
     case let .setSearchResults(repos):
         state.searchResult = repos
+    case let .search(query):
+        break
     }
 }
 ```
@@ -74,14 +76,25 @@ final class Store<State, Action>: ObservableObject {
 We already implemented a *unidirectional* flow which accepts user actions and modifies the state, but what about *async action* which we usually call *side effects*. How to add support for an async task to our store type? I think it is a time to introduce the usage of *Combine framework* which perfectly fits async task processing.
 
 ```swift
-import Combine
+typealias Reducer<State, Action, Environment> =
+    (inout State, Action, Environment) -> AnyPublisher<Action, Never>?
 
-func search(query: String) -> AnyPublisher<AppAction, Never> {
-    Current.service
-        .searchRepos(query)
-        .replaceError(with: [])
-        .map { AppAction.setSearchResults(repos: $0) }
-        .eraseToAnyPublisher()
+func appReducer(
+    state: inout AppState,
+    action: AppAction,
+    environment: Environment
+) -> AnyPublisher<AppAction, Never> {
+    switch action {
+    case let .setSearchResults(repos):
+        state.searchResult = repos
+    case let .search(query):
+        return environment.service
+            .searchPublisher(matching: query)
+            .replaceError(with: [])
+            .map { AppAction.setSearchResults(repos: $0) }
+            .eraseToAnyPublisher()
+    }
+    return Empty().eraseToAnyPublisher()
 }
 ```
 
@@ -89,23 +102,27 @@ We add support for *async tasks* by introducing *Effect* typealias. *Effect* is 
 
 ```swift
 final class Store<State, Action>: ObservableObject {
-    typealias Effect = AnyPublisher<Action, Never>
-
     @Published private(set) var state: State
 
-    private let reducer: Reducer<State, Action>
+    private let environment: Environment
+    private let reducer: Reducer<State, Action, Environment>
     private var cancellables: Set<AnyCancellable> = []
 
-    init(initialState: State, reducer: @escaping Reducer<State, Action>) {
+    init(
+        initialState: State,
+        reducer: @escaping Reducer<State, Action, Environment>,
+        environment: Environment
+    ) {
         self.state = initialState
         self.reducer = reducer
+        self.environment = environment
     }
 
     func send(_ action: Action) {
-        reducer(&state, action)
-    }
+        guard let effect = reducer(&state, action, environment) else {
+            return
+        }
 
-    func send(_ effect: Effect) {
         effect
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: send)
