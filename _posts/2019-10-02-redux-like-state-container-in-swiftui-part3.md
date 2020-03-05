@@ -77,7 +77,7 @@ During my transition from multiple stores to a single source of truth, I realize
 import SwiftUI
 
 struct SearchContainerView: View {
-    @EnvironmentObject var store: Store<AppState, AppAction>
+    @EnvironmentObject var store: AppStore
     @State private var query: String = "Swift"
 
     var body: some View {
