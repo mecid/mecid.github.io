@@ -3,10 +3,10 @@ title: Redux-like state container in SwiftUI. Basics.
 layout: post
 ---
 
-This week we will talk about building a state container similar to *Redux* which provides a single source of truth for your app. A single state for the whole app makes it easier to debug and inspect. Single source of truth eliminates tons of bugs produced by creating multiple states across the app.
+This week we will talk about building a state container similar to *Redux* that provides a single source of truth for your app. A single state for the whole app makes it easier to debug and inspect. Single source of truth eliminates tons of bugs produced by creating multiple states across the app.
 
 #### Single source of truth
-The main idea here is describing the whole app state by using a single struct or composition of structs. Assume that we are working on a Github repos search app where the state is repos array which we fetch matching some query using Github API.
+The main idea here is describing the whole app state by using a single struct or composition of structs. Assume that we are working on a Github repos search app where the state is the repos array that we fetch matching some query using Github API.
 
 ```swift
 struct AppState {
@@ -14,7 +14,9 @@ struct AppState {
 }
 ```
 
-Next step is passing the read-only app state to every view inside the app. The best way for doing that is *SwiftUI's Environment* feature. We can give an object holding the whole state of the app to the *Environment* of the root view. Root view will share its *Environment* with all child views. To learn more about the *Environment* feature of *SwiftUI*, take a look at ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+Next step is passing the read-only app state to every view inside the app. The best way for doing that is *SwiftUI's Environment* feature. We can put an object holding the whole app state in the *Environment* of the root view. Root view will share its *Environment* with all child views.
+
+> *SwiftUI* uses environment to pass system-wide and application-related information. You can also populate environment with your custom objects. To learn more about environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 ```swift
 final class Store: ObservableObject {
@@ -22,10 +24,10 @@ final class Store: ObservableObject {
 }
 ```
 
-In the example above, we create a store object which stores the app state and provides read-only access to it. State property uses *@Published* property wrapper, which notifies *SwiftUI* during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
+In the example above, we create a store object that stores the app state and provides read-only access to it. State property uses *@Published* property wrapper that notifies *SwiftUI* during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 
 #### Reducer and Actions
-It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing a state change. For example, set loading value during data fetch, assign fetched repositories to a state's property, etc. Let's take a look at an example code for *Action* enum.
+It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing a state change. For example, set loading value during data fetch, assign fetched repositories to the state's property. Let's take a look at the example code for *Action* enum.
 
 ```swift
 enum AppAction {
@@ -34,7 +36,7 @@ enum AppAction {
 }
 ```
 
-*Reducer* is a function which takes current state, applies *Action* to the state, and generates a new state. Generally, *reducer* or *composition of reducers* is a single place where your app mutates the state. The fact that the only one function can modify the whole app state is super simple, debuggable, and testable. Here is an example of our reduce function.
+*Reducer* is a function that takes current state, applies *Action* to the state, and generates a new state. Generally, *reducer* or *composition of reducers* is the single place where your app should mutate the state. The fact that the only one function can modify the whole app state is super simple, debuggable, and testable. Here is an example of our reduce function.
 
 ```swift
 typealias Reducer<State, Action> = (inout State, Action) -> Void
@@ -50,11 +52,7 @@ func appReducer(state: inout AppState, action: AppAction) {
 ```
 
 #### Unidirectional flow
-Let's talk about a data flow now. Every view has read-only access to a state via store object. Views can send *actions* to a store object. *Reducer* modifies the state, and then *SwiftUI* notifies all the views about state changes. *SwiftUI* has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works very fast.
-
-**State -> View -> Action -> State -> View**
-
-This architecture revolves around a strict **unidirectional** data flow. It means that all the data in the application follows the same pattern, making the logic of your app more predictable and easier to understand. Let's modify our store object to support sending *actions*.
+Let's talk about data flow now. Every view has read-only access to the state via store object. Views can send *actions* to the store object. *Reducer* modifies the state, and then *SwiftUI* notifies all the views about state changes. *SwiftUI* has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works so fast. Let's modify our store object to support sending *actions*.
 
 ```swift
 final class Store<State, Action>: ObservableObject {
@@ -72,18 +70,26 @@ final class Store<State, Action>: ObservableObject {
     }
 ```
 
+**State -> View -> Action -> State -> View**
+
+This architecture revolves around a strict **unidirectional** data flow. It means that all the data in the application follows the same pattern, making the logic of your app more predictable and easier to understand.
+
 #### Side effects
-We already implemented a *unidirectional* flow which accepts user actions and modifies the state, but what about *async action* which we usually call *side effects*. How to add support for an async task to our store type? I think it is a time to introduce the usage of *Combine framework* which perfectly fits async task processing.
+We already implemented a *unidirectional* flow that accepts user actions and modifies the state, but what about *async action* which we usually call *side effects*. How to bake a support for async tasks into our store type? I think it is a good time to introduce the usage of *Combine framework* that perfectly fits async task processing.
 
 ```swift
 typealias Reducer<State, Action, Environment> =
     (inout State, Action, Environment) -> AnyPublisher<Action, Never>?
+```
 
+We add support for *async tasks* by changing *Reducer* typealias, it has the additional parameter called *Environment*. *Environment* might be a plain struct that holds all needed dependencies like service and manager classes. Usually, Reducer resolves an action by applying it on top of the state. In case of an async action *Reducer* returns it as *Combine Publisher*, then *Store* handles it and send back to the *Reducer* as a plain action.
+
+```swift
 func appReducer(
     state: inout AppState,
     action: AppAction,
     environment: Environment
-) -> AnyPublisher<AppAction, Never> {
+) -> AnyPublisher<AppAction, Never>? {
     switch action {
     case let .setSearchResults(repos):
         state.searchResult = repos
@@ -94,11 +100,11 @@ func appReducer(
             .map { AppAction.setSearchResults(repos: $0) }
             .eraseToAnyPublisher()
     }
-    return Empty().eraseToAnyPublisher()
+    return nil
 }
 ```
 
-We add support for *async tasks* by introducing *Effect* typealias. *Effect* is a sequence of *Actions* which we can publish using Combine framework's *Publisher* type. It allows us to handle async jobs using *Combine* and then publish *actions* which will be used by *reducer* to apply on the current state.
+Side Effect is a sequence of *Actions* which we can publish using *Combine* framework's *Publisher* type. It allows us to handle async job and then publish an *action* that will be used by *reducer* to change the current state.
 
 ```swift
 final class Store<State, Action>: ObservableObject {
@@ -131,8 +137,10 @@ final class Store<State, Action>: ObservableObject {
 }
 ```
 
+As you can see in the example above, we build a *Store* type that supports async tasks.
+
 #### Real usage example
-Finally, we can finish our repos search app which calls Github API asynchronously and fetches repositories matching a query. The full source code available on [Github](https://github.com/mecid/redux-like-state-container-in-swiftui).
+Finally, we can finish our repos search app that calls Github API asynchronously and fetches repositories matching a query. The full source code available on [Github](https://github.com/mecid/redux-like-state-container-in-swiftui).
 
 ```swift
 struct SearchContainerView: View {
@@ -178,7 +186,7 @@ struct SearchView : View {
 We divide our screen into two views: *Container View* and *Rendering View*. *Container View* handles the actions and retrieves the needed piece of state from the global state. *Rendering View* accepts the data and renders it. We already talked about *Container Views* in my previous posts, to learn more take a look at ["Introducing Container views in SwiftUI"](/2019/07/31/introducing-container-views-in-swiftui/) post.
 
 #### Conclusion
-Today we learned how to build *Redux-like* state container with *side-effects* in mind. To achieve that we used *SwiftUI's Environment* feature and *Combine* framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+Today we learned how to build *Redux-like* state container with *side-effects* in mind. To achieve that we used *Combine* framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
 
 1. Redux-like state container in SwiftUI. Basics
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
