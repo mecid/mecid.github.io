@@ -27,7 +27,7 @@ final class Store: ObservableObject {
 In the example above, we create a store object that stores the app state and provides read-only access to it. State property uses *@Published* property wrapper that notifies *SwiftUI* during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 
 #### Reducer and Actions
-It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing a state change. For example, set loading value during data fetch, assign fetched repositories to the state's property. Let's take a look at the example code for *Action* enum.
+It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing a change of the state. For example, set loading value during data fetch, assign fetched repositories to the state property. Let's take a look at the example code for *Action* enum.
 
 ```swift
 enum AppAction {
@@ -52,7 +52,7 @@ func appReducer(state: inout AppState, action: AppAction) {
 ```
 
 #### Unidirectional flow
-Let's talk about data flow now. Every view has read-only access to the state via store object. Views can send *actions* to the store object. *Reducer* modifies the state, and then *SwiftUI* notifies all the views about state changes. *SwiftUI* has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works so fast. Let's modify our store object to support sending *actions*.
+Let's talk about data flow now. Every view has a read-only access to the state via store object. Views can send *actions* to the store object. *Reducer* modifies the state, and then *SwiftUI* notifies all the views about state changes. *SwiftUI* has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works so fast. Let's modify our store object to support sending *actions*.
 
 ```swift
 final class Store<State, Action>: ObservableObject {
@@ -70,19 +70,19 @@ final class Store<State, Action>: ObservableObject {
     }
 ```
 
-**State -> View -> Action -> State -> View**
+*State -> View -> Action -> State -> View*
 
 This architecture revolves around a strict **unidirectional** data flow. It means that all the data in the application follows the same pattern, making the logic of your app more predictable and easier to understand.
 
 #### Side effects
-We already implemented a *unidirectional* flow that accepts user actions and modifies the state, but what about *async action* which we usually call *side effects*. How to bake a support for async tasks into our store type? I think it is a good time to introduce the usage of *Combine framework* that perfectly fits async task processing.
+We already implemented a *unidirectional* flow that accepts user actions and modifies the state, but what about *async actions* which we usually call *side effects*. How to bake a support for async tasks into our store type? I think it is a good time to introduce the usage of *Combine framework* that perfectly fits async task processing.
 
 ```swift
 typealias Reducer<State, Action, Environment> =
     (inout State, Action, Environment) -> AnyPublisher<Action, Never>?
 ```
 
-We add support for *async tasks* by changing *Reducer* typealias, it has the additional parameter called *Environment*. *Environment* might be a plain struct that holds all needed dependencies like service and manager classes. Usually, Reducer resolves an action by applying it on top of the state. In case of an async action *Reducer* returns it as *Combine Publisher*, then *Store* handles it and send back to the *Reducer* as a plain action.
+We add support for *async tasks* by changing *Reducer* typealias, it has the additional parameter called *Environment*. *Environment* might be a plain struct that holds all needed dependencies like service and manager classes.
 
 ```swift
 func appReducer(
@@ -137,14 +137,14 @@ final class Store<State, Action>: ObservableObject {
 }
 ```
 
-As you can see in the example above, we build a *Store* type that supports async tasks.
+As you can see in the example above, we build a *Store* type that supports async tasks. Usually, Reducer resolves an action by applying it on top of the state. In case of an async action, *Reducer* returns it as *Combine Publisher*, then *Store* handles it and send back to the *Reducer* as a plain action.
 
 #### Real usage example
 Finally, we can finish our repos search app that calls Github API asynchronously and fetches repositories matching a query. The full source code available on [Github](https://github.com/mecid/redux-like-state-container-in-swiftui).
 
 ```swift
 struct SearchContainerView: View {
-    @EnvironmentObject var store: Store<AppState, AppAction>
+    @EnvironmentObject var store: AppStore
     @State private var query: String = "Swift"
 
     var body: some View {
