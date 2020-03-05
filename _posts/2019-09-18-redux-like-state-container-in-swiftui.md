@@ -36,7 +36,7 @@ enum AppAction {
 }
 ```
 
-*Reducer* is a function that takes current state, applies *Action* to the state, and generates a new state. Generally, *reducer* or *composition of reducers* is the single place where your app should mutate the state. The fact that the only one function can modify the whole app state is super simple, debuggable, and testable. Here is an example of our reduce function.
+*Reducer* is a function that takes current state, applies *Action* to the state, and generates a new state. Generally, *reducer* or *composition of reducers* is the single place where your app should mutate the state. The fact that the only one function can modify the whole app state is super simple, debuggable, and testable. Here is an example of reduce function.
 
 ```swift
 typealias Reducer<State, Action> = (inout State, Action) -> Void
@@ -107,7 +107,7 @@ func appReducer(
 Side Effect is a sequence of *Actions* which we can publish using *Combine* framework's *Publisher* type. It allows us to handle async job and then publish an *action* that will be used by *reducer* to change the current state.
 
 ```swift
-final class Store<State, Action>: ObservableObject {
+final class Store<State, Action, Environment>: ObservableObject {
     @Published private(set) var state: State
 
     private let environment: Environment
@@ -137,12 +137,14 @@ final class Store<State, Action>: ObservableObject {
 }
 ```
 
-As you can see in the example above, we build a *Store* type that supports async tasks. Usually, Reducer resolves an action by applying it on top of the state. In case of an async action, *Reducer* returns it as *Combine Publisher*, then *Store* handles it and send back to the *Reducer* as a plain action.
+As you can see in the example above, we build a *Store* type that supports async tasks. Usually, Reducer resolves an action by applying it on top of the state. In case of an async action, *Reducer* returns it as *Combine Publisher*, then *Store* run it and send result back to the *Reducer* as a plain action.
 
 #### Real usage example
 Finally, we can finish our repos search app that calls Github API asynchronously and fetches repositories matching a query. The full source code available on [Github](https://github.com/mecid/redux-like-state-container-in-swiftui).
 
 ```swift
+typealias AppStore = Store<AppState, AppAction, AppEnvironment>
+
 struct SearchContainerView: View {
     @EnvironmentObject var store: AppStore
     @State private var query: String = "Swift"
