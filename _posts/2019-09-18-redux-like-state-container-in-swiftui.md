@@ -139,6 +139,8 @@ final class Store<State, Action, Environment>: ObservableObject {
 
 As you can see in the example above, we build a *Store* type that supports async tasks. Usually, Reducer resolves an action by applying it on top of the state. In case of an async action, *Reducer* returns it as *Combine Publisher*, then *Store* run it and send result back to the *Reducer* as a plain action.
 
+> To learn more about *side effects* and *Combine framework* I highly recommend you to watch series of videos on [pointfree](https://www.pointfree.co/episodes/ep81-the-combine-framework-and-effects-part-2).
+
 #### Real usage example
 Finally, we can finish our repos search app that calls Github API asynchronously and fetches repositories matching a query. The full source code available on [Github](https://github.com/mecid/redux-like-state-container-in-swiftui).
 
