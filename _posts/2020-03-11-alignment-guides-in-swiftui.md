@@ -90,5 +90,7 @@ struct ContentView: View {
 
 In the example above, we use *AlignmentID* protocol to create a custom alignment. This protocol has the only requirement that we need to provide. *SwiftUI* will use the *defaultValue* whenever we leave it without custom value. The interesting fact is that the inner *VStack* didn't specify a value for custom alignment, but it uses the value that provides its child view.
 
+![align](/public/align.png)
+
 #### Conclusion
 Today we learned how powerful could be custom alignments in *SwiftUI*. We also can use the overriding alignment technique to build super custom layouts. For example, we can build a grid view that arranges child views using alignments. I suggest you play around alignments to understand it well. It is something that can take time. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
