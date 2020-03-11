@@ -38,10 +38,10 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use *alignmentGuide* modifier to override the default value for .*bottom* alignment by adding 8 points. We read the default value by using subscript of d, which is an instance of *ViewDimensions* struct. *ViewDimensions* struct provides us access to the width and height of the view and default alignment values by using a subscript.
+As you can see in the example above, we use *alignmentGuide* modifier to override the default value for .*bottom* alignment by adding 8 points. We read the default value by using subscript of **d**, which is an instance of *ViewDimensions* struct. *ViewDimensions* struct provides us access to the width and height of the view and default alignment values by using a subscript.
 
 #### Custom alignment guides
-We learned how to override default alignments in *SwiftUI*, but it also allows us to create a custom alignment guide that we can use in container views to align its child views. But why we might need it? Custom alignments allow us to align views that live in different container views. Let's take a look at the example below.
+We learned how to override default alignments in *SwiftUI*, but *SwiftUI* also allows us to create a custom alignment guide that we can use in container views to align its child views. But why we might need it? Custom alignments allow us to align views that live in different container views. Let's take a look at the example below.
 
 ```swift
 struct ContentView: View {
@@ -59,7 +59,7 @@ struct ContentView: View {
 }
 ```
 
-We have a horizontal stack that contains an image and vertical stack with a few text views. I might need to align the image with the third text view. It doesn't look possible with the current configuration, because these views live in different containers. Fortunately, *SwiftUI* allows us to create a custom alignment and use it in the parent container view.
+We have a horizontal stack that contains an image and vertical stack with a few text views. I might need to align the image with the third text view, but it doesn't look possible with the current configuration, because these views live in different containers. Fortunately, *SwiftUI* allows us to create a custom alignment and use it in the parent container view.
 
 ```swift
 extension VerticalAlignment {
