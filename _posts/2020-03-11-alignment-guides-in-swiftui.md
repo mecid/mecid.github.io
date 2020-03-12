@@ -24,7 +24,7 @@ In the example above, we have a vertical container view that displays child view
 *ZStack* uses *Alignment* enum, which is the combination of *HorizontalAlignment* and *VerticalAlignment* enums.
 
 #### Overriding alignment guides
-*SwiftUI* allows us to override standard alignments by using the *alignmentGuide* modifier. For example, we might need to align the bottom of *Image* and *Text* views in a horizontal stack. We can face the problem when them image has some spacing inside a bitmap, and it looks not aligned very well. This is a perfect case for overriding an alignment guide.
+*SwiftUI* allows us to override standard alignments by using the *alignmentGuide* modifier. For example, we might need to align the bottom of *Image* and *Text* views in a horizontal stack. We can face the problem when the image has some spacing inside a bitmap, and it looks not aligned very well. This is a perfect case for overriding an alignment guide.
 
 ```swift
 struct ContentView: View {
