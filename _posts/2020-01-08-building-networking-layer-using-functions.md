@@ -124,4 +124,4 @@ Here we compose two functions: *tokenRequestModifier* and *networking* to create
 #### Conclusion
 Today we talked about building a networking layer in a very functional way. I'm not saying that protocols are bad or something similar. Protocols are awesome when you need to build a huge hierarchy of types like collections that we have in Swift standard library. 
 
-But usually, we have mocked and real-life implementation, and this is the case where functions are more than enough. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+But usually, we have mocked and production implementation, and this is the case where functions are more than enough. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
