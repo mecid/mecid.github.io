@@ -17,9 +17,10 @@ Another post that I wrote about the mechanics of *SwiftUI* is ["You have to chan
 *SwiftUI* also has a brand new layout system, which I enjoy much more than AutoLayout. The new layout system is very powerful and straightforward. I highly suggest you read these posts to understand the new layout system and its benefits.
 
 1. [SwiftUI Layout System](https://kean.github.io/post/swiftui-layout-system)
-2. [Inspecting the View Tree – Part 1: PreferenceKey](https://swiftui-lab.com/communicating-with-the-view-tree-part-1/)
-3. [Inspecting the View Tree – Part 2: AnchorPreferences](https://swiftui-lab.com/communicating-with-the-view-tree-part-2/)
-4. [Inspecting the View Tree – Part 3: Nested Views](https://swiftui-lab.com/communicating-with-the-view-tree-part-3/)
+2. [Alignment guides in SwiftUI](/2020/03/11/alignment-guides-in-swiftui/)
+3. [The magic of view preferences in SwiftUI](/2020/01/15/the-magic-of-view-preferences-in-swiftui/)
+4. [Inspecting the View Tree – AnchorPreferences](https://swiftui-lab.com/communicating-with-the-view-tree-part-2/)
+5. [Inspecting the View Tree – Part 3: Nested Views](https://swiftui-lab.com/communicating-with-the-view-tree-part-3/)
 
 #### Architecture
 *SwiftUI* has a lot of similarities with *React* framework, which brings many new concepts to iOS development. I've built a few apps using those ideas and really like how it works. Here is the list of useful posts.
