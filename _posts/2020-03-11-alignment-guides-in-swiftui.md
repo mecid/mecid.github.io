@@ -18,7 +18,7 @@ VStack(alignment: .leading) {
 }
 ```
 
-In the example above, we have a vertical container view that displays child views from the top to bottom. We set alignment to leading, and it means that VStack will use the leading point of every child view to align them. 
+In the example above, we have a vertical container view that displays child views from the top to bottom. We set alignment to leading, and it means that *VStack* will use the leading point of every child view to align them. 
 
 *VStack* uses *HorizontalAlignment* enum to define possible alignments. On the other hand, *HStack* uses *VerticalAlignment* enum. It might be strange, but after all, it is logical. We can set the alignment of *VStack* only in the horizontal way because the container view controls the vertical direction.
 *ZStack* uses *Alignment* enum, which is the combination of *HorizontalAlignment* and *VerticalAlignment* enums.
