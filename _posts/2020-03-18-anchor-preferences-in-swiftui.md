@@ -4,7 +4,7 @@ layout: post
 image: /public/anchor.png
 ---
 
-Today we will continue mastering view preferences in SwiftUI that we touched a few weeks ago. Anchor preferences are another type of view preferences provided by SwiftUI. The main goal of anchor preferences is to pass layout data like bounds, center coordinates, etc. to its parent view.
+Today we will continue mastering view preferences in *SwiftUI* that we touched a few weeks ago. Anchor preferences are another type of view preferences provided by *SwiftUI*. The main goal of anchor preferences is to pass layout data like bounds, center coordinates, etc. to its parent view.
 
 #### Basics
 First of all, I want to ask you to check the post about view preferences if you are not familiar with these API. Anchor preferences use a very similar API. The only difference is that it is tuned to pass layout data.
@@ -57,18 +57,18 @@ struct ExampleView: View {
 }
 ```
 
-As you can see in the example above, we still use the PreferenceKey protocol to create an anchor preference key. It has two requirements: default value and reduce function. Reduce function allows us to merge multiple values that appear from different views. We can replace the current value with the new one for now. We will see more advanced usage of reduces function later in the post.
+As you can see in the example above, we still use the *PreferenceKey* protocol to create an anchor preference key. It has two requirements: default value and reduce function. Reduce function allows us to merge multiple values that appear from different views. We can replace the current value with the new one for now. We will see more advanced usage of reduces function later in the post.
 
-Anchor preferences use opaque Anchor type. You can't merely use Anchor type anywhere in the app. You have to use it in pair with GeometryProxy provided by GeometryReader. You can use the subscript of GeometryProxy to resolve anchor and access wrapped CGRect value. As a bonus, SwiftUI will convert a coordinate space between views while solving anchor, and you don't need to do it manually.
+Anchor preferences use opaque *Anchor* type. You can't merely use Anchor type anywhere in the app. You have to use it in pair with *GeometryProxy* provided by *GeometryReader*. You can use the subscript of *GeometryProxy* to resolve anchor and access wrapped *CGRect* value. As a bonus, *SwiftUI* will convert a coordinate space between views while solving anchor, and you don't need to do it manually.
 
-We use the anchorPreference modifier to define the type of PreferenceKey and the value we want to gather. It can be bounds, center, leading, trailing, top, bottom. We also pass a closure that transforms provided anchor value. In this case, we don't need any change and return the CGRect value as is.
+We use the *anchorPreference* modifier to define the type of *PreferenceKey* and the value we want to gather. It can be bounds, center, leading, trailing, top, bottom. We also pass a closure that transforms provided anchor value. In this case, we don't need any change and return the *CGRect* value as is.
 
-In the end, we use overlayPreferenceValue on ancestor view to access gathered preference values and return overlay view. As I mentioned before, we need a GeometryProxy to resolve an anchor. That's why we use here GeometryReader.
+In the end, we use *overlayPreferenceValue* on ancestor view to access gathered preference values and return overlay view. As I mentioned before, we need a *GeometryProxy* to resolve an anchor. That's why we use here *GeometryReader*.
 
 We can easily use border modifier on the text component to achieve the same result, but I've done it to realize how to use anchor preferences.
 
 #### Advanced usage
-Now we can move to more advanced usage of anchor preferences. As an example, we will build a grid view. We will need to gather the size of every view inside the grid to calculate its positions. Let's start by defining the PreferenceKey for our grid view.
+Now we can move to more advanced usage of anchor preferences. As an example, we will build a grid view. We will need to gather the size of every view inside the grid to calculate its positions. Let's start by defining the *PreferenceKey* for our grid view.
 
 ```swift
 struct SizePreferences<Item: Hashable>: PreferenceKey {
@@ -121,7 +121,7 @@ struct Grid<Data: RandomAccessCollection, ElementView: View>: View where Data.El
 }
 ```
 
-We use ZStack with top leading alignment. It allows us to position items inside in an effortless way. Instead of using the offset modifier that doesn't affect the layout, we use overridden alignment guides to position our child views. We also resolve our anchors here, because we already have access to the instance of GeometryProxy.
+We use *ZStack* with top leading alignment. It allows us to position items inside in an effortless way. Instead of using the offset modifier that doesn't affect the layout, we use overridden alignment guides to position our child views. We also resolve our anchors here, because we already have access to the instance of *GeometryProxy*.
 
 > To learn more about the benefits of alignment guides in SwiftUI, take a look at my ["Alignment guides in SwiftUI"]() post.
 
@@ -157,7 +157,7 @@ var body: some View {
 }
 ```
 
-As the last step, we calculate bounds for every item using GeometryProxy and gathered sizes. Let's take a look at the final result.
+As the last step, we calculate bounds for every item using *GeometryProxy* and gathered sizes. Let's take a look at the final result.
 
 ```swift
 struct RootView: View {
@@ -180,4 +180,4 @@ struct RootView: View {
 ![anchor](/public/anchor.png)
 
 #### Conclusion
-SwiftUI provides us so many great tools that we can use to build impressive views. Anchor preferences feature is one of the powerful hidden gems of SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+*SwiftUI* provides us so many great tools that we can use to build impressive views. Anchor preferences feature is one of the powerful hidden gems of *SwiftUI*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
