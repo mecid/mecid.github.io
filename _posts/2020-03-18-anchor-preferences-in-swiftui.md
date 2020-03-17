@@ -1,6 +1,7 @@
 ---
 title: Anchor preferences in SwiftUI
 layout: post
+image: /public/anchor.png
 ---
 
 Today we will continue mastering view preferences in SwiftUI that we touched a few weeks ago. Anchor preferences are another type of view preferences provided by SwiftUI. The main goal of anchor preferences is to pass layout data like bounds, center coordinates, etc. to its parent view.
@@ -157,6 +158,26 @@ var body: some View {
 ```
 
 As the last step, we calculate bounds for every item using GeometryProxy and gathered sizes. Let's take a look at the final result.
+
+```swift
+struct RootView: View {
+    @State private var cards: [String] = [
+        "Lorem", "ipsum", "is", "placeholder", "text", "!!!"
+    ]
+
+    var body: some View {
+        Grid(cards) { card in
+            Text(card)
+                .frame(width: 120, height: 120)
+                .background(Color.orange)
+                .cornerRadius(8)
+                .padding(4)
+        }
+    }
+}
+```
+
+![anchor](/public/anchor.png)
 
 #### Conclusion
 SwiftUI provides us so many great tools that we can use to build impressive views. Anchor preferences feature is one of the powerful hidden gems of SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
