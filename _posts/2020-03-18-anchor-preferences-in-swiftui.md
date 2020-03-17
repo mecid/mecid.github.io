@@ -65,6 +65,8 @@ We use the *anchorPreference* modifier to define the type of *PreferenceKey* and
 
 In the end, we use *overlayPreferenceValue* on ancestor view to access gathered preference values and return overlay view. As I mentioned before, we need a *GeometryProxy* to resolve an anchor. That's why we use here *GeometryReader*.
 
+![anchor-basics](/public/anchor-basics.png)
+
 We can easily use border modifier on the text view to achieve the same result, but I've done it to show you the basics of anchor preferences.
 
 #### Advanced usage
