@@ -159,7 +159,7 @@ var body: some View {
 }
 ```
 
-As the last step, we calculate bounds for every item using *GeometryProxy* and gathered sizes. Let's take a look at the final result.
+As the last step, we calculate bounds for every item using *onPreferenceChange* modifier which provides us the access to gathered sizes. Let's take a look at the final result.
 
 ```swift
 struct RootView: View {
