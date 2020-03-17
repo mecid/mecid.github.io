@@ -122,11 +122,41 @@ struct Grid<Data: RandomAccessCollection, ElementView: View>: View where Data.El
 
 We use ZStack with top leading alignment. It allows us to position items inside in an effortless way. Instead of using the offset modifier that doesn't affect the layout, we use overridden alignment guides to position our child views. We also resolve our anchors here, because we already have access to the instance of GeometryProxy.
 
-> To learn more about the benefits of alignment guides in SwiftUI, take a look at my "Alignment guides in SwiftUI" post.
+> To learn more about the benefits of alignment guides in SwiftUI, take a look at my ["Alignment guides in SwiftUI"]() post.
+
+```swift
+var body: some View {
+    GeometryReader { geometry in
+        ZStack(alignment: .topLeading) {
+            ...
+        }
+        .onPreferenceChange(SizePreferences<Data.Element>.self) { sizes in
+            var newPreferences: [Data.Element: CGRect] = [:]
+            var bounds: [CGRect] = []
+            for item in self.data {
+                let size = sizes[item, default: .zero]
+                let rect: CGRect
+                if let lastBounds = bounds.last {
+                    if lastBounds.maxX + size.width > geometry.size.width {
+                        let origin = CGPoint(x: 0, y: lastBounds.maxY)
+                        rect = CGRect(origin: origin, size: size)
+                    } else {
+                        let origin = CGPoint(x: lastBounds.maxX, y: lastBounds.minY)
+                        rect = CGRect(origin: origin, size: size)
+                    }
+                } else {
+                    rect = CGRect(origin: .zero, size: size)
+                }
+                bounds.append(rect)
+                newPreferences[item] = rect
+            }
+            self.preferences = newPreferences
+        }
+    }
+}
+```
 
 As the last step, we calculate bounds for every item using GeometryProxy and gathered sizes. Let's take a look at the final result.
 
 #### Conclusion
-SwiftUI provides us so many great tools that we can use to build impressive views. Anchor preferences feature is one of the powerful hidden gems of SwiftUI.
-
-
+SwiftUI provides us so many great tools that we can use to build impressive views. Anchor preferences feature is one of the powerful hidden gems of SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
