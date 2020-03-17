@@ -7,7 +7,7 @@ image: /public/anchor.png
 Today we will continue mastering view preferences in *SwiftUI* that we touched a few weeks ago. Anchor preferences are another type of view preferences provided by *SwiftUI*. The main goal of anchor preferences is to pass layout data like bounds, center coordinates, etc. to its parent view.
 
 #### Basics
-First of all, I want to ask you to check the post about view preferences if you are not familiar with these API. Anchor preferences use a very similar API. The only difference is that it is tuned to pass layout data.
+First of all, I want to ask you to check the post about view preferences if you are not familiar with these API. Anchor preferences use a very similar API. The only difference is that it is tuned to pass layout-specific data.
 
 > To learn more about the benefits of preferences in SwiftUI, take a look at my ["The magic of view preferences in SwiftUI"](/2020/01/15/the-magic-of-view-preferences-in-swiftui/) post.
 
@@ -57,15 +57,15 @@ struct ExampleView: View {
 }
 ```
 
-As you can see in the example above, we still use the *PreferenceKey* protocol to create an anchor preference key. It has two requirements: default value and reduce function. Reduce function allows us to merge multiple values that appear from different views. We can replace the current value with the new one for now. We will see more advanced usage of reduces function later in the post.
+As you can see in the example above, we still use the *PreferenceKey* protocol to create an anchor preference key. It has two requirements: default value and reduce function. Reduce function allows us to merge multiple values that appear from different views. We can replace the current value with the new one for now. We will see more advanced usage of reduce function later in the post.
 
 Anchor preferences use opaque *Anchor* type. You can't merely use Anchor type anywhere in the app. You have to use it in pair with *GeometryProxy* provided by *GeometryReader*. You can use the subscript of *GeometryProxy* to resolve anchor and access wrapped *CGRect* value. As a bonus, *SwiftUI* will convert a coordinate space between views while solving anchor, and you don't need to do it manually.
 
-We use the *anchorPreference* modifier to define the type of *PreferenceKey* and the value we want to gather. It can be bounds, center, leading, trailing, top, bottom. We also pass a closure that transforms provided anchor value. In this case, we don't need any change and return the *CGRect* value as is.
+We use the *anchorPreference* modifier to define the type of *PreferenceKey* and the value we want to gather. It can be bounds, center, leading, trailing, top, bottom. We also pass a closure that transforms provided anchor value. In this case, we don't need any transformation and return the *CGRect* value as is.
 
 In the end, we use *overlayPreferenceValue* on ancestor view to access gathered preference values and return overlay view. As I mentioned before, we need a *GeometryProxy* to resolve an anchor. That's why we use here *GeometryReader*.
 
-We can easily use border modifier on the text component to achieve the same result, but I've done it to realize how to use anchor preferences.
+We can easily use border modifier on the text view to achieve the same result, but I've done it to show you the basics of anchor preferences.
 
 #### Advanced usage
 Now we can move to more advanced usage of anchor preferences. As an example, we will build a grid view. We will need to gather the size of every view inside the grid to calculate its positions. Let's start by defining the *PreferenceKey* for our grid view.
@@ -121,7 +121,7 @@ struct Grid<Data: RandomAccessCollection, ElementView: View>: View where Data.El
 }
 ```
 
-We use *ZStack* with top leading alignment. It allows us to position items inside in an effortless way. Instead of using the offset modifier that doesn't affect the layout, we use overridden alignment guides to position our child views. We also resolve our anchors here, because we already have access to the instance of *GeometryProxy*.
+We use *ZStack* with top leading alignment. It allows us to position items inside in an effortless way. Instead of using the offset modifier which doesn't affect the layout, we use overridden alignment guides to position our child views. We also resolve our anchors here, because we already have access to the instance of *GeometryProxy*.
 
 > To learn more about the benefits of alignment guides in SwiftUI, take a look at my ["Alignment guides in SwiftUI"]() post.
 
