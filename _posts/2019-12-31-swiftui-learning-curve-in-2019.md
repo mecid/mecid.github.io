@@ -19,7 +19,7 @@ Another post that I wrote about the mechanics of *SwiftUI* is ["You have to chan
 1. [SwiftUI Layout System](https://kean.github.io/post/swiftui-layout-system)
 2. [Alignment guides in SwiftUI](/2020/03/11/alignment-guides-in-swiftui/)
 3. [The magic of view preferences in SwiftUI](/2020/01/15/the-magic-of-view-preferences-in-swiftui/)
-4. [Inspecting the View Tree – AnchorPreferences](https://swiftui-lab.com/communicating-with-the-view-tree-part-2/)
+4. [Anchor preferences in SwiftUI](/2020/03/18/anchor-preferences-in-swiftui/)
 5. [Inspecting the View Tree – Part 3: Nested Views](https://swiftui-lab.com/communicating-with-the-view-tree-part-3/)
 
 #### Architecture
