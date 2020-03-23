@@ -47,6 +47,7 @@ Here we have the *ViewModel* that fetches posts, stores them in the variable, an
 ```swift
 final class PostsViewController: UIViewController {
     let viewModel: PostsViewModel
+    private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +61,7 @@ final class PostsViewController: UIViewController {
                 return
             }
             self.renderPosts(self.viewModel.posts)
-        }
+        }.store(in: &cancellables)
     }
 }
 ```
@@ -89,6 +90,7 @@ As I said before, @*Published* property wrapper wraps our property with a publis
 ```swift
 final class PostsViewController: UIViewController {
     let viewModel: PostsViewModel
+    private var cancellables: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +101,7 @@ final class PostsViewController: UIViewController {
     private func bindViewModel() {
         viewModel.$posts.sink { [weak self] posts in
             self?.renderPosts(posts)
-        }
+        }.store(in: &cancellables)
     }
 }
 ```
