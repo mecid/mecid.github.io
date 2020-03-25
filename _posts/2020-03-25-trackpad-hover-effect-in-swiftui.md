@@ -1,6 +1,7 @@
 ---
 title: Trackpad hover effect in SwiftUI
 layout: post
+image: /public/ipad.jpg
 ---
 Last week Apple updated iPad Pro and added trackpad support to iPadOS. We finally have Xcode 11.4, which introduces the onHover and hoverEffect modifiers to help us utilize trackpad and mouse support. This week we will learn how to be a good iOS citizen and add support for the trackpad to our SwiftUI views.
 
