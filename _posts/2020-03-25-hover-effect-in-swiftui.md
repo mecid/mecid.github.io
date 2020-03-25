@@ -1,5 +1,5 @@
 ---
-title: Trackpad hover effect in SwiftUI
+title: Hover effect in SwiftUI
 layout: post
 image: /public/ipad.jpg
 ---
