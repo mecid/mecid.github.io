@@ -70,6 +70,7 @@ import SwiftUI
 
 fileprivate struct EmbedInStack: ViewModifier {
     private let verticalSizes: [ContentSizeCategory] = [
+        .accessibilityMedium,
         .accessibilityLarge,
         .accessibilityExtraLarge,
         .accessibilityExtraExtraLarge,
@@ -79,17 +80,19 @@ fileprivate struct EmbedInStack: ViewModifier {
     @Environment(\.sizeCategory) var sizeCategory
 
     func body(content: Content) -> some View {
-        if verticalSizes.contains(sizeCategory) {
-            return AnyView(VStack { content })
-        } else {
-            return AnyView(HStack { content })
+        Group {
+            if verticalSizes.contains(sizeCategory) {
+                VStack { content }
+            } else {
+                HStack { content }
+            }
         }
     }
 }
 
 extension Group where Content: View {
     func embedInStack() -> some View {
-        ModifiedContent(content: self, modifier: EmbedInStack())
+        modifier(EmbedInStack())
     }
 }
 ```
