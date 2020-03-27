@@ -31,6 +31,8 @@ In the example above, we create a *Text* component with the *"myNameIs \(name)"*
 "myNameIs %@" = "My name is %@.";
 ```
 
+**I have to mention that it doesn't work in preview canvas. You should run it on simulator.**
+
 *String* interpolation is a compelling feature of *Swift* language. By using *String* interpolation, we can also pass stuff like formatters or format specifiers, which can provide additional presentation logic. Let's take a look at a few code examples.
 
 ```swift
