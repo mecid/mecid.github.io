@@ -62,7 +62,7 @@ struct BookmarksDropDelegate: DropDelegate {
 
 Here we have a *BookmarksDropDelegate* struct that conforms to *DropDelegate* protocol. *DropDelegate* protocol requires us to implement *performDrop* function. This function should return *true* whenever the drop succeeded or *false* if it failed. *performDrop* function has *DropInfo* parameter, which provides us the information about items that should be dropped.
 
-Using *DropInfo*, we can filter items and accept only links. Apple uses *Uniform Type Identifiers* to identify the type of data. We want to receive only URLs that's why we use **public.link** identifier.
+Using *DropInfo*, we can filter items and accept only links. Apple uses *Uniform Type Identifiers* to identify the type of data. We want to receive only URLs that's why we use **public.link** identifier. *DropInfo* also provides us the location of drop using *CGPoint* instance.
 
 > To learn more about *Uniform Type Identifiers*, take a look at [Apple's documentation](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/understanding_utis/understand_utis_intro/understand_utis_intro.html).
 
