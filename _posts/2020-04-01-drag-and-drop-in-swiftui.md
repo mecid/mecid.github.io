@@ -4,10 +4,10 @@ layout: post
 image: /public/draganddrop.png
 ---
 
-Another *iPadOS* feature released in *SwiftUI* with Xcode 11.4 was the drag and drop. Finally, we can use drag and drop API not only with *UIKit* but also with *SwiftUI*. This week we will learn all about drag and drop interaction in *SwiftUI*. 
+Another *iPadOS* feature released in *SwiftUI* with Xcode 11.4 was the drag and drop. Finally, we can use drag and drop API not only with *UIKit* but also with *SwiftUI*. This week we will learn all about drag and drop interactions in *SwiftUI*. 
 
 #### Basics
-Drag and drop interaction allows users to send data between two apps or two scenes of the same app. For example, you can run Safari and Notes apps side-by-side and drag the links from Safari to Note app. As part of the post, we will build a bookmarking app that uses drag and drop to save or open links stored in the app.
+Drag and drop interactions allow users to send data between two apps or two scenes of the same app. For example, you can run Safari and Notes apps side-by-side and drag the links from Safari to Notes app. As part of the post, we will build a bookmarking app that uses drag and drop to save or open links stored in the app.
 
 #### Drag
 *SwiftUI* provides *onDrag* modifier that allows us to register a closure that will create and return *NSItemProvider*. *NSItemProvider* is the class that describes the content and the type of draggable item. Let's take a look at how we can use *onDrag* modifier.
@@ -33,7 +33,7 @@ struct BookmarksList: View {
 As you can see in the example above, all we need to do is to use *onDrag* modifier that returns an instance of *NSItemProvider*. Now you can run the app on the iPad simulator side-by-side with Safari and try to drag and drop the link from our app to Safari.
 
 #### Drop
-Unlike drag operation, drop interaction is a little bit complicated. *SwiftUI* gave us three overloads of *onDrop* modifier. The most interesting one is the overload that provides *DropDelegate*. *DropDelegate* is the protocol that we can implement to control drop interaction. Let's take a look at the quick example.
+Unlike drag operation, drop interaction is a little bit complicated. *SwiftUI* gave us three overloads of *onDrop* modifier. The most interesting one is the overload that accepts *DropDelegate*. *DropDelegate* is the protocol that we can implement to control drop interaction. Let's take a look at the quick example.
 
 ```swift
 struct BookmarksDropDelegate: DropDelegate {
@@ -60,7 +60,7 @@ struct BookmarksDropDelegate: DropDelegate {
 }
 ```
 
-Here we have a *BookmarksDropDelegate* struct that conforms *DropDelegate* protocol. *DropDelegate* protocol requires us to implement *performDrop* function. This function should return *true* whenever the drop succeeded or *false* if failed. *performDrop* function has a *DropInfo* parameter, which provides us the information about items that should be dropped.
+Here we have a *BookmarksDropDelegate* struct that conforms to *DropDelegate* protocol. *DropDelegate* protocol requires us to implement *performDrop* function. This function should return *true* whenever the drop succeeded or *false* if it failed. *performDrop* function has *DropInfo* parameter, which provides us the information about items that should be dropped.
 
 Using *DropInfo*, we can filter items and accept only links. Apple uses *Uniform Type Identifiers* to identify the type of data. We want to receive only URLs that's why we use **public.link** identifier.
 
@@ -90,12 +90,12 @@ struct BookmarksList: View {
     }
 ```
 
-Unfortunately, onDrop modifier doesn't affect the list or any view that inside a *List*. It works well with *VStack*, *ScrollView*, and other views. But it doesn't work with the *List*.
+Unfortunately, *onDrop* modifier doesn't affect the *List* or any view that inside a *List*. It works well with *VStack*, *ScrollView*, and other views. But it doesn't work with the *List*.
 
-I hope it is a bug, and Apple will fix it soon. We can replace the *List* with *ScrollView* to make onDrop modifier working. But in this case, we lose all the features of the *List* component.
+I hope it is a bug, and Apple will fix it soon. We can replace the *List* with *ScrollView* to make *onDrop* modifier working. But in this case, we will lose all the features of the *List* component.
 
 #### Insert
-Gladly, *SwiftUI* provides us another modifier that we can use on *ForEach* view. *onInsert* modifier looks like a simplified version of onDrop modifier, and it works inside *List* component. Let's take a look at quick usage example of *onInsert* modifier.
+Gladly, *SwiftUI* provides us another modifier that we can use on *ForEach* view. *onInsert* modifier looks like a simplified version of *onDrop* modifier, and it works inside *List* component. Let's take a look at the quick usage example of *onInsert* modifier.
 
 ```swift
 struct BookmarksList: View {
