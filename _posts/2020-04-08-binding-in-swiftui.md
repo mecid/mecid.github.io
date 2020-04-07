@@ -146,7 +146,7 @@ extension Store {
 }
 ```
 
-As you can see, we generate a computed binding that reads a part of the state and emits an action through reducer to modify the state when needed.
+As you can see, we generate a computed binding that reads a part of the state and emits an action through reducer to modify the state when needed. You might need this type of bindings when you, for example, have a settings screen that describes some checkboxes bound to the app state.
 
 > To learn more about implementing Redux in SwiftUI, take a look at my ["Redux-like state container in SwiftUI" post](/2019/09/18/redux-like-state-container-in-swiftui/).
 
