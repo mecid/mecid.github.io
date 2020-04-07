@@ -7,7 +7,7 @@ image: /public/swiftui.png
 Binding is one of the several property wrappers that *SwiftUI* presents us to control data flow in the app. Binding provides us a reference like access to a value type. This week we will understand how and when to use binding. We will learn how to avoid common mistakes while using binding in *SwiftUI*.
 
 #### Basics
-Binding is a property wrapper type that can read and write a value owned by a source of truth. We have several possible types of sources of truth in *SwiftUI*. It can be *EnvironmentObject*, *ObservedObject* or *State*. All these property wrappers provide a projection value, which is binding. Let's take a look at the quick example.
+Binding is a property wrapper type that can read and write a value owned by a source of truth. We have several possible types of sources of truth in *SwiftUI*. It can be *EnvironmentObject*, *ObservedObject* or *State*. All these property wrappers provide a projected value, which is binding. Let's take a look at the quick example.
 
 ```swift
 import SwiftUI
@@ -130,7 +130,7 @@ final class Store<State, Action>: ObservableObject {
 }
 ```
 
-Here we have a concept of store that holds the entire state of the app. All changes to the state come from the unidirectional flow. Reducer is the single place that can mutate the state of the app. By using computed binding, we can provide read-only access to the state and respect the unidirectional flow by sending action to the reducer.
+Here we have a concept of store that holds the entire state of the app. All changes to the state come from the unidirectional flow. Reducer is the single place where we can mutate the state of the app. By using computed binding, we can provide read-only access to the state and respect the unidirectional flow by sending action to the reducer.
 
 ```swift
 extension Store {
