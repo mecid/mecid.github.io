@@ -107,7 +107,7 @@ extension Sequence {
 
 You can see that I use the *indexed* function to generate an array of tuples that provides both the element and its index. It allows me to read the item to render it in place and access the binding using the item's index.
 
-> To learn more about building editable forms using *Form* component, take a look at my "[Building forms with SwiftUI](/2019/06/19/building-forms-with-swiftui/)" post.
+> To learn more about building editable forms using *Form* component, take a look at my ["Building forms with SwiftUI"](/2019/06/19/building-forms-with-swiftui/) post.
 
 #### Computed Binding
 Usually, we access binding using a projected value of a source of truth. In this section, we will talk about another way of creating a binding. Binding is a two-way connection between the data and a view that access it. *SwiftUI* provides a way to construct a binding using getter and setter closures. In this case, we are responsible for calculating the value inside these closures. It is hard to imagine where we can use it, but it plays very well with Redux-like state containers.
