@@ -75,4 +75,4 @@ struct MessageView: View {
 As you can see in the example above, we use layoutPriority modifier to change the order of the layout process. SwiftUI will start the size proposing process with the latest view inside the HStack because it has the highest priority in the view hierarchy.
 
 #### Conclusion
-This week we learned another exciting feature of SwiftUI. To be honest, I don't use layout priorities a lot. Usually, I'm able to build the needed layout without altering priorities, but it is always good to know that we have this tool in our toolbox.
+This week we learned another exciting feature of SwiftUI. To be honest, I don't use layout priorities a lot. Usually, I'm able to build the needed layout without altering priorities, but it is always good to know that we have this tool in our toolbox. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
