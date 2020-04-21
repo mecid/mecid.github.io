@@ -110,7 +110,7 @@ init(service: GithubService) {
 }
 ```
 
-As you can see in the example, I ask the publisher to retry three times before replacing an error with an empty array.
+As you can see in the example above, I ask the publisher to retry three times before replacing an error with an empty array.
 
 #### Catch operator
 Both retry and replace error operators are built on top of the *catch* operator. The *catch* operator allows us to replace a failed publisher with a new one. After that, the chain will use the new publisher to emit values.
