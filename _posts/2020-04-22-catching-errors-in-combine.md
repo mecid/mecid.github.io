@@ -84,7 +84,10 @@ As you can see, I have inserted *replaceError* operator with an empty array. Pub
 init(service: GithubService) {
     cancellable = $query
         .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-        .flatMap { service.searchPublisher(matching: $0).replaceError(with: []) }
+        .flatMap { 
+            service.searchPublisher(matching: $0)
+                .replaceError(with: []) 
+        }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
         .sink(receiveValue: { [weak self] in self?.repos = $0})
