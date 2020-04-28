@@ -22,6 +22,8 @@ struct Example1: View {
 
 We try to simulate the displaying of very long text. I also use the frame modifier to limit available space. As you can see in the example above, the text doesn't fit the available space, and the *SwiftUI* layout system decides to truncate it.
 
+![fixed-size](/public/fixedSize1.png)
+
 > To learn more about the logic behind the layout system of SwiftUI, take a look at my ["Layout priorities in SwiftUI" post](/2020/04/15/layout-priorities-in-swiftui/).
 
 Now let's take a look at the same example but with the fixed size modifier attached to the text component.
@@ -39,6 +41,8 @@ struct Example1: View {
 ```
 
 As you can see in the code sample above, the fixed size modifier allows to text to ignore the frame and use as much space as needed to render the content. The text component simply exceeds the provided frame by continuing the rendering outside of the frame. You can use the *clipped* modifier after the frame modifier to cut the content inside the provided rectangle.
+
+![fixed-size](/public/fixedSize2.png)
 
 > To learn more about clipping and changing the shape of a view, take a look at my ["Customizing the shape of views in SwiftUI" post](/2020/02/12/customizing-the-shape-of-views-in-swiftui/).
 
