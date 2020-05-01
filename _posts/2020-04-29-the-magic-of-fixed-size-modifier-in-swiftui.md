@@ -4,7 +4,7 @@ image: /public/swiftui.png
 layout: post
 ---
 
-You might saw some examples of fixed size modifier usages while trying to fix the issue with multiline text in *SwiftUI*. But do you know what exactly fixed size modifier does? How does it work? Today I want to talk about all the magic and power behind the fixed size modifier.
+You may have seen some examples of fixed size modifier usage while trying to fix the issue with multiline text in *SwiftUI*. But do you know what exactly fixed size modifier does? How does it work? Today I want to talk about all the magic and power behind the fixed size modifier.
 
 #### Basics
 *SwiftUI* documentation says that the fixed size modifier fixes this view at its ideal size. I think the best way to understand how the fixed size modifier works is the visual example. Let's take a look at a small sample.
