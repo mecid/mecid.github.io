@@ -3,7 +3,7 @@ title: Building calendar without UICollectionView in SwiftUI
 layout: post
 image: /public/calendar.png
 ---
-One of the most expected features of SwiftUI 2.0 is a SwiftUI alternative to UICollectionView. UICollectionView provides us an easy way to build super custom interfaces like calendar or photos grid. But today, I want to show you that we can create a calendar view without UICollectionView by using only the SwiftUI layout system.
+One of the most expected features of *SwiftUI* 2.0 is a *SwiftUI* alternative to *UICollectionView*. *UICollectionView* provides us an easy way to build super custom interfaces like calendar or photos grid. But today, I want to show you that we can create a calendar view without *UICollectionView* by using only the *SwiftUI* layout system.
 
 Let's start by describing what we want to achieve with our calendar view. The calendar view is a container view that displays its child views using a calendar-based grid. These are my requirements for a calendar view:
 1. It should scroll vertically through months.
@@ -26,9 +26,9 @@ struct CalendarView<DateView>: View where DateView: View {
 }
 ```
 
-Here we define our CalendarView struct that accepts date interval in which it needs to display dates and a @ViewBuilder closure that we will use to build day cells. ViewBuilder is a great way to extract view construction logic and provide a DSL like syntax.
+Here we define our *CalendarView* struct that accepts date interval in which it needs to display dates and a *@ViewBuilder* closure that we will use to build day cells. *ViewBuilder* is a great way to extract view construction logic and provide a DSL like syntax.
 
-> I already talked about @ViewBuilder function builder on my blog multiple times. To learn more, take a look at my "The power of @ViewBuilder in SwiftUI" post.
+> I already talked about *@ViewBuilder* function builder on my blog multiple times. To learn more, take a look at my "The power of @ViewBuilder in SwiftUI" post.
 
 ```swift
 struct CalendarView<DateView>: View where DateView: View {
@@ -64,11 +64,11 @@ struct CalendarView<DateView>: View where DateView: View {
 }
 ```
 
-Now we can display a scroll view that has a vertical stack as its root view. We use a calendar to generate all months in the date interval that the user provides us. As you can see, we use a system calendar that SwiftUI put in the environment. SwiftUI will also update the view as soon as the user changes the calendar in system settings.
+Now we can display a scroll view that has a vertical stack as its root view. We use a calendar to generate all months in the date interval that the user provides us. As you can see, we use a system calendar that *SwiftUI* put in the environment. *SwiftUI* will also update the view as soon as the user changes the calendar in system settings.
 
-> As I said before, the environment is one of my favorite features of SwiftUI. To learn more about the environment feature, take a look at my "The power of Environment in SwiftUI" post.
+> As I said before, the environment is one of my favorite features of *SwiftUI*. To learn more about the environment feature, take a look at my "The power of Environment in SwiftUI" post.
 
-As you can see, I decided to create the separated MonthView struct that displays a single month in our calendar view. SwiftUI allows us to compose multiple views to build an excellent view hierarchy. I want to note that I reuse MonthView in other parts of my app to present a calendar preview.
+As you can see, I decided to create the separated MonthView struct that displays a single month in our calendar view. *SwiftUI* allows us to compose multiple views to build an excellent view hierarchy. I want to note that I reuse MonthView in other parts of my app to present a calendar preview.
 
 ```swift
 struct MonthView<DateView>: View where DateView: View {
@@ -105,7 +105,7 @@ struct MonthView<DateView>: View where DateView: View {
 }
 ```
 
-As you can see in the code example above, MonthView struct is a plain view that uses the system provided calendar to generate weeks and render them using a vertical stack with a collection of week views.
+As you can see in the code example above, *MonthView* struct is a plain view that uses the system provided calendar to generate weeks and render them using a vertical stack with a collection of week views.
 
 ```swift
 struct WeekView<DateView>: View where DateView: View {
@@ -148,7 +148,7 @@ struct WeekView<DateView>: View where DateView: View {
 }
 ```
 
-Week view is the latest piece of my calendar view. It also uses the system provided calendar to generate days inside the given week and renders them using a horizontal stack by applying passed @ViewBuilder closure to construct a view per day.
+Week view is the latest piece of my calendar view. It also uses the system provided calendar to generate days inside the given week and renders them using a horizontal stack by applying passed *@ViewBuilder* closure to construct a view per day.
 
 ```swift
 struct RootView: View {
@@ -181,4 +181,4 @@ In the example above, you see how we can use our calendar view. I want you to pa
 Here is the final result of our work. I think it looks nice, at least I will use it in my next app. You can access full source code via Github Gist.
 
 #### Conclusion
-I still think that we will have a UICollectionView alternative later this year. But I need to mention that SwiftUI has such a friendly layout system that we can use to build great views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+I still think that we will have a *UICollectionView* alternative later this year. But I need to mention that *SwiftUI* has such a friendly layout system that we can use to build great views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
