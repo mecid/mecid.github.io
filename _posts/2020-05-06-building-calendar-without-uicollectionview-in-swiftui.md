@@ -28,7 +28,7 @@ struct CalendarView<DateView>: View where DateView: View {
 
 Here we define our *CalendarView* struct that accepts date interval in which it needs to display dates and a *@ViewBuilder* closure that we will use to build day cells. *ViewBuilder* is a great way to extract view construction logic and provide a DSL like syntax.
 
-> I already talked about *@ViewBuilder* function builder on my blog multiple times. To learn more, take a look at my "The power of @ViewBuilder in SwiftUI" post.
+> I already talked about *@ViewBuilder* function builder on my blog multiple times. To learn more, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
 ```swift
 struct CalendarView<DateView>: View where DateView: View {
@@ -66,7 +66,7 @@ struct CalendarView<DateView>: View where DateView: View {
 
 Now we can display a scroll view that has a vertical stack as its root view. We use a calendar to generate all months in the date interval that the user provides us. As you can see, we use a system calendar that *SwiftUI* put in the environment. *SwiftUI* will also update the view as soon as the user changes the calendar in system settings.
 
-> As I said before, the environment is one of my favorite features of *SwiftUI*. To learn more about the environment feature, take a look at my "The power of Environment in SwiftUI" post.
+> As I said before, the environment is one of my favorite features of *SwiftUI*. To learn more about the environment feature, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 As you can see, I decided to create the separated MonthView struct that displays a single month in our calendar view. *SwiftUI* allows us to compose multiple views to build an excellent view hierarchy. I want to note that I reuse MonthView in other parts of my app to present a calendar preview.
 
@@ -176,9 +176,11 @@ struct RootView: View {
 
 In the example above, you see how we can use our calendar view. I want you to pay attention to the way that I use to construct a day view. I call it the template view. I create a hidden text with the template value that has the maximal width. I show the real content as the overlay of the template view. This approach allows me to have day views of the same size. We can use the frame modifier instead, but in this case, we will break dynamic type support by limiting the space.
 
+> To learn more about benefits of view composition, take a look at my "[View composition in SwiftUI](/2019/10/30/view-composition-in-swiftui/)" post.
+
 ![calendar-screenshot](/public/calendar.png)
 
-Here is the final result of our work. I think it looks nice, at least I will use it in my next app. You can access full source code via Github Gist.
+Here is the final result of our work. I think it looks nice, at least I will use it in my next app. You can access full source code via [Github Gist](https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec).
 
 #### Conclusion
 I still think that we will have a *UICollectionView* alternative later this year. But I need to mention that *SwiftUI* has such a friendly layout system that we can use to build great views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
