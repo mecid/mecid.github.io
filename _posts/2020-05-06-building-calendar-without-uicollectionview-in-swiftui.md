@@ -176,7 +176,7 @@ struct RootView: View {
 
 In the example above, you see how we can use our calendar view. I want you to pay attention to the way that I use to construct a day view. I call it the template view. I create a hidden text with the template value that has the maximal width. I show the real content as the overlay of the template view. This approach allows me to have day views of the same size. We can use the frame modifier instead, but in this case, we will break dynamic type support by limiting the space.
 
-> To learn more about benefits of view composition, take a look at my "[View composition in SwiftUI](/2019/10/30/view-composition-in-swiftui/)" post.
+> To learn more about benefits of view composition, take a look at my ["View composition in SwiftUI"](/2019/10/30/view-composition-in-swiftui/) post.
 
 ![calendar-screenshot](/public/calendar.png)
 
