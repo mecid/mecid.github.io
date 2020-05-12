@@ -105,7 +105,11 @@ Button(action: { print("Hello!")}) {
         Text("00")
             .font(.title)
             .hidden()
-            .overlay(Image("icon").resizable())
+            .overlay(
+                Image("icon")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit))
+            )
         Text("Press me")
     }
 }
