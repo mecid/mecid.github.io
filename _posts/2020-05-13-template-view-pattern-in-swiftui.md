@@ -109,7 +109,7 @@ Button(action: { print("Hello!")}) {
                 Image("icon")
                     .resizable()
                     .scaledToFit()
-                )
+            )
         Text("Press me")
     }
 }
