@@ -68,6 +68,7 @@ final class Store<State, Action>: ObservableObject {
     func send(_ action: Action) {
         reducer(&state, action)
     }
+}
 ```
 
 *State -> View -> Action -> State -> View*
