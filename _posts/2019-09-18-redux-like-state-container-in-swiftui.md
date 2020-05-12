@@ -194,3 +194,8 @@ Today we learned how to build *Redux-like* state container with *side-effects* i
 1. Redux-like state container in SwiftUI. Basics
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
 3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)
+
+#### References
+1. [The Elm Architecture](https://guide.elm-lang.org/architecture/)
+2. [SwifTEA](https://github.com/weegigs/swiftea)
+3. [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture)
