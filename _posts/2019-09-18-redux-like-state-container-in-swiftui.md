@@ -197,5 +197,5 @@ Today we learned how to build *Redux-like* state container with *side-effects* i
 
 #### References
 1. [The Elm Architecture](https://guide.elm-lang.org/architecture/)
-2. [SwifTEA](https://github.com/weegigs/swiftea)
+2. [The Elm Architecture in Swift](https://github.com/chriseidhof/tea-in-swift)
 3. [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture)
