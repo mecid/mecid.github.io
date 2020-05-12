@@ -108,8 +108,8 @@ Button(action: { print("Hello!")}) {
             .overlay(
                 Image("icon")
                     .resizable()
-                    .aspectRatio(contentMode: .fit))
-            )
+                    .scaledToFit()
+                )
         Text("Press me")
     }
 }
