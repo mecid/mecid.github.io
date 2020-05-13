@@ -27,7 +27,7 @@ struct WeekView: View {
 
 ![template-view](/public/template1.png)
 
-Pretty easy, right? But this code has one issue. Every circle inside the horizontal stack has a different size based on its text content. The fundamental layout system rule says that every view in *SwiftUI* calculates its size and sends it back to the parent.
+Pretty easy, right? But this code has one issue. Every view inside the horizontal stack has a different size based on its text content. The fundamental layout system rule says that every view in *SwiftUI* calculates its size and sends it back to the parent.
 
 > To learn more about the layout system in *SwiftUI*, take a look at my ["Layout priorities in SwiftUI"](/2020/04/15/layout-priorities-in-swiftui/) post.
 
@@ -52,7 +52,7 @@ struct WeekView: View {
 
 ![template-view](/public/template2.png)
 
-Looks nice, but what about *Dynamic Type*? My users can change the font size in system settings, and I want respect that font size configuration. It is impossible with *frame* modifier because it just sets the size of the view and doesn't support *Dynamic Type*. Let's what happens when I increase the font size in system settings.
+Looks nice, but what about *Dynamic Type*? My users can change the font size in system settings, and I want respect that font size configuration. It is impossible with *frame* modifier because it just sets the size of the view and doesn't support *Dynamic Type*. Let's see what happens when I increase the font size in system settings.
 
 ![template-view](/public/template3.png)
 
@@ -81,9 +81,11 @@ struct WeekView: View {
 
 It might look strange, but let me describe what happens here. First of all, I create a hidden text component with some stub value that I think should have the largest width. *SwiftUI* doesn't show a hidden view but still calculates its size, and this hidden view supports *Dynamic Type*.
 
+We use an overlay to display content on top of the background that we have configured using the *template-view*. The benefit of using overlay is the ability to place the view in the center of *template-view* and limit its size with the size of *template-view*.
+
 ![template-view](/public/template4.png)
 
-We use an overlay to display content on top of the background that we have configured using the *template-view*. The benefit of using overlay is the ability to place the view in the center of *template-view* and limit its size with the size of *template-view*. Remember that we have to use the same font size both for *template-view* and the overlay to support *Dynamic Type* and to keep layout correct. As soon as the user changes the font size in system settings, *template-view* reacts by recalculating its size and providing more or less room for its overlay depending on user preferred font size.
+Remember that we have to use the same font size both for *template-view* and the overlay to support *Dynamic Type* and to keep layout correct. As soon as the user changes the font size in system settings, *template-view* reacts by recalculating its size and providing more or less room for its overlay depending on user preferred font size.
 
 #### Dynamic Type for images
 *Dynamic Type* is not something connected only to text. Assume that you have a button with an image and text label.
