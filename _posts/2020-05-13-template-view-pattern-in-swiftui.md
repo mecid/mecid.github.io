@@ -67,7 +67,7 @@ struct WeekView: View {
     var body: some View {
         HStack {
             ForEach(self.heartRates, id: \.self) { hr in
-                Text("00")
+                Text("190")
                     .hidden()
                     .padding(4)
                     .background(Color.purple)
