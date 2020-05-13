@@ -29,7 +29,7 @@ struct WeekView: View {
 
 Pretty easy, right? But this code has one issue. Every circle inside the horizontal stack has a different size based on its text content. The fundamental layout system rule says that every view in SwiftUI calculates its size and sends it back to the parent.
 
-> To learn more about the layout system in SwiftUI, take a look at my "Layout priorities in SwiftUI" post.
+> To learn more about the layout system in SwiftUI, take a look at my ["Layout priorities in SwiftUI"](/2020/04/15/layout-priorities-in-swiftui/) post.
 
 I want to make all views in the horizontal stack the same size. We can easily solve the issue by adding the frame modifier to fix the size for every view.
 
@@ -55,6 +55,8 @@ struct WeekView: View {
 Looks nice, but what about Dynamic Type? My users can change the font size in system settings, and I want respect that font size configuration. It is impossible with frame modifier because it just sets the size of the view and doesn't support Dynamic Type. Let's what happens when I increase the font size in system settings.
 
 ![template-view](/public/template3.png)
+
+> To learn more about the benefits of Dynamic Type, take a look at my ["Dynamic Type in SwiftUI"](/2019/10/09/dynamic-type-in-swiftui/) post.
 
 As you can see, the frame modifier creates additional problems for us. It is a perfect time to introduce a template-view here.
 
