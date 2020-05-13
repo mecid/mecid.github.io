@@ -72,7 +72,7 @@ struct WeekView: View {
                     .padding(4)
                     .background(Color.purple)
                     .cornerRadius(4)
-                    .overlay(Text(String(hr)).font(.largeTitle))
+                    .overlay(Text(String(hr)))
             }
         }
     }
