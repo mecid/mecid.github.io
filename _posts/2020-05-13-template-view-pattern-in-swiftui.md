@@ -119,7 +119,7 @@ Button(action: { print("Hello!")}) {
 }
 ```
 
-As you can see, we use the very same approach by creating a template-view. We display a resizable image in the overlay of the hidden text. *SwiftUI* resizes the image in the overlay as soon as the template-view changes according to user's font settings.
+As you can see, we use the very same approach by creating a template-view. We display a resizable image in the overlay of the hidden text. *SwiftUI* resizes the image in the overlay as soon as the template-view changes according to system font settings.
 
 #### Conclusion
 *Dynamic Type* is essential, and I believe that every app should support and respect user-defined font size. *Template-view* is a great way to limit the size of your view but also appreciate the *Dynamic Type*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
