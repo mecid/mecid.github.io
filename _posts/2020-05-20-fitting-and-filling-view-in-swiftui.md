@@ -7,6 +7,8 @@ This week I want to continue the topic of layout system in SwiftUI. SwiftUI layo
 
 A few weeks ago, we will talk about layout priorities in SwiftUI. Let me refresh your memory by describing how the layout system works in SwiftUI. Usually, a parent view proposes the available space to its child and asks to calculate its size. Then the parent view places the child in the center of available space. Pretty easy, right?
 
+> To learn more about the SwiftUI layout engine, take a look at my "[Layout priorities in SwiftUI](/2020/04/15/layout-priorities-in-swiftui/)" post.
+
 But how exactly view calculates its size? There are two types of views: fitting and filling.
 
 #### Fitting views
@@ -27,8 +29,6 @@ I think the border modifier is the best way to highlight the view's frame. As yo
 #### Filling views
 A filling view tries to fill all available space provided by its parent view. Usually, this view doesn't have a proper way to understand its content. That's why it fills all the free space. SwiftUI provides us a bunch of filling views. For example, shapes, colors, spacers, dividers, and GeometryReader. 
 
-Yes, yes. GeometryReader is also a filling view. GeometryReader always consumes all the available space provided by its parent and allows you to place its child using a manual calculation based on the given instance of GeometryProxy that holds all the needed information about available space and safe area. Let's take a look at another example.
-
 ```swift
 struct RootView: View {
     var body: some View {
@@ -38,6 +38,10 @@ struct RootView: View {
     }
 }
 ```
+
+Yes, yes. GeometryReader is also a filling view. GeometryReader always consumes all the available space provided by its parent and allows you to place its child using a manual calculation based on the given instance of GeometryProxy that holds all the needed information about available space and safe area. Let's take a look at another example.
+
+> To learn more about the benefits of GeometryReader view, take a look at my "[Building BarChart with Shape API in SwiftUI](/2019/08/14/building-barchart-with-shape-api-in-swiftui/)" post.
 
 The best way to manage the size of a filling view is by using the frame modifier. 
 
