@@ -19,7 +19,7 @@ struct RootView: View {
 
 ![image](/public/image1.png)
 
-We create an image by providing the name from the asset catalog. By default, the image view fits the source image. It means it has the size of its source image. Let's add the frame modifier to make our picture bigger.
+We create an image by providing the name from the asset catalog. By default, the image view fits the source image. It means it has the size of its original bitmap. Let's add the *frame modifier* to make our picture bigger.
 
 ```swift
 struct RootView: View {
@@ -34,7 +34,7 @@ struct RootView: View {
 
 ![image](/public/image2.png)
 
-As you can see, the frame modifier doesn't affect the size of our image. It happens because image by default chooses its size by measuring source image. We can change this behavior by adding the resizable modifier to the image.
+As you can see, the frame modifier doesn't affect the size of our image. It happens because image by default chooses its size by measuring source bitmap. We can change this behavior by adding the resizable modifier to the image.
 
 ```swift
 struct RootView: View {
@@ -64,7 +64,7 @@ struct RootView: View {
 #### Image interpolation
 As we saw before, the image becomes a bit blurry when we try to resize it and fill the entire screen. It happens in the result of the interpolation process that *SwiftUI* applies to an image when stretching it.
 
-When you stretch the image, *SwiftUI* replaces every pixel with the nearest pixel in the output. While upscaling, it means multiple pixels of the same color will be present. As a result, stretching introduces jaggedness. To solve the issue, *SwiftUI* uses blur to make the stretching process invisible. We can easily control the interpolation process by using the interpolation modifier on the image. For example, this is how we can completely disable it.
+When you stretch the image, *SwiftUI* replaces every pixel with the nearest pixel in the output. While upscaling, it means multiple pixels of the same color will be present. As a result, stretching introduces jaggedness. To solve the issue, *SwiftUI* uses blur to make the stretching process invisible. We can easily control the interpolation process by using the *interpolation modifier* on the image. For example, this is how we can completely disable it.
 
 ```swift
 struct RootView: View {
@@ -99,7 +99,7 @@ struct RootView: View {
 
 ![image](/public/image6.png)
 
-While tiled resizing, *SwiftUI* tries to fill the entire space with the image by duplicating its original source. It might be useful when you want to fill the area with the texture. You can also specify the part of the image that you want to tile. The resizable modifier accepts the capInsets parameter that allows us to choose the tiling part of the picture.
+*SwiftUI* tries to fill the entire space with the image by duplicating its original source. It might be useful when you want to fill the area with the texture. You can also specify the part of the image that you want to tile. The *resizable modifier* accepts the *capInsets* parameter that allows us to choose the tiling part of the picture.
 
 ```swift
 struct RootView: View {
@@ -136,4 +136,4 @@ struct RootView: View {
 *SwiftUI* automatically sets the rendering mode to template whenever you use it inside a *NavigationLink* or *NavigatioBarItem*. Sometimes it is something that we don't except, and we can use *renderingMode* modifier to change the default mode.
 
 #### Conclustion
-*SwiftUI*'s image component provides us cool functionality out of the box. I believe we cover today all the hidden games of the image view. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+*SwiftUI*'s image component provides us a really cool set of features out of the box. I believe we cover today all the hidden gems of the image view. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
