@@ -135,5 +135,5 @@ struct RootView: View {
 
 *SwiftUI* automatically sets the rendering mode to template whenever you use it inside a *NavigationLink* or *NavigatioBarItem*. Sometimes it is something that we don't except, and we can use *renderingMode* modifier to change the default mode.
 
-#### Conclustion
+#### Conclusion
 *SwiftUI*'s image component provides us a really cool set of features out of the box. I believe we cover today all the hidden gems of the image view. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
