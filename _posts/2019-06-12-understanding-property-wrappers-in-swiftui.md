@@ -69,12 +69,12 @@ struct ProductsView: View {
 }
 ```
 
-We use @*Binding* to mark *showFavorited* property inside the *FilterView*. We also use *$* to pass a binding reference, because without *$* *Swift* will pass a copy of the value instead of passing bindable reference. *FilterView* can read and write the value of *ProductsView*'s *showFavorited* property, but it can't observe the changes using this binding. As soon as *FilterView* changes value of *showFavorited* property, *SwiftUI* will recreate the *ProductsView* and *FilterView* as its child.
+We use @*Binding* to mark *showFavorited* property inside the *FilterView*. We also use *$* to pass a binding reference, because without *$* *Swift* will pass a copy of the value instead of passing bindable reference. *FilterView* can read and write the value of *ProductsView*'s *showFavorited* property. As soon as *FilterView* changes value of *showFavorited* property, *SwiftUI* will recreate the *ProductsView* and *FilterView* as its child.
 
 > @*Binding* provides a *reference* like access for a `value` type. That's why it should be used only with value types. If `Value` of Binding is not value semantic, the updating behavior for any views that make use of the resulting `Binding` is unspecified.
 
 #### @ObservedObject
-@*ObservedObject* work very similarly to @*State* *Property Wrapper*, but the main difference is that we can share it between multiple independent *Views* which can subscribe and observe changes on that object, and as soon as changes appear *SwiftUI* rebuilds all *Views* bound to this object. Let's take a look at an example.
+We should use @*ObservedObject* to handle data that lives outside of *SwiftUI*, like your business logic. We can share it between multiple independent *Views* which can subscribe and observe changes on that object, and as soon as changes appear *SwiftUI* rebuilds all *Views* bound to this object. Let's take a look at an example.
 
 ```swift
 import Combine
