@@ -30,7 +30,7 @@ I think the border modifier is the best way to highlight the view's frame. As yo
 #### Filling views
 A filling view tries to fill all available space provided by its parent view. Usually, this view doesn't have a proper way to understand its content. That's why it fills all the free space. *SwiftUI* provides us a bunch of filling views. For example, shapes, colors, spacers, dividers, and *GeometryReader*. 
 
-Yes, yes. *GeometryReader* is also a filling view. *GeometryReader* always consumes all the available space provided by its parent and allows you to place its child using a manual calculation based on the given instance of GeometryProxy that holds all the needed information about available space and safe area. Let's take a look at another example.
+Yes, yes. *GeometryReader* is also a filling view. *GeometryReader* always consumes all the available space provided by its parent and allows you to place its child using a manual calculation based on the given instance of *GeometryProxy* that holds all the needed information about available space and safe area. Let's take a look at another example.
 
 ```swift
 struct RootView: View {
