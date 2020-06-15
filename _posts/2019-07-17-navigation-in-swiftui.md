@@ -1,6 +1,7 @@
 ---
 title: Navigation in SwiftUI
 post: layout
+category: Mastering SwiftUI views
 ---
 
 This week I want to talk about *Navigation in SwiftUI*. *SwiftUI* provides both declarative and imperative ways of implementing navigation in your apps. Today we will cover two ways of *Master-Detail* navigation available in *SwiftUI*. We will learn how use *NavigationLink*, and how to do programmatic navigation in *SwiftUI*.

@@ -1,6 +1,7 @@
 ---
 title: The power of Closures in SwiftUI
 layout: post
+category: View Composition
 ---
 
 One of my favorite design patterns in *UIKit* development was a [*Delegate pattern*](/2019/05/29/the-power-of-delegate-design-pattern/). *Delegate pattern* is very straightforward, and everybody knows how to use it. In the *Functional Programming* world, we usually replace delegates with closures. This week we will learn how to use closures to make *SwiftUI* views composable and decoupled.

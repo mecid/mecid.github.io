@@ -2,6 +2,7 @@
 title: Optimizing views in SwiftUI using EquatableView
 layout: post
 image: /public/equatable.png
+category: View Composition
 ---
 
 *SwiftUI* provides us a very fast and easy to use diffing algorithm, but as you might know, diffing is a linear operation. It means that diffing will be very fast for simple layouts and can take some time for a complicated layout. 

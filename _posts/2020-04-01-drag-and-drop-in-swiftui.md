@@ -2,6 +2,7 @@
 title: Drag and drop in SwiftUI
 layout: post
 image: /public/draganddrop.png
+category: Interactions
 ---
 
 Another *iPadOS* feature released in *SwiftUI* with Xcode 11.4 was the drag and drop. Finally, we can use drag and drop API not only with *UIKit* but also with *SwiftUI*. This week we will learn all about drag and drop interactions in *SwiftUI*. 

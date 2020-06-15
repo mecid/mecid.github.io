@@ -2,6 +2,7 @@
 title: SwiftUI learning curve in 2019
 layout: post
 image: /public/swiftui.png
+category: Meta
 ---
 
 This year we had a massive change in iOS development world. We got a *SwiftUI* framework. *SwiftUI* is a brand new declarative way of building apps for Apple ecosystem. Let's build our learning curve. I want to share with you the list of all the needed posts to learn *SwiftUI*.

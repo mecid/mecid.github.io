@@ -2,6 +2,7 @@
 title: Customizing the shape of views in SwiftUI
 layout: post
 image: /public/mask.png
+category: Mastering SwiftUI views
 ---
 
 *SwiftUI* provides us several exciting ways to change the shape of our views. It allows clipping, masking, and a few other operations on the shape of views. This week I want to talk to you about altering view's shape in *SwiftUI*.

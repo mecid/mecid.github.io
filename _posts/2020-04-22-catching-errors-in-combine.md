@@ -2,6 +2,7 @@
 title: Catching errors in Combine
 layout: post
 image: /public/catch.png
+category: Architecture
 ---
 
 The Combine framework provides a declarative *Swift API* for processing values over time. It is another excellent framework that released side-by-side with *SwiftUI*. I already covered it multiple times on my blog, but today I want to talk about one of the key aspects of data processing. Today we will learn how to handle errors during data processing using the Combine framework.

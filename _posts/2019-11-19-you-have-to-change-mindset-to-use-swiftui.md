@@ -1,6 +1,7 @@
 ---
 title: You have to change mindset to use SwiftUI
 layout: post
+category: View Composition
 ---
 
 Last week I saw that the community tries to move *UIKit* development patterns to *SwiftUI*. But I'm sure that the best way to write efficient *SwiftUI* is to forget everything about *UIKit* and entirely change your mindset in terms of User Interface development. This week we will learn the main differences between *UIKit* and *SwiftUI* development.

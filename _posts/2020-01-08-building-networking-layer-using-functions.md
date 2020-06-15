@@ -2,6 +2,7 @@
 title: Building networking layer using functions
 layout: post
 image: /public/networking.png
+category: Architecture
 ---
 
 This week I want to talk about building a networking layer in *Swift* using *Functional programming*. *Functional programming* is a way of making programs using *pure functions and function composition*. Let's see how we can use it to build a flexible and composable network layer.

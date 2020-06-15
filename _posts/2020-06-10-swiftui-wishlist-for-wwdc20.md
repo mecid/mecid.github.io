@@ -2,6 +2,7 @@
 title: SwiftUI wishlist for WWDC20
 layout: post
 image: /public/swiftui.png
+category: Meta
 ---
 
 We already started collecting our questions for Apple engineers. On the other hand, I decided to share with you my *SwiftUI* wishlist for WWDC20. This week we will talk about possible additions and changes in *SwiftUI*. I will show you also *API* that I expect to see during the next release of *SwiftUI*.

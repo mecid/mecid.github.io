@@ -2,6 +2,7 @@
 title: Using UIKit views in SwiftUI
 layout: post
 image: /public/map.png
+category: View Composition
 ---
 
 A few weeks ago, we talked about building views like [*PagerView*](/2019/12/25/building-pager-view-in-swiftui/) and [*BottomSheetView*](/2019/12/11/building-bottom-sheet-in-swiftui/) from scratch in *SwiftUI*. *SwiftUI* is pretty young and misses some components that we expect to have out of the box. But it provides all the needed APIs to build whatever we want. However, sometimes we need to reuse *UIKit* views instead of making the *SwiftUI* versions. This week I want to talk to you about using *UIKit* views in *SwiftUI*.

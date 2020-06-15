@@ -1,6 +1,7 @@
 ---
 title: Making real-world app with SwiftUI
 layout: post
+category: Data Flow
 ---
 
 That is WWDC week: everybody is so excited about so many new things like SwiftUI, Dark Mode, updateable Core ML models, etc. I will try to cover all the new stuff during the upcoming weeks. Let's start with *SwiftUI*. *SwiftUI* is an entirely new approach to building apps for the Apple ecosystem.
@@ -112,7 +113,7 @@ Another interesting fact here is *@EnvironmentObject*. It is a part of feature c
 import Foundation
 import Combine
 
-class ReposStore: ObservableObject {
+final class ReposStore: ObservableObject {
     @Published private(set) var repos: [Repo] = []
 
     private let service: GithubService

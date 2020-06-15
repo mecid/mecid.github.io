@@ -1,6 +1,7 @@
 ---
 title: Introducing Container views in SwiftUI
 layout: post
+category: View Composition
 ---
 
 During app development using *SwiftUI*, you can see that your views are very coupled with the data flow. Views fetch and render the data, handle user input and actions, etc. By doing so many things views become very fat and we can't reuse them across the app. Let's take a look at a different way of decomposing views by using *Container Views*.

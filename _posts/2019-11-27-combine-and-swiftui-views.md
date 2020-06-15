@@ -2,6 +2,7 @@
 title: Combine and SwiftUI views
 layout: post
 image: /public/combine-and-swiftui-views.png
+category: Data Flow
 ---
 
 *Combine* is one of the new frameworks released during WWDC 2019. It provides a declarative *Swift API* for processing values over time. Today we will talk about one of the hidden features of *SwiftUI* views, which is *onReceive* modifier. It allows views to subscribe and react as soon as the publisher emits the value.

@@ -1,6 +1,7 @@
 ---
 title: Alerts, ActionSheets, Modals and Popovers in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*, *ActionSheets*, and *Popovers*. *SwiftUI* views have a dedicated modifiers for presenting this kind stuff. Let's take a look at how we can use modifiers to display *Modals*, *Alerts*, *ActionSheets*, and *Popovers*.

@@ -1,6 +1,7 @@
 ---
 title: Gradient in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 One thing which I really enjoy about *SwiftUI* is the fact that *SwiftUI* has a lot of stuff ready to use out of the box. In order to build your app, all you need to do is composing the building blocks provided by *SwiftUI* into a fully functional application. This week we will talk about *Gradient*, which is just another type of *View* in *SwiftUI*.

@@ -2,6 +2,7 @@
 title: Reusing SwiftUI views across Apple platforms
 layout: post
 image: /public/napbot-watch.jpeg
+category: View Composition
 ---
 
 This week we will talk about reusing *SwiftUI* views between *Apple* platforms. We will learn how to run the same views both on *iOS*, *watchOS* and *macOS* without any changes. To make it possible, all we need is an understanding of the view decomposition principle.

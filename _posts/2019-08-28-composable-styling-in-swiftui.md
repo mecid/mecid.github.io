@@ -1,6 +1,7 @@
 ---
 title: Composable styling in SwiftUI
 layout: post
+category: View Composition
 ---
 
 This week I want to talk about the styling of views in *SwiftUI*. *SwiftUI* provides a pretty composable architecture for building your apps. Every screen in terms of *SwiftUI* is a function on some data which returns a view. So let's talk today about composable and highly reusable styling options which we have in *SwiftUI*.
