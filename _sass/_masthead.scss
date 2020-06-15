@@ -6,16 +6,22 @@
   padding-top:    1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
+
+  a {
+    color: inherit;
+    margin-right: 1rem;
+  }
+
+  nav {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
 .masthead-title {
   margin-top: 0;
   margin-bottom: 0;
   color: $gray-1;
-
-  a {
-    color: inherit;
-  }
 
   small {
     font-size: 75%;
