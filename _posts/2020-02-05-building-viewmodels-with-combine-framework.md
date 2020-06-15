@@ -2,6 +2,7 @@
 title: Building ViewModels with Combine framework
 layout: post
 image: /public/viewmodel.png
+category: Architecture
 ---
 
 One of my first posts on this blog was about using the *ViewModel* pattern in iOS apps. I'm still using this concept in some old school *UIKit* projects. But I think it's time to remaster that post. This week we will talk about building reactive *ViewModels* using *Combine framework*.

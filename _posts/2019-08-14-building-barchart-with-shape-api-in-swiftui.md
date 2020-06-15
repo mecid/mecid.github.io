@@ -2,6 +2,7 @@
 title: Building BarChart with Shape API in SwiftUI
 layout: post
 image: /public/chart.jpg
+category: Building custom views
 ---
 
 This week I want to show you how to use *Shape* API in *SwiftUI*. We will take a look at ready to use shapes like *Circle, Capsule, Rectangle*, etc. We will learn how to draw super custom shapes by using *Path* and *GeometryReader*. In the end, we will build *BarChart* implementation ultimately in *SwiftUI*.

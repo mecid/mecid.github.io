@@ -2,6 +2,7 @@
 title: The magic of view preferences in SwiftUI
 layout: post
 image: /public/swiftui.png
+category: Data Flow
 ---
 
 I took a one week break from *SwiftUI* topic when we were talking about [building networking in Swift using functions](/2020/01/08/building-networking-layer-using-functions/). It's time to go back to *SwiftUI*. This week we will talk about view preferences, which is another powerful concept of *SwiftUI* views that allows us to pass data through view hierarchy.

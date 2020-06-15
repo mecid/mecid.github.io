@@ -1,6 +1,7 @@
 ---
 title: Redux-like state container in SwiftUI. Basics.
 layout: post
+category: Architecture
 ---
 
 This week we will talk about building a state container similar to *Redux* and *The Elm Architecture* that provides a single source of truth for your app. A single state for the whole app makes it easier to debug and inspect. Single source of truth eliminates tons of bugs produced by creating multiple states across the app.

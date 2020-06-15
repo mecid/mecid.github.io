@@ -2,6 +2,7 @@
 title: Binding in SwiftUI
 layout: post
 image: /public/swiftui.png
+category: Data Flow
 ---
 
 Binding is one of the several property wrappers that *SwiftUI* presents us to control data flow in the app. Binding provides us a reference like access to a value type. This week we will understand how and when to use binding. We will learn how to avoid common mistakes while using binding in *SwiftUI*.

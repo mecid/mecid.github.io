@@ -2,6 +2,7 @@
 title: Building forms with SwiftUI
 layout: post
 image: /public/settings.jpg
+category: Mastering SwiftUI views
 ---
 
 Today we are going to build a form styled layout with *SwiftUI*. I want to show you a real-life example of the settings screen built with *SwiftUI*'s new Form component.

@@ -1,6 +1,7 @@
 ---
 title: Dynamic Type in SwiftUI
 layout: post
+category: Accessibility
 ---
 
 This week I want to talk to you about *Dynamic Type* support in *SwiftUI*. I think there is no way to create an excellent user experience without *Dynamic Type* support in your apps. *SwiftUI* provides *Dynamic Type* out of the box for any text representation and simplifies our job. But we still need to do some work, so let's talk about it.

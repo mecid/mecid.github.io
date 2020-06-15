@@ -1,6 +1,7 @@
 ---
 title: Localization in SwiftUI
 layout: post
+category: Accessibility
 ---
 
 This week I want to talk about another crucial feature of any app, which is *Localization*. Every user expects that your app correctly uses environment features like the right-to-left layout or uses system locale to format dates or currencies. Another vital thing here is translations, and this week, we will learn which tools *SwiftUI* provides to add in our apps as many languages as we can.

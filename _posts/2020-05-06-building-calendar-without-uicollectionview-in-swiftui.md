@@ -2,6 +2,7 @@
 title: Building calendar without UICollectionView in SwiftUI
 layout: post
 image: /public/calendar.png
+category: Building custom views
 ---
 One of the most expected features of *SwiftUI* 2.0 is a *SwiftUI* alternative to *UICollectionView*. *UICollectionView* provides us an easy way to build super custom interfaces like calendar or photos grid. But today, I want to show you that we can create a calendar view without *UICollectionView* by using only pure *SwiftUI*.
 

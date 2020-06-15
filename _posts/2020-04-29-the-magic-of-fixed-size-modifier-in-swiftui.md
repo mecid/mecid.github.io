@@ -2,6 +2,7 @@
 title: The magic of fixed size modifier in SwiftUI
 image: /public/swiftui.png
 layout: post
+category: Layout
 ---
 
 You may have seen some examples of fixed size modifier usage while trying to fix the issue with multiline text in *SwiftUI*. But do you know what exactly fixed size modifier does? How does it work? Today I want to talk about all the magic and power behind the fixed size modifier.

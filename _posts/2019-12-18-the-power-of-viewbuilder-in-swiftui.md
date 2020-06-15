@@ -2,6 +2,7 @@
 title: The power of @ViewBuilder in SwiftUI
 layout: post
 image: /public/viewbuilder.png
+category: Building custom views
 ---
 
 Last week we started a series of posts about developing interactive components using *SwiftUI*, where we talked about building the bottom sheet. We need to understand the power of *@ViewBuilder* before moving to the next post about building another interactive view. That's why this week, we will talk about *@ViewBuilder* and its benefits while developing custom views.

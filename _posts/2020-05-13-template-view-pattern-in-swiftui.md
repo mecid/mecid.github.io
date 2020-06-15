@@ -2,6 +2,7 @@
 title: Template-view pattern in SwiftUI
 layout: post
 image: /public/template2.png
+category: Layout
 ---
 
 Today I want to share with you a technique that I use a lot in *SwiftUI*. It helps me to solve the problem when I need to place a vertical or horizontal stack with equal-sized views that support *Dynamic Type*. I didn't find the right name for this approach and call it *template-view*.

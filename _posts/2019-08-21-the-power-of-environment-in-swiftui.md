@@ -1,6 +1,7 @@
 ---
 title: The power of Environment in SwiftUI
 layout: post
+category: Data Flow
 ---
 
 *Environment* is one of the unique features of *SwiftUI* which we didn't have before in *UIKit*. Today I would like to show you all the benefits of using *Environment* in your apps.

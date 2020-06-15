@@ -2,6 +2,7 @@
 title: Fitting and filling views in SwiftUI
 layout: post
 image: /public/fill.png
+category: Layout
 ---
 
 This week I want to continue the topic of layout system in *SwiftUI*. The *SwiftUI* layout engine works predictably, and usually, an outcoming result looks like we expect. Today, to make this process even more apparent, we will talk about fitting and filling views in *SwiftUI*.
