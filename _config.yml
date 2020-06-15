@@ -1,5 +1,5 @@
 # Permalinks
-permalink:           pretty
+permalink:           /:year/:month/:day/:title/
 
 # Setup
 title:               Swift with Majid
