@@ -1,0 +1,15 @@
+---
+title: Archive
+layout: page
+---
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <p>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+      </p>
+    </li>
+  {% endfor %}
+</ul>
