@@ -1,6 +1,7 @@
 ---
 title: Creating DSL in Swift
 layout: post
+category: Swift Language Features
 ---
 
 This week we will talk about creating DSL in Swift. Let's start with the understanding of DSL acronym. Domain Specific Language is a language hosted by parent language to solve any specific area. An excellent example of DSL can be HTML which is DSL for creating web page markup.

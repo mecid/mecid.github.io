@@ -1,6 +1,7 @@
 ---
 title: The power of Delegate design pattern
 layout: post
+category: Swift Language Features
 ---
 
 Last week before WWDC and everybody so excited about new features which we will have just in a few days. However, let's keep posts related to WWDC for next week. This week we are going to talk about my favorite design pattern *Delegate*. *Delegate* is the most straightforward and powerful pattern.

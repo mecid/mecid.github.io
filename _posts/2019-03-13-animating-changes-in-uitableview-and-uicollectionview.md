@@ -1,6 +1,7 @@
 ---
 title: Animating changes in UITableView and UICollectionView
 layout: post
+category: Interactions
 ---
 
 Most of our apps present lists or grids of some data by using UITableView or UICollectionView. Often users can update this list by using Pull-to-Refresh technique or by pressing the update button. Everybody knows how to update UITableView by calling the reloadData method on the tableView instance. But what about animation? ReloadData method is invalidating the current items provided by data source and draws new ones without any animation. Today we will talk about animating data changes in UITableView and UICollectionView.

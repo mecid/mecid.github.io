@@ -1,6 +1,7 @@
 ---
 title: Starting Unit Testing with Model layer
 layout: post
+category: Unit Testing
 ---
 
 Today we are going to touch the completely new topic on my blog, and it is Unit Testing. Most of us heard about the pros of Unit Testing. I want to show how easily you can start with Unit Testing by covering your model layer. So let's start with the definition.
