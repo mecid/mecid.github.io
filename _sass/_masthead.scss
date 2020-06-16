@@ -14,6 +14,7 @@
 
   nav {
     display: flex;
+    flex-wrap: wrap;
     align-items: baseline;
   }
 }
@@ -22,6 +23,10 @@
   margin-top: 0;
   margin-bottom: 0;
   color: $gray-1;
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
 
   small {
     font-size: 75%;
