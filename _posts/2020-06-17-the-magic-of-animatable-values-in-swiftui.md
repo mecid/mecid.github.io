@@ -5,7 +5,7 @@ image: /public/swiftui.png
 category: Interactions
 ---
 
-*WWDC20* is already around the corner, and we are waiting for massive changes and additions to the *SwiftUI* framework. It is a perfect week to wrap up the season with a post about one of the strongest sides of the *SwiftUI* framework, which is *animation*.
+*WWDC20* is already around the corner, and we are waiting for massive changes and additions to the *SwiftUI* framework. It is a perfect week to wrap up the season with a post about one of the strongest sides of the *SwiftUI* framework, which is *animation*. Today we will learn how to build complex animations by using *VectorArithmetic* protocol.
 
 #### Basics
 Let's start with the basics. Usually, we attach the animation modifier to a view and change some state variables. *SwiftUI* docs say that animation modifier applies the given animation to all **animatable** values within this view. Here is a small example that animates the button on every tap.
@@ -39,6 +39,17 @@ struct Line1: Shape {
             path.move(to: .zero)
             path.addLine(to: CGPoint(x: coordinate, y: coordinate))
         }
+    }
+}
+
+struct RootView: View {
+    @State private var coordinate: CGFloat = 0
+
+    var body: some View {
+        Line1(coordinate: coordinate)
+            .stroke(Color.red)
+            .animation(Animation.linear(duration: 1).repeatForever())
+            .onAppear { self.coordinate = 100 }
     }
 }
 ```
@@ -178,14 +189,8 @@ struct RootView: View {
             }
     }
 }
-
-struct RootView_Previews: PreviewProvider {
-    static var previews: some View {
-        RootView()
-    }
-}
 ```
 ![linechart-animation](/public/linechart.gif)
 
 #### Conclusion
-Today we have learned how we can build complex animating views by using *VectorArithmetic*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
