@@ -28,6 +28,8 @@ struct RootView: View {
 }
 ```
 
+> To learn more about basics of animation in *SwiftUI*, take a look at my ["Animations in SwiftUI" post](/2019/06/26/animations-in-swiftui/).
+
 But how *SwiftUI* understand which values are **animatable**? *SwiftUI* introduces a protocol called *Animatable*. This protocol has the only requirement, *animatableData* property, that describes the changes during an animation. So during the state changes, *SwiftUI* traverses the view hierarchy and finds all the values that conform to *Animatable* protocol and animate its changes by understanding *animatableData* of a particular item. Let's take a look at another example.
 
 ```swift
@@ -55,6 +57,8 @@ struct RootView: View {
 ```
 
 Here we have a *Line* struct that conforms to the *Shape* protocol. All shapes in *SwiftUI* conform to *Animatable* protocol, but as you can see, there is no animation while running the example. *SwiftUI* doesn't animate our line because the framework doesn't know how to animate it. 
+
+> To learn more about *Shape API* in *SwiftUI*, take a look at my ["Building BarChart with Shape API in SwiftUI" post](/2019/08/14/building-barchart-with-shape-api-in-swiftui/).
 
 By default, shape returns the instance of *EmptyAnimatableData* struct as its *animatableData*. *SwiftUI* allows us to use *EmptyAnimatableData* whenever we don't know how to animate the value. Let's solve the problem by replacing *EmptyAnimatableData* with some value.
 
