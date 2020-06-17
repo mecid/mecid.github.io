@@ -185,6 +185,7 @@ struct RootView_Previews: PreviewProvider {
     }
 }
 ```
+![linechart-animation](/public/linechart.gif)
 
 #### Conclusion
 Today we have learned how we can build complex animating views by using *VectorArithmetic*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
