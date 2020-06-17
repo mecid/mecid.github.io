@@ -5,10 +5,10 @@ image: /public/swiftui.png
 category: Interactions
 ---
 
-WWDC20 is already around the corner, and we are waiting for massive changes and additions to the SwiftUI framework. It is a perfect week to wrap up the season with a post about one of the strongest sides of the SwiftUI framework, which is animation.
+*WWDC20* is already around the corner, and we are waiting for massive changes and additions to the *SwiftUI* framework. It is a perfect week to wrap up the season with a post about one of the strongest sides of the *SwiftUI* framework, which is *animation*.
 
 #### Basics
-Let's start with the basics. Usually, we attach the animation modifier to a view and change some state variables. SwiftUI docs say that animation modifier applies the given animation to all animatable values within this view. Here is a small example that animates the button on every tap.
+Let's start with the basics. Usually, we attach the animation modifier to a view and change some state variables. *SwiftUI* docs say that animation modifier applies the given animation to all **animatable** values within this view. Here is a small example that animates the button on every tap.
 
 ```swift
 struct RootView: View {
@@ -28,7 +28,7 @@ struct RootView: View {
 }
 ```
 
-But how SwiftUI understand which values are animatable? SwiftUI introduces a protocol called Animatable. This protocol has the only requirement, animatableData property, that describes the changes during an animation. So during the state changes, SwiftUI traverses the view hierarchy and finds all the values that conform to Animatable protocol and animate its changes by understanding animatableData of a particular item. Let's take a look at another example.
+But how *SwiftUI* understand which values are **animatable**? *SwiftUI* introduces a protocol called *Animatable*. This protocol has the only requirement, *animatableData* property, that describes the changes during an animation. So during the state changes, *SwiftUI* traverses the view hierarchy and finds all the values that conform to *Animatable* protocol and animate its changes by understanding *animatableData* of a particular item. Let's take a look at another example.
 
 ```swift
 struct Line1: Shape {
@@ -43,9 +43,9 @@ struct Line1: Shape {
 }
 ```
 
-Here we have a Line struct that conforms to the Shape protocol. All shapes in SwiftUI conform to Animatable protocol, but as you can see, there is no animation while running the example. SwiftUI doesn't animate our line because the framework doesn't know how to animate it. 
+Here we have a *Line* struct that conforms to the *Shape* protocol. All shapes in *SwiftUI* conform to *Animatable* protocol, but as you can see, there is no animation while running the example. *SwiftUI* doesn't animate our line because the framework doesn't know how to animate it. 
 
-By default, shape returns the instance of EmptyAnimatableData struct as its animatableData. SwiftUI allows us to use EmptyAnimatableData whenever we don't know how to animate the value. Let's solve the problem by replacing EmptyAnimatableData with some value.
+By default, shape returns the instance of *EmptyAnimatableData* struct as its *animatableData*. *SwiftUI* allows us to use *EmptyAnimatableData* whenever we don't know how to animate the value. Let's solve the problem by replacing *EmptyAnimatableData* with some value.
 
 ```swift
 struct Line1: Shape {
@@ -65,7 +65,7 @@ struct Line1: Shape {
 }
 ```
 
-In the example above, we made our Line struct animatable by implementing animatableData property. But how we can animate multiple properties of the same shape? There is another type called AnimatablePair that helps us to animate the paired values. Let's make our Line struct animatable in both vertical and horizontal directions.
+In the example above, we made our *Line* struct animatable by implementing *animatableData* property. But how we can animate multiple properties of the same shape? There is another type called *AnimatablePair* that helps us to animate the paired values. Let's make our *Line* struct animatable in both vertical and horizontal directions.
 
 ```swift
 struct Line2: Shape {
@@ -92,9 +92,9 @@ struct Line2: Shape {
 OK, nice. Now we can animate two values of the same shape. But what about the line chart? Assume that you are working on the charting library, and you want to build an animatable line chart? There might be hundreds of values that we want to animate. How could we deal with this challenge?
 
 #### Introducing VectorArithmetic protocol
-As you can see, we have already used CGFloat and AnimatablePair types as animatable data. But it doesn't mean that you can use any type here. Animatable protocol has a constraint on animatableData property. Any type that conforms to VectorArithmetic protocol can be used as animtableData. SwiftUI provides us a few types that conform to VectorArithmetic protocol out of the box. For example, Float, Double, CGFloat, and AnimatablePair. 
+As you can see, we have already used *CGFloat* and *AnimatablePair* types as animatable data. But it doesn't mean that you can use any type here. *Animatable* protocol has a constraint on *animatableData* property. Any type that conforms to *VectorArithmetic* protocol can be used as *animtableData*. *SwiftUI* provides us a few types that conform to *VectorArithmetic* protocol out of the box. For example, *Float*, *Double*, *CGFloat*, and *AnimatablePair*. 
 
-Let's back to our line chart idea. I want to make a line chart shape that animates all the values. There are probably could be hundreds of points, and it looks like an excellent candidate for a custom type that conforms to VectorArithmetic protocol. VectorArithmetic has a few requirements like scaling, adding, subtracting, etc. You should describe how SwiftUI must handle these operations on your type. Here is a drop-in implementation for an array of values.
+Let's back to our line chart idea. I want to make a line chart shape that animates all the values. There are probably could be hundreds of points, and it looks like an excellent candidate for a custom type that conforms to *VectorArithmetic* protocol. *VectorArithmetic* has a few requirements like scaling, adding, subtracting, etc. You should describe how *SwiftUI* must handle these operations on your type. Here is a drop-in implementation for an array of values.
 
 ```swift
 import SwiftUI
@@ -135,7 +135,7 @@ struct AnimatableVector: VectorArithmetic {
 }
 ```
 
-As you can see, I use the Accelerate framework that provides us high-performance vector-based arithmetic. By using AnimatableVector struct, we can animate as many values as we want, and it will work super fast because it uses the Accelerate framework. Now we have all we need to implement an animatable line chart shape.
+As you can see, I use the *Accelerate* framework that provides us high-performance vector-based arithmetic. By using *AnimatableVector* struct, we can animate as many values as we want, and it will work super fast because it uses the *Accelerate* framework. Now we have all we need to implement an animatable line chart shape.
 
 ```swift
 import SwiftUI
@@ -163,7 +163,7 @@ struct LineChart: Shape {
 }
 ```
 
-You can download the source code of AnimatableVector through [Github gist](https://gist.github.com/mecid/18a80b18cc9670eef1d8667cf8c886bd).
+You can download the source code of *AnimatableVector* through [Github gist](https://gist.github.com/mecid/18a80b18cc9670eef1d8667cf8c886bd).
 
 ```swift
 struct RootView: View {
@@ -187,4 +187,4 @@ struct RootView_Previews: PreviewProvider {
 ```
 
 #### Conclusion
-Today we have learned how we can build complex animating views by using VectorArithmetic. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today we have learned how we can build complex animating views by using *VectorArithmetic*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
