@@ -5,7 +5,7 @@ image: /public/wwdc20.jpg
 category: Meta
 ---
 
-I was waiting for this day for the last nine months, and it has finally arrived. We saw the next iteration of the *SwiftUI* framework. *Apple* has done a great job during the year by improving *SwiftUI* and moving it toward to make it a standalone way to build apps for the *Apple* ecosystem. Today we will take a peek at all-new *SwiftUI* features.
+I have been waiting for this day for the last nine months, and it has finally arrived. We saw the next iteration of the *SwiftUI* framework. *Apple* did a great job during the last year by improving *SwiftUI* and moving it towards to making it a standalone way for building apps for the *Apple* ecosystem. Today we will take a peek at all-new *SwiftUI* features.
 
 #### App structure
 *Apple* provides a brand new way of defining the app's entry point by using the *App* protocol. *App* protocol allows us to easily replace the *AppDelegate* and *SceneDelegate* with a single struct that will manage our scenes and app lifecycle. Let's take a look at a very quick example.
@@ -43,7 +43,7 @@ struct CardioBotApp: App {
 For document-based apps, *SwiftUI* provides a *DocumentGroup* scene that automatically handles the navigation through files.
 
 #### Lazy stacks
-One thing that I don't like about *SwiftUI* stacks is the eager initialization. Whenever you have ten or thousand views in a stack, *SwiftUI* tries to create them immediately. Fortunately, it is changed today. The new version of the *SwiftUI* framework provides us *LazyHStack* and *LazyVStack* that creates its children only when needed.
+One thing that I don't like about *SwiftUI* stacks is the eager initialization. Whenever you have ten or thousand views in a stack, *SwiftUI* tries to create them immediately. Fortunately, it is changed today. The new version of the *SwiftUI* framework provides us *LazyHStack* and *LazyVStack* which create its children only when needed.
 
 ```swift
 import SwiftUI
@@ -87,7 +87,7 @@ struct ContentView: View {
 ```
 
 #### ScrollView
-If you read my post about *SwiftUI* wishes, you might now that I was waiting for an ability to scroll to a particular offset using a *ScrollView*. That part of functionally stopped me from using *SwiftUI*'s *ScrollView*. It is also changed today when *Apple* released the *ScrollViewReader*. *ScrollViewReader* works very similarly to *GeometryReader* and provides a way to scroll to a specific element using its *ID*.
+If you read my post about [*SwiftUI* wishes](/2020/06/10/swiftui-wishlist-for-wwdc20/), you might know that I have been waiting for an ability to scroll to a particular offset using a *ScrollView*. That part of functionally stopped me from using *SwiftUI*'s *ScrollView*. It is also changed today when *Apple* released the *ScrollViewReader*. *ScrollViewReader* works very similarly to *GeometryReader* and provides a way to scroll to a specific view using its *ID*.
 
 ```swift
 import SwiftUI
@@ -129,7 +129,7 @@ struct ContentView: View {
 The usage is pretty similar to *TextField*, but in this case, we allowed to type very long text examples. There is still no way to use attributed text, but I hope it will arrive during the next betas.
 
 #### New data flow property wrappers
-Besides all the new views that *Apple* released today, we also have brand new ways to handle data flow in *SwiftUI*. *SwiftUI* now includes an *AppStorage* property wrapper that accesses *UserDefauls* and invalidates view as soon as corresponding key changes. Let's take a look at the example.
+Besides all the new views that *Apple* released today, we also have brand new ways to handle data flow in *SwiftUI*. *SwiftUI* now includes the *AppStorage* property wrapper that accesses *UserDefauls* and invalidates view as soon as corresponding key changes. Let's take a look at the example.
 
 ```swift
 import SwiftUI
