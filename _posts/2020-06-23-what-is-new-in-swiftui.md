@@ -165,7 +165,7 @@ struct CardioBotApp: App {
 One of the best things about SwiftUI is the way that the framework uses to apply styling. Most of the views in SwiftUI provides protocols that we can conform to share the styling across the app. This year the list of styling protocols increased. SwiftUI allows us to transform *TabView* into a paging view by applying *PageTabViewStyle*. There is also a new collection of list styles like *SidebarListStyle*, *InsetGroupedListStyle*, and *InsetListStyle*.
 
 #### New views
-This year SwiftUI integrates more deeply with all the frameworks across the Apple ecosystem. For example, MapKit provides *Map* and *MapAnnotations* SwiftUI views. ClockKit provides us a *Gauge* view that we can use to show value within a range.
+This year SwiftUI integrates more deeply with all the frameworks across the Apple ecosystem. For example, MapKit provides *Map* and *MapAnnotations* SwiftUI views. ClockKit provides us a *Gauge* view that we can use to show value within a range. AVKit provides the *VideoPlayer* view that we can use to integrate with *AVPlayer*.
 
 There is also a bunch of new views that SwiftUI provides us today. We finally have a system-wide Color picker, native *SignInWithAppleButton*, *ProgressView* that supports both linear and circular progress indicators, *OutlineGroup* that allows us to display tree-structured collections of data, and much more.
 
