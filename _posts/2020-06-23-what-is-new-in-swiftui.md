@@ -150,7 +150,7 @@ Another new property wrapper is *StateObject*. *StateObject* works similarly to 
 struct CardioBotApp: App {
     @StateObject var store = Store()
 
-    @SceneBuilder var body: some Scene {
+    var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(store)
