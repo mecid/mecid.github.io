@@ -143,6 +143,8 @@ struct ContentView: View {
 }
 ```
 
+There is also *SceneStorage* property wrapper that we can use for the automatic state restoration of the value. It works similarly to *AppStorage*, but instead of *UserDefaults*, it uses per-scene storage managed by the system.
+
 Another new property wrapper is *StateObject*. *StateObject* works similarly to *State* property wrapper. It allocates memory inside the SwiftUI framework and stores your *ObservableObject* there. It allows to *ObservableObject* to survive during view updates.
 
 ```swift
