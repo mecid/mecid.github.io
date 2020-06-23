@@ -5,10 +5,10 @@ image: /public/swiftui.png
 category: Data Flow
 ---
 
-I took a one week break from *SwiftUI* topic when we were talking about [building networking in Swift using functions](/2020/01/08/building-networking-layer-using-functions/). It's time to go back to *SwiftUI*. This week we will talk about view preferences, which is another powerful concept of *SwiftUI* views that allows us to pass data through view hierarchy.
+I took a one week break from SwiftUI topic when we were talking about [building networking in Swift using functions](/2020/01/08/building-networking-layer-using-functions/). It's time to go back to SwiftUI. This week we will talk about view preferences, which is another powerful concept of SwiftUI views that allows us to pass data through view hierarchy.
 
 #### Preferences
-*SwiftUI* has the environment concept which we can use to pass data down into a view hierarchy. Parent views share its environment with child views and subscribe to the changes. But sometimes we need to pass data up from child view to the parent view, and this is where preferences shine. Let's take a look at the small example.
+SwiftUI has the environment concept which we can use to pass data down into a view hierarchy. Parent views share its environment with child views and subscribe to the changes. But sometimes we need to pass data up from child view to the parent view, and this is where preferences shine. Let's take a look at the small example.
 
 > To learn more about the benefits of the environment feature take a look at ["The power of Environment in SwiftUI" post](/2019/08/21/the-power-of-environment-in-swiftui/).
 
@@ -67,10 +67,10 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we use the *onPreferenceChange* modifier to observe *NavigationBarTitleKey*. *SwiftUI* will call this closure whenever view sets a new value for the preference.
+In the example above, we use the *onPreferenceChange* modifier to observe *NavigationBarTitleKey*. SwiftUI will call this closure whenever view sets a new value for the preference.
 
 #### Understanding the size of child view
-Sometimes we need to get the size of the child view to make some offset, and it is another excellent example of preference usage in *SwiftUI*. Let's take a look at how we can use preferences to fetch the size of the child view.
+Sometimes we need to get the size of the child view to make some offset, and it is another excellent example of preference usage in SwiftUI. Let's take a look at how we can use preferences to fetch the size of the child view.
 
 ```swift
 struct SizePreferenceKey: PreferenceKey {
@@ -140,4 +140,4 @@ struct ScrollView<Content: View>: View {
 Here is the possible implementation of *ScrollView* that uses preferences to understand the size of its content and enable/disable scrolling based on that value. I use this implementation only for the demo, please don't use it in production.
 
 #### Conclusion
-Today we talked about another very great feature of *SwiftUI*. Preferences feature has the same power as the environment, but instead, it uses reversed direction to pass the data. I'm sure you won't need it very often, but you should know about it. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today we talked about another very great feature of SwiftUI. Preferences feature has the same power as the environment, but instead, it uses reversed direction to pass the data. I'm sure you won't need it very often, but you should know about it. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!

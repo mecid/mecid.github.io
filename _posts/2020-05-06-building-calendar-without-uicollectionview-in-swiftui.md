@@ -4,7 +4,7 @@ layout: post
 image: /public/calendar.png
 category: Building custom views
 ---
-One of the most expected features of *SwiftUI* 2.0 is a *SwiftUI* alternative to *UICollectionView*. *UICollectionView* provides us an easy way to build super custom interfaces like calendar or photos grid. But today, I want to show you that we can create a calendar view without *UICollectionView* by using only pure *SwiftUI*.
+One of the most expected features of SwiftUI 2.0 is a SwiftUI alternative to *UICollectionView*. *UICollectionView* provides us an easy way to build super custom interfaces like calendar or photos grid. But today, I want to show you that we can create a calendar view without *UICollectionView* by using only pure SwiftUI.
 
 Let's start by describing what we want to achieve with our calendar view. The calendar view is a container view that displays its child views using a calendar-based grid. These are my requirements for a calendar view:
 1. It should scroll vertically through months.
@@ -66,11 +66,11 @@ struct CalendarView<DateView>: View where DateView: View {
 }
 ```
 
-Now we can display a scroll view that has a vertical stack as its root view. We use a calendar to generate all months in the date interval that the user provides us. As you can see, we use a system calendar that *SwiftUI* put in the environment. *SwiftUI* will also update the view as soon as the user changes the calendar in system settings.
+Now we can display a scroll view that has a vertical stack as its root view. We use a calendar to generate all months in the date interval that the user provides us. As you can see, we use a system calendar that SwiftUI put in the environment. SwiftUI will also update the view as soon as the user changes the calendar in system settings.
 
-> As I said before, the environment is one of my favorite features of *SwiftUI*. To learn more about the environment feature, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+> As I said before, the environment is one of my favorite features of SwiftUI. To learn more about the environment feature, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
-As you can see, I decided to create the separated MonthView struct that displays a single month in our calendar view. *SwiftUI* allows us to compose multiple views to build an excellent view hierarchy. I want to note that I reuse MonthView in other parts of my app to present a calendar preview.
+As you can see, I decided to create the separated MonthView struct that displays a single month in our calendar view. SwiftUI allows us to compose multiple views to build an excellent view hierarchy. I want to note that I reuse MonthView in other parts of my app to present a calendar preview.
 
 ```swift
 struct MonthView<DateView>: View where DateView: View {
@@ -185,4 +185,4 @@ In the example above, you see how we can use our calendar view. I want you to pa
 Here is the final result of our work. I think it looks nice, and I will use it in my next app. You can access full source code via [Github Gist](https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec).
 
 #### Conclusion
-I still think that we will have a *UICollectionView* alternative later this year. But I need to mention that *SwiftUI* has such a friendly layout system that we can use to build great views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+I still think that we will have a *UICollectionView* alternative later this year. But I need to mention that SwiftUI has such a friendly layout system that we can use to build great views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!

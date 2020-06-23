@@ -5,10 +5,10 @@ image: /public/swiftui.png
 category: Interactions
 ---
 
-*WWDC20* is already around the corner, and we are waiting for massive changes and additions to the *SwiftUI* framework. It is a perfect week to wrap up the season with a post about one of the strongest sides of the *SwiftUI* framework, which is *animation*. Today we will learn how to build complex animations by using *VectorArithmetic* protocol.
+*WWDC20* is already around the corner, and we are waiting for massive changes and additions to the SwiftUI framework. It is a perfect week to wrap up the season with a post about one of the strongest sides of the SwiftUI framework, which is *animation*. Today we will learn how to build complex animations by using *VectorArithmetic* protocol.
 
 #### Basics
-Let's start with the basics. Usually, we attach the animation modifier to a view and change some state variables. *SwiftUI* docs say that animation modifier applies the given animation to all **animatable** values within this view. Here is a small example that animates the button on every tap.
+Let's start with the basics. Usually, we attach the animation modifier to a view and change some state variables. SwiftUI docs say that animation modifier applies the given animation to all **animatable** values within this view. Here is a small example that animates the button on every tap.
 
 ```swift
 struct RootView: View {
@@ -28,9 +28,9 @@ struct RootView: View {
 }
 ```
 
-> To learn more about basics of animation in *SwiftUI*, take a look at my ["Animations in SwiftUI" post](/2019/06/26/animations-in-swiftui/).
+> To learn more about basics of animation in SwiftUI, take a look at my ["Animations in SwiftUI" post](/2019/06/26/animations-in-swiftui/).
 
-But how *SwiftUI* understand which values are **animatable**? *SwiftUI* introduces a protocol called *Animatable*. This protocol has the only requirement, *animatableData* property, that describes the changes during an animation. So during the state changes, *SwiftUI* traverses the view hierarchy and finds all the values that conform to *Animatable* protocol and animate its changes by understanding *animatableData* of a particular item. Let's take a look at another example.
+But how SwiftUI understand which values are **animatable**? SwiftUI introduces a protocol called *Animatable*. This protocol has the only requirement, *animatableData* property, that describes the changes during an animation. So during the state changes, SwiftUI traverses the view hierarchy and finds all the values that conform to *Animatable* protocol and animate its changes by understanding *animatableData* of a particular item. Let's take a look at another example.
 
 ```swift
 struct Line1: Shape {
@@ -56,11 +56,11 @@ struct RootView: View {
 }
 ```
 
-Here we have a *Line* struct that conforms to the *Shape* protocol. All shapes in *SwiftUI* conform to *Animatable* protocol, but as you can see, there is no animation while running the example. *SwiftUI* doesn't animate our line because the framework doesn't know how to animate it. 
+Here we have a *Line* struct that conforms to the *Shape* protocol. All shapes in SwiftUI conform to *Animatable* protocol, but as you can see, there is no animation while running the example. SwiftUI doesn't animate our line because the framework doesn't know how to animate it. 
 
-> To learn more about *Shape API* in *SwiftUI*, take a look at my ["Building BarChart with Shape API in SwiftUI" post](/2019/08/14/building-barchart-with-shape-api-in-swiftui/).
+> To learn more about *Shape API* in SwiftUI, take a look at my ["Building BarChart with Shape API in SwiftUI" post](/2019/08/14/building-barchart-with-shape-api-in-swiftui/).
 
-By default, shape returns the instance of *EmptyAnimatableData* struct as its *animatableData*. *SwiftUI* allows us to use *EmptyAnimatableData* whenever we don't know how to animate the value. Let's solve the problem by replacing *EmptyAnimatableData* with some value.
+By default, shape returns the instance of *EmptyAnimatableData* struct as its *animatableData*. SwiftUI allows us to use *EmptyAnimatableData* whenever we don't know how to animate the value. Let's solve the problem by replacing *EmptyAnimatableData* with some value.
 
 ```swift
 struct Line1: Shape {
@@ -107,9 +107,9 @@ struct Line2: Shape {
 OK, nice. Now we can animate two values of the same shape. But what about the line chart? Assume that you are working on the charting library, and you want to build an animatable line chart? There might be hundreds of values that we want to animate. How could we deal with this challenge?
 
 #### Introducing VectorArithmetic protocol
-As you can see, we have already used *CGFloat* and *AnimatablePair* types as animatable data. But it doesn't mean that you can use any type here. *Animatable* protocol has a constraint on *animatableData* property. Any type that conforms to *VectorArithmetic* protocol can be used as *animtableData*. *SwiftUI* provides us a few types that conform to *VectorArithmetic* protocol out of the box. For example, *Float*, *Double*, *CGFloat*, and *AnimatablePair*. 
+As you can see, we have already used *CGFloat* and *AnimatablePair* types as animatable data. But it doesn't mean that you can use any type here. *Animatable* protocol has a constraint on *animatableData* property. Any type that conforms to *VectorArithmetic* protocol can be used as *animtableData*. SwiftUI provides us a few types that conform to *VectorArithmetic* protocol out of the box. For example, *Float*, *Double*, *CGFloat*, and *AnimatablePair*. 
 
-Let's back to our line chart idea. I want to make a line chart shape that animates all the values. There are probably could be hundreds of points, and it looks like an excellent candidate for a custom type that conforms to *VectorArithmetic* protocol. *VectorArithmetic* has a few requirements like scaling, adding, subtracting, etc. You should describe how *SwiftUI* must handle these operations on your type. Here is a drop-in implementation for an array of values.
+Let's back to our line chart idea. I want to make a line chart shape that animates all the values. There are probably could be hundreds of points, and it looks like an excellent candidate for a custom type that conforms to *VectorArithmetic* protocol. *VectorArithmetic* has a few requirements like scaling, adding, subtracting, etc. You should describe how SwiftUI must handle these operations on your type. Here is a drop-in implementation for an array of values.
 
 ```swift
 import SwiftUI

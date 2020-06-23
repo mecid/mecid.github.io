@@ -4,10 +4,10 @@ layout: post
 category: Accessibility
 ---
 
-This week I want to talk to you about *Accessibility in SwiftUI*. *SwiftUI* provides a ready to use accessibility implementation for standard User Interface elements like *Text, Button, Toggle, etc*. In most of the cases, you don't need to do something additional to make it work. But I will show how you can modify the accessibility tree by using accessibility modifiers to improve your User Experience. 
+This week I want to talk to you about *Accessibility in SwiftUI*. SwiftUI provides a ready to use accessibility implementation for standard User Interface elements like *Text, Button, Toggle, etc*. In most of the cases, you don't need to do something additional to make it work. But I will show how you can modify the accessibility tree by using accessibility modifiers to improve your User Experience. 
 
 #### Accessibility modifiers
-*SwiftUI* provides a bunch of accessibility modifiers for any view. By using accessibility modifiers, you can easily set label and value for a view, add accessibility traits and actions.
+SwiftUI provides a bunch of accessibility modifiers for any view. By using accessibility modifiers, you can easily set label and value for a view, add accessibility traits and actions.
 
 Assume that we are working on *BarChart* component and we want to make every *Bar* accessible to *VoiceOver* and *VoiceControl* users. Let's take a look at how we can do that by adding accessibility modifiers to custom shape view.
 
@@ -38,9 +38,9 @@ struct BarsView: View {
 In the example above, we use multiple overloaded versions of accessibility modifier to set label and value on a capsule shape.
 
 #### Accessibility tree
-Let's talk about accessibility path of every view. *SwiftUI* builds accessibility tree for the entire screen and provides it to *VoiceOver* or any other assistive technology. *VoiceOver* reads the accessibility tree from top to bottom and allows to user navigate through it via short swipes.
+Let's talk about accessibility path of every view. SwiftUI builds accessibility tree for the entire screen and provides it to *VoiceOver* or any other assistive technology. *VoiceOver* reads the accessibility tree from top to bottom and allows to user navigate through it via short swipes.
 
-*SwiftUI* allows us to modify the accessibility tree in different ways. For example, we can change the order used by *VoiceOver* to navigate through the tree. To do that we have to use accessibility modifier with sort priority parameter.
+SwiftUI allows us to modify the accessibility tree in different ways. For example, we can change the order used by *VoiceOver* to navigate through the tree. To do that we have to use accessibility modifier with sort priority parameter.
 
 We also can hide some elements in the accessibility tree by using another overloaded version of accessibility modifier. It accepts a boolean parameter indicating whenever element should be hidden or not.
 
@@ -87,4 +87,4 @@ struct SleepDetailsRow: View {
 Here we use *accessibilityElement* modifier with children combine option which merges all the accessibility information provided by the children into a single element and assign it to a parent view. *accessibilityElement* modifier also allows us to ignore or contain children accessibility information by using other options provided by *AccessibilityChildBehavior*.
 
 #### Conclusion
-Today we learned how to customize accessibility experience in our apps by using simple accessibility modifier in *SwiftUI*. I hope you will use that information to improve your User Experience. Remember that accessibility isn't a feature or a "nice to have." **It's a necessity**. So let's make your app accessible for everyone. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+Today we learned how to customize accessibility experience in our apps by using simple accessibility modifier in SwiftUI. I hope you will use that information to improve your User Experience. Remember that accessibility isn't a feature or a "nice to have." **It's a necessity**. So let's make your app accessible for everyone. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 

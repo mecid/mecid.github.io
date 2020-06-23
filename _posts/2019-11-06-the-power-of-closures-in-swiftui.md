@@ -4,7 +4,7 @@ layout: post
 category: View Composition
 ---
 
-One of my favorite design patterns in *UIKit* development was a [*Delegate pattern*](/2019/05/29/the-power-of-delegate-design-pattern/). *Delegate pattern* is very straightforward, and everybody knows how to use it. In the *Functional Programming* world, we usually replace delegates with closures. This week we will learn how to use closures to make *SwiftUI* views composable and decoupled.
+One of my favorite design patterns in *UIKit* development was a [*Delegate pattern*](/2019/05/29/the-power-of-delegate-design-pattern/). *Delegate pattern* is very straightforward, and everybody knows how to use it. In the *Functional Programming* world, we usually replace delegates with closures. This week we will learn how to use closures to make SwiftUI views composable and decoupled.
 
 #### Passing closures to child views
 I usually build my app screen by implementing one container view which handles all the data-flow related to the screen and a couple of rendering views, which simply represent passed data and propagate user actions to the container view. Let's take a look at an example.
@@ -44,7 +44,7 @@ Here we have a container view that handles user actions by providing a closure t
 We already discussed the benefits of using container view in SwiftUI on my blog multiple times, take a look at ["Introducing Container views in SwiftUI"](/2019/07/31/introducing-container-views-in-swiftui/) post if you missed it.
 
 #### Extracting navigation into closures
-*SwiftUI* has a pretty declarative way of building navigation between the screens. All you need to do is embedding your view into a *NavigationLink* with a provided destination view. Here is a quick example of using *NavigationLink* in *SwiftUI* apps.
+SwiftUI has a pretty declarative way of building navigation between the screens. All you need to do is embedding your view into a *NavigationLink* with a provided destination view. Here is a quick example of using *NavigationLink* in SwiftUI apps.
 
 ```swift
 struct ItemsView: View {
@@ -101,4 +101,4 @@ Here we have *ItemsContainerView*, which handles data-flow for the screen and bu
 Navigation is a crucial topic, and we already covered it in previous posts, to learn more about navigation in SwiftUI take a look at [the dedicated post](/2019/07/17/navigation-in-swiftui/).
 
 #### Conclusion
-This week we learned how to use *closures* to extract navigation and user input handling from *SwiftUI* views. *Closures* allow us to make our views decoupled and respecting the single responsibility principle. We can benefit it to build simple and composable view hierarchies in *SwiftUI*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+This week we learned how to use *closures* to extract navigation and user input handling from SwiftUI views. *Closures* allow us to make our views decoupled and respecting the single responsibility principle. We can benefit it to build simple and composable view hierarchies in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 

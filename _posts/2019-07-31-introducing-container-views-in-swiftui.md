@@ -4,9 +4,9 @@ layout: post
 category: View Composition
 ---
 
-During app development using *SwiftUI*, you can see that your views are very coupled with the data flow. Views fetch and render the data, handle user input and actions, etc. By doing so many things views become very fat and we can't reuse them across the app. Let's take a look at a different way of decomposing views by using *Container Views*.
+During app development using SwiftUI, you can see that your views are very coupled with the data flow. Views fetch and render the data, handle user input and actions, etc. By doing so many things views become very fat and we can't reuse them across the app. Let's take a look at a different way of decomposing views by using *Container Views*.
 
-In my first post about *SwiftUI*, we build a Github app.
+In my first post about SwiftUI, we build a Github app.
 
 ```swift
 import SwiftUI
@@ -43,7 +43,7 @@ struct FavoritesView : View {
 Here we have a simple view which fetches and renders my starred repositories. It looks very straightforward, but there is a massive problem. *FavoritesView* mixes data fetching plus rendering, and because of that, we can't reuse this view. For example, I want to use it to render a user's repositories or repos search result. To make it possible, let's start our refactoring process.
 
 #### Composition
-As you can see, *SwiftUI* uses mainly value types instead of classes and built on top *Composition over Inheritance* principle. Let's follow this way by decomposing our *FavoritesView* into a few small composable views.
+As you can see, SwiftUI uses mainly value types instead of classes and built on top *Composition over Inheritance* principle. Let's follow this way by decomposing our *FavoritesView* into a few small composable views.
 
 ```swift
 import SwiftUI
@@ -142,7 +142,7 @@ Here we have a more complex example, where *Container View* provides an acton ha
 4. Provide action handlers to the *Rendering View*
 
 ***Rendering Views* should do things only related to rendering:**
-1. Build User Interface using primitive components provided by *SwiftUI*.
+1. Build User Interface using primitive components provided by SwiftUI.
 2. Compose User Interface by using other Rendering views.
 3. Use data as input to render User Interface and don't store any state.
 

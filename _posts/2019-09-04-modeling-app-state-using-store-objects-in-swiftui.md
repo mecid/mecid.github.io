@@ -4,12 +4,12 @@ layout: post
 category: Architecture
 ---
 
-This week I want to talk to you about modeling data layer in *SwiftUI*. I already finished work on my very first app, which I build entirely with *SwiftUI*. And now I can share with you the way of architecting model layer using store objects which I used during the development of *NapBot*.
+This week I want to talk to you about modeling data layer in SwiftUI. I already finished work on my very first app, which I build entirely with SwiftUI. And now I can share with you the way of architecting model layer using store objects which I used during the development of *NapBot*.
 
 #### Store object
 Store objects responsible for storing the state and providing actions to mutate that state. You can have as many store objects as you need to keep them simple and responsible for a small part of your app state. For example, you may have *SettingsStore* to keep a state of user-defined settings and *TodoStore* to keep user tasks. 
 
-To create a store object, we need a class which conforms to *ObservableObject*. *ObservableObject* allows *SwiftUI* to observe and react to data changes. To learn more about *ObservableObject*, take a look at "[Managing Data Flow in SwiftUI](/2019/07/03/managing-data-flow-in-swiftui/)" post. Let's take a look at a simple example of *SettingsStore* object.
+To create a store object, we need a class which conforms to *ObservableObject*. *ObservableObject* allows SwiftUI to observe and react to data changes. To learn more about *ObservableObject*, take a look at "[Managing Data Flow in SwiftUI](/2019/07/03/managing-data-flow-in-swiftui/)" post. Let's take a look at a simple example of *SettingsStore* object.
 
 ```swift
 import Foundation
@@ -37,7 +37,7 @@ final class SettingsStore: ObservableObject {
 }
 ```
 
-In the code sample above, we have *SettingsStore* class which provides access to the user-defined settings. We also use *didChangeNotification* to notify *SwiftUI* whenever user defaults changes.
+In the code sample above, we have *SettingsStore* class which provides access to the user-defined settings. We also use *didChangeNotification* to notify SwiftUI whenever user defaults changes.
 
 #### Advanced usage 
 Let's take a look at another usage of the store object by creating a simple Todo app. We need to create a store object which stores the list of tasks and provides actions to mutate them like deleting and filtering.
@@ -71,7 +71,7 @@ final class TodosStore: ObservableObject {
 }
 ```
 
-Here we have a *TodosStore* class which conforms to *ObservableObject* protocol. *TodosStore* provides few actions to mutate its state, we can use these methods from our views. By default, *SwiftUI* updates the views whenever @*Published* field changes. That's why we marked our array of Todo items as @*Published*. As soon as we insert or remove items from that array, *SwiftUI* will update views subscribed to the *TodosStore*.
+Here we have a *TodosStore* class which conforms to *ObservableObject* protocol. *TodosStore* provides few actions to mutate its state, we can use these methods from our views. By default, SwiftUI updates the views whenever @*Published* field changes. That's why we marked our array of Todo items as @*Published*. As soon as we insert or remove items from that array, SwiftUI will update views subscribed to the *TodosStore*.
 
 Now, we can create a view which represents the list of tasks and provides actions like marking a task as completed, deleting, and reordering. Let's start by creating a view which shows the title of the task and a toggle to mark the task as completed.
 
@@ -171,7 +171,7 @@ extension RandomAccessCollection {
 }
 ```
 
-The environment is a perfect candidate to keep store objects. Environment can share it between multiple views without explicit injection via init method. To learn more about the benefits of *Environment* in *SwiftUI*, take a look at "[The power of Environment in SwiftUI](/2019/08/21/the-power-of-environment-in-swiftui/)" post.
+The environment is a perfect candidate to keep store objects. Environment can share it between multiple views without explicit injection via init method. To learn more about the benefits of *Environment* in SwiftUI, take a look at "[The power of Environment in SwiftUI](/2019/08/21/the-power-of-environment-in-swiftui/)" post.
 
 ![todos-screenshots](/public/todo.jpeg)
 

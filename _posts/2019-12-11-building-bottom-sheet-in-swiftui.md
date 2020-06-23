@@ -5,7 +5,7 @@ image: /public/bottom-sheet.png
 category: Building custom views
 ---
 
-This week I want to start a series of posts about building interactive view components that Apple heavily uses in its apps but doesn't include them into the SDK. Let's begin with the bottom sheet. I think everybody used Apple Maps, Shortcut or Apple Music apps. There is a draggable sheet at the bottom of the screen. It looks like bottom sheet is going to be a must-use component, so let's try to implement it in *SwiftUI*.
+This week I want to start a series of posts about building interactive view components that Apple heavily uses in its apps but doesn't include them into the SDK. Let's begin with the bottom sheet. I think everybody used Apple Maps, Shortcut or Apple Music apps. There is a draggable sheet at the bottom of the screen. It looks like bottom sheet is going to be a must-use component, so let's try to implement it in SwiftUI.
 
 ![apple-maps](/public/apple-maps.png)
 
@@ -36,7 +36,7 @@ As you can see, we started with defining a few properties of *BottomSheetView*. 
 
 We also require the maximum height which we will use whenever the sheet is open, and we calculate the minimum height to use it whenever the sheet is closed.
 
-The last parameter we need is the content closure with *@ViewBuilder* function builder. *@ViewBuilder* allows us to use closure to build the content view of our bottom sheet. Other view containers like *VStack, HStack, ZStack* also use *@ViewBuilder* to describe content closure. Let's make it similar to standard *SwiftUI* components.
+The last parameter we need is the content closure with *@ViewBuilder* function builder. *@ViewBuilder* allows us to use closure to build the content view of our bottom sheet. Other view containers like *VStack, HStack, ZStack* also use *@ViewBuilder* to describe content closure. Let's make it similar to standard SwiftUI components.
 
 We already defined all the needed public properties. Let's place the content now. 
 
@@ -105,7 +105,7 @@ var body: some View {
 }
 ```
 
-In the code sample above, we attach the drag gesture to the view and modify its state as soon as it ends. Besides that, we update the gesture state to make it interactive. The main benefit of *@GestureState* is its behavior. *SwiftUI* resets the value of the *@GestureState* to its initial value as soon as gesture ends. We use the value of *@GestureState* by adding it to the offset, which allows us to drive our view interactively.
+In the code sample above, we attach the drag gesture to the view and modify its state as soon as it ends. Besides that, we update the gesture state to make it interactive. The main benefit of *@GestureState* is its behavior. SwiftUI resets the value of the *@GestureState* to its initial value as soon as gesture ends. We use the value of *@GestureState* by adding it to the offset, which allows us to drive our view interactively.
 
 > To learn more about *gestures* and *@GestureState* take a look at ["Gestures in SwiftUI"](/2019/07/10/gestures-in-swiftui/) post.
 
@@ -134,4 +134,4 @@ struct ContentView: View {
 > Full source code available [here](https://gist.github.com/mecid/78eab34d05498d6c60ae0f162bfd81ee)
 
 #### Conclusion
-Today we learned how we could build a draggable bottom sheet component, which Apple uses a lot in its apps. Building interactive components is really straightforward in *SwiftUI*. All you need to do is defining the state and the gesture which modifies the state. *SwiftUI* animates all the transitions between state changes for free for you. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+Today we learned how we could build a draggable bottom sheet component, which Apple uses a lot in its apps. Building interactive components is really straightforward in SwiftUI. All you need to do is defining the state and the gesture which modifies the state. SwiftUI animates all the transitions between state changes for free for you. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 

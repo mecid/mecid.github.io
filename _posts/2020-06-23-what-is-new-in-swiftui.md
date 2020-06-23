@@ -87,7 +87,7 @@ struct ContentView: View {
 ```
 
 #### ScrollView
-If you read my post about [*SwiftUI* wishes](/2020/06/10/swiftui-wishlist-for-wwdc20/), you might know that I have been waiting for an ability to scroll to a particular offset using a *ScrollView*. That part of functionally stopped me from using SwiftUI's *ScrollView*. It is also changed today when Apple released the *ScrollViewReader*. *ScrollViewReader* works very similarly to *GeometryReader* and provides a way to scroll to a specific view using its *ID*.
+If you read my post about [SwiftUI wishes](/2020/06/10/swiftui-wishlist-for-wwdc20/), you might know that I have been waiting for an ability to scroll to a particular offset using a *ScrollView*. That part of functionally stopped me from using SwiftUI's *ScrollView*. It is also changed today when Apple released the *ScrollViewReader*. *ScrollViewReader* works very similarly to *GeometryReader* and provides a way to scroll to a specific view using its *ID*.
 
 ```swift
 import SwiftUI

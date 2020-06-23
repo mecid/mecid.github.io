@@ -4,10 +4,10 @@ layout: post
 category: Mastering SwiftUI views
 ---
 
-Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*, *ActionSheets*, and *Popovers*. *SwiftUI* views have a dedicated modifiers for presenting this kind stuff. Let's take a look at how we can use modifiers to display *Modals*, *Alerts*, *ActionSheets*, and *Popovers*.
+Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*, *ActionSheets*, and *Popovers*. SwiftUI views have a dedicated modifiers for presenting this kind stuff. Let's take a look at how we can use modifiers to display *Modals*, *Alerts*, *ActionSheets*, and *Popovers*.
 
 #### Alerts and ActionSheets
-Both *Alerts* and *ActionSheets* use the similar two ways of presenting it to the user. Let's start with a simpler one. We have to describe a *Boolean* binding which can be observed by *SwiftUI*, and as soon as *Boolean* is true, *SwiftUI* presents the *ActionSheet* or *Alert*.
+Both *Alerts* and *ActionSheets* use the similar two ways of presenting it to the user. Let's start with a simpler one. We have to describe a *Boolean* binding which can be observed by SwiftUI, and as soon as *Boolean* is true, SwiftUI presents the *ActionSheet* or *Alert*.
 
 ```swift
 struct MasterView: View {
@@ -34,7 +34,7 @@ struct MasterView: View {
 ```
 As you can see in the example above to present an action sheet, we use *actionSheet* modifier bound to a *Boolean* value and a closure which creates an action sheet. Alternatively, to display an alert, we need to use *alert* modifier instead.
 
-The interesting fact here is that *SwiftUI* resets the binding to initial value after *Alert* or *ActionSheet* dismiss. To learn more about *Property Wrappers* available in *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
+The interesting fact here is that SwiftUI resets the binding to initial value after *Alert* or *ActionSheet* dismiss. To learn more about *Property Wrappers* available in SwiftUI, take a look at ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
 It is a straightforward approach to present *Alerts* or *ActionSheets*. But sometimes it is not enough, because we need some data to show in *Alert* or *ActionSheet*. For this case, we have another overload of *alert* and *actionSheet* modifiers, which uses *Optional Identifiable binding* instead of *Boolean binding*.
 
@@ -62,10 +62,10 @@ struct MasterView: View {
 }
 ```
 
-As soon as *message* is not *nil* *SwiftUI* call a closure with *message* as a parameter. You can create your *Alert* based on data passed into the closure. 
+As soon as *message* is not *nil* SwiftUI call a closure with *message* as a parameter. You can create your *Alert* based on data passed into the closure. 
 
 #### Modals
-To present modals, *SwiftUI* provides the special view modifier called *sheet*. *Sheet* modifier is very similar to *alert* and *actionSheet*, it uses *Boolean* or *Optional Identifiable* binding to understand when to present a modal. It also needs a closure which returns a content view for a modal. Besides that, *sheet* modifier has an optional *onDismiss* closure parameter, *SwiftUI* calls this closure after modal dismiss. Like with alerts, *SwiftUI* will reset binding to the initial value after modal dismiss.
+To present modals, SwiftUI provides the special view modifier called *sheet*. *Sheet* modifier is very similar to *alert* and *actionSheet*, it uses *Boolean* or *Optional Identifiable* binding to understand when to present a modal. It also needs a closure which returns a content view for a modal. Besides that, *sheet* modifier has an optional *onDismiss* closure parameter, SwiftUI calls this closure after modal dismiss. Like with alerts, SwiftUI will reset binding to the initial value after modal dismiss.
 
 ```swift
 import SwiftUI
@@ -105,7 +105,7 @@ struct ModalView: View {
 *presentationMode* is an *Environment* binding to the current *PresentationMode* of this view. We can use it to programmatically dismiss the *Modal*. To learn more about *Property Wrappers provided by SwiftUI and Environment values*, you can check my ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
 #### Popovers
-Using Popovers in *SwiftUI* is very similar to *Alers* and *ActionSheets*. *Popover* modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in *popover modifier* is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
+Using Popovers in SwiftUI is very similar to *Alers* and *ActionSheets*. *Popover* modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in *popover modifier* is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
 
 ```swift
 struct MasterView: View {
@@ -125,5 +125,5 @@ struct MasterView: View {
 ```
 
 #### Conclusion
-As you can see, *SwiftUI* provides a pretty easy way of presenting context-related views like *Alerts*, *ActionSheets*, *Modals*, and *Popovers* by using *bindings*. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+As you can see, SwiftUI provides a pretty easy way of presenting context-related views like *Alerts*, *ActionSheets*, *Modals*, and *Popovers* by using *bindings*. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
 

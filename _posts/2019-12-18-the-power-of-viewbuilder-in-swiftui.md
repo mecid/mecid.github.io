@@ -5,10 +5,10 @@ image: /public/viewbuilder.png
 category: Building custom views
 ---
 
-Last week we started a series of posts about developing interactive components using *SwiftUI*, where we talked about building the bottom sheet. We need to understand the power of *@ViewBuilder* before moving to the next post about building another interactive view. That's why this week, we will talk about *@ViewBuilder* and its benefits while developing custom views.
+Last week we started a series of posts about developing interactive components using SwiftUI, where we talked about building the bottom sheet. We need to understand the power of *@ViewBuilder* before moving to the next post about building another interactive view. That's why this week, we will talk about *@ViewBuilder* and its benefits while developing custom views.
 
 #### @FunctionBuilder
-*@ViewBuilder* is one of the possible function builders. The function builders feature of *Swift* is described in [Swift Evolution Proposal](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md). The main goal of function builders is providing *DSL* like syntax. Let's take a look at a very quick example of *@ViewBuilder* usage.
+*@ViewBuilder* is one of the possible function builders. The function builders feature of Swift is described in [Swift Evolution Proposal](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md). The main goal of function builders is providing *DSL* like syntax. Let's take a look at a very quick example of *@ViewBuilder* usage.
 
 ```swift
 import SwiftUI
@@ -120,4 +120,4 @@ struct ContentView: View {
 > We also used the ability to build custom views via *@ViewBuilder* during ["Building Bottom sheet in SwiftUI"](/2019/12/11/building-bottom-sheet-in-swiftui/) post.
 
 #### Conclusion
-This week we talked about the benefits of function builders and used *@ViewBuilder* as a concrete example. *@ViewBuilder* allows us to build super reusable *SwiftUI* views by separating its presentation logic and content. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+This week we talked about the benefits of function builders and used *@ViewBuilder* as a concrete example. *@ViewBuilder* allows us to build super reusable SwiftUI views by separating its presentation logic and content. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 

@@ -5,7 +5,7 @@ image: /public/catch.png
 category: Architecture
 ---
 
-The Combine framework provides a declarative *Swift API* for processing values over time. It is another excellent framework that released side-by-side with *SwiftUI*. I already covered it multiple times on my blog, but today I want to talk about one of the key aspects of data processing. Today we will learn how to handle errors during data processing using the Combine framework.
+The Combine framework provides a declarative *Swift API* for processing values over time. It is another excellent framework that released side-by-side with SwiftUI. I already covered it multiple times on my blog, but today I want to talk about one of the key aspects of data processing. Today we will learn how to handle errors during data processing using the Combine framework.
 
 #### The lifecycle of publisher
 We use publishers to emit values over time. In the end, the publisher can finish its work by sending the completion event or fail with an error. Neither after completion nor after failure, the publisher can not emit new values. Let's take a look at the typical use-case that we might have in our apps.
@@ -57,7 +57,7 @@ final class SearchStore: ObservableObject {
 }
 ```
 
-I don't want to produce too many requests as user types a query. That's why I debounce it for *500ms*. It means the publisher will wait at least *500ms* whenever the user stops typing and then publish a value. Then I can use a *flatMap* operator to run a search request using a query. In the end, I use the sink subscriber to assign search results to a store variable. As soon as published variables change, *SwiftUI* will update the view to respect new data.
+I don't want to produce too many requests as user types a query. That's why I debounce it for *500ms*. It means the publisher will wait at least *500ms* whenever the user stops typing and then publish a value. Then I can use a *flatMap* operator to run a search request using a query. In the end, I use the sink subscriber to assign search results to a store variable. As soon as published variables change, SwiftUI will update the view to respect new data.
 
 > To learn more about store concept, take a look at my ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 

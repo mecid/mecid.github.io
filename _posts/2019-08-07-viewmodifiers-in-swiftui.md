@@ -4,7 +4,7 @@ layout: post
 category: View Composition
 ---
 
-*ViewModifiers* play a significant role in *SwiftUI*. Most of the functions called on a *View* are *ViewModifiers*. It is the primary way of modifying the view instance in *SwiftUI*. In this post, we will take a look at some ready to use *ViewModifiers*, and then we will build our own custom *ViewModifier*.
+*ViewModifiers* play a significant role in SwiftUI. Most of the functions called on a *View* are *ViewModifiers*. It is the primary way of modifying the view instance in SwiftUI. In this post, we will take a look at some ready to use *ViewModifiers*, and then we will build our own custom *ViewModifier*.
 
 #### Custom ViewModifier
 Assume that we are working on Github repositories search app, and we need some *View* to display a single repository in the search results screen. Here we go.
@@ -66,9 +66,9 @@ struct RepoRow: View {
 As you can see in the example, we use *SubheadlineModifier* by creating *ModifiedContent* struct with original *View* and *SubheadlineModifier* instance as parameters.
 
 #### ViewModifiers can have a @State like Views
-Another interesting fact about *ViewModifiers* is that it conforms to View protocol. It means you can use inside *ViewModifiers* property wrappers like *@State, @Binding, @Environment, @ObservableObject and @EnvironmentObject*. To learn more about property wrappers provided by *SwiftUI*, take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/).
+Another interesting fact about *ViewModifiers* is that it conforms to View protocol. It means you can use inside *ViewModifiers* property wrappers like *@State, @Binding, @Environment, @ObservableObject and @EnvironmentObject*. To learn more about property wrappers provided by SwiftUI, take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
-*Swift* has a lot of great libraries for loading and caching remote images. Let's integrate one of them with *SwiftUI*. Most of my projects use *Kingfisher* library for loading and caching remote images, but it doesn't support *SwiftUI* for now. We will try to integrate it by creating *ViewModifier* which loads remote images with *Kingfisher*.
+Swift has a lot of great libraries for loading and caching remote images. Let's integrate one of them with SwiftUI. Most of my projects use *Kingfisher* library for loading and caching remote images, but it doesn't support SwiftUI for now. We will try to integrate it by creating *ViewModifier* which loads remote images with *Kingfisher*.
 
 ```swift
 import class Kingfisher.KingfisherManager
@@ -135,5 +135,5 @@ struct RepoRow: View {
 ```
 
 #### Conclusion
-Today we talked about another key concept of *SwiftUI*. *ViewModifiers* allow us to encapsulate and reuse any logic across the *Views*. It is a compelling concept which we can use to build composable pieces of our apps. Try to use this method and share with me your thoughts about it. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+Today we talked about another key concept of SwiftUI. *ViewModifiers* allow us to encapsulate and reuse any logic across the *Views*. It is a compelling concept which we can use to build composable pieces of our apps. Try to use this method and share with me your thoughts about it. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
 

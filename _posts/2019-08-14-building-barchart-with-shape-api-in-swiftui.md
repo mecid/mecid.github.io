@@ -5,10 +5,10 @@ image: /public/chart.jpg
 category: Building custom views
 ---
 
-This week I want to show you how to use *Shape* API in *SwiftUI*. We will take a look at ready to use shapes like *Circle, Capsule, Rectangle*, etc. We will learn how to draw super custom shapes by using *Path* and *GeometryReader*. In the end, we will build *BarChart* implementation ultimately in *SwiftUI*.
+This week I want to show you how to use *Shape* API in SwiftUI. We will take a look at ready to use shapes like *Circle, Capsule, Rectangle*, etc. We will learn how to draw super custom shapes by using *Path* and *GeometryReader*. In the end, we will build *BarChart* implementation ultimately in SwiftUI.
 
 #### Shape protocol
-*SwiftUI* provides *Shape* protocol which has a single requirement *path* function. We use *path* function to describe our shape inside a provided rectangle. Let's try to use it to draw a progress ring.
+SwiftUI provides *Shape* protocol which has a single requirement *path* function. We use *path* function to describe our shape inside a provided rectangle. Let's try to use it to draw a progress ring.
 
 ```swift
 struct ProgressShape: Shape {
@@ -51,7 +51,7 @@ struct ProgressView: View {
 ```
 
 #### Ready to use shapes
-We discussed how to draw custom shapes, but most of the time, it is enough to apply ready to use shapes provided by *SwiftUI*. *SwiftUI* offers shapes like *Circle, Capsule, Rectangle*, etc. We can easily use them to build *BarChart* in *SwiftUI*. Let's start by describing the Bar data model.
+We discussed how to draw custom shapes, but most of the time, it is enough to apply ready to use shapes provided by SwiftUI. SwiftUI offers shapes like *Circle, Capsule, Rectangle*, etc. We can easily use them to build *BarChart* in SwiftUI. Let's start by describing the Bar data model.
 
 ```swift
 struct Legend: Hashable {
@@ -98,7 +98,7 @@ struct BarsView: View {
 
 Here we implement *BarsView* which uses *HStack* to display capsules in the horizontal layout. Another interesting fact here is *GeometryReader*. By wrapping any view inside the *GeometryReader*, we can access the geometry data like parent size and safe area insets provided by its container. We use container size to calculate the height of bars and draw them properly. We also use accessibility modifier here to make our bars more accessible and navigable.
 
-Every chart should have a legend view. Let's implement it by using another regular shape provided by *SwiftUI*. I want to display legends as a view which contains a small colored circle on the left and title on the right.
+Every chart should have a legend view. Let's implement it by using another regular shape provided by SwiftUI. I want to display legends as a view which contains a small colored circle on the left and title on the right.
 
 ```swift
 struct LegendView: View {
@@ -185,4 +185,4 @@ Take a look at the final version of *BarChartView* in *SleepBot* app.
 ![chart](/public/chart.jpg)
 
 #### Conclusion
-Today we talked about *Shape* API which we have in *SwiftUI*. We also build *BarChart* experience by using ready to use *Capsule* and *Circle* shapes. We made our chart accessible by providing labels and values for our bars. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
+Today we talked about *Shape* API which we have in SwiftUI. We also build *BarChart* experience by using ready to use *Capsule* and *Circle* shapes. We made our chart accessible by providing labels and values for our bars. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 

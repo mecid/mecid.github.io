@@ -17,7 +17,7 @@ struct AppState {
 
 Next step is passing the read-only app state to every view inside the app. The best way for doing that is *SwiftUI's Environment* feature. We can put an object holding the whole app state in the *Environment* of the root view. Root view will share its *Environment* with all child views.
 
-> *SwiftUI* uses environment to pass system-wide and application-related information. You can also populate environment with your custom objects. To learn more about environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+> SwiftUI uses environment to pass system-wide and application-related information. You can also populate environment with your custom objects. To learn more about environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 ```swift
 final class Store: ObservableObject {
@@ -25,7 +25,7 @@ final class Store: ObservableObject {
 }
 ```
 
-In the example above, we create a store object that stores the app state and provides read-only access to it. State property uses *@Published* property wrapper that notifies *SwiftUI* during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
+In the example above, we create a store object that stores the app state and provides read-only access to it. State property uses *@Published* property wrapper that notifies SwiftUI during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 
 #### Reducer and Actions
 It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing a change of the state. For example, set loading value during data fetch, assign fetched repositories to the state property. Let's take a look at the example code for *Action* enum.
@@ -53,7 +53,7 @@ func appReducer(state: inout AppState, action: AppAction) {
 ```
 
 #### Unidirectional flow
-Let's talk about data flow now. Every view has a read-only access to the state via store object. Views can send *actions* to the store object. *Reducer* modifies the state, and then *SwiftUI* notifies all the views about state changes. *SwiftUI* has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works so fast. Let's modify our store object to support sending *actions*.
+Let's talk about data flow now. Every view has a read-only access to the state via store object. Views can send *actions* to the store object. *Reducer* modifies the state, and then SwiftUI notifies all the views about state changes. SwiftUI has a super-efficient diffing algorithm that's why diffing of the whole app state and updating changed views works so fast. Let's modify our store object to support sending *actions*.
 
 ```swift
 final class Store<State, Action>: ObservableObject {

@@ -5,7 +5,7 @@ image: /public/anyview.png
 category: View Composition
 ---
 
-Currently, I have three ongoing *SwiftUI* projects. During my work on these projects, I find myself in copying some extension files, which are very helpful in any *SwiftUI* based project.  That's why I decide to share with you that small foundation of useful extensions.
+Currently, I have three ongoing SwiftUI projects. During my work on these projects, I find myself in copying some extension files, which are very helpful in any SwiftUI based project.  That's why I decide to share with you that small foundation of useful extensions.
 
 #### AnyView
 *AnyView* is a type-erased view. It allows us to hide the real type of view inside the erased box. Usually, we might use it whenever we want to return different types of views. Let's take a look at a quick example.
@@ -203,4 +203,4 @@ extension View {
 ```
 
 #### Conclusion
-Today we talked about the most useful *SwiftUI* extensions from my codebase. I hope you will find it valuable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+Today we talked about the most useful SwiftUI extensions from my codebase. I hope you will find it valuable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 

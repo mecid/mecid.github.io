@@ -5,10 +5,10 @@ image: /public/swiftui.png
 category: Data Flow
 ---
 
-Binding is one of the several property wrappers that *SwiftUI* presents us to control data flow in the app. Binding provides us a reference like access to a value type. This week we will understand how and when to use binding. We will learn how to avoid common mistakes while using binding in *SwiftUI*.
+Binding is one of the several property wrappers that SwiftUI presents us to control data flow in the app. Binding provides us a reference like access to a value type. This week we will understand how and when to use binding. We will learn how to avoid common mistakes while using binding in SwiftUI.
 
 #### Basics
-Binding is a property wrapper type that can read and write a value owned by a source of truth. We have several possible types of sources of truth in *SwiftUI*. It can be *EnvironmentObject*, *ObservedObject* or *State*. All these property wrappers provide a projected value, which is binding. Let's take a look at the quick example.
+Binding is a property wrapper type that can read and write a value owned by a source of truth. We have several possible types of sources of truth in SwiftUI. It can be *EnvironmentObject*, *ObservedObject* or *State*. All these property wrappers provide a projected value, which is binding. Let's take a look at the quick example.
 
 ```swift
 import SwiftUI
@@ -96,7 +96,7 @@ struct EditingView: View {
 }
 ```
 
-As you can see in the example above, we use binding to pass a writable reference to a person struct. As soon as we modify the user instance inside the *EditingView* *SwiftUI* updates *PersonsView* to respect the changes.
+As you can see in the example above, we use binding to pass a writable reference to a person struct. As soon as we modify the user instance inside the *EditingView* SwiftUI updates *PersonsView* to respect the changes.
 
 ```swift
 extension Sequence {
@@ -111,7 +111,7 @@ You can see that I use the *indexed* function to generate an array of tuples tha
 > To learn more about building editable forms using *Form* component, take a look at my ["Building forms with SwiftUI"](/2019/06/19/building-forms-with-swiftui/) post.
 
 #### Computed Binding
-Usually, we access binding using a projected value of a source of truth. In this section, we will talk about another way of creating a binding. Binding is a two-way connection between the data and a view that access it. *SwiftUI* provides a way to construct a binding using getter and setter closures. In this case, we are responsible for calculating the value inside these closures. It is hard to imagine where we can use it, but it plays very well with Redux-like state containers.
+Usually, we access binding using a projected value of a source of truth. In this section, we will talk about another way of creating a binding. Binding is a two-way connection between the data and a view that access it. SwiftUI provides a way to construct a binding using getter and setter closures. In this case, we are responsible for calculating the value inside these closures. It is hard to imagine where we can use it, but it plays very well with Redux-like state containers.
 
 ```swift
 typealias Reducer<State, Action> = (inout State, Action) -> Void
@@ -165,4 +165,4 @@ struct ExampleView: View {
 ```
 
 #### Conclusion
-Today we learned another great tool to control data flow in *SwiftUI*. Binding can be a tool which is more complicated than others, but I believe we cover all the needed things for efficient use of bindings in *SwiftUI*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today we learned another great tool to control data flow in SwiftUI. Binding can be a tool which is more complicated than others, but I believe we cover all the needed things for efficient use of bindings in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!

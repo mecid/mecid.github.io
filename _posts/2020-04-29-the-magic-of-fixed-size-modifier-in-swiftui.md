@@ -5,10 +5,10 @@ layout: post
 category: Layout
 ---
 
-You may have seen some examples of fixed size modifier usage while trying to fix the issue with multiline text in *SwiftUI*. But do you know what exactly fixed size modifier does? How does it work? Today I want to talk about all the magic and power behind the fixed size modifier.
+You may have seen some examples of fixed size modifier usage while trying to fix the issue with multiline text in SwiftUI. But do you know what exactly fixed size modifier does? How does it work? Today I want to talk about all the magic and power behind the fixed size modifier.
 
 #### Basics
-*SwiftUI* documentation says that the fixed size modifier fixes this view at its ideal size. I think the best way to understand how the fixed size modifier works is the visual example. Let's take a look at a small sample.
+SwiftUI documentation says that the fixed size modifier fixes this view at its ideal size. I think the best way to understand how the fixed size modifier works is the visual example. Let's take a look at a small sample.
 
 ```swift
 struct Example1: View {
@@ -21,7 +21,7 @@ struct Example1: View {
 }
 ```
 
-We try to simulate the rendering of very long text. I also use the frame modifier to limit available space. As you can see in the example above, the text doesn't fit the available space, and the *SwiftUI* layout system decides to truncate it.
+We try to simulate the rendering of very long text. I also use the frame modifier to limit available space. As you can see in the example above, the text doesn't fit the available space, and the SwiftUI layout system decides to truncate it.
 
 ![fixed-size](/public/fixedSize1.png)
 
@@ -47,7 +47,7 @@ As you can see in the code sample above, the fixed size modifier allows to text 
 
 > To learn more about clipping and changing the shape of a view, take a look at my ["Customizing the shape of views in SwiftUI" post](/2020/02/12/customizing-the-shape-of-views-in-swiftui/).
 
-*SwiftUI* provides us two versions of fixed size modifier. The first one, which we already used in previous examples, doesn't have any parameters and allows the view to grow both vertically and horizontally. The second variant of the fixed size modifier accepts two boolean parameters. These parameters describe the axis of expansion.
+SwiftUI provides us two versions of fixed size modifier. The first one, which we already used in previous examples, doesn't have any parameters and allows the view to grow both vertically and horizontally. The second variant of the fixed size modifier accepts two boolean parameters. These parameters describe the axis of expansion.
 
 ```swift
 struct Example1: View {
@@ -61,7 +61,7 @@ struct Example1: View {
 }
 ```
 
-Here we use the fixed size modifier to allow the view to expand horizontally. This level of control lets us use the fixed size modifier as an alternative to layout priorities in *SwiftUI*.  Let's take a look at another example.
+Here we use the fixed size modifier to allow the view to expand horizontally. This level of control lets us use the fixed size modifier as an alternative to layout priorities in SwiftUI.  Let's take a look at another example.
 
 ```swift
 struct Example2: View {
@@ -78,7 +78,7 @@ struct Example2: View {
 }
 ```
 
-In the example above, we have the horizontal stack that contains three text labels. The layout system can't render all of them without truncating because labels have pretty big font sizes. Assume that we want to display the second label without truncating and allow to *SwiftUI* cut other labels. We have at least two solutions here. The first one is layout priority, and the second one is the fixed size modifier.
+In the example above, we have the horizontal stack that contains three text labels. The layout system can't render all of them without truncating because labels have pretty big font sizes. Assume that we want to display the second label without truncating and allow to SwiftUI cut other labels. We have at least two solutions here. The first one is layout priority, and the second one is the fixed size modifier.
 
 ```swift
 struct Example2: View {

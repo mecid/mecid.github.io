@@ -5,9 +5,9 @@ image: /public/networking.png
 category: Architecture
 ---
 
-This week I want to talk about building a networking layer in *Swift* using *Functional programming*. *Functional programming* is a way of making programs using *pure functions and function composition*. Let's see how we can use it to build a flexible and composable network layer.
+This week I want to talk about building a networking layer in Swift using *Functional programming*. *Functional programming* is a way of making programs using *pure functions and function composition*. Let's see how we can use it to build a flexible and composable network layer.
 
-Usually, *Swift* developers use the *Protocol-Oriented* style of programming to build any abstractions like the networking layer. In most of the cases, protocols generate more boilerplate than needed. Let's instead model our networking layer using a pure function and function composition. 
+Usually, Swift developers use the *Protocol-Oriented* style of programming to build any abstractions like the networking layer. In most of the cases, protocols generate more boilerplate than needed. Let's instead model our networking layer using a pure function and function composition. 
 
 #### Pure functions
 Pure functions calculate output using input and don't affect or rely on any state outside itself. It means pure function takes an argument to transform and return a new value. Here is a very simple example of a pure function that takes two arguments, sums them, and returns a new value.

@@ -4,7 +4,7 @@ layout: post
 image: /public/swiftui.png
 category: Mastering SwiftUI views
 ---
-This week I want to talk to you about a *TextField* component in *SwiftUI*.  It might look like an elementary tutorial, but *TextField* has pretty exciting features like out of the box formatting that we don't have in *UIKit*. But let's start with the basics of the *TextField* component.
+This week I want to talk to you about a *TextField* component in SwiftUI.  It might look like an elementary tutorial, but *TextField* has pretty exciting features like out of the box formatting that we don't have in *UIKit*. But let's start with the basics of the *TextField* component.
 
 #### Basics
 As you might know, we can use *TextField* for user input. All we need to do is to create a *TextField* and assign it to any *Binding* of a *String* value. Let's take a look at a very quick example.
@@ -66,7 +66,7 @@ struct ContentView: View {
 *TextField* uses provided *Formatter* while converting between the string that user edits and the underlying raw value. In case when *Formatter* is unable to perform a conversion, the value will not be modified. Try to type some letters that *Formatter* is not able to convert to see what will happen.
 
 #### Styling
-*SwiftUI* provides us a few styles and the *textFieldStyle* modifier that we can use to apply styles to our *TextFields* in the app. *textFieldStyle* modifier uses the environment to pass the style to every view inside the environment. It looks very similar to the *buttonStyle* modifier that discussed in the previous post.
+SwiftUI provides us a few styles and the *textFieldStyle* modifier that we can use to apply styles to our *TextFields* in the app. *textFieldStyle* modifier uses the environment to pass the style to every view inside the environment. It looks very similar to the *buttonStyle* modifier that discussed in the previous post.
 
 > To learn more about *buttonStyle* modifier, take a look at my ["Mastering buttons in SwiftUI post"](/2020/02/19/mastering-buttons-in-swiftui/).
 
@@ -81,7 +81,7 @@ struct ContentView: View {
 }
 ```
 
-*SwiftUI* has a *TextFieldStyle* protocol that we can use to provide styling to our *TextFields*. Let's take a look at how we can use it.
+SwiftUI has a *TextFieldStyle* protocol that we can use to provide styling to our *TextFields*. Let's take a look at how we can use it.
 
 ```swift
 struct SuperCustomTextFieldStyle: TextFieldStyle {
