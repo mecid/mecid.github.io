@@ -2,6 +2,7 @@
 title: Redux-like state container in SwiftUI. Container Views.
 layout: post
 category: Architecture
+image: /public/store.png
 ---
 
 This week I want to continue the topic of using a *Redux-like state container in SwiftUI*. I'm delighted with the new approach and already finished the refactoring of the [NapBot app](https://napbotapp.com/) in this way. That's why today I want to share with you how I use *Container Views* with a state container similar to *Redux*.

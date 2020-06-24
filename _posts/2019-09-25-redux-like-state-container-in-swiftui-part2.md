@@ -2,6 +2,7 @@
 title: Redux-like state container in SwiftUI. Best practices.
 layout: post
 category: Architecture
+image: /public/store.png
 ---
 
 Last week we talked about [building a state container similar to Redux in SwiftUI](/2019/09/18/redux-like-state-container-in-swiftui/). *Redux* provides a single source of truth, which eliminates tons of bugs produced by multiple states across the app. This week we will talk about best practices in building *Redux-based* apps which allows us to keep our codebase simple and clean.

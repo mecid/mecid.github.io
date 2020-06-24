@@ -2,6 +2,7 @@
 title: Modeling app state using Store objects in SwiftUI
 layout: post
 category: Architecture
+image: /public/store.png
 ---
 
 This week I want to talk to you about modeling data layer in SwiftUI. I already finished work on my very first app, which I build entirely with SwiftUI. And now I can share with you the way of architecting model layer using store objects which I used during the development of *NapBot*.
