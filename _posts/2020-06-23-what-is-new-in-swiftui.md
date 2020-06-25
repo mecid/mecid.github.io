@@ -1,5 +1,5 @@
 ---
-title: What is new in SwiftUI
+title: What's new in SwiftUI
 layout: post
 image: /public/wwdc20.jpg
 category: Meta
