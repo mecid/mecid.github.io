@@ -198,6 +198,7 @@ Today we learned how to build *Redux-like* state container with *side-effects* i
 3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)
 
 #### References
+0. [WWDC20 - Data Essentials in SwiftUI](https://developer.apple.com/videos/play/wwdc2020/10040/)
 1. [The Elm Architecture](https://guide.elm-lang.org/architecture/)
 2. [The Elm Architecture in Swift](https://github.com/chriseidhof/tea-in-swift)
 3. [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture)
