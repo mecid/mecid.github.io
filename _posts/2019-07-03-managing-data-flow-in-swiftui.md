@@ -93,6 +93,16 @@ Here we use *Binding* for selected person item. *Binding Property Wrapper* allow
 Now let's refactor our *PersonsView* to support editing by passing *Binding* to a selected *Person* inside *EditingView*.
 
 ```swift
+import Foundation
+
+extension RandomAccessCollection {
+    func indexed() -> Array<(offset: Int, element: Element)> {
+        Array(enumerated())
+    }
+}
+
+import SwiftUI
+
 struct PersonsView : View {
     @ObservedObject var store: PersonStore
 
@@ -116,43 +126,10 @@ struct PersonsView : View {
         }
     }
 }
-
-struct IndexedCollection<Base: RandomAccessCollection>: RandomAccessCollection {
-    typealias Index = Base.Index
-    typealias Element = (index: Index, element: Base.Element)
-
-    let base: Base
-
-    var startIndex: Index { base.startIndex }
-
-    var endIndex: Index { base.endIndex }
-
-    func index(after i: Index) -> Index {
-        base.index(after: i)
-    }
-
-    func index(before i: Index) -> Index {
-        base.index(before: i)
-    }
-
-    func index(_ i: Index, offsetBy distance: Int) -> Index {
-        base.index(i, offsetBy: distance)
-    }
-
-    subscript(position: Index) -> Element {
-        (index: position, element: base[position])
-    }
-}
-
-extension RandomAccessCollection {
-    func indexed() -> IndexedCollection<Self> {
-        IndexedCollection(base: self)
-    }
-}
 ```
 
 #### And here is the screenshot of our app, you can see how it looks.
 ![managing-data-flow-in-swiftui](/public/managing-data-flow-in-swiftui.png)
 
 #### Conclusion
-Today we built simple Master-Detail flow in SwiftUI. I've tried to show the power of *Bindings* in SwiftUI. You don't need to post notifications or observe key-value to indicate changes in your User Interface, all you need is using correct *Property Wrapper provided by SwiftUI*. Again, if you want to learn when and which one should be used, check out my [post about Property Wrappers in SwiftUI](/2019/06/12/understanding-property-wrappers-in-swiftui/). Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we built simple Master-Detail flow in SwiftUI. I've tried to show the power of *Bindings* in SwiftUI. You don't need to post notifications or observe key-values to indicate changes in your User Interface, all you need is using correct *Property Wrapper provided by SwiftUI*. Again, if you want to learn when and which one should be used, check out my [post about Property Wrappers in SwiftUI](/2019/06/12/understanding-property-wrappers-in-swiftui/). Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
