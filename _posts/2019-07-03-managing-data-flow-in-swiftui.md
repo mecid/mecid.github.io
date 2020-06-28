@@ -128,7 +128,7 @@ struct PersonsView : View {
 }
 ```
 
-#### And here is the screenshot of our app, you can see how it looks.
+And here is the screenshot of our app, you can see how it looks.
 ![managing-data-flow-in-swiftui](/public/managing-data-flow-in-swiftui.png)
 
 #### Conclusion
