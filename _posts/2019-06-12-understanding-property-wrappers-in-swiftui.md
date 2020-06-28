@@ -172,7 +172,7 @@ struct EpisodesView: View {
 }
 ```
 
-As you can see, we have to pass *PodcastPlayer* object via *environmentObject* modifier of our *View*. By doing this, we can easily access *PodcastPlayer* by defining it with *@EnvironmentObject Property Wrapper*. @*EnvironmentObject* uses dynamic member lookup feature to find *PodcastPlayer* class instance in the *Environment*, that's why you don't need to pass it via init method of *EpisodesView*. It works like magic.
+As you can see, we can pass *PodcastPlayer* object via *environmentObject* modifier of our *View*. By doing this, we can easily access *PodcastPlayer* by defining it with *@EnvironmentObject Property Wrapper*. @*EnvironmentObject* uses dynamic member lookup feature to find *PodcastPlayer* class instance in the *Environment*, that's why you don't need to pass it via init method of *EpisodesView*. It works like magic.
 
 #### @Environment
 As we discussed in the previous chapter, we can pass custom objects into the *Environment* of a *View* hierarchy inside SwiftUI. But SwiftUI already has an *Environment* populated with system-wide settings. We can easily access them with *@Environment Property Wrapper*.
