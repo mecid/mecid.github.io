@@ -88,7 +88,7 @@ struct EditingView: View {
 }
 ```
 
-Here we use *Binding* for selected person item. *Binding Property Wrapper* allows passing a reference to a value type. By using *Binding* property, *EditingView* can read and write to the *Person* struct, but it doesn't store a copy of it. We use this *Binding* to mutate value inside *PersonsStore* and as soon as we do that SwiftUI will update the view with the updated list of *Persons*. If you want to learn more about *Property Wrappers* available in SwiftUI like @*Binding*, @*Environment*, @*EnvironmentObject*, *@ObservedObject*, please take a look at the ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/).
+Here we use *Binding* for selected person item. *Binding Property Wrapper* allows passing a reference to a value type. By using *Binding* property, *EditingView* can read and mutate the *Person* struct, but it doesn't store a copy of it. We use this *Binding* to mutate value inside *PersonsStore* and as soon as we do that SwiftUI will update the view with the updated list of *Persons*. If you want to learn more about *Property Wrappers* available in SwiftUI like @*Binding*, @*Environment*, @*EnvironmentObject*, *@ObservedObject*, please take a look at the ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
 Now let's refactor our *PersonsView* to support editing by passing *Binding* to a selected *Person* inside *EditingView*.
 
