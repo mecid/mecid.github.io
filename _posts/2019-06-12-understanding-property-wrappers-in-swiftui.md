@@ -192,4 +192,4 @@ struct CalendarView: View {
 By marking our properties with *@Environment Property Wrapper*, we access and subscribe to changes of system-wide settings. As soon as *Locale*, *Calendar* or *ColorScheme* of the system change, SwiftUI recreates our *CalendarView*.
 
 #### Conclusion
-Today we talked about *Property Wrappers* provided by SwiftUI. *@State, @Binding, @EnvironmentObject, and @ObservedObject* play huge role in SwiftUI development. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
+Today we talked about *Property Wrappers* provided by SwiftUI. *@State, @Binding, @EnvironmentObject, @Environment and @ObservedObject* play huge role in SwiftUI development. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
