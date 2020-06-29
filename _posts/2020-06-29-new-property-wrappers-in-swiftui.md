@@ -5,7 +5,7 @@ image: /public/wwdc20.jpg
 category: Data Flow
 ---
 
-WWDC20 brought a lot of new features into SwiftUI that I will discuss on my blog during the next weeks. Today I would like to start with the main additions to SwiftUI data flow with the brand new @*StateObject*, @*AppStorage*, and @*SceneStorage* property wrappers.
+WWDC20 brought a lot of new features into SwiftUI that I will discuss on my blog during the next weeks. Today I would like to start with the main additions to SwiftUI data flow with the brand new @*StateObject*, @*AppStorage*, @*SceneStorage*, and @*ScaledMetric* property wrappers.
 
 > If you are not familiar with the legacy property wrappers that SwiftUI provides, I suggest to start with my ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
