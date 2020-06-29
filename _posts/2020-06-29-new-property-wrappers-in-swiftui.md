@@ -5,14 +5,14 @@ image: /public/wwdc20.jpg
 category: Data Flow
 ---
 
-WWDC20 brought a lot of new features into SwiftUI that I will discuss on my blog during the next weeks. Today I would like to start with the main additions to the SwiftUI data flow with the brand new @*StateObject*, @*AppStorage*, and @*SceneStorage* property wrappers.
+WWDC20 brought a lot of new features into SwiftUI that I will discuss on my blog during the next weeks. Today I would like to start with the main additions to SwiftUI data flow with the brand new @*StateObject*, @*AppStorage*, and @*SceneStorage* property wrappers.
 
 > If you are not familiar with the legacy property wrappers that SwiftUI provides, I suggest to start with my ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
 #### StateObject
-As you remember, SwiftUI provides us an *ObservedObject* property wrapper that allows us to observe the changes in the data model that lives outside of the SwiftUI framework. For example, it might be the data that you fetch from web service or the local database. The main concern about *ObservedObject* was the lifecycle. You have to store it somewhere outside of SwiftUI to save it during view updates. In other cases, you can lose the data backed by *ObservedObject* in certain circumstances.
+As you remember, SwiftUI provides us the @*ObservedObject* property wrapper that allows us to observe the changes in the data model that lives outside of the SwiftUI framework. For example, it might be the data that you fetch from web service or the local database. The main concern about @*ObservedObject* was the lifecycle. You have to store it somewhere outside of SwiftUI to save it during view updates, for example, in *SceneDelegate* or *AppDelegate*. In other cases, you can lose the data backed by @*ObservedObject* in certain circumstances.
 
-Here is the brand new *StateObject* property wrapper, which will fill the most significant gap in SwiftUI data flow management. SwiftUI creates only one instance of the *StateObject* for each container instance that you declare and holds in the internal framework memory that saves it during view updates. *StateObject* works in a very similar way to *State* property wrapper, but instead of value types, it is designed to work with reference types.
+Here is the brand new *StateObject* property wrapper that fills the most significant gap in SwiftUI data flow management. SwiftUI creates only one instance of the *StateObject* for each container instance that you declare and holds it in the internal framework memory that saves it during view updates. *StateObject* works in a very similar way to *State* property wrapper, but instead of value types, it is designed to work with reference types.
 
 ```swift
 struct CalendarContainerView: View {
@@ -103,5 +103,7 @@ struct ContentView: View {
 }
 ```
 
+As soon as user changes the Dynamic Type settings, SwiftUI scales the value of spacing and update the view.
+
 #### Conclusion
-Today we learned about new property wrappers in SwiftUI. I believe there is enough data flow property wrappers that can cover any logic we need while implementing our apps. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and have a nice week!
+Today we learned about new property wrappers in SwiftUI. I believe there are enough data flow property wrappers that can cover any logic we need while implementing our apps. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and have a nice week!
