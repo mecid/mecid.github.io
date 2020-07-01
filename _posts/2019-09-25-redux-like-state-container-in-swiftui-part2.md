@@ -71,6 +71,78 @@ func appReducer(state: inout AppState, action: AppAction) {
 }
 ```
 
+#### Derived stores
+Another way of composition that should simplify our architecture is derived stores. I don't want to expose the whole app state to every view or update views on not related state updates. Here is a small example from my CardioBot app.
+
+```swift
+import SwiftUI
+
+struct RootView: View {
+    @EnvironmentObject var store: Store<AppState, AppAction>
+
+    var body: some View {
+        TabView {
+            NavigationView {
+                SummaryContainerView()
+                    .navigationBarTitle("today")
+                    .environmentObject(
+                        store.derived(
+                            deriveState: \.summary,
+                            deriveAction: AppAction.summary
+                        )
+                )
+            }.tabItem {
+                Image(systemName: "heart.fill")
+                    .imageScale(.large)
+                Text("today")
+            }
+
+            NavigationView {
+                TrendsContainerView()
+                    .navigationBarTitle("trends")
+                    .environmentObject(
+                        store.derived(
+                            deriveState: \.trends,
+                            deriveAction: AppAction.trends
+                        )
+                )
+            }.tabItem {
+                Image(systemName: "chevron.up.circle.fill")
+                    .imageScale(.large)
+                Text("trends")
+            }
+        }
+    }
+}
+```
+
+As you can see, every tab of my app gets its part of the state via the derived store. We still use the global store to handle all the state mutation. Derived store works as a pipeline that allows us to transform the state from the global store and redirect actions to the global store. Let's take a look at how we can implement the derived method for our Store class.
+
+```swift
+private var derivedCancellable: AnyCancellable?
+
+func derived<DerivedState: Equatable, DerivedAction, Void>(
+    deriveState: @escaping (State) -> DerivedState,
+    deriveAction: @escaping (DerivedAction) -> Action
+) -> Store<DerivedState, DerivedAction, Void> {
+    let store = Store<DerivedState, DerivedAction, Void>(
+        initialState: deriveState(state),
+        reducer: Reducer { _, action, _ in
+            self.send(deriveAction(action))
+            return Empty(completeImmediately: true)
+                .eraseToAnyPublisher()
+        }, environment: ()
+    )
+
+    store.derivedCancellable = $state
+        .map(deriveState)
+        .removeDuplicates()
+        .sink { [weak store] in store?.state = $0 }
+
+    return store
+}
+```
+
 #### Conclusion
 Today we talked about two important strategies which we should use during app development using *Redux-like* state containers in SwiftUI. Both normalization and composition keep our app state simple and maintainable. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
 
