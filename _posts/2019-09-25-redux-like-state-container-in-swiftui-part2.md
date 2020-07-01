@@ -116,7 +116,7 @@ struct RootView: View {
 }
 ```
 
-As you can see, every tab of my app gets its part of the state via the derived store. We still use the global store to handle all the state mutation. Derived store works as a pipeline that allows us to transform the state from the global store and redirect actions to the global store. Let's take a look at how we can implement the derived method for our Store class.
+As you can see, every tab of my app gets its part of the state via the derived store. We still use the global store to handle all the state mutation. Derived store works as a pipeline that allows us to transform the state from the global store and redirect actions to the global store. Let's take a look at how we can implement the *derived* method for our *Store* class.
 
 ```swift
 private var derivedCancellable: AnyCancellable?
