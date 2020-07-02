@@ -34,7 +34,7 @@ struct CardioBotApp: App {
 
 As you can see, @*StateObject* perfectly fits to store the whole app state and share it with different scenes or views of your app. SwiftUI will store it in special framework memory outside of the lifecycle of your views to keep your data in a safe place.
 
-> To learn more about using a single state container, take a look at my "Redux-like state container in SwiftUI. Basics." post.
+> To learn more about using a single state container, take a look at my ["Redux-like state container in SwiftUI. Basics."](/2019/09/18/redux-like-state-container-in-swiftui/) post.
 
 #### @EnvironmentObject
 @*EnvironmentObject* is an excellent way to implicitly inject an instance of a class that conforms to *ObservableObject* into a part of the view hierarchy. Assume that you have a module in your app that contains 3-4 screens, and all of them use the same ViewModel. You don't want to pass the same ViewModel explicitly from one view to another. It is a great use case for @*EnvironmentObject*. Let's take a look at how we can use it.
