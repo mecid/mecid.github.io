@@ -2,7 +2,7 @@
 title: The difference between @StateObject, @EnvironmentObject, and @ObservedObject in SwiftUI
 layout: post
 image: /public/wwdc20.jpg
-category: Data flow
+category: Data Flow
 ---
 
 This week I decided to share as much as I can about data flow in SwiftUI. In this post, we will discuss the difference between @*StateObject*, @*EnvironmentObject*, and @*ObservedObject* property wrappers. I know that this is the most confusing topic in SwiftUI for newcomers.
