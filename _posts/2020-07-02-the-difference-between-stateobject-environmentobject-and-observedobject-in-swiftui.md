@@ -93,7 +93,7 @@ struct SummaryContainerView: View {
 }
 ```
 
-> To learn more about using a single state container, take a look at my "Redux-like state container in SwiftUI. Basics." post.
+> To learn more about advanced techniques while using a single state container, take a look at my ["Redux-like state container in SwiftUI. Best practices."](/2019/09/25/redux-like-state-container-in-swiftui-part2/) post.
 
 #### @ObservedObject
 @*ObservedObject* is another way to subscribe and keep track of changes in *ObservableObject*. Unlike @*EnvironmentObject*, you have to make it explicitly. SwiftUI doesn't control the lifecycle of @*ObservedObject*, and you have to manage it yourself. @*ObservedObject* perfectly fits a case where you have an *ObservableObject* stored by @*StateObject*, and you want to share it with any reusable view.
@@ -126,7 +126,7 @@ NavigationLink(
 }
 ```
 
-> To learn more about using a single state container, take a look at my "Redux-like state container in SwiftUI. Basics." post.
+> To learn more about using container views, take a look at my ["Redux-like state container in SwiftUI. Container Views."](/2019/10/02/redux-like-state-container-in-swiftui-part3/) post.
 
 #### Conclusion
 Today we talked about the differences between @*StateObject*, @*EnvironmentObject*, and @*ObservedObject* property wrappers. I hope this post makes it easier to understand which property wrapper fits best for your case. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
