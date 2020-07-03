@@ -126,6 +126,8 @@ struct SummaryContainerView: View {
 }
 ```
 
+I have to mention that @*EnvironmentObject* has the same lifecycle as @*ObservedObject*. It means that you can get a new environment object whenever you create it inside a view that can be recreated by SwiftUI.
+
 > To learn more about advanced techniques while using a single state container, take a look at my ["Redux-like state container in SwiftUI. Best practices."](/2019/09/25/redux-like-state-container-in-swiftui-part2/) post.
 
 #### Conclusion
