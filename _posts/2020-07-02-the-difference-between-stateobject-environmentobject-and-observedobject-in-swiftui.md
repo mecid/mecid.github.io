@@ -36,6 +36,39 @@ As you can see, @*StateObject* perfectly fits to store the whole app state and s
 
 > To learn more about using a single state container, take a look at my ["Redux-like state container in SwiftUI. Basics."](/2019/09/18/redux-like-state-container-in-swiftui/) post.
 
+#### @ObservedObject
+@*ObservedObject* is another way to subscribe and keep track of changes in *ObservableObject*. SwiftUI doesn't control the lifecycle of @*ObservedObject*, and you have to manage it yourself. @*ObservedObject* perfectly fits a case where you have an *ObservableObject* stored by @*StateObject*, and you want to share it with any reusable view.
+
+```swift
+struct CalendarContainerView: View {
+    @ObservedObject var store: Store<CalendarState, CalendarAction>
+    let interval: DateInterval
+
+    var body: some View {
+        CalendarView(interval: interval) { date in
+            DateView(date: date) {
+                self.view(for: date)
+            }
+        }.navigationBarTitle("calendar", displayMode: .inline)
+    }
+}
+```
+
+I mention reusable views because I use *CalendarContainerView* in multiple places in my app, and I don't want to make it dependent on the environment. I use @*ObservedObject* to explicitly indicate the data used by the view in that particular case.
+
+```swift
+NavigationLink(
+    destination: CalendarContainerView(
+        store: transformedStore,
+        interval: .twelveMonthsAgo
+    )
+) {
+    Text("Calendar")
+}
+```
+
+> To learn more about using container views, take a look at my ["Redux-like state container in SwiftUI. Container Views."](/2019/10/02/redux-like-state-container-in-swiftui-part3/) post.
+
 #### @EnvironmentObject
 @*EnvironmentObject* is an excellent way to implicitly inject an instance of a class that conforms to *ObservableObject* into a part of the view hierarchy. Assume that you have a module in your app that contains 3-4 screens, and all of them use the same ViewModel. If you don't want to pass the same ViewModel explicitly from one view to another, then @*EnvironmentObject* is all you need. Let's take a look at how we can use it.
 
@@ -94,39 +127,6 @@ struct SummaryContainerView: View {
 ```
 
 > To learn more about advanced techniques while using a single state container, take a look at my ["Redux-like state container in SwiftUI. Best practices."](/2019/09/25/redux-like-state-container-in-swiftui-part2/) post.
-
-#### @ObservedObject
-@*ObservedObject* is another way to subscribe and keep track of changes in *ObservableObject*. Unlike @*EnvironmentObject*, you have to make it explicitly. SwiftUI doesn't control the lifecycle of @*ObservedObject*, and you have to manage it yourself. @*ObservedObject* perfectly fits a case where you have an *ObservableObject* stored by @*StateObject*, and you want to share it with any reusable view.
-
-```swift
-struct CalendarContainerView: View {
-    @ObservedObject var store: Store<CalendarState, CalendarAction>
-    let interval: DateInterval
-
-    var body: some View {
-        CalendarView(interval: interval) { date in
-            DateView(date: date) {
-                self.view(for: date)
-            }
-        }.navigationBarTitle("calendar", displayMode: .inline)
-    }
-}
-```
-
-I mention reusable views because I use *CalendarContainerView* in multiple places in my app, and I don't want to make it dependent on the environment. I use @*ObservedObject* to explicitly indicate the data used by the view in that particular case.
-
-```swift
-NavigationLink(
-    destination: CalendarContainerView(
-        store: transformedStore,
-        interval: .twelveMonthsAgo
-    )
-) {
-    Text("Calendar")
-}
-```
-
-> To learn more about using container views, take a look at my ["Redux-like state container in SwiftUI. Container Views."](/2019/10/02/redux-like-state-container-in-swiftui-part3/) post.
 
 #### Conclusion
 Today we talked about the differences between @*StateObject*, @*EnvironmentObject*, and @*ObservedObject* property wrappers. I hope this post makes it easier to understand which property wrapper fits best your case. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
