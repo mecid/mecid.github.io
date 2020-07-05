@@ -138,36 +138,9 @@ struct EditView: View {
 Here is a straightforward implementation of the idea. It looks simple, but it doesn't compile. The problem here is that *EditView* needs a binding to the note to alter it, but instead, we pass a copy of the note. We can't provide both binding and item while using an array. Let's introduce the *IndexedCollection* type.
 
 ```swift
-struct IndexedCollection<Base: RandomAccessCollection>: RandomAccessCollection {
-    typealias Index = Base.Index
-    typealias Element = (index: Index, element: Base.Element)
-
-    let base: Base
-
-    var startIndex: Index { base.startIndex }
-
-    var endIndex: Index { base.endIndex }
-
-    func index(after i: Index) -> Index {
-        base.index(after: i)
-    }
-
-    func index(before i: Index) -> Index {
-        base.index(before: i)
-    }
-
-    func index(_ i: Index, offsetBy distance: Int) -> Index {
-        base.index(i, offsetBy: distance)
-    }
-
-    subscript(position: Index) -> Element {
-        (index: position, element: base[position])
-    }
-}
-
 extension RandomAccessCollection {
-    func indexed() -> IndexedCollection<Self> {
-        IndexedCollection(base: self)
+    func indexed() -> Array<(offset: Int, element: Element)> {
+        Array(enumerated())
     }
 }
 ```
