@@ -107,4 +107,4 @@ private var columns: [GridItem] = [
 ![grid](/public/grid5.png)
 
 #### Conclusion
-Grids allow us to create very complex and great layouts by mixing different types of GridItems. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Grids allow us to create very complex and great layouts by mixing different types of *GridItems*. Remember that all the changes in grids are animatable. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
