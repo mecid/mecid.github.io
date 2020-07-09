@@ -50,7 +50,7 @@ In the example above, we create a three-column grid where every column has a fix
 1. *columns* parameter is the array that defines columns in a grid layout. SwiftUI provides us *GridItem* type to describe a column. We will talk about it later in the post.
 2. *alignment* parameter allows us to align the grid's content using HorizontalAlignment enum for *LazyVGrid* and VerticalAlignment for *LazyHGrid*. It works the same way as the stack alignment.
 3. *spacing* parameter specifies the space between every row inside the *LazyVGrid* or space between every column inside the *LazyHGrid*.
-4. *pinnedViews* parameter specifies the pinning options for section headers and footers. By default, it is empty, which means that section header and footers behave as content and go away while scrolling. You can enable header and footer pinning, in this case, headers and footers overlay the content and become сonstantly visible.
+4. *pinnedViews* parameter specifies the pinning options for section headers and footers. By default, it is empty, which means that section headers and footers behave as content and go away while scrolling. You can enable header and footer pinning, in this case, headers and footers overlay the content and become сonstantly visible.
 
 #### GridItem
 Every column in a grid has to be defined using *GridItem* struct. *GridItem* type allows us to specify size, alignment, and spacing for every column. Let's take a look at a small example.
