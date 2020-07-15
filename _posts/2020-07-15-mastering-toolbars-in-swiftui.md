@@ -7,7 +7,7 @@ category: Mastering SwiftUI views
 
 Toolbar API is another excellent addition to SwiftUI this year. Usually, we use toolbars to provide available actions. Did you remember the case where you have a button outside of the navigation bar or bottom bar? This week we will learn all about the new Toolbar API.
 
-In the previous version of SwiftUI, we could place buttons in the navigation bar by using navigationBarItems modifier. Let's take a quick look at how it works.
+In the previous version of SwiftUI, we could place buttons in the navigation bar by using *navigationBarItems* modifier. Let's take a quick look at how it works.
 
 ```swift
 import SwiftUI
@@ -25,7 +25,7 @@ struct ContentView: View {
 }
 ```
 
-The example above looks good, but there is one big issue. It works only with the navigation bar. For instance, watchOS apps use NavigationView to provide a navigation stack, but there is no navigation bar to deliver actions. We have to use 3D touch menus on the watchOS, but then we face another problem. SwitUI doesn't provide us API to use 3D touch menus.
+The example above looks good, but there is one big issue. It works only with the navigation bar. For instance, watchOS apps use *NavigationView* to provide a navigation stack, but there is no navigation bar to deliver actions. We have to use 3D touch menus on the watchOS, but then we face another problem. SwitUI doesn't provide us API to use 3D touch menus.
 
 Fortunately, Apple released the unified Toolbar API that works on all Apple platforms. Toolbar API is another example of a declarative API that adapts to the environment and looks different on different devices. For example, it uses a navigation bar on iOS, but on watchOS, it inserts a button into the top of the screen. Let's take a look at how easily we can use it.
 
@@ -53,24 +53,24 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, SwiftUI provides us the toolbar modifier that we can use to build toolbar items. The toolbar modifier accepts the ToolbarContentBuilder closure, which is very similar to ViewBuilder function builder, but instead of views, it uses ToolbarItems.
+As you can see in the example above, SwiftUI provides us the toolbar modifier that we can use to build toolbar items. The toolbar modifier accepts the *ToolbarContentBuilder* closure, which is very similar to *ViewBuilder* function builder, but instead of views, it uses *ToolbarItems*.
 
-We use ToolbarItem struct to declare an action. ToolbarItem has two required parameters. The first one is placement, which is the instance of ToolbarItemPlacement struct. The second one is ViewBuilder closure that SwiftUI uses to build the view representation of your action.
+We use *ToolbarItem* struct to declare an action. *ToolbarItem* has two required parameters. The first one is placement, which is the instance of *ToolbarItemPlacement* struct. The second one is *ViewBuilder* closure that SwiftUI uses to build the view representation of your action.
 
-SwiftUI hides all the magic of toolbars behind ToolbarItemPlacement struct. SwiftUI can put your toolbar item in different places, depending on the value of the placement parameter. There are multiple placement opportunities. Let's talk about the essential options.
+SwiftUI hides all the magic of toolbars behind *ToolbarItemPlacement* struct. SwiftUI can put your toolbar item in different places, depending on the value of the placement parameter. There are multiple placement opportunities. Let's talk about the essential options.
 
-1. automatic - The item is placed in the default section that varies depending on the current platform.
-2. primaryAction - The item represents a primary action. Usually, SwiftUI places this item in the navigation bar on iOS or on top of other views on watchOS.
+1. *automatic* - The item is placed in the default section that varies depending on the current platform.
+2. *primaryAction* - The item represents a primary action. Usually, SwiftUI places this item in the navigation bar on iOS or on top of other views on watchOS.
 
 There are placement options that we can use only in toolbars presented by a modal view.
-1. confirmationAction - The item represents a confirmation action for a modal interface. You can use it in your sheets to confirm saving action.
-2. cancellationAction - The item represents a cancellation action for a modal interface.
-3. destructiveAction - The item represents a destructive action for a modal interface. You can use it in your modal screens that delete some data.
+1. *confirmationAction* - The item represents a confirmation action for a modal interface. You can use it in your sheets to confirm saving action.
+2. *cancellationAction* - The item represents a cancellation action for a modal interface.
+3. *destructiveAction* - The item represents a destructive action for a modal interface. You can use it in your modal screens that delete some data.
 
 There are also a bunch of platform-specific placement options.
-1. bottomBar - The item is placed in the bottom toolbar. It is available only on iOS.
-2. navigationBarLeading - The item is placed in the leading area of the navigation bar. It is available only on iOS and macOS.
-3. navigationBarTrailing - The item is placed in the trailing area of the navigation bar. It is available only on iOS and macOS.
+1. *bottomBar* - The item is placed in the bottom toolbar. It is available only on iOS.
+2. *navigationBarLeading* - The item is placed in the leading area of the navigation bar. It is available only on iOS and macOS.
+3. *navigationBarTrailing* - The item is placed in the trailing area of the navigation bar. It is available only on iOS and macOS.
 
 ![watchOS-toolbar](/public/watchOS.png)
 
