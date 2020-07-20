@@ -59,7 +59,6 @@ We use *ToolbarItem* struct to declare an action. *ToolbarItem* has two required
 
 SwiftUI hides all the magic of toolbars behind *ToolbarItemPlacement* struct. SwiftUI can put your toolbar item in different places, depending on the value of the placement parameter. There are multiple placement opportunities. Let's talk about the essential options.
 
-0. *principal* - The item is placed in the main item section. For example, you can use it to customize the navigation bar's title view on iOS.
 1. *automatic* - The item is placed in the default section that varies depending on the current platform.
 2. *primaryAction* - The item represents a primary action. Usually, SwiftUI places this item in the navigation bar on iOS or on top of other views on watchOS.
 
@@ -69,6 +68,7 @@ There are placement options that we can use only in toolbars presented by a moda
 3. *destructiveAction* - The item represents a destructive action for a modal interface. You can use it in your modal screens that delete some data.
 
 There are also a bunch of platform-specific placement options.
+0. *principal* - The item is placed in the main item section. For example, you can use it to customize the navigation bar's title view on iOS.
 1. *bottomBar* - The item is placed in the bottom toolbar. It is available only on iOS.
 2. *navigationBarLeading* - The item is placed in the leading area of the navigation bar. It is available only on iOS and macOS.
 3. *navigationBarTrailing* - The item is placed in the trailing area of the navigation bar. It is available only on iOS and macOS.
