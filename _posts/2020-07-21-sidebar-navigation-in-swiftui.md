@@ -13,7 +13,7 @@ A sidebar provides app-level navigation and quick access to top-level collection
 
 > To learn about building navigation using *NavigationView* and *NavigationLink*, take a look at my ["Navigation in SwiftUI"](/2020/07/21/sidebar-navigation-in-swiftui/) post.
 
-Let's build a prototype of a mail app that uses three-column navigation. SwiftUI provides *NavigationView* that allows us to create a master-detail flow. You can put up to three children inside a *NavigationView*. In this case, SwiftUI will place views side-by-side. Let's start by declaring our data model. 
+Let's build a prototype of a mail app that uses three-column navigation. SwiftUI provides *NavigationView* that allows us to create a master-detail flow. You can put up to three children inside a *NavigationView*. In this case, SwiftUI will place views side-by-side. But let's start with declaring our data model. 
 
 ```swift
 import SwiftUI
