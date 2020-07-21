@@ -13,7 +13,7 @@ A sidebar provides app-level navigation and quick access to top-level collection
 
 > To learn about building navigation using *NavigationView* and *NavigationLink*, take a look at my ["Navigation in SwiftUI"](/2020/07/21/sidebar-navigation-in-swiftui/) post.
 
-Let's build a prototype of a mail app that uses three-column navigation. SwiftUI provides *NavigationView* that allows us to create a master-detail flow. You can put inside a *NavigationView* up to three children. In this case, SwiftUI will place views side-by-side. Let's start by declaring our data model. 
+Let's build a prototype of a mail app that uses three-column navigation. SwiftUI provides *NavigationView* that allows us to create a master-detail flow. You can put up to three children inside a *NavigationView*. In this case, SwiftUI will place views side-by-side. Let's start by declaring our data model. 
 
 ```swift
 import SwiftUI
@@ -34,7 +34,7 @@ final class MailStore: ObservableObject {
 }
 ```
 
-In the example above, we create a simple mail store that we will use as a datastore for our prototype. Now let's move forward by implementing the first column of our navigation flow.
+In the listing above, we create a simple mail store that we will use as a datastore for our prototype. Now let's move forward by implementing the first column of our navigation flow.
 
 ```swift
 struct Sidebar: View {
@@ -59,7 +59,7 @@ struct Sidebar: View {
 }
 ```
 
-As you can see, we create a view called sidebar. It needs a store object to access our emails and two bindings that we will use to bind the current folder and selected email. We also use new *SidebarListStyle* to apply a brand new styling to our list that available on iOS 14 and macOS Big Sur. 
+As you can see, we create a view called sidebar. It needs an instance of store object to access our emails and two bindings that we will use to bind the current folder and selected email. We also use the new *SidebarListStyle* to apply a brand new styling to our list that available on iOS 14 and macOS Big Sur. 
 
 ```swift
 struct FolderView: View {
@@ -138,6 +138,6 @@ struct TestProjectApp: App {
 }
 ```
 
-As you can see, we have *NavigationView*, which is the root of our app scene. We define two pieces of the state which describe selected label and email. We pass bindings to these state pieces down into the view hierarchy, and whenever the user interacts with the view, SwiftUI updates bindings and route our navigation.
+As you can see, we have *NavigationView*, which is the root of our app scene. We define two pieces of the state which describe selected label and email. We pass bindings to these state properties down into the view hierarchy, and whenever the user selects the folder or email, SwiftUI updates bindings and route our navigation.
 
-Sidebar navigation plays a huge role in new [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/bars/sidebars/). It is effortless to implement it in SwiftUI using *NavigationView*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Sidebar navigation plays a huge role in new [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/bars/sidebars/). It is effortless to implement in SwiftUI using *NavigationView*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
