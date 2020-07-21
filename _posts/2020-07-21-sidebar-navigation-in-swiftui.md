@@ -142,6 +142,6 @@ struct TestProjectApp: App {
 }
 ```
 
-As you can see, we have *NavigationView*, which is the root of our app scene. We define two pieces of the state which describe selected label and email. We pass bindings to these state properties down into the view hierarchy, and whenever the user selects the folder or email, SwiftUI updates bindings and route our navigation.
+As you can see, we have *NavigationView*, which is the root of our app scene. We also define two state properties which describe selected label and email. We pass bindings to these state properties down into the view hierarchy, and whenever the user selects the folder or email, SwiftUI updates bindings and route our navigation.
 
 Sidebar navigation plays a huge role in new [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/bars/sidebars/). It is effortless to implement in SwiftUI using *NavigationView*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
