@@ -70,7 +70,11 @@ struct FolderView: View {
     var body: some View {
         List(selection: $selectedMail) {
             ForEach(mails) { mail in
-                NavigationLink(destination: MailView(mail: mail), tag: mail, selection: $selectedMail) {
+                NavigationLink(
+                    destination: MailView(mail: mail),
+                    tag: mail,
+                    selection: $selectedMail
+                ) {
                     VStack(alignment: .leading) {
                         Text(mail.subject)
                         Text(mail.date, style: .date)
@@ -82,7 +86,7 @@ struct FolderView: View {
 }
 ```
 
-Here we have the *FolderView* struct that we use to display a list of emails in the folder. *FolderView* also needs the binding for a selected email. Whenever the user selects an email in the list, SwiftUI updates the value of the binding and updates the view hierarchy. Now let's take a look at *MailView*.
+Here we have the *FolderView* struct that we use to display a list of emails in the folder. *FolderView* also needs the binding for a selected email. Whenever the user selects an email in the list, SwiftUI sets the value of the binding and updates the view hierarchy. Now let's take a look at *MailView*.
 
 ```swift
 struct MailView: View {
