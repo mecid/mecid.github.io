@@ -104,6 +104,8 @@ struct ModalView: View {
 
 *presentationMode* is an *Environment* binding to the current *PresentationMode* of this view. We can use it to programmatically dismiss the *Modal*. To learn more about *Property Wrappers provided by SwiftUI and Environment values*, you can check my ["Understanding Property Wrappers in SwiftUI" post](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
+You can also use *fullScreenCover* view modifier to present full screen modals. It works the same way as *sheet* modifier.
+
 #### Popovers
 Using Popovers in SwiftUI is very similar to *Alers* and *ActionSheets*. *Popover* modifier also has two overloads for *Boolean* and *Optional Identifiable* bindings. Another additional parameter in *popover modifier* is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of *Popover* modifier usage.
 
