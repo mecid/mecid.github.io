@@ -5,7 +5,7 @@ image: /public/sidebar.png
 category: Mastering SwiftUI views
 ---
 
-We already covered master-detail navigation in SwiftUI on my blog. But today, I want to talk about new three-column navigation that landed this year into iOS and macOS worlds. We will learn how to build a sidebar navigation flow by using *NavigationView* in SwiftUI.
+We already covered master-detail navigation in SwiftUI on my blog. But today, I want to talk about the new three-column navigation that landed this year into iOS and macOS worlds. We will learn how to build a sidebar navigation flow by using *NavigationView* in SwiftUI.
 
 ![sidebar](/public/sidebar.png)
 
