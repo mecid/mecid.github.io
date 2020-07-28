@@ -127,11 +127,12 @@ func derived<DerivedState: Equatable, DerivedAction, Void>(
 ) -> Store<DerivedState, DerivedAction, Void> {
     let store = Store<DerivedState, DerivedAction, Void>(
         initialState: deriveState(state),
-        reducer: Reducer { _, action, _ in
+        reducer: { _, action, _ in
             self.send(deriveAction(action))
             return Empty(completeImmediately: true)
                 .eraseToAnyPublisher()
-        }, environment: ()
+        },
+        environment: () as! Void
     )
 
     store.derivedCancellable = $state
