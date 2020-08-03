@@ -137,7 +137,9 @@ struct MapExample: View {
                 coordinate: city.coordinate,
                 anchorPoint: CGPoint(x: 0.5, y: 0.5)
             ) {
-                Circle().stroke(Color.green).frame(width: 44, height: 44)
+                Circle()
+                    .stroke(Color.green)
+                    .frame(width: 44, height: 44)
             }
         }
     }
