@@ -137,7 +137,7 @@ struct MapExample: View {
                 coordinate: city.coordinate,
                 anchorPoint: CGPoint(x: 0.5, y: 0.5)
             ) {
-                Circle().stroke()
+                Circle().stroke(Color.green).frame(width: 44, height: 44)
             }
         }
     }
@@ -145,8 +145,6 @@ struct MapExample: View {
 ```
 
 SwiftUI provides us *MapAnnotation* struct that we can use to build our annotation view. It accepts the center coordinate of the annotation, its anchor point, and the @*ViewBuilder* closure to create a custom view.
-
-*It looks like MapAnnotation struct doesn't work in Xcode 12 beta 3*
 
 SwiftUI also provides us two standard views that we can use to display our points of interest. These are *MapMarker* and *MapPin*.
 
