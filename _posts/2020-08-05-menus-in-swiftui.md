@@ -43,7 +43,7 @@ struct ContentView: View {
 > To learn more about the power of toolbars in SwiftUI, take a look at my ["Mastering toolbars in SwiftUI"](/2020/07/15/mastering-toolbars-in-swiftui/) post. 
 
 #### Selection
-Another excellent use case for a menu might be a selection option. Assume that you need to provide sorting options in the context of our file manager app. Multiple selection options fit great into the menus world. You can use the SwiftUI Picker view to provide various options in a menu. The declarative nature of the SwiftUI framework allows the picker to adopt the menu and display it inline. Let's take a look at the quick example.
+Another excellent use case for a menu might be a selection option. Assume that you need to provide sorting options in the context of our file manager app. Multiple selection options fit great into the menu world. You can use the SwiftUI *Picker* view to provide various options in a menu. The declarative nature of the SwiftUI framework allows the picker to adopt the menu and display it inline. Let's take a look at the quick example.
 
 ```swift
 import SwiftUI
@@ -112,7 +112,7 @@ struct ContentView: View {
 ```
 
 #### Styling
-SwiftUI doesn't provide us too many customization options on a menu. But still, it gives us the MenuStyle protocol that we can use to create our appearances. It works similarly to all style protocols that we have in SwiftUI. We can set it via the environment to share the styling with the view hierarchy.
+SwiftUI doesn't provide us too many customization options on a menu. But still, it gives us the *MenuStyle* protocol that we can use to create our appearances. It works similarly to all style protocols that we have in SwiftUI. We can set it via the environment to share the styling with the view hierarchy.
 
 ```swift
 import SwiftUI
