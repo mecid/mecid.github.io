@@ -67,6 +67,8 @@ struct ContentView: View {
 }
 ```
 
+![menu](/public/menu.png)
+
 #### Secondary actions
 Menu is a great way to provide a bunch of secondary actions on a view in your app. You can easily group and present actions in your menu by using sections and dividers.
 
@@ -134,4 +136,4 @@ struct ContentView: View {
 ```
 
 #### Conclusion
-As you can see, there are tons of possible use cases for menus. Menus will play a significant role in a new design language that Apple prepares for us.
+As you can see, there are tons of possible use cases for menus. Menus will play a significant role in a new design language that Apple prepares for us. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
