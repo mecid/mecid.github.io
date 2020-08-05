@@ -9,6 +9,8 @@ This week we got another Xcode Beta that brings menus into SwiftUI world. Menus 
 
 Appearance is the main problem of action sheets. An action sheet appears at the bottom of the screen and sometimes loses the context of the action. For example, you may press the button in the navigation bar that reveals the action sheet at the bottom of the screen. Another problem with action sheets is the space that it needs to display the action list. Action sheets cover the big part of the screen, even with a small set of options. 
 
+> To learn more about action sheets, take a look at my ["Alerts, Action Sheets, Modals and Popovers in SwiftUI"](/2019/07/24/alerts-actionsheets-modals-and-popovers-in-swiftui/) post.
+
 #### Disambiguation
 The main reason to use brand new menus is disambiguation. It allows us to provide additional context around your primary action. Assume that we are working on a file manager app where the main action is creating new files or folders. We have a button with the plus sign in the navigation bar to describe the primary action. It might not be evident for the user what we will do here, creating a new file or a folder? And this is a perfect use case for a menu to solve the disambiguation. Let's see how we can use it.
 
@@ -37,6 +39,8 @@ struct ContentView: View {
     }
 }
 ```
+
+> To learn more about the power of toolbars in SwiftUI, take a look at my ["Mastering toolbars in SwiftUI"](/2020/07/15/mastering-toolbars-in-swiftui/) post. 
 
 #### Selection
 Another excellent use case for a menu might be a selection option. Assume that you need to provide sorting options in the context of our file manager app. Multiple selection options fit great into the menus world. You can use the SwiftUI Picker view to provide various options in a menu. The declarative nature of the SwiftUI framework allows the picker to adopt the menu and display it inline. Let's take a look at the quick example.
