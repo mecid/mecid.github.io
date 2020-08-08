@@ -53,14 +53,16 @@ struct MapExample: View {
     )
 
     var body: some View {
-        Map(coordinateRegion: $region)
+        VStack {
+            Map(coordinateRegion: $region)
 
-        Button("zoom") {
-            withAnimation {
-                region.span = MKCoordinateSpan(
-                    latitudeDelta: 100,
-                    longitudeDelta: 100
-                )
+            Button("zoom") {
+                withAnimation {
+                    region.span = MKCoordinateSpan(
+                        latitudeDelta: 100,
+                        longitudeDelta: 100
+                    )
+                }
             }
         }
     }
