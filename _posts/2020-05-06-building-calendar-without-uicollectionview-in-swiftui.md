@@ -182,7 +182,7 @@ In the example above, you see how we can use our calendar view. I want you to pa
 
 ![calendar-screenshot](/public/calendar.png)
 
-Here is the final result of our work. I think it looks nice, and I will use it in my next app. You can access full source code via [Github Gist](https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec).
+Here is the final result of our work. I think it looks nice, and I will use it in my next app. You can access full source code via [Github Gist](https://gist.github.com/mecid/f8859ea4bdbd02cf5d440d58e936faec/9169b0293f709bb1f560de2ca8184ea903fd5116).
 
 #### Conclusion
 I still think that we will have a *UICollectionView* alternative later this year. But I need to mention that SwiftUI has such a friendly layout system that we can use to build great views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
