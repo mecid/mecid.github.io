@@ -1,7 +1,7 @@
 ---
 title: Managing app in SwiftUI
 layout: post
-image: /public/wwdc.png
+image: /public/wwdc20.jpg
 category: Data Flow
 ---
 
