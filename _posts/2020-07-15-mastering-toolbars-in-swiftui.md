@@ -55,6 +55,7 @@ struct ContentView: View {
 
 As you can see in the example above, SwiftUI provides us the toolbar modifier that we can use to build toolbar items. The toolbar modifier accepts the *ToolbarContentBuilder* closure, which is very similar to *ViewBuilder* function builder, but instead of views, it uses *ToolbarItems*.
 
+#### ToolbarItem
 We use *ToolbarItem* struct to declare an action. *ToolbarItem* has two required parameters. The first one is placement, which is the instance of *ToolbarItemPlacement* struct. The second one is *ViewBuilder* closure that SwiftUI uses to build the view representation of your action.
 
 SwiftUI hides all the magic of toolbars behind *ToolbarItemPlacement* struct. SwiftUI can put your toolbar item in different places, depending on the value of the placement parameter. There are multiple placement opportunities. Let's talk about the essential options.
@@ -74,5 +75,50 @@ There are also a bunch of platform-specific placement options.
 3. *navigationBarTrailing* - The item is placed in the trailing area of the navigation bar. It is available only on iOS and macOS.
 
 ![watchOS-toolbar](/public/watchOS.png)
+
+#### ToolbarContent
+We can also create a dedicated type defining our toolbar that we can reuse across the app. SwiftUI provides us the *ToolbarContent* protocol that allows us to create a struct representing a reusable toolbar. Let's take a look at how we can use it.
+
+```swift
+import SwiftUI
+
+struct ItemsToolbar: ToolbarContent {
+    let add: () -> Void
+    let sort: () -> Void
+
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .primaryAction) {
+            Button("Add", action: add)
+        }
+
+        ToolbarItem(placement: .bottomBar) {
+            Button("Sort", action: sort)
+        }
+    }
+}
+```
+
+As you can see in the example above, we create *ItemsToolbar* struct that conforms to *ToolbarContent* protocol. We customize it by providing closures for adding new items and sorting. Now we can reuse it across the app whenever we need to present a list of actions for an items list.
+
+```swift
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            NavigationView {
+                Text("Hello World!")
+                    .toolbar {
+                        ItemsToolbar {
+                            // add new item here
+                        } sort: {
+                            // sort items
+                        }
+
+                    }
+            }
+        }
+    }
+}
+```
 
 Today we learned how to use the new Toolbar API to present actions in our apps in a unified way on different platforms. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
