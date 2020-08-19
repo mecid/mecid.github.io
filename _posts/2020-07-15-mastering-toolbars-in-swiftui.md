@@ -145,4 +145,5 @@ struct ItemsToolbar: ToolbarContent {
 }
 ```
 
+#### Conclusion
 Today we learned how to use the new Toolbar API to present actions in our apps in a unified way on different platforms. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
