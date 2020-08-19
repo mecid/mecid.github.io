@@ -121,4 +121,28 @@ struct MyApp: App {
 }
 ```
 
+#### ToolbarItemGroup
+Sometimes we might have several toolbar items in the same placement. Creating a *ToolbarItem* for every single button in the toolbar can be very repetitive. That's why SwiftUI provides us another type called *ToolbarItemGroup*. *ToolbarItemGroup* allows us to fix toolbar items in the specific placement. Let's take a look at a very quick example.
+
+```swift
+import SwiftUI
+
+struct ItemsToolbar: ToolbarContent {
+    let add: () -> Void
+    let sort: () -> Void
+    let filter: () -> Void
+
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .primaryAction) {
+            Button("Add", action: add)
+        }
+
+        ToolbarItemGroup(placement: .bottomBar) {
+            Button("Sort", action: sort)
+            Button("Filter", action: filter)
+        }
+    }
+}
+```
+
 Today we learned how to use the new Toolbar API to present actions in our apps in a unified way on different platforms. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
