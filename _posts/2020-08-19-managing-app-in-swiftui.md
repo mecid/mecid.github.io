@@ -82,15 +82,15 @@ As you can see in the example above, we register a closure that handles URLs. Sw
 Similarly to deep linking, SwiftUI provides us a modifier to handle Handoff and user activity. We can use *onContinueUserActivity* modifier in the very same way as we use *onOpenURL* modifier. Let's take a look at another example.
 
 ```swift
+import SwiftUI
+
 @main
 struct MyApp: App {
     var body: some Scene {
         WindowGroup {
             Text("Hello World!")
-                .onContinueUserActivity { userActivity in
-                    if userActivity.activityType.contains("today") {
-                        // toggle state to navigate to today screen
-                    }
+                .onContinueUserActivity("com.myapp.today") { userActivity in
+                    // toggle state to navigate to today screen
                 }
         }
     }
