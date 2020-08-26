@@ -31,7 +31,7 @@ WindowGroup is the scene type that you will mostly use. But there are other scen
 
 > To learn more about other types of scenes in SwiftUI, take a look at my "What's new in SwiftUI" post.
 
-#### sceneDidBecomeActive and sceneWillEnterForeground
+#### Scene phase
 There are several scene callbacks like sceneDidBecomeActive and sceneWillEnterForeground that we used to handle in SceneDelegate. SwiftUI gives us a new solution to achieve the same result in a new way. Scenes provide us the onChange modifier and scene phase environment value that we can use to handle scene state changes. Let's take a look at the example.
 
 ```swift
