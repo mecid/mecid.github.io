@@ -63,10 +63,10 @@ struct CardioBotApp: App {
 }
 ```
 
-SwiftUI will run the call the closure that you pass to the *onChange* modifier when the value of scene phase changes.
+SwiftUI will run the closure that you pass to *onChange* modifier whenever the value of scene phase changes.
 
 #### Custom scenes
-The composition is my favorite feature of SwiftUI. You can create many small views and compose them together into a complex picture. The same rule applies to scenes. You can create your custom scene that uses primitive scenes provided by SwiftUI. 
+Composition is my favorite thing about SwiftUI. You can create many small views and compose them together into a complex picture. The same rule applies to scenes. You can create your custom scene that uses primitive scenes provided by SwiftUI. 
 
 I work on the app that supports both watchOS and iOS. It shares the codebase between two platforms, but it has different feature sets on iOS and watchOS. Let's start with iOS.
 
@@ -94,7 +94,7 @@ struct MainScene: Scene {
 
 We create a custom scene type that conforms to *Scene* protocol. The only requirement is the body property that should also return an instance of scene protocol. My app is derived by a global store that I ask to fetch data when the scene becomes active. I even start observers when the scene enters the background. 
 
-On the other hand, my watchOS app doesn't have background observers. It also provides an additional scene for handling dynamic notifications in SwiftUI. That's why I decided to create another scene for the watchOS app.
+On the other hand, my watchOS app doesn't have background observers. It also provides an additional scenes for handling dynamic notifications in SwiftUI. That's why I decided to create another scene for the watchOS app.
 
 ```swift
 struct WatchAppScene: Scene {
@@ -124,7 +124,9 @@ struct CardioApp: App {
     @StateObject var store = Store(
         initialState: AppState(),
         reducer: appReducer,
-        environment: AppEnvironment(healthService: HealthService(store: .init()))
+        environment: AppEnvironment(
+            healthService: HealthService(store: .init())
+        )
     )
 
     var body: some Scene {
