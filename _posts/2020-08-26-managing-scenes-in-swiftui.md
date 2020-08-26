@@ -5,10 +5,10 @@ image: /public/wwdc20.jpg
 category: Data Flow
 ---
 
-This week we will continue the series of posts about the App and Scene lifecycle in SwiftUI. Today we will concentrate on Scene management and the features that the new Scene protocol provides us to replace the old SceneDelegate.
+This week we will continue the series of posts about the app and scene lifecycle in SwiftUI. Today we will concentrate on scene management and the features that the new *Scene* protocol provides us to replace the old *SceneDelegate*.
 
 #### Basics
-The scene is a part of an app's user interface with a life cycle managed by the system. The system will decide how to present it to a user depending on the running platform. For example, it might be a full-screen window on iOS and watchOS, or it can use the part of the screen to render user interface on macOS and iPadOS. Let's start with a small example.
+The scene is a part of an app's user interface with a lifecycle managed by the system. The system will decide how to present it to a user depending on the running platform. For example, it might be a full-screen window on iOS and watchOS, or it can use the part of the screen to render user interface on macOS and iPadOS. Let's start with a small example.
 
 ```swift
 @main
@@ -21,18 +21,18 @@ struct MyApp: App {
 }
 ```
 
-As you can see in the example above, we use the new App lifecycle API to build our app. The only requirement of App protocol is the body property that should return the instance of Scene protocol.
+As you can see in the example above, we use the new app lifecycle API to build our app. The only requirement of *App* protocol is the body property that should return the instance of *Scene* protocol.
 
 > If you are not familiar with the new App lifecycle API in SwiftUI, I highly recommend you to take a look at my ["Managing app in SwiftUI"](/2020/08/19/managing-app-in-swiftui/) post.
 
-Here we use WindowGroup. It is one of the primitive Scene types that SwiftUI gives us out of the box. WindowGroup is a scene that presents a group of identically structured windows. It allows the user to create as many windows with the same user interface as needed and provide functionality for grouping them into tabs on macOS. On iOS and watchOS, WindowGroup consumes the entire screen to render its content. 
+Here we use *WindowGroup*. It is one of the primitive scene types that SwiftUI gives us out of the box. *WindowGroup* is a scene that presents a group of identically structured windows. It allows the user to create as many windows with the same user interface as needed and provide functionality for grouping them into tabs on macOS. On iOS and watchOS, *WindowGroup* consumes the entire screen to render its content. 
 
-WindowGroup is the scene type that you will mostly use. But there are other scene types like DocumentGroup and Settings that you can use to build document-based apps or to provide settings window on macOS.
+*WindowGroup* is the scene type that you will mostly use. But there are other scene types like *DocumentGroup* and *Settings* that you can use to build document-based apps or to provide settings window on macOS.
 
 > To learn more about other types of scenes in SwiftUI, take a look at my ["What's new in SwiftUI"](/2020/06/23/what-is-new-in-swiftui/) post.
 
 #### Scene phase
-There are several scene callbacks like sceneDidBecomeActive and sceneWillEnterForeground that we used to handle in SceneDelegate. SwiftUI gives us a new solution to achieve the same result in a new way. Scenes provide us the onChange modifier and scene phase environment value that we can use to handle scene state changes. Let's take a look at the example.
+There are several scene callbacks like *sceneDidBecomeActive* and *sceneWillEnterForeground* that we used to handle in *SceneDelegate*. SwiftUI gives us a new solution to achieve the same result in a new way. Scenes provide us the *onChange* modifier and scene phase environment value that we can use to handle scene state changes. Let's take a look at the example.
 
 ```swift
 import SwiftUI
@@ -63,7 +63,7 @@ struct CardioBotApp: App {
 }
 ```
 
-SwiftUI will run the call the closure that you pass to the onChange modifier when the value of scene phase changes.
+SwiftUI will run the call the closure that you pass to the *onChange* modifier when the value of scene phase changes.
 
 #### Custom scenes
 The composition is my favorite feature of SwiftUI. You can create many small views and compose them together into a complex picture. The same rule applies to scenes. You can create your custom scene that uses primitive scenes provided by SwiftUI. 
@@ -92,7 +92,7 @@ struct MainScene: Scene {
 }
 ```
 
-We create a custom scene type that conforms to Scene protocol. The only requirement is the body property that should also return an instance of scene protocol. My app is derived by a global store that I ask to fetch data when the scene becomes active. I even start observers when the scene enters the background. 
+We create a custom scene type that conforms to *Scene* protocol. The only requirement is the body property that should also return an instance of scene protocol. My app is derived by a global store that I ask to fetch data when the scene becomes active. I even start observers when the scene enters the background. 
 
 On the other hand, my watchOS app doesn't have background observers. It also provides an additional scene for handling dynamic notifications in SwiftUI. That's why I decided to create another scene for the watchOS app.
 
