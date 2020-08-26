@@ -23,13 +23,13 @@ struct MyApp: App {
 
 As you can see in the example above, we use the new App lifecycle API to build our app. The only requirement of App protocol is the body property that should return the instance of Scene protocol.
 
-> If you are not familiar with the new App lifecycle API in SwiftUI, I highly recommend you to take a look at my "Managing app in SwiftUI" post.
+> If you are not familiar with the new App lifecycle API in SwiftUI, I highly recommend you to take a look at my ["Managing app in SwiftUI"](/2020/08/19/managing-app-in-swiftui/) post.
 
 Here we use WindowGroup. It is one of the primitive Scene types that SwiftUI gives us out of the box. WindowGroup is a scene that presents a group of identically structured windows. It allows the user to create as many windows with the same user interface as needed and provide functionality for grouping them into tabs on macOS. On iOS and watchOS, WindowGroup consumes the entire screen to render its content. 
 
 WindowGroup is the scene type that you will mostly use. But there are other scene types like DocumentGroup and Settings that you can use to build document-based apps or to provide settings window on macOS.
 
-> To learn more about other types of scenes in SwiftUI, take a look at my "What's new in SwiftUI" post.
+> To learn more about other types of scenes in SwiftUI, take a look at my ["What's new in SwiftUI"](/2020/06/23/what-is-new-in-swiftui/) post.
 
 #### Scene phase
 There are several scene callbacks like sceneDidBecomeActive and sceneWillEnterForeground that we used to handle in SceneDelegate. SwiftUI gives us a new solution to achieve the same result in a new way. Scenes provide us the onChange modifier and scene phase environment value that we can use to handle scene state changes. Let's take a look at the example.
