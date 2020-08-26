@@ -2,7 +2,7 @@
 title: Managing scenes in SwiftUI
 layout: post
 image: /public/wwdc20.jpg
-category: Data Flow
+category: View Composition
 ---
 
 This week we will continue the series of posts about the app and scene lifecycle in SwiftUI. Today we will concentrate on scene management and the features that the new *Scene* protocol provides us to replace the old *SceneDelegate*.
