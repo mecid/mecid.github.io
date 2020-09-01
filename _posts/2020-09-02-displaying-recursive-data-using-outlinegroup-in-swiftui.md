@@ -81,6 +81,8 @@ As you can see, there is a new List initializer that takes additional children p
 
 ![outline group](/public/outlineGroup2.png)
 
+> To learn more about building three-column navigation in SwiftUI, take a look at my ["Sidebar navigation in SwiftUI"](/2020/07/21/sidebar-navigation-in-swiftui/) post.
+
 OutlineGroup is really shining when you use it inside a List. We can use OutlineGroup inside sections. This approach allows us to expand the first level of your tree-structured collection automatically. It looks gorgeous with sidebar style. Let's take a look at the quick example of section-based OutlineGroup usage.
 
 ```swift
@@ -122,6 +124,8 @@ struct ContentView: View {
 ```
 
 You can use DisclosureGroup inside a Form view that allows you to build complex forms quickly in a very declarative way.
+
+> To learn more about the power of Form view in SwiftUI, take a look at my ["Building forms with SwiftUI"](/2019/06/19/building-forms-with-swiftui/) post.
 
 #### Conclusion
 Today we learned about another view that WWDC20 brings us in addition to the current collection of views. With the help of OutlineGroup, we can easily display the massive collection of tree-structured items. We also learned about DisclosureGroup that powers OutlineGroup. The nice bonus is that we can use DisclosureGroup separately. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
