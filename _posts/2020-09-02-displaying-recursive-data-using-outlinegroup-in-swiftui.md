@@ -72,7 +72,7 @@ struct ContentView: View {
     var body: some View {
         List(categories, id: \.value, children: \.children) { tree in
             Text(tree.value).font(.subheadline)
-        }
+        }.listStyle(SidebarListStyle())
     }
 }
 ```
