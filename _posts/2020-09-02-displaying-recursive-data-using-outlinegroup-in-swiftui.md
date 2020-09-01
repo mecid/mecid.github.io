@@ -5,10 +5,10 @@ category: Mastering SwiftUI views
 image: /public/outlineGroup2.png
 ---
 
-This week we will talk about another excellent UI component called OutlineGroup. Apple released OutlineGroup during the WWDC20 side-by-side with other great things, including grids, menus, and toolbars. I already covered them in my previous posts. And finally, today is time to talk about OutlineGroup and DisclosureGroup that handles the expanding behavior.
+This week we will talk about another excellent UI component called *OutlineGroup*. Apple released *OutlineGroup* during the WWDC20 side-by-side with other great things, including grids, menus, and toolbars. I already covered them in my previous posts. And finally, today is time to talk about *OutlineGroup* and *DisclosureGroup* that handles the expanding behavior.
 
 #### OutlineGroup
-OutlineGroup is a view that enumerates tree-structured collection and renders its view representation recursively. It is a perfect solution to display recursive data like trees. Assume that you are working on the shopping app where you obtain a categories tree via API. Let's take a look at a straightforward tree implementation in Swift.
+*OutlineGroup* is a view that enumerates tree-structured collection and renders its view representation recursively. It is a perfect solution to display recursive data like trees. Assume that you are working on the shopping app where you obtain a categories tree via API. Let's take a look at a straightforward tree implementation in Swift.
 
 ```swift
 struct Tree<Value: Hashable>: Hashable {
@@ -49,7 +49,7 @@ let categories: [Tree<String>] = [
 ]
 ```
 
-As you can see, we already have a recursive structure. Let's try to feed it into the OutlineGroup to display the tree hierarchy.
+As you can see, we already have a recursive structure. Let's try to feed it into the *OutlineGroup* to display the tree hierarchy.
 
 ```swift
 struct ContentView: View {
@@ -61,11 +61,11 @@ struct ContentView: View {
 }
 ```
 
-OutlineGroup allows us to display very complex tree-structured collections in a few lines of code. We construct OutlineGroup in a very familiar fashion. It looks similar to the ForEach view but also needs the children parameter. Children parameter is a KeyPath to a recursive property of our structure. Keep in mind that the recursive property must be optional. This is how OutlineGroup understands the end of the tree node.
+*OutlineGroup* allows us to display very complex tree-structured collections in a few lines of code. We construct *OutlineGroup* in a very familiar fashion. It looks similar to the *ForEach* view but also needs the children parameter. Children parameter is a *KeyPath* to a recursive property of our structure. Keep in mind that the recursive property must be optional. This is how *OutlineGroup* understands the end of the tree node.
 
 ![outline group](/public/outlineGroup1.png)
 
-Another thing that Apple released side-by-side with OutlineGroup is a new way to configure a List that uses OutlineGroup to display its items. It automatically applies list styling to OutlineGroup and allows us to use it in the sidebar navigation. Let's take a look at how we can use List with OutlineGroup under the hood.
+Another thing that Apple released side-by-side with *OutlineGroup* is a new way to configure a *List* that uses *OutlineGroup* to display its items. It automatically applies list styling to *OutlineGroup* and allows us to use it in the sidebar navigation. Let's take a look at how we can use List with *OutlineGroup* under the hood.
 
 ```swift
 struct ContentView: View {
@@ -77,13 +77,13 @@ struct ContentView: View {
 }
 ```
 
-As you can see, there is a new List initializer that takes additional children parameter. You can simply replace your OutlineGroup with List, and you will get a list styling for your tree-structured collection.
+As you can see, there is a new List initializer that takes additional children parameter. You can simply replace your *OutlineGroup* with List, and you will get a list styling for your tree-structured collection.
 
 ![outline group](/public/outlineGroup2.png)
 
 > To learn more about building three-column navigation in SwiftUI, take a look at my ["Sidebar navigation in SwiftUI"](/2020/07/21/sidebar-navigation-in-swiftui/) post.
 
-OutlineGroup is really shining when you use it inside a List. We can use OutlineGroup inside sections. This approach allows us to expand the first level of your tree-structured collection automatically. It looks gorgeous with sidebar style. Let's take a look at the quick example of section-based OutlineGroup usage.
+*OutlineGroup* is really shining when you use it inside a List. We can use *OutlineGroup* inside sections. This approach allows us to expand the first level of your tree-structured collection automatically. It looks gorgeous with sidebar style. Let's take a look at the quick example of section-based *OutlineGroup* usage.
 
 ```swift
 struct ContentView: View {
@@ -109,7 +109,7 @@ struct ContentView: View {
 ![outline group](/public/outlineGroup3.png)
 
 #### DisclosureGroup
-As you can see on the screenshots that I provide during the post, the main component of OutlineGroup is an expandable view called DisclosureGroup. DisclosureGroup is a straightforward view that accepts title string, content view, and boolean binding, which shows or hides the content.
+As you can see on the screenshots that I provide during the post, the main component of *OutlineGroup* is an expandable view called *DisclosureGroup*. *DisclosureGroup* is a straightforward view that accepts title string, content view, and boolean binding, which shows or hides the content.
 
 ```swift
 struct ContentView: View {
@@ -123,9 +123,11 @@ struct ContentView: View {
 }
 ```
 
-You can use DisclosureGroup inside a Form view that allows you to build complex forms quickly in a very declarative way.
+You can use *DisclosureGroup* inside a *Form* view that allows you to build complex forms quickly in a very declarative way.
 
 > To learn more about the power of Form view in SwiftUI, take a look at my ["Building forms with SwiftUI"](/2019/06/19/building-forms-with-swiftui/) post.
 
 #### Conclusion
-Today we learned about another view that WWDC20 brings us in addition to the current collection of views. With the help of OutlineGroup, we can easily display the massive collection of tree-structured items. We also learned about DisclosureGroup that powers OutlineGroup. The nice bonus is that we can use DisclosureGroup separately. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
+Today we learned about another view that WWDC20 brings us in addition to the current collection of views. With the help of *OutlineGroup*, we can easily display the massive collection of tree-structured items.
+
+We also learned about *DisclosureGroup* that powers *OutlineGroup*. The nice bonus is that we can use *DisclosureGroup* separately. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
