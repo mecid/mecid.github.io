@@ -73,41 +73,38 @@ NavigationLink(
 @*EnvironmentObject* is an excellent way to implicitly inject an instance of a class that conforms to *ObservableObject* into a part of the view hierarchy. Assume that you have a module in your app that contains 3-4 screens, and all of them use the same ViewModel. If you don't want to pass the same ViewModel explicitly from one view to another, then @*EnvironmentObject* is all you need. Let's take a look at how we can use it.
 
 ```swift
-import SwiftUI
+@main
+struct CardioBotApp: App {
+    @StateObject var store = Store(
+        initialState: AppState(),
+        reducer: appReducer,
+        environment: .production
+    )
 
-struct RootView: View {
-    @EnvironmentObject var store: Store<AppState, AppAction>
-
-    var body: some View {
-        TabView {
-            NavigationView {
-                SummaryContainerView()
-                    .navigationBarTitle("today")
-                    .environmentObject(
-                        store.derived(
-                            deriveState: \.summary,
-                            deriveAction: AppAction.summary
+    var body: some Scene {
+        WindowGroup {
+            TabView {
+                NavigationView {
+                    SummaryContainerView()
+                        .navigationBarTitle("today")
+                        .environmentObject(
+                            store.derived(
+                                deriveState: \.summary,
+                                embedAction: AppAction.summary
+                            )
                         )
-                )
-            }.tabItem {
-                Image(systemName: "heart.fill")
-                    .imageScale(.large)
-                Text("today")
-            }
+                }
 
-            NavigationView {
-                TrendsContainerView()
-                    .navigationBarTitle("trends")
-                    .environmentObject(
-                        store.derived(
-                            deriveState: \.trends,
-                            deriveAction: AppAction.trends
+                NavigationView {
+                    TrendsContainerView()
+                        .navigationBarTitle("trends")
+                        .environmentObject(
+                            store.derived(
+                                deriveState: \.trends,
+                                embedAction: AppAction.trends
+                            )
                         )
-                )
-            }.tabItem {
-                Image(systemName: "chevron.up.circle.fill")
-                    .imageScale(.large)
-                Text("trends")
+                }
             }
         }
     }
