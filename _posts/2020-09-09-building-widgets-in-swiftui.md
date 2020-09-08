@@ -12,7 +12,21 @@ Widgets display relevant, glanceable content, letting users quickly get to your 
 
 Let's start by adding a widget extension to your app using the Xcode menu: File -> New -> Target -> Widget Extension. Xcode creates a widget from the template. It might look like this.
 
-=====================================================
+```swift
+@main
+struct MyWidget: Widget {
+    let kind: String = "Widget"
+
+    var body: some WidgetConfiguration {
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+            WidgetEntryView(entry: entry)
+        }
+        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .configurationDisplayName("My Widget")
+        .description("This is an example widget.")
+    }
+}
+```
 
 As you can see, we develop a widget by creating a struct that conforms to the Widget protocol. The only requirement of the Widget protocol is body property that should return an instance of WidgetConfiguration. SwiftUI provides us two structs that conform to WidgetConfiguration: StaticConfiguration and IntentConfiguration. 
 
@@ -28,11 +42,48 @@ You can also attach a few modifiers to your widget configuration for setting sup
 #### Provider
 The system will call your provider to fetch new data. Let's look at the provider example that I use in my CardioBot app to display daily heart points.
 
-=====================================================
+```swift
+final class HeartPointsProvider: TimelineProvider {
+    public typealias Entry = HeartPointsViewModel
+
+    let service = HealthService()
+    var snapshotCancellable: AnyCancellable?
+    var timelineCancellable: AnyCancellable?
+
+    private var entryPublisher: AnyPublisher<Entry, Never> { /*.... */ }
+
+    func placeholder(in with: Context) -> HeartPointsViewModel {
+        HeartPointsViewModel(
+            heartRates: [HeartRate(bpm: 130)],
+            age: 29,
+            goal: 20
+        )
+    }
+
+    func getSnapshot(in context: Context, completion: @escaping (HeartPointsViewModel) -> Void) {
+        snapshotCancellable = entryPublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: completion)
+    }
+
+    func getTimeline(in context: Context, completion: @escaping (Timeline<HeartPointsViewModel>) -> Void) {
+        timelineCancellable = entryPublisher
+            .map { Timeline(entries: [$0], policy: .atEnd) }
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: completion)
+    }
+}
+```
 
 We start by defining type alias for the associated type of Provider protocol. Provider protocol uses the Entry type to describe an item that should be displayed in the widget. Entry must conform to the TimelineEntry protocol that requires only date property.
 
-=====================================================
+```swift
+extension HeartPointsViewModel: TimelineEntry {
+    var date: Date {
+        heartRates.last?.interval.end ?? Date()
+    }
+}
+```
 
 There are three required functions in the protocol:
 The placeholder function is used by the system to generate a template view in the widget gallery. You can provide mock data here that will look nice in the gallery.
@@ -44,14 +95,56 @@ getTimeline is the most exciting function here. It allows us to return a timelin
 #### Widget view
 Usually, we create a SwiftUI view that accepts an entry and displays it. Then we can easily use it inside a view builder closure in widget configuration. We can use widgetFamily environment value to understand the current widget configuration's size and present different views.
 
-=====================================================
+```swift
+struct HeartPointsEntryView: View {
+    @Environment(\.widgetFamily) var size
+    let entry: HeartPointsViewModel
+
+    var body: some View {
+        switch size {
+        case .systemSmall:
+            SmallWidgetEntryView(viewModel: entry).padding()
+        case .systemMedium:
+            HStack(alignment: .bottom) {
+                SmallWidgetEntryView(viewModel: entry)
+                HeartPointsChartView(viewModel: entry, labelCount: 6)
+            }.padding()
+        case .systemLarge:
+            VStack(alignment: .leading) {
+                HeartPointsView(viewModel: entry, showLabel: false)
+                HeartPointsChartView(viewModel: entry)
+            }.padding()
+        @unknown default:
+            SmallWidgetEntryView(viewModel: entry).padding()
+        }
+    }
+}
+```
 
 #### Widget updates
 The system will try to predict the best time to perform widget updates using providers. But you can always ask to update your widgets using WidgetCenter.
 
-=====================================================
+```swift
+WidgetCenter.shared.reloadAllTimelines()
+WidgetCenter.shared.reloadTimelines(ofKind: "heartRateWidget")
+```
 
 As you can see, there are two options for updating your widgets. You can update all of your widgets or update only the particular kind.
+
+#### Widget bundle
+As we know, your app might have more than one widget. In this case, we have to create a widget bundle.
+
+```swift
+@main
+struct CardioBotWidgets: WidgetBundle {
+    var body: some Widget {
+        HeartPointsWidget()
+        HeartRateSummaryWidget()
+    }
+}
+```
+
+Remember to remove @main from your widget definition and add it only to your widget bundle.
 
 #### Conclusion
 Today we learned about another feature that is released during WWDC20. Remember that widgets are available on macOS in the notification center also. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
