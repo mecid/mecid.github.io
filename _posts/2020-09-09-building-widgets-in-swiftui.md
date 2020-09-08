@@ -5,7 +5,7 @@ image: /public/widget.jpg
 category: Mastering SwiftUI views
 ---
 
-This week I want to talk to you about home-screen widgets for iOS 14. I've built several widget collections for my apps, and it is a perfect time to share with you that experience. Today we will learn all about building and updating widgets with SwiftUI.
+This week I want to talk to you about home-screen widgets in iOS 14. I've built several widget collections for my apps, and it is a perfect time to share with you that experience. Today we will learn all about building and updating widgets with SwiftUI.
 
 #### Basics
 Widgets display relevant, glanceable content, letting users quickly get to your app for more details. Your app can provide multiple kinds of widgets, allowing users to focus on essential information. They can add multiple copies of the same widget, tailoring each one to their unique needs and layout. I think it is an excellent definition for widgets, thanks to Apple.
@@ -30,12 +30,12 @@ struct MyWidget: Widget {
 
 As you can see, we develop a widget by creating a struct that conforms to the *Widget* protocol. The only requirement of the *Widget* protocol is body property that should return an instance of *WidgetConfiguration*. SwiftUI provides us two structs that conform to *WidgetConfiguration*: *StaticConfiguration* and *IntentConfiguration*. 
 
-We can use *IntentConfiguration* to provide user-configurable options for our widget. In this post, we will talk about *StaticConfiguration*. *StaticConfiguration* allows us to register a widget configured by the developer, and time-to-time updates its data.
+We can use *IntentConfiguration* to provide user-configurable options for our widget. In this post, we will talk about *StaticConfiguration*. *StaticConfiguration* allows us to register a widget configured by the developer that time-to-time updates its data.
 
 *StaticConfiguration* needs three parameters. Let's take a look at them one-by-one.
 
 1. Kind is a string that identifies the type of widget. Your app might have multiple widgets. In this case, a kind identifier allows you to update widgets of a particular kind.
-2. The provider is a type conforming to Provider protocol and used by SwiftUI to fetch widget data.
+2. The provider is a type conforming to Provider protocol and used by the system to fetch widget data.
 3. View builder closure that describes the SwiftUI view for displaying widget data.
 
 You can also attach a few modifiers to your widget configuration for setting supported widget families or providing description and name.
@@ -145,7 +145,7 @@ struct CardioBotWidgets: WidgetBundle {
 }
 ```
 
-Remember to remove *@main* from your widget definition and add it only to your widget bundle.
+Remember to remove *@main* from your widget definitions and add it only to your widget bundle.
 
 #### Conclusion
 Today we learned about another feature that is released during WWDC20. Remember that widgets are available on macOS in the notification center also. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
