@@ -35,7 +35,7 @@ We can use *IntentConfiguration* to provide user-configurable options for our wi
 *StaticConfiguration* needs three parameters. Let's take a look at them one-by-one.
 
 1. Kind is a string that identifies the type of widget. Your app might have multiple widgets. In this case, a kind identifier allows you to update widgets of a particular kind.
-2. The provider is a type conforming to Provider protocol and used by the system to fetch widget data.
+2. The provider is a type conforming to *Provider* protocol and used by the system to fetch widget data.
 3. View builder closure that describes the SwiftUI view for displaying widget data.
 
 You can also attach a few modifiers to your widget configuration for setting supported widget families or providing description and name.
