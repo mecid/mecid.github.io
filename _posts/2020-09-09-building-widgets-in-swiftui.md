@@ -40,6 +40,8 @@ We can use *IntentConfiguration* to provide user-configurable options for our wi
 
 You can also attach a few modifiers to your widget configuration for setting supported widget families or providing description and name.
 
+> To learn more about *@main* and new App lifecycle in SwiftUI, take a look at my ["Managing app in SwiftUI"](https://swiftwithmajid.com/2020/08/19/managing-app-in-swiftui/) post.
+
 #### Provider
 The system will call your provider to fetch new data. Let's look at the provider example that I use in my [CardioBot](https://cardiobot.swiftwithmajid.com) app to display daily heart points.
 
