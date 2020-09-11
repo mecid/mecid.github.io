@@ -21,7 +21,7 @@ struct MyApp: App {
 }
 ```
 
-As you can see in the example above, we create an app by conforming to *App* protocol and implementing the single requirement, body property. Body property should return an instance of scene protocol, and we use the *WindowGroup* scene here. *WindowGroup* is a standard scene type provided by SwiftUI that handles multiple windows on macOS or various scenes on iPadOS. We will deep dive into scene management in future posts.
+As you can see in the example above, we create an app by conforming to *App* protocol and implementing the single requirement, body property. Body property should return an instance of scene protocol, and we use the *WindowGroup* scene here. *WindowGroup* is a standard scene type provided by SwiftUI that handles multiple windows on macOS or various scenes on iPadOS. We will deep dive into scene management in [another post](https://swiftwithmajid.com/2020/08/26/managing-scenes-in-swiftui/).
 
 You may notice that there is no static main function in the code example that Swift compiler uses as the entry point. *App* protocol has the extension that defines the static main function; that's why we don't need to care about it.
 
