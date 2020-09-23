@@ -25,7 +25,7 @@ In the example above, we have a struct that conforms to the *App* protocol. The 
 
 ```swift
 @main
-struct CardioBotApp: App {
+struct MyApp: App {
     @SceneBuilder var body: some Scene {
         DocumentGroup(newDocument: TextFile()) { textFile in
             TextEditor(textFile.$document.text)
