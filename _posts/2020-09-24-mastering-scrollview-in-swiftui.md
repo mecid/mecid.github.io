@@ -8,7 +8,7 @@ category: Mastering SwiftUI views
 We had a scroll view from the very first version of SwiftUI. It was quite limited. But this year changed everything when Apple released *ScrollViewReader* during WWDC 20. This week we will learn all about scroll views in SwiftUI. We will learn how to scroll to the particular position and read the current offset of scroll view content.
 
 #### Basics
-The usage of a scroll view is pretty simple. You create a scroll view and pass the content inside a ViewBuilder closure. Let's take a look at the first example.
+The usage of a scroll view is pretty simple. You create a scroll view and pass the content inside a *ViewBuilder* closure. Let's take a look at the first example.
 
 ```swift
 import SwiftUI
@@ -50,7 +50,9 @@ struct ContentView1: View {
 }
 ```
 
-As you can see in the example above, we define a *ScrollViewReader* that passes the scroll view parameter to its *ViewBuilder* closure. *ScrollViewReader* traverses its child view, find the first scroll view and pass it into its *ViewBuilder* closure. The parameter of *ViewBuilder* closure is an instance of *ScrollViewProxy*. *ScrollViewProxy* is a simple struct that provides us *scrollTo* function. We can use this function to scroll to any view that defines its id.
+As you can see in the example above, we define a *ScrollViewReader* that passes the scroll view parameter to its *ViewBuilder* closure. *ScrollViewReader* traverses its child view, find the first scroll view and pass it into its *ViewBuilder* closure.
+
+The parameter of *ViewBuilder* closure is an instance of *ScrollViewProxy*. *ScrollViewProxy* is a simple struct that provides us *scrollTo* function. We can use this function to scroll to any view that defines its **id**.
 
 I have to mention that the *scrollTo* function is animatable, and you can wrap it using *withAnimation* function to animate scrolling.
 
@@ -80,7 +82,7 @@ struct ContentView1: View {
 **Tip: You can use ScrollViewReader with List also.**
 
 #### ScrollView content offset
-Now we can move scroll view content offset to a particular position, but what about content offset. How can we keep the view updated while the user scrolling the content? We don't have this behavior out of the box, but we can easily implement it using preferences.
+Now we can move scroll view content to a particular position, but what about reading the content offset. How can we keep the view updated while the user scrolling the content? We don't have this behavior out of the box, but we can easily implement it using preferences.
 
 > If you are not familiar with preferences in SwiftUI, I suggest reading my ["The magic of view preferences in SwiftUI"](/2020/01/15/the-magic-of-view-preferences-in-swiftui/) post.
 
