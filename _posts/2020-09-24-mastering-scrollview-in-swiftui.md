@@ -82,7 +82,7 @@ struct ContentView1: View {
 #### ScrollView content offset
 Now we can move scroll view content offset to a particular position, but what about content offset. How can we keep the view updated while the user scrolling the content? We don't have this behavior out of the box, but we can easily implement it using preferences.
 
-> If you are not familiar with preferences in SwiftUI, I suggest reading my "The magic of view preferences in SwiftUI" post.
+> If you are not familiar with preferences in SwiftUI, I suggest reading my ["The magic of view preferences in SwiftUI"](/2020/01/15/the-magic-of-view-preferences-in-swiftui/) post.
 
 Let's start with defining a preference key type that will store the current content offset using *CGPoint*.
 
@@ -142,7 +142,7 @@ struct ScrollView<Content: View>: View {
 
 As I said before, we use SwiftUI's scroll view under the hood and pass all the parameters to configure its behavior. Before adding the content, we place a *GeometryReader* view that allows us to track the content offset changes. We use preferences to pass the origin point of our content to the parent view.
 
-> To learn more about GeometryReader, look at my "Building BarChart with Shape API in SwiftUI" post.
+> To learn more about *GeometryReader*, look at my ["Building BarChart with Shape API in SwiftUI"](/2019/08/14/building-barchart-with-shape-api-in-swiftui/) post.
 
 ```swift
 struct ContentView: View {
