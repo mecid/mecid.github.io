@@ -52,7 +52,7 @@ struct ContentView1: View {
 
 As you can see in the example above, we define a *ScrollViewReader* that passes the scroll view parameter to its *ViewBuilder* closure. *ScrollViewReader* traverses its child view, find the first scroll view and pass it into its *ViewBuilder* closure.
 
-The parameter of *ViewBuilder* closure is an instance of *ScrollViewProxy*. *ScrollViewProxy* is a simple struct that provides us *scrollTo* function. We can use this function to scroll to any view that defines its **id**.
+The parameter of *ViewBuilder* closure is an instance of *ScrollViewProxy*. *ScrollViewProxy* is a simple struct that provides us *scrollTo* function. We can use this function to scroll to any view that defines its **id**. We can also provide an anchor point of the view to align its position.
 
 I have to mention that the *scrollTo* function is animatable, and you can wrap it using *withAnimation* function to animate scrolling.
 
