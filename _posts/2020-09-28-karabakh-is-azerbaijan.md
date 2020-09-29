@@ -3,7 +3,7 @@ title: Karabakh is Azerbaijan
 layout: post
 ---
 
-Nagorno-Karabakh is not a disputed territory.  This is the territory of Azerbaijan.  Both historically and officially recognized by the whole world, including Armenia.
+Nagorno-Karabakh is not a disputed territory. This is the territory of Azerbaijan.  Both historically and officially recognized by the whole world, including Armenia.
 
 #### Main points you need to know on Karabakh Azerbaijan
 
