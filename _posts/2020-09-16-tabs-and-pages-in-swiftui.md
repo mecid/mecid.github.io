@@ -87,7 +87,7 @@ struct ContentView: View {
 
 As you can see in the example above, we set an instance of *PageTabViewStyle* struct as the style of our *TabView*. We can also control whenever we want to show the page indicator using the *indexDisplayMode* parameter.
 
-*TabView*'s selection binding fully supports animations. It means that you can wrap the binding changes using the withAnimation function and programmatically animate page transition. You might need it when your designs contain buttons for the next and previous pages.
+*TabView*'s selection binding fully supports animations. It means that you can wrap the binding changes using the *withAnimation* function and programmatically animate page transition. You might need it when your designs contain buttons for the next and previous pages.
 
 ```swift
 import SwiftUI
