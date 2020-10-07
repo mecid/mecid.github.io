@@ -27,7 +27,7 @@ struct AnimatedView: View {
 
 As we know, animation modifier applies animation to all the child views of the applied view. Apple suggests us to use this modifier on leaf views rather than container views. This approach allows us to specify animation only for the views that we need.
 
-> To learn more about the animation modifier in Swift, look at my "Animations in SwiftUI" post.
+> To learn more about the animation modifier in Swift, look at my ["Animations in SwiftUI"](/2019/06/26/animations-in-swiftui/) post.
 
 ```swift
 struct ContentView: View {
@@ -113,7 +113,7 @@ struct ContentView: View {
 }
 ```
 
-> To learn more about building interactive views, look at my "Gestures in SwiftUI" post.
+> To learn more about building interactive views, look at my ["Gestures in SwiftUI"](/2019/07/10/gestures-in-swiftui/) post.
 
 #### Transactions in bindings
 You can also provide a custom transaction during binding updates using the transaction function on a binding.
@@ -134,7 +134,7 @@ struct ContentView: View {
 }
 ```
 
-> To learn more about features provided by bindings, look at my "Binding in SwiftUI" post.
+> To learn more about features provided by bindings, look at my ["Binding in SwiftUI"](/2020/04/08/binding-in-swiftui/) post.
 
 #### Conclusion
 Today we learned all about transactions in SwiftUI. Understanding transactions opens new doors for building powerful and reusable view components in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
