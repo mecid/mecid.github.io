@@ -8,7 +8,7 @@ category: Interactions
 Animations play a vital role in SwiftUI. We saw a lot of examples of complex animations that we can easily implement in SwiftUI. The guidance for building fluid animations in SwiftUI has the only one step: mutate your state, and SwiftUI will automatically animate changes in your views. Today we will talk about transactions, which is a hidden gem of SwiftUI.
 
 #### Basics
-Transaction is the context of the current state-processing update. SwiftUI creates a transaction for every state change. Transaction contains the animation that SwiftUI will apply during the state change and the property indicating whenever this transaction disables all the animations defined in the child views. Let's take a look at the quick example.
+Transaction is the context of the current state-processing update. SwiftUI creates a transaction for every state change. Transaction contains the animation that SwiftUI will apply during the state change and the property indicating whenever this transaction disables all the animations defined by the child views. Let's take a look at the quick example.
 
 ```swift
 import SwiftUI
