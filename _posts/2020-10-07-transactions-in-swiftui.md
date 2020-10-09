@@ -89,7 +89,7 @@ struct ContentView: View {
 }
 ```
 
-The transaction modifier accepts a closure with the inout instance of *Transaction* struct. We can modify the current transaction inside this closure as we need it. In the example above, we completely disable animations for one view and replace animation for another view.
+The transaction modifier accepts a closure with the *inout* instance of *Transaction* struct. We can modify the current transaction inside this closure as we need it. In the example above, we completely disable animations for one view and replace animation for another view.
 
 #### Transactions during gesture updates
 You can find the usage of transactions across many APIs in SwiftUI. For example, you can modify the transaction during gesture updates. It works similarly to the transaction modifier.
