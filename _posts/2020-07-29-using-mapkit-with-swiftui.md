@@ -101,10 +101,10 @@ struct MapExample: View {
 
 As you can see map view provides us quite a few customization points. Let's discuss them one by one.
 
-1. coordinateRegion represents the currently visible region of the map view. You can easily change it by updating the value of your binding. Remember that it is an animatable parameter of the view.
-2. interactionModes allows us to set allowed gestures for our map view. For example, it might be only zoom or pan gestures. In our case, we use all the available gestures to interact with the map.
-3. showsUserLocation is the boolean parameter that allows us to control whenever we want to show the user's current location on the map or not. Remember that you have to request permission to access the location. 
-4. userTrackingMode is the way to configure map tracking mode. It describes whenever we want to follow the user as soon as location changes.
+1. *coordinateRegion* represents the currently visible region of the map view. You can easily change it by updating the value of your binding. Remember that it is an animatable parameter of the view.
+2. *interactionModes* allows us to set allowed gestures for our map view. For example, it might be only zoom or pan gestures. In our case, we use all the available gestures to interact with the map.
+3. *showsUserLocation* is the boolean parameter that allows us to control whenever we want to show the user's current location on the map or not. Remember that you have to request permission to access the location. 
+4. *userTrackingMode* is the way to configure map tracking mode. It describes whenever we want to follow the user as soon as location changes.
 
 There is another initializer for the map view that accepts *MKMapRect* instead of *MKCoordinateRegion* to control the visible part of the map.
 
