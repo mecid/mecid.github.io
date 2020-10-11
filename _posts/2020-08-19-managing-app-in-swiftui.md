@@ -100,7 +100,7 @@ struct MyApp: App {
 We use *onContinueUserActivity* modifier to set a closure that will parse a user activity. In the same way, as we did before, we can parse a user activity and toggle state property that routes the navigation. SwiftUI will run this closure as soon as the user continues activity.
 
 #### UIApplicationDelegateAdaptor
-As you can see, we can implement many *AppDelegate* callbacks with App protocol and the new set of modifiers that SwiftUI provides us. But there are still some gaps.
+As you can see, we can implement many *AppDelegate* callbacks with *App* protocol and the new set of modifiers that SwiftUI provides us. But there are still some gaps.
 
 For example, there is no way to register for remote notifications with *App* protocol. That's why SwiftUI gives us another type called *UIApplicationDelegateAdaptor*. We can merge the functionality of old *AppDelegate* with the new App protocol using *UIApplicationDelegateAdaptor* property wrapper.
 
