@@ -53,21 +53,36 @@ enum AppAction {
     case trends(action: TrendsAction)
 }
 
-func trendsReducer(state: inout TrendsState, action: TrendsAction) {
+func trendsReducer(
+    state: inout TrendsState,
+    action: TrendsAction
+) -> AnyPublisher<TrendsAction, Never> {
     // Implement your state changes here
 }
 
-func calendarReducer(state: inout CalendarState, action: CalendarAction) {
+func calendarReducer(
+    state: inout CalendarState,
+    action: CalendarAction
+) -> AnyPublisher<CalendarAction, Never>{
     // Implement your state changes here
 }
 
-func appReducer(state: inout AppState, action: AppAction) {
+func appReducer(
+    state: inout AppState,
+    action: AppAction
+) -> AnyPublisher<AppAction, Never> {
     switch action {
     case let .calendar(action):
-        calendarReducer(&state.calendar, action)
+        return calendarReducer(&state.calendar, action)
+            .map(AppAction.calendar)
+            .eraseToAnyPublisher()
     case let .trends(action):
         trendsReducer(&state.trends, action)
+            .map(AppAction.trends)
+            .eraseToAnyPublisher()
     }
+
+    return Empty().eraseToAnyPublisher()
 }
 ```
 
