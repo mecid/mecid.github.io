@@ -96,5 +96,7 @@ struct CardGroupBoxStyle: GroupBoxStyle {
 
 As you can see, we are able to create any *GroupBox* style we need. Another option might be a style that hides the label or something else. 
 
+> To learn more about other styling protocols available in SwiftUI, take a look at ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
+
 #### Conclusion
 *GroupBox* provides us a simple card-based look and feel that we used to see in many apps on iOS. The great thing about *GroupBox* that it allows us to customize its appearance as we need. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
