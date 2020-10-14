@@ -54,10 +54,12 @@ struct ContentView: View {
 
 ![group-box](/public/groupbox2.png)
 
-As you can see, SwiftUI provides nice card-based styling for *GroupBox* view by default. Sometimes it is not what we need. For example, when you place *GroupBox* inside a grouped List, it looks like a card inside a card. Fortunately, we can tune the look and feel using the *GroupBoxStyle* protocol.
+As you can see, SwiftUI provides nice card-based styling for *GroupBox* view by default. Sometimes it is not what we need. For example, when you place *GroupBox* inside a grouped *List*, it looks like a card inside a card. Fortunately, we can tune the look and feel using the *GroupBoxStyle* protocol.
+
+> To learn more about grids in SwiftUI, take a look at my ["Mastering grids in SwiftUI"](/2020/07/08/mastering-grids-in-swiftui/) post.
 
 #### Styling
-SwiftUI provides us the *GroupBoxStyle* protocol that allows us to change the look and feel of any GroupBox instance completely. We can create different styles for any use-cases we need. For example, I don't need a background and corner radius when I use GroupBox inside a List.
+SwiftUI provides us the *GroupBoxStyle* protocol that allows us to change the look and feel of any *GroupBox* instance completely. We can create different styles for any use-cases we need. For example, I don't need a background and corner radius when I use *GroupBox* inside a *List*.
 
 ```swift
 struct PlainGroupBoxStyle: GroupBoxStyle {
@@ -70,7 +72,9 @@ struct PlainGroupBoxStyle: GroupBoxStyle {
 }
 ```
 
-All you need to do to create your own *GroupBox* style is create a struct that conforms to *GroupBoxStyle* protocol. *GroupBoxStyle* has the only requirement. You have to create a *makeBody* function that accepts an instance of *GroupBoxStyleConfiguration* type and returns a new view. *GroupBoxStyleConfiguration* provides us both the label and content of our *GroupBox*. You can use them inside the *makeBody* function as you need. Our *PlainGroupBoxStyle* example put the label and content view inside a *VStack* with leading alignment and returns the stack.
+All you need to do to create your own *GroupBox* style is create a struct that conforms to *GroupBoxStyle* protocol. *GroupBoxStyle* has the only requirement. You have to create a *makeBody* function that accepts an instance of *GroupBoxStyleConfiguration* type and returns a new view. 
+
+*GroupBoxStyleConfiguration* provides us both the label and content of our *GroupBox*. You can use them inside the *makeBody* function as you need. Our *PlainGroupBoxStyle* example put the label and content view inside a *VStack* with leading alignment and returns the stack.
 
 ![group-box](/public/groupbox3.png)
 
