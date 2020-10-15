@@ -70,6 +70,17 @@ struct PlainGroupBoxStyle: GroupBoxStyle {
         }
     }
 }
+
+struct ContentView: View {
+    var body: some View {
+        GroupBox(
+            label: Label("Heart Rate", systemImage: "heart.fill")
+                .foregroundColor(.red)
+        ) {
+            Text("Your hear rate is 90 BPM.")
+        }.groupBoxStyle(PlainGroupBoxStyle())
+    }
+}
 ```
 
 All you need to do to create your own *GroupBox* style is create a struct that conforms to *GroupBoxStyle* protocol. *GroupBoxStyle* has the only requirement. You have to create a *makeBody* function that accepts an instance of *GroupBoxStyleConfiguration* type and returns a new view. 
