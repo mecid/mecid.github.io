@@ -87,6 +87,8 @@ All you need to do to create your own *GroupBox* style is create a struct that c
 
 *GroupBoxStyleConfiguration* provides us both the label and content of our *GroupBox*. You can use them inside the *makeBody* function as you need. Our *PlainGroupBoxStyle* example put the label and content view inside a *VStack* with leading alignment and returns the stack.
 
+You can set the style by using the *groupBoxStyle* modifier. SwiftUI will share it using environment across all children of the view hierarchy.
+
 ![group-box](/public/groupbox3.png)
 
 You can create super custom *GroupBox* styles. To show more complex styling options, let's replicate the default card-based layout.
