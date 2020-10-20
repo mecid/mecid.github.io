@@ -11,7 +11,7 @@ One of the slogans of SwiftUI during *WWDC* this year was "Learn one time, use a
 
 ![napbot-screenshot](/public/napbot.jpeg)
 
-Last month I had released my [NapBot app](https://napbotapp.com), which I wrote entirely in SwiftUI. What I really love in this app is the how easy I was able to share my views between *iOS* and *watchOS* apps. I was able to run my app on *watchOS* just in a few minutes by adding a couple of small target checks. 
+Last month I had released my [NapBot app](https://napbot.swiftwithmajid.com), which I wrote entirely in SwiftUI. What I really love in this app is the how easy I was able to share my views between *iOS* and *watchOS* apps. I was able to run my app on *watchOS* just in a few minutes by adding a couple of small target checks. 
 
 Let's take a look at a calendar day details screen. It uses a list component as the root view. Inside the list, we have a chart and a bunch of sections with text data. We already talked about creating a bar chart in ["Building BarChart with Shape API in SwiftUI"](/2019/08/14/building-barchart-with-shape-api-in-swiftui/) post, check that post if you want to learn more about *Shapes API*.
 
