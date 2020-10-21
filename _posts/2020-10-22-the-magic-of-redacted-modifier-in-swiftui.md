@@ -1,0 +1,50 @@
+---
+title: The magic of redacted modifier in SwiftUI
+layout: post
+category: Interaction
+image: /public/redacted.jpeg
+---
+
+Redacted modifier is the thing that has a great impact on how iOS apps will handle loading states. During WWDC20, Apple showed us the easy way of hiding the data from home-screen widgets using the redacted modifier. Today we will talk about using the redacted modifier to hide sensitive data and handle loading states.
+
+#### Redacted modifier
+The redacted modifier transforms the view hierarchy into a skeleton view when added. Don't worry if you are not familiar with the skeleton view pattern. You will see how it works very soon. Assume that you are working on the Github app. You have a view that represents a repo on the list. 
+
+=====================================================
+
+Let's create a sample data that we can use to preview our RepoView.
+
+=====================================================
+
+Now we can use our RepoView in preview to see how it looks with or without a redacted modifier.
+
+=====================================================
+
+As you can see in the example above, we have a plain RepoView on the left and a redacted version on the right. The redacted modifier transforms images and text views in the view hierarchy to hide its content using overlays. Let's take a look at a more advanced example.
+
+=====================================================
+
+Here we have a store object that handles the data loading. As you can see, we use the redacted modifier to hide the mock data that we have as our store object's initial state.
+
+While attaching the redacted modifier, we have to provide an instance of RedactionReasons struct using the reason parameter. RedactionReasons is an option set that we can extend with as many reasons as we need. RedactionReasons struct provides us a ready to use placeholder instance that we use in the example above.
+
+Remember that the redacted modifier hides the data only visually. It is still accessible via VoiceOver or clickable in case of buttons. It is your responsibility to disable buttons and change accessibility data while using the redacted modifier.
+
+#### Unredacted modifier
+As we already know, the redacted modifier traverse the view hierarch and applies its effect to hide the actual data, but what if we want to keep a certain part of the view visible? SwiftUI provides us another modifier called unredacted. Unredacted modifier allows us to keep the view unredacted while applying the redacted modifier.
+
+=====================================================
+
+#### Reasons
+As we learned, the redacted modifier accepts a reason parameter. It's great that we can create as many different reasons and hide only the part we need. SwiftUI provides a special environment value called redactionReasons to get the redaction reason applied to the current view hierarchy. Let's start first with the extending RedactionReasons struct with more options.
+
+=====================================================
+
+Now we tune our RepoView to redact the only needed parts of the view.
+
+=====================================================
+
+Remember that SwiftUI applies skeleton view effect only when we use placeholder redaction reason. Any other reasons should be hidden manually.
+
+#### Conclusion
+Today we learned another great feature that SwiftUI provides us for free out of the box. I really love the skeleton view pattern, and with SwiftUI, I started using it on every screen that loads some data. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
