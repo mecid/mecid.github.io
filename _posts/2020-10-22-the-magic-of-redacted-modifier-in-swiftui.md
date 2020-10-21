@@ -10,21 +10,109 @@ Redacted modifier is the thing that has a great impact on how iOS apps will hand
 #### Redacted modifier
 The redacted modifier transforms the view hierarchy into a skeleton view when added. Don't worry if you are not familiar with the skeleton view pattern. You will see how it works very soon. Assume that you are working on the Github app. You have a view that represents a repo on the list. 
 
-=====================================================
+```swift
+struct Repo: Hashable, Decodable {
+    let name: String
+    let description: String
+    let stars: Int
+}
+
+struct RepoView: View {
+    let repo: Repo
+
+    var body: some View {
+        HStack {
+            VStack(alignment: .center) {
+                Image(systemName: "star.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                Text(String(repo.stars))
+                    .font(.title)
+            }.foregroundColor(.red)
+
+            VStack(alignment: .leading) {
+                Text(repo.name)
+                    .font(.headline)
+                Text(repo.description)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+}
+```
 
 Let's create a sample data that we can use to preview our RepoView.
 
-=====================================================
+```swift
+extension Repo {
+    static let mock = Repo(
+        name: "SwiftUICharts",
+        description: "A simple line and bar charting library that support accessibility written using SwiftUI. ",
+        stars: 579
+    )
+}
+```
 
 Now we can use our RepoView in preview to see how it looks with or without a redacted modifier.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @StateObject var store = Store(service: .init())
+
+    var body: some View {
+        HStack {
+            RepoView(repo: .mock)
+            Divider()
+            RepoView1(repo: .mock)
+                .redacted(reason: .placeholder)
+        }
+    }
+}
+```
 
 As you can see in the example above, we have a plain RepoView on the left and a redacted version on the right. The redacted modifier transforms images and text views in the view hierarchy to hide its content using overlays. Let's take a look at a more advanced example.
 
-=====================================================
+```swift
+final class Store: ObservableObject {
+    @Published private(set) var repos: [Repo]
+    @Published private(set) var isLoading = false
+
+    private let service: GithubService
+    init(
+        service: GithubService,
+        initialState: [Repo] = Array(repeating: .mock, count: 5)
+    ) {
+        self.repos = initialState
+        self.service = service
+    }
+
+    func fetch() {
+        isLoading = true
+        service
+            .fetchRepos(matching: "SwiftUI")
+            .replaceError(with: [])
+            .receive(on: DispatchQueue.main)
+            .handleEvents(receiveCompletion: { [weak self] _ in self?.isLoading = false})
+            .assign(to: &$repos)
+    }
+}
+```
 
 Here we have a store object that handles the data loading. As you can see, we use the redacted modifier to hide the mock data that we have as our store object's initial state.
+
+```swift
+struct ContentView: View {
+    @StateObject var store = Store(service: .init())
+
+    var body: some View {
+        List(store.repos, id: \.self) { repo in
+            RepoView(repo: repo)
+        }
+        .onAppear(perform: store.fetch)
+        .redacted(reason: store.isLoading ? .placeholder : [])
+    }
+}
+```
 
 While attaching the redacted modifier, we have to provide an instance of RedactionReasons struct using the reason parameter. RedactionReasons is an option set that we can extend with as many reasons as we need. RedactionReasons struct provides us a ready to use placeholder instance that we use in the example above.
 
@@ -33,16 +121,82 @@ Remember that the redacted modifier hides the data only visually. It is still ac
 #### Unredacted modifier
 As we already know, the redacted modifier traverse the view hierarch and applies its effect to hide the actual data, but what if we want to keep a certain part of the view visible? SwiftUI provides us another modifier called unredacted. Unredacted modifier allows us to keep the view unredacted while applying the redacted modifier.
 
-=====================================================
+```swift
+struct RepoView: View {
+    let repo: Repo
+
+    var body: some View {
+        HStack {
+            VStack(alignment: .center) {
+                Image(systemName: "star.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .unredacted()
+                Text(String(repo.stars))
+                    .font(.title)
+            }.foregroundColor(.red)
+
+            VStack(alignment: .leading) {
+                Text(repo.name)
+                    .font(.headline)
+                Text(repo.description)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+}
+```
 
 #### Reasons
 As we learned, the redacted modifier accepts a reason parameter. It's great that we can create as many different reasons and hide only the part we need. SwiftUI provides a special environment value called redactionReasons to get the redaction reason applied to the current view hierarchy. Let's start first with the extending RedactionReasons struct with more options.
 
-=====================================================
+```swift
+extension RedactionReasons {
+    static let text = RedactionReasons(rawValue: 1 << 2)
+    static let images = RedactionReasons(rawValue: 1 << 4)
+}
 
-Now we tune our RepoView to redact the only needed parts of the view.
+extension View {
+    @ViewBuilder func unredacted(when condition: Bool) -> some View {
+        if condition {
+            unredacted()
+        } else {
+            // Use default .placeholder or implement your custom effect
+            redacted(reason: .placeholder)
+        }
+    }
+}
+```
 
-=====================================================
+Now we can tune our RepoView to redact the only needed parts of the view.
+
+```swift
+struct RepoView1: View {
+    @Environment(\.redactionReasons) var reasons
+    let repo: Repo
+
+    var body: some View {
+        HStack {
+            VStack(alignment: .center) {
+                Image(systemName: "star.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .unredacted(when: !reasons.contains(.images))
+                Text(String(repo.stars))
+                    .font(.title)
+                    .unredacted(when: !reasons.contains(.text))
+            }.foregroundColor(.red)
+
+            VStack(alignment: .leading) {
+                Text(repo.name)
+                    .font(.headline)
+                Text(repo.description)
+                    .foregroundColor(.secondary)
+            }.unredacted(when: !reasons.contains(.text))
+        }
+    }
+}
+```
 
 Remember that SwiftUI applies skeleton view effect only when we use placeholder redaction reason. Any other reasons should be hidden manually.
 
