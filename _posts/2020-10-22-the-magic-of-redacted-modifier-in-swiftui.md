@@ -41,7 +41,7 @@ struct RepoView: View {
 }
 ```
 
-Let's create a sample data that we can use to preview our RepoView.
+Let's create a sample data that we can use to preview our *RepoView*.
 
 ```swift
 extension Repo {
@@ -53,7 +53,7 @@ extension Repo {
 }
 ```
 
-Now we can use our RepoView in preview to see how it looks with or without a redacted modifier.
+Now we can use our *RepoView* in preview to see how it looks with or without a redacted modifier.
 
 ```swift
 struct ContentView: View {
@@ -72,7 +72,7 @@ struct ContentView: View {
 
 ![redacted](/public/redacted1.png)
 
-As you can see in the example above, we have a plain RepoView on the left and a redacted version on the right. The redacted modifier transforms images and text views in the view hierarchy to hide its content using overlays. Let's take a look at a more advanced example.
+As you can see in the example above, we have a plain *RepoView* on the left and a redacted version on the right. The redacted modifier transforms images and text views in the view hierarchy to hide its content using overlays. Let's take a look at a more advanced example.
 
 ```swift
 final class Store: ObservableObject {
@@ -116,7 +116,7 @@ struct ContentView: View {
 }
 ```
 
-While attaching the redacted modifier, we have to provide an instance of RedactionReasons struct using the reason parameter. RedactionReasons is an option set that we can extend with as many reasons as we need. RedactionReasons struct provides us a ready to use placeholder instance that we use in the example above.
+While attaching the redacted modifier, we have to provide an instance of *RedactionReasons* struct using the reason parameter. *RedactionReasons* is an option set that we can extend with as many reasons as we need. *RedactionReasons* struct provides us a ready to use placeholder instance that we use in the example above.
 
 Remember that the redacted modifier hides the data only visually. It is still accessible via VoiceOver or clickable in case of buttons. It is your responsibility to disable buttons and change accessibility data while using the redacted modifier.
 
@@ -152,7 +152,7 @@ struct RepoView: View {
 ![unredacted](/public/unredacted.png)
 
 #### Reasons
-As we learned, the redacted modifier accepts a reason parameter. It's great that we can create as many different reasons and hide only the part we need. SwiftUI provides a special environment value called redactionReasons to get the redaction reason applied to the current view hierarchy. Let's start first with the extending RedactionReasons struct with more options.
+As we learned, the redacted modifier accepts a reason parameter. It's great that we can create as many different reasons and hide only the part we need. SwiftUI provides a special environment value called *redactionReasons* to get the redaction reason applied to the current view hierarchy. Let's start first with the extending *RedactionReasons* struct with more options.
 
 ```swift
 extension RedactionReasons {
@@ -172,7 +172,7 @@ extension View {
 }
 ```
 
-Now we can tune our RepoView to redact the only needed parts of the view.
+Now we can tune our *RepoView* to redact the only needed parts of the view.
 
 ```swift
 struct RepoView1: View {
