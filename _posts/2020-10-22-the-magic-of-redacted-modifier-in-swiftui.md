@@ -123,7 +123,7 @@ While attaching the redacted modifier, we have to provide an instance of *Redact
 Remember that the redacted modifier hides the data only visually. It is still accessible via VoiceOver or clickable in case of buttons. It is your responsibility to disable buttons and change accessibility data while using the redacted modifier.
 
 #### Unredacted modifier
-As we already know, the redacted modifier traverse the view hierarch and applies its effect to hide the actual data, but what if we want to keep a certain part of the view visible? SwiftUI provides us another modifier called unredacted. Unredacted modifier allows us to keep the view unredacted while applying the redacted modifier.
+As we already know, the redacted modifier traverses the view hierarchy and applies its effect to hide the actual data, but what if we want to keep a certain part of the view visible? SwiftUI provides us another modifier called unredacted. Unredacted modifier allows us to keep the view unredacted while applying the redacted modifier.
 
 ```swift
 struct RepoView: View {
@@ -161,17 +161,6 @@ extension RedactionReasons {
     static let text = RedactionReasons(rawValue: 1 << 2)
     static let images = RedactionReasons(rawValue: 1 << 4)
 }
-
-extension View {
-    @ViewBuilder func unredacted(when condition: Bool) -> some View {
-        if condition {
-            unredacted()
-        } else {
-            // Use default .placeholder or implement your custom effect
-            redacted(reason: .placeholder)
-        }
-    }
-}
 ```
 
 > To learn more about *OptionSet* protocol in Swift, take a look at my ["Inclusive enums with OptionSet"](/2019/04/10/inclusive-enums-with-optionset/) post.
@@ -207,6 +196,19 @@ struct RepoView1: View {
 ```
 
 Remember that SwiftUI applies skeleton view effect only when we use placeholder redaction reason. Any other reasons should be hidden manually.
+
+```swift
+extension View {
+    @ViewBuilder func unredacted(when condition: Bool) -> some View {
+        if condition {
+            unredacted()
+        } else {
+            // Use default .placeholder or implement your custom effect
+            redacted(reason: .placeholder)
+        }
+    }
+}
+```
 
 #### Conclusion
 Today we learned another great feature that SwiftUI provides us for free out of the box. I really love the skeleton view pattern, and with SwiftUI, I started using it on every screen that loads some data. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
