@@ -57,8 +57,6 @@ Now we can use our *RepoView* in preview to see how it looks with or without a r
 
 ```swift
 struct ContentView: View {
-    @StateObject var store = Store(service: .init())
-
     var body: some View {
         HStack {
             RepoView(repo: .mock)
