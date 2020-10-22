@@ -1,7 +1,7 @@
 ---
 title: The magic of redacted modifier in SwiftUI
 layout: post
-category: Interaction
+category: Interactions
 image: /public/redacted.jpeg
 ---
 
