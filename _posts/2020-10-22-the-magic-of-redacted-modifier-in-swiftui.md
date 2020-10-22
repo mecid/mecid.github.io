@@ -102,6 +102,8 @@ final class Store: ObservableObject {
 
 Here we have a store object that handles the data loading. As you can see, we use the redacted modifier to hide the mock data that we have as our store object's initial state.
 
+> To learn more about store objects, take a look at my ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
+
 ```swift
 struct ContentView: View {
     @StateObject var store = Store(service: .init())
@@ -171,6 +173,8 @@ extension View {
     }
 }
 ```
+
+> To learn more about *OptionSet* protocol in Swift, take a look at my ["Inclusive enums with OptionSet"](/2019/04/10/inclusive-enums-with-optionset/) post.
 
 Now we can tune our *RepoView* to redact the only needed parts of the view.
 
