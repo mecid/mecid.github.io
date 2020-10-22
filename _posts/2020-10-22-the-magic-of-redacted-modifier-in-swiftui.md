@@ -70,6 +70,8 @@ struct ContentView: View {
 }
 ```
 
+![redacted](/public/redacted1.png)
+
 As you can see in the example above, we have a plain RepoView on the left and a redacted version on the right. The redacted modifier transforms images and text views in the view hierarchy to hide its content using overlays. Let's take a look at a more advanced example.
 
 ```swift
@@ -146,6 +148,8 @@ struct RepoView: View {
     }
 }
 ```
+
+![unredacted](/public/unredacted.png)
 
 #### Reasons
 As we learned, the redacted modifier accepts a reason parameter. It's great that we can create as many different reasons and hide only the part we need. SwiftUI provides a special environment value called redactionReasons to get the redaction reason applied to the current view hierarchy. Let's start first with the extending RedactionReasons struct with more options.
