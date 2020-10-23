@@ -193,7 +193,7 @@ struct RepoView1: View {
 }
 ```
 
-Remember that SwiftUI applies skeleton view effect only when we use placeholder redaction reason. Any other reasons should be hidden manually.
+Remember that SwiftUI applies skeleton view effect only when we use placeholder redaction reason. Any other reasons should be handled manually.
 
 ```swift
 extension View {
