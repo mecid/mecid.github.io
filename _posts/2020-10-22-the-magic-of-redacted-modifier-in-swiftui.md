@@ -5,7 +5,7 @@ category: Interactions
 image: /public/redacted.jpeg
 ---
 
-Redacted modifier is the thing that has a great impact on how iOS apps will handle loading states. During WWDC20, Apple showed us the easy way of hiding the data from home-screen widgets using the redacted modifier. Today we will talk about using the redacted modifier to hide sensitive data and handle loading states.
+Redacted modifier is the thing that will have a great impact on how iOS apps handle loading states. During WWDC20, Apple showed us the easy way of hiding the data from home-screen widgets using the redacted modifier. Today we will talk about using the redacted modifier to hide sensitive data and handle loading states.
 
 #### Redacted modifier
 The redacted modifier transforms the view hierarchy into a skeleton view when added. Don't worry if you are not familiar with the skeleton view pattern. You will see how it works very soon. Assume that you are working on the Github app. You have a view that represents a repo on the list. 
