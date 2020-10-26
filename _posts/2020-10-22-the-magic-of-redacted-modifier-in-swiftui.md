@@ -118,7 +118,7 @@ struct ContentView: View {
 
 While attaching the redacted modifier, we have to provide an instance of *RedactionReasons* struct using the reason parameter. *RedactionReasons* is an option set that we can extend with as many reasons as we need. *RedactionReasons* struct provides us a ready to use placeholder instance that we use in the example above.
 
-Remember that the redacted modifier hides the data only visually. It is still accessible via VoiceOver or clickable in case of buttons. It is your responsibility to disable buttons and change accessibility data while using the redacted modifier.
+Remember that the redacted modifier hides the data only visually. It is still clickable in case of buttons. It is your responsibility to disable buttons while using the redacted modifier.
 
 #### Unredacted modifier
 As we already know, the redacted modifier traverses the view hierarchy and applies its effect to hide the actual data, but what if we want to keep a certain part of the view visible? SwiftUI provides us another modifier called unredacted. Unredacted modifier allows us to keep the view unredacted while applying the redacted modifier.
