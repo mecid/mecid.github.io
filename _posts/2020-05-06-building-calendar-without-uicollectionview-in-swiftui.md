@@ -70,7 +70,7 @@ Now we can display a scroll view that has a vertical stack as its root view. We 
 
 > As I said before, the environment is one of my favorite features of SwiftUI. To learn more about the environment feature, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
-As you can see, I decided to create the separated MonthView struct that displays a single month in our calendar view. SwiftUI allows us to compose multiple views to build an excellent view hierarchy. I want to note that I reuse MonthView in other parts of my app to present a calendar preview.
+As you can see, I decided to create the separated *MonthView* struct that displays a single month in our calendar view. SwiftUI allows us to compose multiple views to build an excellent view hierarchy. I want to note that I reuse *MonthView* in other parts of my app to present a calendar preview.
 
 ```swift
 struct MonthView<DateView>: View where DateView: View {
