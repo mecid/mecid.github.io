@@ -57,7 +57,7 @@ final class SearchStore: ObservableObject {
 }
 ```
 
-I don't want to produce too many requests as user types a query. That's why I debounce it for *500ms*. It means the publisher will wait at least *500ms* whenever the user stops typing and then publish a value. Then I can use a *flatMap* operator to run a search request using a query. In the end, I use the sink subscriber to assign search results to a store variable. As soon as published variables change, SwiftUI will update the view to respect new data.
+I don't want to produce too many requests as user types a query. That's why I debounce it for 500ms. It means the publisher will wait at least 500ms whenever the user stops typing and then publish a value. Then I can use a *flatMap* operator to run a search request using a query. In the end, I use the sink subscriber to assign search results to a store variable. As soon as published variables change, SwiftUI will update the view to respect new data.
 
 > To learn more about store concept, take a look at my ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 
