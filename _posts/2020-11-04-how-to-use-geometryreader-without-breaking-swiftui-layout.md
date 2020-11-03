@@ -10,7 +10,21 @@ Usually, I try to avoid GeometryReader as much as I can. But sometimes, we need 
 #### Basics
 Let's start with a quick example of GeometryReader usage.
 
-=====================================================
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        GeometryReader { geometry in
+            Text("Hello!")
+                .frame(
+                    width: geometry.size.width,
+                    height: geometry.size.height
+                ).background(Color.red)
+        }
+    }
+}
+```
 
 Here we have a GeometryReader in the root of our ContentView. By default, GeometryReader places its children in the top left corner, which is very unusual for SwiftUI views. Usually, SwiftUI views place content in the center of its coordinate space.
 
@@ -18,7 +32,21 @@ As you can see, GeometryReader's @ViewBuilder closure has the parameter called g
 size - The size of space available to GeometryReader.
 safeAreaInsets - An instance of EdgeInsets struct that provides safe area insets of GeometryReader.
 
-=====================================================
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        GeometryReader { geometry in
+            Text("Hello!")
+                .frame(
+                    width: geometry.frame(in: .global).width,
+                    height: geometry.frame(in: .global).height
+                ).background(Color.red)
+        }
+    }
+}
+```
 
 GeometryProxy also has a frame function that allows you to access the frame of the GeometryReader by converting it into a correct coordinate space. You can also create your own coordinate spaces by using coordinateSpace modifier on any view.
 
