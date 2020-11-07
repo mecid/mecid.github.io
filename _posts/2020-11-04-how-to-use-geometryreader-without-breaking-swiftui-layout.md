@@ -50,7 +50,7 @@ struct ContentView: View {
 
 *GeometryProxy* also has a *frame* function that allows you to access the frame of the *GeometryReader* by converting it into a correct coordinate space. You can also create your own coordinate spaces by using *coordinateSpace* modifier on any view.
 
-> Take a look at ["Building Bottom sheet in SwiftUI"](/2019/12/11/building-bottom-sheet-in-swiftui/) post to learn more about advanced usages of GeometryReader.
+> Take a look at ["Building Bottom sheet in SwiftUI"](/2019/12/11/building-bottom-sheet-in-swiftui/) post to learn more about advanced usages of *GeometryReader*.
 
 #### Hints to follow while using GeometryReader
 Now we know how to use *GeometryReader* and its benefits. It is a perfect time to talk about its disadvantages. *GeometryReader* fills all the available space, and usually, it is not something you want to achieve. 
