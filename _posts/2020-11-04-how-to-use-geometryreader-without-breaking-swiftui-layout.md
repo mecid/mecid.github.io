@@ -57,7 +57,7 @@ Now we know how to use *GeometryReader* and its benefits. It is a perfect time t
 
 If you use *GeometryReader* as a full-screen view, that is great, and you don't need to do anything. In other cases, try to limit the available space of *GeometryReader* by using *frame* or *aspectRatio* modifiers. These modifiers allow you to keep *GeometryReader* under control.
 
-The second tip is to use *GeometryReader* inside an *overlay* or *background* modifier of any view. SwiftUI keeps overlay and background views in the same size as the view that you apply them. It limits the size of *GeometryReader* and doesn't allow it to grow and fill all the available space.
+The second tip is to use *GeometryReader* inside an overlay or background of any view. SwiftUI keeps overlay and background views in the same size as the view that you apply them. It limits the size of *GeometryReader* and doesn't allow it to grow and fill all the available space.
 
 > To learn more about this approach, take a look at ["The magic of view preferences in SwiftUI"](/2020/01/15/the-magic-of-view-preferences-in-swiftui/) post.
 
