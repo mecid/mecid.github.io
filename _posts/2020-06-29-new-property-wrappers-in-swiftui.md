@@ -54,7 +54,7 @@ struct SettingsView: View {
 }
 ```
 
-In the example above, we build a settings screen using the *AppStorage* property wrapper and Form view. Now we can access our settings anywhere across the app using *AppStorage*, and as soon as we change the values, SwiftUI will update the views.
+In the example above, we build a settings screen using the *AppStorage* property wrapper and *Form* view. Now we can access our settings anywhere across the app using *AppStorage*, and as soon as we change the values, SwiftUI will update the views.
 
 ```swift
 struct ContentView: View {
