@@ -9,7 +9,7 @@ category: Unit Testing
 ![ShowBot](/public/showbot.jpg)
 
 #### Typical issues
-Assume that you have a screen presenting a list of the progress of your TV show collection. Every cell presents TV show poster, title, and next episode number and title. Let's see on typical ShowCell code:
+Assume that you have a screen presenting a list of the progress of your TV show collection. Every cell presents TV show poster, title, and next episode number and title. Let's see on typical *ShowCell* code:
 
 ```swift
 struct Show: Decodable {
@@ -42,12 +42,12 @@ class ShowCell: UICollectionViewCell {
 
 This code looks very simple, and at first glance, there are no huge problems. But there are probably a few downsides:
 
-1. We are breaking SOLID principles by mixing presentation logic with view logic inside ShowCell. Our cell is responsible for laying out views and formatting show data into user presentable format.
+1. We are breaking SOLID principles by mixing presentation logic with view logic inside *ShowCell*. Our cell is responsible for laying out views and formatting show data into user presentable format.
 
-2. We want to test our data formatting logic to be sure that we are presenting the correct information to the user. But it is hard to cover UIViews with Unit Tests, and there is no clear intention on what you test, layout or presentation logic (we will talk about UI testing in next posts).
+2. We want to test our data formatting logic to be sure that we are presenting the correct information to the user. But it is hard to cover *UIViews* with Unit Tests, and there is no clear intention on what you test, layout or presentation logic (we will talk about UI testing in next posts).
 
 #### Refactoring
-Let's start to refactor our codebase. First of all, I want to reuse this ShowCell across the app for presenting search response, TV shows collection progress, etc. 
+Let's start to refactor our codebase. First of all, I want to reuse this *ShowCell* across the app for presenting search response, TV shows collection progress, etc. 
 
 ```swift
 protocol PosterPresentable {
@@ -75,7 +75,7 @@ class PosterCell: UICollectionViewCell {
 }
 ```
 
-Here we have refactored version of our ShowCell, now it is called PosterCell, and it can render any data which conforms PosterPresentable protocol. Let's go ahead and create a separated struct which will contain presentation logic for Show model and which we will pass to our cell instead of Show model struct.
+Here we have refactored version of our *ShowCell*, now it is called *PosterCell*, and it can render any data which conforms *PosterPresentable* protocol. Let's go ahead and create a separated struct which will contain presentation logic for show model and which we will pass to our cell instead of show model struct.
 
 ```swift
 struct ShowPresentation {
@@ -100,7 +100,7 @@ extension ShowPresentation: PosterPresentable {
 }
 ```
 
-By extracting Show model formatting logic into ShowPresentation struct, we fix the encapsulation problem when Cell class responsible for formatting own data model. Another positive effect here is that we can easily cover ShowPresentation with Unit Testing to make sure it works correctly. So, let's continue with implementing tests for our presentation logic.
+By extracting show model formatting logic into *ShowPresentation* struct, we fix the encapsulation problem when cell class responsible for formatting own data model. Another positive effect here is that we can easily cover *ShowPresentation* with Unit Testing to make sure it works correctly. So, let's continue with implementing tests for our presentation logic.
 
 ```swift
 class ShowPresentationTests: XCTestCase {
@@ -130,7 +130,7 @@ class ShowPresentationTests: XCTestCase {
 }
 ```
 
-Here we have a Unit Test which is checking the way of how our Presentation struct formats the data. You might have more fields and more complex logic there. This Unit Test will keep you from breaking the presentation rules of your data in the future during refactoring or any other changes.
+Here we have a Unit Test which is checking the way of how our presentation struct formats the data. You might have more fields and more complex logic there. This Unit Test will keep you from breaking the presentation rules of your data in the future during refactoring or any other changes.
 
 #### Conclusion
 Today we discussed how easily we could follow the Single responsibility principle during UI development and how we can extract data presentation and formatting logic into testable and reusable pieces of code. We will continue the Unit Testing topic on my blog through the next posts. Just try to refactor your codebase by following the Single responsibility principle. 
