@@ -59,12 +59,12 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Button("Delete message") {
-                print("Message deleted.")
-            }
-
             Button("Print message") {
                 print("Hello World!")
+            }
+            
+            Button("Delete message") {
+                print("Message deleted.")
             }
         }.keyboardShortcut("p")
     }
