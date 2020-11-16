@@ -45,6 +45,8 @@ struct ContentView: View {
 
 I have to mention that keyboardShortcut is a view modifier, and you can apply it to any SwiftUI view. In the example above, we define a keyboard shortcut on the toggle view. By pressing this shortcut, we interact with the toggle and switch its value.
 
+> To learn more about view modifiers, take a look at my ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/) post.
+
 You can also attach the keyboardShortcut modifier to any container view like VStack or HStack. In this case, the shortcut will apply to the first interactive child in the container's view hierarchy.
 
 ```swift
