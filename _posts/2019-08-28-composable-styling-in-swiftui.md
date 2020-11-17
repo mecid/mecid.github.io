@@ -23,7 +23,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 
 SwiftUI uses *Environment* feature to pass the values implicitly inside any child view. This is how we can give an accent color to every view across the app. To learn more about *Environment* feature of SwiftUI, check my dedicated post ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/).
 
-Another must-have option which I want to enable on every view in my app is line limit. I want to make every text in my app multi-lined in the case when it is too long. I also need it when a user enables extra large font size for *Dynamic Type*. It is also straightforward to achieve by adding *lineLimit* modifier to my root view.
+Another must-have option which I want to enable on every view in my app is line limit. I want to make every text in my app multi-lined in the case when it is too long. I also need it when a user enables extra large font size for Dynamic Type. It is also straightforward to achieve by adding *lineLimit* modifier to my root view.
 
 ```swift
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

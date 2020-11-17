@@ -31,7 +31,7 @@ struct ButtonsView: View {
 }
 ```
 
-By using @*Environment property wrapper*, we can read and subscribe on changes for the selected value. Here we have *ButtonsView* that reads *Dynamic Type* value from *Environment* and put buttons in *VStack* or *HStack* depending on the size category value. User can change *Dynamic Type* value in the system settings, and as soon as it happens, SwiftUI will recreate *ButtonsView* to respect the changes.
+By using @*Environment property wrapper*, we can read and subscribe on changes for the selected value. Here we have *ButtonsView* that reads Dynamic Type value from *Environment* and put buttons in *VStack* or *HStack* depending on the size category value. User can change Dynamic Type value in the system settings, and as soon as it happens, SwiftUI will recreate *ButtonsView* to respect the changes.
 
 Now let's see how we can modify *Environment* values. In SwiftUI we don't have separation like *Controllers* or *Views*. Everything is a *View*, and because of that, we can easily modify *Environment* for an entire view hierarchy of the app by adding *environment modifier* to the root view.
 
