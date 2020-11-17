@@ -114,7 +114,7 @@ extension View {
 ```
 
 #### ScaledMetric
-During WWDC20 Apple released a new property wrapper called ScaledMetric. ScaledMetric allows you to scale a BinaryFloatingValue according to the size category choosen by the user. Let's take a look at the quick example.
+During WWDC20 Apple released a new property wrapper called *ScaledMetric*. *ScaledMetric* allows you to scale a *BinaryFloatingValue* according to the size category choosen by the user. Let's take a look at the quick example.
 
 ```swift
 struct ContentView: View {
