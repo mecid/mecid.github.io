@@ -62,7 +62,9 @@ struct ContentView: View {
 }
 ```
 
-By using *sizeCategory* value of the environment, we can read the defined font size and decide how to render our content. By using the environment, our app will subscribe to the system settings, and as soon as the user changes the font size, our view will reload. To learn more about environment feature, take a look at ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+By using *sizeCategory* value of the environment, we can read the defined font size and decide how to render our content. By using the environment, our app will subscribe to the system settings, and as soon as the user changes the font size, our view will reload.
+
+> To learn more about environment feature, take a look at ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 Let's go ahead and create an extension for *Group* component, which embeds it into a horizontal or vertical stack depending on the user-defined size category.
 
@@ -90,7 +92,9 @@ extension Group where Content: View {
 }
 ```
 
-In the example above, we use *ViewModifier*, which wraps the *Group* of views into a stack. One of the benefits of *ViewModifiers* is the ability to have a state or subscribe to an environment value. To learn more about *ViewModifiers*, check ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/) post.
+In the example above, we use *ViewModifier*, which wraps the *Group* of views into a stack. One of the benefits of *ViewModifiers* is the ability to have a state or subscribe to an environment value.
+
+> To learn more about *ViewModifiers*, take a look at ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/) post.
 
 #### ScrollViews
 The possibility of a short text to be multiline brings another requirement. We need to embed our root views into the scroll view to allow the user to scroll the content when it doesn't fit the screen. It quickly turns into boilerplate, that's why I've created a special extension to reuse this functionality.
