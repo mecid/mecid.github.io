@@ -9,7 +9,7 @@ This week I want to talk to you about *Dynamic Type* support in SwiftUI. I think
 #### Dynamic Type basics
 The *Dynamic Type* feature allows users to choose the size of textual content displayed on the screen. It helps users who need larger text for better readability. It also accommodates those who can read a smaller text, allowing more information to appear on the screen. Apps that support *Dynamic Type also* provide a more consistent reading experience.
 
-You don't need to do anything to support Dynamic Type in your SwiftUI views, because by default, all the components representing text are multiline. Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/) have a special section about *Typography*, which provides common text styles. These text styles describe font configuration for different types of text content like *title, headline, body, subhead, caption, footnote*. The styles are shared between all the apps. Try to use these predefined text styles as much as possible. Here is a small example of how to use *HIG* defined text styles in SwiftUI.
+You don't need to do anything to support *Dynamic Type* in your SwiftUI views, because by default, all the components representing text are multiline. Apple's [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/overview/themes/) have a special section about *Typography*, which provides common text styles. These text styles describe font configuration for different types of text content like *title, headline, body, subhead, caption, footnote*. The styles are shared between all the apps. Try to use these predefined text styles as much as possible. Here is a small example of how to use *HIG* defined text styles in SwiftUI.
 
 ```swift
 struct PostView: View {
@@ -52,7 +52,7 @@ struct ContentView: View {
 
     var body: some View {
         Group {
-            if sizeCategory == .accessibilityLarge {
+            if sizeCategory.isAccessibilityCategory {
                 VStack { buttons }
             } else {
                 HStack { buttons }
@@ -70,19 +70,11 @@ Let's go ahead and create an extension for *Group* component, which embeds it in
 import SwiftUI
 
 fileprivate struct EmbedInStack: ViewModifier {
-    private let verticalSizes: [ContentSizeCategory] = [
-        .accessibilityMedium,
-        .accessibilityLarge,
-        .accessibilityExtraLarge,
-        .accessibilityExtraExtraLarge,
-        .accessibilityExtraExtraExtraLarge
-    ]
-
     @Environment(\.sizeCategory) var sizeCategory
 
     func body(content: Content) -> some View {
         Group {
-            if verticalSizes.contains(sizeCategory) {
+            if sizeCategory > ContentSizeCategory.medium {
                 VStack { content }
             } else {
                 HStack { content }
@@ -108,10 +100,10 @@ import SwiftUI
 
 extension View {
     func embedInScrollView(alignment: Alignment = .center) -> some View {
-        GeometryReader { proxy in
+        GeometryReader { geometry in
             ScrollView {
                 self.frame(
-                    minHeight: proxy.size.height,
+                    minHeight: geometry.size.height,
                     maxHeight: .infinity,
                     alignment: alignment
                 )
