@@ -113,6 +113,25 @@ extension View {
 }
 ```
 
+#### ScaledMetric
+During WWDC20 Apple released a new property wrapper called ScaledMetric. ScaledMetric allows you to scale a BinaryFloatingValue according to the size category choosen by the user. Let's take a look at the quick example.
+
+```swift
+struct ContentView: View {
+    @ScaledMetric(relativeTo: .body) var spacing: CGFloat = 8
+
+    var body: some View {
+        VStack(spacing: spacing) {
+            ForEach(0...10, id: \.self) { number in
+                Text(String(number))
+            }
+        }
+    }
+}
+```
+
+Here we have the vertical spacing value which is scaled using the selected size category.
+
 #### Conclusion
 *Dynamic Type* is a super important feature, and every app should support it. SwiftUI does much stuff out of the box to support *Dynamic Type*, but it requires some boilerplate. Today we learned how to reduce it by creating special view extensions. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
 
