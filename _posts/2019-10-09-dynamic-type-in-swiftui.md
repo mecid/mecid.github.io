@@ -132,6 +132,8 @@ struct ContentView: View {
 
 Here we have the vertical spacing value which is scaled using the selected size category.
 
+> To learn more about new property wrappers in SwiftUI, take a look at ["New property wrappers in SwiftUI"](/2020/06/29/new-property-wrappers-in-swiftui/) post.
+
 #### Conclusion
 *Dynamic Type* is a super important feature, and every app should support it. SwiftUI does much stuff out of the box to support *Dynamic Type*, but it requires some boilerplate. Today we learned how to reduce it by creating special view extensions. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
 
