@@ -9,7 +9,7 @@ This week I want to talk to you about *Accessibility in SwiftUI*. SwiftUI provid
 #### Accessibility modifiers
 SwiftUI provides a bunch of accessibility modifiers for any view. By using accessibility modifiers, you can easily set label and value for a view, add accessibility traits and actions.
 
-Assume that we are working on *BarChart* component and we want to make every *Bar* accessible to *VoiceOver* and *VoiceControl* users. Let's take a look at how we can do that by adding accessibility modifiers to custom shape view.
+Assume that we are working on *BarChart* component and we want to make every *Bar* accessible to VoiceOver and VoiceControl users. Let's take a look at how we can do that by adding accessibility modifiers to custom shape view.
 
 ```swift
 struct BarsView: View {
@@ -38,9 +38,9 @@ struct BarsView: View {
 In the example above, we use multiple overloaded versions of accessibility modifier to set label and value on a capsule shape.
 
 #### Accessibility tree
-Let's talk about accessibility path of every view. SwiftUI builds accessibility tree for the entire screen and provides it to *VoiceOver* or any other assistive technology. *VoiceOver* reads the accessibility tree from top to bottom and allows to user navigate through it via short swipes.
+Let's talk about accessibility path of every view. SwiftUI builds accessibility tree for the entire screen and provides it to VoiceOver or any other assistive technology. VoiceOver reads the accessibility tree from top to bottom and allows to user navigate through it via short swipes.
 
-SwiftUI allows us to modify the accessibility tree in different ways. For example, we can change the order used by *VoiceOver* to navigate through the tree. To do that we have to use accessibility modifier with sort priority parameter.
+SwiftUI allows us to modify the accessibility tree in different ways. For example, we can change the order used by VoiceOver to navigate through the tree. To do that we have to use accessibility modifier with sort priority parameter.
 
 We also can hide some elements in the accessibility tree by using another overloaded version of accessibility modifier. It accepts a boolean parameter indicating whenever element should be hidden or not.
 
@@ -58,7 +58,7 @@ VStack {
 In the recent example, we use accessibility with sort priority parameter to reorder accessibility tree of the view. By default, every view has a priority equals to zero. **Remember that higher numbers appear first.**
 
 #### AccessibilityChildBehavior
-Sometimes we need to combine accessibility elements inside any view and assign it to a parent view as a single accessibility element. It becomes super handy when you want to make your cells easily navigable with *VoiceOver*. You can combine accessibility elements inside it into a single element attached to the cell itself. We can do that by using *accessibilityElement* modifier. Let's take a look at a quick example.
+Sometimes we need to combine accessibility elements inside any view and assign it to a parent view as a single accessibility element. It becomes super handy when you want to make your cells easily navigable with VoiceOver. You can combine accessibility elements inside it into a single element attached to the cell itself. We can do that by using *accessibilityElement* modifier. Let's take a look at a quick example.
 
 ```swift
 struct SleepDetailsRow: View {
