@@ -93,7 +93,7 @@ struct TodoItemView: View {
 }
 ```
 
-In the example above, we use *Binding* to provide a reference like access to a value type. In other words, we provide writable access to a todo item. *TodoItemView* doesn't own an instance of Todo struct, but it has writable access to the *TodoStore* via *Binding*.
+In the example above, we use *Binding* to provide a reference like access to a value type. In other words, we provide writable access to a todo item. *TodoItemView* doesn't own an instance of *Todo* struct, but it has writable access to the *TodoStore* via *Binding*.
 
 ```swift
 import SwiftUI
@@ -172,7 +172,7 @@ extension RandomAccessCollection {
 }
 ```
 
-The environment is a perfect candidate to keep store objects. Environment can share it between multiple views without explicit injection via init method. To learn more about the benefits of *Environment* in SwiftUI, take a look at "[The power of Environment in SwiftUI](/2019/08/21/the-power-of-environment-in-swiftui/)" post.
+The environment is a perfect candidate to keep store objects. Environment can share it between multiple views without explicit injection via init method. To learn more about the benefits of *Environment* in SwiftUI, take a look at ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 ![todos-screenshots](/public/todo.jpeg)
 
