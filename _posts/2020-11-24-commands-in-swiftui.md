@@ -11,27 +11,135 @@ Commands are realized in different ways on different platforms. The main menu us
 
 On iPadOS, commands with keyboard shortcuts are exposed in the shortcut discoverability HUD that users see when they hold down the Command key.
 
-=====================================================
+```swift
+@main
+struct TestProjectApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }.commands {
+            CommandMenu("First menu") {
+                Button("Print message") {
+                    print("Hello World!")
+                }.keyboardShortcut("p")
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, you can attach the commands modifier to any scene in your app and provide a CommandBuilder closure. CommandBuilder is a function builder like ViewBuilder, but instead of views, it builds commands. You can use primitive command types provided by SwiftUI to compose them together and build your own unique main menu experience.
 
 CommandMenu is a primitive command type that accepts a title for your menu item and a ViewBuilder closure that will be used to build menu items. You can use Button, Picker, Divider, Toggle, and other SwiftUI views to build your command view hierarchy.
 
-=====================================================
+```swift
+@main
+struct TestProjectApp: App {
+    @State private var filter = 1
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }.commands {
+            CommandMenu("First menu") {
+                Button("Print message") {
+                    print("Hello World!")
+                }.keyboardShortcut("p")
+
+                Button("Print second message") {
+                    print("Second message!")
+                }
+
+                Divider()
+
+                Button("Print third message") {
+                    print("Third message!")
+                }
+
+                Picker(selection: $filter, label: Text("Filter")) {
+                    Text("Option 1").tag(1)
+                    Text("Option 2").tag(2)
+                    Text("Option 3").tag(3)
+                }
+            }
+        }
+    }
+}
+```
 
 There can be some situations where you need to reuse command types. You can do that by defining your own commands type by conforming to Commands protocol. This approach allows you to reuse your commands.
 
-=====================================================
+```swift
+struct SortingCommands: Commands {
+    @Binding var sorting: Int
+
+    var body: some Commands {
+        CommandMenu("Sort") {
+            Picker(selection: $sorting, label: Text("Sorting")) {
+                Text("Option 1").tag(1)
+                Text("Option 2").tag(2)
+                Text("Option 3").tag(3)
+            }
+        }
+    }
+}
+
+@main
+struct MyApp: App {
+    @State private var sorting = 1
+
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }.commands {
+            SortingCommands(sorting: $sorting)
+        }
+    }
+}
+```
 
 Now we know how to create new command menus. What if we need to add the menu item to the existing system provided menu. For this particular case, SwiftUI provides us CommandGroup type, which allows us to insert new command items before or after the system provided item. Let's see how we can use it.
 
-=====================================================
+```swift
+@main
+struct TestProjectApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }.commands {
+            CommandGroup(before: CommandGroupPlacement.newItem) {
+                Button("before item") {
+                    print("before item")
+                }
+            }
+
+            CommandGroup(after: CommandGroupPlacement.newItem) {
+                Button("after item") {
+                    print("after item")
+                }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we create CommandGroup and pass it a CommandGroupPlacement, which will be used as an anchor point for inserted items. CommandGroupPlacement provides us with many system command locations like newItem, saveItem, printItem, undoRedo, pasteboard, windowArrangement, help, etc.
 
 SwiftUI also provides us a few ready to use commands for searching, editing and transforming text that you can enable by using commands modifier and attaching it to any scene you need.
 
-=====================================================
+```swift
+@main
+struct TestProjectApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }.commands {
+            TextEditingCommands()
+            TextFormattingCommands()
+        }
+    }
+}
+```
 
 #### Conclusion
 This week, we learned about another new declarative API that SwiftUI provides us to build your macOS app's main menu. I hope you enjoy this declarative API that allows us to maintain a single codebase for different platforms. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
