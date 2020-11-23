@@ -11,6 +11,8 @@ Commands are realized in different ways on different platforms. The main menu us
 
 On iPadOS, commands with keyboard shortcuts are exposed in the shortcut discoverability HUD that users see when they hold down the Command key.
 
+> To learn more about implementing keyboard shortcuts, take a look at my ["Keyboard shortcuts in SwiftUI"](/2020/11/17/keyboard-shortcuts-in-swiftui/) post.
+
 ```swift
 @main
 struct TestProjectApp: App {
@@ -31,6 +33,8 @@ struct TestProjectApp: App {
 ![commands](/public/commands1.png)
 
 As you can see in the example above, you can attach the commands modifier to any scene in your app and provide a *CommandBuilder* closure. *CommandBuilder* is a function builder like *ViewBuilder*, but instead of views, it builds commands. You can use primitive command types provided by SwiftUI to compose them together and build your own unique main menu experience.
+
+> A scene is a part of an app’s user interface with a lifecycle managed by the system. To learn more take a look at my ["Managing scenes in SwiftUI"](/2020/08/26/managing-scenes-in-swiftui/) post.
 
 *CommandMenu* is a primitive command type that accepts a title for your menu item and a *ViewBuilder* closure that will be used to build menu items. You can use *Button, Picker, Divider, Toggle,* and other SwiftUI views to build your command view hierarchy.
 
@@ -148,4 +152,4 @@ struct TestProjectApp: App {
 ```
 
 #### Conclusion
-This week, we learned about another new declarative API that SwiftUI provides us to build your macOS app's main menu. I hope you enjoy this declarative API that allows us to maintain a single codebase for different platforms. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
+This week, we learned about another new declarative API that SwiftUI provides to build your macOS app's main menu. I hope you enjoy this declarative API that allows us to maintain a single codebase for different platforms. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
