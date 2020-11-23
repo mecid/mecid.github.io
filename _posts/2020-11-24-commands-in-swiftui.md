@@ -28,6 +28,8 @@ struct TestProjectApp: App {
 }
 ```
 
+![commands](/public/commands1.png)
+
 As you can see in the example above, you can attach the commands modifier to any scene in your app and provide a *CommandBuilder* closure. *CommandBuilder* is a function builder like *ViewBuilder*, but instead of views, it builds commands. You can use primitive command types provided by SwiftUI to compose them together and build your own unique main menu experience.
 
 *CommandMenu* is a primitive command type that accepts a title for your menu item and a *ViewBuilder* closure that will be used to build menu items. You can use *Button, Picker, Divider, Toggle,* and other SwiftUI views to build your command view hierarchy.
@@ -66,6 +68,8 @@ struct TestProjectApp: App {
     }
 }
 ```
+
+![commands](/public/commands2.png)
 
 There can be some situations where you need to reuse command types. You can do that by defining your own commands type by conforming to *Commands* protocol. This approach allows you to reuse your commands.
 
@@ -122,6 +126,8 @@ struct TestProjectApp: App {
     }
 }
 ```
+
+![commands](/public/commands3.png)
 
 As you can see in the example above, we create *CommandGroup* and pass it a *CommandGroupPlacement*, which will be used as an anchor point for inserted items. *CommandGroupPlacement* provides us with many system command locations like *newItem, saveItem, printItem, undoRedo, pasteboard, windowArrangement, help, etc.*
 
