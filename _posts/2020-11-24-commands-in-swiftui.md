@@ -106,7 +106,7 @@ struct MyApp: App {
 }
 ```
 
-Now we know how to create new command menus. What if we need to add the menu item to the existing system provided menu. For this particular case, SwiftUI provides us *CommandGroup* type, which allows us to insert new command items before or after the system provided item. Let's see how we can use it.
+Now we know how to create new command menus. What if we need to add the menu item to the existing system provided menu or replace it. For this particular case, SwiftUI provides us *CommandGroup* type, which allows us to insert new command items before, after or even replace the system provided item. Let's see how we can use it.
 
 ```swift
 @main
@@ -118,6 +118,12 @@ struct TestProjectApp: App {
             CommandGroup(before: CommandGroupPlacement.newItem) {
                 Button("before item") {
                     print("before item")
+                }
+            }
+
+            CommandGroup(replacing: CommandGroupPlacement.appInfo) {
+                Button("Custom app info") {
+                    // show custom app info
                 }
             }
 
@@ -133,7 +139,7 @@ struct TestProjectApp: App {
 
 ![commands](/public/commands3.png)
 
-As you can see in the example above, we create *CommandGroup* and pass it a *CommandGroupPlacement*, which will be used as an anchor point for inserted items. *CommandGroupPlacement* provides us with many system command locations like *newItem, saveItem, printItem, undoRedo, pasteboard, windowArrangement, help, etc.*
+As you can see in the example above, we create *CommandGroup* and pass it a *CommandGroupPlacement*, which will be used as an anchor point for inserted or replaced items. *CommandGroupPlacement* provides us with many system command locations like *newItem, saveItem, printItem, undoRedo, pasteboard, windowArrangement, help, etc.*
 
 SwiftUI also provides us a few ready to use commands for searching, editing and transforming text that you can enable by using commands modifier and attaching it to any scene you need.
 
