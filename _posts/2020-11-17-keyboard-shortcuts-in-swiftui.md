@@ -25,7 +25,7 @@ struct ContentView: View {
 
 As you can see in the example above, we assign a keyboard shortcut to the button. We define it by using *keyboardShortcut* modifier and passing the "p" key equivalent and a list of modifier keys. A modifier key is an instance of *EventModifiers* struct that conforms to *OptionSet* protocol and defines keys like shift, command, control, option, etc. You can ignore the key modifier parameter, and in this case, SwiftUI will use the command modifier by default.
 
-> To learn more about OptionSet in Swift, look at my ["Inclusive enums with OptionSet"](/2019/04/10/inclusive-enums-with-optionset/) post.
+> To learn more about *OptionSet* in Swift, look at my ["Inclusive enums with OptionSet"](/2019/04/10/inclusive-enums-with-optionset/) post.
 
 This first parameter of *keyboardShortcut* modifier should be an instance of *KeyEquivalent* struct. *KeyEquivalent* struct conforms to *ExpressibleByExtendedGraphemeClusterLiteral* protocol, which allows us to create an instance of the *KeyEquivalent* using a string literal containing only one character. *KeyEquivalent* also defines a few key symbols like arrows, escape, delete, home, etc.
 
