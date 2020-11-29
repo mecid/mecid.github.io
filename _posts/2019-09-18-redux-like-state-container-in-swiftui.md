@@ -26,7 +26,9 @@ final class Store: ObservableObject {
 }
 ```
 
-In the example above, we create a store object that stores the app state and provides read-only access to it. State property uses *@Published* property wrapper that notifies SwiftUI during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. We already talked about store objects in the previous posts, to learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
+In the example above, we create a store object that stores the app state and provides read-only access to it. State property uses *@Published* property wrapper that notifies SwiftUI during any changes. It allows us to keep up to date the whole app by deriving it from a single source of truth. 
+
+> To learn more you can check ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 
 #### Reducer and Actions
 It's time to talk about user actions which lead to state mutations. *Action* is a simple enum or composition of enums describing a change of the state. For example, set loading value during data fetch, assign fetched repositories to the state property. Let's take a look at the example code for *Action* enum.
