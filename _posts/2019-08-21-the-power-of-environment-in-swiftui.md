@@ -154,7 +154,9 @@ struct CalendarView : View {
 }
 ```
 
-In the example above, we use *environmentObject* modifier to pass an instance of *SleepStore* object. *SleepStore* should conform to *ObservableObject* protocol, which is used by SwiftUI to recreate the view during data changes. To learn more about *ObservableObject* check another post ["Making real-world app with SwiftUI"](/2019/06/05/swiftui-making-real-world-app/).
+In the example above, we use *environmentObject* modifier to pass an instance of *SleepStore* object. *SleepStore* should conform to *ObservableObject* protocol, which is used by SwiftUI to recreate the view during data changes.
+
+> To learn more about *ObservableObject* check another post ["Making real-world app with SwiftUI"](/2019/06/05/swiftui-making-real-world-app/).
 
 The significant benefit of using *Environment* and not passing *ObservableObject* via the *init* method of the view is the internal SwiftUI storage. SwiftUI stores *Environment* in the special framework memory outside the view. It gives an implicit access to view-specific *Environment* for all child views.
 
