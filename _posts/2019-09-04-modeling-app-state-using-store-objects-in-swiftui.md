@@ -10,7 +10,9 @@ This week I want to talk to you about modeling data layer in SwiftUI. I already 
 #### Store object
 Store objects responsible for storing the state and providing actions to mutate that state. You can have as many store objects as you need to keep them simple and responsible for a small part of your app state. For example, you may have *SettingsStore* to keep a state of user-defined settings and *TodoStore* to keep user tasks. 
 
-To create a store object, we need a class which conforms to *ObservableObject*. *ObservableObject* allows SwiftUI to observe and react to data changes. To learn more about *ObservableObject*, take a look at "[Managing Data Flow in SwiftUI](/2019/07/03/managing-data-flow-in-swiftui/)" post. Let's take a look at a simple example of *SettingsStore* object.
+To create a store object, we need a class which conforms to *ObservableObject*. *ObservableObject* allows SwiftUI to observe and react to data changes. Let's take a look at a simple example of *SettingsStore* object.
+
+> To learn more about *ObservableObject*, take a look at "[Managing Data Flow in SwiftUI](/2019/07/03/managing-data-flow-in-swiftui/)" post.
 
 ```swift
 import Foundation
@@ -172,7 +174,9 @@ extension RandomAccessCollection {
 }
 ```
 
-The environment is a perfect candidate to keep store objects. Environment can share it between multiple views without explicit injection via init method. To learn more about the benefits of *Environment* in SwiftUI, take a look at ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+The environment is a perfect candidate to keep store objects. Environment can share it between multiple views without explicit injection via init method.
+
+> To learn more about the benefits of *Environment* in SwiftUI, take a look at ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 ![todos-screenshots](/public/todo.jpeg)
 
