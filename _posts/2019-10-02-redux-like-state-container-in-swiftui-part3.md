@@ -72,7 +72,9 @@ struct ReposView: View {
 }
 ```
 
-In the example above, you can see how we build a connection between *Container and Rendering views*. *Container View* provides the data to *Rendering Views*. By doing this, we can easily reuse our *ReposView* anywhere across the app. *ReposView* doesn't have any dependency on some state or datastore and gets all the needed data via the init method. To learn more about *Container Views*, take a look at ["Introducing Container views in SwiftUI" post](/2019/07/31/introducing-container-views-in-swiftui/).
+In the example above, you can see how we build a connection between *Container and Rendering views*. *Container View* provides the data to *Rendering Views*. By doing this, we can easily reuse our *ReposView* anywhere across the app. *ReposView* doesn't have any dependency on some state or datastore and gets all the needed data via the init method.
+
+> To learn more about *Container Views*, take a look at ["Introducing Container views in SwiftUI" post](/2019/07/31/introducing-container-views-in-swiftui/).
 
 #### Using Container Views with Redux-like state container
 During my transition from multiple stores to a single source of truth, I realize that *Container Views* play a significant role in this approach. I mainly use them for sending actions to the store and mapping the global app state to *Rendering View* properties. *Container Views* perfectly fit into my current app architecture. Let's take a look at the example.
