@@ -12,7 +12,9 @@ In previous weeks we already discussed the basics and some good practices while 
 1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
 
-The container which holds the whole app's state as a single source of truth simplifies my codebase and eliminates a bunch of bugs that I had during manual sync between multiple states across the app screens. To learn more about modeling app state using multiple store objects, check my dedicated [post](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/).
+The container which holds the whole app's state as a single source of truth simplifies my codebase and eliminates a bunch of bugs that I had during manual sync between multiple states across the app screens. 
+
+> To learn more about modeling app state using multiple store objects, take a look at my dedicated ["Modeling app state using Store objects in SwiftUI"](/2019/09/04/modeling-app-state-using-store-objects-in-swiftui/) post.
 
 #### Container Views
 Today, I want to touch another subject from my previous posts which plays very nice in conjunction with a *Redux-like state container*, and this is *Container Views*. *Container Views* help us to keep our SwiftUI views simple and responsible for only one job.
