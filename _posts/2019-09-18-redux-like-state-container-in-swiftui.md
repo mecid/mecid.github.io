@@ -190,7 +190,9 @@ struct SearchView : View {
 }
 ```
 
-We divide our screen into two views: *Container View* and *Rendering View*. *Container View* handles the actions and retrieves the needed piece of state from the global state. *Rendering View* accepts the data and renders it. We already talked about *Container Views* in my previous posts, to learn more take a look at ["Introducing Container views in SwiftUI"](/2019/07/31/introducing-container-views-in-swiftui/) post.
+We divide our screen into two views: *Container View* and *Rendering View*. *Container View* handles the actions and retrieves the needed piece of state from the global state. *Rendering View* accepts the data and renders it. 
+
+> We already talked about *Container Views* in my previous posts, to learn more take a look at ["Introducing Container views in SwiftUI"](/2019/07/31/introducing-container-views-in-swiftui/) post.
 
 #### Conclusion
 Today we learned how to build *Redux-like* state container with *side-effects* in mind. To achieve that we used *Combine* framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week! 
