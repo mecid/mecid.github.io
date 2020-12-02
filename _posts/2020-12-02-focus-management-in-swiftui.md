@@ -12,22 +12,97 @@ Focus indicates the act of selecting an element of a graphical user interface. O
 
 You can easily make any view focusable by using the focusable modifier. Remember that you don't need to use it with already focusable views like List and Buttons. Let's take a look at how we can use this modifier in code.
 
-=====================================================
+```swift
+struct Poster: View {
+    @State private var isFocused = false
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 8)
+            .frame(width: 100, height: 150)
+            .scaleEffect(isFocused ? 1.2 : 1)
+            .focusable(true) { newState in isFocused = newState }
+            .animation(.easeInOut)
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        ScrollView(.horizontal) {
+            LazyHStack {
+                ForEach(0..<100) { index in
+                    Poster()
+                }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the focusable modifier to enable focusing abilities on RoundedRectangle. We also scale our rectangle whenever the user focuses on it. Focusable modifier accepts two parameters. The first one is the bool value that indicates whenever the view is focusable or not. The second one is the closure that SwiftUI runs whenever the focus state of the view changes. This modifier is available on all platforms except iOS.
 
 Another thing that SwiftUI provides us to handle the focused state in our views is environment value, which allows us to recognize if the view's nearest focusable ancestor has focus.
 
-=====================================================
+```swift
+struct Poster: View {
+    @Environment(\.isFocused) var isFocused
+
+    var body: some View {
+        RoundedRectangle(cornerRadius: 8)
+            .frame(width: 100, height: 150)
+            .scaleEffect(isFocused ? 1.2 : 1)
+            .animation(.easeInOut)
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        ScrollView(.horizontal) {
+            LazyHStack {
+                ForEach(0..<100) { index in
+                    ZStack {
+                        Poster()
+                    }.focusable()
+                }
+            }
+        }
+    }
+}
+```
 
 In this example, we use the isFocused environment value to understand whenever our parent ZStack is focused. The view itself doesn't have to be focusable because this environment value checks if the view is within the focused view. 
-
-#### FocusedValue 
 
 #### Focus on watchOS and tvOS
 We already talked about the APIs available on most Apple platforms, but there is much more new stuff. There is a bunch of new APIs that we can use only on watchOS and tvOS. For example, we can define focus entry points for our views on watchOS and tvOS. Assume that you are working on the login screen. You want to focus on text fields as soon as the view appears. Let's take a look at how we can achieve this behavior with SwiftUI.
 
-=====================================================
+```swift
+
+struct LoginView: View {
+    @State private var email = ""
+    @State private var password = ""
+
+    @State private var hasFilledCredentials = false
+    @Namespace private var namespace
+
+    @Environment(\.resetFocus) var resetFocus
+
+    var body: some View {
+        VStack {
+            TextField("email", text: $email)
+                .prefersDefaultFocus(!hasFilledCredentials, in: namespace)
+
+            SecureField("password", text: $password)
+
+            Button("login") {}
+                .prefersDefaultFocus(hasFilledCredentials, in: namespace)
+
+            Button("reset credentials") {
+                hasFilledCredentials = false
+                resetFocus(in: namespace)
+            }
+        }.focusScope(namespace)
+    }
+}
+```
 
 As you can see, SwiftUI provides us a special prefersDefaultFocus modifier that allows us to define a preferred focus area in our view. Let's take a deeper look at how this modifier works. It accepts two parameters. The first one is bool value describing whenever this view should be preferred as the default focus area. The second one is the namespace, defined by its ancestor view and indicates the focus scope. Default focus preference is limited to its namespace. It allows you to define multiple scopes and define different focus entry points in a single view hierarchy.
 
