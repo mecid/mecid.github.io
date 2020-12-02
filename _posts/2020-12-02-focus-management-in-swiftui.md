@@ -10,7 +10,7 @@ WWDC 20 brings us tons of new SwiftUI APIs, which we can use to improve our apps
 #### Basics
 Focus indicates the act of selecting an element of a graphical user interface. On Apple TV, people use the remote to interact indirectly with onscreen elements. This interaction is based on a focus model. By pressing buttons and using gestures on the remote, people move the focus from element to element, stop on a specific one, and click to access content or initiate action.
 
-You can easily make any view focusable by using the focusable modifier. Remember that you don't need to use it with already focusable views like List and Buttons. Let's take a look at how we can use this modifier in code.
+You can easily make any view focusable by using the *focusable* modifier. Remember that you don't need to use it with already focusable views like *List* and *Button*. Let's take a look at how we can use this modifier in code.
 
 ```swift
 struct Poster: View {
@@ -38,7 +38,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the focusable modifier to enable focusing abilities on RoundedRectangle. We also scale our rectangle whenever the user focuses on it. Focusable modifier accepts two parameters. The first one is the bool value that indicates whenever the view is focusable or not. The second one is the closure that SwiftUI runs whenever the focus state of the view changes. This modifier is available on all platforms except iOS.
+As you can see in the example above, we use the *focusable* modifier to enable focusing abilities on *RoundedRectangle*. We also scale our rectangle whenever the user focuses on it. *Focusable* modifier accepts two parameters. The first one is the bool value that indicates whenever the view is focusable or not. The second one is the closure that SwiftUI runs whenever the focus state of the view changes. This modifier is available on all platforms except iOS.
 
 Another thing that SwiftUI provides us to handle the focused state in our views is environment value, which allows us to recognize if the view's nearest focusable ancestor has focus.
 
@@ -69,7 +69,7 @@ struct ContentView: View {
 }
 ```
 
-In this example, we use the isFocused environment value to understand whenever our parent ZStack is focused. The view itself doesn't have to be focusable because this environment value checks if the view is within the focused view. 
+In this example, we use the *isFocused* environment value to understand whenever our parent *ZStack* is focused. The view itself doesn't have to be focusable because this environment value checks if the view is within the focused view. 
 
 #### Focus on watchOS and tvOS
 We already talked about the APIs available on most Apple platforms, but there is much more new stuff. There is a bunch of new APIs that we can use only on watchOS and tvOS. For example, we can define focus entry points for our views on watchOS and tvOS. Assume that you are working on the login screen. You want to focus on text fields as soon as the view appears. Let's take a look at how we can achieve this behavior with SwiftUI.
@@ -104,9 +104,9 @@ struct LoginView: View {
 }
 ```
 
-As you can see, SwiftUI provides us a special prefersDefaultFocus modifier that allows us to define a preferred focus area in our view. Let's take a deeper look at how this modifier works. It accepts two parameters. The first one is bool value describing whenever this view should be preferred as the default focus area. The second one is the namespace, defined by its ancestor view and indicates the focus scope. Default focus preference is limited to its namespace. It allows you to define multiple scopes and define different focus entry points in a single view hierarchy.
+As you can see, SwiftUI provides us a special *prefersDefaultFocus* modifier that allows us to define a preferred focus area in our view. Let's take a deeper look at how this modifier works. It accepts two parameters. The first one is bool value describing whenever this view should be preferred as the default focus area. The second one is the *namespace*, defined by its ancestor view and indicates the focus scope. Default focus preference is limited to its *namespace*. It allows you to define multiple scopes and define different focus entry points in a single view hierarchy.
 
-There is also the resetFocus environment action, which we can use to reset a focus to its preferred default position when needed.
+There is also the *resetFocus* environment action, which we can use to reset a focus to its preferred default position when needed.
 
 #### Conclusion
 I really like how Apple transforms imperative UIKit APIs into the declarative world of SwiftUI. I am still not sure why Apple doesn't make all of these new APIs available for all platforms, but I believe we will see them on iOS also. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
