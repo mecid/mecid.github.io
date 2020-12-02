@@ -71,6 +71,8 @@ struct ContentView: View {
 
 In this example, we use the *isFocused* environment value to understand whenever our parent *ZStack* is focused. The view itself doesn't have to be focusable because this environment value checks if the view is within the focused view. 
 
+> SwiftUI uses environment to pass system-wide and application-related information. You can also populate environment with your custom objects. To learn more about environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+
 #### Focus on watchOS and tvOS
 We already talked about the APIs available on most Apple platforms, but there is much more new stuff. There is a bunch of new APIs that we can use only on watchOS and tvOS. For example, we can define focus entry points for our views on watchOS and tvOS. Assume that you are working on the login screen. You want to focus on text fields as soon as the view appears. Let's take a look at how we can achieve this behavior with SwiftUI.
 
@@ -105,6 +107,8 @@ struct LoginView: View {
 ```
 
 As you can see, SwiftUI provides us a special *prefersDefaultFocus* modifier that allows us to define a preferred focus area in our view. Let's take a deeper look at how this modifier works. It accepts two parameters. The first one is bool value describing whenever this view should be preferred as the default focus area. The second one is the *namespace*, defined by its ancestor view and indicates the focus scope. Default focus preference is limited to its *namespace*. It allows you to define multiple scopes and define different focus entry points in a single view hierarchy.
+
+> To learn more about new property wrappers, take a look at my ["New property wrappers in SwiftUI"](/2020/06/29/new-property-wrappers-in-swiftui/) post.
 
 There is also the *resetFocus* environment action, which we can use to reset a focus to its preferred default position when needed.
 
