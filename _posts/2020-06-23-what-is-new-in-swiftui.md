@@ -167,7 +167,7 @@ One of the best things about SwiftUI is the way that the framework uses to apply
 #### New views
 This year SwiftUI integrates more deeply with all the frameworks across the Apple ecosystem. For example, MapKit provides *Map* and *MapAnnotations* SwiftUI views. ClockKit provides us a *Gauge* view that we can use to show value within a range. AVKit provides the *VideoPlayer* view that we can use to integrate with *AVPlayer*.
 
-There is also a bunch of new views that SwiftUI provides us today. We finally have a system-wide Color picker, native *SignInWithAppleButton*, *ProgressView* that supports both linear and circular progress indicators, *OutlineGroup* that allows us to display tree-structured collections of data, and much more.
+There is also a bunch of new views that SwiftUI provides us today. We finally have a system-wide color picker, native *SignInWithAppleButton*, *ProgressView* that supports both linear and circular progress indicators, *OutlineGroup* that allows us to display tree-structured collections of data, and much more.
 
 #### Conclusion
 I'm delighted to see that the next iteration of SwiftUI is so strong. Of course, I will share with you detailed posts about all new features of SwiftUI as soon as I play with them enough to share something. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and have a nice week!
