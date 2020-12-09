@@ -47,7 +47,7 @@ struct MyApp: App {
 
 As you can see here, we apply the unified button style for all the buttons in the app. All the app buttons will be filled with the accent color and will use the rounded rectangle's shape.
 
-> To learn more about ButtonStyle protocol, look at my "Mastering buttons in SwiftUI" post.
+> To learn more about ButtonStyle protocol, look at my ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
 #### Styling using view parametes
 Now we know how to use the style protocols that SwiftUI provides us, but what about our custom views? I maintain a small charting library. As you may know, charts can be highly flexible in terms of configuration. Let's take a look at the usage example of my charting library.
@@ -126,7 +126,7 @@ extension View {
 
 First of all, we create an additional environment value that will hold the chart style. Then we create an extension on View protocol that allows us to insert chart styles into a view hierarchy environment.
 
-> To learn more about the possibilities of SwiftUI's environment feature, take a look at my "The power of Environment in SwiftUI" post.
+> To learn more about the possibilities of SwiftUI's environment feature, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 We can use the environment property wrapper inside BarChartView to obtain the style that the environment shares.
 
