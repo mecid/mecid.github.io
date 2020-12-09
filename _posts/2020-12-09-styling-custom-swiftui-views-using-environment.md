@@ -21,7 +21,7 @@ struct MyApp: App {
 }
 ```
 
-In the example above, we attached the listStyle modifier to the root view of the app. This modifier shares the instance of ListStyle protocol with the whole app view hierarchy using the environment. All the app list instances will use InsetGroupedListStyle by default just because of this single line of code. But don't worry. Any particular part of the view hierarchy can override this value with any other style when needed. Let's take a look at another example.
+In the example above, we attached the *listStyle* modifier to the root view of the app. This modifier shares the instance of *ListStyle* protocol with the whole app view hierarchy using the environment. All the app list instances will use *InsetGroupedListStyle* by default just because of this single line of code. But don't worry. Any particular part of the view hierarchy can override this value with any other style when needed. Let's take a look at another example.
 
 ```swift
 struct FillButtonStyle: ButtonStyle {
@@ -47,7 +47,7 @@ struct MyApp: App {
 
 As you can see here, we apply the unified button style for all the buttons in the app. All the app buttons will be filled with the accent color and will use the rounded rectangle's shape.
 
-> To learn more about ButtonStyle protocol, look at my ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
+> To learn more about *ButtonStyle* protocol, look at my ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
 #### Styling using view parametes
 Now we know how to use the style protocols that SwiftUI provides us, but what about our custom views? I maintain a small charting library. As you may know, charts can be highly flexible in terms of configuration. Let's take a look at the usage example of my charting library.
@@ -124,11 +124,11 @@ extension View {
 }
 ```
 
-First of all, we create an additional environment value that will hold the chart style. Then we create an extension on View protocol that allows us to insert chart styles into a view hierarchy environment.
+First of all, we create an additional environment value that will hold the chart style. Then we create an extension on *View* protocol that allows us to insert chart styles into a view hierarchy environment.
 
 > To learn more about the possibilities of SwiftUI's environment feature, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
-We can use the environment property wrapper inside BarChartView to obtain the style that the environment shares.
+We can use the environment property wrapper inside *BarChartView* to obtain the style that the environment shares.
 
 ```swift
 public struct BarChartView: View {
