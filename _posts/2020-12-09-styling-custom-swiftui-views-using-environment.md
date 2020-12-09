@@ -136,7 +136,14 @@ public struct BarChartView: View {
     let dataPoints: [DataPoint]
     
     var body: some View {
-        // ...
+        // draw bars
+        if chartStyle.showLabels {
+            // show labels
+        }
+
+        if chartStyle.showLegends {
+            // show legend
+        }
     }
 }
 
