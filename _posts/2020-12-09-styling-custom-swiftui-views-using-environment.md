@@ -5,7 +5,7 @@ layout: post
 image: /public/redacted.jpeg
 ---
 
-One of my favorite features of SwiftUI is styling. I love the idea of styling protocols provided by every view and sharing them using the environment. I have already covered most of the style protocols for SwiftUI provided views in my previous posts. But what about custom views? This week we will learn how to build style protocols for our custom views.
+One of my favorite features of SwiftUI is styling. I love the idea of style protocols provided by every view and sharing them using the environment. I have already covered most of the style protocols for SwiftUI provided views in my previous posts. But what about custom views? This week we will learn how to share styling using environment for our custom views.
 
 #### Basics
 If you are not familiar with style protocols in SwiftUI, let me show you a rapid example of using them.
@@ -45,7 +45,7 @@ struct MyApp: App {
 }
 ```
 
-As you can see here, we apply the unified button style for all the buttons in the app. All the app buttons will be filled with the accent color and will use the rounded rectangle's shape.
+As you can see here, we apply the unified button style for all the buttons in the app. All buttons will be filled with the accent color and will use the rounded rectangle's shape.
 
 > To learn more about *ButtonStyle* protocol, look at my ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
@@ -150,4 +150,6 @@ HStack {
 ```
 
 #### Conclusion
-I really love this approach because it easily allows us to style the whole app hierarchy. For example, in my app, I have a screen that displays a list of charts with different data points. All of these charts have the same styling, which I share using the environment. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
+I really love this approach because it easily allows us to style the whole app hierarchy. For example, I have a screen that displays a list of charts with different data points. All of these charts have the same styling, which I insert into the environment of its parent view using a single line of code. 
+
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
