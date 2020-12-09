@@ -156,6 +156,8 @@ HStack {
 }.chartStyle(ChartStyle(showAxis: false, labelCount: 3))
 ```
 
+![charts](/public/redacted.jpeg)
+
 #### Conclusion
 I really love this approach because it easily allows us to style the whole app hierarchy. For example, I have a screen that displays a list of charts with different data points. All of these charts have the same styling, which I insert into the environment of its parent view using a single line of code. 
 
