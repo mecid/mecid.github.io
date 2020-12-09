@@ -50,7 +50,7 @@ As you can see here, we apply the unified button style for all the buttons in th
 > To learn more about *ButtonStyle* protocol, look at my ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
 #### Styling using view parameters
-Now we know how to use the style protocols that SwiftUI provides us, but what about our custom views? I maintain a small charting library. As you may know, charts can be highly flexible in terms of configuration. Let's take a look at the usage example of my charting library.
+Now we know how to use the style protocols that SwiftUI provides us, but what about our custom views? I maintain [a small charting library](https://github.com/mecid/SwiftUICharts). As you may know, charts can be highly flexible in terms of configuration. Let's take a look at the usage example of my charting library.
 
 ```swift
 let dataPoints: [DataPoint] = []
