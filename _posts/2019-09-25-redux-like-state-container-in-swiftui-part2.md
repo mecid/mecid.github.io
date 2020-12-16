@@ -134,27 +134,23 @@ struct RootView: View {
 As you can see, every tab of my app gets its part of the state via the derived store. We still use the global store to handle all the state mutation. Derived store works as a pipeline that allows us to transform the state from the global store and redirect actions to the global store. Let's take a look at how we can implement the *derived* method for our *Store* class.
 
 ```swift
-private var derivedCancellable: AnyCancellable?
-
-func derived<DerivedState: Equatable, DerivedAction, Void>(
+func derived<DerivedState: Equatable, ExtractedAction>(
     deriveState: @escaping (State) -> DerivedState,
-    deriveAction: @escaping (DerivedAction) -> Action
-) -> Store<DerivedState, DerivedAction, Void> {
-    let store = Store<DerivedState, DerivedAction, Void>(
+    embedAction: @escaping (ExtractedAction) -> Action
+) -> Store<DerivedState, ExtractedAction> {
+    let store = Store<DerivedState, ExtractedAction>(
         initialState: deriveState(state),
-        reducer: { _, action, _ in
-            self.send(deriveAction(action))
-            return Empty(completeImmediately: true)
-                .eraseToAnyPublisher()
+        reducer: Reducer { _, action, _ in
+            self.send(embedAction(action))
+            return Empty().eraseToAnyPublisher()
         },
-        environment: () as! Void
+        environment: ()
     )
-
-    store.derivedCancellable = $state
+    $state
         .map(deriveState)
         .removeDuplicates()
-        .sink { [weak store] in store?.state = $0 }
-
+        .receive(on: DispatchQueue.main)
+        .assign(to: &store.$state)
     return store
 }
 ```
