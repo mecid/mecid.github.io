@@ -43,20 +43,19 @@ struct ContentView: View {
 Here we have a view that defines the list of images and the empty list of selected images. We also structured our view's body to place the list of available images on the top and the list of selected images on the bottom of the screen. Let's move forward and implement a grid that displays our images.
 
 ```swift
-extension ContentView {
-    private var allImagesView: some View {
-        LazyVGrid(columns: [.init(.adaptive(minimum: 44))]) {
-            ForEach(allImages, id: \.self) { image in
-                Image(systemName: image)
-                    .resizable()
-                    .frame(width: 44, height: 44)
-                    .onTapGesture {
-                        withAnimation {
-                            allImages.removeAll { $0 == image }
-                            selectedImages.append(image)
-                        }
+// ContentView.swift
+private var allImagesView: some View {
+    LazyVGrid(columns: [.init(.adaptive(minimum: 44))]) {
+        ForEach(allImages, id: \.self) { image in
+            Image(systemName: image)
+                .resizable()
+                .frame(width: 44, height: 44)
+                .onTapGesture {
+                    withAnimation {
+                        allImages.removeAll { $0 == image }
+                        selectedImages.append(image)
                     }
-            }
+                }
         }
     }
 }
@@ -67,20 +66,19 @@ As you can see in the example above, we have a grid with a single adaptive colum
 > To learn more about grids, look at my ["Mastering grids in SwiftUI"](/2020/07/08/mastering-grids-in-swiftui/) post.
 
 ```swift
-extension ContentView {
-    private var selectedImagesView: some View {
-        LazyVGrid(columns: [.init(.adaptive(minimum: 88))]) {
-            ForEach(selectedImages, id: \.self) { image in
-                Image(systemName: image)
-                    .resizable()
-                    .frame(width: 88, height: 88)
-                    .onTapGesture {
-                        withAnimation {
-                            selectedImages.removeAll { $0 == image }
-                            allImages.append(image)
-                        }
+// ContentView.swift
+private var selectedImagesView: some View {
+    LazyVGrid(columns: [.init(.adaptive(minimum: 88))]) {
+        ForEach(selectedImages, id: \.self) { image in
+            Image(systemName: image)
+                .resizable()
+                .frame(width: 88, height: 88)
+                .onTapGesture {
+                    withAnimation {
+                        selectedImages.removeAll { $0 == image }
+                        allImages.append(image)
                     }
-            }
+                }
         }
     }
 }
