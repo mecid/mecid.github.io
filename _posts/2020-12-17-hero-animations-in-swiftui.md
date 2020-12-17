@@ -139,6 +139,8 @@ private var selectedImagesView: some View {
 }
 ```
 
+As you can see, we attach *matchedGeometryEffect* view modifier by passing a unique identifier and namespace. SwiftUI uses these parameters to identify views in the view hierarchy and understand layout changes. 
+
 If inserting a view in the same transaction that another view with the same identifier is removed, the system will interpolate their frame rectangles in window space to make it appear that a single view moves from its old position to its new position. Remember that you should use unique identifiers for every view that applies a matched geometry effect.
 
 ![hero-animation](/public/hero2.GIF)
