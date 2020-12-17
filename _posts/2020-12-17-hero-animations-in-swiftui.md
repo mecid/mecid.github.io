@@ -9,17 +9,82 @@ Animation is one of the powerful features of SwiftUI. I was shocked when I saw h
 
 Assume that we are working on an app that shows a grid of images. You can select an image by tapping on it. On the bottom of the screen, we have another grid that shows only selected images. Let's start implementing this app example.
 
-==============================================
+```swift
+import SwiftUI
+
+struct ContentView: View {
+    @State private var allImages = [
+        "heart.fill",
+        "bandage.fill",
+        "cross.fill",
+        "bed.double.fill",
+        "cross.case.fill",
+        "pills.fill"
+    ]
+    
+    @State private var selectedImages: [String] = []
+
+    var body: some View {
+        VStack {
+            Text("All images")
+                .font(.headline)
+            allImagesView
+
+            Spacer()
+
+            Text("Selected images")
+                .font(.headline)
+            selectedImagesView
+        }
+    }
+}
+```
 
 Here we have a view that defines the list of images and the empty list of selected images. We also structured our view's body to place the list of available images on the top and the list of selected images on the bottom of the screen. Let's move forward and implement a grid that displays our images.
 
-====================================================
+```swift
+extension ContentView {
+    private var allImagesView: some View {
+        LazyVGrid(columns: [.init(.adaptive(minimum: 44))]) {
+            ForEach(allImages, id: \.self) { image in
+                Image(systemName: image)
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .onTapGesture {
+                        withAnimation {
+                            allImages.removeAll { $0 == image }
+                            selectedImages.append(image)
+                        }
+                    }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we have a grid with a single adaptive column displaying squared images of 44pt. We also attach a tap gesture to every image that removes the image from the list and moves it to the selected image list. We wrap this mutation using the withAnimation function, which animates this change.
 
 > To learn more about grids, look at my "Mastering grids in SwiftUI" post.
 
-====================================================
+```swift
+extension ContentView {
+    private var selectedImagesView: some View {
+        LazyVGrid(columns: [.init(.adaptive(minimum: 88))]) {
+            ForEach(selectedImages, id: \.self) { image in
+                Image(systemName: image)
+                    .resizable()
+                    .frame(width: 88, height: 88)
+                    .onTapGesture {
+                        withAnimation {
+                            selectedImages.removeAll { $0 == image }
+                            allImages.append(image)
+                        }
+                    }
+            }
+        }
+    }
+}
+```
 
 Here is the source code of the selected images grid, which looks very similar to the previous one. There are two differences. The first one is the size of the images. Here we use 88pt instead of 44pt. The second difference is the tap gesture. In this case, we move an image from the list of the selected image to the all images list.
 
@@ -35,7 +100,43 @@ Hero animation is a special effect in motion pictures and animations that change
 
 Fortunately, SwiftUI provides us a special view modifier called matchedGeometryEffect to implement hero animations easily. By attaching matchedGeometryEffect to multiple views, we define a connection between them. SwiftUI can use this connection to understand the geometry of transition and automatically apply shape, position, and size transformation between these changes.
 
-=====================================================
+```swift
+extension ContentView {
+        private var allImagesView: some View {
+        LazyVGrid(columns: [.init(.adaptive(minimum: 44))]) {
+            ForEach(allImages, id: \.self) { image in
+                Image(systemName: image)
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .matchedGeometryEffect(id: image, in: imageEffect)
+                    .onTapGesture {
+                        withAnimation {
+                            allImages.removeAll { $0 == image }
+                            selectedImages.append(image)
+                        }
+                    }
+            }
+        }
+    }
+
+    private var selectedImagesView: some View {
+        LazyVGrid(columns: [.init(.adaptive(minimum: 88))]) {
+            ForEach(selectedImages, id: \.self) { image in
+                Image(systemName: image)
+                    .resizable()
+                    .frame(width: 88, height: 88)
+                    .matchedGeometryEffect(id: image, in: imageEffect)
+                    .onTapGesture {
+                        withAnimation {
+                            selectedImages.removeAll { $0 == image }
+                            allImages.append(image)
+                        }
+                    }
+            }
+        }
+    }
+}
+```
 
 If inserting a view in the same transaction that another view with the same identifier is removed, the system will interpolate their frame rectangles in window space to make it appear that a single view moves from its old position to its new position. Remember that you should use unique identifiers for every view that applies a matched geometry effect.
 
