@@ -107,8 +107,8 @@ private var allImagesView: some View {
         ForEach(allImages, id: \.self) { image in
             Image(systemName: image)
                 .resizable()
-                .frame(width: 44, height: 44)
                 .matchedGeometryEffect(id: image, in: imageEffect)
+                .frame(width: 44, height: 44)
                 .onTapGesture {
                     withAnimation {
                         allImages.removeAll { $0 == image }
@@ -124,8 +124,8 @@ private var selectedImagesView: some View {
         ForEach(selectedImages, id: \.self) { image in
             Image(systemName: image)
                 .resizable()
-                .frame(width: 88, height: 88)
                 .matchedGeometryEffect(id: image, in: imageEffect)
+                .frame(width: 88, height: 88)
                 .onTapGesture {
                     withAnimation {
                         selectedImages.removeAll { $0 == image }
