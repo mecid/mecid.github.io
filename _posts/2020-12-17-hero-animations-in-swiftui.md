@@ -5,7 +5,7 @@ image: /public/swiftui.png
 category: Interactions
 ---
 
-Animation is one of the powerful features of SwiftUI. I was shocked when I saw how easy we could animate changes in view hierarchy by simply mutating *@State* properties and attaching animation modifiers. This week we will talk about another animation type called hero animations. We will learn how we can implement hero animations using the new *matchedGeometryEffect* view modifier.
+Animation is one of the powerful features of SwiftUI. I was shocked when I saw how easy we could animate changes in view hierarchy by simply mutating *@State* properties and attaching animation modifiers. This week we will talk about another animation type called hero animation. We will learn how we can implement hero animations using the new *matchedGeometryEffect* view modifier.
 
 Assume that we are working on an app that shows a grid of images. You can select an image by tapping on it. On the bottom of the screen, we have another grid that shows only selected images. Let's start implementing this app example.
 
@@ -101,38 +101,39 @@ Hero animation is a special effect in motion pictures and animations that change
 Fortunately, SwiftUI provides us a special view modifier called *matchedGeometryEffect* to implement hero animations easily. By attaching *matchedGeometryEffect* to multiple views, we define a connection between them. SwiftUI can use this connection to understand the geometry of transition and automatically apply shape, position, and size transformation between these changes.
 
 ```swift
-extension ContentView {
-        private var allImagesView: some View {
-        LazyVGrid(columns: [.init(.adaptive(minimum: 44))]) {
-            ForEach(allImages, id: \.self) { image in
-                Image(systemName: image)
-                    .resizable()
-                    .frame(width: 44, height: 44)
-                    .matchedGeometryEffect(id: image, in: imageEffect)
-                    .onTapGesture {
-                        withAnimation {
-                            allImages.removeAll { $0 == image }
-                            selectedImages.append(image)
-                        }
+// ContentView.swift
+@Namespace private var imageEffect
+
+private var allImagesView: some View {
+    LazyVGrid(columns: [.init(.adaptive(minimum: 44))]) {
+        ForEach(allImages, id: \.self) { image in
+            Image(systemName: image)
+                .resizable()
+                .frame(width: 44, height: 44)
+                .matchedGeometryEffect(id: image, in: imageEffect)
+                .onTapGesture {
+                    withAnimation {
+                        allImages.removeAll { $0 == image }
+                        selectedImages.append(image)
                     }
-            }
+                }
         }
     }
+}
 
-    private var selectedImagesView: some View {
-        LazyVGrid(columns: [.init(.adaptive(minimum: 88))]) {
-            ForEach(selectedImages, id: \.self) { image in
-                Image(systemName: image)
-                    .resizable()
-                    .frame(width: 88, height: 88)
-                    .matchedGeometryEffect(id: image, in: imageEffect)
-                    .onTapGesture {
-                        withAnimation {
-                            selectedImages.removeAll { $0 == image }
-                            allImages.append(image)
-                        }
+private var selectedImagesView: some View {
+    LazyVGrid(columns: [.init(.adaptive(minimum: 88))]) {
+        ForEach(selectedImages, id: \.self) { image in
+            Image(systemName: image)
+                .resizable()
+                .frame(width: 88, height: 88)
+                .matchedGeometryEffect(id: image, in: imageEffect)
+                .onTapGesture {
+                    withAnimation {
+                        selectedImages.removeAll { $0 == image }
+                        allImages.append(image)
                     }
-            }
+                }
         }
     }
 }
