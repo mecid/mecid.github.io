@@ -64,7 +64,7 @@ extension ContentView {
 
 As you can see in the example above, we have a grid with a single adaptive column displaying squared images of 44pt. We also attach a tap gesture to every image that removes the image from the list and moves it to the selected image list. We wrap this mutation using the withAnimation function, which animates this change.
 
-> To learn more about grids, look at my "Mastering grids in SwiftUI" post.
+> To learn more about grids, look at my ["Mastering grids in SwiftUI"](/2020/07/08/mastering-grids-in-swiftui/) post.
 
 ```swift
 extension ContentView {
@@ -90,7 +90,7 @@ Here is the source code of the selected images grid, which looks very similar to
 
 By default, SwiftUI uses fade-in and fade-out transitions to animate layout changes. For example, when you remove a view from a view hierarchy, SwiftUI uses a fade-out transition. You can change this behavior by adding a transition modifier to the view and providing another transition.
 
-> If you are not familiar with transitions in SwiftUI, take a look at my "Animations in SwiftUI" post.
+> If you are not familiar with transitions in SwiftUI, take a look at my ["Animations in SwiftUI"](/2019/06/26/animations-in-swiftui/) post.
 
 ![fading-animation](/public/hero1.GIF)
 
