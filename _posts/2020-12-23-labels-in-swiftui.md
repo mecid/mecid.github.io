@@ -47,7 +47,7 @@ The main thing that I love about the *Label* view is how it deals with accessibi
 > To learn more about accessibility labels and VoiceOver, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
 
 #### Styling
-SwiftUI provides us *LabelStyle* protocol to implement different styling options for our labels. There are already two style options coming with SwiftUI out of the box. You might be already familiar with style protocols in SwiftUI, as I already covered it on my blog a few times.
+SwiftUI provides us *LabelStyle* protocol to implement different styling options for our labels. There are already three style options coming with SwiftUI out of the box. You might be already familiar with style protocols in SwiftUI, as I already covered it on my blog a few times.
 
 SwiftUI gives us *DefaultLabelStyle*, *IconOnlyLabelStyle* and *TitleOnlyLabelStyle* style options to use out of the box. The default one is *DefaultLabelStyle* that shows both title and image. *IconOnlyLabelStyle* shows only the image, and *TitleOnlyLabelStyle* shows the title only.
 
