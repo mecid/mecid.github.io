@@ -77,13 +77,13 @@ struct ContentView: View {
 }
 ```
 
-As you can see, there is a new List initializer that takes additional children parameter. You can simply replace your *OutlineGroup* with List, and you will get a list styling for your tree-structured collection.
+As you can see, there is a new *List* initializer that takes additional children parameter. You can simply replace your *OutlineGroup* with *List*, and you will get a list styling for your tree-structured collection.
 
 ![outline group](/public/outlineGroup2.png)
 
 > To learn more about building three-column navigation in SwiftUI, take a look at my ["Sidebar navigation in SwiftUI"](/2020/07/21/sidebar-navigation-in-swiftui/) post.
 
-*OutlineGroup* is really shining when you use it inside a List. We can use *OutlineGroup* inside sections. This approach allows us to expand the first level of your tree-structured collection automatically. It looks gorgeous with sidebar style. Let's take a look at the quick example of section-based *OutlineGroup* usage.
+*OutlineGroup* is really shining when you use it inside a *List*. We can use *OutlineGroup* inside sections. This approach allows us to expand the first level of your tree-structured collection automatically. It looks gorgeous with sidebar style. Let's take a look at the quick example of section-based *OutlineGroup* usage.
 
 ```swift
 struct ContentView: View {
