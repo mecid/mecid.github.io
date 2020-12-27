@@ -22,6 +22,8 @@ struct ContentView: View {
 }
 ```
 
+![label](/public/label.png)
+
 As you can see, we create a label by passing two parameters to the initializer. The first one is a title that we can pass as a plain string or *LocalizedStringKey*. The second one is an image, a system image from the SF Symbols collection, or your custom image from the app bundle.
 
 > To learn more about *LocalizedStringKey*, take a look at ["Localization in SwiftUI"](/2019/10/16/localization-in-swiftui/) post.
