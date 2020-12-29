@@ -42,8 +42,6 @@ struct ContentView: View {
 }
 ```
 
-> To learn more about *@ViewBuilders* in SwiftUI, take a look at ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
-
 The main thing that I love about the *Label* view is how it deals with accessibility. It combines both image and title in a single accessibility element and uses the title as an accessibility label for the whole view. This is usually what we want to achieve while using a stack with an image and text describing that image.
 
 > To learn more about accessibility labels and VoiceOver, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
