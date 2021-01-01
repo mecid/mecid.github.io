@@ -35,7 +35,7 @@ KFImage(user.avatar)
 
 We can easily apply *clipShape* to any view by providing the shape we want. There are plenty of ready to use shapes like *Rectangle, Capsule, Circle, etc*. provided by SwiftUI. But anytime you want something unique, for example, a star form, you can quickly implement it by creating a struct conforming *Shape* protocol. You can apply any shape you want by doing your math in *path* function.
 
-> To learn more about Shape protocol, take a look at my ["Building BarChart with Shape API in SwiftUI" post](/2019/08/14/building-barchart-with-shape-api-in-swiftui/).
+> To learn more about *Shape* protocol, take a look at my ["Building BarChart with Shape API in SwiftUI" post](/2019/08/14/building-barchart-with-shape-api-in-swiftui/).
 
 ### Masking
 Let's take a look at more complex examples. Assume that you have a text component that should use a gradient as the text color. You can't implement it by using the *foregroundColor* modifier because it accepts only colors. It is the exact case where we might use masking. Let's take a look at how we can apply masking to use a gradient as the text color.
