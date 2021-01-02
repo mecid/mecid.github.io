@@ -5,15 +5,15 @@ image: /public/viewmodel.png
 category: Architecture
 ---
 
-One of my first posts on this blog was about using the *ViewModel* pattern in iOS apps. I'm still using this concept in some old school *UIKit* projects. But I think it's time to remaster that post. This week we will talk about building reactive *ViewModels* using *Combine framework*.
+One of my first posts on this blog was about using the ViewModel pattern in iOS apps. I'm still using this concept in some old school UIKit projects. But I think it's time to remaster that post. This week we will talk about building reactive ViewModels using Combine framework.
 
 #### What is ViewModel?
-*ViewModel* is a layer between your view and data. *ViewModels* usually fetch the data using service objects, format it, and provide a formatted version to your view.
+ViewModel is a layer between your view and data. ViewModels usually fetch the data using service objects, format it, and provide a formatted version to your view.
 
 > You can check [my old post about MVVM](/2018/01/11/mastering-mvvm-on-ios/) if you need more information about the pattern itself.
 
 #### Apple started promoting MVVM
-I noticed an interesting thing when Apple moved the *ObservableObject* protocol to the *Combine framework*. It looks like Apple began promoting the *MVVM pattern*. Let's take a look at the *ObservableObject* protocol to understand what's going on there.
+I noticed an interesting thing when Apple moved the *ObservableObject* protocol to the Combine framework. It looks like Apple began promoting the MVVM pattern. Let's take a look at the *ObservableObject* protocol to understand what's going on there.
 
 ```swift
 /// A type of object with a publisher that emits before the object has changed.
@@ -27,7 +27,7 @@ public protocol ObservableObject : AnyObject {
 }
 ```
 
-*ObservableObject* protocol has the only one requirement, a publisher that emits before the object changes. Let's write our first *ViewModel* that conforms to *ObservableObject* protocol.
+*ObservableObject* protocol has the only one requirement, a publisher that emits before the object changes. Let's write our first ViewModel that conforms to *ObservableObject* protocol.
 
 ```swift
 final class PostsViewModel: ObservableObject {
@@ -43,7 +43,7 @@ final class PostsViewModel: ObservableObject {
 }
 ```
 
-Here we have the *ViewModel* that fetches posts, stores them in the variable, and emits a notification via *objectWillChange* publisher. Let's take a look at a sample *ViewController* that uses this *ViewModel*.
+Here we have the ViewModel that fetches posts, stores them in the variable, and emits a notification via *objectWillChange* publisher. Let's take a look at a sample *ViewController* that uses this ViewModel.
 
 ```swift
 final class PostsViewController: UIViewController {
@@ -67,12 +67,12 @@ final class PostsViewController: UIViewController {
 }
 ```
 
-As you can see in the example above, we have *PostsViewController* that starts observing changes in *ViewModel* and then ask *ViewModel* to fetch data. As soon as *ViewModel* fetches data, it emits, and *ViewController* calls renderPosts function that displays downloaded posts.
+As you can see in the example above, we have *PostsViewController* that starts observing changes in ViewModel and then ask ViewModel to fetch data. As soon as ViewModel fetches data, it emits, and *ViewController* calls renderPosts function that displays downloaded posts.
 
 #### Published property wrapper
 We can go further by using @*Published* property wrapper. @*Published* property wrapper allows us to wrap any property with the publisher that emits the current value whenever the property changes.
 
-Moreover, you even don't need to define *objectWillChange* publisher when you use @*Published* property wrapper. Swift compiler will **automatically synthesize** the *objectWillChange*, and it will emit whenever any @*Published* property changes. Let's take a look at the refactored version of our *ViewModel* that uses @*Published* property wrapper.
+Moreover, you even don't need to define *objectWillChange* publisher when you use @*Published* property wrapper. Swift compiler will **automatically synthesize** the *objectWillChange*, and it will emit whenever any @*Published* property changes. Let's take a look at the refactored version of our ViewModel that uses @*Published* property wrapper.
 
 ```swift
 final class PostsViewModel: ObservableObject {
@@ -107,7 +107,7 @@ final class PostsViewController: UIViewController {
 }
 ```
 
-Here we have a refactored version of our *PostsViewController*. Please take a look at how we changed *bindViewModel* function. It subscribes to *$posts* now, and it allows us to update our view only when specific properties change. You will see the benefits as soon as your *ViewModel* has more and more fields which can affect the view.
+Here we have a refactored version of our *PostsViewController*. Please take a look at how we changed *bindViewModel* function. It subscribes to *$posts* now, and it allows us to update our view only when specific properties change. You will see the benefits as soon as your ViewModel has more and more fields which can affect the view.
 
 > Apple also mentioned ViewModels during ["Mastering Xcode Previews" session on WWDC 19](https://developer.apple.com/wwdc19/233).
 
