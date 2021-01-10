@@ -36,7 +36,7 @@ struct NumberView: AnimatableModifier {
 }
 ```
 
-As you can see in the example above, we create the *NumberView* type that conforms to *AnimatableModifier*. In the body function of our modifier, we render our number using the *Text* view. *AnimatableModifier* runs the body function multiple times during the animation and creates a smooth transition from one state to another. 
+As you can see in the example above, we create the *NumberView* type that conforms to *AnimatableModifier*. In the *body* function of our modifier, we render our number using the *Text* view. *AnimatableModifier* runs the *body* function multiple times during the animation and creates a smooth transition from one state to another. 
 
 Usually, we use the content parameter inside the body and apply additional modifiers to it. Here we completely ignore the content and instead create a brand new view. Let's try to use the new *NumberView* modifier.
 
