@@ -63,5 +63,7 @@ In the example above, we animate the number that appears on the screen. SwiftUI 
 
 > If you are not familiar with Animatable protocol and vector arithmetic, take a look at my ["The magic of Animatable values in SwiftUI"](/2020/06/17/the-magic-of-animatable-values-in-swiftui/) post.
 
+![video](/public/am.mp4)
+
 #### Conclusion
 Today we learned about another hidden gem of SwiftUI. *AnimatableModifier* allows us to animate the things that SwiftUI doesn't allow us to animate out of the box, like text. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
