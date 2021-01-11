@@ -9,7 +9,7 @@ I have already talked about animations in SwiftUI many times on this blog. But s
 
 We use many modifiers to build a view in SwiftUI like frame, foregroundColor, padding, background, etc. The main goal of a modifier is adding some logic to create a slightly modified view.
 
-> To learn more about modifiers, take a look at my "ViewModifiers in SwiftUI" post.
+> To learn more about modifiers, take a look at my ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/) post.
 
 The single concern that I have about the ViewModifier protocol is the animation opportunity. You simply can't animate the behavior inside a ViewModifier. You may ask about the Animatable protocol to conform to our custom view modifier, but it doesn't work. It doesn't work, but Apple provides us a way to handle animation in view modifiers, and it is AnimatableModifier.
 
@@ -61,7 +61,7 @@ struct ContentView: View {
 
 In the example above, we animate the number that appears on the screen. SwiftUI uses animatableData and vector arithmetic to interpolate the value of the number variable. SwiftUI presents a new text view on every iteration of the animation.
 
-> If you are not familiar with Animatable protocol and vector arithmetic, take a look at my "The magic of Animatable values in SwiftUI" post.
+> If you are not familiar with Animatable protocol and vector arithmetic, take a look at my ["The magic of Animatable values in SwiftUI"](/2020/06/17/the-magic-of-animatable-values-in-swiftui/) post.
 
 #### Conclusion
 Today we learned about another hidden gem of SwiftUI. AnimatableModifier allows us to animate the things that SwiftUI doesn't allow us to animate out of the box, like text. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
