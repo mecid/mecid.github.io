@@ -61,7 +61,7 @@ struct ContentView: View {
 
 In the example above, we animate the number that appears on the screen. SwiftUI uses *animatableData* and vector arithmetic to interpolate the value of the number variable. SwiftUI presents a new text view on every iteration of the animation.
 
-> If you are not familiar with Animatable protocol and vector arithmetic, take a look at my ["The magic of Animatable values in SwiftUI"](/2020/06/17/the-magic-of-animatable-values-in-swiftui/) post.
+> If you are not familiar with *Animatable* protocol and vector arithmetic, take a look at my ["The magic of Animatable values in SwiftUI"](/2020/06/17/the-magic-of-animatable-values-in-swiftui/) post.
 
 ![video](/public/am.mp4)
 
