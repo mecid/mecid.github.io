@@ -4,7 +4,7 @@ layout: post
 category: Interactions
 ---
 
-SwiftUI brings declarative and straightforward approach in building User Interfaces. We have *List* and *Form* components and *Bindings*. All of these things make SwiftUI so easy to use and very powerful. But today we are going to talk about another feature of SwiftUI, and it is *Animations*.
+SwiftUI brings declarative and straightforward approach in building User Interfaces. We have *List* and *Form* components and *Bindings*. All of these things make SwiftUI so easy to use and very powerful. But today we are going to talk about another feature of SwiftUI, and it is animations.
 
 #### Animation
 You can smoothly animate any change in SwiftUI by wrapping it into *withAnimation* block. By default, SwiftUI uses fade in and fade out for animating changes. Let's take a look at a small example.
@@ -57,7 +57,7 @@ struct ContentView : View {
 }
 ```
 
-In the code sample above, we achieve the same animation by simply adding animation modifier. We use *easeInOut* animation, but you can pass custom animation properties.
+In the code sample above, we achieve the same animation by simply adding animation modifier. We use *easeInOut* animation, but you can pass custom animation properties. The second parameter is the equatable value that SwiftUI observes to understand changes and animate them.
 
 Sometimes we have a situation where multiple views depend on some state, and we want to animate all depending view changes together. For this case, we have animatable bindings.
 
