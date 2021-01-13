@@ -43,7 +43,7 @@ struct RootView: View {
     var body: some View {
         Text("Hello World!")
             .scaleEffect(hovered ? 2.0 : 1.0)
-            .animation(.default)
+            .animation(.default, value: hovered)
             .onHover { isHovered in
                 self.hovered = isHovered
             }

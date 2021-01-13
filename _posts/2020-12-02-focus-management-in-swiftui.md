@@ -21,7 +21,7 @@ struct Poster: View {
             .frame(width: 100, height: 150)
             .scaleEffect(isFocused ? 1.2 : 1)
             .focusable(true) { newState in isFocused = newState }
-            .animation(.easeInOut)
+            .animation(.easeInOut, value: isFocused)
     }
 }
 
@@ -50,7 +50,7 @@ struct Poster: View {
         RoundedRectangle(cornerRadius: 8)
             .frame(width: 100, height: 150)
             .scaleEffect(isFocused ? 1.2 : 1)
-            .animation(.easeInOut)
+            .animation(.easeInOut, value: isFocused)
     }
 }
 

@@ -50,7 +50,7 @@ struct ContentView : View {
             if isButtonVisible {
                 Button(action: {}) {
                     Text("Hidden Button")
-                }.animation(.easeInOut)
+                }.animation(.easeInOut, value: isButtonVisible)
             }
         }
     }

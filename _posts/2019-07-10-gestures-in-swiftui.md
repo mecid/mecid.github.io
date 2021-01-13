@@ -29,7 +29,7 @@ struct ContentView : View {
             .padding()
             .scaleEffect(isLongPressed ? 1.1 : 1)
             .gesture(longPress)
-            .animation(.fluidSpring())
+            .animation(.fluidSpring(), value: isLongPressed)
     }
 }
 ```
@@ -69,7 +69,7 @@ struct ContentView : View {
             .padding()
             .offset(x: offset.width, y: offset.height)
             .gesture(drag)
-            .animation(.interactiveSpring())
+            .animation(.interactiveSpring(), value: offset)
     }
 }
 

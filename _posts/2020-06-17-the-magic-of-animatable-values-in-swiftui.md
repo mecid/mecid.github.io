@@ -23,7 +23,7 @@ struct RootView: View {
         .background(Color.blue)
         .cornerRadius(8)
         .scaleEffect(scale)
-        .animation(.default)
+        .animation(.default, value: scale)
     }
 }
 ```

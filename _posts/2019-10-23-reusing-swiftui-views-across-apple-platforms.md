@@ -34,7 +34,6 @@ This screen also has a picker component with the *SegmentedPicker* style, which 
 
             BarChartView(bars: bars, labelsCount: 5)
                 .frame(height: 280)
-                .animation(.spring())
         }
     }
 ```
