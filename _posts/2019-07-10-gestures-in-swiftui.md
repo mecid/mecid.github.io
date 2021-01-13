@@ -129,7 +129,8 @@ struct ContentView : View {
             .scaleEffect(isLongPressed ? 1.1 : 1)
             .offset(x: offset.width, y: offset.height)
             .gesture(longPressAndDrag)
-            .animation(.interactiveSpring())
+            .animation(.interactiveSpring(), value: offset)
+            .animation(.interactiveSpring(), value: isLongPressed)
     }
 }
 ```

@@ -60,7 +60,8 @@ var body: some View {
         .frame(width: geometry.size.width, alignment: .leading)
         .offset(x: -CGFloat(self.currentIndex) * geometry.size.width)
         .offset(x: self.translation)
-        .animation(.interactiveSpring())
+        .animation(.interactiveSpring(), value: currentIndex)
+        .animation(.interactiveSpring(), value: translation)
         .gesture(
             DragGesture().updating(self.$translation) { value, state, _ in
                 state = value.translation.width
