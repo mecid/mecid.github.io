@@ -138,12 +138,12 @@ Here we have a more complex example, where *Container View* provides an acton ha
 ***Container Views* should do things only related to data-flow:**
 1. Store the state of the *Rendering View*
 2. Fetch data using *ObservableObject*
-3. Handle life cycle (onAppear/onDisappear)
+3. Handle life cycle (*onAppear/onDisappear*)
 4. Provide action handlers to the *Rendering View*
 
 ***Rendering Views* should do things only related to rendering:**
 1. Build User Interface using primitive components provided by SwiftUI.
-2. Compose User Interface by using other Rendering views.
+2. Compose User Interface by using other *Rendering Views*.
 3. Use data as input to render User Interface and don't store any state.
 
 #### Conclusion
