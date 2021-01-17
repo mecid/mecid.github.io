@@ -90,7 +90,7 @@ By default, SwiftUI uses fade-in and fade-out transitions to animate layout chan
 
 > If you are not familiar with transitions in SwiftUI, take a look at my ["Animations in SwiftUI"](/2019/06/26/animations-in-swiftui/) post.
 
-![fading-animation](/public/hero1.GIF)
+![fading-animation](/public/hero1.mp4)
 
 As you can see here, SwiftUI removes the image you tap using fade-out transition and adds it to another grid using fade-in transition. Now, it is time to talk about hero animations.
 
@@ -141,7 +141,7 @@ As you can see, we attach *matchedGeometryEffect* view modifier by passing a uni
 
 If inserting a view in the same transaction that another view with the same identifier is removed, the system will interpolate their frame rectangles in window space to make it appear that a single view moves from its old position to its new position. Remember that you should use unique identifiers for every view that applies a matched geometry effect.
 
-![hero-animation](/public/hero2.GIF)
+![hero-animation](/public/hero2.mp4)
 
 #### Conclusion
 Today we learned about implementing hero animations in SwiftUI using the *matchedGeometryEffect* view modifier. I love how easy we can achieve this effect in SwiftUI. Unfortunately, it doesn't work between different views inside navigation links, but I hope to see this working during the next iteration of SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
