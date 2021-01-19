@@ -100,9 +100,9 @@ final class PostsViewController: UIViewController {
     }
 
     private func bindViewModel() {
-        viewModel.$posts.sink { [weak self] posts in
-            self?.renderPosts(posts)
-        }.store(in: &cancellables)
+        viewModel.$posts
+            .sink { [weak self] in self?.renderPosts($0) }
+            .store(in: &cancellables)
     }
 }
 ```
