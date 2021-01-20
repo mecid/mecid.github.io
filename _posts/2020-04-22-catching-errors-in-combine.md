@@ -40,7 +40,6 @@ final class SearchStore: ObservableObject {
     init(service: GithubService) {
         cancellable = $query
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-            .setFailureType(to: Error.self)
             .flatMap { service.searchPublisher(matching: $0) }
             .subscribe(on: DispatchQueue.global())
             .receive(on: DispatchQueue.main)
@@ -68,14 +67,13 @@ Publishers provide us a few ways to handle errors in the chain. Let's start with
 
 ```swift
 init(service: GithubService) {
-    cancellable = $query
+    $query
         .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
-        .setFailureType(to: Error.self)
         .flatMap { service.searchPublisher(matching: $0) }
         .replaceError(with: [])
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0 })
+        .assign(to: &$repos)
 }
 ```
 
@@ -83,7 +81,7 @@ As you can see, I have inserted *replaceError* operator with an empty array. Pub
 
 ```swift
 init(service: GithubService) {
-    cancellable = $query
+    $query
         .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
         .flatMap { 
             service
@@ -92,7 +90,7 @@ init(service: GithubService) {
         }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0 })
+        .assign(to: &$repos)
 }
 ```
 
@@ -103,7 +101,7 @@ Another useful operator that can help to solve an issue during value processing 
 
 ```swift
 init(service: GithubService) {
-    cancellable = $query
+    $query
         .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
         .flatMap {
             service
@@ -113,7 +111,7 @@ init(service: GithubService) {
         }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0 })
+        .assign(to: &$repos)
 }
 ```
 
@@ -124,7 +122,7 @@ Both retry and replace error operators are built on top of the *catch* operator.
 
 ```swift
 init(service: GithubService) {
-    cancellable = $query
+    $query
         .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
         .flatMap {
             service
@@ -141,7 +139,7 @@ init(service: GithubService) {
         }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0 })
+        .assign(to: &$repos)
 }
 ```
 
