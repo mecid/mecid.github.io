@@ -24,6 +24,8 @@ The first section you see is View Body. As you already know, SwiftUI calls the b
 
 The most interesting value here is the *Average Duration*. You should keep your body properties as fast as possible. Don't create heavy objects inside the body property. For example, try to avoid creating *DateFormatter* inside the body property.
 
+> To learn more about the diffing process that SwiftUI applies, take a look at my ["You have to change mindset to use SwiftUI"](/2019/11/19/you-have-to-change-mindset-to-use-swiftui/) post.
+
 Remember that iOS uses 16ms frames to render your app. SwiftUI runs the body property whenever you change view dependencies, diff it with the previous version, and commit the Core Animation transaction. You should keep the whole process inside the 16ms time frame. In other cases, you will have a glitch.
 
 #### View Properties 
