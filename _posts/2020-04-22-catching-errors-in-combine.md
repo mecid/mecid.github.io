@@ -51,7 +51,7 @@ final class SearchStore: ObservableObject {
                     case .finished: print("Publisher is finished")
                     }
             },
-                receiveValue: { [weak self] in self?.repos = $0}
+                receiveValue: { [weak self] in self?.repos = $0 }
         )
     }
 }
@@ -75,7 +75,7 @@ init(service: GithubService) {
         .replaceError(with: [])
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0})
+        .sink(receiveValue: { [weak self] in self?.repos = $0 })
 }
 ```
 
@@ -86,12 +86,13 @@ init(service: GithubService) {
     cancellable = $query
         .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
         .flatMap { 
-            service.searchPublisher(matching: $0)
+            service
+                .searchPublisher(matching: $0)
                 .replaceError(with: []) 
         }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0})
+        .sink(receiveValue: { [weak self] in self?.repos = $0 })
 }
 ```
 
@@ -105,13 +106,14 @@ init(service: GithubService) {
     cancellable = $query
         .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
         .flatMap {
-            service.searchPublisher(matching: $0)
+            service
+                .searchPublisher(matching: $0)
                 .retry(3)
                 .replaceError(with: [])
         }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0})
+        .sink(receiveValue: { [weak self] in self?.repos = $0 })
 }
 ```
 
@@ -139,7 +141,7 @@ init(service: GithubService) {
         }
         .subscribe(on: DispatchQueue.global())
         .receive(on: DispatchQueue.main)
-        .sink(receiveValue: { [weak self] in self?.repos = $0})
+        .sink(receiveValue: { [weak self] in self?.repos = $0 })
 }
 ```
 
