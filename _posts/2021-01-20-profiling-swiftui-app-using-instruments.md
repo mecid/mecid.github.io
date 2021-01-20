@@ -38,5 +38,7 @@ In the Time Profiler section, you can find the timing for every function in your
 
 ![instruments](/public/profile5.png)
 
+> To learn more about other templates available in Instruments app, take a look at ["Instruments Tutorial with Swift: Getting Started"](https://www.raywenderlich.com/16126261-instruments-tutorial-with-swift-getting-started). 
+
 #### Conclusion
 Today we have learned how to use Instruments app and its SwiftUI template to profile our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
