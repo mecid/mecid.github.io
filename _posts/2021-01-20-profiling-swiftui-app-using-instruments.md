@@ -11,7 +11,7 @@ Many developers profile apps only when they have some issues. That's why Instrum
 
 ![instruments](/public/profile1.png)
 
-First of all, you need to build the app in profiling mode by selecting Product -> Profile or pressing CMD+I. Remember that you should profile your app only on the real device and not the simulator. Then you can select the SwiftUI template in the newly opened Instruments window and press the record button.
+First of all, you need to build the app in profiling mode by selecting *Product -> Profile* or pressing *CMD+I*. Remember that you should profile your app only on the real device and not the simulator. Then you can select the SwiftUI template in the newly opened Instruments window and press the record button.
 
 ![instruments](/public/profile2.png)
 
@@ -22,7 +22,7 @@ The first section you see is View Body. As you already know, SwiftUI calls the b
 
 ![instruments](/public/profile3.png)
 
-The most interesting value here is the Average Duration. You should keep your body properties as fast as possible. Don't create heavy objects inside the body property. For example, try to avoid creating DateFormatter inside the body property.
+The most interesting value here is the *Average Duration*. You should keep your body properties as fast as possible. Don't create heavy objects inside the body property. For example, try to avoid creating *DateFormatter* inside the body property.
 
 Remember that iOS uses 16ms frames to render your app. SwiftUI runs the body property whenever you change view dependencies, diff it with the previous version, and commit the Core Animation transaction. You should keep the whole process inside the 16ms time frame. In other cases, you will have a glitch.
 
@@ -34,7 +34,7 @@ Here you can check the values of changed properties and find the properties whic
 ![instruments](/public/profile4.png)
 
 #### Time Profiler
-In the Time Profiler section, you can find the timing for every function in your app. You can see the heaviest stack trace on the right, and usually, this is all you need to solve a performance issue. The filters pane on the bottom is where you can hide system libraries by pressing the Call Tree button.
+In the Time Profiler section, you can find the timing for every function in your app. You can see the heaviest stack trace on the right, and usually, this is all you need to solve a performance issue. The filters pane on the bottom is where you can hide system libraries by pressing the *Call Tree* button.
 
 ![instruments](/public/profile5.png)
 
