@@ -91,10 +91,8 @@ Let's start with defining a preference key type that will store the current cont
 ```swift
 private struct ScrollOffsetPreferenceKey: PreferenceKey {
     static var defaultValue: CGPoint = .zero
-
-    static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {
-        value = nextValue()
-    }
+    
+    static func reduce(value: inout CGPoint, nextValue: () -> CGPoint) {}
 }
 ```
 
