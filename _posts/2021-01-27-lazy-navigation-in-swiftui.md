@@ -4,11 +4,11 @@ layout: post
 category: Mastering SwiftUI views
 ---
 
-Most of our apps are more than just a single screen app. We use the navigation to connect different screens inside our apps. SwiftUI provides us *NavigationLink* struct that we can use to link between views. This week we will learn how to use *NavigationLink* more efficiently than before by making it lazy.
+Most of our apps are more than just a single screen app. We use the navigation to connect different screens inside the app. SwiftUI provides us *NavigationLink* struct that we can use to link views. This week we will learn how to use *NavigationLink* more efficiently than before by making it lazy.
 
 Usually, we have to set up navigation links by providing both source and destination views. In some cases, it might be a bottleneck for your view. I have a calendar screen in my app that displays the summary for every day during the last two years. Every date in the calendar is clickable and linked to the details screen using *NavigationLink*.
 
-OK, my calendar screen shows the information for every date during the last two years. It means I have to construct 730 *NavigationLinks* plus destination views for every date. This makes 1460 views. Assume that the state in this view changes and SwiftUI has to recalculate all these views.
+OK, my calendar screen shows the information for every date during the last two years. It means I have to construct 730 *NavigationLinks* plus destination views for every date. This makes 1460 views. Assume that the state in this view changes and SwiftUI has to recalculate all these views. It is a lot of work to do.
 
 ![calendar](/public/lazy.PNG)
 
@@ -36,7 +36,7 @@ struct CalendarContainerView: View {
 }
 ```
 
-As you can see in the example above, we have the navigate view modifier that accepts binding and the closure to build the destination view. First, we need to bind over the optional value to activate *NavigationLink* only when a value is available. Next, we should define the closure accepting a value and annotate it with *@ViewBuilder*. Let's start by creating a *NavigationLink* extension to add a new initializer supporting our flow.
+As you can see in the example above, we have the *navigate* view modifier that accepts binding and the closure to build the destination view. First, we need to bind over the optional value to activate *NavigationLink* only when a value is available. Next, we should define a closure accepting a value and annotate it with *@ViewBuilder*. Let's start by creating a *NavigationLink* extension to add a new initializer that supports our flow.
 
 ```swift
 import SwiftUI
@@ -105,6 +105,6 @@ struct CalendarContainerView: View {
 }
 ```
 
-As you can see in the example above, it decreases the number of views that SwiftUI should recalculate on state changes. The second benefit is the lazy nature that allows us to move decision flow to a later date. So you can dynamically decide which view should be the destination depending on the value you have in the binding.
+As you can see, it decreases the number of views that SwiftUI should recalculate on state changes. The second benefit is the lazy nature that allows us to move decision flow to a later date. So you can dynamically decide which view should be the destination depending on the value you have in the binding.
 
 I would like to see the approach we use in this post as a part of SwiftUI next year. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
