@@ -8,6 +8,8 @@ Most of our apps are more than just a single screen app. We use the navigation t
 
 Usually, we have to set up navigation links by providing both source and destination views. In some cases, it might be a bottleneck for your view. I have a calendar screen in my app that displays the summary for every day during the last two years. Every date in the calendar is clickable and linked to the details screen using *NavigationLink*.
 
+> To learn more about the basics of *NavigationLink*, take a look at my ["Navigation in SwiftUI"](/2019/07/17/navigation-in-swiftui/) post.
+
 OK, my calendar screen shows the information for every date during the last two years. It means I have to construct 730 *NavigationLinks* plus destination views for every date. This makes 1460 views. Assume that the state in this view changes and SwiftUI has to recalculate all these views. It is a lot of work to do.
 
 ![calendar](/public/lazy.PNG)
@@ -59,6 +61,8 @@ extension NavigationLink where Label == EmptyView {
     }
 }
 ```
+
+> To learn more about benefits of *@ViewBuilder*, take a look at ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
 We create the failable initializer for *NavigationLink*, where Label is *EmptyView*. It means we will hide *NavigationLink* from the screen, but it still will be there, and we can activate it as soon as our binding provides a value. Now we can create an extension on the *View* protocol to use the new API nicely.
 
