@@ -26,7 +26,7 @@ The most interesting value here is the Average Duration. You should keep your bo
 
 > To learn more about the diffing process that SwiftUI applies, take a look at my ["You have to change mindset to use SwiftUI"](/2019/11/19/you-have-to-change-mindset-to-use-swiftui/) post.
 
-Remember that iOS uses 16ms frames to render your app. SwiftUI runs the body property whenever you change view dependencies, diff it with the previous version, and commit the Core Animation transaction. You should keep the whole process inside the 16ms time frame. In other cases, you will have a glitch.
+Remember that iOS uses 16ms frames to render your app. On devices with ProMotion display iOS uses even shorter 8ms frames. SwiftUI runs the body property whenever you change view dependencies, diff it with the previous version, and commit the Core Animation transaction. You should keep the whole process inside the 8ms time frame. In other cases, you will have a glitch.
 
 #### View Properties 
 In the View Properties section, you can find every changed view property. You should expect to have view property updates more often than body property calls because SwiftUI merge multiple property updates to run a single body update.
