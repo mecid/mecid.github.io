@@ -10,6 +10,8 @@ Usually, we have to set up navigation links by providing both source and destina
 
 OK, my calendar screen shows the information for every date during the last two years. It means I have to construct 730 NavigationLinks plus destination views for every date. This makes 1460 views. Assume that the state in this view changes and SwiftUI has to recalculate all these views.
 
+![calendar](/public/lazy.PNG)
+
 In this case, I don't want to create navigation links when the calendar view is loaded. I would like to have only one NavigationLink, which activates as soon as the user selects the calendar date. Let's take a look at the API that I want to achieve.
 
 =====================================================
