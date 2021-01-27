@@ -14,19 +14,96 @@ OK, my calendar screen shows the information for every date during the last two 
 
 In this case, I don't want to create navigation links when the calendar view is loaded. I would like to have only one NavigationLink, which activates as soon as the user selects the calendar date. Let's take a look at the API that I want to achieve.
 
-=====================================================
+```swift
+import SwiftUI
+
+struct CalendarContainerView: View {
+    let interval: DateInterval
+
+    @State private var selectedDate: Date?
+
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            CalendarView(interval: interval, onHeaderAppear: fetch) { date in
+                DateView(date: date) {
+                    // Some content here
+                }
+            }
+        }
+        .navigationBarTitle("calendar", displayMode: .inline)
+        .navigate(using: $selectedDate, destination: makeDestination)
+    }
+}
+```
 
 As you can see in the example above, we have the navigate view modifier that accepts binding and the closure to build the destination view. First, we need to bind over the optional value to activate NavigationLink only when a value is available. Next, we should define the closure accepting a value and annotate it with @ViewBuilder. Let's start by creating a NavigationLink extension to add a new initializer supporting our flow.
 
-=====================================================
+```swift
+import SwiftUI
+
+extension NavigationLink where Label == EmptyView {
+    init?<Value>(
+        _ binding: Binding<Value?>,
+        @ViewBuilder destination: (Value) -> Destination
+    ) {
+        guard let value = binding.wrappedValue else {
+            return nil
+        }
+
+        let isActive = Binding(
+            get: { true },
+            set: { newValue in if !newValue { binding.wrappedValue = nil } }
+        )
+
+        self.init(destination: destination(value), isActive: isActive, label: EmptyView.init)
+    }
+}
+```
 
 We create the failable initializer for NavigationLink, where Label is EmptyView. It means we will hide NavigationLink from the screen, but it still will be there, and we can activate it as soon as our binding provides a value. Now we can create an extension on the View protocol to use the new API nicely.
 
-=====================================================
+```swift
+extension View {
+    @ViewBuilder
+    func navigate<Value, Destination: View>(
+        using binding: Binding<Value?>,
+        @ViewBuilder destination: (Value) -> Destination
+    ) -> some View {
+        background(NavigationLink(binding, destination: destination))
+    }
+}
+```
 
 Here we define an extension on the View protocol that allows us to bind a value to the destination view. As you remember, we use EmptyView as NavigationLink Label, and it allows us to set the NavigationLink as the view background invisibly. Now let's take a look at how we can use the new API in our apps.
 
-=====================================================
+```swift
+import SwiftUI
+
+struct CalendarContainerView: View {
+    let interval: DateInterval
+    
+    @EnvironmentObject var store: Store<CalendarState, CalendarAction>
+    @State private var selectedDate: Date?
+
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+            CalendarView(interval: interval, onHeaderAppear: fetch) { date in
+                Button(action: { self.selectedDate = date }) {
+                    DateView(date: date) {
+                        // Some content here
+                    }
+                }
+            }
+        }
+        .navigationBarTitle("calendar", displayMode: .inline)
+        .navigate(using: $selectedDate, destination: makeDestination)
+    }
+
+    private func makeDestination(for date: Date) -> some View {
+        // create and configure destination view here
+    }
+}
+```
 
 As you can see in the example above, it decreases the number of views that SwiftUI should recalculate on state changes. The second benefit is the lazy nature that allows us to move decision flow to a later date. So you can dynamically decide which view should be the destination depending on the value you have in the binding.
 
