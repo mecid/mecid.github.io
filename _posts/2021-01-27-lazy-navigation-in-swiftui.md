@@ -103,6 +103,7 @@ struct CalendarContainerView: View {
         .navigate(using: $selectedDate, destination: makeDestination)
     }
 
+    @ViewBuilder
     private func makeDestination(for date: Date) -> some View {
         // create and configure destination view here
     }
