@@ -2,6 +2,7 @@
 title: Lazy navigation in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/lazy.PNG
 ---
 
 Most of our apps are more than just a single screen app. We use the navigation to connect different screens inside the app. SwiftUI provides us *NavigationLink* struct that we can use to link views. This week we will learn how to use *NavigationLink* more efficiently than before by making it lazy.
