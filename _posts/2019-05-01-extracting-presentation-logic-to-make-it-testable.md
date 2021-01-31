@@ -133,6 +133,4 @@ class ShowPresentationTests: XCTestCase {
 Here we have a Unit Test which is checking the way of how our presentation struct formats the data. You might have more fields and more complex logic there. This Unit Test will keep you from breaking the presentation rules of your data in the future during refactoring or any other changes.
 
 #### Conclusion
-Today we discussed how easily we could follow the Single responsibility principle during UI development and how we can extract data presentation and formatting logic into testable and reusable pieces of code. We will continue the Unit Testing topic on my blog through the next posts. Just try to refactor your codebase by following the Single responsibility principle. 
-
-Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
+Today we discussed how easily we can follow the Single Responsibility principle during UI development and how we can extract data presentation and formatting logic into testable and reusable pieces of code. We will continue the Unit Testing topic on my blog through the next posts. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
