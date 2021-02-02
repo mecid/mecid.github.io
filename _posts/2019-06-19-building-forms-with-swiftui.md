@@ -5,7 +5,7 @@ image: /public/settings.jpg
 category: Mastering SwiftUI views
 ---
 
-Today we are going to build a form styled layout with SwiftUI. I want to show you a real-life example of the settings screen built with SwiftUI's new Form component.
+Today we are going to build a form styled layout with SwiftUI. I want to show you a real-life example of the settings screen built with SwiftUI's new form view.
 
 I work on a sleep tracking app, which needs settings screen. Settings screen should contain multiple toggles for enabling and disabling some features, buttons for in-app purchases, and a picker for tuning sleep tracking sensitivity level. 
 
