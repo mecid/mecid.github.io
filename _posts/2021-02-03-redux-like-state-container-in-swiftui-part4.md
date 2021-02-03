@@ -9,14 +9,14 @@ During the last year, I totally understand the power of a single source of truth
 
 > If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI. Basics."](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
 
-I'm rewriting my ShowBot app in SwiftUI using the single state container approach. I want to talk mainly about watched episodes history screen. This is how it looks now. Let's try to build this screen.
+I'm rewriting my ShowBot app in SwiftUI using the single state container approach. I want to talk mainly about watched episodes history screen. This is how it looks now. Let's try to build the first screen.
 
 ![showbot](/public/showbot.jpg)
 
 ```swift
 import Foundation
 
-struct AppState1: Equatable {
+struct AppState: Equatable {
     var showsById: [Ids: Show] = [:]
     var seasons: [Ids: Season] = [:]
     var episodes: [Ids: Episode] = [:]
@@ -24,7 +24,7 @@ struct AppState1: Equatable {
     var watchedHistory: [Ids] = []
 }
 
-enum AppAction1: Equatable {
+enum AppAction: Equatable {
     case markAsWatched(episode: Ids, watched: Bool)
 }
 
@@ -32,7 +32,7 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct HistoryView1: View {
-    @ObservedObject var store: Store<AppState1, AppAction1>
+    @ObservedObject var store: Store<AppState, AppAction>
 
     var body: some View {
         LazyVGrid(columns: [.init(), .init()]) {
