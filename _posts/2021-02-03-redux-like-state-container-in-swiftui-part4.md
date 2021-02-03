@@ -7,7 +7,7 @@ image: /public/store.png
 
 During the last year, I totally understand the power of a single source of truth and a state container that holds the whole app state in a single place. I've used this approach in a couple of my apps and continue to use it in new projects.
 
-> If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of "Redux-like state container in SwiftUI" posts.
+> If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI. Basics."](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
 
 I'm rewriting my ShowBot app in SwiftUI using the single state container approach. I want to talk mainly about watched episodes history screen. This is how it looks now. Let's try to build this screen.
 
@@ -19,7 +19,7 @@ The main issue here is the formatting logic that lives inside the view. We can't
 
 We can improve the case a little bit by using derived stores that provide only the app state's needed part. But we still need to keep the formatting logic somewhere outside of the view.
 
-> To learn more about derived stores, take a look at my "Redux-like state container in SwiftUI. Best practices." post.
+> To learn more about derived stores, take a look at my ["Redux-like state container in SwiftUI. Best practices."]() post.
 
 Let me introduce another component that lives in between the whole app store and the dedicated view. The primary responsibility of this component is the transformation of the app state to the view state. I call it Connector, and it is Redux inspired component.
 
@@ -44,5 +44,7 @@ It's time to create the particular connector type, which we will use to bind the
 As you can see in the example above, WatchedHistoryConnector is a simple value type that we can quickly test using unit testing. Now, we can take a look at how we can use our connector types. Usually, I have container or flow views that connect views to the store.
 
 ======================container=======================
+
+> To learn more about Container Views, take a look at [“Introducing Container views in SwiftUI”](/2019/07/31/introducing-container-views-in-swiftui/) post.
 
 This week I've shared the approach that I use in my latest project. I love how it works and the possibility to improve my test coverage by introducing a simple value type. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
