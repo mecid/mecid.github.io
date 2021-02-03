@@ -122,3 +122,4 @@ Today we talked about the benefits of using *Container Views with Redux-like sta
 1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
 3. Redux-like state container in SwiftUI. Container Views.
+4. [Redux-like state container in SwiftUI. Connectors.](/2021/02/03/redux-like-state-container-in-swiftui-part4/)
