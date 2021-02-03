@@ -11,7 +11,7 @@ During the last year, I totally understand the power of a single source of truth
 
 I'm rewriting my ShowBot app in SwiftUI using the single state container approach. I want to talk mainly about watched episodes history screen. This is how it looks now. Let's try to build this screen.
 
-==========================image======================
+![showbot](/public/showbot.jpg)
 
 ==========================code=======================
 
