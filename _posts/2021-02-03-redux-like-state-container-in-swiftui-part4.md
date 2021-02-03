@@ -31,7 +31,7 @@ enum AppAction: Equatable {
 import SwiftUI
 import KingfisherSwiftUI
 
-struct HistoryView1: View {
+struct HistoryView: View {
     @ObservedObject var store: Store<AppState, AppAction>
 
     var body: some View {
@@ -116,7 +116,7 @@ extension HistoryView {
 }
 ```
 
-We create an entirely different model for our view that holds the only needed data. The view state here is a direct mapping of the view representation and its model. The view action enum is the only action that available for this particular view. You eliminate the accidents where you call unrelated actions. Finally, your view is fully independent, which allows you to extract it into a separate Swift Package.
+We create an entirely different model for our view that holds the only needed data. The view state here is a direct mapping of the view representation and its model. The view action enum is the only action that available for this particular view. You eliminate the accidents where you call unrelated actions. Finally, your view is fully independent, which allows you to extract it into a separated Swift Package.
 
 ```swift
 import KingfisherSwiftUI
@@ -204,7 +204,7 @@ As you can see in the example above, *WatchedHistoryConnector* is a simple value
 ```swift
 import SwiftUI
 
-struct RootView1: View {
+struct RootContainerView: View {
     @EnvironmentObject var store: Store<AppState, AppAction>
 
     var body: some View {
