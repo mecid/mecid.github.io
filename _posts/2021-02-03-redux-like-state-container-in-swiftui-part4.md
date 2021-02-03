@@ -218,3 +218,8 @@ struct RootView1: View {
 > To learn more about Container Views, take a look at [“Introducing Container views in SwiftUI”](/2019/07/31/introducing-container-views-in-swiftui/) post.
 
 This week I've shared the approach that I use in my latest project. I love how it works and the possibility to improve my test coverage by introducing a simple value type. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
+
+1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)
+2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
+3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)
+4. Redux-like state container in SwiftUI. Connectors.
