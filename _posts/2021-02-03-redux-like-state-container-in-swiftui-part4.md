@@ -62,7 +62,7 @@ struct HistoryView1: View {
 }
 ```
 
-The main issue here is the formatting logic that lives inside the view. We can't verify it using unit tests. Another problem is SwiftUI previews. We have to provide the entire store with the whole app state to render a single screen.
+The main issue here is the formatting logic that lives inside the view. We can't verify it using unit tests. Another problem is SwiftUI previews. We have to provide the entire store with the whole app state to render a single screen. And we can't keep the view in a separated Swift Package because it depends on the whole app state.
 
 We can improve the case a little bit by using derived stores that provide only the app state's needed part. But we still need to keep the formatting logic somewhere outside of the view.
 
@@ -116,7 +116,7 @@ extension HistoryView {
 }
 ```
 
-We create an entirely different model for our view that holds the only needed data. The view state here is a direct mapping of the view representation and its model. The view action enum is the only action that available for this particular view. You eliminate the accidents where you call unrelated actions.
+We create an entirely different model for our view that holds the only needed data. The view state here is a direct mapping of the view representation and its model. The view action enum is the only action that available for this particular view. You eliminate the accidents where you call unrelated actions. Finally, your view is fully independent, which allows you to extract it into a separate Swift Package.
 
 ```swift
 import KingfisherSwiftUI
@@ -143,7 +143,7 @@ struct HistoryView: View {
 }
 ```
 
-Another benefit here is the super simple view. It doesn't do anything. The view displays the data from and sends actions. You can quickly write as many SwiftUI previews as you need to cover all the different cases like loading, empty, etc.
+Another benefit here is the super simple view. It doesn't do anything. The view displays the formatted data and sends actions. You can quickly write as many SwiftUI previews as you need to cover all the different cases like loading, empty, etc.
 
 ```swift
 struct HistoryView_Previews: PreviewProvider {
