@@ -7,7 +7,7 @@ image: /public/store.png
 
 During the last year, I totally understand the power of a single source of truth and a state container that holds the whole app state in a single place. I've used this approach in a couple of my apps and continue to use it in new projects.
 
-> If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI. Basics."](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
+> If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI."](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
 
 I'm rewriting my ShowBot app in SwiftUI using the single state container approach. I want to talk mainly about watched episodes history screen. This is how it looks now. Let's try to build the first screen.
 
@@ -199,7 +199,7 @@ extension Connectors {
 }
 ```
 
-As you can see in the example above, WatchedHistoryConnector is a simple value type that we can quickly test using unit testing. Now, we can take a look at how we can use our connector types. Usually, I have container or flow views that connect views to the store.
+As you can see in the example above, WatchedHistoryConnector is a simple value type that we can quickly test using unit testing. Now, we should take a look at how we can use our connector types. Usually, I have container or flow views that connect views to the store.
 
 ```swift
 import SwiftUI
