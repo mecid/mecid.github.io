@@ -68,7 +68,7 @@ We can improve the case a little bit by using derived stores that provide only t
 
 > To learn more about derived stores, take a look at my ["Redux-like state container in SwiftUI. Best practices."](/2019/09/25/redux-like-state-container-in-swiftui-part2/) post.
 
-Let me introduce another component that lives in between the whole app store and the dedicated view. The primary responsibility of this component is the transformation of the app state to the view state. I call it Connector, and it is Redux inspired component.
+Let me introduce another component that lives in between the whole app store and the dedicated view. The primary responsibility of this component is the transformation of the app state to the view state. I call it *Connector*, and it is Redux inspired component.
 
 ```swift
 protocol Connector {
@@ -93,7 +93,7 @@ extension Store {
 }
 ```
 
-As you can see, Connector is a simple protocol that defines two functions. The first one transforms the whole app state into the view state, and the second one converts view actions into app actions. Let's refactor our view by introducing view state and view actions.
+As you can see, *Connector* is a simple protocol that defines two functions. The first one transforms the whole app state into the view state, and the second one converts view actions into app actions. Let's refactor our view by introducing view state and view actions.
 
 ```swift
 extension HistoryView {
@@ -199,7 +199,7 @@ extension Connectors {
 }
 ```
 
-As you can see in the example above, WatchedHistoryConnector is a simple value type that we can quickly test using unit testing. Now, we should take a look at how we can use our connector types. Usually, I have container or flow views that connect views to the store.
+As you can see in the example above, *WatchedHistoryConnector* is a simple value type that we can quickly test using unit testing. Now, we should take a look at how we can use our connector types. Usually, I have container or flow views that connect views to the store.
 
 ```swift
 import SwiftUI
