@@ -146,6 +146,16 @@ struct HistoryView: View {
 Another benefit here is the super simple view. It doesn't do anything. The view displays the formatted data and sends actions. You can quickly write as many SwiftUI previews as you need to cover all the different cases like loading, empty, etc.
 
 ```swift
+extension Store {
+    static func stub(with state: State) -> Store {
+        Store(
+            initialState: state,
+            reducer: .init { _, _, _ in Empty().eraseToAnyPublisher() },
+            environment: ()
+        )
+    }
+}
+
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(
