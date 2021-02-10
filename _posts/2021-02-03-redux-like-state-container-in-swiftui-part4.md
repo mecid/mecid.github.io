@@ -5,7 +5,7 @@ category: Architecture
 image: /public/store.png
 ---
 
-During the last year, I totally understand the power of a single source of truth and a state container that holds the whole app state in a single place. I've used this approach in a couple of my apps and continue to use it in new projects.
+During the last year, I totally understood the power of a single source of truth and a state container that holds the whole app state in a single place. I've used this approach in a couple of my apps and continue to use it in new projects.
 
 > If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI."](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
 
