@@ -163,7 +163,9 @@ extension Request where Response == SearchResponse {
     static func search(matching query: String) -> Self {
         Request(
             url: URL(string: "https://api.github.com/search/repositories")!,
-            method: .get([.init(name: "q", value: query)])
+            method: .get(
+                [.init(name: "q", value: query)]
+            )
         )
     }
 }
