@@ -5,7 +5,7 @@ image: /public/networking.jpg
 category: Architecture
 ---
 
-More than half of the apps I built during my career have networking code. Usually, we build apps for web services. I build CardioBot and NapBot apps that do all the logic on the user's device and don't need an internet connection. But this is just a small part of the real world that needs a networking code. Today we will talk about building the type-safe networking layer in Swift for iOS apps.
+More than half of the apps I built during my career have networking code. Usually, we build apps for web services. I build CardioBot and NapBot apps that do all the logic on the user's device and don't need an internet connection. But this is just a small part of the real world. Today we will talk about building the type-safe networking layer in Swift for iOS apps.
 
 #### Basics
 Let's first take a look at the typical networking code and recognize the issues that we want to avoid in our solution.
@@ -70,7 +70,7 @@ enum HttpMethod: Equatable {
 }
 ```
 
-As you can see in the example above, we define the *HTTPMethod* enum that describes various HTTP methods. We use cases with associated types to hold correlated with the HTTP method. For example, the GET method contains URL query items, POST and PUT methods have the data we use as the HTTP body.
+As you can see in the example above, we define the *HTTPMethod* enum that describes various HTTP methods. We use cases with associated types to hold the data correlated with the HTTP method. For example, the GET method contains URL query items, POST and PUT methods have the data we use as the HTTP body.
 
 Now we need to make somehow *URLSession* working with our *Request* type. The easiest way is defining a calculated property on the *Request* type that converts it to the *URLRequest*.
 
@@ -124,7 +124,7 @@ struct Request<Response> {
 }
 ```
 
-As you can see, we define *Response* type, but we didn't use it anywhere in the *Request* type. That's why it is called phantom type. Defining phantom types allows us to store information about the response in our request type. For example, it might be a type conforming or *Decodable* or even an instance of the *Data* type. Let's update our extension on *URLSession* to support response decoding.
+As you can see, we define *Response* type, but we didn't use it anywhere in the *Request* type. That's why it is called phantom type. Defining phantom types allows us to store information about the response in our request type. For example, it might be a type conforming to *Decodable* or even an instance of the *Data* type. Let's update our extension on *URLSession* to support response decoding.
 
 ```swift
 extension URLSession {
@@ -133,7 +133,9 @@ extension URLSession {
         case decoding(Swift.Error)
     }
 
-    func publisher(for request: Request<Data>) -> AnyPublisher<Data, Swift.Error> {
+    func publisher(
+        for request: Request<Data>
+    ) -> AnyPublisher<Data, Swift.Error> {
         dataTaskPublisher(for: request.urlRequest)
             .mapError(Error.networking)
             .map(\.data)
