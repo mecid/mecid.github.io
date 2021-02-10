@@ -35,10 +35,10 @@ let cancellable = URLSession.shared.dataTaskPublisher(for: request)
 ```
 
 In the example above, we have a standard networking code that creates the request and decodes the response. There are a few things that I want to avoid in the future.
-We create a GET request, but there is a possibility to set an HTTP body for a GET request, which looks meaningless.
-We try to decode the response by providing the type of resulting data. Usually, every request has one and only one type that we can obtain. In this case, it is better to have the response type encoded into the request.
+1. We create a GET request, but there is a possibility to set an HTTP body for a GET request, which looks meaningless.
+2. We try to decode the response by providing the type of resulting data. Usually, every request has one and only one type that we can obtain. In this case, it is better to have the response type encoded into the request.
 
-Let's start building our type-safe networking by introducing the Request type. The Request type should contain the URL we need to access, headers, and HTTP method.
+Let's start building our type-safe networking by introducing the *Request* type. The *Request* type should contain the URL we need to access, headers, and HTTP method.
 
 ```swift
 struct Request {
@@ -70,9 +70,9 @@ enum HttpMethod: Equatable {
 }
 ```
 
-As you can see in the example above, we define the HTTPMethod enum that describes various HTTP methods. We use cases with associated types to hold correlated with the HTTP method. For example, the GET method contains URL query items, POST and PUT methods have the data we use as the HTTP body.
+As you can see in the example above, we define the *HTTPMethod* enum that describes various HTTP methods. We use cases with associated types to hold correlated with the HTTP method. For example, the GET method contains URL query items, POST and PUT methods have the data we use as the HTTP body.
 
-Now we need to make somehow URLSession working with our Request type. The easiest way is defining a calculated property on the Request type that converts it to the URLRequest.
+Now we need to make somehow *URLSession* working with our *Request* type. The easiest way is defining a calculated property on the *Request* type that converts it to the *URLRequest*.
 
 ```swift
 extension Request {
@@ -100,7 +100,7 @@ extension Request {
 }
 ```
 
-Finally, we can create an extension on URLSession to make requests with our new type.
+Finally, we can create an extension on *URLSession* to make requests with our new type.
 
 ```swift
 extension URLSession {
@@ -124,7 +124,7 @@ struct Request<Response> {
 }
 ```
 
-As you can see, we define Response type, but we didn't use it anywhere in the Request type. That's why it is called phantom type. Defining phantom types allows us to store information about the response in our request type. For example, it might be a type conforming or Decodable or even an instance of the Data type. Let's update our extension on URLSession to support response decoding.
+As you can see, we define *Response* type, but we didn't use it anywhere in the *Request* type. That's why it is called phantom type. Defining phantom types allows us to store information about the response in our request type. For example, it might be a type conforming or *Decodable* or even an instance of the *Data* type. Let's update our extension on *URLSession* to support response decoding.
 
 ```swift
 extension URLSession {
