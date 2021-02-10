@@ -2,6 +2,7 @@
 title: Building type-safe networking in Swift
 layout: post
 image: /public/networking.jpg
+category: Architecture
 ---
 
 More than half of the apps I built during my career have networking code. Usually, we build apps for web services. I build CardioBot and NapBot apps that do all the logic on the user's device and don't need an internet connection. But this is just a small part of the real world that needs a networking code. Today we will talk about building the type-safe networking layer in Swift for iOS apps.
