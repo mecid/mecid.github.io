@@ -41,7 +41,7 @@ We try to decode the response by providing the type of resulting data. Usually, 
 Let's start building our type-safe networking by introducing the Request type. The Request type should contain the URL we need to access, headers, and HTTP method.
 
 ```swift
-struct Resource {
+struct Request {
     let url: URL
     let method: HttpMethod
     var headers: [String: String] = [:]
@@ -75,7 +75,7 @@ As you can see in the example above, we define the HTTPMethod enum that describe
 Now we need to make somehow URLSession working with our Request type. The easiest way is defining a calculated property on the Request type that converts it to the URLRequest.
 
 ```swift
-extension Resource {
+extension Request {
     var urlRequest: URLRequest {
         var request = URLRequest(url: url)
 
@@ -104,7 +104,7 @@ Finally, we can create an extension on URLSession to make requests with our new 
 
 ```swift
 extension URLSession {
-    func publisher(for request: Resource) -> AnyPublisher<Data, Error> {
+    func publisher(for request: Request) -> AnyPublisher<Data, Error> {
         dataTaskPublisher(for: request.urlRequest)
             .map(\.data)
             .mapError { $0 }
@@ -117,7 +117,7 @@ extension URLSession {
 One thing we forgot to do is encoding of result type into the request. We can make it really easy by introducing phantom type. Phantom type is a generic constraint defined in any type but is not used inside. Let's take a look at the example.
 
 ```swift
-struct Resource<Response> {
+struct Request<Response> {
     let url: URL
     let method: HttpMethod
     var headers: [String: String] = [:]
@@ -133,18 +133,18 @@ extension URLSession {
         case decoding(Swift.Error)
     }
 
-    func publisher(for resource: Resource<Data>) -> AnyPublisher<Data, Swift.Error> {
-        dataTaskPublisher(for: resource.urlRequest)
+    func publisher(for request: Request<Data>) -> AnyPublisher<Data, Swift.Error> {
+        dataTaskPublisher(for: request.urlRequest)
             .mapError(Error.networking)
             .map(\.data)
             .eraseToAnyPublisher()
     }
 
     func publisher<Value: Decodable>(
-        for resource: Resource<Value>,
+        for request: Request<Value>,
         using decoder: JSONDecoder = .init()
     ) -> AnyPublisher<Value, Swift.Error> {
-        dataTaskPublisher(for: resource.urlRequest)
+        dataTaskPublisher(for: request.urlRequest)
             .mapError(Error.networking)
             .map(\.data)
             .decode(type: Value.self, decoder: decoder)
@@ -157,16 +157,16 @@ extension URLSession {
 In the example above, we also introduced proper error management to handle errors more gracefully. Let's define a Github repo search request using the new API.
 
 ```swift
-extension Resource where Response == SearchResponse {
+extension Request where Response == SearchResponse {
     static func search(matching query: String) -> Self {
-        Resource(
+        Request(
             url: URL(string: "https://api.github.com/search/repositories")!,
             method: .get([.init(name: "q", value: query)])
         )
     }
 }
 
-let request: Resource<SearchResponse> = .search(matching: "Swift")
+let request: Request<SearchResponse> = .search(matching: "Swift")
 URLSession.shared.publisher(for: request)
     .map(\.items)
     .replaceError(with: [])
