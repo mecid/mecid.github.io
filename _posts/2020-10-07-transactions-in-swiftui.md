@@ -75,8 +75,7 @@ struct ContentView: View {
         VStack {
             AnimatedView(scale: scale ? 0.5 : 1)
                 .transaction { transaction in
-                    transaction.disablesAnimations = true
-                    transaction.animation = .linear
+                    transaction.animation = .spring()
                 }
             AnimatedView(scale: scale ? 0.5 : 1)
                 .transaction { transaction in
