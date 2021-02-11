@@ -171,7 +171,7 @@ extension Request where Response == SearchResponse {
 }
 
 let request: Request<SearchResponse> = .search(matching: "Swift")
-URLSession.shared.publisher(for: request)
+let cancellable = URLSession.shared.publisher(for: request)
     .map(\.items)
     .replaceError(with: [])
     .sink { print($0) }
