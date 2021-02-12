@@ -82,7 +82,7 @@ extension ActivityPresentable where Self: UIViewController {
 }
 ```
 
-We extracted presentActivity and dismissActivity methods into the particular protocol type. We add default implementation via protocol extension for cases where Type which adopt this protocol is view controller. It gives us the opportunity of using view controller methods and properties in our protocol extension.
+We extracted *presentActivity* and *dismissActivity* methods into the particular protocol type. We add default implementation via protocol extension for cases where Type which adopt this protocol is view controller. It gives us the opportunity of using view controller methods and properties in our protocol extension.
 
 Let's do the same for error presenting logic.
 
