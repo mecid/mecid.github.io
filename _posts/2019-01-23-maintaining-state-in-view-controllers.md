@@ -123,7 +123,7 @@ extension StatePresentable {
 }
 ```
 
-Here we have *StatePresentable* protocol which extends from Activity and Error Presentable protocols. We described these two protocols in the previous [post](/2019/01/17/using-protocols-as-composable-extensions/).
+Here we have *StatePresentable* protocol which extends from *ActivityPresentable* and *ErrorPresentable* protocols. We described these two protocols in the previous [post](/2019/01/17/using-protocols-as-composable-extensions/).
 *StatePresentable* protocol has associated type Data, which we use as generic constraint for *State* enum, to make it usable for any type of data. We also added the default implementation for render method which handles state changes.
 
 Here is the usage example of *StatePresentable* protocol.
@@ -144,7 +144,7 @@ extension HistoryViewController: StatePresentable {
 }
 ```
 
-All we need is to conform *StatePresentable* protocol, add the didSet observer for state property and implement render method, where we add data presenting logic for the actual screen.
+All we need is to conform *StatePresentable* protocol, add the *didSet* observer for state property and implement render method, where we add data presenting logic for the actual screen.
 
 #### Conclusion
 Protocol with associated types can be robust by enabling the power of generic constraints and making codebase more reusable. I really suggest to read great [post](https://www.natashatherobot.com/swift-what-are-protocols-with-associated-types/) by NatashaTheRobot about protocols with associated types. 
