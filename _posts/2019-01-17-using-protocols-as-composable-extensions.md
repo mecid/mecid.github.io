@@ -45,9 +45,9 @@ It looks straightforward and usable because most of our view controllers need ac
 2. Every view controller in our app inherit from *BaseViewController* to use all these features. In case of a bug in *BaseViewController*, we will have this bug in all view controllers in our app even if view controller is not using buggy functionality from *BaseViewController*.
 
 #### Protocols for the rescue.
-Protocol Extensions feature was released with Swift 2.0 and bring real power to protocol types which announce new paradigm of programming: Protocol Oriented Programming. I recommend you to watch the [talk](https://developer.apple.com/videos/play/wwdc2015/408/) from WWDC about Protocols and Protocol extensions.
+Protocol extensions feature was released with Swift 2.0 and bring real power to protocol types which announce new paradigm of programming: Protocol Oriented Programming. I recommend you to watch the [talk](https://developer.apple.com/videos/play/wwdc2015/408/) from WWDC about protocols and protocol extensions.
 
-Let's go back to our topic. How can Protocols help us? Let's start by declaring *ActivityPresentable* protocol for presenting and dismissing an activity indicator.
+Let's go back to our topic. How can protocols help us? Let's start by declaring *ActivityPresentable* protocol for presenting and dismissing an activity indicator.
 
 ```swift
 protocol ActivityPresentable {
@@ -134,7 +134,7 @@ extension CustomViewController: ActivityPresentable {
 }
 ```
 
-While adopting *CustomViewController* to *ActivityPresentable* protocol, we specify the custom implementation of presentActivity and dismissActivity methods.
+While adopting *CustomViewController* to *ActivityPresentable* protocol, we specify the custom implementation of *presentActivity* and *dismissActivity* methods.
 
 #### Conclusion
 As you can see, we can use protocols as simple extensions for our view controller type. In the future posts, we will continue using protocols to build reusable parts of view controller. We will touch associated type, and conditional conformance features to develop more generic data based extensions for view controllers. 
