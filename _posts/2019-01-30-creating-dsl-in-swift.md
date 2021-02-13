@@ -58,7 +58,7 @@ let rootView = stack {
 The code above is our target, and this is how we want our DSL to be. Generally, everything in this example is a function with a trailing closure parameter. For more details let's dive into implementation.
 
 #### Root elements
-We have to create a function stack which returns UIStackView and accepting closure which we apply to this new created UIStackView.
+We have to create a function stack which returns *UIStackView* and accepting closure which we apply to this new created *UIStackView*.
 
 ```swift
 public func stack(apply closure: (UIStackView) -> Void) -> UIStackView {
@@ -76,7 +76,7 @@ stack {
 }
 ```
 
-As the first parameter of the trailing closure, we get created UIStackView on which we can call customization functions like changing axis, alignment, etc. Next, we want to call $0.label to configure new UILabel and add to previous UIStackView. Let's create an extension for UIStackView which provides us with label function.
+As the first parameter of the trailing closure, we get created *UIStackView* on which we can call customization functions like changing axis, alignment, etc. Next, we want to call *$0.label* to configure new *UILabel* and add to previous *UIStackView*. Let's create an extension for *UIStackView* which provides us with label function.
 
 ```swift
 extension UIStackView {
@@ -90,7 +90,7 @@ extension UIStackView {
 }
 ```
 
-We use @discardableResult annotation to disable swift compiler warning on ignoring the result of this function because we already added it to UIStackView. Here is the example of label function usage.
+We use *@discardableResult* annotation to disable swift compiler warning on ignoring the result of this function because we already added it to *UIStackView*. Here is the example of label function usage.
 
 ```swift
 stack {
@@ -101,7 +101,7 @@ stack {
 }
 ```
 
-We have one problem here, and this is the extension on UIStackView, only UIStackView will have this function. But we need it in any UIView subclass, so let's move it to UIView extension.
+We have one problem here, and this is the extension on *UIStackView*, only *UIStackView* will have this function. But we need it in any *UIView* subclass, so let's move it to *UIView* extension.
 
 ```swift
 extension UIView {
@@ -119,7 +119,7 @@ extension UIView {
 }
 ```
 
-We try here to cast self to UIStackView, which give us the ability to use addArrangedSubview in case of UIStackView, if not we add it with the addSubview method. Next step is populating our UIView extension with functions for all UIKit components to make above usage possible for every UIKit component. I've added DSL support for all UIKit components. You can check it out on [Github](https://github.com/mecid/UIKitSwiftDSL). 
+We try here to cast self to *UIStackView*, which give us the ability to use *addArrangedSubview* in case of *UIStackView*, if not we add it with the *addSubview* method. Next step is populating our *UIView* extension with functions for all UIKit components to make above usage possible for every UIKit component. I've added DSL support for all UIKit components. You can check it out on [Github](https://github.com/mecid/UIKitSwiftDSL). 
 
 ```swift
 let rootView = stack {
@@ -164,6 +164,6 @@ let rootView = stack {
 Now we achieve declarative, tree-based and type-safe DSL for building UI for iOS. [It is available via CocoaPods and Carthage](https://github.com/mecid/UIKitSwiftDSL).
 
 #### Conclusion
-Today we learned how powerful is Swift, and how easy we can create DSL for any specific domain. I suggest you try to develop your DSL for DispatchQueue or any other area.
+Today we learned how powerful is Swift, and how easy we can create DSL for any specific domain. I suggest you try to develop your DSL for *DispatchQueue* or any other area.
 
 Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
