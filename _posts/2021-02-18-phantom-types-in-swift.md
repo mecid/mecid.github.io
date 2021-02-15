@@ -37,7 +37,7 @@ We create *User* and *Product* types and use the previously created *Identifier*
 
 > Binary operator '==' cannot be applied to operands of type 'Identifier-User' and 'Identifier-Product'.
 
-And that's great because there is no reason to compare user and product identifiers. We can do it only accidentally. The Swift compiler doesn't allow us to mix the identifiers between users and products because of phantom type. Here is another example where the Swift compiler doesn't allow us to mix identifiers.
+And that's great because there is no reason to compare user and product identifiers. We can do it only accidentally. The Swift compiler doesn't allow us to mix the identifiers between users and products because of phantom type and recognize them as entirely different types. Here is another example where the Swift compiler doesn't allow us to mix identifiers.
 
 ```swift
 func fetch(_ product: Identifier<Product>) -> Product? {
