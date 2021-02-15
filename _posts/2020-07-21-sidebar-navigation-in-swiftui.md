@@ -43,13 +43,16 @@ struct Sidebar: View {
     @Binding var selectedMail: Mail?
 
     var body: some View {
-        List(selection: $selectedFolder) {
+        List {
             ForEach(Array(store.allMails.keys), id: \.self) { folder in
                 NavigationLink(
                     destination: FolderView(
                         title: folder,
                         mails: store.allMails[folder, default: []],
-                        selectedMail: $selectedMail)
+                        selectedMail: $selectedMail
+                    ),
+                    tag: folder,
+                    selection: $selectedFolder
                 ) {
                     Text(folder).font(.headline)
                 }
@@ -68,7 +71,7 @@ struct FolderView: View {
     @Binding var selectedMail: Mail?
 
     var body: some View {
-        List(selection: $selectedMail) {
+        List {
             ForEach(mails) { mail in
                 NavigationLink(
                     destination: MailView(mail: mail),
@@ -121,21 +124,8 @@ struct TestProjectApp: App {
                     selectedMail: $selectedMail
                 )
 
-                if let label = selectedLabel {
-                    FolderView(
-                        title: label,
-                        mails: store.allMails[label, default: []],
-                        selectedMail: $selectedMail
-                    )
-                } else {
-                    Text("Select label...")
-                }
-
-                if let mail = selectedMail {
-                    MailView(mail: mail)
-                } else {
-                    Text("Select mail...")
-                }
+                Text("Select label...")
+                Text("Select mail...")
             }
         }
     }
