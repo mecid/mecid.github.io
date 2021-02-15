@@ -108,7 +108,7 @@ Here is a possible solution for the HealthKit framework that uses phantom type t
 
 > Cannot convert the value of type 'Distance' to expected argument type 'Mass'
 
-> To learn more about the benefits of using phantom types, look at my "Building type-safe networking in Swift" post.
+> To learn more about the benefits of using phantom types, look at my ["Building type-safe networking in Swift"](/2021/02/10/building-type-safe-networking-in-swift/) post.
 
 #### Conclusion
 Today we learned phantom types, one of my favorite features of the Swift language. It looks like there are a lot of possible applications for phantom types. Feel free to share with me how you make your API more type-safe by using phantom types. I hope you enjoy the post. Follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
