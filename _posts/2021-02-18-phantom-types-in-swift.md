@@ -16,7 +16,7 @@ struct Identifier<Holder> {
 }
 ```
 
-In the example above, we have the *Identifier* struct with a generic *Holder* type declared. As you can see, we don't use the *Holder* type inside the *Identifier* type. That's why it is called phantom type. Now let's think about the benefits of using types like this.
+In the example above, we have the *Identifier* struct with a generic *Holder* type declared. As you can see, we don't use the *Holder* type inside the *Identifier* type. That's why it is called phantom type. Now let's think about the benefits of using phantom types like this.
 
 ```swift
 struct User {
@@ -35,7 +35,7 @@ user.id == product.id
 
 We create *User* and *Product* types and use the previously created *Identifier* struct. We set the value of the identifier to 1 for the newly created user and product. But when we try to compare them, the Swift compiler fails with the error:
 
-> Binary operator '==' cannot be applied to operands of type 'Identifier<User>' and 'Identifier<Product>'.
+> Binary operator '==' cannot be applied to operands of type 'Identifier-User' and 'Identifier-Product'.
 
 And that's great because there is no reason to compare user and product identifiers. We can do it only accidentally. The Swift compiler doesn't allow us to mix the identifiers between users and products because of phantom type. Here is another example where the Swift compiler doesn't allow us to mix identifiers.
 
@@ -63,13 +63,13 @@ let query = HKStatisticsQuery(
     options: .discreteAverage
 ) { _, statistics, _ in
     let average = statistics?.averageQuantity()
-    let mass = average?.doubleValue(for: .ounce())
+    let mass = average?.doubleValue(for: .meter())
 }
 
 store.execute(query)
 ```
 
-In the example above, we create a query to fetch user's weight from the Apple Health app. In the completion handler, we try to get the average and convert it to meters. As you can guess, it is impossible to convert body mass to meters, and the app will crash here. We will try to solve the issue by introducing phantom and building more type-safe API.
+In the example above, we create a query to fetch user's weight from the Apple Health app. In the completion handler, we try to get the average and convert it to meters. As you can guess, it is impossible to convert body mass to meters, and the app will crash here. We will try to solve the issue by introducing phantom type to build more type-safe API.
 
 ```swift
 enum Distance {
