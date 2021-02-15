@@ -142,6 +142,15 @@ extension URLSession {
             .eraseToAnyPublisher()
     }
 
+    func publisher(
+        for resource: Resource<URLResponse>
+    ) -> AnyPublisher<URLResponse, Swift.Error> {
+        dataTaskPublisher(for: resource.urlRequest)
+            .mapError(Error.networking)
+            .map(\.response)
+            .eraseToAnyPublisher()
+    }
+
     func publisher<Value: Decodable>(
         for request: Request<Value>,
         using decoder: JSONDecoder = .init()
