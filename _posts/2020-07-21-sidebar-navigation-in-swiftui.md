@@ -132,7 +132,7 @@ struct TestProjectApp: App {
 }
 ```
 
-As you can see, we have *NavigationView*, which is the root of our app scene. We also define two state properties which describe selected label and email. We pass bindings to these state properties down into the view hierarchy, and whenever the user selects the folder or email, SwiftUI updates bindings and route our navigation.
+As you can see, we have *NavigationView*, which is the root of our app scene. We also define two state properties which describe selected label and email. We pass bindings to these state properties down into the view hierarchy, it allows us to programmatically navigate to the selected folder and mail when needed. You can remove these bindings if you don't need programmatic navigation.
 
 Thanks to SwiftUI's declarative nature, the code above works great both on iPhone, where it uses the single column navigation and iPad where is uses sidebar navigation.
 
