@@ -16,7 +16,7 @@ struct Identifier<Holder> {
 }
 ```
 
-In the example above, we have the Identifier struct with a generic Holder type declared. As you can see, we don't use the Holder type inside the Identifier type. That's why it is called phantom type. Now let's think about the benefits of using types like this.
+In the example above, we have the *Identifier* struct with a generic *Holder* type declared. As you can see, we don't use the *Holder* type inside the *Identifier* type. That's why it is called phantom type. Now let's think about the benefits of using types like this.
 
 ```swift
 struct User {
@@ -33,7 +33,7 @@ let user = User(id: .init(value: 1))
 user.id == product.id
 ```
 
-We create User and Product types and use the previously created Identifier struct. We set the value of the identifier to 1 for the newly created user and product. But when we try to compare them, the Swift compiler fails with the error:
+We create *User* and *Product* types and use the previously created *Identifier* struct. We set the value of the identifier to 1 for the newly created user and product. But when we try to compare them, the Swift compiler fails with the error:
 
 > Binary operator '==' cannot be applied to operands of type 'Identifier<User>' and 'Identifier<Product>'.
 
@@ -104,7 +104,7 @@ let weight = Statistics<Mass>(value: 75)
 weight.convert(to: Distance.meter)
 ```
 
-Here is a possible solution for the HealthKit framework that uses phantom type to improve API safety. We introduce Mass and Distance enums to have distinct units. And as soon you try to convert mass into the distance, the Swift compiler stops you with a great error message:
+Here is a possible solution for the HealthKit framework that uses phantom type to improve API safety. We introduce *Mass* and *Distance* enums to have distinct units. And as soon you try to convert mass into the distance, the Swift compiler stops you with a great error message:
 
 > Cannot convert the value of type 'Distance' to expected argument type 'Mass'
 
