@@ -177,5 +177,7 @@ let cancellable = URLSession.shared.publisher(for: request)
     .sink { print($0) }
 ```
 
+> To learn more about the benefits of using phantom types, look at my ["Phantom types in Swift"](/2021/02/18/phantom-types-in-swift/) post.
+
 #### Conclusion
 Today we built a type-safe networking layer using Swift features like enums, phantom types, and extensions. This toolbox allows you to transform any old API into a safe and modern API. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
