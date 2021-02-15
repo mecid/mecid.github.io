@@ -47,6 +47,8 @@ func fetch(_ product: Identifier<Product>) -> Product? {
 fetch(user.id)
 ```
 
+> To learn more about the benefits of using phantom types, look at my ["Building type-safe networking in Swift"](/2021/02/10/building-type-safe-networking-in-swift/) post.
+
 #### Type safety in HealthKit
 We learned the basics of phantom types. Now we can move to more advanced examples. I built a couple of health-oriented apps that use HealthKit to store and query health data from the Apple Watch. Let's look at the typical code that I use to fetch data from the Apple Health app.
 
@@ -107,8 +109,6 @@ weight.convert(to: Distance.meter)
 Here is a possible solution for the HealthKit framework that uses phantom type to improve API safety. We introduce *Mass* and *Distance* enums to have distinct units. And as soon you try to convert mass into the distance, the Swift compiler stops you with a great error message:
 
 > Cannot convert the value of type 'Distance' to expected argument type 'Mass'
-
-> To learn more about the benefits of using phantom types, look at my ["Building type-safe networking in Swift"](/2021/02/10/building-type-safe-networking-in-swift/) post.
 
 #### Conclusion
 Today we learned phantom types, one of my favorite features of the Swift language. It looks like there are a lot of possible applications for phantom types. Feel free to share with me how you make your API more type-safe by using phantom types. I hope you enjoy the post. Follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
