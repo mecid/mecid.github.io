@@ -99,6 +99,9 @@ extension Statistics where Unit == Distance {
 
     }
 }
+
+let weight = Statistics<Mass>(value: 75)
+weight.convert(to: Distance.meter)
 ```
 
 Here is a possible solution for the HealthKit framework that uses phantom type to improve API safety. We introduce Mass and Distance enums to have distinct units. And as soon you try to convert mass into the distance, the Swift compiler stops you with a great error message:
