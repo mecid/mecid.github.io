@@ -35,7 +35,7 @@ user.id == product.id
 
 We create *User* and *Product* types and use the previously created *Identifier* struct. We set the value of the identifier to 1 for the newly created user and product. But when we try to compare them, the Swift compiler fails with the error:
 
-> Binary operator '==' cannot be applied to operands of type 'Identifier-User' and 'Identifier-Product'.
+> Binary operator '==' cannot be applied to operands of type '*Identifier-User*' and '*Identifier-Product*'.
 
 And that's great because there is no reason to compare user and product identifiers. We can do it only accidentally. The Swift compiler doesn't allow us to mix the identifiers between users and products because of phantom type and recognize them as entirely different types. Here is another example where the Swift compiler doesn't allow us to mix identifiers.
 
@@ -108,7 +108,7 @@ weight.convert(to: Distance.meter)
 
 Here is a possible solution for the HealthKit framework that uses phantom type to improve API safety. We introduce *Mass* and *Distance* enums to have distinct units. And as soon you try to convert mass into the distance, the Swift compiler stops you with a great error message:
 
-> Cannot convert the value of type 'Distance' to expected argument type 'Mass'
+> Cannot convert the value of type '*Distance*' to expected argument type '*Mass*'
 
 #### Conclusion
 Today we learned phantom types, one of my favorite features of the Swift language. It looks like there are a lot of possible applications for phantom types. Feel free to share with me how you make your API more type-safe by using phantom types. I hope you enjoy the post. Follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
