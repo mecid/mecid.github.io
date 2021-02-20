@@ -70,7 +70,7 @@ NavigationLink(
 > To learn more about using container views, take a look at my ["Redux-like state container in SwiftUI. Container Views."](/2019/10/02/redux-like-state-container-in-swiftui-part3/) post.
 
 #### @EnvironmentObject
-@*EnvironmentObject* is an excellent way to implicitly inject an instance of a class that conforms to *ObservableObject* into a part of the view hierarchy. Assume that you have a module in your app that contains 3-4 screens, and all of them use the same ViewModel. If you don't want to pass the same ViewModel explicitly from one view to another, then @*EnvironmentObject* is all you need. Let's take a look at how we can use it.
+@*EnvironmentObject* is an excellent way to implicitly inject an instance of a class that conforms to *ObservableObject* into a part of the view hierarchy. Assume that you have a module in your app that contains 3-4 screens, and all of them use the same view model. If you don't want to pass the same view model explicitly from one view to another, then @*EnvironmentObject* is all you need. Let's take a look at how we can use it.
 
 ```swift
 @main
