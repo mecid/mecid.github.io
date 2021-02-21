@@ -122,8 +122,7 @@ struct RootView: View {
 ![image](/public/image7.png)
 
 #### Rendering mode
-SwiftUI provides us two ways of rendering an image. The first one is called the original. It tries to render the image as is without any additional visual effects. The second one is the template mode. In this case, SwiftUI will fill all the non-transparent pixels of your bitmap with the accent color. This mode is beneficial when you use *SF Symbols* as a button or navigation item icon, and you want to tint them using your branding color.
-We can change the rendering mode of the image by using *renderingMode* modifier.
+SwiftUI provides us two ways of rendering an image. The first one is called the original. It tries to render the image as is without any additional visual effects. The second one is the template mode. In this case, SwiftUI will fill all the non-transparent pixels of your bitmap with the accent color. This mode is beneficial when you use *SF Symbols* as a button or navigation item icon, and you want to tint them using your branding color. We can change the rendering mode of the image by using *renderingMode* modifier.
 
 ```swift
 struct RootView: View {
