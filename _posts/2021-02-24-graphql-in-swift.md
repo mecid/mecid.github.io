@@ -173,4 +173,4 @@ client.fetch(query: AllFilmsQuery()) { result in
 ```
 
 #### Conclusion
-There are a lot of benefits of GraphQL over REST API. But remember, everything comes with its own set of pros and cons. GraphQL is a great way to build an efficient and type-sade backend for your app. I will try to cover more advanced features of GraphQL in the next posts. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
+There are a lot of benefits of GraphQL over REST API. But remember, everything comes with its own set of pros and cons. GraphQL is a great way to build an efficient and type-safe backend for your app. I will try to cover more advanced features of GraphQL in the next posts. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
