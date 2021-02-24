@@ -10,21 +10,128 @@ I spent last weeks sharing more about type-safety and building robust APIs in Sw
 #### Basics
 Let me introduce GraphQL first. GraphQL is a query language for your API. Usually, a backend developer or web service should provide you a schema file and a single GraphQL endpoint. Schema file contains all the types and queries. Let's take a look at the example of the schema file.
 
-=====================================================
+```graphql
+schema {
+  query: Root
+}
+
+type Root {
+  film(id: ID, filmID: ID): Film
+  allFilms(after: String, first: Int, before: String, last: Int): FilmsConnection
+  """more code here"""
+}
+```
 
 The schema file should contain Query and Mutation types. These types define all the queries and mutations that the current GraphQL endpoint supports. The schema file also describes the list of all the types that you can use in your queries.
 
-=====================================================
+```graphql
+
+"""A single film."""
+type Film implements Node {
+  """The title of this film."""
+  title: String
+
+  """The episode number of this film."""
+  episodeID: Int
+
+  """The opening paragraphs at the beginning of this film."""
+  openingCrawl: String
+
+  """The name of the director of this film."""
+  director: String
+}
+```
 
 GraphQL is a strongly typed language. Every field defined inside a GraphQL custom type must declare its type. By default, every field can contain nil as a value. The fields having exclamation marks can't be nil.
 
-I use Star Wars API to show you examples in this post. Let's continue by making some queries. You can easily play with GraphQL API using the GraphiQL app.
+I use Star Wars API to show you examples in this post. Let's continue by making some queries. You can easily play with GraphQL API using the GraphiQL app by using this [endpoint](https://swapi-graphql.netlify.app/.netlify/functions/index).
 
-=====================================================
+```graphql
+query AllFilms {
+  allFilms {
+    films {
+      title
+    }
+  }
+}
+
+"""response:
+{
+  "data": {
+    "allFilms": {
+      "films": [
+        {
+          "title": "A New Hope"
+        },
+        {
+          "title": "The Empire Strikes Back"
+        },
+        {
+          "title": "Return of the Jedi"
+        },
+        {
+          "title": "The Phantom Menace"
+        },
+        {
+          "title": "Attack of the Clones"
+        },
+        {
+          "title": "Revenge of the Sith"
+        }
+      ]
+    }
+  }
+}
+"""
+```
 
 As you can see, we use the data types from the schema file to build our query. One thing that I love about GraphQL is the response format. Request format is directly mapped to the response format. You can add more fields to your request, and the response will have them also.
 
-=====================================================
+```graphql
+query AllFilms {
+  allFilms {
+    films {
+      title
+      director
+    }
+  }
+}
+
+"""response
+{
+  "data": {
+    "allFilms": {
+      "films": [
+        {
+          "title": "A New Hope",
+          "director": "George Lucas"
+        },
+        {
+          "title": "The Empire Strikes Back",
+          "director": "Irvin Kershner"
+        },
+        {
+          "title": "Return of the Jedi",
+          "director": "Richard Marquand"
+        },
+        {
+          "title": "The Phantom Menace",
+          "director": "George Lucas"
+        },
+        {
+          "title": "Attack of the Clones",
+          "director": "George Lucas"
+        },
+        {
+          "title": "Revenge of the Sith",
+          "director": "George Lucas"
+        }
+      ]
+    }
+  }
+}
+"""
+```
 
 #### ApolloGraphQL
 ApolloGraphQL is a great framework that allows you easily make GraphQL queries and mutations. ApolloGraphQL iOS framework takes care of caching and code generation. ApolloGraphQL generates Swift types for queries and mutations that you define in your project. It saves your time by generating all the boilerplate for you automatically.
@@ -36,11 +143,32 @@ Add [run script]() to your build phases above the compile sources section. This 
 
 We have prepared the project to use ApolloGraphQL. Now we can add the first query to our project. We should create a file in the project with the .graphql extension and put these lines into the file.
 
-=====================================================
+```graphql
+query AllFilms {
+  allFilms {
+    films {
+      title
+      director
+    }
+  }
+}
+```
 
 Let's build the project now. ApolloGraphQL generates an API.swift file that you should add to the project. There are all the needed types to make GraphQL queries in a very type-safe way. Every request type defines its response type. ApolloGraphQL generated AllFilmsQuery and Data types that describe the request and response. Now we can use generated code to make GraphQL requests.
 
-=====================================================
+```swift
+let url = URL(string: "https://swapi-graphql.netlify.app/.netlify/functions/index")!
+let client = ApolloClient(url: url)
+
+client.fetch(query: AllFilmsQuery()) { result in
+    switch result {
+    case .success(let response):
+        print(response.data?.allFilms?.films ?? [])
+    case .failure(let error):
+        print(error)
+    }
+}
+```
 
 #### Conclusion
 There are a lot of benefits of GraphQL over REST API. But remember, everything comes with its own set of pros and cons. GraphQL is a great way to build an efficient and type-sade backend for your app. I will try to cover more advanced features of GraphQL in the next posts. I hope you enjoy the post. Follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
