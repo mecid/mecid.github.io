@@ -139,7 +139,7 @@ ApolloGraphQL is a great framework that allows you easily make GraphQL queries a
 There are a few steps that you need to do to setup ApolloGraphQL in your project.
 
 You should embed ApolloGraphQL into your project using SPM or another package manager.
-Add [run script]() to your build phases above the compile sources section. This script downloads the schema and generates Swift types for your queries. You can easily change the GraphQL endpoint in this script to connect to your GraphQL backend.
+Add [run script](https://gist.github.com/mecid/6b19cc006939855748604de16bf12eca) to your build phases above the compile sources section. This script downloads the schema and generates Swift types for your queries. You can easily change the GraphQL endpoint in this script to connect to your GraphQL backend.
 
 We have prepared the project to use ApolloGraphQL. Now we can add the first query to our project. We should create a file in the project with the .graphql extension and put these lines into the file.
 
