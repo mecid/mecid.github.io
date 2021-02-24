@@ -29,7 +29,7 @@ The schema file should contain *Query* and *Mutation* types. These types define 
 """A single film."""
 type Film implements Node {
   """The title of this film."""
-  title: String
+  title: String!
 
   """The episode number of this film."""
   episodeID: Int
@@ -38,7 +38,7 @@ type Film implements Node {
   openingCrawl: String
 
   """The name of the director of this film."""
-  director: String
+  director: String!
 }
 ```
 
