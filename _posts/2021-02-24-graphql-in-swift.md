@@ -22,7 +22,7 @@ type Root {
 }
 ```
 
-The schema file should contain Query and Mutation types. These types define all the queries and mutations that the current GraphQL endpoint supports. The schema file also describes the list of all the types that you can use in your queries.
+The schema file should contain *Query* and *Mutation* types. These types define all the queries and mutations that the current GraphQL endpoint supports. The schema file also describes the list of all the types that you can use in your queries.
 
 ```graphql
 
@@ -154,7 +154,7 @@ query AllFilms {
 }
 ```
 
-Let's build the project now. ApolloGraphQL generates an API.swift file that you should add to the project. There are all the needed types to make GraphQL queries in a very type-safe way. Every request type defines its response type. ApolloGraphQL generated AllFilmsQuery and Data types that describe the request and response. Now we can use generated code to make GraphQL requests.
+Let's build the project now. ApolloGraphQL generates an API.swift file that you should add to the project. There are all the needed types to make GraphQL queries in a very type-safe way. Every request type defines its response type. ApolloGraphQL generated *AllFilmsQuery* and *Data* types that describe the request and response. Now we can use generated code to make GraphQL requests.
 
 ```swift
 let url = URL(string: "https://swapi-graphql.netlify.app/.netlify/functions/index")!
