@@ -8,7 +8,7 @@ category: Architecture
 I spent last weeks sharing more about type-safety and building robust APIs in Swift. I want to continue the type-safety topic by talking about GraphQL. GraphQL is a query language for your API. This week we will talk about the benefits of GraphQL, and we will learn how to utilize it in Swift.
 
 #### Basics
-Let me introduce GraphQL first. GraphQL is a query language for your API. Usually, a backend developer or web service should provide you a schema file and a single GraphQL endpoint. Schema file contains all the types and queries. Let's take a look at the example of the schema file.
+Let me introduce GraphQL first. GraphQL is a query language for your API. Usually, a backend developer or web service should provide you a schema file and a single GraphQL endpoint. Schema file contains all the types and queries which you can make with the particular endpoint. Let's take a look at the example of the schema file.
 
 ```graphql
 schema {
@@ -133,6 +133,8 @@ query AllFilms {
 }
 """
 ```
+
+Using GraphQL we only get the data that we request. Nothing more.
 
 #### ApolloGraphQL
 ApolloGraphQL is a great framework that allows you easily make GraphQL queries and mutations. ApolloGraphQL iOS framework takes care of caching and code generation. ApolloGraphQL generates Swift types for queries and mutations that you define in your project. It saves your time by generating all the boilerplate for you automatically.
