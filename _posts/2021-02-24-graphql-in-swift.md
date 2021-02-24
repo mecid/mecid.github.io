@@ -12,10 +12,11 @@ Let me introduce GraphQL first. GraphQL is a query language for your API. Usuall
 
 ```graphql
 schema {
-  query: Root
+  query: Query
+  mutation: Mutation
 }
 
-type Root {
+type Query {
   film(id: ID, filmID: ID): Film
   allFilms(after: String, first: Int, before: String, last: Int): FilmsConnection
   """more code here"""
