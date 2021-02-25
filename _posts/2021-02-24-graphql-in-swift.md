@@ -26,19 +26,13 @@ type Query {
 The schema file should contain *Query* and *Mutation* types. These types define all the queries and mutations that the current GraphQL endpoint supports. The schema file also describes the list of all the types that you can use in your queries.
 
 ```graphql
-
-"""A single film."""
 type Film implements Node {
-  """The title of this film."""
   title: String!
 
-  """The episode number of this film."""
   episodeID: Int
 
-  """The opening paragraphs at the beginning of this film."""
   openingCrawl: String
 
-  """The name of the director of this film."""
   director: String!
 }
 ```
