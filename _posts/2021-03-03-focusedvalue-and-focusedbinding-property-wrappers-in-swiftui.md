@@ -20,7 +20,7 @@ struct FocusedNoteValue: FocusedValueKey {
 }
 ```
 
-As you can see in the example above, we create the *NoteFocusedValue* struct and conform to the *FocusedValueKey* protocol. The only thing we need to do is adding a type alias for the *Value* type. The *Value* type here is our content that we want to observe when a view is focused. In our case, it is String because we want to monitor the note that the user edits at the moment.
+As you can see in the example above, we create the *NoteFocusedValue* struct and conform to the *FocusedValueKey* protocol. The only thing we need to do is adding a type alias for the *Value* type. The *Value* type here is our content that we want to observe when a view is focused. In our case, it is *String* because we want to monitor the note that the user edits at the moment.
 
 ```swift
 extension FocusedValues {
