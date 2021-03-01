@@ -7,7 +7,7 @@ category: Data Flow
 
 The last year Apple has done a great job in terms of focus management in SwiftUI. We got a few new modifiers to set up an entry point for the focus system and programmatically handle focus changes. We still have some gaps, and I hope Apple will fill them during WWDC21. This week I want to talk about FocusedValue and FocusedBinding property wrappers.
 
-> To learn more about the basics of focus management in SwiftUI, take a look at my dedicated post.
+> To learn more about the basics of focus management in SwiftUI, take a look at my dedicated [post](/2020/12/02/focus-management-in-swiftui/).
 
 #### FocusedValue
 FocusedValue property wrapper allows us to observe the value from the focused view or one of its ancestors. It works in a very similar way to the Environment property wrapper, but instead of observing the environment, it observes the view hierarchy's focused view.
@@ -30,6 +30,8 @@ extension FocusedValues {
     }
 }
 ```
+
+> To learn more about providing custom values via SwiftUI's Environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 Now, we can provide an extension for FocusedValues where we register a getter and setter for our custom focused value. Make sure it is optional. SwiftUI set it to nil when the view is not focused.
 
