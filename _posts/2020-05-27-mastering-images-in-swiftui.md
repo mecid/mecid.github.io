@@ -35,7 +35,7 @@ struct RootView: View {
 
 ![image](/public/image2.png)
 
-As you can see, the frame modifier doesn't affect the size of our image. It happens because image by default chooses its size by measuring source bitmap. We can change this behavior by adding the resizable modifier to the image.
+As you can see, the frame modifier doesn't affect the size of our image. It happens because image by default chooses its size by measuring source bitmap. We can change this behavior by adding the *resizable* modifier to the image.
 
 ```swift
 struct RootView: View {
@@ -48,7 +48,7 @@ struct RootView: View {
 
 ![image](/public/image3.png)
 
-The resizable modifier tries to fill the entire available space with the image without saving aspect ratio. To fix this issue, we can use *scaleToFit* modifier.
+The *resizable* modifier tries to fill the entire available space with the image without saving aspect ratio. To fix this issue, we can use *scaleToFit* modifier.
 
 ```swift
 struct RootView: View {
@@ -100,7 +100,7 @@ struct RootView: View {
 
 ![image](/public/image6.png)
 
-SwiftUI tries to fill the entire space with the image by duplicating its original source. It might be useful when you want to fill the area with the texture. You can also specify the part of the image that you want to tile. The *resizable modifier* accepts the *capInsets* parameter that allows us to choose the tiling part of the picture.
+SwiftUI tries to fill the entire space with the image by duplicating its original source. It might be useful when you want to fill the area with the texture. You can also specify the part of the image that you want to tile. The *resizable* modifier accepts the *capInsets* parameter that allows us to choose the tiling part of the picture.
 
 ```swift
 struct RootView: View {
