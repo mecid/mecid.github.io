@@ -1,7 +1,7 @@
 ---
 title: FocusedValue and FocusedBinding property wrappers in SwiftUI
 layout: post
-image: /public/swiftui.png
+image: /public/tabs.png
 category: Data Flow
 ---
 
