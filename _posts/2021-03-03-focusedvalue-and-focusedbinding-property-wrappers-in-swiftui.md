@@ -125,4 +125,6 @@ struct NoteFormatter: View {
 #### Conclusion
 Today we learned how to use *FocusedValue* and *FocusedBinding* property wrappers. One of the possible use cases for these property wrappers is commands that we can use to create the main menu for macOS apps. You can access the currently focused view's content and implement some logic that lives in your macOS app's main menu.
 
+> To learn more about building the main menu for macOS apps, take a look at my ["Commands in SwiftUI"](/2020/11/24/commands-in-swiftui/) post.
+
 I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
