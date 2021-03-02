@@ -31,9 +31,9 @@ extension FocusedValues {
 }
 ```
 
-> To learn more about providing custom values via SwiftUI's Environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
-
 Now, we can provide an extension for *FocusedValues* where we register a getter and setter for our custom focused value. Make sure it is optional. SwiftUI set it to nil when the view is not focused.
+
+> To learn more about providing custom values via SwiftUI's Environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 ```swift
 struct ContentView: View {
