@@ -64,7 +64,7 @@ struct NotePreview: View {
 }
 ```
 
-Here we have the *ContentView* with *TextEditor* that uses a binding from the view state to store the note content. We use the *focusedValue* modifier to save note content into the special memory that SwiftUI control and only assign when the view is focused.
+Here we have the *ContentView* with *NoteEditor* that uses a binding from the view state to store the note content. We use the *focusedValue* modifier to save note content into the special memory that SwiftUI control and only assign when the view is focused.
 
 We also define the *NotePreview* view. *NotePreview* uses the *FocusedValue* property wrapper to monitor the content of the focused note. SwiftUI will set the value of *FocusedValue* to *nil* as soon as the view loses the focus.
 
