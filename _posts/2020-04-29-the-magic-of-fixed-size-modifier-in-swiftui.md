@@ -21,7 +21,7 @@ struct Example1: View {
 }
 ```
 
-We try to simulate the rendering of very long text. I also use the frame modifier to limit available space. As you can see in the example above, the text doesn't fit the available space, and the SwiftUI layout system decides to truncate it.
+We try to simulate the rendering of very long text. I also use the *frame* modifier to limit available space. As you can see in the example above, the text doesn't fit the available space, and the SwiftUI layout system decides to truncate it.
 
 ![fixed-size](/public/fixedSize1.png)
 
