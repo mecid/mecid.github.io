@@ -53,7 +53,7 @@ Vertical and horizontal stacks have additional steps in the layout process.
 5. Stack view repeats this process as many times as needed to calculate the size of every child.
 6. It the end, stack view sum the spacing between items and calculated sizes of children to understand its own size and pass it back to the parent.
 
-One thing that we can adjust in this process is the order of size proposing. Usually, SwiftUI starts the layout process inside a stack with the *least flexible* view. But we can alter this rule by using *layoutPriority* modifier.
+One thing that we can adjust in this process is the order of size proposing. Usually, SwiftUI starts the layout process inside a stack with the least flexible view. But we can alter this rule by using *layoutPriority* modifier.
 
 Layout priority defines the order of the size proposing process. By default, all views have 0 as default priority. SwiftUI allows us to set a custom layout priority using *layoutPriority* modifier. SwiftUI uses layout priorities to sort views in descending order. It means SwiftUI will propose views with higher priority first.
 
