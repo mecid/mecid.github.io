@@ -24,6 +24,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
+![preview-debug](/public/preview1.png)
+
 We declare a *ContentView_Previews* struct that conforms to *PreviewProvider*. The only requirement of *PreviewProvider* protocol is the static previews calculated property. In this property, you should return the view that you want to preview. You can preview more than one view by placing them in previews property.
 
 ```swift
@@ -36,6 +38,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 ```
+
+![preview-debug](/public/preview3.png)
 
 #### Environment 
 Preview is a simple SwiftUI view. You can apply different modifiers in previews to check how your view looks with various user settings. One of the essential things is Dynamic Type support. You can easily verify your view with different font size options.
@@ -74,6 +78,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 ```
+
+![preview-debug](/public/preview2.png)
 
 #### UIKit previews
 Xcode previews are not limited to SwiftUI views. You can quickly wrap any UIKit view or controller with a struct conforming to *UIViewRepresentable* or *UIViewControllerRepresentable* and preview it.
@@ -115,7 +121,7 @@ I want to mention that you are not limited to creating a preview only inside a S
 SwiftUI previews use the simulator to render themselves. So you can think about them as an embedded simulator in the Xcode window. That's why we can run and debug SwiftUI preview directly in the Xcode canvas.
 You can run the preview in live mode by pressing the play button on the canvas. You can start debugging by using right-click on the play button while the preview is running. 
 
-=====================================================
+![preview-debug](/public/debug-preview.jpeg)
 
 #### Shortcuts
 There are two shortcuts that you should remember. Both of them will make your life easier during the development cycle of your SwiftUI views.
