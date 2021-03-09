@@ -113,7 +113,7 @@ struct ContentView_Previews: PreviewProvider {
 ```
 
 #### Preview files
-I want to mention that you are not limited for creating a preview only inside a Swift file containing a SwiftUI view. You can create Swift files that contain only previews. It might be handy when you provide a complete design system or a UI library. For example, I maintain the SwiftUI charting library, and I have a Swift file that contains the previews of all available chart views in my library.
+I want to mention that you are not limited for creating a preview only inside a Swift file containing a SwiftUI view. You can create Swift files that contain only previews. It might be handy when you provide a complete design system or a UI library. For example, I maintain a SwiftUI charting library, and I have a Swift file that contains the previews of all available chart views in my library.
 
 > Don’t be afraid to extract your complex views into small pieces and then compose them into a large view. To learn more about view decomposition, look at my ["View composition in SwiftUI"](/2019/10/30/view-composition-in-swiftui/) post.
 
