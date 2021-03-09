@@ -63,6 +63,8 @@ struct SizeCategoryPreview<Content: View>: View {
 }
 ```
 
+> To learn more about providing custom values via SwiftUI’s Environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+
 Here we declare the SizeCategoryPreview struct, a SwiftUI view accepting another view and putting it in a loop by applying different content size conditions. It allows you to validate the look and feel of your view in all possible size categories.
 
 ```swift
@@ -76,7 +78,7 @@ struct ContentView_Previews: PreviewProvider {
 #### UIKit previews
 Xcode previews are not limited to SwiftUI views. You can quickly wrap any UIKit view or controller with a struct conforming to UIViewRepresentable or UIViewControllerRepresentable and preview it.
 
-> To learn more about using UIKit view and controllers in SwiftUI, look at my "Using UIKit views in SwiftUI" post.
+> To learn more about using UIKit view and controllers in SwiftUI, look at my ["Using UIKit views in SwiftUI"](/2020/01/29/using-uikit-views-in-swiftui/) post.
 
 ```swift
 struct UIKitPreview: UIViewRepresentable {
@@ -106,6 +108,8 @@ struct ContentView_Previews: PreviewProvider {
 
 #### Preview files
 I want to mention that you are not limited to creating a preview only inside a Swift file containing a SwiftUI view. You can create Swift files that contain only previews. It might be handy when you provide a complete design system or a UI library. For example, I maintain the SwiftUI charting library, and I have a Swift file that contains the previews of all available chart views in my library.
+
+> Don’t be afraid to extract your complex views into small pieces and then compose them into a large view. To learn more about view decomposition, look at my ["View composition in SwiftUI"](/2019/10/30/view-composition-in-swiftui/) post.
 
 #### Debug previews
 SwiftUI previews use the simulator to render themselves. So you can think about them as an embedded simulator in the Xcode window. That's why we can run and debug SwiftUI preview directly in the Xcode canvas.
