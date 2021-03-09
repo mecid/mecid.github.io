@@ -8,7 +8,7 @@ image: /public/debug-preview.jpeg
 This week, I want to talk about one of the most powerful Xcode features, SwiftUI previews. SwiftUI previews allow you to look at your SwiftUI views inside Xcode without running the app in the simulator. You can also preview UIKit views and controllers by wrapping them in SwiftUI. Today we will learn about all the powerful features of previews in Xcode.
 
 #### Basics
-Xcode monitors your Swift files, and as soon as your Swift file contains the struct that conforms to PreviewProvider, it shows you a preview canvas. Let's take a look at the example.
+Xcode monitors your Swift files, and as soon as your Swift file contains the struct that conforms to *PreviewProvider*, it shows you a preview canvas. Let's take a look at the example.
 
 ```swift
 struct ContentView: View {
@@ -24,7 +24,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-We declare a ContentView_Previews struct that conforms to PreviewProvider. The only requirement of PreviewProvider protocol is the static previews calculated property. In this property, you should return the view that you want to preview. You can preview more than one view by placing them in previews property.
+We declare a *ContentView_Previews* struct that conforms to *PreviewProvider*. The only requirement of *PreviewProvider* protocol is the static previews calculated property. In this property, you should return the view that you want to preview. You can preview more than one view by placing them in previews property.
 
 ```swift
 struct ContentView_Previews: PreviewProvider {
@@ -49,7 +49,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 ```
 
-As you can see in the example above, we can apply the environment modifier in our previews to check the view's look and feel with different font sizes. I'm doing this very often in my projects. That's why I create a special view which automates this process.
+As you can see in the example above, we can apply the *environment* modifier in our previews to check the view's look and feel with different font sizes. I'm doing this very often in my projects. That's why I create a special view which automates this process.
 
 ```swift
 struct SizeCategoryPreview<Content: View>: View {
@@ -65,7 +65,7 @@ struct SizeCategoryPreview<Content: View>: View {
 
 > To learn more about providing custom values via SwiftUI’s Environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
-Here we declare the SizeCategoryPreview struct, a SwiftUI view accepting another view and putting it in a loop by applying different content size conditions. It allows you to validate the look and feel of your view in all possible size categories.
+Here we declare the *SizeCategoryPreview* struct, a SwiftUI view accepting another view and putting it in a loop by applying different content size conditions. It allows you to validate the look and feel of your view in all possible size categories.
 
 ```swift
 struct ContentView_Previews: PreviewProvider {
@@ -76,7 +76,7 @@ struct ContentView_Previews: PreviewProvider {
 ```
 
 #### UIKit previews
-Xcode previews are not limited to SwiftUI views. You can quickly wrap any UIKit view or controller with a struct conforming to UIViewRepresentable or UIViewControllerRepresentable and preview it.
+Xcode previews are not limited to SwiftUI views. You can quickly wrap any UIKit view or controller with a struct conforming to *UIViewRepresentable* or *UIViewControllerRepresentable* and preview it.
 
 > To learn more about using UIKit view and controllers in SwiftUI, look at my ["Using UIKit views in SwiftUI"](/2020/01/29/using-uikit-views-in-swiftui/) post.
 
@@ -96,7 +96,7 @@ struct UIKitPreview: UIViewRepresentable {
 }
 ```
 
-Here we create a generic struct that allows us to preview any UIKit view in Xcode previews. We need to create a UIKit view, wrap it with 	UIKitPreview struct and return it in previews property. By doing that, you can preview any UIKit view in Xcode previews.
+Here we create a generic struct that allows us to preview any UIKit view in Xcode previews. We need to create a UIKit view, wrap it with *UIKitPreview* struct and return it in previews property. By doing that, you can preview any UIKit view in Xcode previews.
 
 ```swift
 struct ContentView_Previews: PreviewProvider {
@@ -120,8 +120,8 @@ You can run the preview in live mode by pressing the play button on the canvas. 
 #### Shortcuts
 There are two shortcuts that you should remember. Both of them will make your life easier during the development cycle of your SwiftUI views.
 
-1. Cmd + Option + Enter shows or hides previews.
-2. Cmd + Option + P runs the previews.
+1. *Cmd + Option + Enter* shows or hides previews.
+2. *Cmd + Option + P* runs the previews.
 
 #### Conclusion
 Xcode preview is one of my favorite features of Xcode that changed my development habits enormously. Keep your views small by using decomposition to make your previews fast and stable. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
