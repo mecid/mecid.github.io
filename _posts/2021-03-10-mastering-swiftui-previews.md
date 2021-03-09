@@ -55,6 +55,8 @@ struct ContentView_Previews: PreviewProvider {
 
 As you can see in the example above, we can apply the *environment* modifier in our previews to check the view's look and feel with different font sizes. I'm doing this very often in my projects. That's why I create a special view which automates this process.
 
+> To learn more about providing custom values via SwiftUI’s Environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+
 ```swift
 struct SizeCategoryPreview<Content: View>: View {
     let content: Content
@@ -66,8 +68,6 @@ struct SizeCategoryPreview<Content: View>: View {
     }
 }
 ```
-
-> To learn more about providing custom values via SwiftUI’s Environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 Here we declare the *SizeCategoryPreview* struct, a SwiftUI view accepting another view and putting it in a loop by applying different content size conditions. It allows you to validate the look and feel of your view in all possible size categories.
 
