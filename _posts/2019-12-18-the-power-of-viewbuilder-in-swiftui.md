@@ -44,6 +44,39 @@ extension ViewBuilder {
 
 As you can see, *@ViewBuilder* has a static *buildBlock* method that accepts two views, combine them and return *TupleView*. It also has other declarations of *buildBlock* method, which takes from one to ten child views, and all of them combine child views into a *TupleView*. That's why *@ViewBuilder* can accept only ten views inside the closure.
 
+```swift
+struct ContentView: View {
+    @ObservedObject var viewModel: ViewModel
+
+    @ViewBuilder
+    var body: some View {
+        if viewModel.isAuthorized {
+            Text("Hello World!")
+        } else {
+            LoginView(viewModel: viewModel)
+        }
+    }
+}
+```
+
+*@ViewBuilder* also has support for conditions via *if* and *switch* expressions.
+
+```swift
+struct ContentView: View {
+    @ObservedObject var viewModel: ViewModel
+
+    @ViewBuilder
+    var body: some View {
+        switch viewModel.isAuthorized {
+        case true:
+            Text("Hello")
+        case false:
+            LoginView(viewModel: viewModel)
+        }
+    }
+}
+```
+
 > To learn how to avoid ten views limitation, take a look at my ["View Composition in SwiftUI"](/2019/10/30/view-composition-in-swiftui/) post.
 
 #### TupleView
