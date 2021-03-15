@@ -74,7 +74,7 @@ class SearchLoader {
 }
 ```
 
-In the code sample above we have *SearchLoader* class which make an API request to Github's search endpoint and convert the data to *SearchResponse* struct. First of all, I want to cover with tests these data manipulations. Let's start with creating a Unit Test target in Xcode project( File -> New -> Target -> iOS Unit Testing bundle). Xcode should create it by default if you do not disable it during the project forming process.
+In the code sample above we have *SearchLoader* class which make an API request to Github's search endpoint and convert the data to *SearchResponse* struct. First of all, I want to cover with tests these data manipulations. Let's start with creating a Unit Test target in Xcode project(*File -> New -> Target -> iOS Unit Testing bundle*). Xcode should create it by default if you do not disable it during the project forming process.
 
 Now we have to add JSON file with search endpoint response as a content to a testing target. We will use it to mock network request and speed up our test by faking real network request. 
 
