@@ -12,6 +12,8 @@ UI test is a programmatic way to verify that the particular user flow works corr
 
 Xcode provides us XCTest framework that we use to write both unit and UI tests. XCTest utilize Accessibility APIs to access controls in your view hierarchy and interact with them. As you might know, UIKit and SwiftUI provide accessibility support out of the box. That's why you can easily use the XCTest framework to write UI tests for your apps written in UIKit or SwiftUI.
 
+> To learn more about accessibility support in UIKit, take a look at my ["Make your app accessible for everyone"](/2018/07/09/make-your-app-accessible-for-everyone/) post.
+
 Let's start writing our first UI test for a simple view that displays a message.
 
 ```swift
