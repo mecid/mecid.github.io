@@ -164,7 +164,7 @@ final class UITests: XCTestCase {
 In the example above, we have the test that verifies the login flow. Please note that we use the *waitForExistence* function here. It waits for a particular timeout and returns false if the element doesn't appear. On the other hand, it returns true as soon as the element appears on the screen.
 
 #### Performance
-UI tests run slower than unit tests because it needs to run the whole app for every test. That's why we usually try to write as many unit tests as we can and cover the essential user flows with UI tests. But still, there is a way to improve performance by disabling animations while running UI tests.
+UI test runs slower than unit test because it needs to run the whole app. That's why we usually try to write as many unit tests as we can and cover the essential user flows with UI tests. But still, there is a way to improve performance by disabling animations while running UI tests.
 
 ```swift
 final class AppDelegate: NSObject, UIApplicationDelegate {
