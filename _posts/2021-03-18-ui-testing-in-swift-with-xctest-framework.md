@@ -45,7 +45,7 @@ final class UITests: XCTestCase {
 }
 ```
 
-To create a UI test, we have to create a Swift class that extends *XCTestCase*. Xcode runs every method that starts with the word **test** as a separate test. As you can see in the example above, we override the *setUp* method. Xcode runs this method before every test in the test case. It is an excellent place for an initial setup for every test.
+To write a UI test, we have to create a Swift class that extends *XCTestCase*. Xcode runs every method that starts with the word **test** as a separate test. As you can see in the example above, we override the *setUp* method. Xcode runs this method before every test in the test case. It is an excellent place for an initial setup for every test.
 
 Here we run the app from scratch before every UI test to keep them consistent over multiple runs. XCTest provides us the *XCUIApplication* class as a proxy for the application specified by the "Target Application" target setting. We can access and interact with our app via the instance of the *XCUIApplication* class.
 
