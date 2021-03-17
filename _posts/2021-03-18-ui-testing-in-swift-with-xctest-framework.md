@@ -65,7 +65,7 @@ As you can see, we can access all the needed views by using subscript syntax. We
 
 To learn more about query properties of *XCUIApplication*, take a look at the documentation of *XCUIElementTypeQueryProvider* protocol.
 
-Labels, buttons, and switches use titles as accessibility labels out of the box. You still need to set accessibility identifiers for views like *UITableView* and *UICollectionView* manually.
+Labels, buttons, and switches use titles as accessibility labels out of the box. But you still need to set accessibility identifiers for views like *UITableView* and *UICollectionView* manually.
 
 ```swift
 // UIKit
