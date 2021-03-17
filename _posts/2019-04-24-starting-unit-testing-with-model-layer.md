@@ -8,7 +8,7 @@ Today we are going to touch the completely new topic on my blog, and it is Unit 
 
 Unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules together with associated control data, usage procedures, and operating procedures, are tested to determine whether they are fit for use.
 
-##### In other words, Unit Test is a code which tests individual unit on your codebase. 
+##### In other words, Unit Test is a code which tests individual unit of your codebase. 
 I think the model layer is the best place to start writing Unit Tests. Assume that you are working on the Github client for iOS where you have a bunch of model structs which represents data fetched from Github API. Let's take a look at structs which define repository search results.
 
 ```swift
