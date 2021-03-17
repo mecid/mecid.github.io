@@ -4,9 +4,11 @@ layout: post
 category: Testing
 ---
 
-[Last week we touched the entirely new topic on my blog. This week we will continue the Unit Testing subject](/2019/04/24/starting-unit-testing-with-model-layer/). One of the smells of a good architecture is the ability to cover it with Unit Tests. Today we will talk about extracting Presentation logic into testable and straightforward pieces of code.
+Last week we touched the entirely new topic on my blog. This week we will continue the Unit Testing subject. One of the smells of a good architecture is the ability to cover it with Unit Tests. Today we will talk about extracting Presentation logic into testable and straightforward pieces of code.
 
 ![ShowBot](/public/showbot.jpg)
+
+> To learn more about the basics of Unit Testing, take a look at my ["Starting Unit Testing with Model layer"](/2019/04/24/starting-unit-testing-with-model-layer/) post.
 
 #### Typical issues
 Assume that you have a screen presenting a list of the progress of your TV show collection. Every cell presents TV show poster, title, and next episode number and title. Let's see on typical *ShowCell* code:
