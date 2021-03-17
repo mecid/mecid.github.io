@@ -41,14 +41,14 @@ final class UITests: XCTestCase {
 }
 ```
 
-To create a UI test, we have to create a Swift class that extends XCTestCase. Xcode runs every method that starts with the word "test" as a separate test. As you can see in the example above, we override the setUp method. Xcode runs this method before every test in the test case. It is an excellent place for an initial setup for every test.
+To create a UI test, we have to create a Swift class that extends *XCTestCase*. Xcode runs every method that starts with the word **test** as a separate test. As you can see in the example above, we override the *setUp* method. Xcode runs this method before every test in the test case. It is an excellent place for an initial setup for every test.
 
-Here we run the app from scratch before every UI test to keep them consistent over multiple runs. XCTest provides us the XCUIApplication class as a proxy for the application specified by the "Target Application" target setting. We can access and interact with our app via the instance of the XCUIApplication class.
+Here we run the app from scratch before every UI test to keep them consistent over multiple runs. XCTest provides us the *XCUIApplication* class as a proxy for the application specified by the "Target Application" target setting. We can access and interact with our app via the instance of the *XCUIApplication* class.
 
 In our simple test, we verify that our app displays a static text with a particular message.
 
 #### Queries
-XCUIApplication provides a lot of properties to query view hierarchy. You can access buttons, labels, tables, sliders, switches, and other views living in your view hierarchy. The main requirement to access a view is enabled accessibility. By default, accessibility support is enabled for any view.
+*XCUIApplication* provides a lot of properties to query view hierarchy. You can access buttons, labels, tables, sliders, switches, and other views living in your view hierarchy. The main requirement to access a view is enabled accessibility. By default, accessibility support is enabled for any view.
 
 ```swift
 let email = app.textFields["email"]
@@ -59,9 +59,9 @@ let loginButton = app.buttons["login"]
 
 As you can see, we can access all the needed views by using subscript syntax. We pass a string to find a control in the view hierarchy. Xcode tries to find the view matching accessibility label or accessibility identifier.
 
-To learn more about query properties of XCUIApplication, take a look at the documentation of XCUIElementTypeQueryProvider protocol.
+To learn more about query properties of *XCUIApplication*, take a look at the documentation of *XCUIElementTypeQueryProvider* protocol.
 
-Labels, buttons, and switches use titles as accessibility labels out of the box. You still need to set accessibility identifiers for views like UITableView and UICollectionView manually.
+Labels, buttons, and switches use titles as accessibility labels out of the box. You still need to set accessibility identifiers for views like *UITableView* and *UICollectionView* manually.
 
 ```swift
 // UIKit
@@ -83,7 +83,7 @@ app.buttons["login"].doubleTap()
 app.buttons["logout"].twoFingerTap()
 ```
 
-To learn more about the actions that XCTest provides us, take a look at the documentation of the XCUIElement class.
+To learn more about the actions that XCTest provides us, take a look at the documentation of the *XCUIElement* class.
 
 #### Advanced example
 Now we can interact with our app using the XCTest framework. Let's write a more interesting test that verifies login flow. Assume that you have a login view written in SwiftUI. It might look like this:
@@ -123,7 +123,7 @@ struct ContentView: View {
 }
 ```
 
-Here we have the ContentView that presents LoginView and replace it with the message as soon as the user logged in.
+Here we have the *ContentView* that presents LoginView and replace it with the message as soon as the user logged in.
 
 ```swift
 import XCTest
@@ -157,7 +157,7 @@ final class UITests: XCTestCase {
 }
 ```
 
-In the example above, we have the test that verifies the login flow. Please note that we use the waitForExistence function here. It waits for a particular timeout and returns false if the element doesn't appear. On the other hand, it returns true as soon as the element appears on the screen.
+In the example above, we have the test that verifies the login flow. Please note that we use the *waitForExistence* function here. It waits for a particular timeout and returns false if the element doesn't appear. On the other hand, it returns true as soon as the element appears on the screen.
 
 #### Performance
 UI tests run slower than unit tests because it needs to run the whole app for every test. That's why we usually try to write as many unit tests as we can and cover the essential user flows with UI tests. But still, there is a way to improve performance by disabling animations while running UI tests.
