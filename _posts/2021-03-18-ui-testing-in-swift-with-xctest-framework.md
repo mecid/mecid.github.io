@@ -63,7 +63,7 @@ let loginButton = app.buttons["login"]
 
 As you can see, we can access all the needed views by using subscript syntax. We pass a string to find a control in the view hierarchy. Xcode tries to find the view matching accessibility label or accessibility identifier.
 
-To learn more about query properties of *XCUIApplication*, take a look at the documentation of *XCUIElementTypeQueryProvider* protocol.
+To learn more about query properties of *XCUIApplication*, take a look at the documentation for the *XCUIElementTypeQueryProvider* protocol.
 
 Labels, buttons, and switches use titles as accessibility labels out of the box. But you still need to set accessibility identifiers for views like *UITableView* and *UICollectionView* manually.
 
@@ -87,7 +87,7 @@ app.buttons["login"].doubleTap()
 app.buttons["logout"].twoFingerTap()
 ```
 
-To learn more about the actions that XCTest provides us, take a look at the documentation of the *XCUIElement* class.
+To learn more about the actions that XCTest provides us, take a look at the documentation for the *XCUIElement* class.
 
 #### Advanced example
 Now we can interact with our app using the XCTest framework. Let's write a more interesting test that verifies login flow. Assume that you have a login view written in SwiftUI. It might look like this:
@@ -161,7 +161,7 @@ final class UITests: XCTestCase {
 }
 ```
 
-In the example above, we have the test that verifies the login flow. Please note that we use the *waitForExistence* function here. It waits for a particular timeout and returns false if the element doesn't appear. On the other hand, it returns true as soon as the element appears on the screen.
+In the example above, we have the test that verifies the login flow. Please note that we use the *waitForExistence* function here. It waits for a particular timeout and returns **false** if the element doesn't appear. On the other hand, it returns **true** as soon as the element appears on the screen.
 
 #### Performance
 UI test runs slower than unit test because it needs to run the whole app. That's why we usually try to write as many unit tests as we can and cover the essential user flows with UI tests. But still, there is a way to improve performance by disabling animations while running UI tests.
