@@ -63,7 +63,7 @@ let loginButton = app.buttons["login"]
 
 As you can see, we can access all the needed views by using subscript syntax. We pass a string to find a control in the view hierarchy. Xcode tries to find the view matching accessibility label or accessibility identifier.
 
-To learn more about query properties of *XCUIApplication*, take a look at the documentation for the *XCUIElementTypeQueryProvider* protocol.
+> To learn more about accessibility support in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
 
 Labels, buttons, and switches use titles as accessibility labels out of the box. But you still need to set accessibility identifiers for views like *UITableView* and *UICollectionView* manually.
 
@@ -77,6 +77,7 @@ List {
 
 }.accessibilityIdentifier("newsList")
 ```
+To learn more about query properties of *XCUIApplication*, take a look at the documentation for the *XCUIElementTypeQueryProvider* protocol.
 
 #### Actions
 XCTest framework provides us a lot of functions for interacting with views. You can easily tap, double-tap, swipe, pinch and rotate views.
