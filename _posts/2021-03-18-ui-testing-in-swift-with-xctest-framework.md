@@ -74,7 +74,7 @@ tableView.accessibilityIdentifier = "newsList"
 
 // SwiftUI
 List {
-
+    Text("news item")
 }.accessibilityIdentifier("newsList")
 ```
 To learn more about query properties of *XCUIApplication*, take a look at the documentation for the *XCUIElementTypeQueryProvider* protocol.
