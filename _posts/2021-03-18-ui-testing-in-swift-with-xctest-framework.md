@@ -180,6 +180,6 @@ final class AppDelegate: NSObject, UIApplicationDelegate {
 Here we check if the app runs under the UI test using command-line arguments. In the previous examples, we set the launch arguments while running UI tests, and this is how we can check arguments and prepare our app for UI tests. For instance, we can reset the app state by removing user defaults, keychain data, and cleaning the local database.
 
 #### Conclusion
-UI test is an excellent way to verify the most crucial user flows in your app. XCTest framework provides a very nice and simple API that we can utilize to write complex tests straightforwardly. You can write your first UI test without any refactoring just by interacting with your app user interface.
+UI tests is an excellent way to verify the most crucial user flows in your app. XCTest framework provides a very nice and simple API that we can utilize to write complex tests straightforwardly. You can write your first UI test without any refactoring just by interacting with your app user interface.
 
 I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
