@@ -128,7 +128,7 @@ struct ContentView: View {
 }
 ```
 
-Here we have the *ContentView* that presents LoginView and replace it with the message as soon as the user logged in.
+Here we have the *ContentView* that presents *LoginView* and replace it with the message as soon as the user logged in.
 
 ```swift
 import XCTest
