@@ -24,7 +24,7 @@ struct ContentView: View {
 }
 ```
 
-To create a new UI testing target, go to the Xcode menu File -> New -> Target -> UI Testing bundle. Now we can write our first UI test.
+To create a new UI testing target, go to the Xcode menu *File -> New -> Target -> UI Testing bundle*. Now we can write our first UI test.
 
 ```swift
 import XCTest
