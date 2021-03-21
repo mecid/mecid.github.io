@@ -121,7 +121,7 @@ Now we have to add JSON file with search endpoint response as a content to a tes
 }
 ```
 
-Finally, it is time to write our first Unit Test for the project. Let's create new file from Unit Test template (File -> New -> File -> Unit Test Case Class). Xcode can identify test methods by the name. It should start with text prefix. Here is a sample Unit Test on *SearchResponse*.
+Finally, it is time to write our first Unit Test for the project. Let's create new file from Unit Test template (*File -> New -> File -> Unit Test Case Class*). Xcode can identify test methods by the name. It should start with text prefix. Here is a sample Unit Test on *SearchResponse*.
 
 ```swift
 import XCTest
