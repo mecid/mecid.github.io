@@ -40,4 +40,4 @@ Methods of a Page Object should return itself or an instance of another Page Obj
 =====================================================
 
 #### Conclusion
-UI tests are expensive and fragile but vital and usable. That's why you should take care of them as much as you take care of your main codebase. The Page Object pattern is a great way to simplify your UI tests and reuse them.
+UI tests are expensive and fragile but vital and usable. That's why you should take care of them as much as you take care of your main codebase. The Page Object pattern is a great way to simplify your UI tests and reuse them. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
