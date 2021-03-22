@@ -93,7 +93,7 @@ Now it looks much better but still has other problems. The example above mixes w
 The code above is not reusable. We might need to use the same login flow in other UI tests, but we don't have a way to reuse it. Even if we copy this code and paste it into another UI test, we will have a classical code duplication problem. What if the view hierarchy of the login screen will change in the future? Should I fix all the UI tests that use login flow?
 
 #### Page Object pattern
-Page Object is a type that defines all the interactions of the particular screen and provides you all the needed functions to verify the UI state of that screen. This term appeared first in web page testing, which is why it is called Page Object. Let's try to introduce this pattern in our codebase.
+Page Object is a type that defines all the interactions of the particular screen and provides you all the needed functions to verify the UI state of that screen. This term appeared first in web page testing, which is why it is called [Page Object](https://www.martinfowler.com/bliki/PageObject.html). Let's try to introduce this pattern in our codebase.
 
 ```swift
 protocol Screen {
