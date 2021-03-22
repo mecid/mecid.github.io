@@ -30,10 +30,8 @@ final class LoginTests: XCTestCase {
         pwd.tap()
         pwd.typeText("pwd")
 
-        app.switches["rememberMe"].tap()
-        app.buttons["login"].doubleTap()
-        app.buttons["login"].twoFingerTap()
-
+        app.buttons["login"].tap()
+        
         let message = app.staticTexts["Hello World!"]
         XCTAssertTrue(message.waitForExistence(timeout: 5))
     }
