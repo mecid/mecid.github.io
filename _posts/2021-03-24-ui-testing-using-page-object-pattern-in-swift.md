@@ -171,5 +171,7 @@ final class LoginTests: UITestCase {
 }
 ```
 
+Now our test looks in a declarative way where the Page Object pattern hides all the implementation details. In the future, you might have breaking changes in the login screen, but you don't need to change all the UI tests that use the login screen. You only need to make changes in the Page Object that responsible for the login screen.
+
 #### Conclusion
 UI tests are expensive and fragile but vital and usable. That's why you should take care of them as much as you take care of your main codebase. The Page Object pattern is a great way to simplify your UI tests and reuse them. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
