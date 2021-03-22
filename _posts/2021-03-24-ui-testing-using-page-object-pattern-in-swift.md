@@ -42,7 +42,7 @@ final class LoginTests: XCTestCase {
 
 Here is an example of a typical UI test where we have a code that runs the app, propagates some launching arguments, navigates through the app, interacts with your views, and validates the state of UI.
 
-This code has a few downsides. First of all, it has an app launching logic that we will use in most of our UI tests. I think it is better to extract it into the UITestCase class that defines a UI test and handles common logic like app launching and making screenshots at the end of the UI test.
+This code has a few downsides. First of all, it has an app launching logic that we will use in most of our UI tests. I think it is better to extract it into the *UITestCase* class that defines a UI test and handles common logic like app launching and making screenshots at the end of the UI test.
 
 ```swift
 class UITestCase: XCTestCase {
@@ -65,7 +65,7 @@ class UITestCase: XCTestCase {
 }
 ```
 
-Here we have the new UITestCase class that defines a UI test case and handles typical setup and teardown logic. For example, we have to launch the app before every test and terminate the app after every test. We also make a screenshot of the app whenever the test finishes its work. We keep it only for failing tests. It might be handy to look at the failing test screenshot. Usually, it helps to understand what is wrong with the state of UI.
+Here we have the new *UITestCase* class that defines a UI test case and handles typical setup and teardown logic. For example, we have to launch the app before every test and terminate the app after every test. We also make a screenshot of the app whenever the test finishes its work. We keep it only for failing tests. It might be handy to look at the failing test screenshot. Usually, it helps to understand what is wrong with the state of UI.
 
 ```swift
 final class LoginTests: UITestCase {
@@ -138,9 +138,9 @@ struct LoginScreen: Screen {
 }
 ```
 
-In the example above, we have the LoginScreen struct. I decide to use the word screen because we don't have pages in iOS apps, and the screen sounds more familiar.
+In the example above, we have the *LoginScreen* struct. I decide to use the word screen because we don't have pages in iOS apps, and the screen sounds more familiar.
 
-As you can see, LoginScreen hides all the complexity of the UI test under the hood and provides you user-friendly functions to interact with the login screen.
+As you can see, *LoginScreen* hides all the complexity of the UI test under the hood and provides you user-friendly functions to interact with the login screen.
 
 ```swift
 struct MessageScreen: Screen {
@@ -154,7 +154,7 @@ struct MessageScreen: Screen {
 }
 ```
 
-Methods of a Page Object should return itself or an instance of another Page Object. It allows us to build readable and chainable UI tests. For example, the tapLogin method navigates you to another screen. That's why it is responsible for creating and returning the MessageScreen Page Object.
+Methods of a Page Object should return itself or an instance of another Page Object. It allows us to build readable and chainable UI tests. For example, the *tapLogin* method navigates you to another screen. That's why it is responsible for creating and returning the *MessageScreen* Page Object.
 
 ```swift
 final class LoginTests: UITestCase {
