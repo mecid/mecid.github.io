@@ -31,7 +31,7 @@ final class LoginTests: XCTestCase {
         pwd.typeText("pwd")
 
         app.buttons["login"].tap()
-        
+
         let message = app.staticTexts["Hello World!"]
         XCTAssertTrue(message.waitForExistence(timeout: 5))
     }
@@ -42,7 +42,7 @@ Here is an example of a typical UI test where we have a code that runs the app, 
 
 > To learn more about the basics of UI testing in Swift, take a look at my ["UI Testing in Swift with XCTest framework"](/2021/03/18/ui-testing-in-swift-with-xctest-framework/) post.
 
-This code has a few downsides. First of all, it has an app launching logic that we will use in most of our UI tests. I think it is better to extract it into the *UITestCase* class that defines a UI test and handles common logic like app launching and making screenshots at the end of the UI test.
+This code has a few downsides. First of all, it has the app launching logic that we will use in most of our UI tests. I think it is better to extract it into the *UITestCase* class that defines a UI test and handles common logic like app launching and making screenshots at the end of the UI test.
 
 ```swift
 class UITestCase: XCTestCase {
