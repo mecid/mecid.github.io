@@ -53,7 +53,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, SwiftUI provides us the toolbar modifier that we can use to build toolbar items. The toolbar modifier accepts the *ToolbarContentBuilder* closure, which is very similar to *ViewBuilder* function builder, but instead of views, it uses *ToolbarItems*.
+As you can see in the example above, SwiftUI provides us the *toolbar* modifier that we can use to build toolbar items. The *toolbar* modifier accepts the *ToolbarContentBuilder* closure, which is very similar to *ViewBuilder* function builder, but instead of views, it uses *ToolbarItems*.
 
 #### ToolbarItem
 We use *ToolbarItem* struct to declare an action. *ToolbarItem* has two required parameters. The first one is placement, which is the instance of *ToolbarItemPlacement* struct. The second one is *ViewBuilder* closure that SwiftUI uses to build the view representation of your action.
