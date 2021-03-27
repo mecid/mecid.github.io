@@ -4,7 +4,7 @@ layout: post
 category: Swift Language Features
 ---
 
-Today we will talk about Pattern Matching, one of my favorite features in Swift.  Pattern Matching is the act of checking a given sequence of tokens for the presence of the constituents of some pattern. Swift has a particular keyword for applying Pattern Matching: case let. Let's dive into examples.
+Today we will talk about Pattern Matching, one of my favorite features in Swift. Pattern Matching is the act of checking a given sequence of tokens for the presence of the constituents of some pattern. Swift has a particular keyword for applying Pattern Matching: **case let**. Let's dive into examples.
 
 #### Enums
 Pattern Matching is very useful while working with enums. As a part of ["Maintaining State in Your ViewControllers" post](/2019/01/23/maintaining-state-in-view-controllers/), we talk about State enum, which describes the state of ViewController. Let's see how we can efficiently use Pattern Matching with it.
@@ -24,7 +24,7 @@ case let .failed(error): render(error)
 }
 ```
 
-While regular switching on enum with associated values we can also use case let keyword to match it to some pattern and assign associated value to a variable. Another beautiful option here is filtering associated value by using where keyword.
+While regular switching on enum with associated values we can also use **case let** keyword to match it to some pattern and assign associated value to a variable. Another beautiful option here is filtering associated value by using where keyword.
 
 #### Optionals
 Optional in Swift is the enum with two cases, so you can apply Pattern Matching as we do it before with enums. But in the case of optionals, we have some additional features. Let's check the example code.
@@ -57,7 +57,7 @@ case let (username, password): renderUserProfile(username, password)
 As you can see, we can apply to tuples all the matching features which we used with enums. We can also match the particular value to the tuple as we do for matching admin data.
 
 #### case let with flow statements
-I want to mention that you can easily use case let keyword with any flow control statement, let's see how we can use it with if condition statements.
+I want to mention that you can easily use **case let** keyword with any flow control statement, let's see how we can use it with if condition statements.
 
 ```swift
 if case let .loaded(shows) = state, shows.isEmpty {
@@ -73,7 +73,7 @@ guard case let .loaded(shows) = state, shows.isEmpty else {
 }
 ```
 
-Another compelling case let usage is possible with for-in loops, we can easily filter items.
+Another compelling **case let** usage is possible with for-in loops, we can easily filter items.
 
 ```swift 
 let stateHistory: [State<[Show]>] = [.loaded([]), .loading]
