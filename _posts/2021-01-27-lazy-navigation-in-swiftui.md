@@ -79,7 +79,7 @@ extension View {
 }
 ```
 
-Here we define an extension on the *View* protocol that allows us to bind a value to the destination view. As you remember, we use *EmptyView* as *NavigationLink* *Label*, and it allows us to set the *NavigationLink* as the view background invisibly. Now let's take a look at how we can use the new API in our apps.
+Here we define an extension on the *View* protocol that allows us to bind a value to the destination view. As you remember, we use *EmptyView* as *NavigationLink* label, and it allows us to set the *NavigationLink* as the view background invisibly. Now let's take a look at how we can use the new API in our apps.
 
 ```swift
 import SwiftUI
