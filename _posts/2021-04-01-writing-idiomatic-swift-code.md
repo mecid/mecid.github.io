@@ -2,7 +2,7 @@
 title: Writing idiomatic Swift code
 layout: post
 category: Swift Language Features
-image:
+image: /public/swift.png
 ---
 
 Today is a great day to start learning iOS development. There are plenty of new tools and frameworks to learn from zero and apply every day. iOS development evolves every year and brings us new things to learn. This post should be valuable for the people who move to Swift from another programming language. This week we will talk about Swift idioms and how to write idiomatic Swift code.
