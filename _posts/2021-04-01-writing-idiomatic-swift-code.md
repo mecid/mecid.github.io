@@ -124,3 +124,8 @@ As you can see, we have to use **?** after the type name in case of optionals. W
 
 #### Conclusion
 Swift programming language evolves very fast. The core team is constantly considering the feedback that developers provide and add new features to the Swift language. To write more idiomatic code, you should also learn about pattern matching, protocols, generics, and functional programming in Swift. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
+1. [Using protocols as composable extensions](/2019/01/17/using-protocols-as-composable-extensions/)
+2. [Phantom types in Swift](/2021/02/18/phantom-types-in-swift/)
+3. [Pattern Matching with case let](/2019/02/06/pattern-matching-with-case-let/)
+4. [Building networking layer using functions](/2020/01/08/building-networking-layer-using-functions/)
