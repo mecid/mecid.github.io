@@ -123,4 +123,4 @@ print(integer: optionalInteger)
 As you can see, we have to use ? after the type name in case of optionals. We can use ?? operator to provide a default value whenever value is not available, or we can use if let expression to extract the optional value and use it inside the inner scope.
 
 #### Conclusion
-Swift programming language evolves very fast. The core team is constantly considering the feedback that developers provide and add new features to the Swift language. To write more idiomatic code, you should also learn about pattern matching, protocols, generics, and functional programming in Swift.
+Swift programming language evolves very fast. The core team is constantly considering the feedback that developers provide and add new features to the Swift language. To write more idiomatic code, you should also learn about pattern matching, protocols, generics, and functional programming in Swift. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
