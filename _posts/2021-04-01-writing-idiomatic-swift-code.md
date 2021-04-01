@@ -79,7 +79,7 @@ case let .sharePost(content):
 }
 ```
 
-Now we can use the switch with case let to extract the associated values for every case. But remember that we should use enums for mutually exclusive cases. You can always use structs with static fields for inclusive cases.
+Now we can use the **switch** with **case let** to extract the associated values for every case. But remember that we should use enums for mutually exclusive cases. You can always use structs with static fields for inclusive cases.
 
 ```swift
 // Bad
@@ -99,7 +99,7 @@ struct Regex {
 ```
 
 #### Optionals
-Another language feature that Swift provides us to write type-safe code is optionals. Swift types can't be nil unless you define them as optional. In this case, the Swift compiler will require to handle all the usages where the value can be nil.
+Another language feature that Swift provides us to write type-safe code is optionals. Swift types can't be *nil* unless you define them as optional. In this case, the Swift compiler will require to handle all the usages where the value can be *nil*.
 
 ```swift
 let nonOptionalInteger: Int = 3
@@ -120,7 +120,7 @@ if let value = optionalInteger {
 print(integer: optionalInteger)
 ```
 
-As you can see, we have to use **?** after the type name in case of optionals. We can use **??** operator to provide a default value whenever value is not available, or we can use if let expression to extract the optional value and use it inside the inner scope.
+As you can see, we have to use **?** after the type name in case of optionals. We can use **??** operator to provide a default value whenever value is not available, or we can use **if let** expression to extract the optional value and use it inside the inner scope.
 
 #### Conclusion
 Swift programming language evolves very fast. The core team is constantly considering the feedback that developers provide and add new features to the Swift language. To write more idiomatic code, you should also learn about pattern matching, protocols, generics, and functional programming in Swift. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
