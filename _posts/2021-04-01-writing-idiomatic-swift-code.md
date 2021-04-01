@@ -58,7 +58,7 @@ if sorting == .date {
 }
 ```
 
-Enum is a compelling Swift language feature because it can have different associated values in different cases.
+Enums are great and even more powerful with associated values for particular cases.
 
 ```swift
 enum Action {
