@@ -96,6 +96,8 @@ struct Regex {
     static let email = Regex(pattern: "regex for email")
     static let username = Regex(pattern: "regex for username")
 }
+
+let other = Regex(pattern: "another regex")
 ```
 
 #### Optionals
