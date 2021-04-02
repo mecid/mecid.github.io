@@ -5,7 +5,7 @@ category: Swift Language Features
 image: /public/swift.png
 ---
 
-Today is a great day to start learning iOS development. There are plenty of new tools and frameworks to learn from zero and apply every day. iOS development evolves every year and brings us new things to learn. This post should be valuable for the people who move to Swift from another programming language. This week we will talk about Swift idioms and how to write idiomatic Swift code.
+Today is a great day to start learning iOS development. iOS development evolves every year and brings us new things to learn. This post should be valuable for the people who move to Swift from another programming language. This week we will talk about Swift idioms and how to write idiomatic Swift code.
 
 Swift language encourages you to write safe, fast, and expressive code. It provides you all the needed programming language features to allow you to write safe and bug-free code.
 
