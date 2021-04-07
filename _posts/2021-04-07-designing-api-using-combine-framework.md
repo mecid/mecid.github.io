@@ -64,7 +64,7 @@ final class HealthService {
 }
 ```
 
-We can quickly wrap a *Future* publisher with a *Deferred* publisher to make it lazy. *Deferred* publisher runs only in case when we subscribe to it. Now we can use our new API and leverage all the power of declarative value processing.
+We can quickly wrap a *Future* publisher with a *Deferred* publisher to make it lazy. *Deferred* publisher runs only when we subscribe to it. Now we can use our new API and leverage all the power of declarative value processing.
 
 ```swift
 let health = HealthService()
