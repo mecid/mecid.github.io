@@ -30,7 +30,7 @@ final class HealthService {
     }
 ```
 
-As you can see in the example above, we wrap the old school HealthKit API with *Future* publisher. Inside the *Future* publisher, we call the asynchronous method of *HKHealthStore* to authorize the user. We deliver the result of the *HKHealthStore*'s authorize method using the handler of *Future* publisher and finish the publisher.
+As you can see in the example above, we wrap the old school HealthKit API with *Future* publisher. Inside the *Future* publisher, we call the asynchronous method of *HKHealthStore* to authorize the user. We deliver the result of the *HKHealthStore*'s authorize method using the handler of *Future* publisher.
 
 The *Future* publisher has a few downsides, and one of them is the publisher's eager nature. It means Combine will run the publisher as soon as you create it.
 
