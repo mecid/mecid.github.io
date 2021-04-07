@@ -2,6 +2,7 @@
 title: Designing API using Combine framework
 layout: post
 image: /public/combine.png
+category: Architecture
 ---
 
 Combine framework provides a declarative Swift API for processing values over time. It allows you to chain, transform and reduce multiple operations. This week we will learn how to design our APIs using the Combine framework to leverage all the data processing power that the framework provides us.
