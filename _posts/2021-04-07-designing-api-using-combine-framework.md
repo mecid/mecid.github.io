@@ -128,4 +128,4 @@ health
 ```
 
 #### Conclusion 
-Combine provides us a straightforward and friendly way to handle asynchronous operations. We need to design our own APIs using the Combine to leverage the powerful operators that it gives us. We can model complex operation chains using a declarative approach and tools like *Future* and *PassthroughSubject*.
+Combine provides us a straightforward and friendly way to handle asynchronous operations. We need to design our own APIs using the Combine to leverage the powerful operators that it gives us. We can model complex operation chains using a declarative approach and tools like *Future* and *PassthroughSubject*. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
