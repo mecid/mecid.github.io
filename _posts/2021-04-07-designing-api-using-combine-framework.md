@@ -39,7 +39,7 @@ let health = HealthService()
 let authPublisher = health.authorize()
 ```
 
-In the example above, we create an instance of an authorization publisher but never subscribe to it. We expect that Combine will run the publisher later when we subscribe to it using a sink or assign, but it runs immediately. The Combine framework provides us the *Deferred* publisher that prevents these situations.
+In the example above, we create an instance of an authorization publisher but never subscribe to it. We expect that Combine will run the publisher later when we subscribe to it using a *sink* or *assign*, but it runs immediately. The Combine framework provides us the *Deferred* publisher that prevents these situations.
 
 ```swift
 final class HealthService {
