@@ -48,7 +48,10 @@ final class HealthService {
     func authorize() -> AnyPublisher<Bool, Error> {
         Deferred {
             Future { handler in
-                self.store.requestAuthorization(toShare: [], read: []) { success, error in
+                self.store.requestAuthorization(
+                    toShare: [.workout], 
+                    read: [.hr]
+                ) { success, error in
                     if let error = error {
                         handler(.failure(error))
                     } else {
