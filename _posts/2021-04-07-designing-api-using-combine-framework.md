@@ -81,7 +81,7 @@ health
 > To learn more about the set of operators that the Combine framework provides us, take a look at my ["Catching errors in Combine"](/2020/04/22/catching-errors-in-combine/) post.
 
 #### PassthroughSubject
-*Future* publisher works excellent when you need to wrap the asynchronous task and deliver a single result. But what about the stream of values that we want to provide over time? We can't do that with *Future* because it finishes its work as soon as it delivers the first result. We can handle this case with *PassthroughSubject*.
+*Future* publisher works excellent when you need to wrap the asynchronous task and deliver a single result. But what about the stream of values that we want to provide over time? We can't do that with *Future* publisher because it finishes its work as soon as it delivers the first result. We can handle this case with *PassthroughSubject*.
 
 *PassthroughSubject* is a publisher that you can use to inject values into a stream by calling its *send* method. We will use *PassthroughSubject* to design the APIs that provide value through time. For example, it might be user location or user heart rate. These values appear over time.
 
