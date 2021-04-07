@@ -83,7 +83,7 @@ health
 #### PassthroughSubject
 *Future* publisher works excellent when you need to wrap the asynchronous task and deliver a single result. But what about the stream of values that we want to provide over time? We can't do that with *Future* publisher because it finishes its work as soon as it delivers the first result. We can handle this case with *PassthroughSubject*.
 
-*PassthroughSubject* is a publisher that you can use to inject values into a stream by calling its *send* method. We will use *PassthroughSubject* to design the APIs that provide value through time. For example, it might be user location or user heart rate. These values appear over time.
+*PassthroughSubject* is a publisher that you can use to inject values into a stream by calling its *send* method. We will use *PassthroughSubject* to design the APIs that provide values through time. For example, it might be user location or user heart rate. These values appear over time.
 
 ```swift
 final class HealthService1 {
@@ -102,7 +102,8 @@ final class HealthService1 {
                 subject.send(completion: .failure(error))
             } else {
                 let newSamples = newSamples as? [HKQuantitySample] ?? []
-                subject.send(newSamples.compactMap { $0.quantity.doubleValue(for: .bpm()) })
+                let hr = newSamples.compactMap { $0.quantity.doubleValue(for: .bpm()) }
+                subject.send(hr)
             }
         }
 
