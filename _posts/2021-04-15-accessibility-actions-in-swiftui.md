@@ -72,7 +72,7 @@ We use the *accessibilityAdjustableAction* modifier, which automatically adds th
 Whenever the user navigates to the *RatingView*, VoiceOver focuses on the *HStack* itself and pronounces the message: "rating, 3. Adjustable". Users can use swipe up and down gestures to change the value of the rating.
 
 #### Additional actions
-VoiceOver supports additional actions that we can provide to handle in our views. For example, there is a two-finger double-tap action called magic tap. Apple suggests us to use a magic tap for the main action in our views.
+VoiceOver supports additional actions which we can handle in our views. For example, there is a two-finger double-tap action called magic tap. Apple suggests us to use the magic tap for the main action in our view.
 
 There is two-finger scrub (move two fingers back and forth three times quickly, making a "z") action that users do to go back in the navigation or dismiss the alert. You can use handle this action in your view if it utilizes the custom navigation behavior.
 
