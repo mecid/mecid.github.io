@@ -10,7 +10,7 @@ SwiftUI provides us accessible views out of the box, and usually, you don't need
 {% include friends.html %}
 
 #### Adjustable action
-SwiftUI provides us a particular adjustable trait that VoiceOver uses to indicate the ability to adjust the view using swipes up or down. Assume that you work on the RatingView. RatingView has to present the current 5-star rating and should provide the opportunity to change the rating. Let's see how we can implement this view.
+SwiftUI provides us a particular adjustable trait that VoiceOver uses to indicate the ability to adjust the view using swipes up or down. Assume that you work on the *RatingView*. *RatingView* has to present the current 5-star rating and should provide the opportunity to change the rating. Let's see how we can implement this view.
 
 ```swift
 struct RatingView: View {
@@ -28,7 +28,7 @@ struct RatingView: View {
 }
 ```
 
-As you can see in the example above, the implementation of the RatingView is pretty straightforward. The RatingView changes the value of rating using binding whenever you press the particular button. But what about accessibility? How does VoiceOver work with the RatingView?
+As you can see in the example above, the implementation of the *RatingView* is pretty straightforward. The *RatingView* changes the value of rating using binding whenever you press the particular button. But what about accessibility? How does VoiceOver work with the *RatingView*?
 
 Buttons are accessible out of the box, and VoiceOver will focus on the first button and pronounce the message: "star fill". This is the default behavior, and it doesn't make sense in this case. Fortunately, SwiftUI provides us a few modifiers to customize the user experience here.
 
@@ -63,13 +63,13 @@ struct RatingView: View {
 }
 ```
 
-By default, the HStack works as a transparent accessibility container for its children and exposes children's information. We prevent the default behavior using accessibilityElement modifier that enables accessibility for HStack and ignores the children. We also provide the accessibility label and value.
+By default, the *HStack* works as a transparent accessibility container for its children and exposes children's information. We prevent the default behavior using *accessibilityElement* modifier that enables accessibility for *HStack* and ignores the children. We also provide the accessibility label and value.
 
 > To learn about the basics of accessibility in SwiftUI, take a look at my "Accessibility in SwiftUI" post.
 
-We also use the accessibilityAdjustableAction modifier, which automatically adds the adjustable trait. We also have to provide a closure that handles the action. The only parameter of the closure is the instance of the AccessibilityAdjustmentDirection enum.
+We also use the *accessibilityAdjustableAction* modifier, which automatically adds the adjustable trait. We also have to provide a closure that handles the action. The only parameter of the closure is the instance of the *AccessibilityAdjustmentDirection* enum.
 
-Whenever the user navigates to the RatingView, VoiceOver focuses on the HStack itself and pronounces the message: "rating, 3. Adjustable". Users can use swipe up and down gestures to change the value of the rating.
+Whenever the user navigates to the *RatingView*, VoiceOver focuses on the *HStack* itself and pronounces the message: "rating, 3. Adjustable". Users can use swipe up and down gestures to change the value of the rating.
 
 #### Additional actions
 VoiceOver supports additional actions that we can provide to handle in our views. For example, there is a two-finger double-tap action called magic tap. Apple suggests us to use a magic tap for the main action in our views.
