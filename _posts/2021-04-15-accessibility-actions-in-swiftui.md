@@ -7,6 +7,8 @@ image: /public/accessibility.jpeg
 
 SwiftUI provides us accessible views out of the box, and usually, you don't need to do anything to build an accessible app for your users. But there is always room for improvements and additional functionality that you can create using Accessibility API. This week we will learn how to provide custom accessibility actions for SwiftUI views.
 
+{% include friends.html %}
+
 #### Adjustable action
 SwiftUI provides us a particular adjustable trait that VoiceOver uses to indicate the ability to adjust the view using swipes up or down. Assume that you work on the RatingView. RatingView has to present the current 5-star rating and should provide the opportunity to change the rating. Let's see how we can implement this view.
 
