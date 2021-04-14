@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 We often underestimate the power of simple things. The same feelings I had during the first usage of *Label* view in SwiftUI. It looks straightforward, but it hides many use cases where it works great. Today we will talk about the *Label* view and its customization capabilities.
 
+{% include friends.html %}
+
 #### Basics
 *Label* is a standard component for user interface items, consisting of an icon with a title. One of the most common and recognizable user interface components is the combination of an icon and a label. Let's take a look at how easily we can use it in code.
 

@@ -6,6 +6,8 @@ category: Data Flow
 
 *Environment* is one of the unique features of SwiftUI which we didn't have before in *UIKit*. Today I would like to show you all the benefits of using *Environment* in your apps.
 
+{% include friends.html %}
+
 #### Environment
 Let's start with describing the idea of *Environment*. We already discussed it previously in ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/), but I want to start with basics. When you create and start your very first *View* in SwiftUI, the framework generates *Environment* for it. SwiftUI creates it automatically, and we don't need to do something.
 

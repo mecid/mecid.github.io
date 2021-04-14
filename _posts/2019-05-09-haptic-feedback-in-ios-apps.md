@@ -6,7 +6,9 @@ category: Interactions
 
 Feedback helps people know what an app is doing, discover what they can do next, and understand the results of actions. This week I am going to talk about the Haptic Feedback Engine which provided by Apple in most of the devices.
 
->On supported devices, haptics provide a way to physically engage users with tactile feedback that gets attention and reinforces actions. Some system-provided interface elements, such as pickers, switches, and sliders, automatically provide haptic feedback as users interact with them. Your app can also ask the system to generate different types of haptic feedback. iOS manages the strength and behavior of this feedback.
+{% include friends.html %}
+
+On supported devices, haptics provide a way to physically engage users with tactile feedback that gets attention and reinforces actions. Some system-provided interface elements, such as pickers, switches, and sliders, automatically provide haptic feedback as users interact with them. Your app can also ask the system to generate different types of haptic feedback. iOS manages the strength and behavior of this feedback.
 
 Another benefit of the feedback engine is Accessibility. It helps to understand the result of any action without actually watching the screen.
 

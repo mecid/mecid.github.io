@@ -6,6 +6,8 @@ category: Interactions
 
 SwiftUI brings declarative and straightforward approach in building User Interfaces. We have *List* and *Form* components and *Bindings*. All of these things make SwiftUI so easy to use and very powerful. But today we are going to talk about another feature of SwiftUI, and it is animations.
 
+{% include friends.html %}
+
 #### Animation
 You can smoothly animate any change in SwiftUI by wrapping it into *withAnimation* block. By default, SwiftUI uses fade in and fade out for animating changes. Let's take a look at a small example.
 

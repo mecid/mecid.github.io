@@ -7,6 +7,8 @@ image: /public/menu.png
 
 This week we got another Xcode Beta that brings menus into SwiftUI world. Menus are going to replace old action sheets that have been here since iOS 8. Action sheets don't play well with huge screens that we have nowadays. This week we will learn how to use menus to provide secondary actions or selection options in SwiftUI.
 
+{% include friends.html %}
+
 Appearance is the main problem of action sheets. An action sheet appears at the bottom of the screen and sometimes loses the context of the action. For example, you may press the button in the navigation bar that reveals the action sheet at the bottom of the screen. Another problem with action sheets is the space that it needs to display the action list. Action sheets cover the big part of the screen, even with a small set of options. 
 
 > To learn more about action sheets, take a look at my ["Alerts, Action Sheets, Modals and Popovers in SwiftUI"](/2019/07/24/alerts-actionsheets-modals-and-popovers-in-swiftui/) post.

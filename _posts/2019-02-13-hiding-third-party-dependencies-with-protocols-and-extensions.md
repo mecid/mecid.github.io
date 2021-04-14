@@ -6,6 +6,8 @@ category: Protocol-Oriented Programming
 
 There are plenty of discussions on the Internet about using third-party dependencies in your apps. The first part of developers suggest ignoring the usage of libraries and write all the code yourself. The second part recommends using third-party dependencies to speed up app development.
 
+{% include friends.html %}
+
 Sometimes it is better to use a well-tested library, rather than implementing it yourself. A good example here is Cryptography. Cryptography is hard, and it is effortless to make a mistake during the implementation of some common cryptography algorithms. It is an excellent example of a situation where we should use a third-party library.
 
 But here we can face another problem when the author of the library abandoned it or didn't update for the next Swift version. In this case, we have to replace this library with another one or implement our solution. It can be tough to remove the library if you use it across the codebase.

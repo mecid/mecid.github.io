@@ -7,6 +7,8 @@ category: Building custom views
 
 Last week we started a series of posts about developing interactive components using SwiftUI, where we talked about building the bottom sheet. We need to understand the power of *@ViewBuilder* before moving to the next post about building another interactive view. That's why this week, we will talk about *@ViewBuilder* and its benefits while developing custom views.
 
+{% include friends.html %}
+
 #### @FunctionBuilder
 *@ViewBuilder* is one of the possible function builders. The function builders feature of Swift is described in [Swift Evolution Proposal](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md). The main goal of function builders is providing *DSL* like syntax. Let's take a look at a very quick example of *@ViewBuilder* usage.
 

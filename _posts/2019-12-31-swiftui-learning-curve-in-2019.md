@@ -7,6 +7,8 @@ category: Meta
 
 This year we had a massive change in iOS development world. We got a SwiftUI framework. SwiftUI is a brand new declarative way of building apps for Apple ecosystem. Let's build our learning curve. I want to share with you the list of all the needed posts to learn SwiftUI.
 
+{% include friends.html %}
+
 #### Basics
 Apple did an excellent job this year by creating the SwiftUI [tutorials page](https://developer.apple.com/tutorials/swiftui/). I suggest starting with those tutorials to learn the basics of SwiftUI. 
 

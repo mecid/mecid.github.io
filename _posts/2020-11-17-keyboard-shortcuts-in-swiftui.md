@@ -7,9 +7,11 @@ image: /public/ipad.jpg
 
 This year Apple released the new App Lifecycle API for SwiftUI, which brings tons of new modifiers to replace *AppDelegate* callbacks. I have already covered most of them in previous posts. This week, we will discuss the new *keyboardShortcut* modifier, which allows us to assign a shortcut to any interacting view.
 
-> To learn more about new App Lifecycle API, take a look at ["Managing app in SwiftUI"](/2020/08/19/managing-app-in-swiftui/) post.
+{% include friends.html %}
 
 SwiftUI provides us the *keyboardShortcut* modifier that we can attach to any view in the view hierarchy and define a keyboard shortcut. Pressing the defined keyboard shortcut is the equivalent to direct interaction with the view to perform its primary action. Let's take a look at the example.
+
+> To learn more about new App Lifecycle API, take a look at ["Managing app in SwiftUI"](/2020/08/19/managing-app-in-swiftui/) post.
 
 ```swift
 import SwiftUI

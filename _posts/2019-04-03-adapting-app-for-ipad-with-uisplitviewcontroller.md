@@ -6,6 +6,8 @@ category: Interactions
 
 Apple promotes iPad as the primary computer for regular users. This trend is visible during the last couple of years. More and more users start to use iPad as the main device. I think it is essential to support iPad screens and efficiently use that space. This week we will talk about adapting apps for iPad with the help of UISplitViewController.
 
+{% include friends.html %}
+
 #### Adaptive presentation
 As a part of iOS 9 SDK, Apple released an adaptive "show" method on UIViewController. We have to use this method to present another UIViewController, here is a quote from Apple Documentation which describes how it works:
 

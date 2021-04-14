@@ -7,6 +7,8 @@ image: /public/redacted.jpeg
 
 One of my favorite features of SwiftUI is styling. I love the idea of style protocols provided by every view and sharing them using the environment. I have already covered most of the style protocols for SwiftUI provided views in my previous posts. But what about custom views? This week we will learn how to share styling using environment for our custom views.
 
+{% include friends.html %}
+
 #### Basics
 If you are not familiar with style protocols in SwiftUI, let me show you a rapid example of using them.
 

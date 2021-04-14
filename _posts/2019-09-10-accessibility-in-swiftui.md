@@ -6,6 +6,8 @@ category: Accessibility
 
 This week I want to talk to you about *Accessibility in SwiftUI*. SwiftUI provides a ready to use accessibility implementation for standard User Interface elements like *Text, Button, Toggle, etc*. In most of the cases, you don't need to do something additional to make it work. But I will show how you can modify the accessibility tree by using accessibility modifiers to improve your User Experience. 
 
+{% include friends.html %}
+
 #### Accessibility modifiers
 SwiftUI provides a bunch of accessibility modifiers for any view. By using accessibility modifiers, you can easily set label and value for a view, add accessibility traits and actions.
 

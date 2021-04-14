@@ -7,6 +7,8 @@ category: Data Flow
 
 Xcode comes with a bunch of tools you need to build, debug and release your apps. One of these tools is the Instruments app. The Instruments app is a great tool for profiling your iOS apps. It provides many profiling templates for debugging Core Data, catching memory leaks, disk read/writes, and much more. This week we will learn how to profile SwiftUI apps using the SwiftUI template.
 
+{% include friends.html %}
+
 Many developers profile apps only when they have some issues. That's why Instruments looks like the hidden gem of Xcode. I suggest you profile your apps on a weekly or bi-weekly basis. Profiling your app by making incremental changes is the best way to identify and fix small performance downgrades.
 
 ![instruments](/public/profile1.png)

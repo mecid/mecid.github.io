@@ -7,10 +7,12 @@ category: Data Flow
 
 WWDC20 brought a lot of new features into SwiftUI that I will discuss on my blog during the next weeks. Today I would like to start with the main additions to SwiftUI data flow with the brand new @*StateObject*, @*AppStorage*, @*SceneStorage*, and @*ScaledMetric* property wrappers.
 
-> If you are not familiar with the legacy property wrappers that SwiftUI provides, I suggest to start with my ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
+{% include friends.html %}
 
 #### StateObject
 As you remember, SwiftUI provides us the @*ObservedObject* property wrapper that allows us to observe the changes in the data model that lives outside of the SwiftUI framework. For example, it might be the data that you fetch from web service or the local database. The main concern about @*ObservedObject* was the lifecycle. You have to store it somewhere outside of SwiftUI to save it during view updates, for example, in *SceneDelegate* or *AppDelegate*. In other cases, you can lose the data backed by @*ObservedObject* in certain circumstances.
+
+> If you are not familiar with the legacy property wrappers that SwiftUI provides, I suggest to start with my ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
 Here is the brand new *StateObject* property wrapper that fills the most significant gap in SwiftUI data flow management. SwiftUI creates only one instance of the *StateObject* for each container instance that you declare and holds it in the internal framework memory that saves it during view updates. *StateObject* works in a very similar way to *State* property wrapper, but instead of value types, it is designed to work with reference types.
 

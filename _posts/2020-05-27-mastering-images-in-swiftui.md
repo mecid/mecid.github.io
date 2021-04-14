@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 This week I want to talk to you about another view component that we have in SwiftUI. Today we will deep dive into image view. Image view provides us a lot of nice features that we don't have in *UIImageView* like rendering mode, resizing options, interpolation, etc.
 
+{% include friends.html %}
+
 #### Basics
 As we usually do, let's start with the basics. I've put an image in my asset catalog to show you some examples.
 

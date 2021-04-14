@@ -7,6 +7,8 @@ image: /public/phantom.jpg
 
 Not every language with a static type system has so strong type-safety like Swift. Swift features like phantom types, generic type extensions, enums with associated types create an excellent foundation. This week we will learn how to use phantom types to build type-safe APIs.
 
+{% include friends.html %}
+
 #### Basics
 A phantom type is a generic type that is declared but never used inside a type where it is declared. It is usually used as a generic constraint to build a more type-safe and robust API. Let's take a look at the quick example.
 

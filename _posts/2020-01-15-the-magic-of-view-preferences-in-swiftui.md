@@ -7,6 +7,8 @@ category: Data Flow
 
 I took a one week break from SwiftUI topic when we were talking about [building networking in Swift using functions](/2020/01/08/building-networking-layer-using-functions/). It's time to go back to SwiftUI. This week we will talk about view preferences, which is another powerful concept of SwiftUI views that allows us to pass data through view hierarchy.
 
+{% include friends.html %}
+
 #### Preferences
 SwiftUI has the environment concept which we can use to pass data down into a view hierarchy. Parent views share its environment with child views and subscribe to the changes. But sometimes we need to pass data up from child view to the parent view, and this is where preferences shine. Let's take a look at the small example.
 

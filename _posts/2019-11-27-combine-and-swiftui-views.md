@@ -7,6 +7,8 @@ category: Data Flow
 
 *Combine* is one of the new frameworks released during WWDC 2019. It provides a declarative *Swift API* for processing values over time. Today we will talk about one of the hidden features of SwiftUI views, which is *onReceive* modifier. It allows views to subscribe and react as soon as the publisher emits the value.
 
+{% include friends.html %}
+
 #### Combine
 We didn't talk much about Combine on my blog, but I mainly use it for handling asynchronous work. Usually, we have a data layer that is responsible for all operations in the app, like fetching or saving, and this is the place where all asynchronous operations take place. To learn more about the modeling app state, please take a look at ["Redux-like state container in SwiftUI" post](/2019/09/18/redux-like-state-container-in-swiftui/).
 

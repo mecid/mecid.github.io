@@ -7,6 +7,8 @@ category: Layout
 
 This week I want to continue the topic of layout system in SwiftUI. The SwiftUI layout engine works predictably, and usually, an outcoming result looks like we expect. Today, to make this process even more apparent, we will talk about fitting and filling views in SwiftUI.
 
+{% include friends.html %}
+
 A few weeks ago, we will talk about layout priorities in SwiftUI. Let me refresh your memory by describing how the layout system works in SwiftUI. Usually, a parent view proposes the available space to its child and asks to calculate its size. Then the parent view places the child in the center of available space. Pretty easy, right?
 
 > To learn more about the SwiftUI layout engine, take a look at my "[Layout priorities in SwiftUI](/2020/04/15/layout-priorities-in-swiftui/)" post.

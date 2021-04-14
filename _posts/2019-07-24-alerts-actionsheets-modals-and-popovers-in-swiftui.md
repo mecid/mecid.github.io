@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with *Modals*, *Alerts*, *Action Sheets*, and *Popovers*. SwiftUI views have a dedicated modifiers for presenting this kind stuff. Let's take a look at how we can use modifiers to display *Modals*, *Alerts*, *Action Sheets*, and *Popovers*.
 
+{% include friends.html %}
+
 #### Alerts and Action Sheets
 Both *Alerts* and *Action Sheets* use the similar two ways of presenting it to the user. Let's start with a simpler one. We have to describe a *Boolean* binding which can be observed by SwiftUI, and as soon as *Boolean* is true, SwiftUI presents the *Action Sheet* or *Alert*.
 

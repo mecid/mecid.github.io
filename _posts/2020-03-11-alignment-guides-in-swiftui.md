@@ -7,6 +7,8 @@ category: Layout
 
 This week we will talk about another great tool that we have in SwiftUI. The alignment guide is a way that we can use to speak to SwiftUI's layout system. By using alignment guides, we can easily align views that live in different parts of a view hierarchy.
 
+{% include friends.html %}
+
 #### Basics
 SwiftUI provides us a few container views that we can use to build our layout. You might already be familiar with *VStack, HStack, and ZStack*. All of these container views use alignments to regulate the position of child views inside the container. Let's take a look at the very basic example.
 

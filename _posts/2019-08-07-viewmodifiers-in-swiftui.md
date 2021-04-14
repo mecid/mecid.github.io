@@ -6,6 +6,8 @@ category: View Composition
 
 *ViewModifiers* play a significant role in SwiftUI. Most of the functions called on a *View* are *ViewModifiers*. It is the primary way of modifying the view instance in SwiftUI. In this post, we will take a look at some ready to use *ViewModifiers*, and then we will build our own custom *ViewModifier*.
 
+{% include friends.html %}
+
 #### Custom ViewModifier
 Assume that we are working on Github repositories search app, and we need some *View* to display a single repository in the search results screen. Here we go.
 

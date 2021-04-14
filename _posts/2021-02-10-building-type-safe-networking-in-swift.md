@@ -7,6 +7,8 @@ category: Architecture
 
 More than half of the apps I built during my career had networking code. Usually, we build apps for web services. Today we will talk about building the type-safe networking layer using Swift language features like enums, phantom types, and extensions.
 
+{% include friends.html %}
+
 #### Basics
 Let's first take a look at the typical networking code and recognize the issues that we want to avoid in our solution.
 

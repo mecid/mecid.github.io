@@ -7,6 +7,8 @@ category: Building custom views
 
 This week I want to continue the series of posts about building custom interactive views in SwiftUI. Today we will create a pager view. *ScrollView* in SwiftUI support only scrolling content and doesn't have paging behavior. That's why we will build a pager view that supports paging mode.
 
+{% include friends.html %}
+
 Let's start by describing the *PagerView* and all the needed properties. First of all, we need the page count, binding to the currently visible page, and the content of pages.
 
 ```swift

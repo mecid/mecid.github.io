@@ -7,6 +7,8 @@ category: Interactions
 
 Animation is one of the powerful features of SwiftUI. I was shocked when I saw how easy we could animate changes in view hierarchy by simply mutating *@State* properties and attaching animation modifiers. This week we will talk about another animation type called hero animation. We will learn how we can implement hero animations using the new *matchedGeometryEffect* view modifier.
 
+{% include friends.html %}
+
 Assume that we are working on an app that shows a grid of images. You can select an image by tapping on it. On the bottom of the screen, we have another grid that shows only selected images. Let's start implementing this app example.
 
 ```swift

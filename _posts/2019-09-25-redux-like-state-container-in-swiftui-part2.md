@@ -7,6 +7,8 @@ image: /public/store.png
 
 Last week we talked about [building a state container similar to Redux in SwiftUI](/2019/09/18/redux-like-state-container-in-swiftui/). *Redux* provides a single source of truth, which eliminates tons of bugs produced by multiple states across the app. This week we will talk about best practices in building *Redux-based* apps which allows us to keep our codebase simple and clean.
 
+{% include friends.html %}
+
 #### State normalization
 *Redux* stores the whole app's state as a single source of truth. It allows us to keep our *User Interface* in sync with the app state. But to achieve this, we have to normalize our state. Let's take a look at the example.
 

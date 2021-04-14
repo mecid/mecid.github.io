@@ -7,6 +7,8 @@ image: /public/outlineGroup2.png
 
 This week we will talk about another excellent UI component called *OutlineGroup*. Apple released *OutlineGroup* during the WWDC20 side-by-side with other great things, including grids, menus, and toolbars. I already covered them in my previous posts. And finally, today is time to talk about *OutlineGroup* and *DisclosureGroup* that handles the expanding behavior.
 
+{% include friends.html %}
+
 #### OutlineGroup
 *OutlineGroup* is a view that enumerates tree-structured collection and renders its view representation recursively. It is a perfect solution to display recursive data like trees. Assume that you are working on the shopping app where you obtain a categories tree via API. Let's take a look at a straightforward tree implementation in Swift.
 

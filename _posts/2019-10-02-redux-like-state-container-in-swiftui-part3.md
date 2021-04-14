@@ -7,6 +7,8 @@ image: /public/store.png
 
 This week I want to continue the topic of using a *Redux-like state container in SwiftUI*. I'm delighted with the new approach and already finished the refactoring of the [NapBot app](https://napbot.swiftwithmajid.com) in this way. That's why today I want to share with you how I use *Container Views* with a state container similar to *Redux*.
 
+{% include friends.html %}
+
 In previous weeks we already discussed the basics and some good practices while using *Redux-like state containers*. If you are not familiar with *Redux*, please take a look at those posts to understand how to build it in SwiftUI and which benefits you get by using it.
 
 1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)

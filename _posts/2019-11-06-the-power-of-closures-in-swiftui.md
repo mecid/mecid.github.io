@@ -6,6 +6,8 @@ category: View Composition
 
 One of my favorite design patterns in *UIKit* development was a [*Delegate pattern*](/2019/05/29/the-power-of-delegate-design-pattern/). *Delegate pattern* is very straightforward, and everybody knows how to use it. In the *Functional Programming* world, we usually replace delegates with closures. This week we will learn how to use closures to make SwiftUI views composable and decoupled.
 
+{% include friends.html %}
+
 #### Passing closures to child views
 I usually build my app screen by implementing one container view which handles all the data-flow related to the screen and a couple of rendering views, which simply represent passed data and propagate user actions to the container view. Let's take a look at an example.
 

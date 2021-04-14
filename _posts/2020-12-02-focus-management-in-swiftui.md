@@ -7,6 +7,8 @@ image: /public/tabs.png
 
 WWDC 20 brings us tons of new SwiftUI APIs, which we can use to improve our apps user experience without using UIKit. One of these new APIs was the focus management API that we can use on iOS, macOS, tvOS, and watchOS. This week we will talk about SwiftUI functionality that allows us to manage the focus in our apps.
 
+{% include friends.html %}
+
 #### Basics
 Focus indicates the act of selecting an element of a graphical user interface. On Apple TV, people use the remote to interact indirectly with onscreen elements. This interaction is based on a focus model. By pressing buttons and using gestures on the remote, people move the focus from element to element, stop on a specific one, and click to access content or initiate action.
 

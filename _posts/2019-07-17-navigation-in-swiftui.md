@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 This week I want to talk about *Navigation in SwiftUI*. SwiftUI provides both declarative and imperative ways of implementing navigation in your apps. Today we will cover two ways of *Master-Detail* navigation available in SwiftUI. We will learn how use *NavigationLink*, and how to do programmatic navigation in SwiftUI.
 
+{% include friends.html %}
+
 #### Master-Detail flow
 Assume that you are working on app which shows a list of some items and you want to move to details screen as soon as the user selects any item. For this type of navigation, SwiftUI provides *NavigationView* and *NavigationLink* components. Let's check how we can use them.
 

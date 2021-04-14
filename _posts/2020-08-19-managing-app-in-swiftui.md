@@ -7,6 +7,8 @@ category: Data Flow
 
 One of the most important things that Apple did release this year was the native app and scene management for SwiftUI apps. This week we will understand how to manage our apps using *App* protocol without old *AppDelegate*. We will learn how to achieve the same set of features with *App* protocol.
 
+{% include friends.html %}
+
 #### Entry point
 [SE-0281](https://github.com/apple/swift-evolution/blob/master/proposals/0281-main-attribute.md) introduced type-based program entry points for Swift language. This proposal provides us *@main* attribute that allows us to mark the app's entry point. Swift compiler will recognize this entry point and launch it by running the static main function. Let's take a look at the smallest "Hello World" app example.
 

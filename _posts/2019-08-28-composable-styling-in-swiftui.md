@@ -6,6 +6,8 @@ category: View Composition
 
 This week I want to talk about the styling of views in SwiftUI. SwiftUI provides a pretty composable architecture for building your apps. Every screen in terms of SwiftUI is a function on some data which returns a view. So let's talk today about composable and highly reusable styling options which we have in SwiftUI.
 
+{% include friends.html %}
+
 #### Branding
 Whenever I begin a project, I start with defining my brand color for my User Interface. I use brand color as a tint for my buttons, switches, slider, etc. We can easily set the tint color on every view in the app by using *accentColor* modifier on the root view. Here is a quick example. 
 

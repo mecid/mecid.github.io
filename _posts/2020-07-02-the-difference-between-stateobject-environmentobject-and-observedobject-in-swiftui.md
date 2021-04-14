@@ -7,6 +7,8 @@ category: Data Flow
 
 This week I decided to share as much as I can about data flow in SwiftUI. In this post, we will discuss the difference between @*StateObject*, @*EnvironmentObject*, and @*ObservedObject* property wrappers. I know that this is the most confusing topic in SwiftUI for newcomers.
 
+{% include friends.html %}
+
 #### Why SwiftUI does need property wrappers?
 SwiftUI uses immutable struct types to describe the view hierarchy. All the views that SwiftUI provides are immutable. That's why SwiftUI gives us a bunch of property wrappers to handle data mutations. Property wrappers allow us to declare them inside SwiftUI views but store the data outside of the view declaring it.
 

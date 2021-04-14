@@ -6,6 +6,8 @@ category: Interactions
 
 SwiftUI has a powerful and easy to use approach in building *Gestures*. Today we will talk about how we can use gestures in SwiftUI. We will touch special *GestureState Property Wrapper* which is very similar to *State* but works only with gestures. Finally, we will build swipeable Tinder cards as a sample project.
 
+{% include friends.html %}
+
 #### Gesture modifier
 SwiftUI provides a bunch of ready to use gestures like *TapGesture, DragGesture, RotationGesture, MagnificationGesture, LongPressGesture*. You can use them by attaching gesture modifier to any view. Let's take a look at a code sample. 
 

@@ -7,6 +7,8 @@ image: /public/map1.png
 
 This year we saw that Apple started using SwiftUI across macOS and iOS to build notification center and widgets. Another great addition was a SwiftUI integration for frameworks that Apple provides us like MapKit and AVKit. This week we will talk about *Map* view that SwiftUI provides us as soon as you import both MapKit and SwiftUI.
 
+{% include friends.html %}
+
 #### Basics
 As you might remember, I already covered using *MKMapView* in SwiftUI by using the *UIViewRepresentable* protocol. This protocol easily allows us to wrap *UIView* and use it in SwiftUI. You don't need to do it anymore, starting iOS 14, macOS 11, tvOS 14, and watchOS 7 SwiftUI provides us *Map* view. Let's take a look at how easily we can use it.
 

@@ -7,6 +7,8 @@ category: Interactions
 
 Another *iPadOS* feature released in SwiftUI with Xcode 11.4 was the drag and drop. Finally, we can use drag and drop API not only with *UIKit* but also with SwiftUI. This week we will learn all about drag and drop interactions in SwiftUI. 
 
+{% include friends.html %}
+
 #### Basics
 Drag and drop interactions allow users to send data between two apps or two scenes of the same app. For example, you can run Safari and Notes apps side-by-side and drag the links from Safari to Notes app. As part of the post, we will build a bookmarking app that uses drag and drop to save or open links stored in the app.
 

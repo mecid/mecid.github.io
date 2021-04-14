@@ -7,6 +7,8 @@ category: Meta
 
 I have been waiting for this day for the last nine months, and it has finally arrived. We saw the next iteration of the SwiftUI framework. Apple did a great job during the last year by improving SwiftUI and moving it towards by making it a standalone way for building apps for the Apple ecosystem. Today we will take a peek at all-new SwiftUI features.
 
+{% include friends.html %}
+
 #### App structure
 Apple provides a brand new way of defining the app's entry point by using the *App* protocol. *App* protocol allows us to easily replace the *AppDelegate* and *SceneDelegate* with a single struct that will manage our scenes and app lifecycle. Let's take a look at a very quick example.
 

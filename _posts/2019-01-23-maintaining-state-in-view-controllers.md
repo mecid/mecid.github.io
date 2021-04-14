@@ -6,6 +6,8 @@ category: Architecture
 
 Last week we talked about [extracting reusable code samples from view controllers into protocols and protocol extensions](/2019/01/17/using-protocols-as-composable-extensions/). Today I want to show you another nice use case of protocols while maintaining the state of view controllers. 
 
+{% include friends.html %}
+
 Assume that we have a screen for presenting the list of user watched shows — our app downloads it from the web service like Trakt. We can describe the state of view controller within three variables:
 
 ```swift

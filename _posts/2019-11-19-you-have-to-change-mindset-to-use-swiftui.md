@@ -6,6 +6,8 @@ category: View Composition
 
 Last week I saw that the community tries to move *UIKit* development patterns to SwiftUI. But I'm sure that the best way to write efficient SwiftUI is to forget everything about *UIKit* and entirely change your mindset in terms of User Interface development. This week we will learn the main differences between *UIKit* and SwiftUI development.
 
+{% include friends.html %}
+
 #### Diffing
 *UIKit* is an imperative event-driven framework for building User Interfaces for iOS platform. It means you have to handle all the state changes during events like view loaded, button pressed, etc. The big downside of this approach is the complexity of keeping in sync User Interface with its state. As soon as state changes, you need to manually add/remove/show/hide the views and keep it in sync with the current state. 
 

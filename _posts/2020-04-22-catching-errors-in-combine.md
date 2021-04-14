@@ -7,6 +7,8 @@ category: Architecture
 
 The Combine framework provides a declarative *Swift API* for processing values over time. It is another excellent framework that released side-by-side with SwiftUI. I already covered it multiple times on my blog, but today I want to talk about one of the key aspects of data processing. Today we will learn how to handle errors during data processing using the Combine framework.
 
+{% include friends.html %}
+
 #### The lifecycle of publisher
 We use publishers to emit values over time. In the end, the publisher can finish its work by sending the completion event or fail with an error. Neither after completion nor after failure, the publisher can not emit new values. Let's take a look at the typical use-case that we might have in our apps.
 

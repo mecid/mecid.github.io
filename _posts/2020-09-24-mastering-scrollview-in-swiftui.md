@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 We had the scroll view from the very first version of SwiftUI. It was quite limited. But this year changed everything when Apple released *ScrollViewReader* during WWDC 20. This week we will learn all about scroll views in SwiftUI. We will learn how to scroll to the particular position and read the current offset of scroll view content.
 
+{% include friends.html %}
+
 #### Basics
 The usage of a scroll view is pretty simple. You create a scroll view and pass the content inside a *ViewBuilder* closure. Let's take a look at the first example.
 

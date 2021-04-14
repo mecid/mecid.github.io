@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 SwiftUI provides us several exciting ways to change the shape of our views. It allows clipping, masking, and a few other operations on the shape of views. This week I want to talk to you about altering view's shape in SwiftUI.
 
+{% include friends.html %}
+
 #### Clipping
 Sometimes we use the frame modifier to limit the size of our view. It might be useful when you want to set the size to the image that should be scaled. In case when the scaled image bigger than the provided frame, it can exceed it and overlap other views. To fix this issue, SwiftUI allows us to clip the content of the view to its frame. Let's take a look at a quick example.
 

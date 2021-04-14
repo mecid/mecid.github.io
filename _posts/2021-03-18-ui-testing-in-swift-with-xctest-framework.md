@@ -7,6 +7,8 @@ image: /public/ui.png
 
 I'm not going to talk about the importance of testing in general, but I want to talk about UI testing. One obvious benefit of UI testing over Unit Testing is the opportunity to write UI tests even when you have a smelling and deeply coupled codebase. This week we will learn how to write UI tests both for SwiftUI and UIKit-based projects.
 
+{% include friends.html %}
+
 #### Basics
 UI test is a programmatic way to verify that the particular user flow works correctly in your app. For example, you can write a UI test to mimic user behavior while adding a product to the shopping cart and checkout. 
 

@@ -7,6 +7,8 @@ category: Layout
 
 Today we will continue mastering view preferences in SwiftUI that we touched a few weeks ago. Anchor preferences are another type of view preferences provided by SwiftUI. The main goal of anchor preferences is to pass layout data like bounds, center coordinates, etc. to its parent view.
 
+{% include friends.html %}
+
 #### Basics
 First of all, I want to ask you to check the post about view preferences if you are not familiar with these API. Anchor preferences use a very similar API. The only difference is that it is tuned to pass layout-specific data.
 

@@ -7,6 +7,8 @@ category: Interactions
 
 I have already talked about animations in SwiftUI many times on this blog. But still didn't cover all the opportunities in terms of animation. Today I want to fill another gap and talk to you about the *AnimatableModifier* protocol that opens new horizons for animations.
 
+{% include friends.html %}
+
 We use many modifiers to build a view in SwiftUI like *frame*, *foregroundColor*, *padding*, *background*, etc. The main goal of a modifier is adding some logic to create a slightly modified view.
 
 > To learn more about modifiers, take a look at my ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/) post.

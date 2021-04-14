@@ -7,6 +7,8 @@ category: Meta
 
 We already started collecting our questions for Apple engineers. On the other hand, I decided to share with you my SwiftUI wishlist for WWDC20. This week we will talk about possible additions and changes in SwiftUI. I will show you also *API* that I expect to see during the next release of SwiftUI.
 
+{% include friends.html %}
+
 #### ScrollView
 *ScrollView* has a bunch of bugs right now. I believe Apple will fix all of them, but I also hope for a content offset binding option. There is no way to get or set the current content offset of *ScrollView* in SwiftUI. We need a way to both assign and read the offset, and it is a perfect use-case for a *Binding*. Let's take a look at the quick example.
 

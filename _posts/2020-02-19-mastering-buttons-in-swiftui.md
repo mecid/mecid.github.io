@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 *Button* is one of the regularly used components in SwiftUI. We use buttons to allow users to produce actions. That's why it is so essential to generalize the look and feel of buttons in our apps. This week we will master buttons in SwiftUI. We will learn how to customize the look and feel of our buttons.
 
+{% include friends.html %}
+
 #### Basic usage
 Let's start by presenting a simple button that prints something in the console whenever the user presses it.
 

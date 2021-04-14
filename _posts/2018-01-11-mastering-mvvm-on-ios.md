@@ -7,6 +7,8 @@ category: Architecture
 There are a plenty of posts on the internet about app architectures in the iOS development world. Today I will show some tips for using MVVM architecture while developing iOS apps. I am not going to show other architectures if you need them there is a great [post](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52).
 The main problem of Apple MVC is mixed responsibility, which leads to the appearance of some kinds of problems such as Massive-View-Controller.
 
+{% include friends.html %}
+
 #### Why MVVM?
 We should accept that *UIViewController* is the main component in Apple’s iOS SDK and all the actions are started and built across this entity. Despite the name, it is more view than a classic Controller (or Presenter) from MVC(or MVP), because of callbacks like *viewDidLoad*, *viewWillLayoutSubviews*, and other view related methods. That is the reason why we should ignore the **controller** keyword in the name and use it as View, where the role of real controller takes the view model.
 

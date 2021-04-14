@@ -6,6 +6,8 @@ category: Accessibility
 
 This week I want to talk to you about Dynamic Type support in SwiftUI. I think there is no way to create an excellent user experience without Dynamic Type support in your apps. SwiftUI provides Dynamic Type out of the box for any text representation and simplifies our job. But we still need to do some work, so let's talk about it.
 
+{% include friends.html %}
+
 #### Dynamic Type basics
 The Dynamic Type feature allows users to choose the size of textual content displayed on the screen. It helps users who need larger text for better readability. It also accommodates those who can read a smaller text, allowing more information to appear on the screen. Apps that support *Dynamic Type also* provide a more consistent reading experience.
 

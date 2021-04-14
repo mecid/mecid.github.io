@@ -6,6 +6,8 @@ category: Data Flow
 
 Last week we talked about ["Animations and Transitions in SwiftUI"](/2019/06/26/animations-in-swiftui/). But it's time to touch the crucial aspect of every app, and it is *Data Flow*. All the apps have data to present or mutate. Data plays a vital role in apps using SwiftUI. Every view in SwiftUI is just a function of some state, where the state is our data.
 
+{% include friends.html %}
+
 #### Fetching data from local/remote storage
 Today we will build a small app which uses core SwiftUI concepts like *Binding* and *ObservableObject*. Assume that you work on the app, which has two primary responsibilities:
 

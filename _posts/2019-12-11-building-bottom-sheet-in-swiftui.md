@@ -7,7 +7,7 @@ category: Building custom views
 
 This week I want to start a series of posts about building interactive view components that Apple heavily uses in its apps but doesn't include them into the SDK. Let's begin with the bottom sheet. I think everybody used Apple Maps, Shortcut or Apple Music apps. There is a draggable sheet at the bottom of the screen. It looks like bottom sheet is going to be a must-use component, so let's try to implement it in SwiftUI.
 
-![apple-maps](/public/apple-maps.png)
+{% include friends.html %}
 
 Usually, when I deal with interactive components, I start with implementing the component in different states. After that, we can add the gesture which manipulates the state of the component. In our case, we deal with the bottom sheet. It has two different states: *open* and *closed*. Let's start by describing our view and all the needed properties which should be passed by the parent view.
 

@@ -6,6 +6,8 @@ category: Data Flow
 
 Last week we started a new series of [posts](/2019/06/05/swiftui-making-real-world-app) about SwiftUI framework. Today I want to continue this topic by covering *Property Wrappers* provided by SwiftUI. SwiftUI gives us *@State*, *@Binding*, *@ObservedObject*, *@EnvironmentObject*, and *@Environment* *Property Wrappers*. So let's try to understand the differences between them and when and why which one we have to use.
 
+{% include friends.html %}
+
 #### Property Wrappers
 *Property Wrappers* feature described in [SE-0258](https://github.com/DougGregor/swift-evolution/blob/property-wrappers/proposals/0258-property-wrappers.md) proposal. The main goal here is wrapping properties with logic which can be extracted into the separated struct to reuse it across the codebase.
 

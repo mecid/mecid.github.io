@@ -7,6 +7,8 @@ category: Architecture
 
 Combine framework provides a declarative Swift API for processing values over time. It allows you to chain, transform and reduce multiple operations. This week we will learn how to design our APIs using the Combine framework to leverage all the data processing power that the framework provides us.
 
+{% include friends.html %}
+
 #### Future and Deferred publishers
 The easiest way to integrate your asynchronous API with the Combine framework is to use *Future* publisher. All you need to do is provide closure that calls the completion handler whenever it finishes the job. Let's take a look at the simple example.
 

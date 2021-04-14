@@ -7,6 +7,8 @@ category: Architecture
 
 This week I want to talk about building a networking layer in Swift using *Functional programming*. *Functional programming* is a way of making programs using *pure functions and function composition*. Let's see how we can use it to build a flexible and composable network layer.
 
+{% include friends.html %}
+
 Usually, Swift developers use the *Protocol-Oriented* style of programming to build any abstractions like the networking layer. In most of the cases, protocols generate more boilerplate than needed. Let's instead model our networking layer using a pure function and function composition. 
 
 #### Pure functions

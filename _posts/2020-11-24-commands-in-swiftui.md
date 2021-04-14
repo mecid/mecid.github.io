@@ -7,6 +7,8 @@ image: /public/ipad.jpg
 
 This week we will talk about another new API that Apple released this year during WWDC 20. Replacing *AppDelegate* with the new SwiftUI App Lifecycle brings us tons of new APIs that we can use to replace old functionality with a brand new declarative API. One of those APIs is commands, which we will cover today.
 
+{% include friends.html %}
+
 Commands are realized in different ways on different platforms. The main menu uses the available command menus and groups to organize its main menu items on macOS. Each menu is represented as a top-level menu bar menu. Each command group has a corresponding set of menu items in one of the top-level menus, delimited by separator menu items.
 
 On iPadOS, commands with keyboard shortcuts are exposed in the shortcut discoverability HUD that users see when they hold down the Command key.

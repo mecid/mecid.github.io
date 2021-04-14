@@ -6,6 +6,8 @@ category: Accessibility
 
 This week I want to talk about another crucial feature of any app, which is *Localization*. Every user expects that your app correctly uses environment features like the right-to-left layout or uses system locale to format dates or currencies. Another vital thing here is translations, and this week, we will learn which tools SwiftUI provides to add in our apps as many languages as we can.
 
+{% include friends.html %}
+
 #### LocalizedStringKey
 *LocalizedStringKey* is a special struct which is provided by the SwiftUI framework. It conforms *ExpressibleByStringLiteral* protocol, which allows us to create this struct by using a *String* value. *Text* component, on the other hand, has an overload that accepts *LocalizedStringKey* instead of *String*. It allows us to use our localization keys in a very transparent way. Let's take a look at a quick example. 
 

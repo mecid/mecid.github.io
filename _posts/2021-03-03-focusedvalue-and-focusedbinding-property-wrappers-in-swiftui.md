@@ -7,10 +7,12 @@ category: Data Flow
 
 The last year Apple has done a great job in terms of focus management in SwiftUI. We got a few new modifiers to set up an entry point for the focus system and programmatically handle focus changes. We still have some gaps, and I hope Apple will fill them during WWDC21. This week I want to talk about *FocusedValue* and *FocusedBinding* property wrappers.
 
-> To learn more about the basics of focus management in SwiftUI, take a look at my dedicated [post](/2020/12/02/focus-management-in-swiftui/).
+{% include friends.html %}
 
 #### FocusedValue
 *FocusedValue* property wrapper allows us to observe the value from the focused view or one of its ancestors. It works in a very similar way to the *Environment* property wrapper, but instead of observing the environment, it observes the view hierarchy's focused view.
+
+> To learn more about the basics of focus management in SwiftUI, take a look at my dedicated [post](/2020/12/02/focus-management-in-swiftui/).
 
 To start using this feature, you should first create a struct that conforms to *FocusedValueKey* to define the type of value you want to observe. Assume that we are working on the note-taking app, and we want to monitor the content of the focused note editor. Let's try to implement this.
 

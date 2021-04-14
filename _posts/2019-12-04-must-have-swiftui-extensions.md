@@ -7,6 +7,8 @@ category: View Composition
 
 Currently, I have three ongoing SwiftUI projects. During my work on these projects, I find myself in copying some extension files, which are very helpful in any SwiftUI based project.  That's why I decide to share with you that small foundation of useful extensions.
 
+{% include friends.html %}
+
 #### AnyView
 *AnyView* is a type-erased view. It allows us to hide the real type of view inside the erased box. Usually, we might use it whenever we want to return different types of views. Let's take a look at a quick example.
 

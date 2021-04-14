@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 ---
 This week I want to talk to you about a *TextField* component in SwiftUI.  It might look like an elementary tutorial, but *TextField* has pretty exciting features like out of the box formatting that we don't have in *UIKit*. But let's start with the basics of the *TextField* component.
 
+{% include friends.html %}
+
 #### Basics
 As you might know, we can use *TextField* for user input. All we need to do is to create a *TextField* and assign it to any *Binding* of a *String* value. Let's take a look at a very quick example.
 

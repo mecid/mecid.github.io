@@ -7,6 +7,8 @@ category: Interactions
 
 *WWDC20* is already around the corner, and we are waiting for massive changes and additions to the SwiftUI framework. It is a perfect week to wrap up the season with a post about one of the strongest sides of the SwiftUI framework, which is *animation*. Today we will learn how to build complex animations by using *VectorArithmetic* protocol.
 
+{% include friends.html %}
+
 #### Basics
 Let's start with the basics. Usually, we attach the animation modifier to a view and change some state variables. SwiftUI docs say that animation modifier applies the given animation to all **animatable** values within this view. Here is a small example that animates the button on every tap.
 

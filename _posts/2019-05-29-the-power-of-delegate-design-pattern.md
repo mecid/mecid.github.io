@@ -6,7 +6,9 @@ category: Swift Language Features
 
 Last week before WWDC and everybody so excited about new features which we will have just in a few days. However, let's keep posts related to WWDC for next week. This week we are going to talk about my favorite design pattern *Delegate*. *Delegate* is the most straightforward and powerful pattern.
 
->In software engineering, the delegation pattern is an object-oriented design pattern that allows object composition to achieve the same code reuse as an inheritance. In delegation, an object handles a request by delegating to a second object (the delegate). A delegate is a helper object, but with the original context. 
+{% include friends.html %}
+
+In software engineering, the delegation pattern is an object-oriented design pattern that allows object composition to achieve the same code reuse as an inheritance. In delegation, an object handles a request by delegating to a second object (the delegate). A delegate is a helper object, but with the original context. 
 
 #### Protocols
 We use *Delegate* pattern every day, and iOS SDK uses it in many places. For example, *UITableView* delegates to *UITableViewDataSource* populating the table with cells, it also delegates cell selection and other actions to *UITableViewDelegate*. Another excellent example of delegate patters is *FlowController* or *Coordinators*. *ViewControllers* delegates navigation logic to *Coordinator*. I have separated post about [extracting navigation logic into FlowControllers](/2019/02/20/navigation-with-flow-controllers).

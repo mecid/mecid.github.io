@@ -7,6 +7,8 @@ image: /public/debug-preview.jpeg
 
 This week, I want to talk about one of the most powerful Xcode features, SwiftUI previews. SwiftUI previews allow you to look at your SwiftUI views inside Xcode without running the app in the simulator. You can also preview UIKit views and controllers by wrapping them in SwiftUI. Today we will learn about all the powerful features of previews in Xcode.
 
+{% include friends.html %}
+
 #### Basics
 Xcode monitors your Swift files, and as soon as your Swift file contains the struct that conforms to *PreviewProvider* protocol, it shows you the preview canvas. Let's take a look at the example.
 

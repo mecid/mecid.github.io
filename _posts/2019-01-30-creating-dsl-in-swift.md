@@ -6,6 +6,8 @@ category: Swift Language Features
 
 This week we will talk about creating DSL in Swift. Let's start with the understanding of DSL acronym. Domain Specific Language is a language hosted by parent language to solve any specific area. An excellent example of DSL can be HTML which is DSL for creating web page markup.
 
+{% include friends.html %}
+
 There are some requirements for a language in which you want to create DSL. A host language should have first-class functions, trailing closures and operator overloading to make DSL possible. The great news is that Swift has all of these features.
 
 We are going to simplify User Interface development on iOS by creating UIKit specific DSL. We have two ways of building UI in iOS. The first one is by using Interface Builder, and the second one is via code. Both of them have pros and cons. For instance, building UI by Interface Builder is a high-speed and visual process, but you have to deal with a problematic code review process, because of the format of Xibs and Storyboards. In case of building your UI by code, you get the reusability and clean code review process, but you deal with the imperative and error-prone codebase, without a visual understanding of view hierarchy.

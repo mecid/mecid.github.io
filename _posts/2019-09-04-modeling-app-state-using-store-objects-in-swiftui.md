@@ -7,6 +7,8 @@ image: /public/store.png
 
 This week I want to talk to you about modeling data layer in SwiftUI. I already finished work on my very first app, which I build entirely with SwiftUI. And now I can share with you the way of architecting model layer using store objects which I used during the development of *NapBot*.
 
+{% include friends.html %}
+
 #### Store object
 Store objects responsible for storing the state and providing actions to mutate that state. You can have as many store objects as you need to keep them simple and responsible for a small part of your app state. For example, you may have *SettingsStore* to keep a state of user-defined settings and *TodoStore* to keep user tasks. 
 

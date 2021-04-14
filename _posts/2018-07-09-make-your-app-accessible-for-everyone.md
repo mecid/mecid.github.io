@@ -6,6 +6,8 @@ category: Accessibility
 
 Last few months I was working on implementing Accessibility support for my app. During this years WWDC I’ve visited all Accessibility related sessions and Labs to improve my knowledge and catch some best practices from Apple Engineers. So now I’m finished my work and finally ready to share with you story of my Accessibility way.
 
+{% include friends.html %}
+
 First of all, I would like to mention that Apple had done a great job with Accessibility framework. Most of the things handled by the system without our action. All the UIKit controls have Accessibility support out of the box. *UIButton, UILabel, UISegmentedControl, UISwitch,* etc. are ready to be used by assistive technologies like VoiceOver, Switch Control, etc. If you’re not familiar with VoiceOver technology, I suggest watching this [talk](https://developer.apple.com/videos/play/wwdc2018/226/) from last WWDC event.
 
 Let’s check out my app called [CardioBot](https://cardiobot.swiftwithmajid.com). It is Heart Rate analyzer for iOS and watchOS. CardioBot has a massive amount of data presented in charts and other visual ways, which are custom views and don’t support Accessibility out of the box. Good news is that it is easy to add Accessibility support to our custom views.

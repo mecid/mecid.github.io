@@ -7,11 +7,11 @@ category: Mastering SwiftUI views
 
 We already covered master-detail navigation in SwiftUI on my blog. But today, I want to talk about the new three-column navigation that landed this year into iOS and macOS worlds. We will learn how to build a sidebar navigation flow by using *NavigationView* in SwiftUI.
 
-![sidebar](/public/sidebar.png)
+{% include friends.html %}
 
 A sidebar provides app-level navigation and quick access to top-level collections of content in your app. Selecting an item in the sidebar allows people to navigate to a specific piece of content. For example, the sidebar in Mail shows a list of all mailboxes. People can select a mailbox to access its list of messages, and select a specific message to display in the content pane.
 
-> To learn about building navigation using *NavigationView* and *NavigationLink*, take a look at my ["Navigation in SwiftUI"](/2019/07/17/navigation-in-swiftui/) post.
+![sidebar](/public/sidebar.png)
 
 Let's build a prototype of a mail app that uses three-column navigation. SwiftUI provides *NavigationView* that allows us to create a master-detail flow. You can put up to three children inside a *NavigationView*. In this case, SwiftUI will place views side-by-side. But let's start with declaring our data model. 
 
@@ -33,6 +33,8 @@ final class MailStore: ObservableObject {
     ]
 }
 ```
+
+> To learn about building navigation using *NavigationView* and *NavigationLink*, take a look at my ["Navigation in SwiftUI"](/2019/07/17/navigation-in-swiftui/) post.
 
 In the listing above, we create a simple mail store that we will use as a datastore for our prototype. Now let's move forward by implementing the first column of our navigation flow.
 

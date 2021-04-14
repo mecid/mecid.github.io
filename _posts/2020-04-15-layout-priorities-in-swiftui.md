@@ -6,6 +6,8 @@ category: Layout
 ---
 This week we will talk about another core process in SwiftUI. We will learn the procedure of laying out views. We will understand how SwiftUI calculates positions and sizes of our views and how we can change that process using layout priorities.
 
+{% include friends.html %}
+
 #### Basics
 You can build regular views without real knowledge of the layout process. SwiftUI has a declarative nature where you have to describe what you want to achieve, and SwiftUI will understand it. Let's start our discussion with the simple example of a "Hello World" app in SwiftUI.
 

@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 Toolbar API is another excellent addition to SwiftUI this year. Usually, we use toolbars to provide available actions. Did you remember the case where you have a button outside of the navigation bar or bottom bar? This week we will learn all about the new Toolbar API.
 
+{% include friends.html %}
+
 In the previous version of SwiftUI, we could place buttons in the navigation bar by using *navigationBarItems* modifier. Let's take a quick look at how it works.
 
 ```swift

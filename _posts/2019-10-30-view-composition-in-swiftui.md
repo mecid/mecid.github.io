@@ -6,6 +6,8 @@ category: View Composition
 
 SwiftUI is a declarative framework for building User Interfaces on Apple platforms. The keyword here is **declarative**.  Declarative means that you need to declare what you want to achieve, and the framework takes care of it. Framework knows the best way to render the User Interface, which you declare.
 
+{% include friends.html %}
+
 #### View decomposition
 Containers in SwiftUI has a nasty limitation for the count of children. It is limited to **ten** items. This restriction can sound ugly, but I think it is awesome. Let's accept it as a rule. Whenever you reach this limitation, decompose your view into several views. Don't be afraid to extract your complex views into small pieces and then compose them into a large view. 
 

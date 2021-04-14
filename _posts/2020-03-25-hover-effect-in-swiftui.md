@@ -6,6 +6,8 @@ category: Interactions
 ---
 Last week Apple updated iPad Pro and added trackpad support to iPadOS. We finally have Xcode 11.4, which introduces the *onHover* and *hoverEffect* modifiers to help us utilize trackpad and mouse support in SwiftUI. This week we will learn how to be a good iOS citizen and add support for the trackpad to our SwiftUI views.
 
+{% include friends.html %}
+
 #### hoverEffect modifier
 SwiftUI provides us the *hoverEffect* modifier that we can attach to any view. This modifier enables the transformation of trackpad or mouse pointer into the covering view shape. It is tough to explain this transformation and better to see. Let's run the example on an iPad simulator.
 

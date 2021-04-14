@@ -6,6 +6,8 @@ category: Swift Language Features
 
 [In one of my previous posts, we talked about the Pattern Matching feature of Swift language](/2019/02/06/pattern-matching-with-case-let). We discussed how we could use "case let" keyword in our daily development to find patterns in Enums, Turples, and Optionals. But today we are going to talk about particular Pattern Matching operator which hides all of this magic behind it.
 
+{% include friends.html %}
+
 Pattern Matching is the act of checking a given sequence of tokens for the presence of the constituents of some pattern. Let's take a look at a simple string matching operation.
 
 ```swift

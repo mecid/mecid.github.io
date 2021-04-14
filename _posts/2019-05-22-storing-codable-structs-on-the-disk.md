@@ -6,6 +6,8 @@ category: Protocol-Oriented Programming
 
 Most of our apps are REST clients for some backends. During the development of this kind of apps, we want to keep it working offline. In this case, we have to cache data somewhere locally on the device to make it readable without an internet connection. 
 
+{% include friends.html %}
+
 Apple provides a CoreData framework, which is the best way to store your app data locally. It has a lot of excellent features which help you to boost development. However, it is tough to use it as a simple cache. Most of the time, we just need to display cached data without any additional manipulations. In my opinion, all we need is pure disk storage. This week we will discuss how easily we can implement straightforward disk store for our Codable structs.
 
 Let's start with defining a couple of protocols for our storage logic. I want to separate access to writable and readable parts of the storage, and this is where we can use protocol composition feature of Swift language.

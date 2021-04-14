@@ -7,6 +7,8 @@ category: View Composition
 
 This week we will continue the series of posts about the app and scene lifecycle in SwiftUI. Today we will concentrate on scene management and the features that the new *Scene* protocol provides us to replace the old *SceneDelegate*.
 
+{% include friends.html %}
+
 #### Basics
 The scene is a part of an app's user interface with a lifecycle managed by the system. The system will decide how to present it to a user depending on the running platform. For example, it might be a full-screen window on iOS and watchOS, or it can use the part of the screen to render user interface on macOS and iPadOS. Let's start with a small example.
 

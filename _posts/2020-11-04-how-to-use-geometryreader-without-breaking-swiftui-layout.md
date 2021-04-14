@@ -7,6 +7,8 @@ category: Layout
 
 Usually, I try to avoid *GeometryReader* as much as I can. But sometimes, we need it to build our custom view. This week we will talk about *GeometryReader*. The view that allows us to read its geometry and layout child views manually.
 
+{% include friends.html %}
+
 #### Basics
 Let's start with a quick example of *GeometryReader* usage.
 

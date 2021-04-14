@@ -6,6 +6,8 @@ category: Architecture
 
 Last month I started refactoring navigation flow in my pet project. I've been using Coordinator pattern for a while, but now I decide to switch to a more native and simple approach like Flow Controllers. Today we will talk about Flow Controllers and why it is more native than Coordinators.
 
+{% include friends.html %}
+
 #### Coordinators
 Coordinator is a plain object which handles the navigation flow. It owns rootViewController, where it pushes next ViewControllers. ViewControllers and Coordinators talk with each other by delegates. It gives us an opportunity to keep ViewControllers reusable, by extracting navigation knowledge from them. More about Coordinator pattern you can read in the original [post by Soroush Khanlou](http://khanlou.com/2015/01/the-coordinator/).
 

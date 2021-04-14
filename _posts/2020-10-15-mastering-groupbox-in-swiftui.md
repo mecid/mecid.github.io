@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 Styleable views is the thing I love in SwiftUI. You can separate your view logic and its style. You can easily apply different styles in different conditions whenever you need to change appearance depending on the platform or other environmental requirements. This week we will talk about *GroupBox*, another view container that SwiftUI provides, and allows us easily change its look and feel using a style protocol. 
 
+{% include friends.html %}
+
 #### Basics
 *GroupBox* is a stylized view with an optional label that is associated with a logical grouping of content. Default styling on iOS is a simple card with the title and content. Let's take a look at it.
 

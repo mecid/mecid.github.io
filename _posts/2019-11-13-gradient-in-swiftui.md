@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 One thing which I really enjoy about SwiftUI is the fact that SwiftUI has a lot of stuff ready to use out of the box. In order to build your app, all you need to do is composing the building blocks provided by SwiftUI into a fully functional application. This week we will talk about *Gradient*, which is just another type of *View* in SwiftUI.
 
+{% include friends.html %}
+
 As I already said, *Gradient* is one of the *View* protocol's implementations. You can easily use *Gradient* anywhere in the app where you can use other *View* components like *Text* or *Button*. SwiftUI provides three types of *Gradient* component. Let's take a look at them one by one.
 
 #### LinearGradient

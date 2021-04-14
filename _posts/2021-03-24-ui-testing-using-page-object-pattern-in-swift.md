@@ -7,6 +7,8 @@ image: /public/visual.png
 
 We talked a lot about different design patterns, which help us maintain the codebase by solving various issues. But what about testing? What can we do to keep our UI tests in a maintainable and consistent state? This week we will talk about the Page Object pattern that allows us to build a foundation for our UI tests.
 
+{% include friends.html %}
+
 #### Basic UI test
 Let's start first by tackling the problems of a simple UI test.
 

@@ -6,6 +6,8 @@ category: Testing
 
 Today we are going to touch the completely new topic on my blog, and it is Unit Testing. Most of us heard about the pros of Unit Testing. I want to show how easily you can start with Unit Testing by covering your model layer. So let's start with the definition.
 
+{% include friends.html %}
+
 Unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules together with associated control data, usage procedures, and operating procedures, are tested to determine whether they are fit for use.
 
 ##### In other words, Unit Test is a code which tests individual unit of your codebase. 

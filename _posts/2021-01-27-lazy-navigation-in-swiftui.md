@@ -7,6 +7,8 @@ image: /public/lazy.PNG
 
 Most of our apps are more than just a single screen app. We use the navigation to connect different screens inside the app. SwiftUI provides us *NavigationLink* struct that we can use to link views. This week we will learn how to use *NavigationLink* more efficiently than before by making it lazy.
 
+{% include friends.html %}
+
 Usually, we have to set up navigation links by providing both source and destination views. In some cases, it might be a bottleneck for your view. I have a calendar screen in my app that displays the summary for every day during the last two years. Every date in the calendar is clickable and linked to the details screen using *NavigationLink*.
 
 > To learn more about the basics of *NavigationLink*, take a look at my ["Navigation in SwiftUI"](/2019/07/17/navigation-in-swiftui/) post.

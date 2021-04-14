@@ -7,6 +7,8 @@ category: View Composition
 
 SwiftUI provides us a very fast and easy to use diffing algorithm, but as you might know, diffing is a linear operation. It means that diffing will be very fast for simple layouts and can take some time for a complicated layout. 
 
+{% include friends.html %}
+
 I have good news for you. SwiftUI allows us to replace the standalone diffing algorithm with our custom logic. This week we will talk about optimizing our SwiftUI layouts using the equatable modifier.
 
 #### Diffing in SwiftUI

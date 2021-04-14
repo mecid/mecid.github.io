@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 This week I want to talk to you about home-screen widgets in iOS 14. I've built several widget collections for my apps, and it is a perfect time to share with you that experience. Today we will learn all about building and updating widgets with SwiftUI.
 
+{% include friends.html %}
+
 #### Basics
 Widgets display relevant, glanceable content, letting users quickly get to your app for more details. Your app can provide multiple kinds of widgets, allowing users to focus on essential information. They can add multiple copies of the same widget, tailoring each one to their unique needs and layout. I think it is an excellent definition for widgets, thanks to Apple.
 

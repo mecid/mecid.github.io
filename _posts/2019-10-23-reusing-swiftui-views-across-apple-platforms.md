@@ -7,6 +7,8 @@ category: View Composition
 
 This week we will talk about reusing SwiftUI views between Apple platforms. We will learn how to run the same views both on iOS, watchOS and macOS without any changes. To make it possible, all we need is an understanding of the view decomposition principle.
 
+{% include friends.html %}
+
 One of the slogans of SwiftUI during *WWDC* this year was "Learn one time, use anywhere". SwiftUI is a *declarative* framework for building *User Interfaces* on Apple platforms. But what does mean the word **declarative**? It means that you describe what you want to achieve, and the framework does all the needed work for you. Depending on the platform, SwiftUI can render content differently.
 
 ![napbot-screenshot](/public/napbot.jpeg)

@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 This week I want to talk about grids in SwiftUI. It was the most expected feature. Everybody has been waiting for *UICollectionView* alternative in SwiftUI, and finally, it arrived this year. SwiftUI provides us *LazyVGrid* and *LazyHGrid* views that we can use to build grid-based layouts.
 
+{% include friends.html %}
+
 #### Basics
 *LazyVGrid* and *LazyHGrid* are two new view types that SwiftUI gives us to build a super custom grid-based layout. The only difference between them is the layout axis. *LazyVGrid* populates the available space in the vertical direction. On the other hand, *LazyHGrid* arranges its children in the horizontal direction. Axis is the only difference between these two views. That's why everything that you see about *LazyVGrid* applies to *LazyHGrid* and vice versa. Let's take a look at our first example.
 

@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 This week we will continue mastering SwiftUI components by learning *Toggle*. *Toggle* is a view that we can use to allow users to toggle any boolean state in the app. SwiftUI enables us to customize toggles in a very convenient way by providing *ToggleStyle* protocol.
 
+{% include friends.html %}
+
 #### Basics
 Let's start with the basics of the *Toggle* component. To use *Toggle*, we need to create it by providing a binding to a boolean value that it is going to toggle and a label view that can be any combination of views. Let's take a look at the very quick example of using a toggle.
 

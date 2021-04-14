@@ -6,6 +6,8 @@ category: Protocol-Oriented Programming
 
 There are a lot of third-party libraries which provide Dependency Injection for Swift apps. In my opinion, Swift has a powerful type system which gives us the ability to create type-safe Dependency Injection techniques easily. Today we will talk about creating Dependency Injection in Swift with the power of protocols.
 
+{% include friends.html %}
+
 #### Protocol Composition
 As I said before Protocols are one of [my favorite language features in Swift](/2019/01/23/maintaining-state-in-view-controllers/), especially Protocol Composition, which gives us an opportunity to compose multiple Protocols together in one type. Let's take a look at the implementation of the "Service Locator" pattern in Swift and how we can improve it with the usage of Protocol Composition. 
 

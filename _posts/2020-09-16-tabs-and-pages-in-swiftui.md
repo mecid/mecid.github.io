@@ -7,6 +7,8 @@ image: /public/tabs.png
 
 This week we will talk about creating tabs and pager views in SwiftUI. *TabView* gained superpower during WWDC20. We can now use it across all the Apple platforms to build tabbed and paged user experiences with SwiftUI out of the box.
 
+{% include friends.html %}
+
 #### Basics
 *TabView* is a container view that puts children views into separated tabs. Let's start with a quick example.
 
