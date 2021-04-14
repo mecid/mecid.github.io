@@ -67,7 +67,7 @@ By default, the *HStack* works as a transparent accessibility container for its 
 
 > To learn about the basics of accessibility in SwiftUI, take a look at my "Accessibility in SwiftUI" post.
 
-We also use the *accessibilityAdjustableAction* modifier, which automatically adds the adjustable trait. We also have to provide a closure that handles the action. The only parameter of the closure is the instance of the *AccessibilityAdjustmentDirection* enum.
+We use the *accessibilityAdjustableAction* modifier, which automatically adds the adjustable trait. We also have to provide a closure that handles the action. The only parameter of the closure is the instance of the *AccessibilityAdjustmentDirection* enum.
 
 Whenever the user navigates to the *RatingView*, VoiceOver focuses on the *HStack* itself and pronounces the message: "rating, 3. Adjustable". Users can use swipe up and down gestures to change the value of the rating.
 
