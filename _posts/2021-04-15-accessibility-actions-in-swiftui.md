@@ -10,13 +10,56 @@ SwiftUI provides us accessible views out of the box, and usually, you don't need
 #### Adjustable action
 SwiftUI provides us a particular adjustable trait that VoiceOver uses to indicate the ability to adjust the view using swipes up or down. Assume that you work on the RatingView. RatingView has to present the current 5-star rating and should provide the opportunity to change the rating. Let's see how we can implement this view.
 
-=====================================================
+```swift
+struct RatingView: View {
+    @Binding var rating: Int
+
+    var body: some View {
+        HStack {
+            ForEach(1..<6) { index in
+                Button(action: { rating = index }) {
+                    Image(systemName: index <= rating ? "star.fill" : "star")
+                }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, the implementation of the RatingView is pretty straightforward. The RatingView changes the value of rating using binding whenever you press the particular button. But what about accessibility? How does VoiceOver work with the RatingView?
 
 Buttons are accessible out of the box, and VoiceOver will focus on the first button and pronounce the message: "star fill". This is the default behavior, and it doesn't make sense in this case. Fortunately, SwiftUI provides us a few modifiers to customize the user experience here.
 
-=====================================================
+```swift
+struct RatingView: View {
+    @Binding var rating: Int
+
+    var body: some View {
+        HStack {
+            ForEach(1..<6) { index in
+                Button(action: { rating = index }) {
+                    Image(systemName: index <= rating ? "star.fill" : "star")
+                }
+            }
+        }
+        .accessibilityElement()
+        .accessibilityLabel(Text("rating"))
+        .accessibilityValue(Text(String(rating)))
+        .accessibilityAdjustableAction { direction in
+            switch direction {
+            case .increment:
+                guard rating < 5 else { break }
+                rating += 1
+            case .decrement:
+                guard rating > 1 else { break }
+                rating -= 1
+            @unknown default:
+                break
+            }
+        }
+    }
+}
+```
 
 By default, the HStack works as a transparent accessibility container for its children and exposes children's information. We prevent the default behavior using accessibilityElement modifier that enables accessibility for HStack and ignores the children. We also provide the accessibility label and value.
 
@@ -31,11 +74,47 @@ VoiceOver supports additional actions that we can provide to handle in our views
 
 There is two-finger scrub (move two fingers back and forth three times quickly, making a "z") action that users do to go back in the navigation or dismiss the alert. You can use handle this action in your view if it utilizes the custom navigation behavior.
 
-=====================================================
+```swift
+struct PlayerView: View {
+    @ObservedObject var viewModel: ViewModel
+
+    var body: some View {
+        HStack {
+            // Player content
+        }
+        .accessibilityAction(.magicTap) {
+            if viewModel.isPlaying {
+                viewModel.pause()
+            } else {
+                viewModel.play()
+            }
+        }
+        .accessibilityAction(.escape) {
+            viewModel.pause()
+        }
+    }
+}
+```
 
 You can also provide named actions in addition to the predefined actions.
 
-=====================================================
+```swift
+struct PlayerView: View {
+    @ObservedObject var viewModel: ViewModel
+
+    var body: some View {
+        HStack {
+            // Player content
+        }
+        .accessibilityAction(named: Text("skip")) {
+            viewModel.skip()
+        }
+        .accessibilityAction(named: Text("repeat")) {
+            viewModel.repeat()
+        }
+    }
+}
+```
 
 #### Conclusion
 This week we learned how to make our apps more accessible by adding VoiceOver-friendly actions. Remember that accessibility isn't a feature or a "nice to have." It's a necessity. So let's make your app accessible for everyone. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
