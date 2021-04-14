@@ -10,7 +10,7 @@ SwiftUI provides us accessible views out of the box, and usually, you don't need
 {% include friends.html %}
 
 #### Adjustable action
-SwiftUI provides us a particular adjustable trait that VoiceOver uses to indicate the ability to adjust the view using swipes up or down. Assume that you work on the *RatingView*. *RatingView* has to present the current 5-star rating and should provide the opportunity to change the rating. Let's see how we can implement this view.
+SwiftUI provides us an adjustable trait that VoiceOver uses to indicate the ability to adjust the view using swipes up or down. Assume that you are working on the *RatingView*. *RatingView* has to present the current 5-star rating and should provide the opportunity to change the rating. Let's see how we can implement this view.
 
 ```swift
 struct RatingView: View {
