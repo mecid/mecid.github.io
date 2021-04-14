@@ -30,6 +30,8 @@ struct RatingView: View {
 
 As you can see in the example above, the implementation of the *RatingView* is pretty straightforward. The *RatingView* changes the value of rating using binding whenever you press the particular button. But what about accessibility? How does VoiceOver work with the *RatingView*?
 
+> To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
+
 Buttons are accessible out of the box, and VoiceOver will focus on the first button and pronounce the message: "star fill". This is the default behavior, and it doesn't make sense in this case. Fortunately, SwiftUI provides us a few modifiers to customize the user experience here.
 
 ```swift
@@ -64,8 +66,6 @@ struct RatingView: View {
 ```
 
 By default, the *HStack* works as a transparent accessibility container for its children and exposes children's information. We prevent the default behavior using *accessibilityElement* modifier that enables accessibility for *HStack* and ignores the children. We also provide the accessibility label and value.
-
-> To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
 
 We use the *accessibilityAdjustableAction* modifier, which automatically adds the adjustable trait. We also have to provide a closure that handles the action. The only parameter of the closure is the instance of the *AccessibilityAdjustmentDirection* enum.
 
