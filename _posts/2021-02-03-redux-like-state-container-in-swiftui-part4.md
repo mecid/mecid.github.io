@@ -13,7 +13,7 @@ I'm rewriting my ShowBot app in SwiftUI using the single state container approac
 
 ![showbot](/public/showbot.jpg)
 
-> If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI."](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
+> If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI"](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
 
 ```swift
 import Foundation
