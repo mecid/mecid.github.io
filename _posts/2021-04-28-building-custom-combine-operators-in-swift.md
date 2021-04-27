@@ -5,6 +5,8 @@ layout: post
 
 I started using the Combine framework from the very first day to handle heavyweight and long-running operations like network requests and data processing. The Combine looks like a very sophisticated framework and provides you all the needed things you might need to process your data. It comes with many valuable operators that you can use to map, filter, and reduce values. This week we will learn how to build new operators that we might miss from the default package.
 
+{% include friends.html %}
+
 Rather than implementing the Publisher protocol yourself, you can create your own operator using composition and several standard operators provided by the Combine framework. Let's start with the simplest one.
 
 #### Replace error or empty with value
