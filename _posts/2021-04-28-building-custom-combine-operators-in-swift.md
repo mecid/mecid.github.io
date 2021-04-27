@@ -122,5 +122,7 @@ func authReducer(
 }
 ```
 
+> If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI"](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
+
 #### Conclusion
 The Combine framework is a great tool to handle asynchronous operations in your app. It provides you with tons of operators to transform your data, but it is also effortless to extend it using the composition of standard operators that we learned today. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
