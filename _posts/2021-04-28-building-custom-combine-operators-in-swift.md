@@ -39,4 +39,4 @@ Assume that we have a single state container that stores the whole app state. Th
 =====================================================
 
 #### Conclusion
-The Combine framework is a great tool to handle asynchronous operations in your app. It provides you with tons of operators to transform your data, but it is also effortless to extend it using the composition of standard operators that we learned today.
+The Combine framework is a great tool to handle asynchronous operations in your app. It provides you with tons of operators to transform your data, but it is also effortless to extend it using the composition of standard operators that we learned today. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
