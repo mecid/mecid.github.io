@@ -9,7 +9,7 @@ I started using the Combine framework from the very first day to handle heavywei
 
 {% include friends.html %}
 
-Rather than implementing the *Publisher* protocol yourself, you can create your own operator using composition and several standard operators provided by the Combine framework. Let's start with the simplest one.
+Rather than implementing the *Publisher* protocol yourself, you can create your own operator using composition and several standard operators and publishers provided by the Combine framework. Let's start with the simplest one.
 
 #### Replace error or empty with value
 The Combine framework has *replaceEmpty* and *replaceError* operators that we can use to inject the value into an empty publisher or replace the error with a value. I need both of them very often, and instead of typing these two operators every time, we can create a new one that combines them.
