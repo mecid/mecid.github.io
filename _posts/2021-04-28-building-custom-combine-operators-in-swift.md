@@ -43,7 +43,7 @@ Reducer { state, action, environment in
 > To learn more about the set of operators that the Combine framework provides us, take a look at my ["Catching errors in Combine"](/2020/04/22/catching-errors-in-combine/) post.
 
 #### Finish on fail
-Another helpful operator might be finish on fail. There are different circumstances where you don't need to handle the failure and finish silently. There is no standard operator for that in the Combine framework, but we can quickly achieve that by using the *catch* operator and empty publisher.
+Another helpful operator might be finish on fail. There are different circumstances where you don't need to handle the failure and want to finish silently. There is not standard operator for that in the Combine framework, but we can quickly achieve it by using the *catch* operator and *Empty* publisher.
 
 ```swift
 extension Publisher {
@@ -55,7 +55,7 @@ extension Publisher {
 }
 ```
 
-Here we have another extension on *Publisher* type that adds an opportunity to finish the publisher without emitting the error. I usually use the *finishOnFail* operator in conjunction with the *merge* operator. For example, on every app launch, I start a network request to fetch the latest data, but at the same time, I fetch and display locally cached data. In this case, I don't worry if my network request fails or not because I have the data to show.
+Here we have another extension on *Publisher* type that adds an opportunity to finish the publisher without emitting an error. I usually use the *finishOnFail* operator in conjunction with the *Merge* publisher. For example, on every app launch, I start a network request to fetch the latest data, but at the same time, I fetch and display locally cached data. In this case, I don't worry if my network request fails or not because I have the data to show.
 
 ```swift
 func newsReducer(
