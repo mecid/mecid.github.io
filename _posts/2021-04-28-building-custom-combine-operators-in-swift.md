@@ -25,7 +25,7 @@ extension Publisher {
 }
 ```
 
-As you can see in the example above, we can create an extension for *Publisher* type in a straightforward way and add the functionality we need by composing other operators. Now you can use the new operator as we use standard ones.
+As you can see in the example above, we can create an extension for *Publisher* type in a straightforward way and add the functionality we need by composing other operators. Now we can use the new operator as we use standard ones.
 
 ```swift
 Reducer { state, action, environment in
@@ -34,7 +34,7 @@ Reducer { state, action, environment in
         return environment.healthService
             .authorize()
             .replaceErrorOrEmpty(with: false)
-            .map(AppAction.fetch)
+            .map(AppAction.setAuthStatus)
             .eraseToAnyPublisher()
     }
 }
