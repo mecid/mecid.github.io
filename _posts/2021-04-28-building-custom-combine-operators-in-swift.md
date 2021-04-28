@@ -124,6 +124,8 @@ func authReducer(
 }
 ```
 
+Side effects returned by reducers should never fail. Even if it fails under the hood, it should emit an action that defines a failure. It is a perfect use case for our new *catchResult* operator.
+
 > If you are not familiar with the concept of a single source of truth, take a look at my dedicated series of ["Redux-like state container in SwiftUI"](/2019/09/18/redux-like-state-container-in-swiftui/) posts.
 
 #### Conclusion
