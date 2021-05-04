@@ -7,6 +7,8 @@ category: Architecture
 
 The Combine framework provides you a bunch of operators to map, filter, and chain asynchronous operations. This week I want to focus on the chaining asynchronous jobs using two main operators that the Combine framework provides us. We will learn how to use *flatMap* and *switchToLatest* operators to chain asynchronous tasks in a declarative way.
 
+{% include friends.html %}
+
 #### Chaining basics with the flatMap operator
 The flatMap operator allows us to take the result of one publisher, pass it to another and run the second publisher. We can use it to chain two different publishers. Let's take a look at how we can use it.
 
