@@ -2,7 +2,7 @@
 title: Chaining publishers with Combine in Swift
 layout: post
 image: /public/combine.png
-category: Architecture
+category: Combine framework
 ---
 
 The Combine framework provides you a bunch of operators to map, filter, and chain asynchronous operations. This week I want to focus on the chaining asynchronous jobs using two main operators that the Combine framework provides us. We will learn how to use *flatMap* and *switchToLatest* operators to chain asynchronous tasks in a declarative way.

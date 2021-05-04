@@ -2,7 +2,7 @@
 title: Building custom Combine operators in Swift
 layout: post
 image: /public/combine.png
-category: Architecture
+category: Combine framework
 ---
 Combine looks like a very sophisticated framework and provides you all the needed things you might need to process your data. It comes with many valuable operators like map, filter, and reduce. This week we will learn how to build new operators that we might miss from the default package.
 
