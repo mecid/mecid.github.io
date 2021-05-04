@@ -1,5 +1,5 @@
 ---
-title: Chaining publishers with Combine framework in Swift
+title: Chaining publishers with Combine in Swift
 layout: post
 image: /public/combine.png
 category: Architecture
@@ -46,6 +46,8 @@ final class SearchViewModel: ObservableObject {
 ```
 
 As you can see in the example above, we create the *SearchViewModel* class that conforms to *ObservableObject*. Here we define two properties query and repos. @*Published* property wrapper automatically provides a publisher for property and allows us to access it via projected value using **$** sign.
+
+> To learn more about designing API with Combine publishers, take a look at my "[Designing API using Combine framework](/2021/04/07/designing-api-using-combine-framework/)" post.
 
 In the *SearchViewModel* initializer, we use the *flatMap* operator to pass the value of query publisher to and generate a new search publisher using the provided query. Then we use the *assign* operator to save the result of the search operation in the repos property.
 
@@ -96,6 +98,8 @@ final class SearchViewModel: ObservableObject {
 ```
 
 The *debounce* operator blocks the chain for a time interval that you provide and doesn't emit any values in that period of time. It emits the latest value after the timeout that you provide. We can significantly reduce the number of network requests we make using *debounce* operator.
+
+> To learn more about the set of operators that the Combine framework provides us, take a look at my ["Catching errors in Combine"](/2020/04/22/catching-errors-in-combine/) post.
 
 #### Advanced chaining with switchToLatest operator
 Assume that you have a situation where a user types two queries in a sequence, but the network delays the first one, and the second one finishes earlier. The view represents the search result for the second request, but after a decent amount of time, the first query finishes, and the data appears on the screen by replacing the results of the second query.
