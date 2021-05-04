@@ -106,7 +106,7 @@ The *debounce* operator blocks the chain for a time interval that you provide an
 #### Advanced chaining with switchToLatest operator
 Assume that you have a situation where a user types two queries in a sequence, but the network delays the first one, and the second one finishes earlier. The view represents the search result for the second request, but after a decent amount of time, the first query finishes, and the data appears on the screen by replacing the results of the second query.
 
-Usually, we want to present the results of the latest query and ignore the previous attempts. We can't achieve that with the flatMap operator, and especially for this case, the Combine framework provides us the *switchToLatest* operator.
+Usually, we want to present the results of the latest query and ignore the previous attempts. We can't achieve that with the *flatMap* operator, and especially for this case, the Combine framework provides us the *switchToLatest* operator.
 
 ```swift
 final class SearchViewModel: ObservableObject {
