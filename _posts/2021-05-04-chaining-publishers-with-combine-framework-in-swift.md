@@ -10,7 +10,7 @@ The Combine framework provides you a bunch of operators to map, filter, and chai
 {% include friends.html %}
 
 #### Chaining basics with the flatMap operator
-The flatMap operator allows us to take the result of one publisher, pass it to another and run the second publisher. We can use it to chain two different publishers. Let's take a look at how we can use it.
+The *flatMap* operator allows us to take the result of one publisher, pass it to another and run the second publisher. We can use it to chain two different publishers. Let's take a look at how we can use it.
 
 ```swift
 final class GithubService {
@@ -49,7 +49,7 @@ As you can see in the example above, we create the *SearchViewModel* class that 
 
 > To learn more about designing API with Combine publishers, take a look at my "[Designing API using Combine framework](/2021/04/07/designing-api-using-combine-framework/)" post.
 
-In the *SearchViewModel* initializer, we use the *flatMap* operator to pass the value of query publisher to and generate a new search publisher using the provided query. Then we use the *assign* operator to save the result of the search operation in the repos property.
+In the *SearchViewModel* initializer, we use the *flatMap* operator to pass the value of query publisher and generate a new search publisher using the provided query. Then we use the *assign* operator to save the result of the search operation in the repos property.
 
 ```swift
 struct ContentView: View {
@@ -75,7 +75,9 @@ struct ContentView: View {
 }
 ```
 
-Now we can use the *SearchViewModel* in our SwiftUI app to implement a GitHub repos search screen. Here we have a SwiftUI view that contains a text field for query terms and a list of results. *SearchViewModel* will make a network request as soon as the user types something in the query text field. Every new character in the text field generates a new API request. Usually, we want to delay requests till user typing. We can achieve this behavior by using *debounce* operator on query publisher in the *SearchViewModel*.
+Now we can use the *SearchViewModel* in our SwiftUI app to implement a GitHub repos search screen. Here we have a SwiftUI view that contains a text field for query terms and a list of results. 
+
+*SearchViewModel* will make a network request as soon as the user types something in the query text field. Every new character in the text field generates a new API request. Usually, we want to delay requests till user typing. We can achieve this behavior by using *debounce* operator on query publisher in the *SearchViewModel*.
 
 ```swift
 final class SearchViewModel: ObservableObject {
