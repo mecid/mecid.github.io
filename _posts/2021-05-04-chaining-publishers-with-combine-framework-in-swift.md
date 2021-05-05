@@ -118,7 +118,10 @@ final class SearchViewModel: ObservableObject {
     init() {
         $query
             .debounce(for: 0.5, scheduler: DispatchQueue.main)
-            .map { self.service.searchPublisher(matching: $0).replaceError(with: []) }
+            .map { 
+                self.service.searchPublisher(matching: $0)
+                    .replaceError(with: [])
+            }
             .switchToLatest()
             .receive(on: DispatchQueue.main)
             .assign(to: &$repos)
@@ -129,4 +132,4 @@ final class SearchViewModel: ObservableObject {
 In the example above, we refactored our *SearchViewModel* to use the *switchToLatest* operator. The *switchToLatest* operator is designed to work with a publisher that emits other publishers. That's why we use the *map* operator to transform our publisher into the publisher that emits search publishers. Then we attach the *switchToLatest* operator flattening the stream of publishers and delivering results only from the latest one.
 
 #### Conclusion
-This week we learned about two different ways of chaining asynchronous operations with the Combine framework. Usually, the *flatMap* operator is what you need to chain multiple operations. When you should do some work as a response to a user action, you can use the combination of *map* and *switchToLatest* operators to deliver the latest results. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+This week we learned about two different ways of chaining asynchronous operations with the Combine framework. Usually, the *flatMap* operator is what you need to chain multiple operations. When you should do some work as a response to a user action, you should use the combination of *map* and *switchToLatest* operators to deliver the latest results. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
