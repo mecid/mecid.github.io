@@ -111,14 +111,16 @@ struct Grid<Data: RandomAccessCollection, ElementView: View>: View where Data.El
                     self.itemView(item)
                         .alignmentGuide(.leading) { _ in
                             -self.preferences[item, default: .zero].origin.x
-                    }.alignmentGuide(.top) { _ in
-                        -self.preferences[item, default: .zero].origin.y
-                    }.anchorPreference(
-                        key: SizePreferences<Data.Element>.self,
-                        value: .bounds
-                    ) {
-                        [item: geometry[$0].size]
-                    }
+                        }
+                        .alignmentGuide(.top) { _ in
+                            -self.preferences[item, default: .zero].origin.y
+                        }
+                        .anchorPreference(
+                            key: SizePreferences<Data.Element>.self,
+                            value: .bounds
+                        ) {
+                            [item: geometry[$0].size]
+                        }
                 }
             }
         }
