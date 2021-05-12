@@ -61,9 +61,11 @@ final class SignUpViewModel: ObservableObject {
 }
 ```
 
-Here we have the signup screen's view model. It contains a few stored properties which we are going to use in our view. It also has isValid computed property that creates a validation publisher. As you can see, we use the *CombineLatest* operator to obtain the latest values from all the publishers. *CombineLatest* publisher collects the first value from all three publishers and emits them as a single tuple. *CombineLatest* continues sending new values even when only one publisher emits a new value. 
+Here we have the signup screen's view model. It contains a few stored properties which we are going to use in our view. It also has *isValid* computed property that creates a validation publisher.
 
-On the other hand, the zip operator sends a new value only when all the publishers emit values.
+As you can see, we use the *CombineLatest* operator to obtain the latest values from all the publishers. *CombineLatest* publisher collects the first value from all three publishers and emits them as a single tuple. *CombineLatest* continues sending new values even when only one publisher emits a new value.
+
+On the other hand, the zip operator sends a new value only when all the publishers emit new values.
 
 #### MergeMany
 *Merge* is another helpful Combine operator that you can use to join a few different publishers with the same output type. I often use the merge operator while fetching locally cached data and fetching new data from the webserver.
