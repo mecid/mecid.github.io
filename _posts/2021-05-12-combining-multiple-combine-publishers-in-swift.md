@@ -48,7 +48,8 @@ final class SignUpViewModel: ObservableObject {
     @Published var password2: String = ""
 
     var isValid: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest3($email, $password1, $password2)
+        Publishers
+            .CombineLatest3($email, $password1, $password2)
             .allSatisfy { email, password1, password2 in
                 email.contains("@") &&
                     password1.count > 7 &&
