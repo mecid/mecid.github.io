@@ -36,6 +36,8 @@ final class ProductViewModel: ObservableObject {
 }
 ```
 
+> To learn more about designing API with Combine publishers, take a look at my "[Designing API using Combine framework](/2021/04/07/designing-api-using-combine-framework/)" post.
+
 As you can see in the example above, we use *Zip* to fetch product details and related products. As soon as both publishers emit the value sink will assign them to the store properties.
 
 #### CombineLatest
@@ -83,6 +85,8 @@ final class FavoritesViewModel: ObservableObject {
 ```
 
 As you can see, the *MergeMany* operator allows me to create a single pipe for cached and fresh data where the cached information usually appears first and then replaced by new data. 
+
+> To learn about building custom Combine operators, take a look at my ["Building custom Combine operators in Swift"](/2021/04/28/building-custom-combine-operators-in-swift/) post.
 
 #### Conclusion
 This week we learned about operators of the Combine framework, which allows us to build complex data pipelines by zipping and merging multiple publishers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
