@@ -82,4 +82,4 @@ final class FavoritesViewModel: ObservableObject {
 As you can see, the MergeMany operator allows me to create a single pipe for cached and fresh data where the cached information usually appears first and then replaced by new data. 
 
 #### Conclusion
-This week we learned about operators of the Combine framework, which allows us to build complex data pipelines by zipping and merging multiple publishers.
+This week we learned about operators of the Combine framework, which allows us to build complex data pipelines by zipping and merging multiple publishers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
