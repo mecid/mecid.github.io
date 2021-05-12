@@ -10,7 +10,7 @@ I've already covered a few essential topics from the Combine framework story. We
 {% include friends.html %}
 
 #### Zip
-*Zip* operator is handy when you have a couple of publishers and need to wait for values from both of them. For example, assume that you are working on some kind of store app. You have a product screen where you show product details and the list of related products. In this case, you might want to display details and associated products at the same time. You can achieve this behavior using a zip operator.
+*Zip* operator is handy when you have a couple of publishers and need to wait for values from both of them. For example, assume that you are working on some kind of store app. You have a product screen where you show product details and the list of related products. In this case, you might want to display details and associated products at the same time. You can achieve this behavior using the zip operator.
 
 ```swift
 final class ProductViewModel: ObservableObject {
