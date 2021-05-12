@@ -7,6 +7,8 @@ category: Combine framework
 
 I've already covered a few essential topics from the Combine framework story. We talked about handling errors and chaining operations, but today I want to talk about running multiple operations in parallel and handing results in a single place. This week we will learn how to use zip, merge and combine operators.
 
+{% include friends.html %}
+
 #### Zip
 Zip operator is handy when you have a couple of publishers and need to wait for values from both of them. For example, assume that you are working on some kind of store app. You have a product screen where you show product details and the list of related products. In this case, you might want to display details and associated products at the same time. You can achieve this behavior using a zip operator.
 
