@@ -68,7 +68,7 @@ As you can see, we use the *CombineLatest* operator to obtain the latest values 
 On the other hand, the zip operator sends a new value only when all the publishers emit new values.
 
 #### MergeMany
-*Merge* is another helpful Combine operator that you can use to join a few different publishers with the same output type. I often use the merge operator while fetching locally cached data and fetching new data from the webserver.
+*Merge* is another helpful operator provided by the Combine framework that you can use to join a few different publishers with the same output type. I often use the merge operator while fetching locally cached data and fetching new data from the webserver.
 
 ```swift
 final class FavoritesViewModel: ObservableObject {
