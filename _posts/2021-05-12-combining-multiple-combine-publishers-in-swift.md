@@ -38,7 +38,7 @@ final class ProductViewModel: ObservableObject {
 
 > To learn more about designing API with Combine publishers, take a look at my ["Designing API using Combine framework"](/2021/04/07/designing-api-using-combine-framework/) post.
 
-As you can see in the example above, we use *Zip* to fetch product details and related products. As soon as both publishers emit the value sink will assign them to the stored properties.
+As you can see in the example above, we use *Zip* to fetch product details and related products. As soon as both publishers emit the value *sink* subscriber will assign them to the stored properties.
 
 #### CombineLatest
 The main downside of the zip operator is that it delivers values only when all the publishers emit. Sometimes we want to obtain all the values even when some of them change more often than others. For example, assume that you are working on a signup screen where you have text fields for email, password, and repeated password. You also have a signup button that should be enabled when all the text fields contain valid data.
