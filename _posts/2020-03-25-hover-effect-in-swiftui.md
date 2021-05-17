@@ -55,7 +55,7 @@ struct RootView: View {
 
 As you can see in the example above, we use *onHover* modifier to register a closure that delivers us a *Boolean* value. This *Boolean* value is *true* whenever the pointer covers the view. We save the value into a state variable and scale our view using default animation.
 
-> To learn more about the power of animation modifier in SwiftUI, take a look at my "[Animations in SwiftUI](/2019/06/26/animations-in-swiftui/)" post.
+> To learn more about the power of animation modifier in SwiftUI, take a look at my ["Animations in SwiftUI"](/2019/06/26/animations-in-swiftui/) post.
 
 #### Conclusion
 I am pleased to see that iPadOS gains the support of trackpad. I hope we will see Xcode running on iPadOS pretty soon, and iPad will replace Macbook. For now, let's support trackpad and mouse in our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!

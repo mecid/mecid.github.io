@@ -36,7 +36,7 @@ final class ProductViewModel: ObservableObject {
 }
 ```
 
-> To learn more about designing API with Combine publishers, take a look at my "[Designing API using Combine framework](/2021/04/07/designing-api-using-combine-framework/)" post.
+> To learn more about designing API with Combine publishers, take a look at my ["Designing API using Combine framework"](/2021/04/07/designing-api-using-combine-framework/) post.
 
 As you can see in the example above, we use *Zip* to fetch product details and related products. As soon as both publishers emit the value sink will assign them to the stored properties.
 

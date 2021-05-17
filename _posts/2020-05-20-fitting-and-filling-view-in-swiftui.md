@@ -11,7 +11,7 @@ This week I want to continue the topic of layout system in SwiftUI. The SwiftUI 
 
 A few weeks ago, we will talk about layout priorities in SwiftUI. Let me refresh your memory by describing how the layout system works in SwiftUI. Usually, a parent view proposes the available space to its child and asks to calculate its size. Then the parent view places the child in the center of available space. Pretty easy, right?
 
-> To learn more about the SwiftUI layout engine, take a look at my "[Layout priorities in SwiftUI](/2020/04/15/layout-priorities-in-swiftui/)" post.
+> To learn more about the SwiftUI layout engine, take a look at my ["Layout priorities in SwiftUI"](/2020/04/15/layout-priorities-in-swiftui/) post.
 
 But how exactly view calculates its size? There are two types of views: fitting and filling.
 
@@ -45,7 +45,7 @@ struct RootView: View {
 }
 ```
 
-> To learn more about the benefits of GeometryReader view, take a look at my "[Building BarChart with Shape API in SwiftUI](/2019/08/14/building-barchart-with-shape-api-in-swiftui/)" post.
+> To learn more about the benefits of GeometryReader view, take a look at my ["Building BarChart with Shape API in SwiftUI"](/2019/08/14/building-barchart-with-shape-api-in-swiftui/) post.
 
 The best way to manage the size of a filling view is by using the *frame* modifier. 
 

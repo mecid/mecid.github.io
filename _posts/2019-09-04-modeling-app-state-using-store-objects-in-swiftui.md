@@ -14,7 +14,7 @@ Store objects responsible for storing the state and providing actions to mutate 
 
 To create a store object, we need a class which conforms to *ObservableObject*. *ObservableObject* allows SwiftUI to observe and react to data changes. Let's take a look at a simple example of *SettingsStore* object.
 
-> To learn more about *ObservableObject*, take a look at "[Managing Data Flow in SwiftUI](/2019/07/03/managing-data-flow-in-swiftui/)" post.
+> To learn more about *ObservableObject*, take a look at ["Managing Data Flow in SwiftUI"](/2019/07/03/managing-data-flow-in-swiftui/) post.
 
 ```swift
 import Foundation
