@@ -31,7 +31,7 @@ struct ContentView: View {
             .padding()
             .scaleEffect(isLongPressed ? 1.1 : 1)
             .gesture(longPress)
-            .animation(.fluidSpring(), value: isLongPressed)
+            .animation(.interactiveSpring(), value: isLongPressed)
     }
 }
 ```
