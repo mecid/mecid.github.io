@@ -87,11 +87,11 @@ struct PersonView: View {
 
             Text("Majid Jabrayilov")
                 .font(.title)
-                .color(.white)
+                .foregroundColor(.white)
 
             Text("iOS Developer")
                 .font(.body)
-                .color(.white)
+                .foregroundColor(.white)
         }.padding()
     }
 }
