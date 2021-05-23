@@ -14,7 +14,7 @@ SwiftUI provides a bunch of ready to use gestures like *TapGesture, DragGesture,
 ```swift
 import SwiftUI
 
-struct ContentView : View {
+struct ContentView: View {
     @GestureState var isLongPressed = false
 
     var body: some View {
@@ -50,7 +50,7 @@ Let's try to create a Tinder-like swipeable card. We will use *DragGesture* to t
 ```swift
 import SwiftUI
 
-struct ContentView : View {
+struct ContentView: View {
     @State private var offset: CGSize = .zero
 
     var body: some View {
@@ -113,7 +113,7 @@ Let's add a dragging gesture simultaneously with a long-press gesture to our red
 ```swift
 import SwiftUI
 
-struct ContentView : View {
+struct ContentView: View {
     @State private var offset: CGSize = .zero
     @GestureState var isLongPressed = false
 
