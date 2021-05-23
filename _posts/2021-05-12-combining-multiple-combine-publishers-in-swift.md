@@ -10,7 +10,7 @@ I've already covered a few essential topics from the Combine framework story. We
 {% include friends.html %}
 
 #### Zip
-*Zip* operator is handy when you have a couple of publishers and need to wait for values from both of them. For example, assume that you are working on some kind of store app. You have a product screen where you show product details and the list of related products. In this case, you might want to display details and associated products at the same time. You can achieve this behavior using the zip operator.
+*Zip* operator is handy when you have a couple of publishers and need to wait for values from both of them. For example, assume that you are working on some kind of store app. You have a product screen where you show product details and the list of related products. In this case, you might want to display details and associated products at the same time. You can achieve this behavior using the *Zip* operator.
 
 ```swift
 final class ProductViewModel: ObservableObject {
@@ -65,10 +65,10 @@ Here we have the signup screen's view model. It contains a few stored properties
 
 As you can see, we use the *CombineLatest* operator to obtain the latest values from all the publishers. *CombineLatest* publisher collects the first value from all three publishers and emits them as a single tuple. *CombineLatest* continues sending new values even when only one publisher emits a new value.
 
-On the other hand, the zip operator sends a new value only when all the publishers emit new values.
+On the other hand, the *Zip* operator sends a new value only when all the publishers emit new values.
 
 #### MergeMany
-*Merge* is another helpful operator provided by the Combine framework that you can use to join a few different publishers with the same output type. I often use the merge operator while fetching locally cached data and fetching new data from the webserver.
+*Merge* is another helpful operator provided by the Combine framework that you can use to join a few different publishers with the same output type. I often use the *Merge* operator while fetching locally cached data and fetching new data from the webserver.
 
 ```swift
 final class FavoritesViewModel: ObservableObject {
