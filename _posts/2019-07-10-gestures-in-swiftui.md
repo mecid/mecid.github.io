@@ -19,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         let longPress = LongPressGesture()
-            .updating($isLongPressed) { value, state, transcation in
+            .updating($isLongPressed) { value, state, transaction in
                 state = value
         }
 
@@ -119,7 +119,7 @@ struct ContentView: View {
 
     var body: some View {
         let longPressAndDrag = LongPressGesture()
-            .updating($isLongPressed) { value, state, transition in
+            .updating($isLongPressed) { value, state, transaction in
                 state = value
         }.simultaneously(with: DragGesture()
             .onChanged { self.offset = $0.translation }
