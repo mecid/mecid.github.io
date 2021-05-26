@@ -6,9 +6,9 @@ category: Meta
 WWDC21 is coming pretty soon, and it is a great chance to think about the new features that I want to see in SwiftUI. This wishlist contains not only the list of the features I want to use but also possible APIs. Remember that this post is the result of my imagination, and most of the code examples don't exist at the moment. 
 
 #### List and ScrollView
-SwiftUI provides you both List and ScrollView, but under the hood, these views still use the UIKit implementation of UITableView and UIScrollView. I love how UITableView works and the API it provides us. But SwiftUI's List and ScrollView don't expose all the powerful features of UITableView and UIScrollView.
+SwiftUI provides you both *List* and *ScrollView*, but under the hood, these views still use the UIKit implementation of *UITableView* and *UIScrollView*. I love how *UITableView* works and the API it provides us. But SwiftUI's *List* and *ScrollView* don't expose all the powerful features of *UITableView* and *UIScrollView*.
 
-Almost all the screens in my apps use the List view in different styles, and I hope to see more APIs from UITableView, which allows styling separators, cell backgrounds using the ListStyle protocol.
+Almost all the screens in my apps use the List view in different styles, and I hope to see more APIs from *UITableView*, which allows styling separators, cell backgrounds using the *ListStyle* protocol.
 
 ```swift
 struct ContentView: View {
@@ -24,7 +24,7 @@ struct ContentView: View {
 }
 ```
 
-ScrollView is another crucial component for many screens. I usually build my apps with accessibility in mind and support Dynamic Type out of the box. Scroll View is must have root view for every screen where you want Dynamic Type. ScrollView in SwiftUI is still missing paging and content offset features that we used to see in UIScrollView.
+*ScrollView* is another crucial component for many screens. I usually build my apps with accessibility in mind and support Dynamic Type out of the box. Scroll View is must have root view for every screen where you want Dynamic Type. *ScrollView* in SwiftUI is still missing paging and content offset features that we used to see in *UIScrollView*.
 
 ```swift
 struct RootView: View {
@@ -44,7 +44,7 @@ struct RootView: View {
 > We can read the content offset of ScrollView using preferences API in SwiftUI. To learn more, take a look at my dedicated ["Mastering ScrollView in SwiftUI"](/2020/09/24/mastering-scrollview-in-swiftui/) post.
 
 #### CompositionalLayout
-During the last year, Apple gave us LazyHGrid and LazyVGrid views, which we can use to build views like calendars or photo grids. Grids work great, and I love them, but we want to use the power of CompositionalLayout that we have in UIKit. I don't think that Apple should get rid of LazyHGrid and LazyVGrid views, but they can introduce a new CompositionaView that supports all the features of CompositionalLayout.
+During the last year, Apple gave us *LazyHGrid* and *LazyVGrid* views, which we can use to build views like calendars or photo grids. Grids work great, and I love them, but we want to use the power of *CompositionalLayout* that we have in UIKit. I don't think that Apple should get rid of *LazyHGrid* and *LazyVGrid* views, but they can introduce a new *CompositionaView* that supports all the features of *CompositionalLayout*.
 
 ```swift
 struct AppStoreView: View {
@@ -52,7 +52,7 @@ struct AppStoreView: View {
     let appsWeLove: [App]
 
     var body: some View {
-        CompositionalLayout {
+        CompositionaView {
             Section(.groupPagingCentered) {
                 Group(.horizontal, width: .fractionalWidth(0.5), height: .fractionalHeight(0.5)) {
                     ForEach(featured) { app in
@@ -74,7 +74,7 @@ struct AppStoreView: View {
 ```
 
 #### Navigation
-Navigation is another point of pain in SwiftUI. It works great for simple use cases but doesn't provide enough flexibility for complex solutions. What I want to use is some sort of RouterView that maps destinations to concrete views.
+Navigation is another point of pain in SwiftUI. It works great for simple use cases but doesn't provide enough flexibility for complex solutions. What I want to use is some sort of *RouterView* that maps destinations to concrete views.
 
 ```swift
 enum Destination {
@@ -122,7 +122,7 @@ struct ProfileView: View {
 > To learn more about advanced techniques while building navigation in SwiftUI, take a look at my ["Lazy navigation in SwiftUI"](/2021/01/27/lazy-navigation-in-swiftui/) post.
 
 #### Focus management and text fields
-Sign-up form with multiple text fields is what I usually implement using UIKit and then wrap with UIViewControllerRepresentable. It is literally impossible to handle the first responder in SwiftUI and move the focus from one view to another.
+Sign-up form with multiple text fields is what I usually implement using UIKit and then wrap with *UIViewControllerRepresentable*. It is literally impossible to handle the first responder in SwiftUI and move the focus from one view to another.
 
 ```swift
 struct LoginView: View {
