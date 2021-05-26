@@ -27,7 +27,7 @@ struct ContentView: View {
 }
 ```
 
-*ScrollView* is another crucial component for many screens. I usually build my apps with accessibility in mind and support Dynamic Type out of the box. Scroll View is must have root view for every screen where you want Dynamic Type. *ScrollView* in SwiftUI is still missing paging and content offset features that we used to see in *UIScrollView*.
+*ScrollView* is another crucial component for many screens. I usually build my apps with accessibility in mind and support Dynamic Type out of the box. *ScrollView* is must-have root view for every screen where you want Dynamic Type. *ScrollView* in SwiftUI is still missing paging and content offset features that we used to see in *UIScrollView*.
 
 ```swift
 struct RootView: View {
