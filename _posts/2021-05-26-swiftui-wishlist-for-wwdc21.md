@@ -10,32 +10,146 @@ SwiftUI provides you both List and ScrollView, but under the hood, these views s
 
 Almost all the screens in my apps use the List view in different styles, and I hope to see more APIs from UITableView, which allows styling separators, cell backgrounds using the ListStyle protocol.
 
-=====================================================
+```swift
+struct ContentView: View {
+    let messages: [String]
+
+    var body: some View {
+        List {
+            ForEach(messages, id: \.self) { message in
+                Text(message)
+            }
+        }.listStyle(DefaultListStyle(separator: .none, selection: .single))
+    }
+}
+```
 
 ScrollView is another crucial component for many screens. I usually build my apps with accessibility in mind and support Dynamic Type out of the box. Scroll View is must have root view for every screen where you want Dynamic Type. ScrollView in SwiftUI is still missing paging and content offset features that we used to see in UIScrollView.
 
-=====================================================
+```swift
+struct RootView: View {
+    @State private var offset: CGPoint = .zero
+
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false, offset: $offset) {
+            Text("Very long text")
+            Button("Jump to top") {
+                self.offset = .zero
+            }
+        }
+    }
+}
+```
 
 > We can read the content offset of ScrollView using preferences API in SwiftUI. To learn more, take a look at my dedicated "Mastering ScrollView in SwiftUI" post.
 
 #### CompositionalLayout
 During the last year, Apple gave us LazyHGrid and LazyVGrid views, which we can use to build views like calendars or photo grids. Grids work great, and I love them, but we want to use the power of CompositionalLayout that we have in UIKit. I don't think that Apple should get rid of LazyHGrid and LazyVGrid views, but they can introduce a new CompositionaView that supports all the features of CompositionalLayout.
 
-=====================================================
+```swift
+struct AppStoreView: View {
+    let featured: [App]
+    let appsWeLove: [App]
+
+    var body: some View {
+        CompositionalLayout {
+            Section(.groupPagingCentered) {
+                Group(.horizontal, width: .fractionalWidth(0.5), height: .fractionalHeight(0.5)) {
+                    ForEach(featured) { app in
+                        FeatureAppView(app: app)
+                    }
+                }
+            }
+
+            Section {
+                Group(.vertical, width: .fractionalWidth(0.9), height: .estimated(200)) {
+                    ForEach(appsWeLove) { app in
+                        SmallAppView(app: app)
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
 #### Navigation
 Navigation is another point of pain in SwiftUI. It works great for simple use cases but doesn't provide enough flexibility for complex solutions. What I want to use is some sort of RouterView that maps destinations to concrete views.
 
-=====================================================
+```swift
+enum Destination {
+    case home
+    case login
+    case profile(UUID)
+    case settings
+}
+
+struct RootView: View {
+    var body: some View {
+        RouterView<Destination> { destination in
+            switch destination {
+            case .home: HomeView()
+            case .login: LoginView()
+            case let .profile(user): ProfileView(user: user)
+            case .settings: SettingsView()
+            }
+        }
+    }
+}
+```
 
 We also can have a router in the environment and mutate the state of navigation using the environment.
 
-=====================================================
+```swift
+struct ProfileView: View {
+    let user: UUID
+    @Environment(\.router) var router
+
+    var body: some View {
+        VStack {
+            Button("push settings screen") {
+                router.push(.settings)
+            }
+
+            Button("go home") {
+                router.popToRoot()
+            }
+        }
+    }
+}
+```
 
 #### Focus management and text fields
 Sign-up form with multiple text fields is what I usually implement using UIKit and then wrap with UIViewControllerRepresentable. It is literally impossible to handle the first responder in SwiftUI and move the focus from one view to another.
 
-=====================================================
+```swift
+struct LoginView: View {
+    @State private var email = ""
+    @State private var password = ""
+
+    @State private var hasFilledCredentials = false
+    @Namespace private var namespace
+
+    @Environment(\.resetFocus) var resetFocus
+
+    var body: some View {
+        VStack {
+            TextField("email", text: $email)
+                .prefersDefaultFocus(!hasFilledCredentials, in: namespace)
+
+            SecureField("password", text: $password)
+
+            Button("login") {}
+                .prefersDefaultFocus(hasFilledCredentials, in: namespace)
+
+            Button("reset credentials") {
+                hasFilledCredentials = false
+                resetFocus(in: namespace)
+            }
+        }.focusScope(namespace)
+    }
+}
+```
 
 You might wonder, but this is the real API that we have in SwiftUI at the moment. Unfortunately, it is available only for tvOS and watchOS, but I wish to see it for iOS and macOS.
 
