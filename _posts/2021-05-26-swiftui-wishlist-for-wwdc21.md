@@ -2,6 +2,7 @@
 title: SwiftUI wishlist for WWDC21
 layout: post
 category: Meta
+image: /public/wwdc21.jpg
 ---
 WWDC21 is coming pretty soon, and it is a great chance to think about the new features that I want to see in SwiftUI. This wishlist contains not only the list of the features I want to use but also possible APIs. Remember that this post is the result of my imagination, and most of the code examples don't exist at the moment. 
 
