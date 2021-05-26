@@ -5,6 +5,8 @@ category: Meta
 ---
 WWDC21 is coming pretty soon, and it is a great chance to think about the new features that I want to see in SwiftUI. This wishlist contains not only the list of the features I want to use but also possible APIs. Remember that this post is the result of my imagination, and most of the code examples don't exist at the moment. 
 
+{% include friends.html %}
+
 #### List and ScrollView
 SwiftUI provides you both *List* and *ScrollView*, but under the hood, these views still use the UIKit implementation of *UITableView* and *UIScrollView*. I love how *UITableView* works and the API it provides us. But SwiftUI's *List* and *ScrollView* don't expose all the powerful features of *UITableView* and *UIScrollView*.
 
