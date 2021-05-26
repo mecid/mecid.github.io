@@ -41,7 +41,7 @@ struct RootView: View {
 }
 ```
 
-> We can read the content offset of ScrollView using preferences API in SwiftUI. To learn more, take a look at my dedicated "Mastering ScrollView in SwiftUI" post.
+> We can read the content offset of ScrollView using preferences API in SwiftUI. To learn more, take a look at my dedicated ["Mastering ScrollView in SwiftUI"](/2020/09/24/mastering-scrollview-in-swiftui/) post.
 
 #### CompositionalLayout
 During the last year, Apple gave us LazyHGrid and LazyVGrid views, which we can use to build views like calendars or photo grids. Grids work great, and I love them, but we want to use the power of CompositionalLayout that we have in UIKit. I don't think that Apple should get rid of LazyHGrid and LazyVGrid views, but they can introduce a new CompositionaView that supports all the features of CompositionalLayout.
@@ -119,6 +119,8 @@ struct ProfileView: View {
 }
 ```
 
+> To learn more about advanced techniques while building navigation in SwiftUI, take a look at my ["Lazy navigation in SwiftUI"](/2021/01/27/lazy-navigation-in-swiftui/) post.
+
 #### Focus management and text fields
 Sign-up form with multiple text fields is what I usually implement using UIKit and then wrap with UIViewControllerRepresentable. It is literally impossible to handle the first responder in SwiftUI and move the focus from one view to another.
 
@@ -152,6 +154,8 @@ struct LoginView: View {
 ```
 
 You might wonder, but this is the real API that we have in SwiftUI at the moment. Unfortunately, it is available only for tvOS and watchOS, but I wish to see it for iOS and macOS.
+
+> To learn more about focus management in SwiftUI, take a look at my ["Focus management in SwiftUI"](/2020/12/02/focus-management-in-swiftui/) post.
 
 #### Conclusion
 SwiftUI has its own set of pros and cons. But for me, it is the way to go with my projects. I'm so excited about the upcoming WWDC and hope to see at least a part of the features I mentioned in this post.
