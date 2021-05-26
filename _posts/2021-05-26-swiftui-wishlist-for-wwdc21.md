@@ -101,7 +101,7 @@ struct RootView: View {
 }
 ```
 
-We also can have a router in the environment and mutate the state of navigation using the environment.
+We also can have a router in the environment and mutate the state of navigation using the environment value.
 
 ```swift
 struct ProfileView: View {
