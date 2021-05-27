@@ -89,7 +89,7 @@ enum Destination {
 
 struct RootView: View {
     var body: some View {
-        RouterView<Destination> { destination in
+        RouterView(initial: Destination.home) { destination in
             switch destination {
             case .home: HomeView()
             case .login: LoginView()
