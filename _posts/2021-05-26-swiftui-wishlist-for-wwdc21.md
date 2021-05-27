@@ -161,4 +161,4 @@ You might wonder, but this is the real API that we have in SwiftUI at the moment
 > To learn more about focus management in SwiftUI, take a look at my ["Focus management in SwiftUI"](/2020/12/02/focus-management-in-swiftui/) post.
 
 #### Conclusion
-SwiftUI has its own set of pros and cons. But for me, it is the way to go with my projects. I'm so excited about the upcoming WWDC and hope to see at least a part of the features I mentioned in this post. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+I didn't mention small things like *Pull-to-Refresh, SearchBar, TextView*, but I still expect them to appear. SwiftUI has its own set of pros and cons. But for me, it is the way to go with my projects. I'm so excited about the upcoming WWDC and hope to see at least a part of the features I mentioned in this post. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
