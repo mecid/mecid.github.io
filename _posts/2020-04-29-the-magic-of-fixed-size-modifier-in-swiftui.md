@@ -1,6 +1,6 @@
 ---
 title: The magic of fixed size modifier in SwiftUI
-image: /public/swiftui.png
+image: /public/fixedSize2.png
 layout: post
 category: Layout
 ---
