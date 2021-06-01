@@ -95,7 +95,7 @@ struct MonthView<DateView>: View where DateView: View {
             else { return [] }
         return calendar.generateDates(
             inside: monthInterval,
-            matching: DateComponents(hour: 0, minute: 0, second: 0, weekday: 1)
+            matching: DateComponents(hour: 0, minute: 0, second: 0, weekday: calendar.firstWeekday)
         )
     }
 
