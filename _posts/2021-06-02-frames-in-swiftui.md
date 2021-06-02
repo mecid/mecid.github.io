@@ -55,9 +55,9 @@ func frame(
 ```
 
 Let's focus on the horizontal axis because the same applies to the vertical. We will talk about ideal width and height in the next section because it doesn't affect flexible frames. As you can see, there are optional parameters for minimal and maximal width. You have three options here:
-You provide both minimal and maximal value.
-You provide only minimal value.
-You provide only maximal value.
+1. You provide both minimal and maximal value.
+2. You provide only minimal value.
+3. You provide only maximal value.
 	
 Let's start with the first one when you provide both minimal and maximal value. In this case, SwiftUI completely ignores the size of the child inside the frame and clamps the final size of the frame between minimal and maximal value.
 
