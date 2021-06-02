@@ -7,6 +7,8 @@ category: Layout
 
 SwiftUI provides us a magical frame modifier that you might think is very simple and straightforward to use. But there is a lot of complicated logic under the hood. This week we will talk about fixed and flexible frames and the frame modifier to control them.
 
+{% include friends.html %}
+
 #### Fixed frame
 Let's start with the straightforward type of frame called a fixed frame. The fixed frame is a way to create an invisible frame around the view that will propose the size you mention to the view. It doesn't mean that the frame will set the size of the view inside. The frame only suggests the size, and the view can completely ignore it. Let's take a look a two different examples.
 
