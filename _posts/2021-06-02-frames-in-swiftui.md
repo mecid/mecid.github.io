@@ -42,4 +42,4 @@ In the third case, we have only maximal value provided, and it leads to the cond
 Ideal width and heigh parameters allow us to provide an intrinsic. Intrinsic size is usually the size of the content. In the case of the Text view, it is the size of the string presented in the view. In the case of a shape like a Rectangle or Circle, the ideal size is undefined, and the view tries to fill the available space. The frame modifier allows you to provide the ideal size for the views that don't have content. SwiftUI uses ideal size only in conjunction with the fixedSize modifier.
 
 #### Conclusion
-The most challenging topic in SwiftUI for me was frame behavior. Fixed-size, flexible frames, ideal size, so many options for a single frame modifier.
+The most challenging topic in SwiftUI for me was frame behavior. Fixed-size, flexible frames, ideal size, so many options for a single frame modifier. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
