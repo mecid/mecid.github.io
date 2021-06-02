@@ -24,6 +24,8 @@ PlaygroundPage.current.setLiveView(
 )
 ```
 
+![fixed-frame](/public/fixed-frame1.png)
+
 As you can see in the example above, we have a Text view that shrinks its content to fit the size proposed by the frame.
 
 ```swift
@@ -36,6 +38,8 @@ PlaygroundPage.current.setLiveView(
         .background(Color.black)
 )
 ```
+
+![fixed-frame](/public/fixed-frame2.png)
 
 In the second example, we use a green rectangle with the size of 100x100. We also add a small fixed frame around the rectangle, but in this case, the green rectangle ignores the size proposed by the frame and draws itself outside of the frame.
 
@@ -73,6 +77,8 @@ PlaygroundPage.current.setLiveView(
 )
 ```
 
+![flexible-frame](/public/flexible-frame1.png)
+
 In the second case, we have only minimal value provided, which leads to the situation where SwiftUI checks the content size of a child view inside a frame and makes a decision based on this value. The final size of the frame will be the minimum value that you pass if the content size of the child view is smaller than the value you provide. Otherwise, it will be equal to the content size of the child view.
 
 ```swift
@@ -87,6 +93,8 @@ PlaygroundPage.current.setLiveView(
 )
 ```
 
+![flexible-frame](/public/flexible-frame2.png)
+
 In the third case, we have only maximal value provided, and it leads to the condition where SwiftUI checks the content size of a child view inside a frame. It sets the final size of the frame to the maximal value that you pass whenever it is bigger than the content size of the child view. Otherwise, it will be equal to the content size of the child view.
 
 ```swift
@@ -100,6 +108,8 @@ PlaygroundPage.current.setLiveView(
         .background(Color.black)
 )
 ```
+
+![flexible-frame](/public/flexible-frame3.png)
 
 #### Ideal size
 Ideal width and heigh parameters allow us to provide an intrinsic. Intrinsic size is usually the size of the content. In the case of the Text view, it is the size of the string presented in the view. In the case of a shape like a Rectangle or Circle, the ideal size is undefined, and the view tries to fill the available space. The frame modifier allows you to provide the ideal size for the views that don't have content. SwiftUI uses ideal size only in conjunction with the fixedSize modifier.
