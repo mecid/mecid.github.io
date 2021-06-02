@@ -26,7 +26,7 @@ PlaygroundPage.current.setLiveView(
 
 ![fixed-frame](/public/fixed-frame1.png)
 
-As you can see in the example above, we have a Text view that shrinks its content to fit the size proposed by the frame.
+As you can see in the example above, we have a *Text* view that shrinks its content to fit the size proposed by the frame.
 
 ```swift
 PlaygroundPage.current.setLiveView(
@@ -114,7 +114,7 @@ PlaygroundPage.current.setLiveView(
 ![flexible-frame](/public/flexible-frame3.png)
 
 #### Ideal size
-Ideal width and heigh parameters allow us to provide an intrinsic. Intrinsic size is usually the size of the content. In the case of the Text view, it is the size of the string presented in the view. In the case of a shape like a Rectangle or Circle, the ideal size is undefined, and the view tries to fill the available space. The frame modifier allows you to provide the ideal size for the views that don't have content. SwiftUI uses ideal size only in conjunction with the fixedSize modifier.
+Ideal width and heigh parameters allow us to provide an intrinsic. Intrinsic size is usually the size of the content. In the case of the *Text* view, it is the size of the string presented in the view. In the case of a shape like a *Rectangle* or *Circle*, the ideal size is undefined, and the view tries to fill the available space. The frame modifier allows you to provide the ideal size for the views that don't have content. SwiftUI uses ideal size only in conjunction with the *fixedSize* modifier.
 
 > To learn more about the fixedSize modifier, take a look at my ["The magic of fixed size modifier in SwiftUI"](/2020/04/29/the-magic-of-fixed-size-modifier-in-swiftui/) post.
 
