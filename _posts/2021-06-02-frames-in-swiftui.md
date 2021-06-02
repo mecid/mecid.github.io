@@ -10,7 +10,22 @@ SwiftUI provides us a magical frame modifier that you might think is very simple
 {% include friends.html %}
 
 #### Fixed frame
-Let's start with the straightforward type of frame called a fixed frame. The fixed frame is a way to create an invisible frame around the view that will propose the size you mention to the view. It doesn't mean that the frame will set the size of the view inside. The frame only suggests the size, and the view can completely ignore it. Let's take a look a two different examples.
+Let's start with the straightforward type of frame called a fixed frame. The fixed frame is a way to create an invisible frame around the view that will propose the size you mention to the view. It doesn't mean that the frame will set the size of the view inside. The frame only suggests the size, and the view can completely ignore it. Let's take a look two different examples.
+
+```swift
+PlaygroundPage.current.setLiveView(
+    Text("Happy WWDC 21!")
+        .foregroundColor(Color.white)
+        .frame(width: 50, height: 50)
+        .border(Color.red)
+        .frame(width: 300, height: 300)
+        .background(Color.black)
+)
+```
+
+![fixed-frame](/public/fixed-frame2.png)
+
+As you can see in the example above, we have a *Text* view that shrinks its content to fit the size proposed by the frame.
 
 ```swift
 PlaygroundPage.current.setLiveView(
@@ -25,21 +40,6 @@ PlaygroundPage.current.setLiveView(
 ```
 
 ![fixed-frame](/public/fixed-frame1.png)
-
-As you can see in the example above, we have a *Text* view that shrinks its content to fit the size proposed by the frame.
-
-```swift
-PlaygroundPage.current.setLiveView(
-    Text("Happy WWDC 21!")
-        .foregroundColor(Color.white)
-        .frame(width: 50, height: 50)
-        .border(Color.red)
-        .frame(width: 300, height: 300)
-        .background(Color.black)
-)
-```
-
-![fixed-frame](/public/fixed-frame2.png)
 
 In the second example, we use a green rectangle with the size of 100x100. We also add a small fixed frame around the rectangle, but in this case, the green rectangle ignores the size proposed by the frame and draws itself outside of the frame.
 
