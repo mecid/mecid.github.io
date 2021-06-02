@@ -97,7 +97,7 @@ PlaygroundPage.current.setLiveView(
 
 ![flexible-frame](/public/flexible-frame2.png)
 
-In the third case, we have only maximal value provided, and it leads to the condition where SwiftUI checks the content size of a child view inside a frame. It sets the final size of the frame to the maximal value that you pass whenever it is bigger than the content size of the child view. Otherwise, it will be equal to the content size of the child view.
+In the third case, we have only maximal value provided, and it leads to the condition where SwiftUI checks the content size of a child view inside a frame. It sets the final size of the frame to the maximal value that you pass whenever it is smaller than the content size of the child view. Otherwise, it will be equal to the content size of the child view.
 
 ```swift
 PlaygroundPage.current.setLiveView(
