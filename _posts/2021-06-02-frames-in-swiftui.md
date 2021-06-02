@@ -1,7 +1,7 @@
 ---
 title: Frames in SwiftUI
 layout: post
-image: /public/fixed-frame.png
+image: /public/fixed-frame1.png
 category: Layout
 ---
 
