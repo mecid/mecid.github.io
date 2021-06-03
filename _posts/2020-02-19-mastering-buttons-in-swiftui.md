@@ -78,6 +78,35 @@ Button("Button 1") {}
     .buttonStyle(FilledButton())
 ```
 
+#### Custom behavior with button styles
+Button styles can change the button instance drastically. For example, we can make a button style that accepts a boolean value and shows an activity indicator depending on that value.
+
+```swift
+struct ProgressButtonStyle: ButtonStyle {
+    let isLoading: Bool
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(isLoading ? 0 : 1)
+            .overlay {
+                if isLoading {
+                    ProgressView()
+                }
+            }
+    }
+}
+
+struct ContentView: View {
+    @State private var isLoading = true
+
+    var body: some View {
+        Button("Download") {
+            isLoading.toggle()
+        }.buttonStyle(ProgressButtonStyle(isLoading: isLoading))
+    }
+}
+```
+
 #### Button styles and environment
 Another benefit of *ButtonStyle* protocol is the ability to set it in the environment. It means we don't need to set a button style manually for every button. SwiftUI will automatically apply it whenever we configure it for the current environment. Let's take a look at the small example.
 
