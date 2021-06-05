@@ -252,13 +252,13 @@ struct ContentView: View {
             List {
                 Section(header: Text("Section 1")) {
                     Text("Hello")
-                }
+                }.headerProminence(.increased)
 
                 Section(header: Text("Section 2")) {
                     Text("World")
                 }
             }
-            .listStyle(.plain)
+            .listStyle(.insetGrouped)
             .navigationTitle("List")
         }
     }
