@@ -265,6 +265,8 @@ struct ContentView: View {
 }
 ```
 
+In the example above, we apply *insetGrouped* style, also we use *headerProminence* modifier to increase the importance of the section which makes the header text bolder and bigger.
+
 SwiftUI also provides us a set of view modifier which allows us to change the tint color of separators, list items or completely hide them from the list.
 
 ```swift
