@@ -117,7 +117,7 @@ struct ContentView: View {
 ```
 
 #### AsyncImage
-The thing that I didn't expect was the new *AsyncImage* view. *AsyncImage* view allows you to download and present remote images using URLSession. It provides a very lovely API which very to use. Let's take a look at it.
+The thing I didn't expect was the new *AsyncImage* view. *AsyncImage* view allows you to download and present remote images using *URLSession*. It provides a very lovely API which very easy to use. Let's take a look at it.
 
 ```swift
 struct Post: Hashable {
