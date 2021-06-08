@@ -68,7 +68,7 @@ struct ContentView: View {
 As you can see in the example above, we also have new *ButtonRole* enum that allows specifying a role for the button, which can be either *destructive* or *cancel*.
 
 #### Pull-to-Refresh
-I used to have the pull-to-refresh gesture in the screens where the content can be updated or refetched. SwiftUI provides the *refreshable* view modifier that we can use to attach the pull-to-refresh gesture and a callback that SwiftUI runs as soon as the user enables the gesture.
+I used to have the pull-to-refresh gesture in the screens where the content can be updated or refetched. SwiftUI provides the new *refreshable* view modifier that we can use to attach the pull-to-refresh gesture and a callback that SwiftUI runs as soon as the user enables the gesture.
 
 ```swift
 struct ContentView: View {
