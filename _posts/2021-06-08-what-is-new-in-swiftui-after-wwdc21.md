@@ -1,11 +1,11 @@
 ---
-title: What is new in SwiftUI 3
+title: What is new in SwiftUI after WWDC21
 layout: post
 image: /public/wwdc21-v3.jpg
 category: Meta
 ---
 
-WWDC 21 is finally here, and there are many new things in the updated version of SwiftUI. I'm happy to share with you that many items on my wishlist have finally arrived. In this post, I will try to give you a summary of the significant SwiftUI additions of this year.
+WWDC21 is finally here, and there are many new things in the updated version of SwiftUI. I'm happy to share with you that many items on my wishlist have finally arrived. In this post, I will try to give you a summary of the significant SwiftUI additions of this year.
 
 #### List
 The List view is the most common view in our apps. The List view managed UITableView under the hood but didn't expose all the great features of UITableView till today. Now we have view modifiers that expose the styling options for separators and tint colors in sections and cells. Let's see how we can use them.
