@@ -192,4 +192,4 @@ ZStack {
 ```
 
 #### Conclusion
-There are many other additions worth mentioning, like a brand new Accessibility Rotors API, the new SectionedFetchRequest property wrapper that allows you to make sectioned requests to Core Data, and much more. I hope to cover all these new features of the SwiftUI framework in the upcoming weeks.
+There are many other additions worth mentioning, like a brand new Accessibility Rotors API, the new SectionedFetchRequest property wrapper that allows you to make sectioned requests to Core Data, and much more. I hope to cover all these new features of the SwiftUI framework in the upcoming weeks. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
