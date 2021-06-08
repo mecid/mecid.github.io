@@ -7,6 +7,8 @@ category: Meta
 
 WWDC21 is finally here, and there are many new things in the updated version of SwiftUI. I'm happy to share with you that many items on my wishlist have finally arrived. In this post, I will try to give you a summary of the significant SwiftUI additions of this year.
 
+{% include friends.html %}
+
 #### List
 The List view is the most common view in our apps. The List view managed UITableView under the hood but didn't expose all the great features of UITableView till today. Now we have view modifiers that expose the styling options for separators and tint colors in sections and cells. Let's see how we can use them.
 
