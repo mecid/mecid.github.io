@@ -193,5 +193,14 @@ ZStack {
 }
 ```
 
+#### TimelineView
+*TimelineView* is another brand new SwiftUI view. Usually, SwiftUI updates views only during environment or state changes. In case of *TimelineView*, SwiftUI updates it according to a schedule that you provide. It might be very useful while building clock or workout apps.
+
+```swift
+TimelineView(PeriodicTimelineSchedule(from: startDate, by: 1)) { context in
+    AnalogTimerView(date: context.date)
+}
+```
+
 #### Conclusion
 There are many other additions worth mentioning, like a brand new Accessibility Rotors API, the new *SectionedFetchRequest* property wrapper that allows you to make sectioned requests to Core Data, and much more. I hope to cover all these new features of the SwiftUI framework in the upcoming weeks. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
