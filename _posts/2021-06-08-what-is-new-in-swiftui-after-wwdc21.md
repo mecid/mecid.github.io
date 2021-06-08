@@ -96,7 +96,7 @@ Another thing that I really missed in SwiftUI is *SearchBar* and *SearchControll
 
 ```swift
 struct ContentView: View {
-    @State private var query: String = "query"
+    @State private var query: String = ""
     @State private var messages: [String] = [
         "Hello", "World"
     ]
@@ -108,7 +108,7 @@ struct ContentView: View {
                     Text(message)
                 }
             }
-            .searchable(text: $query)
+            .searchable("Search term", text: $query)
             .onChange(of: query) { print($0) }
             .navigationTitle("Messages")
         }
