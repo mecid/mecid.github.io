@@ -108,7 +108,7 @@ struct ContentView: View {
                     Text(message)
                 }
             }
-            .searchable("Search term", text: $query)
+            .searchable("Search term", text: $query, placement: .automatic)
             .onChange(of: query) { print($0) }
             .navigationTitle("Messages")
         }
