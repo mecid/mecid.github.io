@@ -165,6 +165,16 @@ struct PostView: View {
 }
 ```
 
+As the bonus we gain markdown support everywhere with *Text* view.
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        Text("**Happy WWDC21**")
+    }
+}
+```
+
 #### Focus management 
 Finally, SwiftUI provides us a way to manage the focus in our views. There are brand new @*FocusState* property wrappers and a *focused* view modifier that we can use to toggle first responders.
 
