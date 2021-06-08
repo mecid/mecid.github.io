@@ -190,7 +190,7 @@ struct LoginForm: View {
     @FocusState private var focusedField: Field?
 
     var body: some View {
-        Form {
+        VStack {
             TextField("Username", text: $username)
                 .focused($focusedField, equals: .usernameField)
 
