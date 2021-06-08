@@ -179,7 +179,7 @@ struct ContentView: View {
 Finally, SwiftUI provides us a way to manage the focus in our views. There are brand new @*FocusState* property wrappers and a *focused* view modifier that we can use to toggle first responders.
 
 ```swift
-struct LoginForm {
+struct LoginForm: View {
     enum Field: Hashable {
         case usernameField
         case passwordField
