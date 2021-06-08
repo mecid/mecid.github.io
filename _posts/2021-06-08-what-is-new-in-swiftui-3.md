@@ -4,3 +4,192 @@ layout: post
 image: /public/wwdc21.jpg
 category: Meta
 ---
+
+WWDC 21 is finally here, and there are many new things in the updated version of SwiftUI. I'm happy to share with you that many items on my wishlist have finally arrived. In this post, I will try to give you a summary of the significant SwiftUI additions of this year.
+
+#### List
+The List view is the most common view in our apps. The List view managed UITableView under the hood but didn't expose all the great features of UITableView till today. Now we have view modifiers that expose the styling options for separators and tint colors in sections and cells. Let's see how we can use them.
+
+```swift
+struct ContentView: View {
+    @State private var messages: [String] = [
+        "Hello", "World"
+    ]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(messages, id: \.self) { message in
+                    Text(message)
+                }
+            }
+            .listRowSeparator(.visible, edges: .all)
+            .listSectionSeparator(.visible, edges: .all)
+            .listSectionSeparatorTint(Color.purple)
+            .listRowSeparatorTint(Color.red)
+            .navigationTitle("Messages")
+        }
+    }
+}
+```
+
+SwiftUI also provides the new swipeActions view modifier that we can use to attach the swipeable action to views inside a list.
+
+```swift
+struct ContentView: View {
+    @State private var messages: [String] = [
+        "Hello", "World"
+    ]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(messages, id: \.self) { message in
+                    Text(message)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            Button("Remove", role: .destructive) {
+                                messages.removeAll { $0 == message }
+                            }
+                        }
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            Button("Copy") {
+                                messages.append(message)
+                            }
+                        }
+                }
+            }.navigationTitle("Messages")
+        }
+    }
+}
+```
+
+As you can see in the example above, we also have new ButtonRole enum that allows specifying a role for the button, which can be either destructive or cancel.
+
+#### Pull-to-Refresh
+I used to have the pull-to-refresh gesture in the screens where the content can be updated or refetched. SwiftUI provides the refreshable view modifier that we can use to attach the pull-to-refresh gesture and a callback that SwiftUI runs as soon as the user enables the gesture.
+
+```swift
+struct ContentView: View {
+    @State private var messages: [String] = [
+        "Hello", "World"
+    ]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(messages, id: \.self) { message in
+                    Text(message)
+                }
+            }.refreshable {
+                messages.append("!!!")
+            }
+            .navigationTitle("Messages")
+        }
+    }
+}
+```
+
+#### Search
+Another thing that I really missed in SwiftUI is SearchBar and SearchController's functionality. Fortunately, this iteration of SwiftUI is packed with a brand new collection of view modifiers that enables powerful search capabilities.
+
+```swift
+struct ContentView: View {
+    @State private var query: String = "query"
+    @State private var messages: [String] = [
+        "Hello", "World"
+    ]
+
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(messages, id: \.self) { message in
+                    Text(message)
+                }
+            }
+            .searchable(text: $query)
+            .onChange(of: query) { print($0) }
+            .navigationTitle("Messages")
+        }
+    }
+}
+```
+
+#### AsyncImage
+The thing that I didn't expect was the new AsyncImage view. AsyncImage view allows you to download and present remote images using URLSession. It provides a very lovely API which very to use. Let's take a look at it.
+
+```swift
+struct Post: Hashable {
+    let image: URL
+    let title: String
+    let content: String
+}
+
+struct PostView: View {
+    let post: Post
+
+    var body: some View {
+        HStack {
+            AsyncImage(url: post.image)
+            VStack {
+                Text(post.title)
+                Text(post.content)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+}
+```
+
+#### Text and AttributedString
+Swift Foundation has a new AttributedString which SwiftUI supports. You can now pass the instances of AttributedString to Text view to display it. An interesting detail here is the ability to display markdown content using the new AttributedString.
+
+```swift
+struct PostView: View {
+    let post: Post
+
+    var markdown: AttributedString {
+        try! AttributedString(markdown: post.content)
+    }
+
+    var body: some View {
+        HStack {
+            AsyncImage(url: post.image)
+            VStack {
+                Text(post.title)
+                Text(markdown)
+            }
+        }
+    }
+}
+```
+
+#### Canvas
+Canvas view is a new way to gain more control over lower-level drawing primitives. It is a modern, GPU-accelerated equivalent of drawRect. We can use Canvas to draw shapes using Path. We can also draw images, texts, and other SwiftUI views.
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        Canvas { context, size in
+            context.fill(
+                Circle().path(in: .init(origin: .zero, size: size)),
+                with: .color(.green)
+            )
+        }
+    }
+}
+```
+
+#### Materials
+iOS provides materials or blur effects that create a translucent effect you can use to evoke a sense of depth. The effect of material lets views and controls hint at background content without distracting from foreground content. We didn't have access to materials in previous versions of SwiftUI. Fortunately, the new version of SwiftUI provides us a whole range of physical materials from ultra-thin to ultra-thick and semantic bars material.
+
+```swift
+ZStack {
+    Color.teal
+    Label("Flag", systemImage: "flag.fill")
+        .padding()
+        .background(.regularMaterial)
+}
+```
+
+#### Conclusion
+There are many other additions worth mentioning, like a brand new Accessibility Rotors API, the new SectionedFetchRequest property wrapper that allows you to make sectioned requests to Core Data, and much more. I hope to cover all these new features of the SwiftUI framework in the upcoming weeks.
