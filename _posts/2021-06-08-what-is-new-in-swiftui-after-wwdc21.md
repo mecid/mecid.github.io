@@ -165,6 +165,42 @@ struct PostView: View {
 }
 ```
 
+#### Focus management 
+Finally, SwiftUI provides us a way to manage the focus in our views. There are brand new @*FocusState* property wrappers and a *focused* view modifier that we can use to toggle first responders.
+
+```swift
+struct LoginForm {
+    enum Field: Hashable {
+        case usernameField
+        case passwordField
+    }
+
+    @State private var username = ""
+    @State private var password = ""
+    @FocusState private var focusedField: Field?
+
+    var body: some View {
+        Form {
+            TextField("Username", text: $username)
+                .focused($focusedField, equals: .usernameField)
+
+            SecureField("Password", text: $password)
+                .focused($focusedField, equals: .passwordField)
+
+            Button("Sign In") {
+                if username.isEmpty {
+                    focusedField = .usernameField
+                } else if password.isEmpty {
+                    focusedField = .passwordField
+                } else {
+                    handleLogin(username, password)
+                }
+            }
+        }
+    }
+}
+```
+
 #### Canvas
 SwiftUI *Canvas* is a new way to gain more control over lower-level drawing primitives. It is a modern, GPU-accelerated equivalent of *drawRect*. We can use *Canvas* to draw shapes using *Path*. We can also draw images, texts, and other SwiftUI views.
 
@@ -203,4 +239,6 @@ TimelineView(PeriodicTimelineSchedule(from: startDate, by: 1)) { context in
 ```
 
 #### Conclusion
-There are many other additions worth mentioning, like a brand new Accessibility Rotors API, the new *SectionedFetchRequest* property wrapper that allows you to make sectioned requests to Core Data, and much more. I hope to cover all these new features of the SwiftUI framework in the upcoming weeks. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+There are many other additions worth mentioning, like a brand new Accessibility Rotors API, the new *SectionedFetchRequest* property wrapper that allows you to make sectioned requests to Core Data, and much more.
+
+I hope to cover all these new features of the SwiftUI framework in the upcoming weeks. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
