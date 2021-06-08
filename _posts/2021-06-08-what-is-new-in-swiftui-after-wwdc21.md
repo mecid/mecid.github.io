@@ -143,7 +143,7 @@ struct PostView: View {
 ```
 
 #### Text and AttributedString
-Swift Foundation has a new *AttributedString* which SwiftUI supports. You can now pass the instances of *AttributedString* to Text view to display it. An interesting detail here is the ability to display markdown content using the new *AttributedString*.
+Swift Foundation has a new *AttributedString* type and SwiftUI supports it out of the box. You can now pass the instances of *AttributedString* to *Text* view to display it. An interesting detail here is the ability to display markdown content using the new *AttributedString*.
 
 ```swift
 struct PostView: View {
