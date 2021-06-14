@@ -23,12 +23,12 @@ struct ContentView: View {
             List {
                 ForEach(messages, id: \.self) { message in
                     Text(message)
+                        .listRowSeparatorTint(Color.red)
+                        .listRowSeparator(.visible, edges: .all)
                 }
             }
-            .listRowSeparator(.visible, edges: .all)
             .listSectionSeparator(.visible, edges: .all)
             .listSectionSeparatorTint(Color.purple)
-            .listRowSeparatorTint(Color.red)
             .navigationTitle("Messages")
         }
     }
