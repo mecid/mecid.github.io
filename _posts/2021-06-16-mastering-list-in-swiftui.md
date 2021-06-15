@@ -12,6 +12,8 @@ The list is the crucial view for many apps. I can't imagine an app that doesn't 
 #### Basics
 List view is straightforward but very powerful. You can use it similarly to other SwiftUI views. To create a list view in SwiftUI, you should initiate the List struct with a *ViewBuilder* closure that defines the content of the list.
 
+> To learn more about *ViewBuilder*, take a look at my dedicated ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
+
 ```swift
 struct ContentView: View {
     var body: some View {
@@ -123,6 +125,8 @@ struct ContentView: View {
 ![list](/public/list3.png)
 
 As you can see in the example above, we define the *Tree* struct with the *children* field, which is another array of trees. Then, we initiate the list view and provide a keypath to the recursive field.
+
+> To learn more about displaying recursive data, take a look at my ["Displaying recursive data using OutlineGroup in SwiftUI"](/2020/09/02/displaying-recursive-data-using-outlinegroup-in-swiftui/) post.
 
 #### Selection
 List view provides you an opportunity to select items only in the edit mode. However, we usually want to mark several items to delete or move them together. Therefore, to enable the selection interface, we have to move the view to the edit mode and provide a selection binding to the list view.
@@ -238,6 +242,8 @@ struct ContentView: View {
 
 #### Styling options
 SwiftUI provides a few different styles for the list view. It includes *plain, sidebar, inset, grouped, inset, and insetGrouped* styles. By default, SwiftUI uses *insetGrouped* style, but you can change it to any style type you need using the *listStyle* view modifier. Keep in mind that the *listStyle* view modifier uses an environment to propagate the selected style, and it will affect all the list views down in the view hierarchy. 
+
+> To learn more about environment in SwiftUI, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 ```swift
 struct ContentView: View {
