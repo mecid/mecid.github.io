@@ -20,6 +20,8 @@ struct ContentView: View {
 }
 ```
 
+![list](/public/list0.png)
+
 Usually, we use the list view to display an array of similar items. To achieve this behavior with SwiftUI, we should use another version of list view's initializer to map every item in the collection to its view representation.
 
 ```swift
@@ -77,6 +79,8 @@ struct ContentView: View {
 }
 ```
 
+![list](/public/list2.png)
+
 As you can see here, we use the ForEach view to iterate over collections of items and map them to particular views. It also needs an ID to differentiate the items in the collection.
 
 #### Recursive
@@ -113,6 +117,8 @@ struct ContentView: View {
 }
 ```
 
+![list](/public/list3.png)
+
 As you can see in the example above, we define the Tree struct with the children field, which is another array of trees. Then, we initiate the list view and provide a keypath to the recursive field.
 
 #### Selection
@@ -139,6 +145,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![list](/public/list4.png)
 
 We add the edit button in the toolbar. Edit button toggles the edit mode for the current scope and enables the editing interface. You can allow both single and multi-selection modes. It depends on the type of selection binding you provide. SwiftUI enables multi selection mode when you give a binding to the set, or it uses single selection binding when you pass the binding to the single ID item.
 
