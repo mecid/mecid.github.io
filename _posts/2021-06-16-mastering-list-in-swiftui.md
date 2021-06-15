@@ -89,7 +89,7 @@ struct ContentView: View {
 As you can see here, we use the *ForEach* view to iterate over collections of items and map them to particular views. It also needs a keypath to the *ID* field to differentiate the items in the collection.
 
 #### Recursive
-I didn't face this case too often, but we have to display recursive data structures like trees in our apps from time to time. You can easily do that with the list view in SwiftUI. There is a particular list initializer that accepts a keypath for the recursive field of your data structure. It will use the keypath to traverse and display your data recursively.
+I didn't face this case too often, but we have to display recursive data structures like trees in our apps from time to time. You can easily do that with the list view in SwiftUI. There is a particular *List* struct initializer that accepts a keypath for the recursive field of your data structure. It will use the keypath to traverse and display your data recursively.
 
 ```swift
 struct Tree<Value: Hashable>: Hashable {
