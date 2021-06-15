@@ -10,7 +10,7 @@ The list is the crucial view for many apps. I can't imagine an app that doesn't 
 {% include friends.html %}
 
 #### Basics
-List view is straightforward but very powerful. You can use it similarly to other SwiftUI views. To create a list view in SwiftUI, you should initiate the List struct with a *ViewBuilder* closure that defines the content of the list.
+List view is straightforward but very powerful. You can use it similarly to other SwiftUI views. To create a list view in SwiftUI, you should initiate the *List* struct with a *ViewBuilder* closure that defines the content of the list.
 
 > To learn more about *ViewBuilder*, take a look at my dedicated ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
