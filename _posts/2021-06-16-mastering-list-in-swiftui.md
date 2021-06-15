@@ -182,7 +182,7 @@ struct ContentView: View {
 Here we provide a binding to the single item *ID*. That's why SwiftUI enables the single selection mode on the list.
 
 #### Swipe actions
-We can attach leading and trailing swipe actions to any items in the list view. We can quickly achieve that by using the new *swipeActions* view modifier.
+We can enable leading and trailing swipe actions for the list items. We can quickly achieve that by using the new *swipeActions* view modifier.
 
 ```swift
 struct ContentView: View {
