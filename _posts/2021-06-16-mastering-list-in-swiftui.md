@@ -27,7 +27,7 @@ struct ContentView: View {
 
 ![list](/public/list0.png)
 
-Usually, we use the list view to display an array of similar items. To achieve this behavior with SwiftUI, we should use another version of list view's initializer to map every item in the collection to its view representation.
+Usually, we use the list view to display an array of similar items. To achieve this behavior with SwiftUI, we should use another version of *List* structs's initializer to map every item in the collection to its view representation.
 
 ```swift
 struct Message {
