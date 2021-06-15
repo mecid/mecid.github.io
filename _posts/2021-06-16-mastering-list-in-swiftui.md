@@ -236,7 +236,7 @@ struct ContentView: View {
 }
 ```
 
-#### List styling options
+#### Styling options
 SwiftUI provides a few different styles for the list view. It includes *plain, sidebar, inset, grouped, inset, and insetGrouped* styles. By default, SwiftUI uses *insetGrouped* style, but you can change it to any style type you need using the *listStyle* view modifier. Keep in mind that the *listStyle* view modifier uses an environment to propagate the selected style, and it will affect all the list views down in the view hierarchy. 
 
 ```swift
