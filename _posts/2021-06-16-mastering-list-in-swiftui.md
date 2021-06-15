@@ -7,6 +7,8 @@ image: /public/cardiobot.PNG
 
 The list is the crucial view for many apps. I can't imagine an app that doesn't use a list view anywhere in the view hierarchy. During WWDC21, list view became even more powerful and brought us all the needed features of *UITableView*. This week, we will learn how to use the list view in SwiftUI and master its features.
 
+{% include friends.html %}
+
 #### Basics
 List view is straightforward but very powerful. You can use it similarly to other SwiftUI views. To create a list view in SwiftUI, you should initiate the List struct with a *ViewBuilder* closure that defines the content of the list.
 
