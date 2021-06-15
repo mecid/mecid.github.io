@@ -155,7 +155,7 @@ struct ContentView: View {
 
 ![list](/public/list4.png)
 
-We add the edit button in the toolbar. Edit button toggles the edit mode for the current scope and enables the editing interface. You can allow both single and multi-selection modes. It depends on the type of selection binding you provide. SwiftUI enables multi selection mode when you give a binding to the set, or it uses single selection binding when you pass the binding to the single *ID* item.
+We add the edit button in the toolbar. Edit button toggles the edit mode for the current scope and enables the editing interface. You can allow both single and multi-selection modes. It depends on the type of selection binding you provide. SwiftUI enables multi selection mode when you give a binding to the *Set*, or it uses single selection binding when you pass the binding to the single *ID* item.
 
 ```swift
 struct ContentView: View {
