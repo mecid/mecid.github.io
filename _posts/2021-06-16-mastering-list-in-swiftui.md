@@ -5,7 +5,7 @@ category: Mastering SwiftUI views
 image: /public/cardiobot.PNG
 ---
 
-The list is the crucial view for many apps. I can't imagine an app that doesn't use a list view anywhere in the view hierarchy. During WWDC21, list view became even more powerful and brought us all the needed features of *UITableView*. This week, we will learn how to use the list view in SwiftUI and master its features.
+List is the crucial view for many apps. I can't imagine an app that doesn't use a list view anywhere in the view hierarchy. During WWDC21, list view became even more powerful and brought us all the needed features of *UITableView*. This week, we will learn how to use the list view in SwiftUI and master its features.
 
 {% include friends.html %}
 
