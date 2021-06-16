@@ -57,8 +57,8 @@ Sometimes we need to display the content of the list view in different sections.
 ```swift
 struct ContentView: View {
     @State private var incoming: [Message] = [
-        Message(content: "Outgoing message 1"),
-        Message(content: "Outgoing message 2")
+        Message(content: "Incoming message 1"),
+        Message(content: "Incoming message 2")
     ]
 
     @State private var outgoing: [Message] = [
