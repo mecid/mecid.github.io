@@ -2,7 +2,7 @@
 title: Mastering search in SwiftUI
 layout: post
 image: /public/search.png
-category: Mastering SwiftUI view
+category: Mastering SwiftUI views
 ---
 
 SwiftUI Release 3.0 brought tons of expected features that we missed in previous iterations. One of them is the ability to provide the search feature in our apps. Fortunately, we have a new *searchable* view modifier. This week, we will learn about the new *searchable* modifier and build a great search experience using it.
