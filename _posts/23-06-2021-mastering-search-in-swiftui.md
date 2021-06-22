@@ -1,0 +1,39 @@
+---
+title: Mastering search in SwiftUI
+layout: post
+image: /public/search.png
+---
+
+SwiftUI Release 3.0 brought tons of expected features that we missed in previous iterations. One of them is the ability to provide the search feature in our apps. Fortunately, we have a new searchable view modifier. This week, we will learn about the new searchable modifier and build a great search experience using it.
+
+#### Basics
+We can mark the content of our view as searchable using the new view modifier. SwiftUI understands the structure of your app and displays the search bar in the appropriate place. Let's take a look at a quick example.
+
+=====================================================
+
+We attach the searchable view modifier to the NavigationView at the root of our app. SwiftUI places search bar in different places depending on the environment. For example, it will put a search bar in Master view on iOS and iPadOS. On macOS, SwiftUI places the search bar in the toolbar of the trailing column of the NavigationView.
+
+=====================================================
+
+You can also suggest placement for the search bar using the placement parameter, but keep in mind that SwiftUI can ignore it. A few possible placements for the search bar are automatic, which is the default one, sidebar, toolbar, and navigationBarDrawer.
+
+=====================================================
+
+Whenever we use the searchable modifier, we should provide a binding to a string value. We can observe changes and filter our content depending on the query term using that binding.
+
+#### Environment
+SwiftUI provides us isSearching environment value that indicated whether the user is currently interacting with the search bar that has been placed by a surrounding searchable modifier. We can use this value to understand whether to show quick search results. 
+
+=====================================================
+
+#### Suggestions 
+Suggestions are a vital part of the excellent search experience, and SwiftUI gives us a very nice API that we can use to provide search suggestions to our users. The searchable view modifier has the optional suggestions parameter, which is a @ViewBuilder closure. Let's see how we can use it.
+
+=====================================================
+
+As you can see in the example above, we use the searchable modifier and provide a @ViewBuilder closure with ForEach view that iterates over an array of suggestions. We also use the searchCompletion view modifier to wrap every text view in a button that assigns its value to the search query binding.
+
+Keep in mind that searchCompletion wraps its content in a Button. It means you should apply it to the view that doesn't have user interaction like Text or Label.
+
+#### Conclusion
+Today we learned how to build a great search experience using the brand new searchable view modifier. It is incredible how easy you can make things like suggestions, the platform adopted placement using the only searchable view modifier.
