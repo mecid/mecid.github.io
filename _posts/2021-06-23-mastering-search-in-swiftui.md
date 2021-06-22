@@ -21,7 +21,7 @@ struct RootView: View {
             Master()
             Details()
         }
-        .searchable("Type something...", text: $query)
+        .searchable("Search", text: $query)
     }
 }
 ```
