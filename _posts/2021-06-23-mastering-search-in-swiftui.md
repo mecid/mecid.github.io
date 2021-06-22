@@ -10,7 +10,7 @@ SwiftUI Release 3.0 brought tons of expected features that we missed in previous
 {% include friends.html %}
 
 #### Basics
-We can mark the content of our view as searchable using the new view modifier. SwiftUI understands the structure of your app and displays the search bar in the appropriate place. Let's take a look at a quick example.
+We can mark the content of our view as searchable using the new view modifier. SwiftUI understands the structure of your app and displays the search bar in the appropriate place. Let's take a look at the quick example.
 
 ```swift
 struct RootView: View {
@@ -28,7 +28,7 @@ struct RootView: View {
 
 ![search](/public/search.png)
 
-We attach the *searchable* view modifier to the *NavigationView* at the root of our app. SwiftUI places search bar in different places depending on the environment. For example, it will put a search bar in Master view on iOS and iPadOS. On macOS, SwiftUI places the search bar in the toolbar of the trailing column of the *NavigationView*.
+We attach the *searchable* view modifier to the *NavigationView* at the root of our app. SwiftUI can put the search bar in different places depending on the environment. For example, it will put a search bar in the *Master* view on iOS and iPadOS. On macOS, SwiftUI places the search bar in the toolbar of the trailing column of the *NavigationView*.
 
 ```swift
 struct RootView: View {
