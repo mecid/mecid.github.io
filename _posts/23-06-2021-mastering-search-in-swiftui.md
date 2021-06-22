@@ -23,6 +23,8 @@ struct RootView: View {
 }
 ```
 
+![search](/public/search.png)
+
 We attach the searchable view modifier to the NavigationView at the root of our app. SwiftUI places search bar in different places depending on the environment. For example, it will put a search bar in Master view on iOS and iPadOS. On macOS, SwiftUI places the search bar in the toolbar of the trailing column of the NavigationView.
 
 ```swift
