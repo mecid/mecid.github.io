@@ -6,6 +6,8 @@ image: /public/search.png
 
 SwiftUI Release 3.0 brought tons of expected features that we missed in previous iterations. One of them is the ability to provide the search feature in our apps. Fortunately, we have a new searchable view modifier. This week, we will learn about the new searchable modifier and build a great search experience using it.
 
+{% include friends.html %}
+
 #### Basics
 We can mark the content of our view as searchable using the new view modifier. SwiftUI understands the structure of your app and displays the search bar in the appropriate place. Let's take a look at a quick example.
 
