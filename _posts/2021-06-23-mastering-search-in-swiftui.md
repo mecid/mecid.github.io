@@ -136,6 +136,8 @@ struct ContentView: View {
 }
 ```
 
+![search-suggestions](/public/search1.png)
+
 As you can see in the example above, we use the *searchable* modifier and provide a *@ViewBuilder* closure with *ForEach* view that iterates over an array of suggestions. We also use the *searchCompletion* view modifier to wrap every text view in a button that assigns its value to the search query binding.
 
 Keep in mind that *searchCompletion* modifier wraps its content in a *Button*. It means you should apply it to the view that doesn't have user interaction like *Text* or *Label*.
