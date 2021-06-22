@@ -141,4 +141,4 @@ As you can see in the example above, we use the *searchable* modifier and provid
 Keep in mind that *searchCompletion* modifier wraps its content in a *Button*. It means you should apply it to the view that doesn't have user interaction like *Text* or *Label*.
 
 #### Conclusion
-Today we learned how to build a great search experience using the brand new *searchable* view modifier. It is incredible how easy you can make things like suggestions, the platform adopted placement using the only *searchable* view modifier.
+Today we learned how to build a great search experience using the brand new *searchable* view modifier. It is incredible how easy you can make things like suggestions, the platform adopted placement using the only *searchable* view modifier. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
