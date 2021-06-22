@@ -100,7 +100,7 @@ struct StarredReposList: View {
 ```
 
 #### Suggestions 
-Suggestions are a vital part of the excellent search experience, and SwiftUI gives us a very nice API that we can use to provide search suggestions to our users. The *searchable* view modifier has the optional suggestions parameter, which is a *@ViewBuilder* closure. Let's see how we can use it.
+Suggestions are a vital part of the excellent search experience, and SwiftUI gives us a very nice API that we can use to provide search suggestions to our users. The *searchable* view modifier has the optional *suggestions* parameter, which is a *@ViewBuilder* closure. Let's see how we can use it.
 
 ```swift
 struct ContentView: View {
