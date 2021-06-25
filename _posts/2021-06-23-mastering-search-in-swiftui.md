@@ -21,7 +21,7 @@ struct RootView: View {
             Master()
             Details()
         }
-        .searchable("Search", text: $query)
+        .searchable(text: $query, prompt: "Search")
     }
 }
 ```
@@ -83,6 +83,7 @@ SwiftUI provides us *isSearching* environment value that indicated whether the u
 ```swift
 struct StarredReposList: View {
     @StateObject var viewModel = SearchViewModel()
+    @Environment(\.dismissSearch) var dismissSearch
     @Environment(\.isSearching) var isSearching
 
     let query: String
@@ -92,12 +93,20 @@ struct StarredReposList: View {
             RepoView(repo: repo)
         }.overlay {
             if isSearching && !query.isEmpty {
-                SearchResultView(query: query)
+                VStack {
+                    Button("Dismiss search") {
+                        dismissSearch()
+                    }
+                    SearchResultView(query: query)
+                        .environmentObject(viewModel)
+                }
             }
         }
     }
 }
 ```
+
+Another search-related environment value we have is *dismissSearch*. *dismissSearch* asks the system to dismiss the current search interaction. Remember that both environment values work only in the views surrounded by the *searchable* modifier.  
 
 #### Suggestions 
 Suggestions are a vital part of the excellent search experience, and SwiftUI gives us a very nice API that we can use to provide search suggestions to our users. The *searchable* view modifier has the optional *suggestions* parameter, which is a *@ViewBuilder* closure. Let's see how we can use it.
