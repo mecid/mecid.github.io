@@ -10,8 +10,7 @@ Button is one of the crucial components of any app. We use buttons to provide ac
 {% include friends.html %}
 
 #### Button role
-New in SwiftUI Release 3, you can provide an optional button role. By default, it is nil and uses a standard one, but you can set the predefined role provided by ButtonRole enum. The role can be destructive or cancel.
-In this case, SwiftUI will set a specified button style. For example, SwiftUI changes the button tint to red for destructive buttons.
+New in SwiftUI Release 3, you can provide an optional button role. By default, it is nil and uses a standard one, but you can set the predefined role provided by ButtonRole enum. The role can be destructive or cancel. In this case, SwiftUI will set a specified button style. For example, SwiftUI changes the button tint to red for destructive buttons.
 
 ```swift
 Button("Delete", role: .destructive) {
@@ -51,6 +50,8 @@ Button("New action") {}
 ![button-bordered](/public/buttons-bordered.png)
 
 BorderedButtonStyle provides you a bordered button appearance with rounded corners that you can see in many places across the iOS system. 
+
+> To learn more about buttons and how to create custom button style, take a look at my ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
 #### Button tint
 There is a new tint view modifier that we should use to override the default accent color. Unlike an app's accent color, which can be overridden by user preference, the tint color is always respected.
