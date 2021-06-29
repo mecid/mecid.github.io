@@ -36,15 +36,6 @@ struct ContentView: View {
 }
 ```
 
-#### Button tint
-There is a new tint view modifier that we should use to override the default accent color. Unlike an app's accent color, which can be overridden by user preference, the tint color is always respected.
-
-```swift
-Button("New action") {}
-    .buttonStyle(.bordered)
-    .tint(.green)
-```
-
 #### Bordered button style
 There is a new BorderedButtonStyle type that allows us to display buttons with rounded corners. You can set the button style for a particular button or the full view hierarchy using the buttonStyle view modifier.
 
@@ -54,6 +45,15 @@ Button("New action") {}
 ```
 
 BorderedButtonStyle provides you a bordered button appearance with rounded corners that you can see in many places across the iOS system. 
+
+#### Button tint
+There is a new tint view modifier that we should use to override the default accent color. Unlike an app's accent color, which can be overridden by user preference, the tint color is always respected.
+
+```swift
+Button("New action") {}
+    .buttonStyle(.bordered)
+    .tint(.green)
+```
 
 #### Control size
 We can't directly control the corner radius of the bordered button, but we can affect it using the controlSize view modifier. The controlSize view modifier allows us to set the size of controls within the view. There is a ControlSize enum with four cases: mini, small, regular, and large. We can use one of them and pass it via the controlSize modifier.
