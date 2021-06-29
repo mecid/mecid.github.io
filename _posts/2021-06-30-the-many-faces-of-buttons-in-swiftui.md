@@ -43,4 +43,4 @@ Control prominence defines the dominance of control in the user interface. You c
 As you can see in the example above, SwiftUI changes button appearance whenever we set the increased prominence. SwiftUI displays buttons with increased prominence by filling them with tint color.
 
 #### Conclusion
-There are a lot of new opportunities for customizing buttons both in SwiftUI and UIKit. New control size and prominence APIs will play a crucial role in styling SwiftUI buttons without implementing custom button styles.
+There are a lot of new opportunities for customizing buttons both in SwiftUI and UIKit. New control size and prominence APIs will play a crucial role in styling SwiftUI buttons without implementing custom button styles. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
