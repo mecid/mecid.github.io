@@ -6,6 +6,8 @@ category: Mastering SwiftUI view
 
 Button is one of the crucial components of any app. We use buttons to provide actions in the user interface of the app. SwiftUI 3 released a bunch of new view modifiers that allow us to style buttons in different ways. The new bordered button style in conjunction with controlProminence and controlSize view modifiers can change button presentation drastically.
 
+{% include friends.html %
+
 #### Button role
 New in SwiftUI Release 3, you can provide an optional button role. By default, it is nil and uses a standard one, but you can set the predefined role provided by ButtonRole enum. The role can be destructive or cancel.
 In this case, SwiftUI will set a specified button style. For example, SwiftUI changes the button tint to red for destructive buttons.
