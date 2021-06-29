@@ -2,7 +2,7 @@
 title: The many faces of buttons in SwiftUI
 layout: post
 image: /public/buttons1.png
-category: Mastering SwiftUI view
+category: Mastering SwiftUI views
 ---
 
 Button is one of the crucial components of any app. We use buttons to provide actions in the user interface of the app. SwiftUI 3 released a bunch of new view modifiers that allow us to style buttons in different ways. The new *bordered* button style in conjunction with *controlProminence* and *controlSize* view modifiers can change button presentation drastically.
