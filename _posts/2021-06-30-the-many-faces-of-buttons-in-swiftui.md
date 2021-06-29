@@ -41,6 +41,7 @@ There is a new tint view modifier that we should use to override the default acc
 
 ```swift
 Button("New action") {}
+    .buttonStyle(.bordered)
     .tint(.green)
 ```
 
@@ -57,14 +58,25 @@ BorderedButtonStyle provides you a bordered button appearance with rounded corne
 #### Control size
 We can't directly control the corner radius of the bordered button, but we can affect it using the controlSize view modifier. The controlSize view modifier allows us to set the size of controls within the view. There is a ControlSize enum with four cases: mini, small, regular, and large. We can use one of them and pass it via the controlSize modifier.
 
-=====================================================
+```swift
+ Button("New action") {}
+    .tint(.green)
+    .buttonStyle(.bordered)
+    .controlSize(.large)
+```
 
 In the example above, we set the large size for controls in our view hierarchy. As you can see, it affects the size of our button and changes its corner radius.
 
 #### Control prominence
 Control prominence defines the dominance of control in the user interface. You can set the importance using the controlProminence view modifier that accepts one of two possible prominence cases: standard or increased.
 
-=====================================================
+```swift
+Button("New action") {}
+    .tint(.green)
+    .buttonStyle(.bordered)
+    .controlSize(.large)
+    .controlProminence(.increased)
+```
 
 As you can see in the example above, SwiftUI changes button appearance whenever we set the increased prominence. SwiftUI displays buttons with increased prominence by filling them with tint color.
 
