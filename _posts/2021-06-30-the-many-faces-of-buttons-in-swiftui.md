@@ -10,7 +10,7 @@ Button is one of the crucial components of any app. We use buttons to provide ac
 {% include friends.html %}
 
 #### Button role
-New in SwiftUI Release 3, you can provide an optional button role. By default, it is *nil* and uses a standard one, but you can set the predefined role provided by *ButtonRole* enum. The role can be *destructive* or *cancel*. In this case, SwiftUI will set a specified button style. For example, SwiftUI changes the button tint to red for destructive buttons.
+New in SwiftUI Release 3, you can provide an optional button role. By default, it is *nil* and uses a standard one, but you can set the predefined role provided by *ButtonRole* enum. The role can be *destructive* or *cancel*. In this case, SwiftUI will set a specified button appearance. For example, SwiftUI changes the button tint to red for destructive buttons.
 
 ```swift
 Button("Delete", role: .destructive) {
