@@ -1,5 +1,5 @@
 ---
-title: The many faces of buttons in SwiftUI
+title: The many faces of button in SwiftUI
 layout: post
 image: /public/buttons1.png
 category: Mastering SwiftUI views
