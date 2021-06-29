@@ -12,21 +12,45 @@ Button is one of the crucial components of any app. We use buttons to provide ac
 New in SwiftUI Release 3, you can provide an optional button role. By default, it is nil and uses a standard one, but you can set the predefined role provided by ButtonRole enum. The role can be destructive or cancel.
 In this case, SwiftUI will set a specified button style. For example, SwiftUI changes the button tint to red for destructive buttons.
 
-=====================================================
+```swift
+Button("Delete", role: .destructive) {
+    viewModel.delete()
+}
+```
 
 Button roles change the appearance in many places across the app, like context menus, toolbar menus, etc.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        NavigationView {
+            Text("Hello, World!")
+                .toolbar {
+                    Menu("Actions") {
+                        Button("New action") {}
+                        Button("Delete", role: .destructive) {}
+                }
+            }.navigationTitle("Buttons")
+        }
+    }
+}
+```
 
 #### Button tint
 There is a new tint view modifier that we should use to override the default accent color. Unlike an app's accent color, which can be overridden by user preference, the tint color is always respected.
 
-=====================================================
+```swift
+Button("New action") {}
+    .tint(.green)
+```
 
 #### Bordered button style
 There is a new BorderedButtonStyle type that allows us to display buttons with rounded corners. You can set the button style for a particular button or the full view hierarchy using the buttonStyle view modifier.
 
-=====================================================
+```swift
+Button("New action") {}
+    .buttonStyle(.bordered)
+```
 
 BorderedButtonStyle provides you a bordered button appearance with rounded corners that you can see in many places across the iOS system. 
 
