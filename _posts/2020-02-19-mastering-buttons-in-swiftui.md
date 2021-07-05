@@ -60,18 +60,20 @@ SwiftUI allows us to customize buttons in our apps without introducing new views
 
 ```swift
 struct FilledButton: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
             .foregroundColor(configuration.isPressed ? .gray : .white)
             .padding()
-            .background(Color.accentColor)
+            .background(isEnabled ? Color.accentColor : .gray)
             .cornerRadius(8)
     }
 }
 ```
 
-As you can see in the example above, *ButtonStyle* protocol has the only one requirement. We need to implement *makeBody* function. This function provides a configuration that we can use to obtain the label of the button and understand whenever user presses it.
+As you can see in the example above, *ButtonStyle* protocol has the only one requirement. We need to implement *makeBody* function. This function provides a configuration that we can use to obtain the label of the button and understand whenever it is pressed or not. I have to mention that we also have access to the environment inside the *FilledButton* type. 
 
 ```swift
 Button("Button 1") {}
