@@ -36,7 +36,7 @@ struct AvatarView: View {
             .clipShape(Circle())
 ```
 
-#### Customisation
+#### Customization
 Usually, we need to customize the downloaded image size, scaling options, rendering mode, etc. We can access the instance of underlining Image using another overload of *AsyncImage* initializer.
 
 ```swift
