@@ -71,6 +71,8 @@ Keep in mind that this initializer uses *ViewBuilder* closure which means you ca
 
 In the example above, we use the overlay view modifier to cover our image with the ultra-thin material that creates a light blur effect.
 
+> To learn more about the logic behind the @ViewBuilder type, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
+
 *AsyncImage* allows us to take complete control of all the steps of image presentation using another initializer.
 
 ```swift
@@ -105,6 +107,8 @@ struct AvatarView: View {
 As you can see, we use another initializer that accepts a *ViewBuilder* closure. This closure has only one parameter that is an instance of *AsyncImagePhase* enum. *AsyncImagePhase* enum defines a bunch of image loading states like *empty, success, and failed*. You can handle all these cases to provide super-custom image presentations.	
 
 Another parameter of the currently used initializer is the SwiftUI transaction. By default, *AsyncImage* creates a new transaction with the default configuration. In our example, I create a custom transaction with a particular animation that *AsyncImage* will use whenever phase changes.
+
+> To learn more about the power of transactions in SwiftUI, take a look at my ["Transactions in SwiftUI"](/2020/10/07/transactions-in-swiftui/) post.
 
 #### Conclusion
 Today we learned how to download and display remote images using *AsyncImage* view. I'm happy to see that SwiftUI provides us this feature because it is fundamental for most of the apps we build. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
