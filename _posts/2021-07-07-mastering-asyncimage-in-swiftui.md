@@ -44,6 +44,7 @@ Usually, we need to customize the size of the downloaded image, scaling options,
     AsyncImage(url: url) { image in
         image
             .resizable()
+            .scaledToFill()
     } placeholder: {
         ProgressView()
     }
