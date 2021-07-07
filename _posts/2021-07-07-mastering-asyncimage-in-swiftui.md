@@ -53,6 +53,8 @@ Usually, we need to customize the size of the downloaded image, scaling options,
 
 Here we use another *AsyncImage* initializer to access the downloaded image, make it resizable and apply the filling content mode. This initializer also allows us to provide a placeholder view that SwiftUI displays while downloading the image.
 
+> To learn more about image rendering options in SwiftUI, take a look at my ["Mastering images in SwiftUI"](/2020/05/27/mastering-images-in-swiftui/) post. 
+
 Keep in mind that this initializer uses a *ViewBuilder* closure which means you can take advantage of any SwiftUI view modifier you need and build a super custom presentation. 
 
 ```swift
