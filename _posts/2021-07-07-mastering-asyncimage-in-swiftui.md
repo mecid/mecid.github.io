@@ -37,7 +37,7 @@ struct AvatarView: View {
 ```
 
 #### Customization
-Usually, we need to customize the downloaded image size, scaling options, rendering mode, etc. We can access the instance of underlining Image using another overload of *AsyncImage* initializer.
+Usually, we need to customize the size of the downloaded image, scaling options, rendering mode, etc. We can access the instance of underlining image using another overload of *AsyncImage* initializer.
 
 ```swift
     AsyncImage(url: url) { image in
@@ -51,9 +51,9 @@ Usually, we need to customize the downloaded image size, scaling options, render
     .clipShape(Circle())
 ```
 
-Here we use another *AsyncImage* initializer to access the underlying image to make it resizable and apply the filling content mode. This initializer also allows us to provide a placeholder view that SwiftUI displays while downloading the image.
+Here we use another *AsyncImage* initializer to access the downloaded image, make it resizable and apply the filling content mode. This initializer also allows us to provide a placeholder view that SwiftUI displays while downloading the image.
 
-Keep in mind that this initializer uses *ViewBuilder* closure which means you can take advantage of any SwiftUI you need and build a super custom presentation. 
+Keep in mind that this initializer uses a *ViewBuilder* closure which means you can take advantage of any SwiftUI view modifier you need and build a super custom presentation. 
 
 ```swift
     AsyncImage(url: url) { image in
