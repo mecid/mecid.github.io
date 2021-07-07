@@ -1,6 +1,7 @@
 ---
 title: Mastering AsyncImage in SwiftUI
 layout: post
+image: /public/wwdc21-v3.jpg
 category: Mastering SwiftUI views
 ---
 
