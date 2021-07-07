@@ -69,9 +69,9 @@ Keep in mind that this initializer uses a *ViewBuilder* closure which means you 
     .clipShape(Circle())
 ```
 
-In the example above, we use the overlay view modifier to cover our image with the ultra-thin material that creates a light blur effect.
+In the example above, we use the *overlay* view modifier to cover our image with the ultra-thin material that creates a light blur effect.
 
-> To learn more about the logic behind the @ViewBuilder type, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
+> To learn more about the logic behind the ViewBuilder type, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
 *AsyncImage* allows us to take complete control of all the steps of image presentation using another initializer.
 
