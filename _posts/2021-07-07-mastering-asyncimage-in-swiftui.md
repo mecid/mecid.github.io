@@ -1,6 +1,7 @@
 ---
 title: Mastering AsyncImage in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 During our careers, we primarily build apps that work with web services to retrieve and upload data. Remote image is one type of that data that we need to download and display. SwiftUI provides us the AsyncImage type, which is a view that downloads and shows an image via URL. This week we learn how to use and customize AsyncImage in SwiftUI.
