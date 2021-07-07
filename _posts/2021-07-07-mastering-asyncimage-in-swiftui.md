@@ -106,4 +106,4 @@ As you can see, we use another initializer that accepts a ViewBuilder closure. T
 Another parameter of the currently used initializer is the SwiftUI transaction. By default, AsyncImage creates a new transaction with the default configuration. In our example, I create a custom transaction with a particular animation that AsyncImage will use whenever phase changes.
 
 #### Conclusion
-Today we learned how to download and display remote images using AsyncImage view. I'm happy to see that SwiftUI provides us this feature because it is fundamental for most of the apps we build.
+Today we learned how to download and display remote images using AsyncImage view. I'm happy to see that SwiftUI provides us this feature because it is fundamental for most of the apps we build. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
