@@ -35,6 +35,8 @@ struct AvatarView: View {
             .frame(width: 44, height: 44)
             .background(Color.gray)
             .clipShape(Circle())
+    }
+}
 ```
 
 #### Customization
