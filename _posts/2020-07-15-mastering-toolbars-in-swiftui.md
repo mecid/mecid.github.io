@@ -73,8 +73,9 @@ There are placement options that we can use only in toolbars presented by a moda
 There are also a bunch of platform-specific placement options.
 0. *principal* - The item is placed in the main item section. For example, you can use it to customize the navigation bar's title view on iOS.
 1. *bottomBar* - The item is placed in the bottom toolbar. It is available only on iOS.
-2. *navigationBarLeading* - The item is placed in the leading area of the navigation bar. It is available only on iOS and macOS.
-3. *navigationBarTrailing* - The item is placed in the trailing area of the navigation bar. It is available only on iOS and macOS.
+2. *keyboard* - The item is placed in the keyboard section. On iOS, keyboard items are above the software keyboard when present. On macOS, keyboard items will be placed inside the Touch Bar.
+3. *navigationBarLeading* - The item is placed in the leading area of the navigation bar. It is available only on iOS and macOS.
+4. *navigationBarTrailing* - The item is placed in the trailing area of the navigation bar. It is available only on iOS and macOS.
 
 ![watchOS-toolbar](/public/watchOS.png)
 
