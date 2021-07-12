@@ -2,6 +2,7 @@
 permalink:           /:year/:month/:day/:title/
 
 # Setup
+theme: minima
 title:               Swift with Majid
 url:                 https://swiftwithmajid.com
 paginate:            10
@@ -20,11 +21,6 @@ author:
   name:              Majid Jabrayilov
   url:               https://twitter.com/mecid
   email:             cmecid@gmail.com
-
-# Custom vars
-version:             2.0.0
-github:
-  repo:              https://github.com/poole/poole
 
 # Gems
 plugins:
