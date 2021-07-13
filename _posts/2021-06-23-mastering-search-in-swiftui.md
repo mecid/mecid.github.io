@@ -108,6 +108,8 @@ struct StarredReposList: View {
 
 Another search-related environment value we have is *dismissSearch*. *dismissSearch* asks the system to dismiss the current search interaction. Remember that both environment values work only in the views surrounded by the *searchable* modifier.  
 
+> To learn more about environment in SwiftUI, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+
 #### Suggestions 
 Suggestions are a vital part of the excellent search experience, and SwiftUI gives us a very nice API that we can use to provide search suggestions to our users. The *searchable* view modifier has the optional *suggestions* parameter, which is a *@ViewBuilder* closure. Let's see how we can use it.
 
