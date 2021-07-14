@@ -11,7 +11,24 @@ Pull-to-refresh is a widespread User Interface pattern that we use to request a 
 #### Basics
 Let's start with a simple example where you have a List displaying items from the view model. It should also provide a pull-to-refresh gesture to update the list of items.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @StateObject private var viewModel = SearchViewModel()
+    @State private var query = "Swift"
+
+    var body: some View {
+        NavigationView {
+            List(viewModel.repos) { repo in
+                Text(repo.name)
+            }
+            .navigationTitle("Search")
+            .refreshable {
+                await viewModel.search(matching: query)
+            }
+        }
+    }
+}
+```
 
 In the example above, we attach the refreshable view modifier to the List view, configuring the pull-to-refresh gesture. We pass an async closure that SwiftUI runs when a user enables the pull-to-refresh gesture. The pull-to-refresh gesture is only available for the List view at the moment.
 
@@ -22,9 +39,58 @@ The refreshable view modifier uses the new Swift Concurrency feature and automat
 #### Custom refreshable views
 SwiftUI uses pull-to-refresh in List views out of the box. You don't need to do additional work like creating and adding spinner to the view hierarchy. But sometimes, you might need to build ultimately custom refresh experience.
 
+```swift
+struct ContentView: View {
+    @StateObject private var viewModel = SearchViewModel()
+    @State private var query = "Swift"
+
+    var body: some View {
+        NavigationView {
+            SearchView(viewModel: viewModel)
+                .refreshable {
+                    await viewModel.search(matching: query)
+                }
+        }
+    }
+}
+```
+
 Assume that you are working on a custom reusable view that represents the list of items. You might want to show a refresh button in the toolbar whenever the refreshable view modifier is attached to the view. Fortunately, when you attach the refreshable view modifier, SwiftUI propagates it down to the view hierarchy by using the environment.
 
-=====================================================
+```swift
+struct SearchView: View {
+    @ObservedObject var viewModel: SearchViewModel
+    @Environment(\.refresh) private var refreshAction
+    @State private var isRefreshing = false
+
+    var body: some View {
+        LazyVGrid(columns: Array(repeating: .init(), count: 4)) {
+            ForEach(viewModel.repos) { repo in
+                AsyncImage(url: repo.owner.avatar)
+                    .frame(width: 44, height: 44)
+                    .clipShape(Circle())
+            }
+        }.toolbar {
+            if let refreshAction = refreshAction {
+                Button("Refresh") {
+                    async {
+                        isRefreshing = true
+                        await refreshAction()
+                        isRefreshing = false
+                    }
+                }
+                .disabled(isRefreshing)
+                .opacity(isRefreshing ? 0 : 1)
+                .overlay {
+                    if isRefreshing {
+                        ProgressView()
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we have a view representing a grid of items. SwiftUI grids don't provide a pull-to-refresh behavior. That's why I decide to show a refresh button in the toolbar. 
 
