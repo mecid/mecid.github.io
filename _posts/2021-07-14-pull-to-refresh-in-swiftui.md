@@ -31,9 +31,9 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we attach the *refreshable* view modifier to the *List* view, configuring the pull-to-refresh gesture. We pass an async closure that SwiftUI runs when a user enables the pull-to-refresh gesture. The pull-to-refresh gesture is only available for the *List* view at the moment.
+In the example above, we attach the *refreshable* view modifier to the *List* view, configuring the pull-to-refresh gesture. We pass an async closure that SwiftUI runs when a user enables the pull-to-refresh gesture. Keep in mind that the pull-to-refresh gesture is only available for the *List* view at the moment.
 
-The *refreshable* view modifier uses the new Swift Concurrency feature and automatically disables the refreshing indicator when the async task finishes. Keep in mind that the only way to control the refreshing indicator is async/await. You can't show/hide it manually at the moment.
+The *refreshable* view modifier uses the new Swift Concurrency feature and automatically disables the refreshing indicator when the async task finishes. Remember that the only way to control the refreshing indicator is async/await. You can't show/hide it manually at the moment.
 
 > To learn more about the new Swift Concurrency feature, look at the [Concurrency chapter of Swift book](https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html).
 
