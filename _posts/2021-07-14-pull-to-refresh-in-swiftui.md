@@ -97,6 +97,8 @@ As you can see in the example above, we have a view representing a grid of items
 
 We use the *Environment* property wrapper to access the optional refresh action of the view. SwiftUI sets the refresh action in the environment when you attach the *refreshable* view modifier. Otherwise, it is nil.
 
+> To learn more about environment in SwiftUI, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+
 We use a closure that we provide to the *refreshable* view modifier as an action closure for the refresh button. I also track the refreshing internal state of the view to disable the button during the refresh and display the progress indicator.
 
 ![refresh](/public/refresh.png)
