@@ -16,7 +16,7 @@ In the example above, we attach the refreshable view modifier to the List view, 
 
 The refreshable view modifier uses the new Swift Concurrency feature and automatically disables the refreshing indicator when the async task finishes. Keep in mind that the only way to control the refreshing indicator is async/await. You can't show/hide it manually at the moment.
 
-> To learn more about the new Swift Concurrency feature, look at the Concurrency chapter of Swift book.
+> To learn more about the new Swift Concurrency feature, look at the [Concurrency chapter of Swift book](https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html).
 
 #### Custom refreshable views
 SwiftUI uses pull-to-refresh in List views out of the box. You don't need to do additional work like creating and adding spinner to the view hierarchy. But sometimes, you might need to build ultimately custom refresh experience.
