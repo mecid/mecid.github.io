@@ -94,9 +94,9 @@ struct SearchView: View {
 
 As you can see in the example above, we have a view representing a grid of items. SwiftUI grids don't provide a pull-to-refresh behavior. That's why I decide to show a refresh button in the toolbar. 
 
-We use the Environment property wrapper to access the optional refresh action of the view. SwiftUI sets the refresh action in the environment when you attach the refreshable view modifier. Otherwise, it is nil.
+We use the *Environment* property wrapper to access the optional refresh action of the view. SwiftUI sets the refresh action in the environment when you attach the *refreshable* view modifier. Otherwise, it is nil.
 
-We use a closure that we provide to the refreshable view modifier as an action closure for the refresh button. I also track the refreshing internal state of the view to disable the button during the refresh and display the progress indicator.
+We use a closure that we provide to the *refreshable* view modifier as an action closure for the refresh button. I also track the refreshing internal state of the view to disable the button during the refresh and display the progress indicator.
 
 #### Conclusion
 Today we learned about another new SwiftUI feature available in Release 3. I love how SwiftUI is consistent in providing functionality out of the box and allowing us to customize the behavior using the environment. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
