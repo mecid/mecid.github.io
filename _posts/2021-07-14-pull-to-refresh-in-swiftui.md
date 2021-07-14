@@ -4,12 +4,12 @@ layout: post
 category: Mastering SwiftUI views
 ---
 
-Pull-to-refresh is a widespread User Interface pattern that we use to request a data update in our apps. The new SwiftUI Release provides a brand new way to set up a pull-to-refresh action using the new refreshable view modifier. This week, we will learn how to use a refreshable view modifier and provide a super custom experience with it.
+Pull-to-refresh is a widespread User Interface pattern that we use to request a data update in our apps. The new SwiftUI Release provides a brand new way to set up a pull-to-refresh action using the new *refreshable* view modifier. This week, we will learn how to use the *refreshable* view modifier and provide a super custom experience with it.
 
 {% include friends.html %}
 
 #### Basics
-Let's start with a simple example where you have a List displaying items from the view model. It should also provide a pull-to-refresh gesture to update the list of items.
+Let's start with a simple example where you have a *List* displaying items from the view model. It should also provide a pull-to-refresh gesture to update the list of items.
 
 ```swift
 struct ContentView: View {
@@ -30,9 +30,9 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we attach the refreshable view modifier to the List view, configuring the pull-to-refresh gesture. We pass an async closure that SwiftUI runs when a user enables the pull-to-refresh gesture. The pull-to-refresh gesture is only available for the List view at the moment.
+In the example above, we attach the *refreshable* view modifier to the *List* view, configuring the pull-to-refresh gesture. We pass an async closure that SwiftUI runs when a user enables the pull-to-refresh gesture. The pull-to-refresh gesture is only available for the *List* view at the moment.
 
-The refreshable view modifier uses the new Swift Concurrency feature and automatically disables the refreshing indicator when the async task finishes. Keep in mind that the only way to control the refreshing indicator is async/await. You can't show/hide it manually at the moment.
+The *refreshable* view modifier uses the new Swift Concurrency feature and automatically disables the refreshing indicator when the async task finishes. Keep in mind that the only way to control the refreshing indicator is async/await. You can't show/hide it manually at the moment.
 
 > To learn more about the new Swift Concurrency feature, look at the [Concurrency chapter of Swift book](https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html).
 
@@ -55,7 +55,7 @@ struct ContentView: View {
 }
 ```
 
-Assume that you are working on a custom reusable view that represents the list of items. You might want to show a refresh button in the toolbar whenever the refreshable view modifier is attached to the view. Fortunately, when you attach the refreshable view modifier, SwiftUI propagates it down to the view hierarchy by using the environment.
+Assume that you are working on a custom reusable view that represents the list of items. You might want to show a refresh button in the toolbar whenever the *refreshable* view modifier is attached to the view. Fortunately, when you attach the *refreshable* view modifier, SwiftUI propagates it down to the view hierarchy by using the environment.
 
 ```swift
 struct SearchView: View {
