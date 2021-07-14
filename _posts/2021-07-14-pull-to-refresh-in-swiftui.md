@@ -2,6 +2,7 @@
 title: Pull-to-Refresh in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/refresh.png
 ---
 
 Pull-to-refresh is a widespread User Interface pattern that we use to request a data update in our apps. The new SwiftUI Release provides a brand new way to set up a pull-to-refresh action using the new *refreshable* view modifier. This week, we will learn how to use the *refreshable* view modifier and provide a super custom experience with it.
