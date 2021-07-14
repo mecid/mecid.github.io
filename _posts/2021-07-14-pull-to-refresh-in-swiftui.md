@@ -32,4 +32,4 @@ We use the Environment property wrapper to access the optional refresh action of
 We use a closure that we provide to the refreshable view modifier as an action closure for the refresh button. I also track the refreshing internal state of the view to disable the button during the refresh and display the progress indicator.
 
 #### Conclusion
-Today we learned about another new SwiftUI feature available in Release 3. I love how SwiftUI is consistent in providing functionality out of the box and allowing us to customize the behavior using the environment.
+Today we learned about another new SwiftUI feature available in Release 3. I love how SwiftUI is consistent in providing functionality out of the box and allowing us to customize the behavior using the environment. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
