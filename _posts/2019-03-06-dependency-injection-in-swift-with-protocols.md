@@ -9,7 +9,7 @@ There are a lot of third-party libraries which provide Dependency Injection for 
 {% include friends.html %}
 
 #### Protocol Composition
-As I said before Protocols are one of [my favorite language features in Swift](/2019/01/23/maintaining-state-in-view-controllers/), especially Protocol Composition, which gives us an opportunity to compose multiple Protocols together in one type. Let's take a look at the implementation of the "Service Locator" pattern in Swift and how we can improve it with the usage of Protocol Composition. 
+As I said before protocols are one of [my favorite language features in Swift](/2019/01/23/maintaining-state-in-view-controllers/), especially protocol composition, which gives us an opportunity to compose multiple protocols together in one type. Let's take a look at the implementation of the Service Locator pattern in Swift and how we can improve it with the usage of protocol composition. 
 
 ```swift
 protocol HasUserDefaults {
@@ -41,7 +41,7 @@ struct Dependencies: HasUserDefaults, HasUrlSession, HasHealthStore {
 }
 ```
 
-Here we have a bunch of protocols which describes our dependencies. Dependencies struct contains all of our dependencies in the app. Generally, we can create and store our Dependencies struct instance in AppDelegate or root [Coordinator/FlowController](/2019/02/20/navigation-with-flow-controllers). Now let's take a look at the usage of our dependency container.
+Here we have a bunch of protocols which describes our dependencies. *Dependencies* struct contains all of our dependencies in the app. Generally, we can create and store our *Dependencies* struct instance in *AppDelegate* or root [Coordinator/FlowController](/2019/02/20/navigation-with-flow-controllers). Now let's take a look at the usage of our dependency container.
 
 ```swift
 class ViewController: UIViewController {
@@ -58,7 +58,9 @@ class ViewController: UIViewController {
 }
 ```
 
-Here we have ViewController which describes its dependencies via Typealias and Protocol Composition. In the Init method, we easily extract our dependencies into field variables. All we need is the passing instance of our Dependencies struct to ViewController, and ViewController will be able to access only defined in Typealias dependencies. Next time when your ViewController will need another dependency all you need to do is add it to Typealias and extract it into the variable. You don't need to change the creation of ViewController, because you already pass all the dependencies.
+Here we have *ViewController* which describes its dependencies via a typealias and protocol composition. In the *init* method, we easily extract our dependencies into field variables. All we need is the passing instance of our *Dependencies* struct to *ViewController*, and *ViewController* will be able to access only defined in typealias dependencies.
+
+Next time when your *ViewController* will need another dependency all you need to do is add it to typealias and extract it into the variable. You don't need to change the creation of *ViewController*, because you already pass all the dependencies.
 
 ```swift
 extension Dependencies {
@@ -75,7 +77,7 @@ extension Dependencies {
 The example above shows how we can create the mocked version of dependencies to use it for Unit-Testing.
 
 #### Abstract Factory
-Another option for Dependency Injection is the "Abstract Factory" pattern. I love to use it to extract the creation of complex objects like ViewControllers and its dependencies. Let's take a look at the Swift version of the "Abstract Factory" pattern by using Protocols and Extensions.
+Another option for Dependency Injection is the Abstract Factory pattern. I love to use it to extract the creation of complex objects like *ViewControllers* and its dependencies. Let's take a look at the Swift version of the Abstract Factory pattern by using protocols and extensions.
 
 ```swift
 protocol DependencyFactory {
@@ -107,7 +109,7 @@ extension Dependencies: DependencyFactory {
 }
 ```
 
-Here we have DependencyFactory protocol which describes factory methods for every dependency in our app. We also have small Dependencies struct which stores low-level dependencies. By using the extension, we add DependencyFactory protocol conformance to Dependencies struct. Now let's take a look at ViewControllerFactory, which describes ViewController creation process. 
+Here we have *DependencyFactory* protocol which describes factory methods for every dependency in our app. We also have small *Dependencies* struct which stores low-level dependencies. By using the extension, we add *DependencyFactory* protocol conformance to *Dependencies* struct. Now let's take a look at *ViewControllerFactory*, which describes *ViewController* creation process. 
 
 ```swift
 protocol ViewControllerFactory {
@@ -138,7 +140,7 @@ extension Dependencies: ViewControllerFactory {
 }
 ```
 
-We use ViewControllerFactory to create every ViewController in our app, for more complex apps we can have more ViewController factories based on the user flow. Here we also use an extension to add protocol conformance to Dependencies struct. It is time to see how we can use these factories while using Coordinators or FlowControllers.
+We use *ViewControllerFactory* to create every *ViewController* in our app, for more complex apps we can have more than one *ViewController* factory based on the user flow. Here we also use an extension to add protocol conformance to *Dependencies* struct. It is time to see how we can use these factories while using Coordinators or FlowControllers.
 
 ```swift
 protocol FlowControllerDelegate {
@@ -147,6 +149,7 @@ protocol FlowControllerDelegate {
 
 class FlowController: UIViewController {
     private let factory: ViewControllerFactory
+    
     init(factory: ViewControllerFactory) {
         self.factory = factory
     }
@@ -164,9 +167,7 @@ extension FlowController: FlowControllerDelegate {
 }
 ```
 
-We can create an instance of Dependencies struct in AppDelegate and pass it to the main FlowController in the app. By extracting creation of ViewControllers into factories, we keep our FlowControllers small and responsible only for controlling user-flow.
+We can create an instance of *Dependencies* struct in *AppDelegate* and pass it to the main *FlowController* in the app. By extracting creation of *ViewControllers* into factories, we keep our *FlowControllers* small and responsible only for controlling user-flow.
 
 #### Conclusion
-Today we discussed two Dependency Injection techniques. Both of them use Swift language features without any third-party dependencies. Just take a look at them and choose which will work better for you.
-
-Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
+Today we discussed two Dependency Injection techniques. Both of them use Swift language features without any third-party dependencies. Just take a look at them and choose which will work better for you. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
