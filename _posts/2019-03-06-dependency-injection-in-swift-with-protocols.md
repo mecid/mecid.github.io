@@ -4,7 +4,7 @@ layout: post
 category: Protocol-Oriented Programming
 ---
 
-There are a lot of third-party libraries which provide Dependency Injection for Swift apps. In my opinion, Swift has a powerful type system which gives us the ability to create type-safe Dependency Injection techniques easily. Today we will talk about creating Dependency Injection in Swift with the power of protocols.
+There are a lot of third-party libraries which provide Dependency Injection for Swift apps. In my opinion, Swift has a powerful type system which gives us the ability to make type-safe Dependency Injection easily. Today we will talk about using Dependency Injection in Swift with the power of protocols.
 
 {% include friends.html %}
 
@@ -41,7 +41,7 @@ struct Dependencies: HasUserDefaults, HasUrlSession, HasHealthStore {
 }
 ```
 
-Here we have a bunch of protocols which describes our dependencies. *Dependencies* struct contains all of our dependencies in the app. Generally, we can create and store our *Dependencies* struct instance in *AppDelegate* or root [Coordinator/FlowController](/2019/02/20/navigation-with-flow-controllers). Now let's take a look at the usage of our dependency container.
+Here we have a bunch of protocols which describe our dependencies. *Dependencies* struct contains all of our service classes in the app. Generally, we can create and store an instance of *Dependencies* struct in *AppDelegate* or root [Coordinator/FlowController](/2019/02/20/navigation-with-flow-controllers). Now let's take a look at the usage of our dependency container.
 
 ```swift
 class ViewController: UIViewController {
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
 }
 ```
 
-Here we have *ViewController* which describes its dependencies via a typealias and protocol composition. In the *init* method, we easily extract our dependencies into field variables. All we need is the passing instance of our *Dependencies* struct to *ViewController*, and *ViewController* will be able to access only defined in typealias dependencies.
+Here we have *ViewController* which describes its dependencies via a typealias and protocol composition. In the *init* method, we easily extract our dependencies into field variables. All we need is the passing instance of our *Dependencies* struct to *ViewController*, and *ViewController* will be able to access dependencies only defined in typealias.
 
 Next time when your *ViewController* will need another dependency all you need to do is add it to typealias and extract it into the variable. You don't need to change the creation of *ViewController*, because you already pass all the dependencies.
 
@@ -167,7 +167,7 @@ extension FlowController: FlowControllerDelegate {
 }
 ```
 
-We can create an instance of *Dependencies* struct in *AppDelegate* and pass it to the main *FlowController* in the app. By extracting creation of *ViewControllers* into factories, we keep our *FlowControllers* small and responsible only for controlling user-flow.
+We can create an instance of *Dependencies* struct in *AppDelegate* and pass it to the main *FlowController* of the app. By extracting creation of *ViewControllers* into factories, we keep our *FlowControllers* small and responsible only for controlling user-flow.
 
 #### Conclusion
 Today we discussed two Dependency Injection techniques. Both of them use Swift language features without any third-party dependencies. Just take a look at them and choose which will work better for you. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
