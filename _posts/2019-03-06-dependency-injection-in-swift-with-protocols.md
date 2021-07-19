@@ -9,7 +9,7 @@ There are a lot of third-party libraries which provide Dependency Injection for 
 {% include friends.html %}
 
 #### Protocol Composition
-As I said before protocols are one of [my favorite language features in Swift](/2019/01/23/maintaining-state-in-view-controllers/), especially protocol composition, which gives us an opportunity to compose multiple protocols together in one type. Let's take a look at the implementation of the Service Locator pattern in Swift and how we can improve it with the usage of protocol composition. 
+As I said before protocols are one of my favorite language features in Swift, especially protocol composition, which gives us an opportunity to compose multiple protocols together in one type. Let's take a look at the implementation of the Service Locator pattern in Swift and how we can improve it with the usage of protocol composition. 
 
 ```swift
 protocol HasUserDefaults {
@@ -41,7 +41,7 @@ struct Dependencies: HasUserDefaults, HasUrlSession, HasHealthStore {
 }
 ```
 
-Here we have a bunch of protocols which describe our dependencies. *Dependencies* struct contains all of our service classes in the app. Generally, we can create and store an instance of *Dependencies* struct in *AppDelegate* or root [Coordinator/FlowController](/2019/02/20/navigation-with-flow-controllers). Now let's take a look at the usage of our dependency container.
+Here we have a bunch of protocols which describe our dependencies. *Dependencies* struct contains all of our service classes in the app. Generally, we can create and store an instance of *Dependencies* struct in *AppDelegate* or root coordinator. Now let's take a look at the usage of our dependency container.
 
 ```swift
 class ViewController: UIViewController {
