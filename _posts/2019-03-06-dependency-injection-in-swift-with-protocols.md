@@ -140,7 +140,7 @@ extension Dependencies: ViewControllerFactory {
 }
 ```
 
-We use *ViewControllerFactory* to create every *ViewController* in our app, for more complex apps we can have more than one *ViewController* factory based on the user flow. Here we also use an extension to add protocol conformance to *Dependencies* struct. It is time to see how we can use these factories while using Coordinators or FlowControllers.
+We use *ViewControllerFactory* to create every *ViewController* in our app, for more complex apps we can have more than one *ViewController* factory based on the user flow. Here we also use an extension to add protocol conformance to *Dependencies* struct. It is time to see how we can use these factories while using Coordinators or Flow Controllers.
 
 ```swift
 protocol FlowControllerDelegate {
@@ -167,7 +167,9 @@ extension FlowController: FlowControllerDelegate {
 }
 ```
 
-We can create an instance of *Dependencies* struct in *AppDelegate* and pass it to the main *FlowController* of the app. By extracting creation of *ViewControllers* into factories, we keep our *FlowControllers* small and responsible only for controlling user-flow.
+We can create an instance of *Dependencies* struct in *AppDelegate* and pass it to the main *Flow Controller* of the app. By extracting creation of *ViewControllers* into factories, we keep our *Flow Controllers* small and responsible only for controlling user-flow.
+
+> To learn more about Flow Controllers and Coordinator pattern, take a look at my dedicate ["Navigation with Flow Controllers"](/2019/02/20/navigation-with-flow-controllers/) post.
 
 #### Conclusion
 Today we discussed two Dependency Injection techniques. Both of them use Swift language features without any third-party dependencies. Just take a look at them and choose which will work better for you. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
