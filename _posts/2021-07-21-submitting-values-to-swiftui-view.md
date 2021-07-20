@@ -36,6 +36,8 @@ As you can see in the example above, we display the list of messages from *ViewM
 
 We use the *onSubmit* view modifier with a search submit trigger. It means SwiftUI runs the given closure only as a result of search action. SwiftUI provides us a set of different submit triggers like *search, text, form,* and its count can increase in the future releases of SwiftUI.
 
+Other views which we can use in conjunction with the *onSubmit* view modifier are *TextField* and *SecureField*. We can attach the *onSubmit* view modifier directly to the text field. In this case, we have to use the text submit trigger.
+
 ```swift
 struct ContentView: View {
     @State private var query = ""
@@ -50,8 +52,6 @@ struct ContentView: View {
     }
 }
 ```
-
-Other views which we can use in conjunction with the *onSubmit* view modifier are *TextField* and *SecureField*. We can attach the *onSubmit* view modifier directly to the text field. In this case, we have to use the text submit trigger.
 
 Keep in mind that we can attach multiple *onSubmit* view modifiers with various submit triggers to the view hierarchy and provide different closures for separate triggers.
 
