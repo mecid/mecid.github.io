@@ -2,6 +2,7 @@
 title: Submitting values to SwiftUI view
 layout: post
 image: /public/todo.jpeg
+category: Data Flow
 ---
 
 SwiftUI Release 3 brought us a new declarative approach for handling submitted values. Text fields, forms, search bars allow users to submit values that we can take and react to them using the new *onSubmit* view modifier. This week we will learn how to use the *onSubmit* view modifier and what benefits it provides us.
