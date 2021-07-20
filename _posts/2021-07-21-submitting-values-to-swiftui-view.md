@@ -55,6 +55,8 @@ struct ContentView: View {
 
 Keep in mind that we can attach multiple *onSubmit* view modifiers with various submit triggers to the view hierarchy and provide different closures for separate triggers.
 
+We can also change the label of the return key on the software keyboard using the *submitLabel* view modifier. *submitLabel* view modifier requires the instance of *SubmitLabel* struct as the parameter which defined the return key label. It has many predefined values like *done, go, send, join, route, search, return, next and continue.*
+
 ```swift
 struct ContentView: View {
     @State private var query = ""
@@ -70,8 +72,6 @@ struct ContentView: View {
     }
 }
 ```
-
-We can also change the label of the return key on the software keyboard using the *submitLabel* view modifier. *submitLabel* view modifier requires the instance of *SubmitLabel* struct as the parameter which defined the return key label. It has many predefined values like *done, go, send, join, route, search, return, next and continue.*
 
 #### Scopes
 I should mention that you can place the *onSubmit* view modifier not only under the text field, but it can be anywhere in the view hierarchy. That's why SwiftUI provides us an opportunity to control submit scopes. For example, you can disable a part of the view hierarchy to react on submitting values.
