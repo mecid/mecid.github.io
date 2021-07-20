@@ -28,7 +28,7 @@ struct SearchView: View {
 
 As you can see in the example above, we display the list of messages from ViewModel and provide the search functionality. We also use the onSubmit view modifier to provide a closure that SwiftUI runs whenever the user submits the value. As soon as the user hits the return key on the software or hardware keyboard, SwiftUI calls the provided closure.
 
-> To learn more about using the search view modifier, take a look at my "Mastering search in SwiftUI" post.
+> To learn more about using the search view modifier, take a look at my ["Mastering search in SwiftUI"](/2021/06/23/mastering-search-in-swiftui/) post.
 
 We use the onSubmit view modifier with a search submit trigger. It means SwiftUI runs the given closure only as a result of search action. SwiftUI provides us a set of different submit triggers like search, text, form, and its count can increase in the future releases of SwiftUI.
 
