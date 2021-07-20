@@ -6,6 +6,8 @@ image: /public/todo.jpeg
 
 SwiftUI Release 3 brought us a new declarative approach for handling submitted values. Text fields, forms, search bars allow users to submit values that we can take and react to them using the new onSubmit view modifier. This week we will learn how to use the onSubmit view modifier and what benefits it provides us.
 
+{% include friends.html %}
+
 #### Basics
 Let's build a view that allows us to search for messages using the searchable view modifier.
 
