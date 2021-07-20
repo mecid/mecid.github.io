@@ -1,5 +1,5 @@
 ---
-title: Submitting value to SwiftUI view
+title: Submitting values to SwiftUI view
 layout: post
 ---
 
