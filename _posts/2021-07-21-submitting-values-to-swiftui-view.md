@@ -102,5 +102,5 @@ struct ContentView: View {
 The *submitScope* view modifier allows you to avoid specific views from invoking a submission action. In our example, the phone text field will not initiate a submission while the provided condition is false.
 
 #### Conclusion
-This week, we learn about the new *onSubmit* view modifier that provides us with a generic way to handle the value submission for different views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+This week, we learned about the new *onSubmit* view modifier that provides us with a generic way to handle the value submission for different views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
