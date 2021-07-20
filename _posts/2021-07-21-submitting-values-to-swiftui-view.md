@@ -74,7 +74,7 @@ struct ContentView: View {
 ```
 
 #### Scopes
-I should mention that you can place the *onSubmit* view modifier not only under the text field, but it can be anywhere in the view hierarchy. That's why SwiftUI provides us an opportunity to control submit scopes. For example, you can disable a part of the view hierarchy to react on submitting values.
+I should mention that you can place the *onSubmit* view modifier not only under text fields, but it can be anywhere in the view hierarchy. That's why SwiftUI provides us an opportunity to control submit scopes. For example, you can disable a part of the view hierarchy to react on submitting values.
 
 ```swift
 struct ContentView: View {
