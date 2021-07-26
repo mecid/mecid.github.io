@@ -209,4 +209,4 @@ The series of posts have built on a foundation of ideas started by other librari
 0. [WWDC20 - Data Essentials in SwiftUI](https://developer.apple.com/videos/play/wwdc2020/10040/)
 1. [Redux](https://redux.js.org) - The JavaScript library that popularized unidirectional data flow.
 2. [The Elm Architecture](https://guide.elm-lang.org/architecture/) - A purely functional language and runtime that inspired the creation of Redux.
-3. [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture) - A library that bridges concepts that Elm Architecture and Redux introduced to Swift. It introduced the “environment” and “effect” patterns that this series covers.
+3. [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture) - A library that bridges concepts from the Elm Architecture and Redux to Swift. It introduced the “environment” and “effect” patterns that this series covers.
