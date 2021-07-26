@@ -108,8 +108,6 @@ As you can see map view provides us quite a few customization points. Let's disc
 3. *showsUserLocation* is the boolean parameter that allows us to control whenever we want to show the user's current location on the map or not. Remember that you have to request permission to access the location. 
 4. *userTrackingMode* is the way to configure map tracking mode. It describes whenever we want to follow the user as soon as location changes.
 
-There is another initializer for the map view that accepts *MKMapRect* instead of *MKCoordinateRegion* to control the visible part of the map.
-
 #### Annotations 
 We usually use map screens to display the points of interest in our apps. SwiftUI allows us to place the annotations on the map by using simple views. To provide annotation items, we have to use another initializer that accepts the random access collection of identifiable elements.
 
@@ -161,6 +159,41 @@ var body: some View {
     }
 }
 ```
+#### Fit the map with MKMapRect 
+There is another initializer for the *Map* view that accepts *MKMapRect* instead of *MKCoordinateRegion* to control the visible part of the map.
+
+```swift
+final class PinsViewModel: ObservableObject {
+    @Published var mapRect = MKMapRect()
+    let cities: [City]
+
+    init(cities: [City]) {
+        self.cities = cities
+    }
+
+    func fit() {
+        let points = cities.map(\.coordinate).map(MKMapPoint.init)
+        mapRect = points.reduce(MKMapRect.null) { rect, point in
+            let newRect = MKMapRect(origin: point, size: MKMapSize())
+            return rect.union(newRect)
+        }
+    }
+}
+
+struct PinsView: View {
+    @ObservedObject var viewModel: PinsViewModel
+
+    var body: some View {
+        Map(
+            mapRect: $viewModel.mapRect,
+            annotationItems: viewModel.cities
+        ) { city in
+            MapPin(coordinate: city.coordinate, tint: .accentColor)
+        }.onAppear(perform: viewModel.fit)
+    }
+}
+```
+In the example above, we use *MKMapRect* to calculate the rectange that is able to show all the pins on the map at once.
 
 #### Conclusion
 I am happy to see that Apple provides us more views to use in SwiftUI. I hope to see 100% coverage of UIKit views in SwiftUI anytime in the future. But let's learn the things that we have right now. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
