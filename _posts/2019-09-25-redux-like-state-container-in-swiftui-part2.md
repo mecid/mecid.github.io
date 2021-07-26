@@ -164,3 +164,11 @@ Today we talked about two important strategies which we should use during app de
 2. Redux-like state container in SwiftUI. Best practices
 3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)
 4. [Redux-like state container in SwiftUI. Connectors.](/2021/02/03/redux-like-state-container-in-swiftui-part4/)
+
+#### References
+The series of posts have built on a foundation of ideas started by other libraries, particularly Redux, Elm, and TCA.
+0. [WWDC20 - Data Essentials in SwiftUI](https://developer.apple.com/videos/play/wwdc2020/10040/)
+1. [Redux](https://redux.js.org) - The JavaScript library that popularized unidirectional data flow.
+2. [The Elm Architecture](https://guide.elm-lang.org/architecture/) - A purely functional language and runtime that inspired the creation of Redux.
+3. [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture) - A library that bridges concepts from the Elm Architecture and Redux to Swift. It introduced the “environment” and “effect” patterns that this series covers.
+
