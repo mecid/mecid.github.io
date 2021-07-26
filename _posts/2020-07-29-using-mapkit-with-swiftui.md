@@ -193,7 +193,7 @@ struct PinsView: View {
     }
 }
 ```
-In the example above, we use *MKMapRect* to calculate the rectange that is able to show all the pins on the map at once.
+In the example above, we use *MKMapRect* to calculate the rectangle that is able to show all the pins on the map at once.
 
 #### Conclusion
 I am happy to see that Apple provides us more views to use in SwiftUI. I hope to see 100% coverage of UIKit views in SwiftUI anytime in the future. But let's learn the things that we have right now. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
