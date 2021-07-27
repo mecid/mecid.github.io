@@ -116,6 +116,8 @@ I should mention that the system can reorder the buttons based on their roles an
 
 SwiftUI handles different environments gracefully and displays confirmation dialog as a popover when runs in regular size classes and as an action sheet in compact size classes.
 
+> To learn more about popovers and action sheets in SwiftUI, take a look at my ["Alerts, Action Sheets, Modals and Popovers in SwiftUI"](/2019/07/24/alerts-actionsheets-modals-and-popovers-in-swiftui/) post.
+
 The *confirmationDialog* view modifier also provides us a way to control the title visibility of the presented dialog. The *titleVisibility* parameter accepts an instance of *Visibility* enum with the following values: *automatic, visible, and hidden*.
 
 ```swift
@@ -174,6 +176,8 @@ The *confrimationDialog* view modifier allows us to provide optional data to pas
     Text(message)
 }
 ```
+
+> To learn more about the benefits of *ViewBuilder* closures in SwiftUI, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
 I love the new *confirmationDialog* view modifier and the level of flexibility it provides to customize the user experience in our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
