@@ -175,4 +175,5 @@ The *confrimationDialog* view modifier allows us to provide optional data to pas
 }
 ```
 
-I love the new *confirmationDialog* view modifier and the level of flexibility it provides to customize the user experience in our apps.
+I love the new *confirmationDialog* view modifier and the level of flexibility it provides to customize the user experience in our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
