@@ -4,7 +4,7 @@ layout: post
 category: Mastering SwiftUI views
 ---
 
-SwiftUI Release 3 brings a few new generic view modifiers that allow us to handle semantically similar operations for different views in the very same way. One of these view modifiers is *onSubmit*, which we can use to manage both forms and search fields. This week we will talk about another new view modifier that SwiftUI provides us to display confirmation dialogs.
+SwiftUI Release 3 brings a few generic view modifiers that allow us to handle semantically similar operations for different views in the very same way. One of these view modifiers is *onSubmit*, which we can use to manage both forms and search fields. This week we will talk about another view modifier that SwiftUI provides us to display confirmation dialogs.
 
 {% include friends.html %}
 
