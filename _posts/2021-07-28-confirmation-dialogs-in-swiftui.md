@@ -45,7 +45,7 @@ As you can see in the example above, we have a screen showing a list of messages
 ```swift
 struct ContentView: View {
     @StateObject var viewModel = ViewModel()
-    @State private var confirmationShow = false
+    @State private var confirmationShown = false
 
     var body: some View {
         NavigationView {
@@ -55,14 +55,14 @@ struct ContentView: View {
                         .swipeActions {
                             Button(
                                 role: .destructive,
-                                action: { confirmationShow = true }
+                                action: { confirmationShown = true }
                             ) {
                                 Image(systemName: "trash")
                             }
                         }
                         .confirmationDialog(
                             "Are you sure?",
-                             isPresented: $confirmationShow
+                             isPresented: $confirmationShown
                         ) { 
                             Button("Yes") {
                                 withAnimation { 
@@ -87,7 +87,7 @@ We attach the *confirmationDialog* view modifier to the *Text* view that we want
 You don't need to provide a cancel button. SwiftUI does it automatically for any confirmation dialog. But you can still offer a button with the cancelation role to replace the default cancel button.
 
 ```swift
-.confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
+.confirmationDialog("Are you sure?", isPresented: $confirmationShown) {
     Button("Yes") {
         withAnimation { 
             viewModel.delete(message) 
@@ -103,7 +103,7 @@ Remember that you don't need to change the binding value to false to dismiss a c
 I should mention that the system can reorder the buttons based on their roles and prominence. SwiftUI uses the higher prominence for the default action. You can make any of the provided actions default using the *keyboardShortcut* view modifier.
 
 ```swift
-.confirmationDialog("Are you sure?", isPresented: $confirmationShow) {
+.confirmationDialog("Are you sure?", isPresented: $confirmationShown) {
     Button("Yes") {
         withAnimation { 
             viewModel.delete(message) 
@@ -123,7 +123,7 @@ The *confirmationDialog* view modifier also provides us a way to control the tit
 ```swift
 .confirmationDialog(
     "Are you sure?",
-    isPresented: $confirmationShow,
+    isPresented: $confirmationShown,
     titleVisibility: .visible
 ) {
     Button("Yes") {
@@ -141,7 +141,7 @@ We can also provide an additional message under the title using a message parame
 ```swift
 .confirmationDialog(
     "Are you sure?",
-    isPresented: $confirmationShow,
+    isPresented: $confirmationShown,
     titleVisibility: .visible
 ) {
     Button("Yes") {
@@ -161,7 +161,7 @@ The *confrimationDialog* view modifier allows us to provide optional data to pas
 ```swift
 .confirmationDialog(
     "Are you sure?",
-    isPresented: $confirmationShow,
+    isPresented: $confirmationShown,
     titleVisibility: .visible,
     presenting: message
 ) { message in
