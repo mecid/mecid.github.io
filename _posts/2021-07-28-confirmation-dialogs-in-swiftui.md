@@ -2,6 +2,7 @@
 title: Confirmation dialogs in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/confirmation0.png
 ---
 
 SwiftUI Release 3 brings a few generic view modifiers that allow us to handle semantically similar operations for different views in the very same way. One of these view modifiers is *onSubmit*, which we can use to manage both forms and search fields. This week we will talk about another view modifier that SwiftUI provides us to display confirmation dialogs.
@@ -79,6 +80,8 @@ struct ContentView: View {
 }
 ```
 
+![confirmation-dialog](/public/confirmation0.png)
+
 We attach the *confirmationDialog* view modifier to the *Text* view that we want to delete. It needs a few parameters to display a confirmation dialog.
 1. The first one is the title of the particular confirmation dialog. It can be a *Text* view or *LocalizedStringKey*.
 2. The second one is binding to a boolean value that indicates whenever to present the confirmation dialog.
@@ -97,6 +100,8 @@ You don't need to provide a cancel button. SwiftUI does it automatically for any
     Button("No", role: .cancel) {}
 }
 ```
+
+![confirmation-dialog](/public/confirmation1.png)
 
 Remember that you don't need to change the value of binding to false to dismiss a confirmation dialog. SwiftUI dismisses the confirmation dialog as soon as the user hits any of the provided actions.
 
