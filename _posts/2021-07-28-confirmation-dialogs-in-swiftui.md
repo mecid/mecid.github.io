@@ -118,7 +118,7 @@ SwiftUI handles different environments gracefully and displays confirmation dial
 
 > To learn more about popovers and action sheets in SwiftUI, take a look at my ["Alerts, Action Sheets, Modals and Popovers in SwiftUI"](/2019/07/24/alerts-actionsheets-modals-and-popovers-in-swiftui/) post.
 
-The *confirmationDialog* view modifier also provides us a way to control the title visibility of the presented dialog. The *titleVisibility* parameter accepts an instance of *Visibility* enum with the following values: *automatic, visible, and hidden*.
+The *confirmationDialog* view modifier also provides us a way to control the title visibility of the presented dialog. The *titleVisibility* parameter accepts an instance of *Visibility* enum with one of the following values: *automatic, visible, and hidden*.
 
 ```swift
 .confirmationDialog(
