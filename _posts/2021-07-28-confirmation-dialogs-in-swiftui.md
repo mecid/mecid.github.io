@@ -98,7 +98,7 @@ You don't need to provide a cancel button. SwiftUI does it automatically for any
 }
 ```
 
-Remember that you don't need to change the binding value to false to dismiss a confirmation dialog. SwiftUI dismisses the confirmation dialog as soon as the user hits any of the provided actions.
+Remember that you don't need to change the value of binding to false to dismiss a confirmation dialog. SwiftUI dismisses the confirmation dialog as soon as the user hits any of the provided actions.
 
 I should mention that the system can reorder the buttons based on their roles and prominence. SwiftUI uses the higher prominence for the default action. You can make any of the provided actions default using the *keyboardShortcut* view modifier.
 
