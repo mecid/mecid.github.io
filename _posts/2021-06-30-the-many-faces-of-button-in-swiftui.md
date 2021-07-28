@@ -62,7 +62,7 @@ Button("New action") {}
     .tint(.green)
 ```
 
-![button-tint](/public/buttons-tint.png)
+![button-tint](/public/buttons-bordered-tint.png)
 
 #### Control size
 We can't directly control the corner radius of the bordered button, but we can affect it using the *controlSize* view modifier. The *controlSize* view modifier allows us to set the size of controls within the view. There is a *ControlSize* enum with four cases: *mini, small, regular, and large*. We can use one of them and pass it via the *controlSize* modifier.
@@ -74,19 +74,31 @@ We can't directly control the corner radius of the bordered button, but we can a
     .controlSize(.large)
 ```
 
-![button-bordered-tint](/public/buttons-bordered-tint.png)
+![button-bordered-large](/public/buttons-bordered-large.png)
 
 In the example above, we set the large size for controls in our view hierarchy. As you can see, it affects the size of our button and changes its corner radius.
 
-#### Control prominence
-Control prominence defines the dominance of control in the user interface. You can set the importance using the *controlProminence* view modifier that accepts one of two possible prominence cases: *standard* or *increased*.
+#### Bordered button shape
+There is a new *buttonBorderShape* view modifier that allows us to change the shape of bordered button in the view. *buttonBorderShape* view modifier accepts an instance of *ButtonBorderShape* struct that defines the shape. There are a few predefined options like *capsule, roundedRectangle, and automatic*.
 
 ```swift
 Button("New action") {}
     .tint(.green)
     .buttonStyle(.bordered)
+    .buttonBorderShape(.capsule)
     .controlSize(.large)
-    .controlProminence(.increased)
+```
+
+![button-bordered-capsule](/public/buttons-bordered-capsule.png)
+
+#### Button prominence
+Button prominence defines the dominance of a button in the user interface. You can increase the importance using the new *borderedProminent* style.
+
+```swift
+Button("New action") {}
+    .tint(.green)
+    .controlSize(.large)
+    .buttonStyle(.borderedProminent)
 ```
 
 ![button-bordered-tint-important](/public/buttons-tint-fill.png)
