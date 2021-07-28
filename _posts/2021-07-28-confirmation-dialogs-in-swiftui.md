@@ -9,7 +9,7 @@ SwiftUI Release 3 brings a few generic view modifiers that allow us to handle se
 
 {% include friends.html %}
 
-A confirmation dialog is a widespread UI/UX pattern that we usually use to confirm some dangerous actions in our apps. For example, we might present a confirmation dialog before deleting any sensitive data from the app.
+Confirmation dialog is a widespread UI/UX pattern that we usually use to confirm some dangerous actions in our apps. For example, we might present a confirmation dialog before deleting any sensitive data from the app.
 
 ```swift
 struct ContentView: View {
