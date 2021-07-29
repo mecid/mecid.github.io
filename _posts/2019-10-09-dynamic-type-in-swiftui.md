@@ -110,6 +110,7 @@ extension View {
         GeometryReader { geometry in
             ScrollView {
                 self.frame(
+                    minWidth: geometry.size.width,
                     minHeight: geometry.size.height,
                     maxHeight: .infinity,
                     alignment: alignment
