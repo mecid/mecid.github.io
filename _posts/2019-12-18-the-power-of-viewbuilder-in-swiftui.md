@@ -9,8 +9,8 @@ Last week we started a series of posts about developing interactive components u
 
 {% include friends.html %}
 
-#### @FunctionBuilder
-*@ViewBuilder* is one of the possible function builders. The function builders feature of Swift is described in [Swift Evolution Proposal](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md). The main goal of function builders is providing *DSL* like syntax. Let's take a look at a very quick example of *@ViewBuilder* usage.
+#### Result builders
+*@ViewBuilder* is one of the possible result builders. The result builder feature of Swift is described in [Swift Evolution Proposal](https://github.com/apple/swift-evolution/blob/main/proposals/0289-result-builders.md). The main goal of result builder is providing *DSL* like syntax. Let's take a look at a very quick example of *@ViewBuilder* usage.
 
 ```swift
 import SwiftUI
@@ -155,4 +155,4 @@ struct ContentView: View {
 > We also used the ability to build custom views via *@ViewBuilder* during ["Building Bottom sheet in SwiftUI"](/2019/12/11/building-bottom-sheet-in-swiftui/) post.
 
 #### Conclusion
-This week we talked about the benefits of function builders and used *@ViewBuilder* as a concrete example. *@ViewBuilder* allows us to build super reusable SwiftUI views by separating its presentation logic and content. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
+This week we talked about the benefits of result builders and used *@ViewBuilder* as a concrete example. *@ViewBuilder* allows us to build super reusable SwiftUI views by separating its presentation logic and content. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
