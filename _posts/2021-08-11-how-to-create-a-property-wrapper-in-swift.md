@@ -162,6 +162,18 @@ In the current implementation, I've created a private class that holds all the l
         )
     }
 }
+
+struct HeartPointsSettings: View {
+    @SecureStorage(Settings.heartPoinstWeeklyGoal) var goal: Int = 150
+
+    var body: some View {
+        Section(header: Text("heartMinutesGoal")) {
+            Stepper(value: $goal, in: 150...900, step: 10) {
+                Text("\(goal) heartMinutesGoalValue")
+            }
+        }
+    }
+}
 ```
 
 #### Conclusion
