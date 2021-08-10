@@ -77,7 +77,7 @@ Now, we can implement the calculatable property called *wrappedValue* to provide
 }
 ```
 
-Here we hide all the implementation details of using Keychain service inside the property wrapper type. We also use the third-party KeychainAccess package to utilize its nice API. 
+Here we hide all the implementation details of using Keychain service inside the property wrapper type. We also use the third-party [KeychainAccess](https://github.com/kishikawakatsumi/KeychainAccess) package to utilize its nice API. 
 
 Another great thing about property wrappers is that you can use them to hide third-party code. You can easily update the SecureStorage type whenever you want to change the implementation or migrate to another Swift Package for Keychain. And this is going to be the only place for changes because the whole codebase uses the *SecureStorage* property wrapper and doesn't know about implementation details.
 
