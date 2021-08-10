@@ -165,4 +165,4 @@ In the current implementation, I've created a private class that holds all the l
 ```
 
 #### Conclusion
-Property wrapper is a great way to extract reusable logic into a separate type and use it across the codebase. It also has an advantage while hiding the third-party dependencies by providing a nice API to the client-side code.
+Property wrapper is a great way to extract reusable logic into a separate type and use it across the codebase. It also has an advantage while hiding the third-party dependencies by providing a nice API to the client-side code. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
