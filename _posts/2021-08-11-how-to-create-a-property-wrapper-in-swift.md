@@ -152,7 +152,12 @@ In the current implementation, I've created a private class that holds all the l
     }
 
     init(wrappedValue: Value, _ key: String) {
-        self._storage = StateObject(wrappedValue: KeychainStorage(defaultValue: wrappedValue, for: key))
+        self._storage = StateObject(
+            wrappedValue: KeychainStorage(
+                defaultValue: wrappedValue,
+                for: key
+            )
+        )
     }
 
     var projectedValue: Binding<Value> {
@@ -164,7 +169,8 @@ In the current implementation, I've created a private class that holds all the l
 }
 
 struct HeartPointsSettings: View {
-    @SecureStorage(Settings.heartPoinstWeeklyGoal) var goal: Int = 150
+    @SecureStorage(Settings.heartPoinstWeeklyGoal)
+    var goal: Int = 150
 
     var body: some View {
         Section(header: Text("heartMinutesGoal")) {
