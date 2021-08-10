@@ -5,6 +5,8 @@ layout: post
 
 Property wrapper is a Swift language feature. The main goal here is wrapping properties with logic that we extract into a separate type to reuse it across the codebase. This week, we will learn how to create a property wrapper to read Keychain data and be a good citizen in the SwiftUI world by reacting to data changes.
 
+{% include friends.html %}
+
 #### Basics
 SwiftUI provides us SceneStorage and AppStorage property wrappers to access data in scene memory and user defaults, respectively. Unfortunately, it doesn't give us a similar property wrapper to access Keychain, but we can build it. Let me show you a code example that defines the usage of the property wrapper we try to make.
 
