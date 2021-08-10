@@ -5,7 +5,7 @@ category: Swift Language Features
 image: /public/pw.png
 ---
 
-Property wrapper is a Swift language feature. The main goal here is wrapping properties with logic that we extract into a separate type to reuse it across the codebase. This week, we will learn how to create a property wrapper to read Keychain data and be a good citizen in the SwiftUI world by reacting to data changes.
+Property wrapper is a Swift language feature. The main goal here is wrapping properties with a logic that we extract into a separate type to reuse it across the codebase. This week, we will learn how to create a property wrapper to read data in Keychain and be a good citizen in the SwiftUI world by reacting to data changes.
 
 {% include friends.html %}
 
