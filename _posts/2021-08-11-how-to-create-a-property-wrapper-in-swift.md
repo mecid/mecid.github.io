@@ -104,7 +104,7 @@ We used to obtain bindings from property wrappers that SwiftUI provides us by us
 Here we create a calculated property that returns the binding to the value controlled by the property wrapper type. Now we can easily provide that binding to any SwiftUI view. Keep in mind that you can make *projectedValue* of any type you need, not only *Binding*.
 
 Another thing that we expect from SwiftUI is that it updates the view as soon as data hidden by a property wrapper changes. To achieve that, we should do two things:
-1. Conform our property wrapper type to the *DynamicProperty* protocol that SwiftUI gives us. *DynamicProperty* protocol has only one requirement that has a default implementation.
+1. Conform our property wrapper type to the *DynamicProperty* protocol that SwiftUI gives us. *DynamicProperty* protocol has only one requirement with a default implementation.
 2. Use some of SwiftUI provided property wrappers like *@State, @StateObject, etc.*, inside our custom property wrapper type to react to data changes.
 
 ```swift
