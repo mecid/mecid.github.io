@@ -89,6 +89,7 @@ We used to obtain bindings from property wrappers that SwiftUI provides us by us
 
 ```swift
 @propertyWrapper struct SecureStorage<Value: Codable> {
+//  ....
     var projectedValue: Binding<Value> {
         .init(
             get: { wrappedValue },
