@@ -23,7 +23,7 @@ As you can see in the example above, we use the *SecureStorage* property wrapper
 
 > To learn more about property wrappers in SwiftUI, take a look at my dedicated ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
-To create a property wrapper, we have to create a new type annotated with the **@propertyWrapper** attribute. A property wrapper type must contain a field named **wrappedValue**. Wrapped value is the heart of any property wrapper. Swift will transparently access the value of wrapped value whenever you read or write to any property that uses a property wrapper.
+To create a property wrapper, we have to create a new type annotated with the **@propertyWrapper** attribute. A property wrapper type must contain a field named **wrappedValue**. Wrapped value is the heart of any property wrapper. Swift will transparently access the wrapped value whenever you read or write to any property that uses a property wrapper.
 
 ```swift
 import KeychainAccess
