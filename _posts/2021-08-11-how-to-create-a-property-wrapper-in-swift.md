@@ -50,7 +50,7 @@ import Foundation
 }
 ```
 
-We declare the *SecureStorage* property wrapper with generic constraint to decode/encode the value while writing and reading from the Keychain service. We also define an initializer that takes a key and an initial value. Swift automatically calls this initializer when you define a field with a property wrapper with a default value.
+We declare the *SecureStorage* property wrapper with generic constraint to decode/encode the value while writing and reading from the Keychain service. We also define an initializer that takes a key and an initial value. Swift automatically calls this initializer when you define a field with a property wrapper and a default value.
 
 Now, we can implement the calculatable property called *wrappedValue* to provide access to the Keychain service.
 
