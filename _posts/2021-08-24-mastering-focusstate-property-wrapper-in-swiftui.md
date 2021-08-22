@@ -104,6 +104,8 @@ struct SignInView: View {
 }
 ```
 
+> To learn about other focus related property wrappers in SwiftUI, take a look at my ["FocusedValue and FocusedBinding property wrappers in SwiftUI"](/2021/03/03/focusedvalue-and-focusedbinding-property-wrappers-in-swiftui/) post.
+
 Defining many *FocusState* properties in complex view hierarchies can become cumbersome. Fortunately, *FocusState* works not only with boolean values but also with any *Hashable* type. It means that we can model the focused state using an enum type conforming to *Hashable* protocol. Let's take a look at the example.
 
 ```swift
@@ -160,7 +162,7 @@ struct ContentView: View {
 
 As you can see, we use another version of the *focused* view modifier to bind a view to a concrete case of the *Field* enum. SwiftUI updates the value of the *FocusState* property whenever the user focuses on any of the bound views. Remember that we should make our *FocusState* property optional to use combined with *Hashable* enum because there might be no focused view at the moment.
 
-> To learn about other focus related property wrappers in SwiftUI, take a look at my ["FocusedValue and FocusedBinding property wrappers in SwiftUI"](/2021/03/03/focusedvalue-and-focusedbinding-property-wrappers-in-swiftui/) post.
+> To learn more about toolbars in SwiftUI, take a look at my ["Mastering toolbars in SwiftUI"](/2020/07/15/mastering-toolbars-in-swiftui/) post.
 
 Today we learned how to use the *FocusState* property wrapper to manage focus in our views. Remember that *FocusState* allows us both to read and change the focused view programmatically. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
