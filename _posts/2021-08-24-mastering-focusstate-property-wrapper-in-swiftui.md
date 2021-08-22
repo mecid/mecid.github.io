@@ -5,6 +5,8 @@ layout: post
 
 SwiftUI became very powerful during the last WWDC. We gained many new features, and one of them was a brand new FocusState property wrapper. FocusState property wrapper allows us to read and write the current focus position in the view hierarchy. This week we will learn how to manage focus in SwiftUI apps.
 
+{% include friends.html %}
+
 SwiftUI provides a new FocusState property wrapper that allows us to focus on a particular view or check if that view is already focused. The usage is effortless. Let's see how we can use it.
 
 =====================================================
