@@ -1,6 +1,7 @@
 ---
 title: Mastering FocusState property wrapper in SwiftUI
 layout: post
+image: /public/focus-state.png
 ---
 
 SwiftUI became very powerful during the last WWDC. We gained many new features, and one of them was a brand new *FocusState* property wrapper. *FocusState* property wrapper allows us to read and write the current focus position in the view hierarchy. This week we will learn how to manage focus in SwiftUI apps using *FocusState* property wrapper and *focused* view modifier.
