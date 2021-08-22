@@ -31,4 +31,5 @@ Here we have the Field enum that conforms to Hashable and defines all the focusa
 
 As you can see, we use another version of the focused view modifier to bind a view to a concrete case of the Field enum. SwiftUI updates the value of the FocusState property whenever the user focuses on any of the bound views. Remember that we should make our FocusState property optional to use combined with Hashable enum because there might be no focused view at the moment.
 
-Today we learned how to use the FocusState property wrapper to manage focus in our views. Remember that FocusState allows us both to read and change the focused view programmatically.
+Today we learned how to use the FocusState property wrapper to manage focus in our views. Remember that FocusState allows us both to read and change the focused view programmatically. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
