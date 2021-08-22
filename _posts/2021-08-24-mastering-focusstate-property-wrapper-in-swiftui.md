@@ -33,6 +33,8 @@ struct SignInView: View {
 
 As you can see in the example above, we need to define a boolean variable using the *FocusState* property wrapper. We also have to bind its value to the focus state of a particular view using the *focused* view modifier. SwiftUI sets the boolean value of the view to true as soon as the user focuses on it. It also changes it to false as soon as the view loses focus.
 
+> To learn more about focus management in SwiftUI, take a look at my ["Focus management in SwiftUI"](/2020/12/02/focus-management-in-swiftui/) post.
+
 You can define as many *FocusState* variables as needed to cover your focus management logic. SwiftUI takes care of them by keeping in sync the focused view with its binding.
 
 ```swift
@@ -157,6 +159,8 @@ struct ContentView: View {
 ```
 
 As you can see, we use another version of the *focused* view modifier to bind a view to a concrete case of the *Field* enum. SwiftUI updates the value of the *FocusState* property whenever the user focuses on any of the bound views. Remember that we should make our *FocusState* property optional to use combined with *Hashable* enum because there might be no focused view at the moment.
+
+> To learn about other focus related property wrappers in SwiftUI, take a look at my ["FocusedValue and FocusedBinding property wrappers in SwiftUI"](/2021/03/03/focusedvalue-and-focusedbinding-property-wrappers-in-swiftui/) post.
 
 Today we learned how to use the *FocusState* property wrapper to manage focus in our views. Remember that *FocusState* allows us both to read and change the focused view programmatically. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
