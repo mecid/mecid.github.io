@@ -9,7 +9,7 @@ SwiftUI became very powerful during the last WWDC. We gained many new features, 
 
 {% include friends.html %}
 
-SwiftUI provides a new *FocusState* property wrapper that allows us to focus on a particular view or check if that view is already focused. The usage is effortless. Let's see how we can use it.
+SwiftUI provides a new *FocusState* property wrapper that works on all Apple platforms and allows us to focus on a particular view or check if that view is already focused. The usage is effortless. Let's see how we can use it.
 
 ```swift
 import SwiftUI
