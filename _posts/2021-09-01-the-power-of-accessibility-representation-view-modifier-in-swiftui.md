@@ -99,4 +99,5 @@ struct BarChartView: View {
 
 Here we use the new *Canvas* view for custom drawing. *Canvas* view doesn't support accessibility out of the box. Fortunately, we can use the *accessibilityRepresentation* view modifier to generate the accessibility information for our chart.
 
-The new *accessibilityRepresentation* view modifier drastically simplifies the accessibility support for custom views.
+The new *accessibilityRepresentation* view modifier drastically simplifies the accessibility support for custom views. Remember that accessibility isn't a feature or a "nice to have". It's a necessity. So let's make your app accessible for everyone. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
