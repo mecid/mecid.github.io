@@ -22,7 +22,7 @@ struct LongPressCheckmark: View {
 }
 ```
 
-The code above looks simple. We have a binding to a boolean value indicating the selection of the checkmark. We also have an image presenting a checkmark or empty rectangle depending on the value of the binding. I also added a long-press gesture to the image that toggles the boolean binding.
+The code above looks simple. We have a binding to a boolean value indicating the selection of the checkmark. We also have an image presenting a checkmark or empty rectangle depending on the value of the binding. I added a long-press gesture to the image that toggles the boolean binding.
 
 The main downside of the code above is the accessibility support. VoiceOver recognizes the image and doesn't provide information about the selection state, possible actions, etc. We can improve the accessibility support manually by using the set of provided accessibility view modifiers in SwiftUI.
 
