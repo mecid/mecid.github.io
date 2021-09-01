@@ -69,7 +69,7 @@ As you can see, we replace all the accessibility-related lines of code with the 
 
 Whenever you build a custom view that has logic similar to the view in SwiftUI, you can use the *accessibilityRepresentation* view modifier to generate accessibility behavior for your custom view automatically from that SwiftUI view.
 
-In the previous example, we used the standard Toggle to extract its accessibility information. I should mention that the *accessibilityRepresentation* view modifier works both with plain views and complex view hierarchies. In the following example, we will build a custom bar chart view.
+In the previous example, we used the standard *Toggle* to extract its accessibility information. I should mention that the *accessibilityRepresentation* view modifier works both with plain views and complex view hierarchies. In the following example, we will build a custom bar chart view.
 
 ```swift
 struct Bar: Identifiable {
