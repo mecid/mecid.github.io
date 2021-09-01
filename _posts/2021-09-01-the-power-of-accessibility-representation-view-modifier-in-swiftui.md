@@ -3,7 +3,7 @@ title: The power of accessibilityRepresentation view modifier in SwiftUI
 layout: post
 ---
 
-The SwiftUI Release 3 has a lot of improvements in the area of accessibility. It provides all the missing APIs like accessibility rotors, but it also gives us new ways of doing complex things efficiently. This week we will talk about the accessibilityRepresentation view modifier that allows us to replace accessibility elements of one view with another.
+The SwiftUI Release 3 has a lot of improvements in the area of accessibility. It provides all the missing APIs like accessibility rotors, but it also gives us new ways of doing complex things efficiently. This week we will talk about the *accessibilityRepresentation* view modifier that allows us to replace accessibility elements of one view with another.
 
 Assume we are working on a super custom checkmark button that toggles its state only after a long press. Let's take a look at the code we write to implement this view.
 
@@ -43,7 +43,7 @@ struct LongPressCheckmark: View {
 }
 ```
 
-Here we add accessibility modifiers to provide information about the current state of the checkmark, an accessibility action to toggle the state, and the accessibility label with the hint. We have much more accessibility-related lines of code than button logic. Fortunately, SwiftUI provides us a way to simplify the code above by using the accessibilityRepresentation view modifier.
+Here we add accessibility modifiers to provide information about the current state of the checkmark, an accessibility action to toggle the state, and the accessibility label with the hint. We have much more accessibility-related lines of code than button logic. Fortunately, SwiftUI provides us a way to simplify the code above by using the *accessibilityRepresentation* view modifier.
 
 ```swift
 import SwiftUI
@@ -63,11 +63,11 @@ struct LongPressCheckmark: View {
 }
 ```
 
-As you can see, we replace all the accessibility-related lines of code with the single accessibilityRepresentation view modifier. accessibilityRepresentation view modifier replaces the accessibility element of the current view with the accessibility information of the view you provide in the closure. SwiftUI doesn't render the view you provide in the closure. SwiftUI uses it only for generating accessibility information.
+As you can see, we replace all the accessibility-related lines of code with the single *accessibilityRepresentation* view modifier. *accessibilityRepresentation* view modifier replaces the accessibility element of the current view with the accessibility information of the view you provide in the closure. SwiftUI doesn't render the view you provide in the closure. SwiftUI uses it only for generating accessibility information.
 
-Whenever you build a custom view that has logic similar to the view in SwiftUI, you can use the accessibilityRepresentation view modifier to generate accessibility behavior for your custom view automatically from that SwiftUI view.
+Whenever you build a custom view that has logic similar to the view in SwiftUI, you can use the *accessibilityRepresentation* view modifier to generate accessibility behavior for your custom view automatically from that SwiftUI view.
 
-In the previous example, we used the standard Toggle to extract its accessibility information. I should mention that the accessibilityRepresentation view modifier works both with plain views and complex view hierarchies. In the following example, we will build a custom bar chart view.
+In the previous example, we used the standard Toggle to extract its accessibility information. I should mention that the *accessibilityRepresentation* view modifier works both with plain views and complex view hierarchies. In the following example, we will build a custom bar chart view.
 
 ```swift
 struct Bar: Identifiable {
@@ -95,6 +95,6 @@ struct BarChartView: View {
 }
 ```
 
-Here we use the new Canvas view for custom drawing. Canvas view doesn't support accessibility out of the box. Fortunately, we can use the accessibilityRepresentation view modifier to generate the accessibility information for our chart.
+Here we use the new *Canvas* view for custom drawing. *Canvas* view doesn't support accessibility out of the box. Fortunately, we can use the *accessibilityRepresentation* view modifier to generate the accessibility information for our chart.
 
-The new accessibilityRepresentation view modifier drastically simplifies the accessibility support for custom views.
+The new *accessibilityRepresentation* view modifier drastically simplifies the accessibility support for custom views.
