@@ -1,7 +1,7 @@
------
+---
 title: The power of accessibilityRepresentation view modifier in SwiftUI
 layout: post
------
+---
 
 The SwiftUI Release 3 has a lot of improvements in the area of accessibility. It provides all the missing APIs like accessibility rotors, but it also gives us new ways of doing complex things efficiently. This week we will talk about the accessibilityRepresentation view modifier that allows us to replace accessibility elements of one view with another.
 
