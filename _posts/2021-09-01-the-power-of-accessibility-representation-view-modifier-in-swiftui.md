@@ -7,7 +7,7 @@ image: /public/accessibility.jpeg
 
 The SwiftUI Release 3 has a lot of improvements in the area of accessibility. It provides all the missing APIs like accessibility rotors, but it also gives us new ways of doing complex things efficiently. This week we will talk about the *accessibilityRepresentation* view modifier that allows us to replace accessibility elements of one view with another.
 
-Assume we are working on a super custom checkmark button that toggles its state only after a long press. Let's take a look at the code we write to implement this view.
+Assume we are working on a super custom checkmark button that toggles its state only after a long press. Let's take a look at the code we could write to implement this view.
 
 ```swift
 import SwiftUI
