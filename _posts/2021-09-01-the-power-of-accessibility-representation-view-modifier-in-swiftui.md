@@ -45,6 +45,8 @@ struct LongPressCheckmark: View {
 }
 ```
 
+> To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
+
 Here we add accessibility modifiers to provide information about the current state of the checkmark, an accessibility action to toggle the state, and the accessibility label with the hint. We have much more accessibility-related lines of code than button logic. Fortunately, SwiftUI provides us a way to simplify the code above by using the *accessibilityRepresentation* view modifier.
 
 ```swift
