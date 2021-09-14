@@ -1,6 +1,7 @@
 ---
 title: Accessibility rotors in SwiftUI
 layout: post
+category: Accessibility
 ---
 
 SwiftUI Release 3 contains many new APIs that we can utilize to improve accessibility in our apps, and one of them is the new accessibilityRotor view modifier. That's why I want to continue the topic of accessibility in SwiftUI. This week we will learn how to use the accessibilityRotor view modifier to provide custom VoiceOver navigation using rotors.
