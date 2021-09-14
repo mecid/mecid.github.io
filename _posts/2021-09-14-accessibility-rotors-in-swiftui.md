@@ -13,7 +13,7 @@ Usually, we navigate through the app using the left and right swipes while Voice
 To use the rotor, rotate two fingers on your iOS device's screen as if you're turning a dial. VoiceOver will say the first rotor option. Keep rotating your fingers to hear more options. Lift your fingers to choose an option. Then flick your finger up or down on the screen to navigate through it.
 
 #### SwiftUI custom rotors API
-Assume that we are working on a screen that provides information about health trends. There is a long list of different trends, including positive, negative, and constant results. Negative trends are the thing the user should focus on improving. That's why we should build a custom rotor to navigate only through negative trends. Let's start by introducing the *Trend* model and the *TrendsView*.
+Assume that we are working on a screen that provides information about health trends. There is a long list of different trends, including positive, negative, and constant results. Negative trends are the things the user should focus on improving. That's why we should build a custom rotor to navigate only through negative trends. Let's start by introducing the *Trend* model and the *TrendsView*.
 
 ```swift
 import SwiftUI
