@@ -40,6 +40,8 @@ struct TrendView: View {
 
 The code above is super simple. Please look at how we use the accessibilityElement view modifier to make TrendView accessible and combine all the children's information. 
 
+> To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
+
 ```swift
 struct TrendsView: View {
     let trends: [Trend]
