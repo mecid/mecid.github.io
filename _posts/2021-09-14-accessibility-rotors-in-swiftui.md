@@ -71,7 +71,7 @@ The second parameter is the *AccessibilityRotorContentBuilder* closure. The *Acc
 
  *AccessibilityRotorContent* is also identical to *View* protocol, but it describes the content of the rotor. SwiftUI types like *ForEach* and *Group* conform both to *View* and *AccessibilityRotorContent* protocols. That's why we can use them both inside *ViewBuilder* and *AccessibilityRotorContentBuilder* closures.
 
-The last piece is the *AccessibilityRotorEntry* conforming to *AccessibilityRotorContent* and allowing us to use it inside a *ForEach*. We use it to create a rotor entry and bind it to a SwiftUI view using an ID. This is the point where all the magic takes place. We have two *ForEach* instances, and SwiftUI is smart enough to match the IDs inside *ForEach* and bind rotor entries to the views with the same IDs.
+The last piece is the *AccessibilityRotorEntry* conforming to *AccessibilityRotorContent* and allowing us to use it inside a *ForEach* or *Group*. We use it to create a rotor entry and bind it to a SwiftUI view using an ID. This is the point where all the magic takes place. We have two *ForEach* instances, and SwiftUI is smart enough to match the IDs inside *ForEach* and bind rotor entries to the views with the same IDs.
 
 #### accessibilityRotorEntry view modifier
 The approach above works like a charm, but we can gain more control over binding rotor entry to a view using the *accessibilityRotorEntry* view modifier.
