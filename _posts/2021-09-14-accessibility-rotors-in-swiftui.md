@@ -13,11 +13,51 @@ To use the rotor, rotate two fingers on your iOS device's screen as if you're tu
 #### SwiftUI custom rotors API
 Assume that we are working on a screen that provides information about health trends. There is a long list of different trends, including positive, negative, and constant results. Negative trends are the thing the user should focus on improving. That's why we should build a custom rotor to navigate only through negative trends. Let's start by introducing the Trend model and the TrendsView.
 
-=====================================================
+```swift
+import SwiftUI
+
+struct Trend: Identifiable {
+    let id = UUID()
+    let message: String
+    let isPositive: Bool
+}
+
+struct TrendView: View {
+    let trend: Trend
+
+    var body: some View {
+        HStack {
+            Image(systemName: trend.isPositive ? "chevron.up" : "chevron.down")
+                .accessibilityElement()
+                .accessibilityLabel(trend.isPositive ? "positive" : "negative")
+            Text(trend.message)
+        }.accessibilityElement(children: .combine)
+    }
+}
+```
 
 The code above is super simple. Please look at how we use the accessibilityElement view modifier to make TrendView accessible and combine all the children's information. 
 
-=====================================================
+```swift
+struct TrendsView: View {
+    let trends: [Trend]
+
+    var body: some View {
+        List {
+            ForEach(trends, id: \.id) { trend in
+                TrendView(trend: trend)
+            }
+        }
+        .accessibilityRotor("Negative trends") {
+            ForEach(trends, id: \.id) { trend in
+                if !trend.isPositive {
+                    AccessibilityRotorEntry(trend.message, id: trend.id)
+                }
+            }
+        }
+    }
+}
+```
 
 Here we have the TrendsView that displays the list of trends. We use the accessibilityRotor view modifier to create a custom rotor called "Negative trends". As soon as the user focuses on the list, VoiceOver suggests accessing the negative trends rotor.
 
@@ -30,19 +70,81 @@ The last piece is the AccessibilityRotorEntry conforming to AccessibilityRotorCo
 #### accessibilityRotorEntry view modifier
 The approach above works like a charm, but we can gain more control over binding rotor entry to a view using the accessibilityRotorEntry view modifier.
 
-=====================================================
+```swift
+struct TrendsView: View {
+    let trends: [Trend]
+
+    @Namespace private var customRotorNamespace
+
+    var body: some View {
+        List {
+            ForEach(trends, id: \.id) { trend in
+                VStack {
+                    TrendView(trend: trend)
+                        .accessibilityRotorEntry(id: trend.id, in: customRotorNamespace)
+                    Text(trend.notes)
+                }
+            }
+        }
+        .accessibilityRotor("Negative trends") {
+            ForEach(trends, id: \.id) { trend in
+                if !trend.isPositive {
+                    AccessibilityRotorEntry(trend.message, trend.id, in: customRotorNamespace) 
+                }
+            }
+        }
+    }
+}
+```
 
 In this case, we use the accessibilityRotorEntry view modifier to bind a rotor entry id to a view explicitly. It allows us to ignore IDs from ForEach and can be very helpful in situations where we don't have ForEach or don't need to include the whole child of ForEach into the rotor.
 
 #### Preparing rotor entries
 As a bonus, the AccessibilityRotorEntry type allows us to provide a closure to run when the user navigates to a particular rotor entry. For example, we can scroll to the specific list item if it is not visible when navigating to that item using rotors.
 
-=====================================================
+```swift
+struct TrendsView: View {
+    let trends: [Trend]
+
+    @Namespace private var customRotorNamespace
+
+    var body: some View {
+        ScrollViewReader { scrollView in
+            List {
+                ForEach(trends, id: \.id) { trend in
+                    TrendView(trend: trend)
+                        .accessibilityRotorEntry(id: trend.id, in: customRotorNamespace)
+                        .id(trend.id)
+                }
+            }
+            .accessibilityRotor("Negative trends") {
+                ForEach(trends, id: \.id) { trend in
+                    if !trend.isPositive {
+                        AccessibilityRotorEntry(trend.message, trend.id, in: customRotorNamespace) {
+                            scrollView.scrollTo(trend.id)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
 #### TextEditor Rotors
 The new accessibility rotors API is robust and allows us to navigate even through text in TextEditor. We can mark particular parts of our text content and navigate between them inside the TextEditor.
 
-=====================================================
+```swift
+struct ContentEditor: View {
+    @Binding var content: Content
+
+    var body: some View {
+        TextEditor(text: $content.text)
+            .accessibilityRotor("Emails", textRanges: content.emailRanges)
+            .accessibilityRotor("Links", textRanges: content.linkRanges)
+    }
+}
+```
 
 #### Conclusion
 SwiftUI Release 3 has done great work in the area of accessibility. Now we can use all these new APIs to build super accessible apps.
