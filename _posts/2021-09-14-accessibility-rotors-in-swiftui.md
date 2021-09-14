@@ -103,7 +103,7 @@ struct TrendsView: View {
 }
 ```
 
-In this case, we use the *accessibilityRotorEntry* view modifier to bind a rotor entry id to a view explicitly. It allows us to ignore IDs from *ForEach* and can be very helpful in situations where we don't have ForEach or don't need to include the whole child of *ForEach* into the rotor.
+In this case, we use the *accessibilityRotorEntry* view modifier to bind a rotor entry id to a view explicitly. It allows us to ignore IDs from *ForEach* and can be very helpful in situations where we don't have ForEach or don't need to include the whole child of *ForEach* into the rotor, like in our example.
 
 #### Preparing rotor entries
 As a bonus, the *AccessibilityRotorEntry* type allows us to provide a closure to run when the user navigates to a particular rotor entry. For example, we can scroll to the specific list item if it is not visible when navigating to that item using rotors.
