@@ -7,7 +7,7 @@ image: /public/accessibility.jpeg
 
 One of the new features of SwiftUI Release 3 is accessibility focus management. SwiftUI allows us easily handle the focus state for assistive technologies like VoiceOver and Switch Control. This week we will learn how to use the *AccessibilityFocusState* property wrapper to move the accessibility focus in SwiftUI.
 
-SwiftUI Release 3 provides us a particular set of tools for managing accessibility focus. It includes *AccessibilityFocusState* property wrapper and the *accessibilityFocused* view modifier. We can handle accessibility focus in a similar way that we manage it without assistive technologies.
+SwiftUI Release 3 provides us a particular set of tools for managing accessibility focus. It includes the *AccessibilityFocusState* property wrapper and the *accessibilityFocused* view modifier. We can handle accessibility focus in a similar way that we manage it without assistive technologies.
 
 ```swift
 import SwiftUI
