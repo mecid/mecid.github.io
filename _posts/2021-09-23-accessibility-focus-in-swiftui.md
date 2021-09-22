@@ -146,4 +146,4 @@ In the example above, we use the *AccessibilityFocusState* view modifier with ou
 
 We should also use another version of the *accessibilityFocused* view modifier to bind a view to a particular case of the hashable enum.
 
-I love SwiftUI because the different APIs use the same style and are consistent across various features. You can learn it once and apply it in multiple places. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+I love SwiftUI because the different APIs use the same style and are consistent across various features. You can learn it once and apply it in multiple places. This week we learned how to manage the accessibility focus which is very similar to the first responder management. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
