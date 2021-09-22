@@ -9,6 +9,8 @@ One of the new features of SwiftUI Release 3 is accessibility focus management. 
 
 SwiftUI Release 3 provides us a particular set of tools for managing accessibility focus. It includes the *AccessibilityFocusState* property wrapper and the *accessibilityFocused* view modifier. We can handle accessibility focus in a similar way that we manage it without assistive technologies.
 
+> To learn more about focus management in SwiftUI, take a look at my ["Mastering FocusState property wrapper in SwiftUI"](/2021/08/24/mastering-focusstate-property-wrapper-in-swiftui/) post.
+
 ```swift
 import SwiftUI
 
