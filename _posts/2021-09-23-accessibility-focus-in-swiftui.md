@@ -144,7 +144,7 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we use the *AccessibilityFocusState* view modifier with our new *FocusableField* enum that defines all the focusable views on the screen. Keep in mind that you should make the *FocusableField* enum hashable and define an optional variable with the help of the *AccessibilityFocusState* view modifier to allow the framework to set the value to nil whenever the user moves the focus from the views you define. 
+In the example above, we use the *AccessibilityFocusState* view modifier with our new *FocusableField* enum that defines all the focusable views on the screen. Keep in mind that you should make the *FocusableField* enum hashable and define an optional variable with the help of the *AccessibilityFocusState* view modifier to allow the framework to set the value to **nil** whenever the user moves the focus from the views you define. 
 
 We should also use another version of the *accessibilityFocused* view modifier to bind a view to a particular case of the hashable enum.
 
