@@ -146,6 +146,6 @@ struct ContentView: View {
 
 In the example above, we use the *AccessibilityFocusState* view modifier with our new *FocusableField* enum that defines all the focusable views on the screen. Keep in mind that you should make the *FocusableField* enum hashable and define an optional variable with the help of the *AccessibilityFocusState* view modifier to allow the framework to set the value to **nil** whenever the user moves the focus from the views you define. 
 
-We should also use another version of the *accessibilityFocused* view modifier to bind a view to a particular case of the hashable enum.
+We should also use another version of the *accessibilityFocused* view modifier to bind a view to a particular case of the hashable enum. Remember that you can programmatically move the focus of VoiceOver or Switch Control by changing the value of the variable wrapped with *AccessibilityFocusState*.
 
 I love SwiftUI because the different APIs use the same style and are consistent across various features. You can learn it once and apply it in multiple places. This week we learned how to manage the accessibility focus which is very similar to the first responder management. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
