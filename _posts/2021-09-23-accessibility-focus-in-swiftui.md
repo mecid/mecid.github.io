@@ -35,7 +35,7 @@ struct SignInView: View {
 }
 ```
 
-As you can see in the example above, we use the *AccessibilityFocusState* property wrapper to define a variable that represents whenever the email field is focused. SwiftUI initializes the variable with the false value by default because the user can focus on any other screen area. We also use the *accessibilityFocused* view modifier to bind the focus state of a particular view to a variable holding its value. 
+As you can see in the example above, we use the *AccessibilityFocusState* property wrapper to define a variable that represents whenever the email field is focused. SwiftUI initializes the variable with the false value by default because the user can focus on any other area of the screen. We also use the *accessibilityFocused* view modifier to bind the focus state of a particular view to a variable holding its value. 
 
 Remember that you can declare as many variables as you need to cover your accessibility focus logic with the *AccessibilityFocusState* property wrapper.
 
