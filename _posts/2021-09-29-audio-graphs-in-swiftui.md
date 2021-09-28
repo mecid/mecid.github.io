@@ -5,7 +5,7 @@ category: Accessibility
 image: /public/accessibility.jpeg
 ---
 
-Charts and graphs are one of the complicated things in terms of accessibility. Fortunately, iOS 15 has a new feature called Audio Graphs. This week we will learn how to build an audio representation for any SwiftUI view presenting a chart like a custom bar chart view or an image.
+Charts and graphs are one of the complicated things in terms of accessibility. Fortunately, iOS 15 has a new feature called Audio Graphs. This week we will learn how to build an audio representation for any SwiftUI view presenting a chart like a custom bar chart view or an image by using the *accessibilityChartDescriptor* view modifier.
 
 Let's start by building a simple bar chart view in SwiftUI that displays a set of data points using vertical bars.
 
