@@ -130,4 +130,4 @@ struct ContentView: View {
 
 As the last step, we use the accessibilityChartDescriptor view modifier to set the instance of AXChartDescriptorRepresentable protocol to describe our chart.
 
-The audio graphs feature is a significant improvement for visually impaired users. The great thing about the audio graphs feature is that you can use it with any view you want, even with the image view. All you need is to create the instance of AXChartDescriptor type.
+The audio graphs feature is a significant improvement for visually impaired users. The great thing about the audio graphs feature is that you can use it with any view you want, even with the image view. All you need is to create the instance of AXChartDescriptor type. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
