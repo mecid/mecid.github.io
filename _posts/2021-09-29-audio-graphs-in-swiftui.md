@@ -52,7 +52,7 @@ struct ContentView: View {
 
     var body: some View {
         BarChartView(dataPoints: dataPoints)
-            .accessibilityElement(children: .ignore)
+            .accessibilityElement()
             .accessibilityLabel("Chart representing some data")
     }
 }
@@ -125,7 +125,7 @@ struct ContentView: View {
 
     var body: some View {
         BarChartView(dataPoints: dataPoints)
-            .accessibilityElement(children: .ignore)
+            .accessibilityElement()
             .accessibilityLabel("Chart representing some data")
             .accessibilityChartDescriptor(self)
     }
