@@ -60,9 +60,13 @@ struct ContentView: View {
 
 Here we create a sample array of *DataPoint* instances and pass it to the *BarChartView*. We also make an accessibility element for the chart and disable its children's accessibility information. To improve the accessibility experience for our chart view, we also added the accessibility label.
 
+> To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
+
 Finally, we can start implementing the audio graph feature for our bar chart view. Audio graphs are available via the rotors menu. To use the rotor, rotate two fingers on your iOS device's screen as if you're turning a dial. VoiceOver will say the first rotor option. Keep rotating your fingers to hear more options. Lift your fingers to choose audio graphs. Then flick your finger up or down on the screen to navigate through it.
 
 Audio graphs allow users to understand and interpret the chart data using audio components. While navigating through bars in your chart view, VoiceOver plays sound with different pitches. VoiceOver uses high pitches for more significant values and low pitches for small values. These pitches represent the data in your array.
+
+> To learn about the custom rotor navigation in SwiftUI, take a look at my ["Accessibility rotors in SwiftUI"](/2021/09/14/accessibility-rotors-in-swiftui/) post.
 
 Now we can talk about implementing this feature in our *BarChartView*. First of all, we have to create a type conforming to the *AXChartDescriptorRepresentable* protocol. *AXChartDescriptorRepresentable* protocol has only one requirement that creates the instance of *AXChartDescriptor* type. The instance of the *AXChartDescriptor* type represents the data in our chart in the format that VoiceOver can understand and interact with. 
 
