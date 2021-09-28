@@ -108,7 +108,7 @@ extension ContentView: AXChartDescriptorRepresentable {
 
 ```
 
-All we need to do to conform to the *AXChartDescriptorRepresentable* protocol is to add the *makeChartDescriptor* function that returns the instance of *AXChartDescriptor*.
+All we need to do is conforming to the *AXChartDescriptorRepresentable* protocol and add the *makeChartDescriptor* function that returns an instance of *AXChartDescriptor*.
 
 First, we define the X and Y axes by using *AXCategoricalDataAxisDescriptor* and *AXNumericDataAxisDescriptor* types. We want to use string labels on the X-axis. That's why we use the *AXCategoricalDataAxisDescriptor* type. In the case of a line chart, we will use the *AXNumericDataAxisDescriptor* for both axes.
 
