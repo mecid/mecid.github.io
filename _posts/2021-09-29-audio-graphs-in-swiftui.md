@@ -64,7 +64,7 @@ Here we create a sample array of *DataPoint* instances and pass it to the *BarCh
 
 Finally, we can start implementing the audio graph feature for our bar chart view. Audio graphs are available via the rotors menu. To use the rotor, rotate two fingers on your iOS device's screen as if you're turning a dial. VoiceOver will say the first rotor option. Keep rotating your fingers to hear more options. Lift your fingers to choose audio graphs. Then flick your finger up or down on the screen to navigate through it.
 
-Audio graphs allow users to understand and interpret the chart data using audio components. While navigating through bars in your chart view, VoiceOver plays sound with different pitches. VoiceOver uses high pitches for more significant values and low pitches for small values. These pitches represent the data in your array.
+Audio graphs allow users to understand and interpret the chart data using audio components. VoiceOver plays sound with different pitches while moving through bars in your chart view. VoiceOver uses high pitches for more significant values and low pitches for small values. These pitches represent the data in your array.
 
 > To learn about the custom rotor navigation in SwiftUI, take a look at my ["Accessibility rotors in SwiftUI"](/2021/09/14/accessibility-rotors-in-swiftui/) post.
 
