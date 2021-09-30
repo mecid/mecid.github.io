@@ -148,4 +148,6 @@ In the example above, we use the *AccessibilityFocusState* view modifier with ou
 
 We should also use another version of the *accessibilityFocused* view modifier to bind a view to a particular case of the hashable enum. Remember that you can programmatically move the focus of VoiceOver or Switch Control by changing the value of the variable wrapped with *AccessibilityFocusState*.
 
+> To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
+
 I love SwiftUI because the different APIs use the same style and they are consistent across various features. You can learn it once and apply it in multiple places. This week we learned how to manage the accessibility focus which is very similar to the first responder management. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
