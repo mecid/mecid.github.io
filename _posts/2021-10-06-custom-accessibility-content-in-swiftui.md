@@ -38,7 +38,7 @@ struct UserView: View {
 }
 ```
 
-SwiftUI provides us with excellent accessibility support out of the box. You don't need to do anything to make your *UserView* accessible. Every piece of text inside the *UserView* is accessible for assistive technologies like VoiceOver and Switch Control. It might sound good, but it can overwhelm Voice Over with a lot of data. Let's improve accessibility support a little bit but adding a few accessibility modifiers to our *UserView*.
+SwiftUI provides us with excellent accessibility support out of the box. You don't need to do anything to make your *UserView* accessible. Every piece of text inside the *UserView* is accessible for assistive technologies like VoiceOver and Switch Control. It might sound good, but it can overwhelm VoiceOver users with a lot of data. Let's improve accessibility support a little bit but adding a few accessibility modifiers to our *UserView*.
 
 ```swift
 struct UserView: View {
