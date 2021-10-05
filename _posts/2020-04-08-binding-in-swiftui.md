@@ -55,8 +55,8 @@ struct PersonsView : View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(store.persons.indexed(), id: \.1.id) { index, person in
-                    NavigationLink(destination: EditingView(person: self.$store.persons[index])) {
+                ForEach($store.persons) { $person in
+                    NavigationLink(destination: EditingView(person: $person)) {
                         VStack(alignment: .leading) {
                             Text(person.name)
                                 .font(.headline)
@@ -71,6 +71,8 @@ struct PersonsView : View {
     }
 }
 ```
+
+Take a look at how we generate bindings inside *ForEach* view. We use **$** sign to define closure parameter and it automatically generates binding for us.
 
 Please keep in mind that the value of binding must be a value type. It means it has to be an enum or a struct. I see that people sometimes use classes to describe a state or entry inside *EnvironmentObject* or *ObservedObject* and notice that binding is not working. Apple's documentation on binding says: if *Value* is not value semantic, the updating behavior for any views that make use of the resulting *Binding* is unspecified.
 
@@ -99,16 +101,6 @@ struct EditingView: View {
 ```
 
 As you can see in the example above, we use binding to pass a writable reference to a person struct. As soon as we modify the user instance inside the *EditingView* SwiftUI updates *PersonsView* to respect the changes.
-
-```swift
-extension Sequence {
-    func indexed() -> Array<(offset: Int, element: Element)> {
-        return Array(enumerated())
-    }
-}
-```
-
-You can see that I use the *indexed* function to generate an array of tuples that provides both the element and its index. It allows me to read the item to render it in place and access the binding using the item's index.
 
 > To learn more about building editable forms using *Form* component, take a look at my ["Building forms with SwiftUI"](/2019/06/19/building-forms-with-swiftui/) post.
 
