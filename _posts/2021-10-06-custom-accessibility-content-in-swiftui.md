@@ -62,7 +62,7 @@ struct UserView: View {
 }
 ```
 
-As you can see in the example above, we use accessibility modifiers to ignore the accessibility content of the children and make the stack itself an accessibility element. We also added the accessibility label to the stack but still missed the other data. So we have to make all the data accessible. We use different fonts and colors to prioritize text visually, but how can we achieve the same impact for assistive technologies?
+As you can see in the example above, we use accessibility modifiers to ignore the accessibility content of the children to make the stack itself an accessibility element. We also added the accessibility label to the stack but still missed the other data. So we have to make all the data accessible. We use different fonts and colors to prioritize text visually, but how can we achieve the same impact for assistive technologies?
 
 > To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
 
