@@ -7,17 +7,87 @@ SwiftUI Release 3 brought a lot of new accessibility APIs, which we can use to i
 
 Let's start with a simple example that defines the User struct and a view presenting an instance of the User struct.
 
-=====================================================
+```swift
+import SwiftUI
+
+struct User: Decodable {
+    let name: String
+    let email: String
+    let address: String
+    let age: Int
+}
+
+struct UserView: View {
+    let user: User
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(user.name)
+                .font(.headline)
+            Text(user.address)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            Text(user.email)
+                .foregroundColor(.secondary)
+            Text("Age: \(user.age)")
+                .foregroundColor(.secondary)
+        }
+    }
+}
+```
 
 SwiftUI provides us with excellent accessibility support out of the box. You don't need to do anything to make your UserView accessible. Every piece of text inside the UserView is accessible for assistive technologies like VoiceOver and Switch Control. It might sound good, but it can overwhelm Voice Over with a lot of data. Let's improve accessibility support a little bit but adding a few accessibility modifiers to our UserView.
 
-=====================================================
+```swift
+struct UserView: View {
+    let user: User
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(user.name)
+                .font(.headline)
+            Text(user.address)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            Text(user.email)
+                .foregroundColor(.secondary)
+            Text("Age: \(user.age)")
+                .foregroundColor(.secondary)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(user.name)
+    }
+}
+```
 
 As you can see in the example above, we use accessibility modifiers to ignore the accessibility content of the children and make the stack itself an accessibility element. We also added the accessibility label to the stack but still missed the other data. So we have to make all the data accessible. We use different fonts and colors to prioritize text visually, but how can we achieve the same impact for assistive technologies?
 
 Fortunately, SwiftUI provides a way to provide customized accessibility content with different importance using the brand new accessibilityCustomContent view modifier. Let's take a look at how we can use it.
 
-=====================================================
+```swift
+struct UserView: View {
+    let user: User
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(user.name)
+                .font(.headline)
+            Text(user.address)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            Text(user.email)
+                .foregroundColor(.secondary)
+            Text("Age: \(user.age)")
+                .foregroundColor(.secondary)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(user.name)
+        .accessibilityCustomContent("Age", "\(user.age)")
+        .accessibilityCustomContent("Email", user.email, importance: .high)
+        .accessibilityCustomContent("Address", user.address, importance: .default)
+    }
+}
+```
 
 Here we add a bunch of accessibilityCustomContent view modifiers to define custom accessibility content with various priorities. The accessibilityCustomContent view modifier has three parameters.
 
@@ -28,7 +98,36 @@ You can use as many accessibilityCustomContent view modifiers as needed to prese
 
 An excellent way to keep your custom accessibility content labels consistent across the large codebase is by using the AccessibilityCustomContentKey type. You can use it as the first parameter of the accessibilityCustomContent view modifier.
 
-=====================================================
+```swift
+extension AccessibilityCustomContentKey {
+    static let age = AccessibilityCustomContentKey("Age")
+    static let email = AccessibilityCustomContentKey("Email")
+    static let address = AccessibilityCustomContentKey("Address")
+}
+
+struct UserView: View {
+    let user: User
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(user.name)
+                .font(.headline)
+            Text(user.address)
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+            Text(user.email)
+                .foregroundColor(.secondary)
+            Text("Age: \(user.age)")
+                .foregroundColor(.secondary)
+        }
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(user.name)
+        .accessibilityCustomContent(.age, "\(user.age)")
+        .accessibilityCustomContent(.email, user.email, importance: .high)
+        .accessibilityCustomContent(.address, user.address, importance: .default)
+    }
+}
+```
 
 In the example above, we define a few shortcuts for our custom accessibility content keys and use them in conjunction with the accessibilityCustomContent view modifier.
 
