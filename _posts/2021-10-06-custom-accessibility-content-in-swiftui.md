@@ -93,11 +93,11 @@ struct UserView: View {
 }
 ```
 
-Here we add a bunch of *accessibilityCustomContent* view modifiers to define custom accessibility content with various priorities. The *accessibilityCustomContent* view modifier has three parameters.
+Here we add a bunch of *accessibilityCustomContent* view modifiers to define custom accessibility content with various priorities. The *accessibilityCustomContent* view modifier has three parameters:
 
-The first one is the localized label for your custom content that VoiceOver uses to announce.
-The second one is the localized label or string value presenting custom content.
-The third one is the importance level of your custom content. It can be default or high. VoiceOver reads content with high importance immediately, while the content with default importance is spoken only in verbose mode when the user uses vertical swipes to access more data.
+1. The first one is the localized label for your custom content that VoiceOver uses to announce.
+2. The second one is the localized label or string value presenting custom content.
+3. The third one is the importance level of your custom content. It can be *default* or *high*. VoiceOver reads content with high importance immediately, while the content with default importance is spoken only in verbose mode when the user uses vertical swipes to access more data.
 
 You can use as many *accessibilityCustomContent* view modifiers as needed to present a massive subset of your data. Remember that you can also replace and override data or importance by introducing *accessibilityCustomContent* view modifiers with the same label.
 
