@@ -2,6 +2,7 @@
 title: Custom accessibility content in SwiftUI
 layout: post
 category: Accessibility
+image: /public/accessibility.jpeg
 ---
 
 SwiftUI Release 3 brought a lot of new accessibility APIs, which we can use to improve user experience drastically in an effortless way. This week I want to talk about another new API that allows us to provide customized accessibility content using the new accessibilityCustomContent view modifier in SwiftUI.
