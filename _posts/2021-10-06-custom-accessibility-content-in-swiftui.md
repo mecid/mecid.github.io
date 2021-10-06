@@ -99,6 +99,8 @@ Here we add a bunch of *accessibilityCustomContent* view modifiers to define cus
 2. The second one is the localized label or string value presenting custom content.
 3. The third one is the importance level of your custom content. It can be *default* or *high*. VoiceOver reads content with high importance immediately, while the content with default importance is spoken only in verbose mode when the user uses vertical swipes to access more data.
 
+The *accessibilityCustomContent* view modifier allows us to prioritize data for assistive technologies. For example, VoiceOver reads the data with *high* importance immediately and enables the user to access data with *default* importance as needed using vertical swipes.
+
 You can use as many *accessibilityCustomContent* view modifiers as needed to present a massive subset of your data. Remember that you can also replace and override data or importance by introducing *accessibilityCustomContent* view modifiers with the same label.
 
 An excellent way to keep your custom accessibility content labels consistent across the large codebase is using the *AccessibilityCustomContentKey* type. You can use an instance of it as the first parameter of the *accessibilityCustomContent* view modifier.
