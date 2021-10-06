@@ -136,4 +136,4 @@ struct UserView: View {
 
 In the example above, we define a few shortcuts for our custom accessibility content keys and use them in conjunction with the *accessibilityCustomContent* view modifier.
 
-Today we learned how to use the *accessibilityCustomContent* view modifier to make our apps more accessible by prioritizing our data for assistive technologies and allowing user access as more details are needed. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today we learned how to use the *accessibilityCustomContent* view modifier to make our apps more accessible by prioritizing our data for assistive technologies and allowing user access as more details as needed. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
