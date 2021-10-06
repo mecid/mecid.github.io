@@ -101,7 +101,7 @@ Here we add a bunch of *accessibilityCustomContent* view modifiers to define cus
 
 You can use as many *accessibilityCustomContent* view modifiers as needed to present a massive subset of your data. Remember that you can also replace and override data or importance by introducing *accessibilityCustomContent* view modifiers with the same label.
 
-An excellent way to keep your custom accessibility content labels consistent across the large codebase is by using the *AccessibilityCustomContentKey* type. You can use it as the first parameter of the *accessibilityCustomContent* view modifier.
+An excellent way to keep your custom accessibility content labels consistent across the large codebase is using the *AccessibilityCustomContentKey* type. You can use an instance of it as the first parameter of the *accessibilityCustomContent* view modifier.
 
 ```swift
 extension AccessibilityCustomContentKey {
