@@ -66,7 +66,7 @@ As you can see in the example above, we use accessibility modifiers to ignore th
 
 > To learn about the basics of accessibility in SwiftUI, take a look at my ["Accessibility in SwiftUI"](/2019/09/10/accessibility-in-swiftui/) post.
 
-Fortunately, SwiftUI provides a way to provide customized accessibility content with different importance using the brand new *accessibilityCustomContent* view modifier. Let's take a look at how we can use it.
+Fortunately, SwiftUI provides a way to generate customized accessibility content with different importance using the brand new *accessibilityCustomContent* view modifier. Let's take a look at how we can use it.
 
 ```swift
 struct UserView: View {
