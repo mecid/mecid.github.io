@@ -77,7 +77,7 @@ struct ContentView: View {
 ```
 ![custom-styled-controlgroup](/public/controlgroup3.png)
 
-The *makeBody* function provides you *Configuration* type that you can use to access the content of the *ControlGroup* passed via *ViewBuilder* closure. It allows you to modify the look and feel of the content in the way you need by applying any view modifiers you want. In the current example, we place the content in the vertical stack and set the foreground color to red.
+The *makeBody* function has the single parameter of *Configuration* type that you can use to access the content of the *ControlGroup* passed via *ViewBuilder* closure. It allows you to modify the look and feel of the content in the way you need by applying any view modifiers you want. In the current example, we place the content in the vertical stack and set the foreground color to red.
 
 ```swift
 struct ControlGroupWithTitle: ControlGroupStyle {
