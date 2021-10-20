@@ -1,6 +1,7 @@
 ---
 title: Mastering ControlGroup in SwiftUI
 layout: post
+image: /public/controlgroup4.png
 ---
 
 One of the new container views delivered in SwiftUI Release 3 was the ControlGroup view. The ControlGroup view displays semantically-related controls in a visually appropriate manner for the context. This week we will learn how to use and customize the appearance of the ControlGroup view in SwiftUI.
