@@ -29,7 +29,7 @@ struct ContentView: View {
 ```
 ![controlgroup](/public/controlgroup1.png)
 
-As you can see in the example above, we simply put two buttons inside the *ControlGroup* view as we do with *VStack* or *HStack*. But instead of laying out views using vertical or horizontal axes, the *ControlGroup* adds the semantic look and feel depending on the view's placement.
+As you can see in the example above, we simply put two buttons inside the *ControlGroup* view as we do with *VStack* or *HStack*. But instead of laying out views using vertical or horizontal axises, the *ControlGroup* adds the semantic look and feel depending on the view's placement.
 
 #### Styling
 The *ControlGroup* view has a few styling options out of the box. SwiftUI provides *automatic* and *navigation* styles. The *automatic* style is used by default, but you can set another style directly using the *controlGroupStyle* view modifier. SwiftUI uses the *navigation* style when you place the *ControlGroup* view in the toolbar of the *NavigationView*.
