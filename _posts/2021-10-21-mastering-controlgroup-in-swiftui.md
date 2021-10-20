@@ -40,8 +40,8 @@ struct ContentView: View {
             Button(action: {}) {
                 Label("Increase", systemImage: "plus")
             }
-            .controlGroupStyle(.navigation)
         }
+        .controlGroupStyle(.navigation)
     }
 }
 ```
@@ -60,15 +60,10 @@ struct VerticalControlGroupStyle: ControlGroupStyle {
 struct ContentView: View {
     var body: some View {
         ControlGroup {
-            Button(action: {}) {
-                Label("Decrease", systemImage: "minus")
-            }
-
-            Button(action: {}) {
-                Label("Increase", systemImage: "plus")
-            }
-            .controlGroupStyle(VerticalControlGroupStyle())
+            Button("Action 1") {}
+            Button("Action 2") {}
         }
+        .controlGroupStyle(VerticalControlGroupStyle())
     }
 }
 ```
@@ -93,15 +88,10 @@ struct ControlGroupWithTitle: ControlGroupStyle {
 struct ContentView: View {
     var body: some View {
         ControlGroup {
-            Button(action: {}) {
-                Label("Decrease", systemImage: "minus")
-            }
-
-            Button(action: {}) {
-                Label("Increase", systemImage: "plus")
-            }
-            .controlGroupStyle(ControlGroupWithTitle(title: "Actions"))
+            Button("Action 1") {}
+            Button("Action 2") {}
         }
+        .controlGroupStyle(ControlGroupWithTitle(title: "Actions"))
     }
 }
 ```
@@ -118,15 +108,9 @@ extension ControlGroupStyle where Self == ControlGroupWithTitle {
 struct ContentView: View {
     var body: some View {
         ControlGroup {
-            Button(action: {}) {
-                Label("Decrease", systemImage: "minus")
-            }
-
-            Button(action: {}) {
-                Label("Increase", systemImage: "plus")
-            }
-            .controlGroupStyle(.with(title: "Actions"))
-        }
+            Button("Action 1") {}
+            Button("Action 2") {}
+        }.controlGroupStyle(.with(title: "Actions"))
     }
 }
 ```
