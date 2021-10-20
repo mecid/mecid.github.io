@@ -125,4 +125,4 @@ struct ContentView: View {
 Swift 5.5 allows us to write extensions for protocols with associated types and improve the usage of our custom styles provided to the controlGroupStyle view modifier.
 
 #### Conclusion
-The ControlGroup view is a new way to group buttons and other controls in a semantic way. I really love SwiftUI because it uses the same approach across the many views to provide custom styling options.
+The ControlGroup view is a new way to group buttons and other controls in a semantic way. I really love SwiftUI because it uses the same approach across the many views to provide custom styling options. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
