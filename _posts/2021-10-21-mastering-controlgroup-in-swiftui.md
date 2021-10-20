@@ -10,6 +10,8 @@ One of the new container views delivered in SwiftUI Release 3 was the *ControlGr
 #### Basics
 The *ControlGroup* view is the simple container view that accepts *ViewBuilder* closure and displays it depending on the current environment. Let's see how we can use it.
 
+> To learn more about *ViewBuilder*, take a look at my dedicated ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
+
 ```swift
 struct ContentView: View {
     var body: some View {
@@ -51,6 +53,8 @@ struct ContentView: View {
 ![navigation-styled-controlgroup](/public/controlgroup2.png)
 
 As you can see in the example, we use the *controlGroupStyle* view modifier to set the style manually. SwiftUI uses the same approach for many different views and allows us to create our own style types by conforming to a protocol. In the case of the *ControlGroup* view, we should create a type that conforms to the *ControlGroupStyle* protocol and implement the single required function called *makeBody*. 
+
+> To learn more about other styling protocols available in SwiftUI, take a look at ["Mastering buttons in SwiftUI"](/2020/02/19/mastering-buttons-in-swiftui/) post.
 
 ```swift
 struct VerticalControlGroupStyle: ControlGroupStyle {
