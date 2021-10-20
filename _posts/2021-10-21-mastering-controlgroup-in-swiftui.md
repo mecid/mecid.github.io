@@ -5,10 +5,10 @@ image: /public/controlgroup4.png
 category: Mastering SwiftUI views
 ---
 
-One of the new container views delivered in SwiftUI Release 3 was the ControlGroup view. The ControlGroup view displays semantically-related controls in a visually appropriate manner for the context. This week we will learn how to use and customize the appearance of the ControlGroup view in SwiftUI.
+One of the new container views delivered in SwiftUI Release 3 was the *ControlGroup* view. The *ControlGroup* view displays semantically-related controls in a visually appropriate manner for the context. This week we will learn how to use and customize the appearance of the *ControlGroup* view in SwiftUI.
 
 #### Basics
-The ControlGroup view is the simple container view that accepts ViewBuilder closure and displays it depending on the current environment. Let's see how we can use it.
+The *ControlGroup* view is the simple container view that accepts *ViewBuilder* closure and displays it depending on the current environment. Let's see how we can use it.
 
 ```swift
 struct ContentView: View {
@@ -27,10 +27,10 @@ struct ContentView: View {
 ```
 ![controlgroup](/public/controlgroup1.png)
 
-As you can see in the example above, we simply put two buttons inside the ControlGroup view as we do with VStack or HStack. But instead of laying out views using vertical or horizontal axes, the ControlGroup adds the semantic look and feel depending on the view's placement.
+As you can see in the example above, we simply put two buttons inside the *ControlGroup* view as we do with *VStack* or *HStack*. But instead of laying out views using vertical or horizontal axes, the *ControlGroup* adds the semantic look and feel depending on the view's placement.
 
 #### Styling
-The ControlGroup view has a few styling options out of the box. SwiftUI provides automatic and navigation styles. The automatic style is used by default, but you can set another style directly using the controlGroupStyle view modifier. SwiftUI uses the navigation style when you place the ControlGroup view in the toolbar of the NavigationView.
+The *ControlGroup* view has a few styling options out of the box. SwiftUI provides *automatic* and *navigation* styles. The *automatic* style is used by default, but you can set another style directly using the *controlGroupStyle* view modifier. SwiftUI uses the *navigation* style when you place the *ControlGroup* view in the toolbar of the *NavigationView*.
 
 ```swift
 struct ContentView: View {
@@ -50,7 +50,7 @@ struct ContentView: View {
 ```
 ![navigation-styled-controlgroup](/public/controlgroup2.png)
 
-As you can see in the example, we use the controlGroupStyle view modifier to set the style manually. SwiftUI uses the same approach for many different views and allows us to create our own style types by conforming to a protocol. In the case of the ControlGroup view, we should create a type that conforms to the ControlGroupStyle protocol and implement the single required function called makeBody. 
+As you can see in the example, we use the *controlGroupStyle* view modifier to set the style manually. SwiftUI uses the same approach for many different views and allows us to create our own style types by conforming to a protocol. In the case of the *ControlGroup* view, we should create a type that conforms to the *ControlGroupStyle* protocol and implement the single required function called *makeBody*. 
 
 ```swift
 struct VerticalControlGroupStyle: ControlGroupStyle {
@@ -73,7 +73,7 @@ struct ContentView: View {
 ```
 ![custom-styled-controlgroup](/public/controlgroup3.png)
 
-The makeBody function provides you Configuration type that you can use to access the content of the ControlGroup passed via ViewBuilder closure. It allows you to modify the look and feel of the content in the way you need by applying any view modifiers you want. In the current example, we place the content in the vertical stack and set the foreground color to red.
+The *makeBody* function provides you *Configuration* type that you can use to access the content of the *ControlGroup* passed via *ViewBuilder* closure. It allows you to modify the look and feel of the content in the way you need by applying any view modifiers you want. In the current example, we place the content in the vertical stack and set the foreground color to red.
 
 ```swift
 struct ControlGroupWithTitle: ControlGroupStyle {
@@ -122,7 +122,7 @@ struct ContentView: View {
 }
 ```
 
-Swift 5.5 allows us to write extensions for protocols with associated types and improve the usage of our custom styles provided to the controlGroupStyle view modifier.
+Swift 5.5 allows us to write extensions for protocols with associated types and improve the usage of our custom styles provided to the *controlGroupStyle* view modifier.
 
 #### Conclusion
-The ControlGroup view is a new way to group buttons and other controls in a semantic way. I really love SwiftUI because it uses the same approach across the many views to provide custom styling options. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+The *ControlGroup* view is a new way to group buttons and other controls in a semantic way. I really love SwiftUI because it uses the same approach across the many views to provide custom styling options. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
