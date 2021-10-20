@@ -23,6 +23,7 @@ struct ContentView: View {
     }
 }
 ```
+![controlgroup](/public/controlgroup1.png)
 
 As you can see in the example above, we simply put two buttons inside the ControlGroup view as we do with VStack or HStack. But instead of laying out views using vertical or horizontal axes, the ControlGroup adds the semantic look and feel depending on the view's placement.
 
@@ -45,6 +46,7 @@ struct ContentView: View {
     }
 }
 ```
+![navigation-styled-controlgroup](/public/controlgroup2.png)
 
 As you can see in the example, we use the controlGroupStyle view modifier to set the style manually. SwiftUI uses the same approach for many different views and allows us to create our own style types by conforming to a protocol. In the case of the ControlGroup view, we should create a type that conforms to the ControlGroupStyle protocol and implement the single required function called makeBody. 
 
@@ -67,6 +69,7 @@ struct ContentView: View {
     }
 }
 ```
+![custom-styled-controlgroup](/public/controlgroup3.png)
 
 The makeBody function provides you Configuration type that you can use to access the content of the ControlGroup passed via ViewBuilder closure. It allows you to modify the look and feel of the content in the way you need by applying any view modifiers you want. In the current example, we place the content in the vertical stack and set the foreground color to red.
 
@@ -95,6 +98,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![custom-styled-controlgroup](/public/controlgroup4.png)
 
 We also can change the look and feel by adding new views and wrapping the content with another container view.
 
