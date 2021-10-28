@@ -33,6 +33,8 @@ struct ContentView: View {
 }
 ```
 
+![blur](/public/blur.png)
+
 As you can see in the example above, we create a Text view with a black background. Next, we add the blur view modifier to apply a gaussian blur effect to the rendering of this view. The blur view modifier has two parameters that allow us to customize the produced result. The first one is the radius that defines the radial size of the blur effect. The second one is the bool value that specifies whether the renderer allows transparency. By default, it is false.
 
 #### Materials
@@ -61,6 +63,8 @@ struct ContentView: View {
 }
 ```
 
+![regular-material](/public/blur1.png)
+
 As you can see in the example, we use the background modifier with regular material. Material isn't a view, but attaching material is similar to inserting a translucent layer between the view and its background. The blurring effect produced by the material isn't simple transparency. It uses a platform-specific mixing to produce a result that matches glass.
 
 ```swift
@@ -85,6 +89,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![ultra-thick-material](/public/blur2.png)
 
 SwiftUI has a set of materials with different thicknesses. Thicker materials have better contrast for text and other views.
 * regular material
