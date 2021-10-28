@@ -69,7 +69,7 @@ struct ContentView: View {
 
 ![regular-material](/public/blur1.png)
 
-As you can see in the example, we use the *background* view modifier with regular material. Material isn't a view, but attaching material is similar to inserting a translucent layer between the view and its background. The blurring effect produced by the material isn't simple transparency. It uses a platform-specific mixing to produce a result that matches glass.
+As you can see in the example, we use the *background* view modifier with regular material. Material isn't a view, but attaching material is similar to inserting a translucent layer between the view and its background. The blurring effect produced by the material isn't simple transparency. It uses an environment-defined mixing that produces a result that matches glass.
 
 ```swift
 import SwiftUI
