@@ -1,6 +1,7 @@
 ---
 title: Blur effect and materials in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 SwiftUI has the blur view modifier from the very first day. It allows us to build super custom blur effects quickly. On the other hand, SwiftUI Release 3 gives us the new material type that specifies different blur effects defined in Human Interface Guidelines. This week we will learn how to use the blur view modifier and the new Material type to build translucent effects.
