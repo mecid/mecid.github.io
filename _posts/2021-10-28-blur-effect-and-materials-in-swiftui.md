@@ -86,11 +86,11 @@ struct ContentView: View {
 ```
 
 SwiftUI has a set of materials with different thicknesses. Thicker materials have better contrast for text and other views.
-regular material
-thin material
-ultra-thin material
-thick material
-ultra-thick material
+* regular material
+* thin material
+* ultra-thin material
+* thick material
+* ultra-thick material
 
 Remember that a material blurs the app's background, but not the content behind the app on the screen. For example, the content on the Home Screen doesn't affect the appearance of a widget.
 
