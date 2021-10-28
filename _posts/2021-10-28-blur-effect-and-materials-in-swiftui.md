@@ -95,5 +95,5 @@ SwiftUI has a set of materials with different thicknesses. Thicker materials hav
 Remember that a material blurs the app's background, but not the content behind the app on the screen. For example, the content on the Home Screen doesn't affect the appearance of a widget.
 
 #### Conclusion
-This week we learned how to use the blur effect and system-provided materials defined in Human Interface Guidelines. Now you can go back and make your apps more vibrant by using new materials available in SwiftUI Release 3.
+This week we learned how to use the blur effect and system-provided materials defined in Human Interface Guidelines. Now you can go back and make your apps more vibrant by using new materials available in SwiftUI Release 3. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
