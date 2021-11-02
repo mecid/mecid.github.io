@@ -87,11 +87,13 @@ The *safeAreaInset* view modifier is another way to manage the safe area of the 
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            ScrollView {
-                Text("Very long text here...")
-                    .font(.title)
-                    .navigationTitle("Lorem Ipsum")
-            }
+            LinearGradient(
+                colors: [.red, .yellow],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            .navigationTitle("Hello World")
             .safeAreaInset(edge: .bottom, alignment: .center, spacing: 0) {
                 Color.clear
                     .frame(height: 20)
