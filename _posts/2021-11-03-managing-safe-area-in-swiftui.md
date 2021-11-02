@@ -1,5 +1,5 @@
 ---
-title: Managing safe are in SwiftUI
+title: Managing safe area in SwiftUI
 layout: post
 category: Mastering SwiftUI views
 image: /public/safearea10.png
