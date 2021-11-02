@@ -78,7 +78,7 @@ struct ContentView: View {
 
 Let's take a deep look at the possible parameters of the *ignoresSafeArea* view modifier.
 1. The *regions* parameter allows us to set the ignored safe area type. For example, it might be a parent container, keyboard, or all of them.
-2. The *edges* parameter allows us to ignore the safe area in the following direction or set of directions. For example, it could be top, leading, bottom, trailing, horizontal, vertical, all, or any combination of previous options.
+2. The *edges* parameter allows us to ignore the safe area in the following direction or set of directions. For example, it could be *top, leading, bottom, trailing, horizontal, vertical, all*, or any combination of previous options.
 
 #### safeAreaInset view modifier
 The *safeAreaInset* view modifier is another way to manage the safe area of the view. The *safeAreaInset* view modifier allows you to shift the safe area of the view by placing another view inside the original safe area of the view.
