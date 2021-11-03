@@ -111,6 +111,8 @@ As you can see in the example above, the *safeAreaInset* view modifier has a bun
 3. *alignment* parameter applies the horizontal or vertical alignment.
 4. *content* is the *@ViewBuilder* closure that defines the content of the shifted safe area.
 
+> To learn more about materials in SwiftUI, take a look at my dedicated ["Blur effect and materials in SwiftUI"](/2021/10/28/blur-effect-and-materials-in-swiftui/) post.
+
 #### Conclusion
 Today we learned how to manage the safe area in SwiftUI. Usually, we don't need it because SwiftUI handles it automatically. But feel free to customize the look and feel of your content with an immersive experience using safe area view modifiers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
