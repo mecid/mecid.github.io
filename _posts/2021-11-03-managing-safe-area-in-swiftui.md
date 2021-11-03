@@ -33,7 +33,7 @@ struct ContentView: View {
 
 ![safe-area](/public/safearea1.png)
 
-But we can change this behavior using the ignoresSafeArea view modifier.
+But we can change this behavior using the *ignoresSafeArea* view modifier.
 
 ```swift
 struct ContentView: View {
@@ -55,7 +55,7 @@ struct ContentView: View {
 
 ![safe-area](/public/safearea2.png)
 
-The ignoresSafeArea view modifier expands the view and fills the space by ignoring the safe area. The ignoresSafeArea view modifier has two parameters that allow us to set the direction and the region of the ignored safe area.
+The *ignoresSafeArea* view modifier expands the view and fills the space by ignoring the safe area. The *ignoresSafeArea* view modifier has two parameters that allow us to set the direction and the region of the ignored safe area.
 
 ```swift
 struct ContentView: View {
@@ -76,12 +76,12 @@ struct ContentView: View {
 }
 ```
 
-Let's take a deep look at the possible parameters of the ignoresSafeArea view modifier.
-1. The regions parameter allows us to set the ignored safe area type. For example, it might be a parent container, keyboard, or all of them.
-2. The edges parameter allows us to ignore the safe area in the following direction or set of directions. For example, it could be top, leading, bottom, trailing, horizontal, vertical, all, or any combination of previous options.
+Let's take a deep look at the possible parameters of the *ignoresSafeArea* view modifier.
+1. The *regions* parameter allows us to set the ignored safe area type. For example, it might be a parent container, keyboard, or all of them.
+2. The *edges* parameter allows us to ignore the safe area in the following direction or set of directions. For example, it could be top, leading, bottom, trailing, horizontal, vertical, all, or any combination of previous options.
 
 #### safeAreaInset view modifier
-The safeAreaInset view modifier is another way to manage the safe area of the view. The safeAreaInset view modifier allows you to shift the safe area of the view by placing another view inside the original safe area of the view.
+The *safeAreaInset* view modifier is another way to manage the safe area of the view. The *safeAreaInset* view modifier allows you to shift the safe area of the view by placing another view inside the original safe area of the view.
 
 ```swift
 struct ContentView: View {
@@ -104,12 +104,12 @@ struct ContentView: View {
 
 ![safe-area](/public/safearea3.png)
 
-As you can see in the example above, the safeAreaInset view modifier has a bunch of parameters that allow us to control the spacing, alignment, and edge of the shifted safe area. It also uses the @ViewBuilder closure to build the content of view that SwiftUI places in the space of the shifted safe area.
+As you can see in the example above, the *safeAreaInset* view modifier has a bunch of parameters that allow us to control the spacing, alignment, and edge of the shifted safe area. It also uses the *@ViewBuilder* closure to build the content of view that SwiftUI places in the space of the shifted safe area.
 
-1. edge parameter allows you to set the vertical or horizontal edge of the shifted safe area region.
-2. spacing parameter allows you to put some space between the shifted safe area and the view itself.
-3. alignment parameter applies the horizontal or vertical alignment.
-4. content is the @ViewBuilder closure that defines the content of the shifted safe area.
+1. *edge* parameter allows you to set the vertical or horizontal edge of the shifted safe area region.
+2. *spacing* parameter allows you to put some space between the shifted safe area and the view itself.
+3. *alignment* parameter applies the horizontal or vertical alignment.
+4. *content* is the *@ViewBuilder* closure that defines the content of the shifted safe area.
 
 #### Conclusion
 Today we learned how to manage the safe area in SwiftUI. Usually, we don't need it because SwiftUI handles it automatically. But feel free to customize the look and feel of your content with an immersive experience using safe area view modifiers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
