@@ -31,6 +31,8 @@ struct ContentView: View {
 }
 ```
 
+![safe-area](/public/safearea1.png)
+
 But we can change this behavior using the ignoresSafeArea view modifier.
 
 ```swift
@@ -50,6 +52,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![safe-area](/public/safearea2.png)
 
 The ignoresSafeArea view modifier expands the view and fills the space by ignoring the safe area. The ignoresSafeArea view modifier has two parameters that allow us to set the direction and the region of the ignored safe area.
 
@@ -97,6 +101,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![safe-area](/public/safearea3.png)
 
 As you can see in the example above, the safeAreaInset view modifier has a bunch of parameters that allow us to control the spacing, alignment, and edge of the shifted safe area. It also uses the @ViewBuilder closure to build the content of view that SwiftUI places in the space of the shifted safe area.
 
