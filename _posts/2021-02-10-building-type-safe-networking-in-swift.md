@@ -145,9 +145,9 @@ extension URLSession {
     }
 
     func publisher(
-        for resource: Resource<URLResponse>
+        for request: Request<URLResponse>
     ) -> AnyPublisher<URLResponse, Swift.Error> {
-        dataTaskPublisher(for: resource.urlRequest)
+        dataTaskPublisher(for: request.urlRequest)
             .mapError(Error.networking)
             .map(\.response)
             .eraseToAnyPublisher()
