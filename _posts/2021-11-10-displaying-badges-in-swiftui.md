@@ -81,5 +81,5 @@ struct ContentView: View {
 As you can see in the example above, we use the badge view modifier with an instance of the Text view. It allows us to use Text view's modifiers to tune the badge's look and feel the way we need. We even can use interpolation to inject the image into the Text view.
 
 #### Conclusion
-This week, we learned how to use the new badge view modifier, a small feature of SwiftUI Release 3 that allows us to badge views effortlessly.
+This week, we learned how to use the new badge view modifier, a small feature of SwiftUI Release 3 that allows us to badge views effortlessly. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
