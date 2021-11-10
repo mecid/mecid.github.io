@@ -26,6 +26,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *badge* view modifier on the *Text* view, which is a list item. A list displays a badge on the trailing part of a list item. The *badge* view modifier also looks great with sidebar styled lists.
 
+> To learn more about sidebar styled lists, take a look at my "[Mastering List in SwiftUI](/2021/06/16/mastering-list-in-swiftui/)" post.
+
 The *badge* view modifier has a few different options. In the previous example, we used the *badge* view modifier with an integer value. SwiftUI uses the environment to format an integer value in an appropriate locale automatically. SwiftUI also hides the badge whenever the integer value is zero.
 
 There is also an opportunity to use another version of the *badge* view modifier to display a string or localized string key instead of an integer value.
@@ -63,6 +65,8 @@ struct ContentView: View {
     }
 }
 ```
+
+> To learn more about tabs in SwiftUI, take a look at my "[Tabs and pages in SwiftUI](/2020/09/16/tabs-and-pages-in-swiftui/)" post.
 
 #### Customization
 Another version of the *badge* view modifier allows us to pass an instance of the *Text* view instead of integer or string values. This fantastic opportunity creates tons of customization options available while displaying badges in SwiftUI. Here is an example showing the power of badge customizations.
