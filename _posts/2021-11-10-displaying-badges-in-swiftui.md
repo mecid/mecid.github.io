@@ -3,7 +3,7 @@ title: Displaying badges in SwiftUI
 layout: post
 ---
 
-One of the many things included in SwiftUI Release 3 was the ability to display badges. SwiftUI Release 3 provides you with the badge view modifier that we can use to render badges in lists and tabs. This week we will learn how to use the badge view modifier.
+One of the many things included in SwiftUI Release 3 was the ability to display badges. SwiftUI Release 3 provides you with the badge view modifier that we can use to render badges in lists and tabs. This week we will learn how to use the badge view modifier and customize the look and feel of badges.
 
 #### Basics
 The badge view modifier is available only for iOS and macOS. You can use the badge view modifier to generate and display a badge for your view. Keep in mind that only lists and tabs can display badges at the moment. Let's start with a simple example of the badge view modifier usage.
