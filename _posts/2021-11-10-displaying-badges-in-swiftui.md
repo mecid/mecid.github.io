@@ -22,6 +22,8 @@ struct ContentView: View {
 }
 ```
 
+![badges](/public/badge1.png)
+
 As you can see in the example above, we use the badge view modifier on the text view, which is a list item. A list displays a badge on the trailing part of a list item.
 
 The badge view modifier has a few different options. In the previous example, we used the badge view modifier with an integer value. SwiftUI uses the environment to format an integer value in an appropriate locale automatically. SwiftUI also hides the badge whenever the integer value is zero.
@@ -42,6 +44,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![badges](/public/badge2.png)
 
 Remember that you can use the badge view modifier with tabs, and that's why you should keep the content of a badge as short as possible. The badge view modifier is one of the many inert view modifiers that SwiftUI provides us, which means you can pass the nil as a value to hide the badge.
 
@@ -83,6 +87,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![badges](/public/badge3.png)
 
 As you can see in the example above, we use the badge view modifier with an instance of the Text view. It allows us to use Text view's modifiers to tune the badge's look and feel the way we need. We even can use interpolation to inject the image into the Text view.
 
