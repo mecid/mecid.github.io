@@ -53,6 +53,7 @@ Remember that you can use the *badge* view modifier with tabs, and that's why yo
 
 ```swift
 struct ContentView: View {
+    let count: Int
     var body: some View {
         TabView {
             Text("Hello World")
@@ -60,7 +61,7 @@ struct ContentView: View {
                     Text("Favorites")
                     Image(systemName: "star")
                 }
-                .badge(nil)
+                .badge(count > 0 ? "\(count) stars" : nil)
         }
     }
 }
