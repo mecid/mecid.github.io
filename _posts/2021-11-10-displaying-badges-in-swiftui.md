@@ -70,7 +70,7 @@ struct ContentView: View {
 > To learn more about tabs in SwiftUI, take a look at my "[Tabs and pages in SwiftUI](/2020/09/16/tabs-and-pages-in-swiftui/)" post.
 
 #### Customization
-Another version of the *badge* view modifier allows us to pass an instance of the *Text* view instead of integer or string values. This fantastic opportunity creates tons of customization options available while displaying badges in SwiftUI. Here is an example showing the power of badge customizations.
+Another version of the *badge* view modifier allows us to pass an instance of the *Text* view instead of integer or string values. This fantastic opportunity creates tons of customization options available while displaying badges in SwiftUI.
 
 ```swift
 struct ContentView: View {
