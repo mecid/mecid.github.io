@@ -24,7 +24,7 @@ struct ContentView: View {
 
 ![badges](/public/badge1.png)
 
-As you can see in the example above, we use the *badge* view modifier on the *Text* view, which is a list item. A list displays a badge on the trailing part of a list item. The *badge* view modifier also looks great with sidebar styled lists.
+As you can see in the example above, we use the *badge* view modifier on the *Text* view, which is a list item. A list displays the badge on the trailing part of the list item. The *badge* view modifier also looks great with sidebar styled lists.
 
 > To learn more about sidebar styled lists, take a look at my "[Mastering List in SwiftUI](/2021/06/16/mastering-list-in-swiftui/)" post.
 
