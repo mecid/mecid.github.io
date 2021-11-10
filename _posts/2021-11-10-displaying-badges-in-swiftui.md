@@ -67,6 +67,12 @@ Another version of the badge view modifier allows us to pass an instance of the 
 struct ContentView: View {
     var body: some View {
         List {
+            Text("Group 1")
+                .badge(12)
+
+            Text("Group 2")
+                .badge(20)
+                
             Text("Group 3")
                 .badge(
                     Text("31 \(Image(systemName: "star"))")
