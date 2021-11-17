@@ -24,6 +24,8 @@ struct ContentView: View {
 }
 ```
 
+![color-shape-style](/public/shapestyle.png)
+
 We can also use a *ShapeStyle* as a background or overlay for any view.
 
 ```swift
@@ -58,6 +60,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![color-shape-style](/public/shapestyle1.png)
 
 > To learn more about gradients, take a look at my dedicated ["Gradient in SwiftUI"](/2019/11/13/gradient-in-swiftui/) post.
 
