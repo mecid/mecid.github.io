@@ -127,7 +127,7 @@ struct ContentView: View {
 }
 ```
 
-#### ForegroundStyle
+#### Foreground
 *ForegroundStyle* type is similar to the *BackgroundStyle* type but instead defines the foreground style of the current context. This one also works both in dark and light themes.
 
 ```swift
