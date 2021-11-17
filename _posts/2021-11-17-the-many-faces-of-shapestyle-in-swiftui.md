@@ -1,6 +1,7 @@
 ---
 title: The many faces of ShapeStyle in SwiftUI
 layout: post
+image: /public/shapestyle.png
 ---
 
 *ShapeStyle* is the protocol that we have from the very first release of the SwiftUI framework. *ShapeStyle* defines a color or pattern to use when rendering a shape. This week we will learn the many faces of *ShapeStyle* protocol and different implementations provided by the SwiftUI framework.
