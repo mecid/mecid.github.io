@@ -112,7 +112,7 @@ struct ContentView: View {
 }
 ```
 
-#### BackgroundStyle
+#### Background
 *BackgroundStyle* type is the implementation of the *ShapeStyle* protocol that defines the background style in the current context. You can use it to adapt both dark and light themes.
 
 ```swift
