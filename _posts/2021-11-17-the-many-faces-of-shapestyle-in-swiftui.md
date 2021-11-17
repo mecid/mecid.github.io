@@ -24,6 +24,20 @@ struct ContentView: View {
 }
 ```
 
+We can also use a *ShapeStyle* as a background or overlay for any view.
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        ZStack {
+            Text("Hello, World!")
+                .background(Color.red)
+        }
+        .padding(32)
+    }
+}
+``` 
+
 #### Gradients
 Another implementation of the *ShapeStyle* protocol is gradients. You can use gradients anywhere in SwiftUI to provide an instance of the *ShapeStyle* protocol.
 
