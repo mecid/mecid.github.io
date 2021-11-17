@@ -169,4 +169,4 @@ let avatarView = AvatarView(style: style)
 ```
 
 #### Conclusion
-Today we learned how to use the ShapeStyle protocol and the many implementations that SwiftUI provides us.
+Today we learned how to use the ShapeStyle protocol and the many implementations that SwiftUI provides us. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
