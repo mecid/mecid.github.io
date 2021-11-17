@@ -106,6 +106,7 @@ struct ContentView: View {
             Circle()
                 .fill(TintShapeStyle())
         }
+        .tint(Color.yellow)
         .padding(32)
     }
 }
