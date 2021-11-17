@@ -97,7 +97,7 @@ struct ContentView: View {
 ```
 
 #### Tint
-*TintShapeStyle* is another implementation of the *ShapeStyle* protocol that uses the tint color. SwiftUI uses the app's accent color by default, but you can override it using the tint view modifier.
+*TintShapeStyle* is another implementation of the *ShapeStyle* protocol that uses the tint color. SwiftUI uses the app's accent color by default, but you can override it using the *tint* view modifier.
 
 ```swift
 struct ContentView: View {
