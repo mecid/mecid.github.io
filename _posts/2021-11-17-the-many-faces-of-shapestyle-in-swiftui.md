@@ -174,6 +174,8 @@ struct ContentView: View {
 }
 ```
 
+> To learn more about images in SwiftUI, take a look at my dedicated ["Mastering images in SwiftUI"](/2021/11/17/the-many-faces-of-shapestyle-in-swiftui/) post.
+
 #### AnyShapeStyle
 The last but not least type that conforms to the *ShapeStyle* protocol is the *AnyShapeStyle* type. *AnyShapeStyle* is the type-erased implementation of the *ShapeStyle* protocol that allows us to pass styles without using generics.
 
