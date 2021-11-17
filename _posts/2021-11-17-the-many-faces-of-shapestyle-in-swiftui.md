@@ -59,7 +59,7 @@ struct ContentView: View {
 }
 ```
 
-> To learn more about gradients, take a look at my dedicated "Gradients in SwiftUI" post.
+> To learn more about gradients, take a look at my dedicated ["Gradient in SwiftUI"](/2019/11/13/gradient-in-swiftui/) post.
 
 #### Hierarchical
 SwiftUI provides us a shape style that maps to one of the numbered content styles. It has a few static instances: *primary, secondary, tertiary, quaternary*. You can use one of them whenever you need to use the hierarchical styling of the content.
@@ -151,6 +151,8 @@ struct ContentView: View {
     }
 }
 ```
+
+> To learn more about materials, take a look at my dedicated ["Blur effect and materials in SwiftUI"](/2021/10/28/blur-effect-and-materials-in-swiftui/) post.
 
 #### ImagePaint
 *ImagePaint* type implements the *ShapeStyle* protocol and fills a shape by repeating a region of an image.
