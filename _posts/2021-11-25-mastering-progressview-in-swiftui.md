@@ -5,10 +5,10 @@ category: Mastering SwiftUI views
 image: /public/progress.png
 ---
 
-Many of our apps do heavy work on background threads like networking or data processing. We usually want to display progress or the activity indicator of the ongoing work. This week we will learn how to use *ProgressView* to present both indefinite and definite progress in SwiftUI.
+Many of our apps do heavy work on background threads like networking or data processing. We usually want to display progress or the activity indicator of the ongoing work. This week we will learn how to use *ProgressView* to present both indeterminate and determinate progress in SwiftUI.
 
-#### Indefinite progress
-All you need to do to display indefinite progress is to place *ProgressView* anywhere in your layout. Let's try to do that in a simple example.
+#### indeterminate progress
+All you need to do to display indeterminate progress is to place *ProgressView* anywhere in your layout. Let's try to do that in a simple example.
 
 ```swift
 struct ContentView: View {
@@ -30,12 +30,12 @@ struct ContentView: View {
 
 ![progress](/public/progress.png)
 
-As you can see in the examples above, plain *ProgressView* displays an indefinite circular indicator by default. Usually, it means that there is ongoing work in the background, and the user should wait to see some results. We also can provide a localizable string by placing it near to circular activity indicator.
+As you can see in the examples above, plain *ProgressView* displays an indeterminate circular indicator by default. Usually, it means that there is ongoing work in the background, and the user should wait to see some results. We also can provide a localizable string by placing it near to circular activity indicator.
 
-SwiftUI uses a circular activity indicator by default to display indefinite progress, but there is a way to show definite progress using a linear progress indicator.
+SwiftUI uses a circular activity indicator by default to display indeterminate progress, but there is a way to show determinate progress using a linear progress indicator.
 
-#### Definite progress
-*ProgressView* provides us with a special initializer that allows us to display definite progress. We might use it in the case where we expect the final result by some time. For example, we usually know the final size of the file while downloading it. This is the case where we have to show definite progress. Let's see how we can do that.
+#### Determinate progress
+*ProgressView* provides us with a special initializer that allows us to display determinate progress. We might use it in the case where we expect the final result by some time. For example, we usually know the final size of the file while downloading it. This is the case where we have to show determinate progress. Let's see how we can do that.
 
 ```swift
 struct ContentView: View {
@@ -65,7 +65,7 @@ struct ContentView: View {
 
 ![progress](/public/progress3.png)
 
-There is also an initializer with *@ViewBuilder* that works with definite progress and allows you to customize the label.
+There is also an initializer with *@ViewBuilder* that works with determinate progress and allows you to customize the label.
 
 > To learn more about *ViewBuilder*, take a look at my dedicated ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
@@ -117,7 +117,7 @@ struct CustomProgressViewStyle: ProgressViewStyle {
 }
 ```
 
-Here we have a custom view that renders the progress. It might be anything you want, from straightforward text to a custom animated path. Keep in mind that *fractionCompleted* might be nil when you use the indefinite progress view.
+Here we have a custom view that renders the progress. It might be anything you want, from straightforward text to a custom animated path. Keep in mind that *fractionCompleted* might be nil when you use the indeterminate progress view.
 
 #### Conclusion
 The *ProgressView* might seem to be very simple, but it provides an excellent level of customization and styling options. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
