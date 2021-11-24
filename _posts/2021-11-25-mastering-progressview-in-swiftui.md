@@ -18,6 +18,12 @@ struct ContentView: View {
 }
 ```
 
+![progress](/public/progress2.png)
+
+
+
+![progress](/public/progress.png)
+
 As you can see in the example above, plain *ProgressView* displays an indefinite circular indicator by default. Usually, it means that there is ongoing work in the background, and the user should wait to see some results.
 
 SwiftUI uses a circular activity indicator by default to display indefinite progress, but there is a way to show definite progress using a linear progress indicator.
@@ -32,6 +38,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![progress](/public/progress1.png)
 
 As you can see in the example above, we use another initializer of the *ProgressView* to display the current progress and the total value. SwiftUI automatically calculates the percentage of the work done and shows corresponding progress using the linear indicator.
 
@@ -48,6 +56,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![progress](/public/progress3.png)
 
 There is also an initializer with *@ViewBuilder* that works with finite progress and allows you to customize the label.
 
