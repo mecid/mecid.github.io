@@ -5,7 +5,7 @@ category: Mastering SwiftUI views
 image: /public/progress.png
 ---
 
-Many of our apps do heavy work on background threads like networking or data processing. We usually want to display progress or the activity indicator of the ongoing work. This week we will learn how to use *ProgressView* to present both indefinite and finite progress in SwiftUI.
+Many of our apps do heavy work on background threads like networking or data processing. We usually want to display progress or the activity indicator of the ongoing work. This week we will learn how to use *ProgressView* to present both indefinite and definite progress in SwiftUI.
 
 #### Indefinite progress
 All you need to do to display indefinite progress is to place *ProgressView* anywhere in your layout. Let's try to do that in a simple example.
@@ -34,8 +34,8 @@ As you can see in the examples above, plain *ProgressView* displays an indefinit
 
 SwiftUI uses a circular activity indicator by default to display indefinite progress, but there is a way to show definite progress using a linear progress indicator.
 
-#### Finite progress
-*ProgressView* provides us with a special initializer that allows us to display finite progress. We might use it in the case where we expect the final result by some time. For example, we usually know the final size of the file while downloading it. This is the case where we have to show finite progress. Let's see how we can do that.
+#### Definite progress
+*ProgressView* provides us with a special initializer that allows us to display definite progress. We might use it in the case where we expect the final result by some time. For example, we usually know the final size of the file while downloading it. This is the case where we have to show definite progress. Let's see how we can do that.
 
 ```swift
 struct ContentView: View {
@@ -65,7 +65,7 @@ struct ContentView: View {
 
 ![progress](/public/progress3.png)
 
-There is also an initializer with *@ViewBuilder* that works with finite progress and allows you to customize the label.
+There is also an initializer with *@ViewBuilder* that works with definite progress and allows you to customize the label.
 
 > To learn more about *ViewBuilder*, take a look at my dedicated ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
