@@ -67,6 +67,7 @@ struct ContentView: View {
 
 There is also an initializer with *@ViewBuilder* that works with finite progress and allows you to customize the label.
 
+> To learn more about *ViewBuilder*, take a look at my dedicated ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
 As usual, SwiftUI provides a style protocol that allows us completely redesign the default look and feel. You need to create a type that conforms to the *ProgressViewStyle* and implement the makeBody function.
 
