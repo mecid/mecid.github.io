@@ -94,7 +94,7 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we create a horizontal stack style to display the circular animating indicator and the label. *Configuration* parameter provides us the completed fraction of the progress, which allows us to draw a super-custom progress view. 
+In the example above, we create a horizontal style to display the circular animating indicator and the label. *Configuration* parameter provides us the completed fraction of the progress, which allows us to draw a super-custom progress view. 
 
 ```swift
 struct CustomProgressView: View {
