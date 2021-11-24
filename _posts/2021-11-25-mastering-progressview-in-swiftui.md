@@ -101,4 +101,4 @@ struct CustomProgressViewStyle: ProgressViewStyle {
 Here we have a custom view that renders the progress. It might be anything you want, from straightforward text to a custom animated path. Keep in mind that fractionCompleted might be nil when you use the indefinite progress view.
 
 #### Conclusion
-The ProgressView might seem to be very simple, but it provides an excellent level of customization and styling options.
+The ProgressView might seem to be very simple, but it provides an excellent level of customization and styling options. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
