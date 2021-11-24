@@ -30,7 +30,7 @@ struct ContentView: View {
 
 ![progress](/public/progress.png)
 
-As you can see in the examples above, plain *ProgressView* displays an indefinite circular indicator by default. Usually, it means that there is ongoing work in the background, and the user should wait to see some results.
+As you can see in the examples above, plain *ProgressView* displays an indefinite circular indicator by default. Usually, it means that there is ongoing work in the background, and the user should wait to see some results. We also can provide a localizable string by placing it near to circular activity indicator.
 
 SwiftUI uses a circular activity indicator by default to display indefinite progress, but there is a way to show definite progress using a linear progress indicator.
 
