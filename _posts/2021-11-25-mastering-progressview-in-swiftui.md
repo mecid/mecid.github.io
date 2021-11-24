@@ -20,7 +20,13 @@ struct ContentView: View {
 
 ![progress](/public/progress2.png)
 
-
+```swift
+struct ContentView: View {
+    var body: some View {
+        ProgressView("Loading")
+    }
+}
+```
 
 ![progress](/public/progress.png)
 
