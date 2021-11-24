@@ -1,6 +1,7 @@
 ---
 title: Mastering ProgressView in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Many of our apps do heavy work on background threads like networking or data processing. We usually want to display progress or the activity indicator of the ongoing work. This week we will learn how to use *ProgressView* to present both infinite and finite progress in SwiftUI.
