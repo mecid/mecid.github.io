@@ -61,10 +61,10 @@ The contentShape view modifier changes the shape of the view used for a particul
 
 The contentShape view modifier accepts the instance of the ContentShapeKinds option set that defines interactions on a view. SwiftUI provides us these options to use:
 
-interaction - this one offers a shape for hit testing
-dragPreview - this type provides an outline for drag and drop previews
-contextMenuPreview - this type provides shape for rendering context menu previews.
-hoverEffect - this type provides shape for a hover effect on iPadOS
+1. interaction - this one offers a shape for hit testing
+2. dragPreview - this type provides an outline for drag and drop previews
+3. contextMenuPreview - this type provides shape for rendering context menu previews.
+4. hoverEffect - this type provides shape for a hover effect on iPadOS
 
 ContentShapeKinds struct conforms to OptionSet protocol which means you can combine different options together.
 
