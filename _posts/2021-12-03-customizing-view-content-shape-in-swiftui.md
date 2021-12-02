@@ -22,7 +22,7 @@ struct ContentView: View {
 
 Now, we want to make this view tappable and provide the hover effect for the iPadOS pointer.
 
-> To learn more about implementing the hover effect on iPadOS, take a look at my dedicated "Hover effect in SwiftUI" post.
+> To learn more about implementing the hover effect on iPadOS, take a look at my dedicated ["Hover effect in SwiftUI"](/2020/03/25/hover-effect-in-swiftui/) post.
 
 ```swift
 struct ContentView: View {
@@ -84,11 +84,11 @@ struct ContentView: View {
 }
 ```
 
-> If you are not familiar with OptionSet protocol, take a look at my "Inclusive enums with OptionSet" post.
+> If you are not familiar with OptionSet protocol, take a look at my ["Inclusive enums with OptionSet"](/2019/04/10/inclusive-enums-with-optionset/) post.
 
 Remember that the contentShape view modifier affects only the interactable shape of the view. If you need to change the shape while rendering, you should use the clipShape view modifier.
 
-> To learn more about clipping and masking in SwiftUI, take a look at my "Customizing the shape of views in SwiftUI" post.
+> To learn more about clipping and masking in SwiftUI, take a look at my ["Customizing the shape of views in SwiftUI"](/2020/02/12/customizing-the-shape-of-views-in-swiftui/) post.
 
 ```swift
 struct Triangle: Shape {
