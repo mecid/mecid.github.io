@@ -46,7 +46,7 @@ struct ContentView: View {
             Image(systemName: "star")
             Text("Hello World!")
         }
-        .contentShape(.interaction, Triangle())
+        .contentShape(.hoverEffect, Circle())
         .hoverEffect()
         .onTapGesture {
             print("Super star!")
@@ -73,7 +73,7 @@ struct ContentView: View {
             Image(systemName: "star")
             Text("Hello World!")
         }
-        .contentShape([.hoverEffect, .dragPreview], Triangle())
+        .contentShape([.hoverEffect, .dragPreview], Circle())
         .hoverEffect()
         .onTapGesture {
             print("Super star!")
