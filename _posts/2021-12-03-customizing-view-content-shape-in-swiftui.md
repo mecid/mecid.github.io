@@ -1,6 +1,7 @@
 ---
 title: Customizing view content shape in SwiftUI
 layout: post
+category: Interactions
 ---
 
 Usually, SwiftUI uses rectangles to render views, but we can control the shape of the view by using the clipShape view modifier. This week we will learn how to modify the interactable shape of the view during hit-testing or previewing drag and drop.
