@@ -57,14 +57,14 @@ struct ContentView: View {
 }
 ```
 
-The *contentShape* view modifier changes the shape of the view used for a particular interaction. We change the content shape only for the hover effect in our example. But we can do it for different types of interaction, like drag and drop previews, hit testing, context menu previews, and hover effect.
+The *contentShape* view modifier changes the shape of the view used for a particular interaction. We change the content shape only for the hover effect in our example. But we can do it for different types of interaction, like drag and drop previews, hit-testing, context menu previews, and hover effect.
 
 The *contentShape* view modifier accepts the instance of the *ContentShapeKinds* option set that defines interactions on a view. SwiftUI provides us these options to use:
 
-1. *interaction* - this one offers a shape for hit testing
-2. *dragPreview* - this type provides an outline for drag and drop previews
+1. *interaction* - this one offers a shape for hit-testing.
+2. *dragPreview* - this type provides an outline for drag and drop previews.
 3. *contextMenuPreview* - this type provides a shape for rendering context menu previews.
-4. *hoverEffect* - this type provides a shape for a hover effect on iPadOS
+4. *hoverEffect* - this type provides a shape for a hover effect on iPadOS.
 
 *ContentShapeKinds* struct conforms to *OptionSet* protocol which means you can combine different options together.
 
