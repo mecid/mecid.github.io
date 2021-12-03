@@ -110,7 +110,7 @@ struct ContentView: View {
             Image(systemName: "star")
             Text("Hello World!")
         }
-        .contentShape([.hoverEffect, .dragPreview], Triangle())
+        .contentShape(.dragPreview, Triangle())
         .hoverEffect()
         .onTapGesture {
             print("Super star!")
@@ -119,6 +119,6 @@ struct ContentView: View {
 }
 ```
 
-Keep in mind that you can use any shape you need. As you can see in the example above, we use a custom shape that clips the view content to a triangle.
+Keep in mind that you can use any shape you need. As you can see in the example above, we use a custom shape that clips the view content to a triangle during drag and drop.
 
 This week we learned how to customize the shape of the view during interactions via the brand new *contentShape* view modifier. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
