@@ -84,7 +84,7 @@ struct ContentView: View {
 }
 ```
 
-> If you are not familiar with OptionSet protocol, take a look at my ["Inclusive enums with OptionSet"](/2019/04/10/inclusive-enums-with-optionset/) post.
+> If you are not familiar with *OptionSet* protocol, take a look at my ["Inclusive enums with OptionSet"](/2019/04/10/inclusive-enums-with-optionset/) post.
 
 Remember that the *contentShape* view modifier affects only the interactable shape of the view. If you need to change the shape while rendering, you should use the *clipShape* view modifier.
 
