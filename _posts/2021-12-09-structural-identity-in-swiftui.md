@@ -79,5 +79,5 @@ struct AchievementView: View {
 There is no rendering effect when you set the padding to 0 or opacity to 1. SwiftUI understands that and doesn't apply these view modifiers. That's why we call them inert view modifiers. Try to use them as much as possible to improve the performance of your view and remove unwanted transitions.
 
 #### Conclusion
-This week we learned about structural identity in SwiftUI. It is crucial to understand how it works to build great and performant views with SwiftUI.
+This week we learned about structural identity in SwiftUI. It is crucial to understand how it works to build great and performant views with SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
