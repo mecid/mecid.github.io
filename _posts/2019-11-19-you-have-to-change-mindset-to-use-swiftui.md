@@ -51,5 +51,7 @@ print(Mirror(reflecting: ContentView(store: .init()).body))
 
 By using *Mirror* struct, we can print the real type of the *ContentView*'s body and learn how SwiftUI works under the hood.
 
+> To learn more how SwiftUI uses *_ConditionalContent* take a look at my ["Structural identity in SwiftUI"](/2021/12/09/structural-identity-in-swiftui/) post.
+
 #### Conclusion
 This week we learned the main difference between *UIKit* and SwiftUI and took an in-depth look at the diffing algorithm in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week! 
