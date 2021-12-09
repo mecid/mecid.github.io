@@ -1,6 +1,7 @@
 ---
 title: Structural identity in SwiftUI
 layout: post
+category: View Composition
 ---
 
 Structural identity is the type of identity that SwiftUI uses to understand your views without an explicit identifier by using your layout description. This week we will learn how to improve performance and eliminate unwanted animations by using inert view modifiers in SwiftUI.
