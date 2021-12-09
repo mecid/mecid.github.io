@@ -35,7 +35,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we have a view that shows loading text and image when the loading finishes. *ObserverObject* here is a state of this view, and as soon as it changes, SwiftUI recomputes the body property and assigns a new view. In typical *UIKit* development, we need manually to hide/show the elements of the view hierarchy, but in SwiftUI, we don't need to add/remove the loading indicator. We have a few ways of describing a state of the view in SwiftUI, to learn more about them take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/).
+As you can see in the example above, we have a view that shows loading text and image when the loading finishes. *ObserverObject* here is a state of this view, and as soon as it changes, SwiftUI recomputes the body property and assigns a new view. In typical *UIKit* development, we need manually to hide/show the elements of the view hierarchy, but in SwiftUI, we don't need to add/remove the loading indicator. 
+
+> We have a few ways of describing a state of the view in SwiftUI, to learn more about them take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/).
 
 Let's take a more in-depth look at what happens when the view's state changes. SwiftUI has a snapshot of the current view hierarchy, and as soon as state changes, it computes a new view. Finally, SwiftUI applies diffing algorithms to understand differences and automatically add/remove/update needed views. By default, SwiftUI uses standard fade in/out transition to show/hide views, but you can manually change the transition to any animation you want.
 
