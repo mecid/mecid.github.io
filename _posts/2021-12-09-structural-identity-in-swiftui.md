@@ -25,7 +25,7 @@ print(Mirror(reflecting: UserView(user: nil).body))
 // Mirror for _ConditionalContent<LoggedUser, AnonymousUserView>
 ```
 
-As you can see in the example above, SwiftUI creates an instance of _ConditionalContent view that uses some condition to present one or another view. In our case, _ConditionalContent view uses if let binding to decide which views it has to show. SwiftUI destroys and creates the views whenever the condition changes. This process deallocates the destroyed view's state and uses animation to remove the destroyed view.
+As you can see in the example above, SwiftUI creates an instance of *_ConditionalContent* view that uses some condition to present one or another view. In our case, *_ConditionalContent* view uses **if let** binding to decide which views it has to show. SwiftUI destroys and creates the views whenever the condition changes. This process deallocates the destroyed view's state and uses animation to remove the destroyed view.
 
 ```swift
 struct AchievementView: View {
@@ -42,9 +42,9 @@ struct AchievementView: View {
 }
 ```
 
-In the current example, we use the if statement to enable or disable the view conditionally. We still use branching via if statement, and SwiftUI will destroy and create views accordingly. It might look correct, but we lose the state of the instance of ComplexView during the condition change because SwiftUI recreates view inside the branches of the if statement, and more, we get unwanted animation while swapping these views.
+In the current example, we use the **if** statement to enable or disable the view conditionally. We still use branching via **if** statement, and SwiftUI will destroy and create views accordingly. It might look correct, but we lose the state of the instance of *ComplexView* during the condition change because SwiftUI recreates view inside the branches of the **if** statement, and more, we get unwanted animation while swapping these views.
 
-Let's solve our issue by removing the if statement and moving the condition inside the disabled view modifier.
+Let's solve our issue by removing the **if** statement and moving the condition inside the *disabled* view modifier.
 
 ```swift
 struct AchievementView: View {
@@ -57,9 +57,9 @@ struct AchievementView: View {
 }
 ```
 
-In the example above, we don't have the if statement. We inline the condition inside the disable view modifier, which allows us to keep the structural identity of our view. SwiftUI understands that it is the same view but with a different value for the disabled view modifier.
+In the example above, we don't have the **if** statement. We inline the condition inside the *disable* view modifier, which allows us to keep the structural identity of our view. SwiftUI understands that it is the same view but with a different value for the *disabled* view modifier.
 
-Remember that you should use branching via if or switch statement only when you need to present different views. Always try to inline your conditions inside the view modifiers to keep your structural identity.
+Remember that you should use branching via **if** or **switch** statement only when you need to present different views. Always try to inline your conditions inside the view modifiers to keep your structural identity.
 
 #### Inert modifiers
 SwiftUI framework is smart enough to understand and optimize your view hierarchy. It provides us with a set of inert view modifiers which doesn't affect rendering, and you can use them for free. Let's take a look at some of them in the example below.
