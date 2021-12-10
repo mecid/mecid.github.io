@@ -54,7 +54,7 @@ struct AchievementView: View {
 
     var body: some View {
         ComplexView()
-            .disabled(isEnabled ? true : false)
+            .disabled(isEnabled ? false : true)
     }
 }
 ```
