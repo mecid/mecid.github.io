@@ -1,24 +1,25 @@
 ---
 title: SF Symbols in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Apple provides us with a set of different icons available across all the platforms called SF Symbols. SF Symbols package contains more than 3200 icons that we can use to visualize different states and actions in our apps. This week we will learn how to utilize the power of SF Symbols in SwiftUI views.
 
 #### Basics
-You can easily use SF Symbols in SwiftUI by using a particular initializer of the Image struct. Let's take a look at a few quick examples.
+You can easily use SF Symbols in SwiftUI by using a particular initializer of the *Image* struct. Let's take a look at a few quick examples.
 
 ```swift
 Image(systemName: "doc.on.doc")
 ```
 
-As you can see in the example above, we define an image with a system name. SwiftUI uses the systemName parameter for SF Symbol lookup. Keep in mind that you can use string interpolation to show an SF Symbol as the part of any text.
+As you can see in the example above, we define an image with a system name. SwiftUI uses the *systemName* parameter for SF Symbol lookup. Keep in mind that you can use string interpolation to show an SF Symbol as the part of any text.
 
 ```swift
 Text("Super star \(Image(systemName: "star"))")
 ```
 
-Another SwiftUI view that plays well with SF Symbols is Label. The Label view contains both text and an image and shows them according to the current context. For example, it hides the text and shows only the image in a toolbar.
+Another SwiftUI view that plays well with SF Symbols is *Label*. The *Label* view contains both text and an image and shows them according to the current context. For example, it hides the text and shows only the image in a toolbar.
 
 ```swift
 Button(role: .destructive, action: {}) {
@@ -27,7 +28,7 @@ Button(role: .destructive, action: {}) {
 ```
 
 #### Styling options
-You can easily change the color of an SF Symbol using the foregroundStyle or foregroundColor view modifiers.
+You can easily change the color of an SF Symbol using the *foregroundStyle* or *foregroundColor* view modifiers.
 
 ```swift
 VStack(spacing: 8) {
@@ -39,7 +40,7 @@ VStack(spacing: 8) {
 }
 ```
 
-There are two ways of changing the size of an SF Symbol in SwiftUI view. First, you can apply the font view modifier to keep the text and the image size in sync with the selected Dynamic Type category.
+There are two ways of changing the size of an SF Symbol in SwiftUI view. First, you can apply the *font* view modifier to keep the text and the image size in sync with the selected Dynamic Type category.
 
 ```swift
 Button(role: .destructive, action: {}) {
@@ -48,7 +49,7 @@ Button(role: .destructive, action: {}) {
 .font(.title3)
 ```
 
-Another option is the imageScale view modifier that doesn't affect the size of the text and only changes the size of the SF Symbol relatively.
+Another option is the *imageScale* view modifier that doesn't affect the size of the text and only changes the size of the SF Symbol relatively.
 
 ```swift
 Button(role: .destructive, action: {}) {
@@ -79,7 +80,7 @@ struct ContentView: View {
 }
 ```
 
-SwiftUI also provides the symbolVariant view modifier that sets the particular variant in the environment and forces it to use in the view hierarchy.
+SwiftUI also provides the *symbolVariant* view modifier that sets the particular variant in the environment and forces it to use in the view hierarchy.
 
 ```swift
 VStack(spacing: 8) {
@@ -100,12 +101,12 @@ VStack(spacing: 8) {
 #### Rendering mode
 SF Symbols support four rendering modes that allow you to customize the way SwiftUI colors them. Let's take a look at them.
 
-1. Monochrome: A mode that renders symbols as a single layer filled with color.
-2. Multicolor: This method generates symbols as multiple layers with their inherited styles.
-3. Hierarchical: A mode renders symbols as various layers, with different opacities applied to the foreground style.
-4. Palette: A way that renders symbols as numerous layers, with different styles used as the layers.
+1. *Monochrome*: A mode that renders symbols as a single layer filled with color.
+2. *Multicolor*: This method generates symbols as multiple layers with their inherited styles.
+3. *Hierarchical*: A mode renders symbols as various layers, with different opacities applied to the foreground style.
+4. *Palette*: A way that renders symbols as numerous layers, with different styles used as the layers.
 
-You can use the symbolRenderingMode view modifier to set a particular rendering mode in the environment and apply it across the view hierarchy.
+You can use the *symbolRenderingMode* view modifier to set a particular rendering mode in the environment and apply it across the view hierarchy.
 
 ```swift
 struct ContentView: View {
