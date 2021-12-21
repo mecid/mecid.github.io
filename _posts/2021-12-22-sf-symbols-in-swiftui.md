@@ -2,6 +2,7 @@
 title: SF Symbols in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/sf.png
 ---
 
 Apple provides us with a set of different icons available across all the platforms called SF Symbols. SF Symbols package contains more than 3200 icons that we can use to visualize different states and actions in our apps. This week we will learn how to utilize the power of SF Symbols in SwiftUI views.
