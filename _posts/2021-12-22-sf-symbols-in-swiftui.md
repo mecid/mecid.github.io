@@ -100,10 +100,10 @@ VStack(spacing: 8) {
 #### Rendering mode
 SF Symbols support four rendering modes that allow you to customize the way SwiftUI colors them. Let's take a look at them.
 
-Monochrome: A mode that renders symbols as a single layer filled with color.
-Multicolor: This method generates symbols as multiple layers with their inherited styles.
-Hierarchical: A mode renders symbols as various layers, with different opacities applied to the foreground style.
-Palette: A way that renders symbols as numerous layers, with different styles used as the layers.
+1. Monochrome: A mode that renders symbols as a single layer filled with color.
+2. Multicolor: This method generates symbols as multiple layers with their inherited styles.
+3. Hierarchical: A mode renders symbols as various layers, with different opacities applied to the foreground style.
+4. Palette: A way that renders symbols as numerous layers, with different styles used as the layers.
 
 You can use the symbolRenderingMode view modifier to set a particular rendering mode in the environment and apply it across the view hierarchy.
 
