@@ -8,41 +8,94 @@ Apple provides us with a set of different icons available across all the platfor
 #### Basics
 You can easily use SF Symbols in SwiftUI by using a particular initializer of the Image struct. Let's take a look at a few quick examples.
 
-=====================================================
+```swift
+Image(systemName: "doc.on.doc")
+```
 
 As you can see in the example above, we define an image with a system name. SwiftUI uses the systemName parameter for SF Symbol lookup. Keep in mind that you can use string interpolation to show an SF Symbol as the part of any text.
 
-=====================================================
+```swift
+Text("Super star \(Image(systemName: "star"))")
+```
 
 Another SwiftUI view that plays well with SF Symbols is Label. The Label view contains both text and an image and shows them according to the current context. For example, it hides the text and shows only the image in a toolbar.
 
-=====================================================
+```swift
+Button(role: .destructive, action: {}) {
+    Label("Remove", systemImage: "trash")
+}
+```
 
 #### Styling options
 You can easily change the color of an SF Symbol using the foregroundStyle or foregroundColor view modifiers.
 
-=====================================================
+```swift
+VStack(spacing: 8) {
+    Image(systemName: "doc.on.doc")
+        .foregroundColor(.green)
+
+    Text("Super star \(Image(systemName: "star"))")
+        .foregroundStyle(.secondary)
+}
+```
 
 There are two ways of changing the size of an SF Symbol in SwiftUI view. First, you can apply the font view modifier to keep the text and the image size in sync with the selected Dynamic Type category.
 
-=====================================================
+```swift
+Button(role: .destructive, action: {}) {
+    Label("Remove", systemImage: "trash")
+}
+.font(.title3)
+```
 
 Another option is the imageScale view modifier that doesn't affect the size of the text and only changes the size of the SF Symbol relatively.
 
-=====================================================
+```swift
+Button(role: .destructive, action: {}) {
+    Label("Remove", systemImage: "trash")
+}
+.imageScale(.large)
+```
 
 #### Variants
 SF Symbols package provides us with icons in many different variants. For example, the trash icon comes with filled, circled, squared, and slashed versions. You can define the variant you need by providing the dedicated symbol name.
 
-=====================================================
+```swift
+Image(systemName: "doc.on.doc.fill")
+```
 
 SwiftUI views are smart enough to display the variant they need without the concrete name. For example, tab bars use the filled version of SF Symbols, and you don't need to specify it manually. SwiftUI picks up the correct version of the SF Symbol automatically.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        TabView {
+            Text("Hello")
+                .tabItem {
+                    Image(systemName: "trash")
+                }
+        }
+    }
+}
+```
 
 SwiftUI also provides the symbolVariant view modifier that sets the particular variant in the environment and forces it to use in the view hierarchy.
 
-=====================================================
+```swift
+VStack(spacing: 8) {
+    Image(systemName: "doc.on.doc")
+        .foregroundColor(.green)
+
+    Text("Super star \(Image(systemName: "star"))")
+        .foregroundStyle(.secondary)
+
+    Button(role: .destructive, action: {}) {
+        Label("Remove", systemImage: "trash")
+    }
+    .imageScale(.large)
+}
+.symbolVariant(.fill)
+```
 
 #### Rendering mode
 SF Symbols support four rendering modes that allow you to customize the way SwiftUI colors them. Let's take a look at them.
@@ -54,8 +107,26 @@ Palette: A way that renders symbols as numerous layers, with different styles us
 
 You can use the symbolRenderingMode view modifier to set a particular rendering mode in the environment and apply it across the view hierarchy.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        VStack(spacing: 8) {
+            Image(systemName: "doc.on.doc.fill")
+                .foregroundColor(.green)
 
+            Text("Super star \(Image(systemName: "star"))")
+                .foregroundStyle(.secondary)
+
+            Button(role: .destructive, action: {}) {
+                Label("Remove", systemImage: "trash")
+            }
+            .imageScale(.large)
+        }
+        .symbolVariant(.fill)
+        .symbolRenderingMode(.hierarchical)
+    }
+}
+```
 
 #### Conclusion
 It became straightforward to build friendly apps with a well-crafted set of icons using SF Symbols. Moreover, SwiftUI provides a few ways of customizing these icons by using dedicated view modifiers that we have learned today.
