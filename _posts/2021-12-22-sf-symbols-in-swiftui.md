@@ -14,11 +14,15 @@ You can easily display an SF Symbols in SwiftUI by using a particular initialize
 Image(systemName: "doc.on.doc")
 ```
 
+![sf-symbol](/public/sf1.png)
+
 As you can see in the example above, we define an image with a system name. SwiftUI uses the *systemName* parameter for SF Symbol lookup. Keep in mind that you can use string interpolation to show an SF Symbol as the part of any text.
 
 ```swift
 Text("Super star \(Image(systemName: "star"))")
 ```
+
+![sf-symbol](/public/sf2.png)
 
 Another SwiftUI view that plays well with SF Symbols is *Label*. The *Label* view contains both text and an image and shows them according to the current context. For example, it hides the text and shows only the image in a toolbar.
 
@@ -27,6 +31,8 @@ Button(role: .destructive, action: {}) {
     Label("Remove", systemImage: "trash")
 }
 ```
+
+![sf-symbol](/public/sf3.png)
 
 > To learn more about the power of the *Label* view, take a look at my dedicated ["Labels in SwiftUI"](/2020/12/23/labels-in-swiftui/) post.
 
