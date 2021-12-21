@@ -130,4 +130,4 @@ struct ContentView: View {
 ```
 
 #### Conclusion
-It became straightforward to build friendly apps with a well-crafted set of icons using SF Symbols. Moreover, SwiftUI provides a few ways of customizing these icons by using dedicated view modifiers that we have learned today.
+It became straightforward to build friendly apps with a well-crafted set of icons using SF Symbols. Moreover, SwiftUI provides a few ways of customizing these icons by using dedicated view modifiers that we have learned today. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
