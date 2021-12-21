@@ -28,6 +28,8 @@ Button(role: .destructive, action: {}) {
 }
 ```
 
+> To learn more about the power of the *Label* view, take a look at my dedicated ["Labels in SwiftUI"](/2020/12/23/labels-in-swiftui/) post.
+
 #### Styling options
 You can easily change the color of an SF Symbol using the *foregroundStyle* or *foregroundColor* view modifiers.
 
@@ -98,6 +100,8 @@ VStack(spacing: 8) {
 }
 .symbolVariant(.fill)
 ```
+
+> To learn more about environment in SwiftUI, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post. 
 
 #### Rendering mode
 SF Symbols support four rendering modes that allow you to customize the way SwiftUI colors them. Let's take a look at them.
