@@ -142,5 +142,15 @@ struct ContentView: View {
 
 SwiftUI allows us to set the foreground styles for different layers inside the SF Symbol by using the *foregroundStyle* view modifier with multiple levels.
 
+```swift
+struct ContentView: View {
+    var body: some View {
+       Image(systemName: "doc.on.doc")
+            .symbolRenderingMode(.palette)
+            .foregroundStyle(.red, .green, .blue)
+    }
+}
+```
+
 #### Conclusion
 It became straightforward to build friendly apps with a well-crafted set of icons using SF Symbols. Moreover, SwiftUI provides a few ways of customizing these icons by using dedicated view modifiers that we have learned today. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
