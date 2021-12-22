@@ -140,7 +140,7 @@ struct ContentView: View {
 }
 ```
 
-SwiftUI allows us to set the foreground styles for different layers inside the SF Symbol by using the *foregroundStyle* view modifier with multiple levels.
+SwiftUI allows us to set the foreground styles for different layers inside the SF Symbol in *palette* mode by using the *foregroundStyle* view modifier with multiple levels.
 
 ```swift
 struct ContentView: View {
