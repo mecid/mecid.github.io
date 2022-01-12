@@ -7,6 +7,8 @@ image: /public/spm.png
 
 This week I want to start a series of posts about the new approach I use to build scalable apps in Swift. Microapps architecture allows you to reduce the compile-time and enhances the separation of concerns in your codebase. Teams can produce a module per feature and run it as a separate app to improve the value delivery.
 
+> To learn more about the benefits of Microapps architecture, take a lookt at ["Meet the microapps architecture"](https://increment.com/mobile/microapps-architecture/).
+
 Swift Package Manager became the heart of this approach. It allows us to extract every feature into a separate Swift module and reduce the compile-time of your project. In this case, Xcode compiles only changed modules and doesn't compile untouched modules.
 
 First of all, let's create a Swift Package that contains all our app's modules. Swift packages are flexible enough and can include many modules that may depend on each other.
