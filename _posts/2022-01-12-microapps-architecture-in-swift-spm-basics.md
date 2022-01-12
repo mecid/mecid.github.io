@@ -30,10 +30,16 @@ let package = Package(
     name: "MyAppLibrary",
     platforms: [.iOS(.v15)],
     products: [
-        .library(name: "DesignSystem", targets: ["DesignSystem"])
+        .library(
+            name: "DesignSystem",
+            targets: ["DesignSystem"]
+        )
     ],
     dependencies: [
-        .package(url: "https://github.com/mecid/SwiftUICharts", from: "0.6.3")
+        .package(
+            url: "https://github.com/mecid/SwiftUICharts",
+            from: "0.6.3"
+        )
     ],
     targets: [
         .target(
