@@ -22,7 +22,29 @@ Let's remove the content of the Sources and Tests folders in our Swift package. 
 
 We should define our modules in the Package.swift file. This file contains all the information about the targets living in the package and the products we can import into any project. Let's take a detailed look at the package definition.
 
-=====================================================
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "MyAppLibrary",
+    platforms: [.iOS(.v15)],
+    products: [
+        .library(name: "DesignSystem", targets: ["DesignSystem"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/mecid/SwiftUICharts", from: "0.6.3")
+    ],
+    targets: [
+        .target(
+            name: "DesignSystem",
+            dependencies: ["SwiftUICharts"]
+        ),
+        .testTarget(
+            name: "DesignSystemTests",
+            dependencies: ["DesignSystem"]),
+    ]
+)
+```
 
 Name - the name of the package.
 Platforms - platforms supported by the package.
@@ -32,7 +54,28 @@ Targets - Swift modules that complier builds independently.
 
 Now we can create our first module that contains the Design System of our app. This module includes button styles, empty views, and other design-related things that we want to use across different features of our app. To create a new module, we have to create a folder inside the Sources folder of our package. Let's call this folder DesignSystem.
 
-=====================================================
+```swift
+import SwiftUI
+
+public struct MainButtonStyle: PrimitiveButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
+        Button(configuration)
+            .controlSize(.large)
+            .buttonStyle(.borderedProminent)
+    }
+}
+
+extension PrimitiveButtonStyle where Self == MainButtonStyle {
+    public static var main: Self { .init() }
+}
+
+struct ButtonStyles_Previews: PreviewProvider {
+    static var previews: some View {
+        Button("Action") {}
+            .buttonStyle(.main)
+    }
+}
+```
 
 Here is the source code for the main button style that we will use across the app. Take a look at the public access modifier. Swift uses the internal access modifier by default making your code visible only inside the current module. We should explicitly mark the types and functions with the public access modifier to make them visible outside the current module. This way, we can improve the boundaries of our modules and control which types should be visible.
 
