@@ -10,13 +10,13 @@ Swift Package Manager became the heart of this approach. It allows us to extract
 
 First of all, let's create the Swift Package that contains all our app's modules. Swift packages are flexible enough and can include many modules that may depend on each other.
 
-=====================================================
+![Swift-Package-Manager-Creation](/public/spm-lib.png)
 
 Here we have an empty Xcode project called MyApp. Go to the menu and choose File -> New -> Package to create a new Swift package. Let's call our new Swift package MyAppLibrary and put it in the root folder of our project. You also need to add it to your app project at the bottom of the dialog screen.
 
 Now we have a Swift package containing all the modules that we want to share between multiple targets of our app. For example, watch app and widgets may need different modules to build their functionality. So we shouldn't bundle the whole app codebase to create a simple widget.
 
-=====================================================
+![Swift-Package-Manager-Project](/public/spm-project.png)
 
 Let's remove the content of the Sources and Tests folders in our Swift package. These two folders are crucial for any Swift package. We must place all the source code and tests there. Swift packages don't use any project file. They are smart enough to understand your folder structure.
 
