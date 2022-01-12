@@ -53,7 +53,7 @@ let package = Package(
 4. Dependencies - the list of dependencies needed to build the current package.
 5. Targets - Swift modules that complier builds independently.
 
-Now we can create our first module that contains the Design System of our app. This module includes button styles, empty views, and other design-related things that we want to use across different features of our app. To create a new module, we have to create a folder inside the Sources folder of our package. Let's call this folder *DesignSystem*.
+Now we can create our first module that contains the Design System of our app. This module includes button styles, empty views, and other design-related things that we want to use across different features of our app. To create a new module, we have to create a folder inside the Sources folder of our package. Let's call this folder *DesignSystem* as we define it in Package.swift file.
 
 ```swift
 import SwiftUI
