@@ -38,4 +38,4 @@ Here is the source code for the main button style that we will use across the ap
 
 We also should create a DesignSystemTests folder in the Tests folder of the Swift package to place our tests there. Xcode automatically updates the scheme of our project, and you can run the tests by pressing CMD+U.
 
-This week we learned about the basics of Swift Package Manager that we would use as the core tool while implementing Microapps architecture.
+This week we learned about the basics of Swift Package Manager that we would use as the core tool while implementing Microapps architecture. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
