@@ -13,7 +13,7 @@ First of all, let's create a Swift Package that contains all our app's modules. 
 
 ![Swift-Package-Manager-Creation](/public/spm-lib.png)
 
-Here we have an empty Xcode project called *MyApp*. Go to the menu and choose *File -> New -> Package* to create a new Swift package. Let's call our new Swift package *MyAppLibrary* and put it in the root folder of our project. You also need to add it to your app project at the bottom of the dialog screen.
+We have an already created empty Xcode project called *MyApp*. Go to the menu and choose *File -> New -> Package* to create a new Swift package. Let's call our new Swift package *MyAppLibrary* and put it in the root folder of our project. You also need to add it to your app project at the bottom of the dialog screen.
 
 Now we have a Swift package containing all the modules that we want to share between multiple targets of our app. For example, watch app and widgets may need different modules to build their functionality. So we shouldn't bundle the whole app codebase to create a simple widget.
 
