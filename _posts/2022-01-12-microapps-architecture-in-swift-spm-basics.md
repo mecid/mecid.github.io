@@ -2,6 +2,7 @@
 title: Microapps architecture in Swift. SPM basics.
 layout: post
 category: Architecture
+image: /public/spm.png
 ---
 
 This week I want to start a series of posts about the new approach I use to build scalable apps in Swift. Microapps architecture allows you to reduce the compile-time and enhances the separation of concerns in your codebase. Teams can produce a module per feature and run it as a separate app to improve the value delivery.
