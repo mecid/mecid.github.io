@@ -9,7 +9,7 @@ This week I want to start a series of posts about the new approach I use to buil
 
 Swift Package Manager became the heart of this approach. It allows us to extract every feature into a separate Swift module and reduce the compile-time of your project. In this case, Xcode compiles only changed modules and doesn't compile untouched modules.
 
-First of all, let's create the Swift Package that contains all our app's modules. Swift packages are flexible enough and can include many modules that may depend on each other.
+First of all, let's create a Swift Package that contains all our app's modules. Swift packages are flexible enough and can include many modules that may depend on each other.
 
 ![Swift-Package-Manager-Creation](/public/spm-lib.png)
 
