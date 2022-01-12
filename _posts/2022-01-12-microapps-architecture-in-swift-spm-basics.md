@@ -19,7 +19,7 @@ Now we have a Swift package that will contain all the modules we want to share b
 
 ![Swift-Package-Manager-Project](/public/spm-project.png)
 
-Let's remove the content of the *Sources* and *Tests* folders in our Swift package. These two folders are crucial for any Swift package. We must place all the source code and tests there. Swift package doesn't use any project file. They are smart enough to understand your folder structure.
+Let's remove the content of the *Sources* and *Tests* folders in our Swift package. These two folders are crucial for any Swift package. We must place all the source code and tests there. Swift package doesn't use any project file. It is smart enough to understand your folder structure.
 
 We should define our modules in the *Package.swift* file. This file contains all the information about the targets living in the package and the products we can import into other projects. Let's take a detailed look at the package definition.
 
