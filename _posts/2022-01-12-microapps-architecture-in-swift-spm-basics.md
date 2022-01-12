@@ -86,3 +86,4 @@ This week we learned about the basics of Swift Package Manager that we would use
 
 #### References
 1. [Meet the microapps architecture](https://increment.com/mobile/microapps-architecture/)
+2. [Introduction to App Modularisation with Swift Package Manager](https://holyswift.app/introduction-to-app-modularisation-with-swift-package-manager-a-tale-to-be-told)
