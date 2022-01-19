@@ -145,3 +145,7 @@ Dividing the app into many decoupled feature modules allows us to create micro-a
 Feature modules can contain more than one screen and should encapsulate the whole feature. For example, it can be a multi-screen checkout feature in the store app. A dedicated team can work on this module and deliver a microapp using TestFlight to test the checkout flow.
 
 This week we learned about the feature modules and how they can improve the development of the big app by delivering a microapp for the dedicated feature set. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
+#### References
+1. [Meet the microapps architecture](https://increment.com/mobile/microapps-architecture/)
+2. [Introduction to App Modularisation with Swift Package Manager](https://holyswift.app/introduction-to-app-modularisation-with-swift-package-manager-a-tale-to-be-told)
