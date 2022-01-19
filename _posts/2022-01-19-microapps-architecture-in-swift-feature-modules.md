@@ -99,7 +99,7 @@ public struct OnboardingView: View {
 }
 ```
 
-First, we import the *DesignSystem* module to use the main button style. Next, we implement the *OnboardingView* by iterating through onboarding items and presenting them in the vertical stack. We also display a button on the bottom of the screen with the style that we imported from the Design System module.
+First, we import the *DesignSystem* module to use the main button style. Next, we implement the *OnboardingView* by iterating through onboarding items and presenting them in the vertical stack. We also display a button on the bottom of the screen with the style that we imported from the *DesignSystem* module.
 
 OK, now we have a separate module representing the onboarding feature. Remember that we should implement all the app logic in the dedicated feature modules. The app target should only provide a thin coordinator layer that instantiates different features and navigates between them.
 
