@@ -138,7 +138,7 @@ struct RootView: View {
 }
 ```
 
-As you can see in the example above, we have the RootView in the app target that imports both *Onboarding* and *DailySummary* modules. RootView doesn't contain any logic. The only thing it does is coordinate between two feature modules.
+As you can see in the example above, we have the *RootView* in the app target that imports both *Onboarding* and *DailySummary* modules. *RootView* doesn't contain any logic. The only thing it does is coordinate between two feature modules.
 
 Dividing the app into many decoupled feature modules allows us to create micro-apps for different user flows and deliver them to the QA team to get early feedback without waiting for other features.
 
