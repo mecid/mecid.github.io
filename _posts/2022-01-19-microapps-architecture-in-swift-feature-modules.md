@@ -36,7 +36,7 @@ let package = Package(
 )
 ```
 
-As you can see, we define the *Onboarding* module as a separate target with *DesignSystem* as the dependency. It allows us to import the Design System module and reuse its functionality. The onboarding screen should present a few items that we define below.
+As you can see, we define the *Onboarding* module as a separate target with *DesignSystem* as the dependency. It allows us to import the *DesignSystem* module and reuse its functionality. The onboarding screen should present a few items that we define below.
 
 ```swift
 public struct OnboardingItem: Hashable {
