@@ -5,7 +5,7 @@ category: Architecture
 image: /public/xcode-spm.png
 ---
 
-This week we will continue the topic of microapps architecture by touching on another essential edge of this approach. In this post, we will talk about sharing resources between modules and separating the localization of feature modules.
+This week we will continue the topic of microapps architecture in Swift by touching on another essential edge of this approach. In this post, we will talk about sharing resources between modules and separating the localization of feature modules.
 
 #### Bundle API
 Usually, we don't care much about resource bundles in single module apps because the only bundle is the app target bundle. Let's take a quick look at the example using Bundle API.
