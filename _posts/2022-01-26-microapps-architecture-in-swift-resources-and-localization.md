@@ -47,6 +47,8 @@ public struct ImageFactory {
 
 As you can see in the example above, we create a type-safe image factory that loads icons from the design system bundle. Please look at how we use the module property on the Bundle type. This is how we can load the resources from the bundle of the current module. If we omit the bundle parameter, the app will load the image from the app target module, which doesn't contain these images.
 
+> To learn more about writing type-safe code in Swift, take a look at my ["Writing idiomatic Swift code"](/2021/04/01/writing-idiomatic-swift-code/) post.
+
 Xcode automatically generates bundles for asset catalogs, Core Data models, Storyboards, NIBs, and localization files. For any other types of resources, you should use Package.swift file to ask the Swift compiler to bundle them.
 
 ```swift
