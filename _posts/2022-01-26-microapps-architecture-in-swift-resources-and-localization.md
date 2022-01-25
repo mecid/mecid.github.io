@@ -141,3 +141,4 @@ This week we learned how to use resources within microapps architecture. We also
 
 First, I try to encapsulate the resources inside the module that uses them. Feature modules contain the localization strings they need. Second, create a type-safe public API for retrieving shared resources, as we do in the design system module, to get the icons across different feature modules.
 
+ I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
