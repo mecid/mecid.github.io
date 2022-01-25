@@ -2,6 +2,7 @@
 title: Microapps architecture in Swift. Resources and localization.
 layout: post
 category: Architecture
+image: /public/xcode-spm.png
 ---
 
 This week we will continue the topic of microapps architecture by touching on another essential edge of this approach. In this post, we will talk about sharing resources between modules and separating the localization of feature modules.
