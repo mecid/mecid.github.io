@@ -86,7 +86,7 @@ let package = Package(
 )
 ```
 
-We added the *defaultLocalization* parameter to the package declaration in the example above. This parameter is necessary if you want to support localization. Now you can create *en.lproj, es.lproj, or any-locale-identifier.lproj* folders in your module to place your *Localizable.strings* file with particular translations. Remember that you still need to specify the bundle whenever you want to access the localization of the current module.
+We added the *defaultLocalization* parameter to the package declaration in the example above. This parameter is necessary if you want to support localization. Now you can create *en.lproj, es.lproj, or any-locale-identifier.lproj* folders in your module to place your *Localizable.strings* files with particular translations. Remember that you still need to specify the bundle whenever you want to access the localization of the current module.
 
 ```swift
 // Feature module
