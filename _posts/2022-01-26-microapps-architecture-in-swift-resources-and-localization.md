@@ -28,6 +28,7 @@ Swift Package Manager allows us to put code and related resources in Swift modul
 To achieve that, first, we need to create an asset catalog with icons and place it inside the *DesignSystem* folder. Xcode automatically recognizes the format of the asset catalog and generates a bundle for the module. You can access the bundle of the current module by using the **module** property on the *Bundle* type. But remember, Xcode generates it only for modules with resources inside. 
 
 ```swift
+// DesignSystem module
 public struct ImageFactory {
     public enum Icon: String {
         case trash
