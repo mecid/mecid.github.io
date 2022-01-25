@@ -128,10 +128,12 @@ public struct PlaceholderView: View {
 }
 ```
 
-As you can see in the example above, we define a public init that accepts the bundle to retrieve localization. Without this parameter, the view can access only the main or its own bundle. But we need to access bundles of various feature modules. That's why we have to introduce an optional *bundle* parameter.
+As you can see in the example above, we define a public *init* that accepts the bundle to retrieve localization. Without this parameter, the view can access only the main or its own bundle. But we need to access bundles of various feature modules. That's why we have to introduce an optional *bundle* parameter.
 
 ```swift
 // Search feature module
+import DesignSystem
+
 PlaceholderView(
     "emptySearchPlaceholder",
     bundle: .module,
