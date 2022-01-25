@@ -22,7 +22,7 @@ These three lines do the same thing. They look for the image in the bundle of th
 Image("image", bundle: Bundle(identifier: "com.example.myapp"))
 ```
 
-#### Swift Package Manager and Resources
+#### SPM and Resources
 Swift Package Manager allows us to put code and related resources in Swift modules. In this case, the Swift compiler generates a bundle for every module that contains resources. Imagine our design system module containing an asset catalog with custom icons to reuse in feature modules.
 
 To achieve that, first, we need to create an asset catalog with icons and place it inside the *DesignSystem* folder. Xcode automatically recognizes the format of the asset catalog and generates a bundle for the module. You can access the bundle of the current module by using the **module** property on the *Bundle* type. But remember, Xcode generates it only for modules with resources inside. 
