@@ -25,7 +25,7 @@ Image("image", bundle: Bundle(identifier: "com.example.myapp"))
 #### Swift Package Manager and Resources
 Swift Package Manager allows us to put code and related resources in Swift modules. In this case, the Swift compiler generates a bundle for every module that contains resources. Imagine our design system module containing an asset catalog with custom icons to reuse in feature modules.
 
-To achieve that, first, we need to create an asset catalog with icons and place it inside the DesignSystem folder. Xcode automatically recognizes the format of the asset catalog and generates a bundle for the module. You can access the bundle of the current module by using the module property on the Bundle type. But remember, Xcode generates it only for modules with resources inside. 
+To achieve that, first, we need to create an asset catalog with icons and place it inside the *DesignSystem* folder. Xcode automatically recognizes the format of the asset catalog and generates a bundle for the module. You can access the bundle of the current module by using the **module** property on the *Bundle* type. But remember, Xcode generates it only for modules with resources inside. 
 
 ```swift
 public struct ImageFactory {
@@ -45,11 +45,11 @@ public struct ImageFactory {
 }
 ```
 
-As you can see in the example above, we create a type-safe image factory that loads icons from the design system bundle. Please look at how we use the module property on the Bundle type. This is how we can load the resources from the bundle of the current module. If we omit the bundle parameter, the app will load the image from the app target module, which doesn't contain these images.
+As you can see in the example above, we create a type-safe image factory that loads icons from the design system bundle. Please look at how we use the *module* property on the *Bundle* type. This is how we can load the resources from the bundle of the current module. If we omit the *bundle* parameter, the app will load the image from the app target module, which doesn't contain these images.
 
 > To learn more about writing type-safe code in Swift, take a look at my ["Writing idiomatic Swift code"](/2021/04/01/writing-idiomatic-swift-code/) post.
 
-Xcode automatically generates bundles for asset catalogs, Core Data models, Storyboards, NIBs, and localization files. For any other types of resources, you should use Package.swift file to ask the Swift compiler to bundle them.
+Xcode automatically generates bundles for asset catalogs, Core Data models, Storyboards, NIBs, and localization files. For any other types of resources, you should use *Package.swift* file to ask the Swift compiler to bundle them.
 
 ```swift
 // Package.swift
@@ -68,12 +68,12 @@ let package = Package(
 )
 ```
 
-The design system module contains the Resources folder with fonts and different PNGs that I want to bundle with my module. Unfortunately, Xcode doesn't recognize them automatically, but we can bundle them manually via a few lines of code in the Package.swift file. There are two ways of bundling resources in Swift modules. We can process or copy them directly in the bundle.
+The design system module contains the *Resources* folder with fonts and different PNGs that I want to bundle with my module. Unfortunately, Xcode doesn't recognize them automatically, but we can bundle them manually via a few lines of code in the *Package.swift* file. There are two ways of bundling resources in Swift modules. We can process or copy them directly in the bundle.
 
 When you choose processing resources, Xcode applies platform-specific rules for compressing files, when you select copying, Xcode copies files simply by keeping the structure of the sub-directories.
 
 #### Swift Package Manager and Localization
-Swift Packages support localization out of the box. Every feature module should contain its localization file and be ready to build and run as a separate microapp. We can quickly achieve that by enabling localization in the Package.swift file by adding a single line of code.
+Swift Packages support localization out of the box. Every feature module should contain its localization file and be ready to build and run as a separate microapp. We can quickly achieve that by enabling localization in the *Package.swift* file by adding a single line of code.
 
 ```swift
 // Package.swift
@@ -85,7 +85,7 @@ let package = Package(
 )
 ```
 
-We added the defaultLocalization parameter to the package declaration in the example above. This parameter is necessary if you want to support localization. Now you can create en.lproj, es.lproj, or any-locale-identifier.lproj folders in your module to place your Localizable.strings file with particular translations. Remember that you still need to specify the bundle whenever you want to access the localization of the current module.
+We added the *defaultLocalization* parameter to the package declaration in the example above. This parameter is necessary if you want to support localization. Now you can create *en.lproj, es.lproj, or any-locale-identifier.lproj* folders in your module to place your *Localizable.strings* file with particular translations. Remember that you still need to specify the bundle whenever you want to access the localization of the current module.
 
 ```swift
 // Feature module
@@ -127,7 +127,7 @@ public struct PlaceholderView: View {
 }
 ```
 
-As you can see in the example above, we define a public init that accepts the module to retrieve localization. Without this parameter, the view can access only the main or its bundle. But we need to access bundles of various feature modules. That's why we have to introduce an optional bundle parameter.
+As you can see in the example above, we define a public init that accepts the bundle to retrieve localization. Without this parameter, the view can access only the main or its own bundle. But we need to access bundles of various feature modules. That's why we have to introduce an optional *bundle* parameter.
 
 ```swift
 // Search feature module
