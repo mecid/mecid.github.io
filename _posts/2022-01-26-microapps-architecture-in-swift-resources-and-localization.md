@@ -134,11 +134,21 @@ As you can see in the example above, we define a public *init* that accepts the 
 // Search feature module
 import DesignSystem
 
-PlaceholderView(
-    "emptySearchPlaceholder",
-    bundle: .module,
-    systemImage: "magnifyingglass"
-)
+struct SearchView: View {
+    let results: [SearchItems]
+    
+    var body: some View {
+        if results.isEmpty {
+            PlaceholderView(
+                "emptySearchPlaceholder",
+                bundle: .module,
+                systemImage: "magnifyingglass"
+            )
+        } else {
+        // display the list of items
+        }
+    }
+}
 ```
 
 #### Conclusion
