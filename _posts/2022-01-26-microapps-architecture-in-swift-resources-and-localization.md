@@ -73,7 +73,7 @@ The design system module contains the *Resources* folder with fonts and differen
 
 When you choose processing resources, Xcode applies platform-specific rules for compressing files, when you select copying, Xcode copies files simply by keeping the structure of the sub-directories.
 
-#### Swift Package Manager and Localization
+#### SPM and Localization
 Swift Packages support localization out of the box. Every feature module should contain its localization file and be ready to build and run as a separate microapp. We can quickly achieve that by enabling localization in the *Package.swift* file by adding a single line of code.
 
 ```swift
