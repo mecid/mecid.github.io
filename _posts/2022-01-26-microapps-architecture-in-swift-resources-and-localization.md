@@ -50,7 +50,7 @@ As you can see in the example above, we create a type-safe image factory that lo
 
 > To learn more about writing type-safe code in Swift, take a look at my ["Writing idiomatic Swift code"](/2021/04/01/writing-idiomatic-swift-code/) post.
 
-Xcode automatically generates bundles for asset catalogs, Core Data models, Storyboards, NIBs, and localization files. For any other types of resources, you should use *Package.swift* file to ask the Swift compiler to bundle them.
+Xcode automatically generates bundles whenever finds asset catalogs, Core Data models, Storyboards, NIBs, and localization files. For any other types of resources, you should use *Package.swift* file to ask the Swift compiler to bundle them.
 
 ```swift
 // Package.swift
