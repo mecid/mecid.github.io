@@ -29,7 +29,7 @@ To achieve that, first, we need to create an asset catalog with icons and place 
 
 ```swift
 // DesignSystem module
-public struct ImageFactory {
+extension UIImage {
     public enum Icon: String {
         case trash
         case star
@@ -37,9 +37,9 @@ public struct ImageFactory {
     }
 
     public static func get(_ icon: Icon) -> UIImage {
-        UIImage(
+        .init(
             named: icon.rawValue,
-            in: Bundle.module,
+            in: .module,
             compatibleWith: .current
         )!
     }
