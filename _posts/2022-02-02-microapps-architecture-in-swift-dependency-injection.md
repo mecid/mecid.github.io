@@ -1,4 +1,4 @@
 ---
-title: Microapps architecture in Swift. Resources and localization.
+title: Microapps architecture in Swift. Dependency Injection.
 layout: post
 ---
