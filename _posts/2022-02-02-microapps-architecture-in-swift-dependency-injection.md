@@ -9,6 +9,8 @@ We covered a lot of things related to microapps architecture in Swift during the
 
 As we told before, we should build our feature modules as completely isolated apps. That's why we call them microapps. Every microapp can have its architecture or state management approach depending on the feature complexity. You can use MVVM in one module or unidirectional flow in another module.
 
+> To learn more about unidirectional flow, take a look at my ["Redux-like state container in SwiftUI"](/2019/09/18/redux-like-state-container-in-swiftui/) post.
+
 Feature modules shouldn't implement low-level functionality like networking or caching. Feature modules should define the dependencies needed, and the app coordinator or container fulfills them. Let's take a look at some examples. 
 
 Assume that we are working on a search feature module. We need to make an API request to search for the items matching our query. We also need to fetch recent queries to show query history. Let's start with defining the view model for our search view.
