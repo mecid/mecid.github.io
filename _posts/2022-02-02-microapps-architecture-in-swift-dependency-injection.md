@@ -124,6 +124,24 @@ struct SearchView_Previews: PreviewProvider {
 Now let's talk about where to store the whole app dependencies. Usually, we have a container that initializes and keeps all the app's services. We can store it in the *AppDelegate* or inside the root view of a SwiftUI app.
 
 ```swift
+struct SearchService {
+    func search(matching query: String) async throws -> [String] {
+        // ...
+    }
+
+    func fetchRecent() async throws -> [String] {
+        // ...
+    }
+
+    func save(query: String) async throws {
+        // ...
+    }
+
+    func delete(query: String) async throws {
+        // ...
+    }
+}
+
 struct AppDependencies {
     let searchService: SearchService
     let storage: Storage
