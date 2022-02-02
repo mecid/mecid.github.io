@@ -5,7 +5,7 @@ category: Architecture
 image: /public/xcode-spm.png
 ---
 
-We covered a lot of things related to microapps architecture in Swift during the last month. I would love to finalize the series of posts by touching another essential edge of the approach: Dependency Injection. This week we will learn how to inject the dependencies into feature modules to improve testability and control the environment.
+We covered a lot of things related to microapps architecture in Swift during the last month. I would love to finalize the series of posts by touching another essential edge of the approach: Dependency Injection. This week we will learn how to inject the dependencies into feature modules to improve testability and facilitate Xcode previews.
 
 As we told before, we should build our feature modules as completely isolated apps. That's why we call them microapps. Every microapp can have its architecture or state management approach depending on the feature complexity. You can use MVVM in one module or unidirectional flow in another module.
 
