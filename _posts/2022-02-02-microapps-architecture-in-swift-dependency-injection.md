@@ -151,4 +151,5 @@ struct RootView: View {
 
 As you can see, I also added the extension with calculated property to easily extract dependencies for the search feature module. You can have this kind of property as many as you need to fulfill the requirements of all the app's feature modules.
 
-Today we learned how to inject the low-level functionality inside feature modules without exposing information about the concrete implementation.
+Today we learned how to inject the low-level functionality inside feature modules without exposing information about the concrete implementation. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
