@@ -27,7 +27,7 @@ Assume that we are working on a search feature module. We need to make an API re
 }
 ```
 
-As you can see in the example above, we create the SearchViewModel that defines the Dependencies type. The Dependencies struct list all the low-level pieces that we need to implement the functionality of our view model. Now we can move on to fulfill the logic we need in our SearchView.
+As you can see in the example above, we create the *SearchViewModel* that defines the *Dependencies* type. The *Dependencies* struct list all the low-level pieces that we need to implement the functionality of our view model. Now we can move on to fulfill the logic we need in our *SearchView*.
 
 ```swift
 @MainActor public final class SearchViewModel: ObservableObject {
@@ -62,9 +62,9 @@ As you can see in the example above, we create the SearchViewModel that defines 
 }
 ```
 
-This approach allows us to expose only necessary low-level logic to our view model. The SearchViewModel type defines its own set of dependencies and requires them to compile.
+This approach allows us to expose only necessary low-level logic to our view model. The *SearchViewModel* type defines its own set of dependencies and requires them to compile.
 
-In another case, the SearchService type might implement different search endpoint functions, and we can pass the instance inside the SearchViewModel. The downside of this approach is that the SearchViewModel type will have access to all the parts of the SearchService type, even if it doesn't need them.
+In another case, the *SearchService* type might implement different search endpoint functions, and we can pass the instance inside the *SearchViewModel*. The downside of this approach is that the *SearchViewModel* type will have access to all the parts of the *SearchService* type, even if it doesn't need them.
 
 ```swift
 public struct SearchView: View {
@@ -119,7 +119,7 @@ struct SearchView_Previews: PreviewProvider {
 }
 ```
 
-Now let's talk about where to store the whole app dependencies. Usually, we have a container that initializes and keeps all the app's services. We can store it in the AppDelegate or inside the root view of a SwiftUI app.
+Now let's talk about where to store the whole app dependencies. Usually, we have a container that initializes and keeps all the app's services. We can store it in the *AppDelegate* or inside the root view of a SwiftUI app.
 
 ```swift
 struct AppDependencies {
