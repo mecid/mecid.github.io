@@ -96,6 +96,8 @@ public struct SearchView: View {
 }
 ```
 
+> To learn more about the *searchable* view modifier, take a look at my ["Mastering search in SwiftUI"](/2021/06/23/mastering-search-in-swiftui/) post.
+
 Another benefit of the approach we describe in this post is the opportunity to easily mock dependencies to write unit tests and run previews in Xcode.
 
 ```swift
