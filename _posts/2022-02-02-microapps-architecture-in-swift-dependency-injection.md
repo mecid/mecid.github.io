@@ -1,6 +1,7 @@
 ---
 title: Microapps architecture in Swift. Dependency Injection.
 layout: post
+category: Architecture
 ---
 
 We covered a lot of things related to microapps architecture in Swift during the last month. I would love to finalize the series of posts by touching another essential edge of the approach: Dependency Injection. This week we will learn how to inject the dependencies into feature modules to improve testability and control the environment.
