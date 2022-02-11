@@ -66,7 +66,7 @@ Remember that you should use branching via **if** or **switch** statement only w
 > To learn more why SwiftUI uses structural identity, take a look at my ["You have to change mindset to use SwiftUI"](/2019/11/19/you-have-to-change-mindset-to-use-swiftui/) post.
 
 #### Inert modifiers
-SwiftUI framework is smart enough to understand and optimize your view hierarchy. It provides us with a set of inert view modifiers which doesn't affect rendering, and you can use them for free. Let's take a look at some of them in the example below.
+SwiftUI framework is smart enough to understand and optimize your view hierarchy. It provides us with a set of inert view modifiers which doesn't affect view tree, and you can use them for free. Let's take a look at some of them in the example below.
 
 ```swift
 struct AchievementView: View {
@@ -80,7 +80,7 @@ struct AchievementView: View {
 }
 ```
 
-There is no rendering effect when you set the padding to 0 or opacity to 1. SwiftUI understands that and doesn't apply these view modifiers. That's why we call them inert view modifiers. Try to use them as much as possible to improve the performance of your view and remove unwanted transitions.
+There is no changes in the view tree when you set the padding to 0 or opacity to 1. SwiftUI understands that and doesn't apply these view modifiers. That's why we call them inert view modifiers. Try to use them as much as possible to improve the performance of your view and remove unwanted transitions.
 
 > To learn more tips and tricks dedicated to view composition in SwiftUI, take a look at my ["View composition in SwiftUI"](/2019/10/30/view-composition-in-swiftui/) post.
 
