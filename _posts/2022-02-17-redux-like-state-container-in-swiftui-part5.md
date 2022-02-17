@@ -106,6 +106,8 @@ func appReducer(
 
 Let's go forward and replace the dependencies of our reducers with async closures. We still must return the Combine framework's *Publisher* type, but we need somehow to wrap an async closure call with the Combine publisher. Unfortunately, there is no way to do it automatically, but we can create the *Publisher* type that does it for us.
 
+> To learn more about using async closures as dependencies, take a look at my ["Microapps architecture in Swift. Dependency Injection"](/2022/02/02/microapps-architecture-in-swift-dependency-injection/) post.
+
 ```swift
 import Foundation
 import Combine
