@@ -76,11 +76,11 @@ typealias Reducer<State, Action, Dependencies> =
 ```
 
 Here we pushed a few changes to support the new concurrency model:
-We made our send method an async by adding the particular keyword to the method definition.
-We use the values property on the Combine framework's Publisher type to convert it into an AsyncSequence.
-We use for await keyword to iterate over values of AsyncSequence and apply them to the store.
+1. We made our *send* method an async by adding the particular keyword to the method definition.
+2. We use the *values* property on the Combine framework's *Publisher* type to convert it into an *AsyncSequence*.
+3. We use *for await* keyword to iterate over values of *AsyncSequence* and apply them to the store.
 
-We also use where keyword to support cooperative task cancellation. As you can see, we made very few changes to migrate to the new concurrency model and gain new features like task cancellation out of the box. We don't need to change anything else, and we still can use our old reducers with the Combine framework because they work together very nicely.
+We also use *where* keyword to support cooperative task cancellation. As you can see, we made very few changes to migrate to the new concurrency model and gain new features like task cancellation out of the box. We don't need to change anything else, and we still can use our old reducers with the Combine framework because they work together very nicely.
 
 ```swift
 func appReducer(
@@ -102,7 +102,7 @@ func appReducer(
 }
 ```
 
-Let's go forward and replace the dependencies of our reducers with async closures. We still must return the Combine framework's Publisher type, but we need somehow to wrap an async closure call with the Combine publisher. Unfortunately, there is no way to do it automatically, but we can create the Publisher type that does it for us.
+Let's go forward and replace the dependencies of our reducers with async closures. We still must return the Combine framework's *Publisher* type, but we need somehow to wrap an async closure call with the Combine publisher. Unfortunately, there is no way to do it automatically, but we can create the *Publisher* type that does it for us.
 
 ```swift
 import Foundation
@@ -138,7 +138,7 @@ public struct SendablePublisher<Output, Failure: Error>: Publisher {
 }
 ```
 
-Let me introduce the SendablePublisher type that allows us to convert any async closure to the Combine publisher. Please look at how we use the handleEvents operator to implement the support for the cooperative cancellation. Now we can refactor our reducer to use async closures for side effects.
+Let me introduce the *SendablePublisher* type that allows us to convert any async closure to the Combine publisher. Please look at how we use the *handleEvents* operator to implement the support for the cooperative cancellation. Now we can refactor our reducer to use async closures for side effects.
 
 ```swift
 struct AppDependencies {
@@ -165,7 +165,7 @@ func appReducer(
 }
 ```
 
-SwiftUI provides us with the task view modifier accepting an async closure. SwiftUI automatically runs past closure when the view appears and tracks its lifecycle. SwiftUI cancels the task created for an async closure whenever the view disappears, and if you support the cooperative cancellation model, your task automatically stops.
+SwiftUI provides us with the *task* view modifier accepting an async closure. SwiftUI automatically runs past closure when the view appears and tracks its lifecycle. SwiftUI cancels the task created for an async closure whenever the view disappears, and if you support the cooperative cancellation model, your task automatically stops.
 
 ```swift
 import SwiftUI
@@ -192,4 +192,4 @@ struct SearchView: View {
 }
 ```
 
-This week we learned how to migrate our codebase from the Combine framework to the new Swift concurrency model using small steps. I love the way they play together, but I believe that the new Swift concurrency model is the future of async tasks. I hope to eliminate the Combine framework whenever the AsyncSequence type gains all the needed transformation operators offered by the Combine framework's Publisher type.
+This week we learned how to migrate our codebase from the Combine framework to the new Swift concurrency model using small steps. I love the way they play together, but I believe that the new Swift concurrency model is the future of async tasks. I hope to eliminate the Combine framework whenever the *AsyncSequence* type gains all the needed transformation operators offered by the Combine framework's *Publisher* type.
