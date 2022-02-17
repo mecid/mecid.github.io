@@ -169,7 +169,7 @@ func appReducer(
 }
 ```
 
-SwiftUI provides us with the *task* view modifier accepting an async closure. SwiftUI automatically runs past closure when the view appears and tracks its lifecycle. SwiftUI cancels the task created for an async closure whenever the view disappears, and if you support the cooperative cancellation model, your task automatically stops.
+SwiftUI provides us with the *task* view modifier accepting an async closure. It automatically runs the closure when the view appears and tracks its lifecycle. SwiftUI cancels the task created for an async closure whenever the view disappears, and if you support the cooperative cancellation model, your task automatically stops.
 
 ```swift
 import SwiftUI
