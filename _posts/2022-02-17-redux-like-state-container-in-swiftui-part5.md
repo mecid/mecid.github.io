@@ -81,6 +81,7 @@ Here we pushed a few changes to support the new concurrency model:
 1. We made our *send* method an async by adding the particular keyword to the method definition.
 2. We use the *values* property on the Combine framework's *Publisher* type to convert it into an *AsyncSequence*.
 3. We use *for await* keyword to iterate over values of *AsyncSequence* and apply them to the store.
+4. We added *@MainActor* annotation to access our state only via the main thread.
 
 We also use *where* keyword to support cooperative task cancellation. As you can see, we made very few changes to migrate to the new concurrency model and gain new features like task cancellation out of the box. We don't need to change anything else, and we still can use our old reducers with the Combine framework because they work together very nicely.
 
