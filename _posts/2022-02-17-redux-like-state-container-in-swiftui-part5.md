@@ -2,6 +2,7 @@
 title: Redux-like state container in SwiftUI. Swift concurrency model.
 layout: post
 category: Architecture
+image: /public/store.png
 ---
 
 Over the last two years, I have actively used unidirectional flow to develop my apps. I covered the approach I use in the series of posts about building Redux-like state containers. This week I want to share with you how this approach adapts to the latest changes in Swift by applying the new concurrency model.
