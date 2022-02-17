@@ -5,7 +5,7 @@ layout: post
 
 Over the last two years, I have actively used unidirectional flow to develop my apps. I covered the approach I use in the series of posts about building Redux-like state containers. This week I want to share with you how this approach adapts to the latest changes in Swift by applying the new concurrency model.
 
-Swift concurrency is the new language feature to write concurrent code straightforwardly. I'm not going to cover this in detail and assume that you know how to use it. If you are not familiar with the Swift Concurrency model, I suggest starting with the official docs.
+Swift concurrency is the new language feature to write concurrent code straightforwardly. I'm not going to cover this in detail and assume that you know how to use it. If you are not familiar with the Swift Concurrency model, I suggest starting with the [official docs](https://docs.swift.org/swift-book/LanguageGuide/Concurrency.html).
 
 ```swift
 typealias Reducer<State, Action, Dependencies> =
