@@ -196,6 +196,8 @@ struct SearchView: View {
 
 This week we learned how to migrate our codebase from the Combine framework to the new Swift concurrency model using small steps. I love the way they play together, but I believe that the new Swift concurrency model is the future of async tasks. I hope to eliminate the Combine framework whenever the *AsyncSequence* type gains all the needed transformation operators offered by the Combine framework's *Publisher* type.
 
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
 1. [Redux-like state container in SwiftUI. Basics](/2019/09/18/redux-like-state-container-in-swiftui/)
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
 3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)
