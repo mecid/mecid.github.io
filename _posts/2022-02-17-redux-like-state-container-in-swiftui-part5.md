@@ -43,7 +43,7 @@ final class Store<State, Action, Dependencies>: ObservableObject {
 }
 ```
 
-As you can see in the previous versions, I have been using the Combine framework heavily to do asynchronous work. But now I'm switching to the new Swift concurrency model. And I am pleased to see that the new concurrency model plays very well with the Combine framework, and we can mix them to don't break the working code in our apps and migrate step by step.
+As you can see above, I have been using the Combine framework heavily to do asynchronous work. But now I'm switching to the new Swift concurrency model. And I am pleased to see that the new concurrency model plays very well with the Combine framework, and we can mix them to don't break the working code in our apps and migrate step by step.
 
 ```swift
 typealias Reducer<State, Action, Dependencies> =
