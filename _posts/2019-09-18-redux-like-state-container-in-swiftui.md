@@ -203,6 +203,7 @@ Today we learned how to build *Redux-like* state container with *side-effects* i
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
 3. [Redux-like state container in SwiftUI. Container Views.](/2019/10/02/redux-like-state-container-in-swiftui-part3/)
 4. [Redux-like state container in SwiftUI. Connectors.](/2021/02/03/redux-like-state-container-in-swiftui-part4/)
+5. [Redux-like state container in SwiftUI. Swift concurrency model.](/2022/02/17/redux-like-state-container-in-swiftui-part5/)
 
 #### References
 The series of posts have built on a foundation of ideas started by other libraries, particularly Redux, Elm, and TCA.
