@@ -125,6 +125,7 @@ Today we talked about the benefits of using *Container Views with Redux-like sta
 2. [Redux-like state container in SwiftUI. Best practices](/2019/09/25/redux-like-state-container-in-swiftui-part2/)
 3. Redux-like state container in SwiftUI. Container Views.
 4. [Redux-like state container in SwiftUI. Connectors.](/2021/02/03/redux-like-state-container-in-swiftui-part4/)
+5. [Redux-like state container in SwiftUI. Swift concurrency model.](/2022/02/17/redux-like-state-container-in-swiftui-part5/)
 
 #### References
 The series of posts have built on a foundation of ideas started by other libraries, particularly Redux, Elm, and TCA.
