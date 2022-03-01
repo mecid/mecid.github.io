@@ -1,6 +1,7 @@
 ---
 title: Functional core, Imperative shell in Swift
 layout: post
+image: /public/swift.png
 ---
 
 We love value types because they provide us with safety and predictability, allowing us to reason about the code we write. But we still need objects to hold and mutate our app's shared state. This week, we will discuss modeling our app's logic by leveraging the value and reference semantics.
