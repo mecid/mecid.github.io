@@ -1,5 +1,5 @@
 ---
-title: Functional core, Imperative shell in Swift
+title: Functional core Imperative shell in Swift
 layout: post
 image: /public/swift.png
 category: Architecture
