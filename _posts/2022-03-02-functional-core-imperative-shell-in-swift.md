@@ -117,3 +117,4 @@ The idea of functional core and imperative shell fits very well into the world o
 #### References
 1. ["Boundaries", a talk by Gary Bernhardt from SCNA 2012](https://www.destroyallsoftware.com/talks/boundaries)
 2. [Functional Core Reactive Shell](https://mokacoding.com/blog/functional-core-reactive-shell/)
+3. [Writing idiomatic Swift code](/2021/04/01/writing-idiomatic-swift-code/)
