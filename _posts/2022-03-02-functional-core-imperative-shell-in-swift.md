@@ -113,3 +113,7 @@ struct TimerView: View {
 ```
 
 The idea of functional core and imperative shell fits very well into the world of mobile development with Swift language, which provides so many language features allowing us to write expressible and safe code in a very few keystrokes. In the next week, we will talk about this approach in the context of unidirectional flow. 
+
+#### References
+1. ["Boundaries", A talk by Gary Bernhardt from SCNA 2012](https://www.destroyallsoftware.com/talks/boundaries)
+2. [Functional Core Reactive Shell](https://mokacoding.com/blog/functional-core-reactive-shell/)
