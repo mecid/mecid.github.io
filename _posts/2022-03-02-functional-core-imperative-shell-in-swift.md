@@ -50,7 +50,7 @@ struct Fasting {
 }
 ```
 
-Even mutating functions in your value types create a new copy and reassign it to the current variable. That's why you can call mutating functions only on instances defined with the var keyword. It means you can easily replace one sample of value type with another, and it will work the same way. This feature of value types shines when you write unit tests. Pure functions like these are easy to test because you only need to verify the function's output. There are no side effects.
+Even mutating functions in your value types create a new copy and reassign it to the current variable. That's why you can call mutating functions only on instances defined with the **var** keyword. It means you can easily replace one sample of value type with another, and it will work the same way. This feature of value types shines when you write unit tests. Pure functions like these are easy to test because you only need to verify the function's output. There are no side effects.
 
 Isolated value types work great for defining your app's state and pure actions around that piece of data. But we still need to share mutable states between different app screens and make side effects like networking and IO operations. Reference types are great for data sharing. Whenever you assign an instance of a class to a new variable, it shares the reference to the same object.
 
