@@ -56,7 +56,7 @@ Even mutating functions in your value types create a new copy and reassign it to
 
 Isolated value types work great for defining your app's state and pure actions around that piece of data. But we still need to share mutable state between different app screens and make side effects like networking and I/O operations. Reference types are great for data sharing. Whenever you assign an instance of a class to a new variable, it shares the reference to the same object.
 
-We can use objects to store and share the state represented by a value type. Objects are not pure. That's why it is an excellent place for side effects. The idea is to encapsulate all the app logic using value types with pure functions and only use objects to store value types and provide side effects.
+We can use objects to store and share the state represented by a value type. Objects are not pure and have identity. That's why it is an excellent place for side effects. The idea is to encapsulate all the app logic using value types with pure functions and only use objects to store value types and provide side effects.
 
 ```swift
 @MainActor final class TimerStore: ObservableObject {
