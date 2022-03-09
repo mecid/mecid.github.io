@@ -138,4 +138,5 @@ struct CommerceApp: App {
 Here we use the *onContinueUserActivity* view modifier to extract the instance of UserActivity type and navigate to the particular screen.
 
 #### Conclusion
-State restoration is the key feature to implement a fluid user experience. SwiftUI provides us with all the needed APIs to implement it quickly without too many lines of code.
+State restoration is the key feature to implement a fluid user experience. SwiftUI provides us with all the needed APIs to implement it quickly without too many lines of code. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
