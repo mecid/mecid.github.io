@@ -1,6 +1,7 @@
 ---
 title: State restoration in SwiftUI
 layout: post
+category: Data Flow
 ---
 
 We always want to provide a great user experience in our apps. The system can shut down your app when the user leaves it and when the user relaunches your app, the system creates it from scratch, and the current state of your app is lost. This is a bad user experience. To avoid this kind of situation, we should provide a state restoration mechanism. This week we will learn how to implement state restorations in SwiftUI.
