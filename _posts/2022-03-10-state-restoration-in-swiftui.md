@@ -2,3 +2,32 @@
 title: State restoration in SwiftUI
 layout: post
 ---
+
+We always want to provide a great user experience in our apps. The system can shut down your app when the user leaves it and when the user relaunches your app, the system creates it from scratch, and the current state of your app is lost. This is a bad user experience. To avoid this kind of situation, we should provide a state restoration mechanism. This week we will learn how to implement state restorations in SwiftUI.
+
+#### SceneStorage property wrapper
+State and StateObject property wrappers are great tools to hold a view state in runtime. The only problem is the ability to restore its value after app relaunch. SwiftUI sets the initial values to State and StateObject whenever it recreates a view holding these property wrappers.
+
+Fortunately, SwiftUI provides us with the SceneStorage property wrappers allowing us to store values in the memory allocated by the current scene. It means every scene has private storage that other scenes can't access. The system is entirely responsible for managing per-scene storage, and you don't have access to the data without the SceneStorage property wrapper.
+
+=====================================================
+
+As you can see in the example above, we use the SceneStorage property wrapper to hold the tab selection. When the system relaunches the app, it also restores the value of SceneStorage property wrappers. The SceneStorage property wrapper is an excellent tool for storing tab selection, active navigation links, sheet presentation conditions, etc.
+
+=====================================================
+
+Remember that the system doesn't guarantee when and how often the data persists. Make sure you don't use SceneStorage property wrapper with sensitive data. SceneStorage is not a replacement for the State and StateObject property wrappers. It is designed to operate in pair with them.
+
+#### UserActivity
+UserActivity type is another option to provide a state restoration. It allows us to mark a particular feature with unique data that the system preserves across launches. For example, you can mark a purchase flow in the e-commerce app with the purchased item id and any additional information you need. Whenever the system relaunches the app, it will pass the instance of UserActivity type with the data populated previously. SwiftUI provides a few view modifiers to populate and handle user activities in the app. Let's take a quick look at how we can use these view modifiers.
+
+=====================================================
+
+In the example above, we enable user activity when the user presses: "Go to checkout" button. The system recognizes the user activity and stores it. Whenever the system relaunches the app, it provides an instance of UserActivity type that we can grab and handle to continue the user flow.
+
+=====================================================
+
+Here we use the onContinueUserActivity view modifier to extract the instance of UserActivity type and navigate to the particular screen.
+
+#### Conclusion
+State restoration is the key feature to implement a fluid user experience. SwiftUI provides us with all the needed APIs to implement it quickly without too many lines of code.
