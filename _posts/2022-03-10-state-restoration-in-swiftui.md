@@ -10,6 +10,8 @@ We always want to provide a great user experience in our apps. The system can sh
 #### SceneStorage property wrapper
 *State* and *StateObject* property wrappers are great tools to hold a view state in runtime. The only problem is the ability to restore its value after app relaunch. SwiftUI sets the initial values to *State* and *StateObject* whenever it recreates a view holding these property wrappers.
 
+> To learn more about property wrappers in SwiftUI, take a look at my ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
+
 Fortunately, SwiftUI provides us with the *SceneStorage* property wrappers allowing us to store values in the memory allocated by the current scene. It means every scene has private storage that other scenes can't access. The system is entirely responsible for managing per-scene storage, and you don't have access to the data without the *SceneStorage* property wrapper.
 
 ```swift
@@ -87,6 +89,8 @@ struct RootView: View {
 ```
 
 Remember that the system doesn't guarantee when and how often the data persists. Make sure you don't use *SceneStorage* property wrapper with sensitive data. *SceneStorage* is not a replacement for the *State* and *StateObject* property wrappers. It is designed to operate in pair with them.
+
+> To learn more about scene management in SwiftUI, take a look at my ["Managing scenes in SwiftUI"](/2020/08/26/managing-scenes-in-swiftui/) post. 
 
 #### UserActivity
 *UserActivity* type is another option to provide a state restoration. It allows us to mark a particular feature with unique data that the system preserves across launches. For example, you can mark a purchase flow in the e-commerce app with the purchased item id and any additional information you need. Whenever the system relaunches the app, it will pass the instance of *UserActivity* type with the data populated previously. SwiftUI provides a few view modifiers to populate and handle user activities in the app. Let's take a quick look at how we can use these view modifiers.
