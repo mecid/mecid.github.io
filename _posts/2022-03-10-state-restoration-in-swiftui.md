@@ -93,7 +93,9 @@ Remember that the system doesn't guarantee when and how often the data persists.
 > To learn more about scene management in SwiftUI, take a look at my ["Managing scenes in SwiftUI"](/2020/08/26/managing-scenes-in-swiftui/) post. 
 
 #### UserActivity
-*UserActivity* type is another option to provide a state restoration. It allows us to mark a particular feature with unique data that the system preserves across launches. For example, you can mark a purchase flow in the e-commerce app with the purchased item identifier and any additional information you need. Whenever the system relaunches the app, it will pass the instance of *UserActivity* type with the data populated previously. SwiftUI provides a few view modifiers to populate and handle user activities in the app. Let's take a quick look at how we can use these view modifiers.
+*UserActivity* type is another option to provide a state restoration. It allows us to mark a particular feature with unique data that the system preserves across launches. For example, you can mark a purchase flow in the e-commerce app with the purchased item identifier and any additional information you need.
+
+Whenever the system relaunches the app, it passes the instance of *UserActivity* type with the data populated previously. SwiftUI provides a few view modifiers to populate and handle user activities in the app. Let's take a quick look at how we can use these view modifiers.
 
 ```swift
 struct PurchaseView: View {
