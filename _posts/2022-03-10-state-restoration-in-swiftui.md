@@ -12,7 +12,7 @@ We always want to provide a great user experience in our apps. The system can sh
 
 > To learn more about property wrappers in SwiftUI, take a look at my ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
 
-Fortunately, SwiftUI provides us with the *SceneStorage* property wrappers allowing us to store values in the memory allocated by the current scene. It means every scene has private storage that other scenes can't access. The system is entirely responsible for managing per-scene storage, and you don't have access to the data without the *SceneStorage* property wrapper.
+Fortunately, SwiftUI provides us with the *SceneStorage* property wrapper allowing us to store values in the memory allocated by the current scene. It means every scene has private storage that other scenes can't access. The system is entirely responsible for managing per-scene storage, and you don't have access to the data without the *SceneStorage* property wrapper.
 
 ```swift
 struct RootView: View {
