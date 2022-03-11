@@ -61,11 +61,6 @@ struct RootView: View {
             NavigationView {
                 SummaryContainerView()
                     .navigationBarTitle("today")
-                    .userActivity(NSUserActivity.todayActivityType, isActive: selectedTab == 0) { userActivity in
-                        userActivity.title = NSLocalizedString("today", comment: "")
-                        userActivity.isEligibleForPrediction = true
-                        userActivity.isEligibleForSearch = true
-                    }
                     .sheet(isPresented: $bloodPressureFormShown) {
                         AddBloodPressureView()
                     }
