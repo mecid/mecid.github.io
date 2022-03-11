@@ -78,7 +78,6 @@ We can use objects to store and share the state represented by a value type. Obj
 
     func save() async {
         try? await dependencies.save(currentFasting)
-        currentFasting.reset()
     }
 }
 ```
