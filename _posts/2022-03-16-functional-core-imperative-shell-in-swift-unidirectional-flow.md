@@ -268,6 +268,6 @@ I use the idea of Functional core and Imperative shell in two of my apps and enj
 
 #### References
 1. ["Boundaries", a talk by Gary Bernhardt from SCNA 2012](https://www.destroyallsoftware.com/talks/boundaries)
-2. [Functional core Imperative shell in Swift](/2022-03-01-functional-core-imperative-shell-in-swift)
+2. [Functional core Imperative shell in Swift](/2022/03/01/functional-core-imperative-shell-in-swift/)
 3. [Functional Core Reactive Shell](https://mokacoding.com/blog/functional-core-reactive-shell/)
 4. [Writing idiomatic Swift code](/2021/04/01/writing-idiomatic-swift-code/)
