@@ -216,7 +216,7 @@ final class TimerMiddlewareTests: XCTestCase {
 }
 ```
 
-And here is the example code showing how to implement a middleware. As you can see, we intercept the action fed into the store, make an async request, and provide another action to the system.
+And here is the example code showing how to implement a middleware. As you can see, we intercept the action fed into the store, make an async request, and provide another action to the system. We also can easily write integration test by mocking *TimerDependencies* type.
 
 ```swift
 import SwiftUI
