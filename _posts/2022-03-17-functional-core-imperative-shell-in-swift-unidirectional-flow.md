@@ -263,3 +263,9 @@ struct RootView: View {
 
 #### Conclusion
 I use the idea of Functional core and Imperative shell in two of my apps and enjoy the infrastructure it provides me. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
+#### References
+1. ["Boundaries", a talk by Gary Bernhardt from SCNA 2012](https://www.destroyallsoftware.com/talks/boundaries)
+2. [Functional core Imperative shell in Swift](/2022-03-01-functional-core-imperative-shell-in-swift.md)
+3. [Functional Core Reactive Shell](https://mokacoding.com/blog/functional-core-reactive-shell/)
+4. [Writing idiomatic Swift code](/2021/04/01/writing-idiomatic-swift-code/)
