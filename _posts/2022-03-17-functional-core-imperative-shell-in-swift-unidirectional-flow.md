@@ -86,17 +86,17 @@ The imperative shell is the object layer holding the app's state represented by 
 }
 ```
 
-Here is the imperative shell defined using the Store class. As you can see, we use the object layer to hold the app state represented by a value type. We also provide thread safety by utilizing the MainActor and allowing mutations only by feeding actions into the store using the *send* method on Store type. This is how we implement unidirectional flow with the idea of Functional core and Imperative shell. But we still miss side effects.
+Here is the imperative shell defined using the *Store* class. As you can see, we use the object layer to hold the app state represented by a value type. We also provide thread safety by utilizing the *MainActor* and allowing mutations only by feeding actions into the store using the *send* method on *Store* type. This is how we implement unidirectional flow with the idea of Functional core and Imperative shell. But we still miss side effects.
 
 #### Side effects
-The imperative shell should provide us with a way to make side effects. We should separate side effects from the pure logic of our app, but we still want to test side effects using integration tests. Let's introduce a new type called Middleware that defines a side effect handler.
+The imperative shell should provide us with a way to make side effects. We should separate side effects from the pure logic of our app, but we still want to test side effects using integration tests. Let's introduce a new type called *Middleware* that defines a side effect handler.
 
 ```swift
 typealias Middleware<State, Action, Dependencies> =
     (State, Action, Dependencies) async -> Action?
 ```
 
-The main idea behind the Middleware type is to intercept pure actions, make side effects like async requests, and return a new action that we can feed into the store and reduce. Let's add this functionality to the Store type.
+The main idea behind the *Middleware* type is to intercept pure actions, make side effects like async requests, and return a new action that we can feed into the store and reduce. Let's add this functionality to the *Store* type.
 
 ```swift
 @MainActor public final class Store<State, Action, Dependencies>: ObservableObject {
@@ -136,7 +136,7 @@ The main idea behind the Middleware type is to intercept pure actions, make side
 }
 ```
 
-As you can see, we use the new Swift concurrency feature to implement async work inside the Store type. It allows us to run our side effects in parallel and feed the actions into the store. We secure access to our state by marking the Store type with @MainActor. Using the TaskGroup, we automatically gain the cooperative cancellation of side effects. The Store type also holds all the dependencies like networking, notification center, etc., to provide them to middlewares.
+As you can see, we use the new Swift concurrency feature to implement async work inside the *Store* type. It allows us to run our side effects in parallel and feed the actions into the store. We secure access to our state by marking the *Store* type with *@MainActor*. Using the *TaskGroup*, we automatically gain the cooperative cancellation of side effects. The *Store* type also holds all the dependencies like networking, notification center, etc., to provide them to middlewares.
 
 ```swift
 struct TimerState: Equatable {
