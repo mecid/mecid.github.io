@@ -82,6 +82,8 @@ We can use objects to store and share the state represented by a value type. Obj
 }
 ```
 
+> To learn more about using async closures as dependencies, take a look at my ["Microapps architecture in Swift. Dependency Injection"](/2022/02/02/microapps-architecture-in-swift-dependency-injection/) post.
+
 As you can see in the example above, we have an object holding the state represented by a value type and providing very few functions to make side effects possible. We encapsulated all the logic in the value type that we can easily verify in unit tests. And we can still quickly write integration tests for the object by mocking only side effects to check its behavior.
 
 ```swift
