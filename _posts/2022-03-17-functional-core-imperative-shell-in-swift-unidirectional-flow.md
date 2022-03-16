@@ -1,6 +1,7 @@
 ---
 title: Functional core Imperative shell in Swift. Unidirectional Flow.
 layout: post
+category: Architecture
 ---
 
 A few weeks ago, we talked about the idea of Functional Core and Imperative shell in Swift. The goal is to extract the pure logic using value types and keep side effects in the thin object layer. This week, we will look at how we can apply this approach in an opinionated way by using unidirectional flow.
