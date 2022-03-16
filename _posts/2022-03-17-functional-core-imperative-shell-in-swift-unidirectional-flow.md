@@ -148,13 +148,13 @@ struct TimerState: Equatable {
     var sharingStatus = SharingStatus.notShared
 }
 
-enum SharingStatus {
+enum SharingStatus: Equatable {
     case shared
     case uploading
     case notShared
 }
 
-enum TimerAction {
+enum TimerAction: Equatable {
     case start
     case finish
     case reset
@@ -201,6 +201,17 @@ let timerMiddleware: Middleware<TimerState, TimerAction, TimerDependencies> = { 
         }
     default:
         return nil
+    }
+}
+
+import XCTest
+
+final class TimerMiddlewareTests: XCTestCase {
+    func testSharing() async throws {
+        let state = TimerState(goal: 13 * 3600)
+        let dependencies: TimerDependencies = .init { _, _ in }
+        let action = await timerMiddleware(state, .share, dependencies)
+        XCTAssertEqual(action, .setSharingStatus(.shared))
     }
 }
 ```
