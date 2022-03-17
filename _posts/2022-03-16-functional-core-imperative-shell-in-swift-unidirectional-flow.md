@@ -5,7 +5,7 @@ category: Architecture
 image: /public/store.png
 ---
 
-A few weeks ago, we talked about the idea of Functional Core and Imperative shell in Swift. The goal is to extract the pure logic using value types and keep side effects in the thin object layer. This week, we will look at how we can apply this approach in an opinionated way by using unidirectional flow.
+A few weeks ago, we talked about the idea of Functional core and Imperative shell in Swift. The goal is to extract the pure logic using value types and keep side effects in the thin object layer. This week, we will look at how we can apply this approach in an opinionated way by using unidirectional flow.
 
 > If you are not familiar with the idea of unidirectional flow, I highly encourage you to read my series of posts about ["Redux-like state container in SwiftUI"](/2019/09/18/redux-like-state-container-in-swiftui/).
 
