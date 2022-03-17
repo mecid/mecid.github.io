@@ -74,7 +74,7 @@ The imperative shell is the object layer holding the app's state represented by 
 
     private let reducer: Reducer<State, Action>
 
-    init(
+    public init(
         initialState state: State,
         reducer: @escaping Reducer<State, Action>
     ) {
@@ -108,7 +108,7 @@ The main idea behind the *Middleware* type is to intercept pure actions, make si
     private let dependencies: Dependencies
     private let middlewares: [Middleware<State, Action, Dependencies>]
 
-    init(
+    public init(
         initialState state: State,
         reducer: @escaping Reducer<State, Action>,
         dependencies: Dependencies,
