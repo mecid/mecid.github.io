@@ -74,7 +74,7 @@ struct OnboardingView: View {
 ```
 
 #### Saving data
-We need to define a schema for record types we want to store on CloudKit. Go to the Signing and Capabilities tab on the project settings page and press the CloudKit Console button. It should open the browser with CloudKit dashboard, where you can find schema setup in the navigation menu. Press the record types button, and let's create a new one that we want to store and fetch.
+We need to define a schema for record types we want to store on CloudKit. Go to the Signing and Capabilities tab on the project settings page and press the CloudKit Console button. It should open the browser with CloudKit dashboard, where you can find schema setup in the navigation menu. Press the record types button, and create a new one that we want to store and fetch.
 
 ```swift
 struct Fasting: Hashable {
