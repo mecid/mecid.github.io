@@ -2,6 +2,7 @@
 title: Getting started with CloudKit
 layout: post
 image: /public/cloudkit.png
+category: CloudKit
 ---
 
 CloudKit is an easy way to store data in the cloud, sync between multiple devices, and share it between the app's users. This week we will learn how to start using CloudKit in the app to save and fetch data from the cloud and sync between multiple user devices.
