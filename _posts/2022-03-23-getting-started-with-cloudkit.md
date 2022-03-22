@@ -115,7 +115,7 @@ extension CloudKitService {
 }
 ```
 
-And now, we can finally create a form to populate fasting record data and save it to the private database of the current use on CloudKit.
+And now, we can finally create a form to populate fasting record data and save it to the private database of the current user on CloudKit.
 
 ```swift
 @MainActor final class NewFastingViewModel: ObservableObject {
