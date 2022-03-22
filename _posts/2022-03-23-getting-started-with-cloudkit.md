@@ -276,6 +276,6 @@ struct FastingHistoryView: View {
 ```
 
 #### Conclusion
-CloudKit provides us with development and production environments. While developing an app and running it in debug mode, you automatically use the development environment. Before publishing the on TestFlight or App Store, you should deploy schema to the production environment in the CloudKit dashboard.
+CloudKit provides us with development and production environments. While developing an app and running it in the debug mode, you automatically use the development environment. Before publishing the app on TestFlight or App Store, you should deploy schema to the production environment in the CloudKit dashboard.
 
 This week we learned the basics of storing and fetching data in the CloudKit. Now you know how to sync the data between the user devices. Next week we will learn how to implement data sharing between your app users via CloudKit.
