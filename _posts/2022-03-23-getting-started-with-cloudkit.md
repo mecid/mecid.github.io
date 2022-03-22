@@ -101,7 +101,7 @@ extension Fasting {
 }
 ```
 
-In the example above, you see the simple Fasting value type that I want to store on CloudKit. CloudKit provides us CKRecord type representing items in the CloudKit database. Usually, we need to implement a converter from/to CKRecord for our custom types.
+In the example above, you see the simple Fasting value type that I want to store on CloudKit. CloudKit provides us *CKRecord* type representing items in the CloudKit database. Usually, we need to implement a converter from/to *CKRecord* for our custom types.
 
 ```swift
 extension CloudKitService {
@@ -197,7 +197,7 @@ extension Fasting {
 }
 ```
 
-In the example above, we implemented another converter from an instance of the CKRecord type. Let's move forward and implement a method on the CloudKitService type to fetch the records in the provided date interval.
+In the example above, we implemented another converter from an instance of the *CKRecord* type. Let's move forward and implement a method on the *CloudKitService* type to fetch the records in the provided date interval.
 
 ```swift
 extension CloudKitService {
