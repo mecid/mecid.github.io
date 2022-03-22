@@ -182,7 +182,7 @@ struct NewFastingRecord: View {
 ```
 
 #### Fetching data
-Now we can learn how to fetch data from the CloudKit. First, we should update our schema by adding indexes marking fields in our records fetchable and sortable. Let's open the CloudKit dashboard and go to Schema -> Indexes. Here we should create indexes for all the fields we want to fetch or sort. 
+Now we can learn how to fetch data from the CloudKit. First, we should update our schema by adding indexes marking fields in our records queryable and sortable. Let's open the CloudKit dashboard and go to Schema -> Indexes. Here we should create indexes for all the fields we want to fetch or sort. 
 
 ```swift
 extension Fasting {
