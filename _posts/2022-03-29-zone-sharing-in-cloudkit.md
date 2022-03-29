@@ -65,11 +65,6 @@ final class CloudKitService {
         identifier: "iCloud.com.aaplab.fastbot"
     )
     
-    private static let logger = Logger(
-        subsystem: "com.aaplab.fastbot",
-        category: "CloudKitService"
-    )
-    
     func save(_ fasting: Fasting) async throws {
         _ = try await Self.container.privateCloudDatabase.modifyRecordZones(
             saving: [CKRecordZone(zoneName: SharedZone.name)],
