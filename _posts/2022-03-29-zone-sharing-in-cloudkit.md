@@ -2,6 +2,7 @@
 title: Zone sharing in CloudKit
 layout: post
 category: CloudKit
+image: /public/cloudkit.png
 ---
 
 Last week we talked about the basics of CloudKit. We learned how to save and fetch data from the cloud storage and how to sync the data between devices. This week I want to cover the only reason why I have chosen CloudKit instead of Firebase, and it is data sharing between users.
