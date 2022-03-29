@@ -124,7 +124,7 @@ struct CloudKitShareView: UIViewControllerRepresentable {
 
 *UICloudSharingController* provides you with all the needed functionality to add and manage participants of the share. You can also configure available options of the *UICloudSharingController* instance by setting the value of the *availablePermissions* property to *allowReadOnly, allowPrivate, allowReadWrite, allowPublic*. Now let's talk about how we should implement share accepting functionality.
 
-Before writing any code, we should add the *CKSharingSupported* boolean key with the value *YES* to the Info.plist. Whenever a user receives and opens a link shared via *UICloudSharingController*, the *userDidAcceptCloudKitShareWith* delegate method will be called by the system. Here we can call the accept method to approve the sharing.
+Before writing any code, we should add the *CKSharingSupported* boolean key with the value *YES* to the Info.plist. Whenever a user receives and opens a link shared via *UICloudSharingController*, the *userDidAcceptCloudKitShareWith* delegate method will be called by the system. Here we can call the *accept* method to approve the sharing.
 
 ```swift
 extension CloudKitService {
