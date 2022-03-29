@@ -8,7 +8,7 @@ category: CloudKit
 CloudKit is an easy way to store data in the cloud, sync between multiple devices, and share it between the app's users. This week we will learn how to start using CloudKit in the app to save and fetch data from the cloud and sync between multiple user devices.
 
 #### Basics
-First, to start using CloudKit in the app, we need to enable it in the project Signing and Capabilities section. Xcode creates a default container for the app. A container is a space in the cloud that stores all of your saved data. You can use a container per application or a single container to share data between multiple apps.
+First, to start using CloudKit in the app, we need to enable it in the project Signing and Capabilities section. Here we can create a default container for the app. A container is a space in the cloud that stores all of your saved data. You can use a container per application or a single container to share data between multiple apps.
 
 Every container has a public, private and shared database. The public database is accessible for any user of the app. Every user of the app has a private database that lives in the personal iCloud and counts towards iCloud storage. You can use the shared database to fetch data shared with the user.
 
