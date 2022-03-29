@@ -78,7 +78,7 @@ final class CloudKitService {
 }
 ```
 
-Now we have a zone saved in the private database and associated records. But to start sharing, we should create an instance of CKShare type and save it into the private database.
+Now we have a zone saved in the private database and associated records. But to start sharing, we should create an instance of *CKShare* type and save it into the private database.
 
 ```swift
 extension CloudKitService {
