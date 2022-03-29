@@ -220,3 +220,5 @@ extension CloudKitService {
 ```
 
 Remember that you have to fetch all the zones from the shared database. Even when they have the same name, they have different owners. We can enumerate all the shared zones and fetch shared records in every zone.
+
+ I think CloudKit data sharing API is one of the best things about this technology. And today we learned how to use it. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
