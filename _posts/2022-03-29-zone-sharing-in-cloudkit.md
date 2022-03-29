@@ -11,7 +11,7 @@ Last week we talked about the basics of CloudKit. We learned how to save and fet
 
 CloudKit provides you ready to use data sharing API that allows you to implement collaborative features of your app without much effort. There are two ways to share data via CloudKit: record sharing and zone sharing. In this post, we will talk about zone sharing.
 
-A zone is a defined bucket inside the private database of the current user. You can create and assign a zone to any record in the database. You share all the records tagged with the zone by sharing the zone itself. For example, in the todo app, you can create a zone with the name of the todo list and share it with your family.
+A zone is a defined bucket inside the private database of the current user. You can create and assign a zone to any record in the database. You share all the records in the zone by sharing the zone itself. For example, in the todo app, you can create a zone with the name of the todo list and share it with your family.
 
 First of all, we need to create and save a zone in the private database of the current user. Then we have to assign it to a particular record and save or update it in the private database.
 
