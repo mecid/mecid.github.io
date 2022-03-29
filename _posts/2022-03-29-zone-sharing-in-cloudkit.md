@@ -5,7 +5,7 @@ category: CloudKit
 image: /public/cloudkit.png
 ---
 
-Last week we talked about the basics of CloudKit. We learned how to save and fetch data from the cloud storage and how to sync the data between devices. This week I want to cover the only reason why I have chosen CloudKit instead of Firebase, and it is data sharing between users.
+Last week we talked about the basics of CloudKit. We learned how to save and fetch data from the storage in the cloud and how to sync the data between devices. This week I want to cover the only reason why I have chosen CloudKit instead of Firebase, and it is data sharing between users.
 
 > If you are not familiar with CloudKit, please take a look at my ["Getting started with CloudKit"](/2022/03/22/getting-started-with-cloudkit/) post.
 
