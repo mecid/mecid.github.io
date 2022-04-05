@@ -8,7 +8,7 @@ category: Architecture
 We encounter bugs that are very hard to catch in the debugger from time to time. For example, it might occur only after a few days of app usage. In this case, running an app in a simulator and testing a feature doesn't make sense. We need to understand what the user has done in the application and how it responds to user actions in this situation. Logging is an excellent technique to track and understand user actions through the app. This week we will learn how to implement proper logging functionality in our apps.
 
 #### Writing logs
-Fortunately, Apple provides us with a framework to build a proper logging system using the Logger type. Let's take a look at how we can use it in code.
+Fortunately, Apple provides us with a framework to build a proper logging system using the *Logger* type. Let's take a look at how we can use it in code.
 
 ```swift
 @MainActor final class ProductsViewModel: ObservableObject {
@@ -36,9 +36,9 @@ Fortunately, Apple provides us with a framework to build a proper logging system
 }
 ```
 
-As you can see in the example above, we have the ProductsViewModel fetching products from the remote server. Usually, we need only one Logger instance per feature. That's why we declare it as a private and static constant. We can use Subsystem and Category parameters to filter logs in the future when we need to extract them. I usually use bundle identifier as subsystem and type name as a category. This approach allows me easily find logs from the required part of my app.
+As you can see in the example above, we have the *ProductsViewModel* fetching products from the remote server. Usually, we need only one *Logger* instance per feature. That's why we declare it as a private and static constant. We can use *subsystem* and *category* parameters to filter logs in the future when we need to extract them. I usually use bundle identifier as subsystem and type name as a category. This approach allows me easily find logs from the required part of my app.
 
-Logger type provides us with functions to log a message with different emergency levels. For example, the trace function works as debug print, and the system doesn't store it. The warning function allows us to log errors that are not fatal for our app, but we still need to know about them. 
+*Logger* type provides us with functions to log a message with different emergency levels. For example, the *trace* function works as debug print, and the system doesn't store it. The *warning* function allows us to log errors that are not fatal for our app, but we still need to know about them. 
 
 ```swift
 func save(_ object: CKRecord, using container: CKContainer) async {
@@ -51,7 +51,7 @@ func save(_ object: CKRecord, using container: CKContainer) async {
 }
 ```
 
-Sometimes we want to crash our app instead of working in an inconsistent state. We can use the critical function before calling fatalError to save a meaningful error message.
+Sometimes we want to crash our app instead of working in an inconsistent state. We can use the *critical* function before calling *fatalError* to save a meaningful error message.
 
 Remember that the iOS system will store messages logged with notice, warning, and critical up to a storage limit. It doesn't store trace messages at all.
 
@@ -73,7 +73,7 @@ struct ContentView: View {
 ![console-app-screenshot](/public/console.png)
 
 #### Formatting logs
-As you can see in the screenshot above, the Console app hides a part of logged information. By default, the Logger type saves only StaticString, and all the interpolated content is private for the developer. Usually, we need to see the description of the error. We should use the public as a privacy parameter to make it possible.
+As you can see in the screenshot above, the Console app hides a part of logged information. By default, the Logger type saves only static strings, and all the interpolated content is private for the developer. Usually, we need to see the description of the error. We should use the public as a *privacy* parameter to make it possible.
 
 ```swift
 struct ContentView: View {
@@ -93,7 +93,7 @@ struct ContentView: View {
 }
 ```
 
-The Logger type uses String interpolation to provide formatting options, like aligning, hiding, and formatting values.
+The Logger type uses string interpolation to provide formatting options, like aligning, hiding, and formatting values.
 
 #### Conclusion
 Logging errors and crucial situations in your app is vital. Today we learned how to build a proper logging flow and how we can leverage the power of the Console app to filter logged messages.
