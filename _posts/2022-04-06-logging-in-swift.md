@@ -8,13 +8,46 @@ We encounter bugs that are very hard to catch in the debugger from time to time.
 #### Writing logs
 Fortunately, Apple provides us with a framework to build a proper logging system using the Logger type. Let's take a look at how we can use it in code.
 
-=====================================================
+```swift
+@MainActor final class ProductsViewModel: ObservableObject {
+    private static let logger = Logger(
+        subsystem: Bundle.main.bundleIdentifier!,
+        category: String(describing: ProductsViewModel.self)
+    )
+
+    @Published private(set) var products: [Product] = []
+
+    private let service: ProducsService
+    init(service: ProducsService) {
+        self.service = service
+    }
+
+    func fetch() async {
+        do {
+            Self.logger.trace("Start product list fetching")
+            products = try await service.fetch()
+            Self.logger.notice("Product list fetching is finished")
+        } catch {
+            Self.logger.warning("\(error.localizedDescription, privacy: .public)")
+        }
+    }
+}
+```
 
 As you can see in the example above, we have the ProductsViewModel fetching products from the remote server. Usually, we need only one Logger instance per feature. That's why we declare it as a private and static constant. We can use Subsystem and Category parameters to filter logs in the future when we need to extract them. I usually use bundle identifier as subsystem and type name as a category. This approach allows me easily find logs from the required part of my app.
 
 Logger type provides us with functions to log a message with different emergency levels. For example, the trace function works as debug print, and the system doesn't store it. The warning function allows us to log errors that are not fatal for our app, but we still need to know about them. 
 
-=====================================================
+```swift
+func save(_ object: CKRecord, using container: CKContainer) async {
+    do {
+        let status = try await container.accountStatus()
+    } catch {
+        logger.critical("Can't fetch iCloud account status.")
+        fatalError()
+    }
+}
+```
 
 Sometimes we want to crash our app instead of working in an inconsistent state. We can use the critical function before calling fatalError to save a meaningful error message.
 
@@ -23,12 +56,39 @@ Remember that the iOS system will store messages logged with notice, warning, an
 #### Reading logs
 We learned how to write logs, but how can we read them? All the records appear in the Xcode's debug console while running the app through Xcode. Another option is a device with an already running app that you can connect to your computer via cable. In this case, you can extract logs by using the Console app. The console app allows us to quickly filter subsystems and categories to focus only on required information.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
+
+    var body: some View {
+        Text("Hello!")
+            .onChange(of: scenePhase) { newPhase in
+                logger.trace("Scene phase: \(newPhase)")
+            }
+    }
+}
+```
 
 #### Formatting logs
 As you can see in the screenshot above, the Console app hides a part of logged information. By default, the Logger type saves only StaticString, and all the interpolated content is private for the developer. Usually, we need to see the description of the error. We should use the public as a privacy parameter to make it possible.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var counter: UInt = 1_000
+    @Environment(\.scenePhase)
+    private var scenePhase
+
+    var body: some View {
+        Text("Hello!")
+            .onChange(of: scenePhase) { newPhase in
+                logger.trace("Scene phase: \(newPhase, privacy: .public)")
+                logger.trace("Counter: \(counter, privacy: .private(mask: .hash))")
+                logger.trace("Counter: \(counter, align: .right(columns: 10))")
+                logger.trace("Counter: \(counter, format: .hex, align: .right(columns: 10))")
+            }
+    }
+}
+```
 
 The Logger type uses String interpolation to provide formatting options, like aligning, hiding, and formatting values.
 
