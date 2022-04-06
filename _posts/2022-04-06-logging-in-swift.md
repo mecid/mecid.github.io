@@ -11,6 +11,9 @@ We encounter bugs that are very hard to catch in the debugger from time to time.
 Fortunately, Apple provides us with a framework to build a proper logging system using the *Logger* type. Let's take a look at how we can use it in code.
 
 ```swift
+import Foundation
+import os
+
 @MainActor final class ProductsViewModel: ObservableObject {
     private static let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
@@ -59,6 +62,10 @@ Remember that the iOS system will store messages logged with notice, warning, an
 We learned how to write logs, but how can we read them? All the records appear in the Xcode's debug console while running the app through Xcode. Another option is a device with an already running app that you can connect to your computer via cable. In this case, you can extract logs by using the Console app. The console app allows us to quickly filter subsystems and categories to focus only on required information.
 
 ```swift
+import Foundation
+import SwiftUI
+import os
+
 struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
 
@@ -76,6 +83,10 @@ struct ContentView: View {
 As you can see in the screenshot above, the Console app hides a part of logged information. By default, the Logger type saves only static strings, and all the interpolated content is private for the developer. Usually, we need to see the description of the error. We should use the public as a *privacy* parameter to make it possible.
 
 ```swift
+import Foundation
+import SwiftUI
+import os
+
 struct ContentView: View {
     @State private var counter: UInt = 1_000
     @Environment(\.scenePhase)
