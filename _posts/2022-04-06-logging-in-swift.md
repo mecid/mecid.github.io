@@ -80,7 +80,7 @@ struct ContentView: View {
 ![console-app-screenshot](/public/console.png)
 
 #### Formatting logs
-As you can see in the screenshot above, the Console app hides a part of logged information. By default, the Logger type saves only static strings, and all the interpolated content is private for the developer. Usually, we need to see the description of the error. We should use the public as a *privacy* parameter to make it possible.
+As you can see in the screenshot above, the Console app hides a part of logged information. By default, the *Logger* type saves only static strings, and all the interpolated content is private for the developer. Usually, we need to see the description of the error. We should use the public as a *privacy* parameter to make it possible.
 
 ```swift
 import Foundation
