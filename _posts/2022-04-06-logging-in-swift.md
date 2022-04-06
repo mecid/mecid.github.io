@@ -39,7 +39,7 @@ import os
 }
 ```
 
-As you can see in the example above, we have the *ProductsViewModel* fetching products from the remote server. Usually, we need only one *Logger* instance per feature. That's why we declare it as a private and static constant. We can use *subsystem* and *category* parameters to filter logs in the future when we need to extract them. I usually use bundle identifier as subsystem and type name as a category. This approach allows me easily find logs from the required part of my app.
+As you can see in the example above, we have the *ProductsViewModel* fetching products from the remote server. Usually, we need only one *Logger* instance per feature. That's why we declare it as a *private* and *static* constant. We can use *subsystem* and *category* parameters to filter logs in the future when we need to extract them. I usually use bundle identifier as subsystem and type name as a category. This approach allows me easily find logs from the required part of my app.
 
 *Logger* type provides us with functions to log a message with different emergency levels. For example, the *trace* function works as debug print, and the system doesn't store it. The *warning* function allows us to log errors that are not fatal for our app, but we still need to know about them. 
 
