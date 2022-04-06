@@ -56,7 +56,7 @@ func save(_ object: CKRecord, using container: CKContainer) async {
 
 Sometimes we want to crash our app instead of working in an inconsistent state. We can use the *critical* function before calling *fatalError* to save a meaningful error message.
 
-Remember that the iOS system will store messages logged with notice, warning, and critical up to a storage limit. It doesn't store trace messages at all.
+Remember that the iOS system will store messages logged with *notice, warning, and critical* functions up to a storage limit. It doesn't store trace messages at all.
 
 #### Reading logs
 We learned how to write logs, but how can we read them? All the records appear in the Xcode's debug console while running the app through Xcode. Another option is a device with an already running app that you can connect to your computer via cable. In this case, you can extract logs by using the Console app. The console app allows us to quickly filter subsystems and categories to focus only on required information.
