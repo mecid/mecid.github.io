@@ -8,7 +8,7 @@ category: Architecture
 We encounter bugs that are very hard to catch in the debugger from time to time. For example, it might occur only after a few days of app usage. In this case, running an app in a simulator and testing a feature doesn't make sense. We need to understand what the user has done in the application and how it responds to user actions in this situation. Logging is an excellent technique to track and understand user actions through the app. This week we will learn how to implement proper logging functionality in our apps.
 
 #### Writing logs
-Fortunately, Apple provides us with a framework to build a proper logging system using the *Logger* type. Let's take a look at how we can use it in code.
+Fortunately, Apple provides us with a unified logging system to build a proper logging using the *Logger* type. Let's take a look at how we can use it in code.
 
 ```swift
 import Foundation
