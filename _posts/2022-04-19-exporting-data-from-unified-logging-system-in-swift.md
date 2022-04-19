@@ -7,6 +7,8 @@ category: Architecture
 
 We discussed building a proper logging system instead of using the print function in the previous post. Apple provides us a framework to utilize its logging system backed by on-disk persistence. This week we will talk about exporting logs from the user devices by leveraging the power of the Unified Logging System.
 
+> To learn about basics of the Unified Logging System, take a look at my ["Logging in Swift"](/2022/04/06/logging-in-swift/) post.
+
 The Unified Logging System comes with the *OSLogStore* type letting us fetch and filter logs saved in our app. Let's build the *LogStore* type that we can use in our settings screen to create a feature allowing our users to export and share logs with the app maintainer.
 
 ```swift
