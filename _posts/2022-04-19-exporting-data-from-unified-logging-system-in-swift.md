@@ -2,6 +2,7 @@
 title: Exporting data from Unified Logging System in Swift 
 layout: post
 image: /public/logging.png
+category: Architecture
 ---
 
 We discussed building a proper logging system instead of using the print function in the previous post. Apple provides us a framework to utilize its logging system backed by on-disk persistence. This week we will talk about exporting logs from the user devices by leveraging the power of the Unified Logging System.
