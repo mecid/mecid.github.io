@@ -44,23 +44,21 @@ As you can see in the example above, we created an instance of the *OSLogStore* 
 Then we use the *getEntries* function to fetch the log entries from the defined position. In the example above, we filter entries to include only the needed *subsystem*. We also use different fields of log entries to build formatted strings. Not let's see how we can use our *LogStore* type.
 
 ```swift
-Form {
-    Section(header: Text("debug")) {
-        Button("resetTimer") {
-            deleteConfirmationShown = true
-        }
-        .confirmationDialog("areYouSureToDeleteCurrentProgress", isPresented: $deleteConfirmationShown) {
-            Button("delete", role: .destructive) {
-                timer.currentFasting.reset()
+struct SettingsView: View {
+    @ObservedObject var logs: LogStore
+    @State private var exportShown = false
+    
+    var body: some View {
+        Form {
+            Section(header: Text("debug")) {
+                Button("exportLogs") {
+                    logs.export()
+                    exportShown = true
+                }
+                .sheet(isPresented: $exportShown) {
+                    ShareView(items: [logs.entries.joined(separator: "\n")])
+                }
             }
-        }
-
-        Button("exportLogs") {
-            logs.export()
-            exportShown = true
-        }
-        .sheet(isPresented: $exportShown) {
-            ShareView(items: [logs.entries.joined(separator: "\n")])
         }
     }    
 }
