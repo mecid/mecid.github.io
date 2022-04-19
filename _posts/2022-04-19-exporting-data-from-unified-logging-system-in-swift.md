@@ -96,7 +96,9 @@ import Foundation
     func export() {
         do {
             let store = try OSLogStore(scope: .currentProcessIdentifier)
-            let position = store.position(date: .now.addingTimeInterval(-24 * 3600))
+            let date = Date.now.addingTimeInterval(-24 * 3600)
+            let position = store.position(date: date)
+            
             entries = try store
                 .getEntries(at: position)
                 .compactMap { $0 as? OSLogEntryLog }
