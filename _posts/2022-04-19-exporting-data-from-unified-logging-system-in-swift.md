@@ -111,4 +111,4 @@ import Foundation
 }
 ```
 
-Today we learned how to use the Unified Logging System to export the valuable information logged by our app. We can't always catch all the things on our testing devices. That's why a proper logging system is essential for any app. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today we learned how to use the Unified Logging System to export the valuable information logged by our apps. We can't always catch all the things on our testing devices. That's why a proper logging system is essential for any app. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
