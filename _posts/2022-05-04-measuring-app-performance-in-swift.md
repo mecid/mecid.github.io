@@ -86,7 +86,7 @@ First, we can use the Instruments app to visualize all the performance data nice
 
 Let's start with the simplest one. While debugging your app via Xcode, you can build the app for profiling by pressing CMD + I. In the opened Instruments app, choose the Logging template. It contains both logs and signposts. Now run the app by pressing the record button and start interacting and producing events in your app.
 
-=================Image===============================
+![instruments-logging-template](/public/signpost.png)
 
 Instruments app is a great way to profile your app locally, but sometimes we need data from the user devices. In this case, we can export the signpost data using the *OSLogStore* type.
 
