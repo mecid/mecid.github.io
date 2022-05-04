@@ -36,7 +36,9 @@ The Unified Logging System provides us with the Signpost API, which is a way to 
 }
 ```
 
-First, we need to import the *OSLog* module that contains the Unified Logging System API. Then we create an instance of the *OSSignposter* type that we will use to track event intervals. We use the *makeSignpostID* function on the *OSSignposter* type to create a unique event identifier. Now we can use the identifier to start monitoring an event with a particular message using the *beginInterval* function. This function returns a state of the interval that we will use to associate starting and finishing points of an event in time. As the last step, we call the *endInterval* function by passing a message and the interval state.
+First, we need to import the *OSLog* module that contains the Unified Logging System API. Then we create an instance of the *OSSignposter* type that we will use to track event intervals. We use the *makeSignpostID* function on the *OSSignposter* type to create a unique event identifier.
+
+Now we can use the identifier to start monitoring an event with a particular message using the *beginInterval* function. This function returns a state of the interval that we will use to associate starting and finishing points of an event. As the last step, we call the *endInterval* function by passing a message and the interval state.
 
 > Remember that the message you use while beginning and ending intervals should be the same.
 
