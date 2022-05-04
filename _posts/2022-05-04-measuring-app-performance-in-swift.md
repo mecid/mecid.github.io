@@ -80,7 +80,7 @@ func fetchRecent() async {
 In the example above, we use the *emitEvent* function on the *OSSignposter* type to emit additional events connected to a particular signpost identifier.
 
 #### Collecting performance data
-OK, we learned how to measure app events using the *Signposter* type. Now it is time to learn how to read that data to analyze our app performance. There are two ways to read the data written by the *Signposter* type. 
+OK, we learned how to measure app events using the *Signposter* type. Now it is time to learn how to read that data to analyze our app performance. There are two ways of reading the data written by the *Signposter* type. 
 
 First, we can use the Instruments app to visualize all the performance data nicely. The second is a programmatic way of exporting performance data from the user devices using the *OSLogStore* type.
 
