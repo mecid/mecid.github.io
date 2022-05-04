@@ -121,4 +121,4 @@ import Foundation
 ```
 
 #### Conclusion
-Today we learned how to use the Unified Logging System to measure and collect performance data of our apps. Understanding the performance of particular events is crucial for building a great user experience. Fortunately, we can quickly achieve that by using the Unified Logging System.
+Today we learned how to use the Unified Logging System to measure and collect performance data of our apps. Understanding the performance of particular events is crucial for building a great user experience. Fortunately, we can quickly achieve that by using the Unified Logging System. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
