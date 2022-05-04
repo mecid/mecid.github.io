@@ -7,6 +7,8 @@ category: Logging
 
 The Unified Logging System is a great way to build a proper logging system allowing you to understand different exceptional cases happening in your app. But it is not limited only to logging. It also provides a way to measure various events in your app. This week, we will learn how to use the Unified Logging System to measure app performance.
 
+> To learn about basics of the Unified Logging System, take a look at my ["Logging in Swift"](/2022/04/06/logging-in-swift/) post.
+
 #### Measuring app events
 The Unified Logging System provides us with the Signpost API, which is a way to measure various time intervals in your app. Let's take a look at how we can use it in a small example.
 
@@ -119,6 +121,8 @@ import Foundation
     }
 }
 ```
+
+> To learn more about the power of *OSLogStore* type, take a look at my ["Exporting data from Unified Logging System in Swift"](/2022/04/19/exporting-data-from-unified-logging-system-in-swift/) post.
 
 #### Conclusion
 Today we learned how to use the Unified Logging System to measure and collect performance data of our apps. Understanding the performance of particular events is crucial for building a great user experience. Fortunately, we can quickly achieve that by using the Unified Logging System. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
