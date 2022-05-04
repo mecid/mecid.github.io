@@ -42,7 +42,7 @@ Now we can use the identifier to start monitoring an event with a particular mes
 
 > Remember that the message you use while beginning and ending intervals should be the same.
 
-Another thing we might need is attaching metadata to a signpost interval. For example, we can bind a localized error description whenever interval s with an error.
+Another thing we might need is attaching metadata to a signpost interval. For example, we can bind a localized error description whenever interval ends with an error.
 
 ```swift
 func fetchRecent() async {
