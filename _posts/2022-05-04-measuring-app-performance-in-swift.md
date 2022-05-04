@@ -2,6 +2,7 @@
 title: Measuring app performance in Swift
 layout: post
 image: /public/signpost.png
+category: Logging
 ---
 
 The Unified Logging System is a great way to build a proper logging system allowing you to understand different exceptional cases happening in your app. But it is not limited only to logging. It also provides a way to measure various events in your app. This week, we will learn how to use the Unified Logging System to measure app performance.
