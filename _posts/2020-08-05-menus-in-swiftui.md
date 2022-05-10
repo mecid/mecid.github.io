@@ -75,6 +75,28 @@ struct ContentView: View {
 
 ![menu](/public/menu.png)
 
+#### Primary action
+SwiftUI allows us to set a primary action on menu which is available via default gesture like press on iOS or mouse click on macOS. Menu content is available via secondary gesture which is long press on iOS. Menu indicator provides you access to secondary actions on macOS.  
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        Menu {
+            Button("Add reference") {
+                print("Add reference")
+            }
+            Button("Add folder") {
+                print("Add folder")
+            }
+        } label: {
+            Label("Add", systemImage: "plus")
+        } primaryAction: {
+            print("Add file")
+        }
+    }
+}
+```
+
 #### Secondary actions
 Menu is a great way to provide a bunch of secondary actions on a view in your app. You can easily group and present actions in your menu by using sections and dividers.
 
