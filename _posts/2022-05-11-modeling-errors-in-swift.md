@@ -3,12 +3,12 @@ title: Modeling errors in Swift
 layout: post
 ---
 
-The new Swift Concurrency feature doesn't only bring new opportunities for writing safer and maintainable async code but also changes the way we handle errors. I didn't use throw-catch keywords too much in my legacy code because usually, I had a completion callback with the Result type handled by the switch operator. This week we will talk about modeling error types and how we will address them in Swift with throw-catch keywords.
+The new Swift Concurrency feature doesn't only bring new opportunities for writing safer and maintainable async code but also changes the way we handle errors. I didn't use *throw-catch* keywords too much in my legacy code because usually, I had a completion callback with the *Result* type handled by the switch operator. This week we will talk about modeling error types and how we will address them in Swift with *throw-catch* keywords.
 
 #### Basics
 Let's look at a small but typical example of error handling in Swift. Here is the in-memory cache class implementation that we can use in our app to store some data by key. There is an option to limit the capacity of an in-memory cache and a list of errors that a cache instance can throw.
 
-We use an enum to define the list of exceptional situations. An enum type has an excellent fit for mutually exclusive cases. All you need to do to throw an error in Swift is to call **throw** with an instance of any type conforming to the Error protocol.
+We use an enum to define the list of exceptional situations. An enum type has an excellent fit for mutually exclusive cases. All you need to do to throw an error in Swift is to call **throw** with an instance of any type conforming to the *Error* protocol.
 
 ```swift
 actor InMemoryCache<Key: Hashable & Codable, Value: Codable> {
@@ -91,7 +91,7 @@ final class APIClient {
 }
 ```
 
-As you can see in the example above, we implement the APIClient class that uses our InMemoryCache class to store downloaded users in memory. The code here really smells, it has a bunch of nested do-catch blocks, and the code path is confusing. Let's refactor our InMemoryCache class to make it friendlier for client code.
+As you can see in the example above, we implement the *APIClient* class that uses our *InMemoryCache* class to store downloaded users in memory. The code here really smells, it has a bunch of nested do-catch blocks, and the code path is confusing. Let's refactor our *InMemoryCache* class to make it friendlier for client code.
 
 We will refactor our error modeling code using three principles described in "A philosophy of software design" book written by John Ousterhout. I enjoyed reading it and can recommend it to you without any doubt.
 
