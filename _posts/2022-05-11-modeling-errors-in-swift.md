@@ -102,7 +102,7 @@ As you can see in the example above, we implement the *APIClient* class that use
 We will refactor our error modeling code using three principles described in "A philosophy of software design" book written by John Ousterhout. I enjoyed reading it and can recommend it to you without any doubt.
 
 #### Define errors out of existence
-Sometimes we define too many errors. We define an error as a situation that is not an error at all. For example, in our case, we have the no value error. Instead of throwing the error whenever a value is not available, we can use optionals and silently return nil without disrupting the execution with an error.
+Sometimes we define too many errors. We define an error as a situation that is not an error at all. For example, in our case, we have the *noValue* case. Instead of throwing the error whenever a value is not available, we can use optionals and silently return nil without disrupting the execution with an error.
 
 ```swift
 func get(for key: Key) -> Value? {
