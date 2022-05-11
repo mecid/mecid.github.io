@@ -29,7 +29,7 @@ actor InMemoryCache<Key: Hashable & Codable, Value: Codable> {
             throw ErrorKind.noValue(key)
         }
 
-        // fetch value here
+        // fetch and return value here
     }
 
     func set(value: Value, for key: Key) throws -> Void {
