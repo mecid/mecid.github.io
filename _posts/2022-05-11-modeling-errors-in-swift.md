@@ -2,6 +2,7 @@
 title: Modeling errors in Swift
 layout: post
 category: Swift Language Features
+image: /public/swift.png
 ---
 
 The new Swift Concurrency feature doesn't only bring new opportunities for writing safer and maintainable async code but also changes the way we handle errors. I didn't use *throw-catch* keywords too much in my legacy code because usually, I had a completion callback with the *Result* type handled by the switch operator. This week we will talk about modeling error types and how we will address them in Swift with *throw-catch* keywords.
