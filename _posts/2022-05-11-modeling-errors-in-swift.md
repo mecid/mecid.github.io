@@ -95,6 +95,8 @@ final class APIClient {
 
 As you can see in the example above, we implement the *APIClient* class that uses our *InMemoryCache* class to store downloaded users in memory. The code here really smells, it has a bunch of nested do-catch blocks, and the code path is confusing. Let's refactor our *InMemoryCache* class to make it friendlier for client code.
 
+> To learn more about logging in Swift, take a look at my ["Logging in Swift"](/2022/04/06/logging-in-swift/) post.
+
 We will refactor our error modeling code using three principles described in "A philosophy of software design" book written by John Ousterhout. I enjoyed reading it and can recommend it to you without any doubt.
 
 #### Define errors out of existence
