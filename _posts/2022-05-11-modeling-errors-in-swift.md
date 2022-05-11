@@ -64,10 +64,12 @@ At first glance, the API we have modeled here looks nice, but we will see all th
 ```swift
 final class APIClient {
     typealias Cache = InMemoryCache<URL, User>
+    
     private static let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
         category: String(describing: APIClient.self)
     )
+    
     private let cache = Cache(memoryLimit: 1_000)
 
     func fetchUser(from url: URL) async throws -> User {
