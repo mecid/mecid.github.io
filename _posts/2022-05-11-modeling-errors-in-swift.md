@@ -181,4 +181,4 @@ actor InMemoryCache<Key: Hashable & Codable, Value: Codable> {
 ```
 
 #### Conclusion
-Today we learned how to model errors in Swift using three different ways. Error handling is a complex topic, and we should treat it carefully while designing our APIs.
+Today we learned how to model errors in Swift using three different ways. Error handling is a complex topic, and we should treat it carefully while designing our APIs. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
