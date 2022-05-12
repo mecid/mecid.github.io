@@ -35,6 +35,31 @@ struct BookmarksList: View {
 
 As you can see in the example above, all we need to do is to use *onDrag* modifier that returns an instance of *NSItemProvider*. Now you can run the app on the iPad simulator side-by-side with Safari and try to drag and drop the link from our app to Safari.
 
+#### Drag preview
+Another version of the *onDrag* view modifier allows you to provide a preview of the dragging content.
+
+```swift
+struct BookmarksList: View {
+    @State private var links: [URL] = [
+        URL(string: "https://twitter.com/mecid")!
+    ]
+
+    var body: some View {
+        List {
+            ForEach(links, id: \.self) { url in
+                Text(url.absoluteString)
+                    .onDrag {
+                        NSItemProvider(object: url as NSURL)
+                    } preview: {
+                        Text(verbatim: url.absoluteString)
+                    }
+            }
+        }
+        .navigationBarTitle("Bookmarks")
+    }
+}
+```
+
 #### Drop
 Unlike drag operation, drop interaction is a little bit complicated. SwiftUI gave us three overloads of *onDrop* modifier. The most interesting one is the overload that accepts *DropDelegate*. *DropDelegate* is the protocol that we can implement to control drop interaction. Let's take a look at the quick example.
 
