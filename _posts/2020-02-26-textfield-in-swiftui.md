@@ -67,6 +67,51 @@ struct ContentView: View {
 
 *TextField* uses provided *Formatter* while converting between the string that user edits and the underlying raw value. In case when *Formatter* is unable to perform a conversion, the value will not be modified. Try to type some letters that *Formatter* is not able to convert to see what will happen.
 
+#### New Formatter API
+Swift Foundation provides us new Formatter API, which is available on iOS 15 and macOS 12. The new Formatter API allows us quickly build reusable formatters using the builder design pattern. Fortunately, *TextField* supports the new API.
+
+```swift
+@MainActor final class InsightsStore: ObservableObject {
+    @Published private(set) var bodyFatUnit = HKUnit.percent()
+    @Published var bodyFat: Double?
+    
+    func save() async {
+    // ...
+    }
+}
+
+struct BodyFatLoggingView: View {
+    @ObservedObject var store: InsightsStore
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        Form {
+            Section {
+                HStack {
+                    Text(store.bodyFatUnit.unitString)
+                    TextField(
+                        "bodyFat",
+                         value: $store.bodyFat,
+                         format: .percent.precision(.fractionLength(0...1))
+                    )
+                        .keyboardType(.numbersAndPunctuation)
+                        .multilineTextAlignment(.trailing)
+                }
+            }
+            
+            Section {
+                Button("save") {
+                    Task {
+                        await store.saveBodyFat()
+                        dismiss()
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
 #### Styling
 SwiftUI provides us a few styles and the *textFieldStyle* modifier that we can use to apply styles to our *TextFields* in the app. *textFieldStyle* modifier uses the environment to pass the style to every view inside the environment. It looks very similar to the *buttonStyle* modifier that discussed in the previous post.
 
