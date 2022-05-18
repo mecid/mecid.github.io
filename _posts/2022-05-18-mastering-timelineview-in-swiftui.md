@@ -2,6 +2,7 @@
 title: Mastering TimelineView in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/timeline.png
 ---
 
 TimelineView is a SwiftUI view type that updates its body according to a provided schedule. We used to see SwiftUI views updating its body whenever the data it presents changes. *TimelineView* doesn't follow this rule and allows us to build a super-custom schedule to update its content in a precise way. We will learn how to use *TimelineView* to create time-based views this week.
