@@ -16,7 +16,6 @@ TimelineView is a SwiftUI view type that updates its body according to a provide
 struct ContentView: View {
     var body: some View {
         TimelineView(.animation) { context in
-            let date = context.date
             let value = secondsValue(for: context.date)
 
             Circle()
@@ -73,7 +72,6 @@ We touched on the basics of *TimelineView*. Let's move forward and learn about s
 struct ContentView: View {
     var body: some View {
         TimelineView(.periodic(from: .now, by: 5)) { context in
-            let date = context.date
             let value = secondsValue(for: context.date)
 
             Circle()
