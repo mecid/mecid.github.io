@@ -120,7 +120,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we have a custom schedule that generates a timeline from the starting point on an hourly basis.
+As you can see in the example above, we have a custom schedule that generates a timeline from the starting point on hourly basis.
 
 #### Conclusion
 Today we learned how to use the TimelineView to build views updating with a specific period. It might be helpful while creating timer apps or custom animations.
