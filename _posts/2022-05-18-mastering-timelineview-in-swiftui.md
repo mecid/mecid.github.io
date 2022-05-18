@@ -62,7 +62,7 @@ struct ContentView: View {
 }
 ```
 
-Here we use the cadence parameter to understand how fluid our animation should be. The *Cadence* enum provides three cases: live, seconds, and minutes.
+Here we use the cadence parameter to understand how fluid our animation should be. The *Cadence* enum provides three cases: *live*, *seconds*, and *minutes*.
 
 #### Schedulers
 We touched on the basics of *TimelineView*. Let's move forward and learn about schedulers provided by SwiftUI and how we can build a custom scheduler. SwiftUI provides us with another two schedulers: *everyMinute* and *periodic* scheduler. The *everyMinute* scheduler updates the timeline every minute. The *periodic* scheduler allows us to give a start date and interval, after which another update event should be fired.
