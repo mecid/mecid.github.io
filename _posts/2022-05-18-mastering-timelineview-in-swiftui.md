@@ -30,7 +30,7 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we use *TimelineView* with the *animation* schedule. The *animation* schedule is the system-provided scheduler that uses animation duration on the current platform and reevaluates its body very often to provide a nice transition. The second parameter is the *ViewBuilder* closure defining a view that *TimelineView* should draw. It also takes the single parameter called *context*. The *context* contains the date from the scheduler that triggers the update. In our example, we use the date field to draw the circle.
+In the example above, we use *TimelineView* with the *animation* schedule. The *animation* schedule is the system-provided scheduler that uses animation duration on the current platform and reevaluates its body very often to provide a nice transition. The second parameter is the *ViewBuilder* closure defining a view that *TimelineView* should draw. It also takes the single parameter called *context*. The *context* contains the date from the scheduler that triggers the update. In our example, we use the *date* field to draw the circle.
 
 #### Cadence
 The second field of the *Context* type is the cadence. The cadence represents the rate at which *TimelineView* updates, and it might change many times during the view's lifecycle. For example, running the *TimelineView* on Apple Watch might decrease cadence while the user lowers the wrist. Fortunately, the *Cadence* type conforms to *Comparable* protocol, and we can easily compare them.
