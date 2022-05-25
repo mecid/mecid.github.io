@@ -68,6 +68,8 @@ struct ContentView: View {
 
 By applying the *accessibilityChildren* view modifier, we create an accessibility container and populate it with elements from the view provided in the *ViewBuilder* closure. SwiftUI doesn't render the view that we pass via *ViewBuilder* closure. SwiftUI uses it only for populating the accessibility tree with child elements.
 
+> To learn more about the *ViewBuilder* type, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
+
 The main difference between the *accessibilityChildren* and *accessibilityRepresentation* view modifiers is that the first one doesn't affect the view itself. It only creates an accessibility container for child elements where the *accessibilityRepresentation* view modifier completely replaces the accessibility tree of the current view.
 
 > To learn more about the benefits of the *accessibilityRepresentation* view modifier, look at my ["The power of accessibilityRepresentation view modifier in SwiftUI"](/2021/09/01/the-power-of-accessibility-representation-view-modifier-in-swiftui/) post.
