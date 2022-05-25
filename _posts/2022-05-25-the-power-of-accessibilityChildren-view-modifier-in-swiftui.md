@@ -5,7 +5,7 @@ category: Accessibility
 image: /public/accessibility.png
 ---
 
-SwiftUI provides us with a rich set of view modifiers to manipulate the accessibility try of views. I covered many of them, and you can find them in the blog's dedicated "accessibility" category. This week we will talk about the *accessibilityChildren* view modifier and how we can benefit from it.
+SwiftUI provides us with a rich set of view modifiers to manipulate the accessibility try of views. I covered many of them, and you can find them in the blog's dedicated Accessibility category. This week we will talk about the *accessibilityChildren* view modifier and how we can benefit from it.
 
 > To learn more about accessibility view modifiers available in SwiftUI, take a look at the "Accessibility" category on the blog.
 
