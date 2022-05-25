@@ -7,7 +7,7 @@ image: /public/accessibility.png
 
 SwiftUI provides us with a rich set of view modifiers to manipulate the accessibility try of views. I covered many of them, and you can find them in the blog's dedicated Accessibility category. This week we will talk about the *accessibilityChildren* view modifier and how we can benefit from it.
 
-> To learn more about accessibility view modifiers available in SwiftUI, take a look at the "Accessibility" category on the blog.
+> To learn more about accessibility view modifiers available in SwiftUI, take a look at the Accessibility category on the blog.
 
 The *accessibilityChildren* view modifier allows us to create an accessibility container for a view and populate it with the elements from a view you provide using a *ViewBuilder* closure. Let's take a look at a quick example.
 
