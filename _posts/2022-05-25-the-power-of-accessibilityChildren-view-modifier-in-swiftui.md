@@ -52,6 +52,7 @@ struct ContentView: View {
     
     var body: some View {
         BarChartShape(dataPoints: dataPoints)
+            .fill(.red)
             .accessibilityLabel("Chart")
             .accessibilityChildren {
                 HStack(alignment: .bottom, spacing: 0) {
