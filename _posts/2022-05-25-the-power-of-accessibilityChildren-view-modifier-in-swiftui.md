@@ -1,6 +1,7 @@
 ---
 title: The power of accessibilityChildren view modifier in SwiftUI
 layout: post
+category: Accessibility
 ---
 
 SwiftUI provides us with a rich set of view modifiers to manipulate the accessibility try of views. I covered many of them, and you can find them in the blog's dedicated "accessibility" category. This week we will talk about the *accessibilityChildren* view modifier and how we can benefit from it.
