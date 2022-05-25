@@ -9,13 +9,59 @@ SwiftUI provides us with a rich set of view modifiers to manipulate the accessib
 
 The accessibilityChildren view modifier allows us to create an accessibility container for a view and populate it with the elements from a view you provide using a ViewBuilder closure. Let's take a look at a quick example.
 
-=====================================================
+```swift
+struct BarChartShape: Shape {
+    let dataPoints: [DataPoint]
+    
+    func path(in rect: CGRect) -> Path {
+        Path { p in
+            let width: CGFloat = rect.size.width / CGFloat(dataPoints.count)
+            var x: CGFloat = 0
+            
+            for point in dataPoints {
+                let pointRect = CGRect(
+                    x: x,
+                    y: rect.size.height - point.value,
+                    width: width,
+                    height: rect.size.height
+                )
+                let pointPath = RoundedRectangle(cornerRadius: 8).path(in: pointRect)
+                p.addPath(pointPath)
+                x += width
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we have the shape-type drawing data points we pass. We can't provide accessibility values for every data point because the shape becomes a single view after stroking or filling it. 
 
 Fortunately, SwiftUI gives us the accessibilityChildren view modifier, especially for this case.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var dataPoints: [DataPoint] = [
+        .init(id: .init(), value: 20),
+        .init(id: .init(), value: 30),
+        .init(id: .init(), value: 5),
+        .init(id: .init(), value: 100),
+        .init(id: .init(), value: 80)
+    ]
+    
+    var body: some View {
+        BarChartShape(dataPoints: dataPoints)
+            .accessibilityLabel("Chart")
+            .accessibilityChildren {
+                HStack(alignment: .bottom, spacing: 0) {
+                    ForEach(dataPoints) { point in
+                        RoundedRectangle(cornerRadius: 8)
+                            .accessibilityValue(Text(point.value.formatted()))
+                    }
+                }
+            }
+    }
+}
+```
 
 By applying the accessibilityChildren view modifier, we create an accessibility container and populate it with elements from the view provided in the ViewBuilder closure. SwiftUI doesn't render the view that we pass via ViewBuilder closure. SwiftUI uses it only for populating the accessibility tree with child elements.
 
