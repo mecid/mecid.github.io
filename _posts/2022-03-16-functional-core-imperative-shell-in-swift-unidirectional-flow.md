@@ -130,7 +130,7 @@ The main idea behind the *Middleware* type is to intercept pure actions, make si
                 }
             }
 
-            for await case let action? in group {
+            for await case let action? in group where !Task.isCancelled {
                 await send(action)
             }
         }
