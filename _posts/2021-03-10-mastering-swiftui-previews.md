@@ -121,7 +121,8 @@ I want to mention that you are not limited for creating a preview only inside a 
 
 #### Debug previews
 SwiftUI previews use the simulator to render themselves. So you can think about them as an embedded simulator in the Xcode window. That's why we can run and debug SwiftUI preview directly in the Xcode canvas.
-You can run the preview in live mode by pressing the play button on the canvas. You can start debugging by using right-click on the play button while the preview is running. 
+
+You can attach the debugger to the app running in the preview by using Debug menu -> Attach to Process and choose your app. Now you can press Debug View Hierarchy button in the toolbar on the bottom of Xcode to run visual debugger.   
 
 ![preview-debug](/public/debug-preview.jpeg)
 
