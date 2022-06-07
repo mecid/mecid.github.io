@@ -211,5 +211,5 @@ ViewThatFits(in: .horizontal) {
 ```
 
 #### Conclusion
-Today we have a massive update for SwiftUI. There are also many new small things like *Transferable* protocol allowing you to share or drag and drop items in your apps and *Grid* view, allowing you to place views in a simple grid. I will try to cover all the new features in the dedicated posts over the following weeks.
+Today we had a massive update for SwiftUI. There are also many small new things like *Transferable* protocol allowing you to share or drag and drop items in your apps and *Grid* view, allowing you to place views in a simple grid. I will try to cover all the new features in the dedicated posts over the following weeks.
 
