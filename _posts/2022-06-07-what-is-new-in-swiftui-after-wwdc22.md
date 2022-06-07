@@ -1,6 +1,7 @@
 ---
 title: What is new in SwiftUI after WWDC22
 layout: post
+category: Meta
 ---
 
 WWDC22 brings tons of new features to SwiftUI and makes it a full-featured UI framework that we can use daily. Unfortunately, most of the new features are available on iOS 16 and macOS 13. This post will cover the most significant additions and changes to the SwiftUI framework.
