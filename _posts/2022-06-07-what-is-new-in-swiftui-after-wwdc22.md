@@ -173,7 +173,7 @@ struct ContentView: View {
 ```
 
 #### Bottom Sheet
-The new *presentationDetents* view modifier allows us to present sheets as bottom sheets. 
+The new *presentationDetents* view modifier allows us to present sheet as a bottom sheet and contol its size. 
 
 ```swift
 struct ContentView: View {
