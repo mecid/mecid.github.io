@@ -211,7 +211,8 @@ ViewThatFits(in: .horizontal) {
     }
 }
 ```
+#### Many small additions
+Today we had a massive update for SwiftUI. There are also many small things like *Transferable* protocol allowing you to share or drag and drop items in your apps. The new *Grid* view allows you to place views in a simple grid. We also have the new single window and menu bar extra scenes with environment values for manipulating windows.
 
 #### Conclusion
-Today we had a massive update for SwiftUI. There are also many small new things like *Transferable* protocol allowing you to share or drag and drop items in your apps and *Grid* view, allowing you to place views in a simple grid. I will try to cover all the new features in the dedicated posts over the following weeks.
-
+I will try to cover all the new features in the dedicated posts over the following weeks. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
