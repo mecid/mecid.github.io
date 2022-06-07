@@ -128,7 +128,7 @@ Here we have a layout type that finds the biggest child and places the items equ
 struct ContentView: View {
     var body: some View {
         EqualWidthStackView {
-            Text("Hello, my name is Majid")
+            Text("Hello, my name is Majid.")
             Text("Bye!")
         }
     }
@@ -175,7 +175,7 @@ struct ContentView: View {
 ```
 
 #### Bottom Sheet
-The new *presentationDetents* view modifier allows us to present sheet as a bottom sheet and contol its size. 
+The new *presentationDetents* view modifier allows us to present sheet as a bottom sheet and control its size. 
 
 ```swift
 struct ContentView: View {
