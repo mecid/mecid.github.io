@@ -134,7 +134,7 @@ struct ContentView: View {
 ```
 
 #### Swift Charts
-SwiftUI provides us with a robust charting framework supporting accessibility and localization out of the box.
+SwiftUI provides us with a robust charting framework supporting accessibility and localization out of the box. It supports different types of charts that you can mix and combine using declarative syntax.
 
 ```swift
 import Charts
@@ -171,8 +171,6 @@ struct ContentView: View {
     }
 }
 ```
-
-It supports different types of charts that you can mix and combine using declarative syntax.
 
 #### Bottom Sheet
 The new *presentationDetents* view modifier allows us to present sheets as bottom sheets. 
