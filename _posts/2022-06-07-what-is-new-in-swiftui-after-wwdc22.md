@@ -33,7 +33,7 @@ struct ContentView: View {
 }
 ```
 
-We use the new version of *NavigationLink* type, allowing us to bind a link to a value. Then we can use the *navigationDestination* view modifier to provide a destination view for a particular value. Remember that we should add the *navigationDestination* view modifier to the view inside the instance of *NavigationStack*.
+We use the new version of *NavigationLink* type, allowing us to bind a link to a value. Then we can use the *navigationDestination* view modifier to provide a destination view for a particular value.
 
 I love the new Navigation API and the ability to manipulate the navigation stack completely programmatically using the type-safe API.
 
