@@ -175,7 +175,7 @@ struct ContentView: View {
 It supports different types of charts that you can mix and combine using declarative syntax.
 
 #### Bottom Sheet
-A new *presentationDetents* view modifier allows us to present sheets as bottom sheets. 
+The new *presentationDetents* view modifier allows us to present sheets as bottom sheets. 
 
 ```swift
 struct ContentView: View {
