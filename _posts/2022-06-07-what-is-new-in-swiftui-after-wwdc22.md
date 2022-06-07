@@ -35,7 +35,7 @@ struct ContentView: View {
 
 We use the new version of *NavigationLink* type, allowing us to bind a link to a value. Then we can use the *navigationDestination* view modifier to provide a destination view for a particular value.
 
-I love the new Navigation API and the ability to manipulate the navigation stack completely programmatically using the type-safe API.
+I love the new Navigation API and the ability to manipulate the navigation stack completely programmatically using the type-safe API. We can implement deep linking easily now.
 
 ```swift
 struct ContentView: View {
