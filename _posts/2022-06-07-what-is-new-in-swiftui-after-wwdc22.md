@@ -73,7 +73,7 @@ struct ContentView: View {
 Here we use another version of the *NavigationStack* view's initializer to bind its navigation stack to an array of values. It allows us to add and remove views in the navigation stack programmatically.
 
 #### Layout
-This year another great addition to SwiftUI is the *Layout* protocol that allows us to build super-custom container types. You can create a flow layout or a container size that fits the children equally. You need to create a type conforming to the *Layout* protocol.
+This year another great addition to SwiftUI is the *Layout* protocol that allows us to build super-custom container types. You can create a flow layout or a container size that fits the children equally. All you need is to create a type conforming to the *Layout* protocol and make your calculations there.
 
 ```swift
 struct EqualWidthStackView: Layout {
