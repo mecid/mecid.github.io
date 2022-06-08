@@ -92,7 +92,7 @@ struct EqualWidthStackView: Layout {
 
         let maxSize = subviews
             .map { $0.sizeThatFits(proposal) }
-            .max { ($0.width * $0.height) > ($1.width * $1.height) } ?? .zero
+            .max { ($0.width * $0.height) < ($1.width * $1.height) } ?? .zero
 
         let width = maxSize.width * CGFloat(subviews.count) + totalSpacing
         return CGSize(width: width, height: maxSize.height)
@@ -106,7 +106,7 @@ struct EqualWidthStackView: Layout {
     ) {
         let maxSize = subviews
             .map { $0.sizeThatFits(proposal) }
-            .max { ($0.width * $0.height) > ($1.width * $1.height) } ?? .zero
+            .max { ($0.width * $0.height) < ($1.width * $1.height) } ?? .zero
 
         var x: CGFloat = subviews.first?.spacing.distance(to: .zero, along: .horizontal) ?? 0
 
