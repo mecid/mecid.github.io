@@ -78,46 +78,70 @@ Here we use another version of the *NavigationStack* view's initializer to bind 
 This year another great addition to SwiftUI is the *Layout* protocol that allows us to build super-custom container types. You can create a flow layout or a container size that fits the children equally. All you need is to create a type conforming to the *Layout* protocol and make your calculations there.
 
 ```swift
-struct EqualWidthStackView: Layout {
+struct EqualWidthHStack: Layout {
     func sizeThatFits(
         proposal: ProposedViewSize,
         subviews: Subviews,
         cache: inout ()
     ) -> CGSize {
-        let totalSpacing = subviews
-            .map(\.spacing)
-            .reduce(0.0) {
-                $0 + $1.distance(to: .zero, along: .horizontal)
-            }
-
-        let maxSize = subviews
-            .map { $0.sizeThatFits(proposal) }
-            .max { ($0.width * $0.height) < ($1.width * $1.height) } ?? .zero
-
-        let width = maxSize.width * CGFloat(subviews.count) + totalSpacing
-        return CGSize(width: width, height: maxSize.height)
+        let maxSize = maxSize(subviews: subviews)
+        let spacings = spacings(subviews: subviews)
+        let totalSpacing = spacings.reduce(0.0, +)
+        
+        return CGSize(
+            width: maxSize.width * CGFloat(subviews.count) + totalSpacing,
+            height: maxSize.height
+        )
     }
-
+    
     func placeSubviews(
         in bounds: CGRect,
         proposal: ProposedViewSize,
         subviews: Subviews,
         cache: inout ()
     ) {
-        let maxSize = subviews
-            .map { $0.sizeThatFits(proposal) }
-            .max { ($0.width * $0.height) < ($1.width * $1.height) } ?? .zero
-
-        var x: CGFloat = subviews.first?.spacing.distance(to: .zero, along: .horizontal) ?? 0
-
-        for subview in subviews {
-            x += subview.spacing.distance(to: .zero, along: .horizontal)
-            subview.place(
-                at: .init(x: x, y: maxSize.height / 2),
-                proposal: proposal
+        let maxSize = maxSize(subviews: subviews)
+        let spacing = spacings(subviews: subviews)
+        
+        let size = ProposedViewSize(
+            width: maxSize.width,
+            height: maxSize.height
+        )
+        var x = bounds.minX + maxSize.width / 2
+        
+        for index in subviews.indices {
+            subviews[index].place(
+                at: CGPoint(x: x, y: bounds.midY),
+                anchor: .center,
+                proposal: size
             )
-            x += maxSize.width
+            x += maxSize.width + spacing[index]
         }
+    }
+    
+    private func spacings(subviews: Subviews) -> [CGFloat] {
+        let spacing: [CGFloat] = subviews.indices.map { index in
+            guard index < subviews.count - 1 else {
+                return 0.0
+            }
+            
+            return subviews[index].spacing.distance(
+                to: subviews[index + 1].spacing,
+                along: .horizontal
+            )
+        }
+        return spacing
+    }
+    
+    private func maxSize(subviews: Subviews) -> CGSize {
+        let subviewSizes = subviews.map { $0.sizeThatFits(.unspecified) }
+        let maxSize: CGSize = subviewSizes.reduce(.zero) { current, size in
+            CGSize(
+                width: max(current.width, size.width),
+                height: max(current.height, size.height)
+            )
+        }
+        return maxSize
     }
 }
 ```
@@ -127,9 +151,13 @@ Here we have a layout type that finds the biggest child and places the items equ
 ```swift
 struct ContentView: View {
     var body: some View {
-        EqualWidthStackView {
-            Text("Hello, my name is Majid.")
-            Text("Bye!")
+        EqualWidthHStack {
+            Text("Hello...")
+                .foregroundColor(.red)
+            Text("Hello.........")
+                .foregroundColor(.green)
+            Text("Hello..............")
+                .foregroundColor(.blue)
         }
     }
 }
