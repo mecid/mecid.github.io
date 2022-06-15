@@ -100,9 +100,9 @@ Remember that we also have another version of the value-based *NavigationLink* i
 #### Placing rules
 You should be careful about placing the *navigationDestination* view modifier in the view hierarchy. There are three rules for placing the *navigationDestination* view modifier:
 
-1. The top-level *navigationDestination* view modifier will always override the lowest one for the same type.
-2. The *navigationDestination* view modifier should be inside the *NavigationStack*.
-3. Don't place *navigationDestination* view modifier on the child of lazy container like *List*, *ScrollView*, *LazyVStack*, etc.
+1. The *navigationDestination* view modifier should be inside the *NavigationStack*.
+2. Don't place *navigationDestination* view modifier on the child of lazy container like *List*, *ScrollView*, *LazyVStack*, etc.
+3. The top-level *navigationDestination* view modifier will always override the lowest one for the same type.
 
 #### Navigator pattern
 I love to keep my feature's navigation flow in a single place. That's why I usually implement the Navigator pattern allowing me to handle my navigation in a type-safe way. It is effortless to implement the Navigator pattern with the new data-driven Navigation API in SwiftUI. First, we should create an enum type defining all our app/feature/module routes.
