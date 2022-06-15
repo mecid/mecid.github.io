@@ -170,4 +170,4 @@ struct AppContainerView: View {
 ```
 
 #### Conclusion
-I'm thrilled to use the new data-driven Navigation API in SwiftUI. If you follow my blog, you might know that I have been waiting for it long. I will continue to cover the new data-driven Navigation API in detail, and next week we will talk about deep linking.
+I'm thrilled to use the new data-driven Navigation API in SwiftUI. If you follow my blog, you might know that I have been waiting for it since the first day. I will continue to cover the new data-driven Navigation API in detail, and next week we will talk about deep linking.
