@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 SwiftUI is the declarative data-driven framework allowing us to build complex user interfaces by defining the data rendering on the screen. Navigation was the main pain point of the framework from the very first day. Fortunately, things have changed since WWDC 22, and SwiftUI provides the new data-driven Navigation API. This week we will learn how to use the new Navigation API to build complex user flows.
 
+> To learn more about other new features of SwiftUI, take a look at my ["What is new in SwiftUI after WWDC22"](/2022/06/07/what-is-new-in-swiftui-after-wwdc22/) post.
+
 #### Basics
 First, I must mention that the old *NavigationView* is deprecated, and we should use the new *NavigationStack* instead. Let's take a look at a quick example.
 
