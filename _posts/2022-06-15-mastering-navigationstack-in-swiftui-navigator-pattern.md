@@ -58,7 +58,7 @@ struct MasterView1: View {
 }
 ```
 
-We use the new value-based navigation links to route the user through the app. Look at how we associate every item on the list with a particular value. Keep in mind, value must conform to *Hashable* protocol. Next, we define a destination view for a specific value using the *navigationDestination* view modifier. In the current example, we have only one type of destination, but you can have as many as you need by applying multiple *navigationDestination* view modifiers.
+We use the new value-based navigation links to route the user through the app. Look at how we associate every item on the list with a particular value. Keep in mind, **value** must conform to the **Hashable** protocol. Next, we define a destination view for a specific value using the *navigationDestination* view modifier. In the current example, we have only one type of destination, but you can have as many as you need by applying multiple *navigationDestination* view modifiers.
 
 ```swift
 struct MasterView2: View {
