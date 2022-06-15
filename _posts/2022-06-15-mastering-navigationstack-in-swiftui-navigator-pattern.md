@@ -2,6 +2,7 @@
 title: Mastering NavigationStack in SwiftUI. Navigator Pattern.
 layout: post
 category: Mastering SwiftUI views
+image: /public/navigation.png
 ---
 
 SwiftUI is the declarative data-driven framework allowing us to build complex user interfaces by defining the data rendering on the screen. Navigation was the main pain point of the framework from the very first day. Fortunately, things have changed since WWDC 22, and SwiftUI provides the new data-driven Navigation API. This week we will learn how to use the new Navigation API to build complex user flows.
