@@ -8,6 +8,8 @@ This week I want to talk about *Navigation in SwiftUI*. SwiftUI provides both de
 
 {% include friends.html %}
 
+> *NavigationView* is deprecated. Use *NavigationStack* instead. To learn more, take a look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern"](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
+
 #### Master-Detail flow
 Assume that you are working on app which shows a list of some items and you want to move to details screen as soon as the user selects any item. For this type of navigation, SwiftUI provides *NavigationView* and *NavigationLink* components. Let's check how we can use them.
 
