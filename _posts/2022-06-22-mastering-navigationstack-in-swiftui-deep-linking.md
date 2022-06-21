@@ -109,7 +109,7 @@ struct ShopContainerView: View {
 ```
 
 #### Programmatic navigation with multiple scenes
-One thing I have to mention is that you never should define the path in the *App* protocol. In this case, you will have a synchronized navigation stack across all of the scenes of your app. Usually, users create multiple scenes of our apps to use different parts of our apps simultaneously.
+One thing I have to mention is that you never should define the path in the *App* protocol. In this case, you will have a synchronized navigation stack across all of the scenes of your app. Usually, users create multiple scenes of our apps to use different parts simultaneously.
 
 ```swift
 @main
