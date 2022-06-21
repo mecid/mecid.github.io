@@ -20,16 +20,16 @@ struct ShopContainerView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List(store.products) { product in
-                Text(product.title)
+                NavigationLink(product.title, value: product)
+            }
+            .task { await store.fetch() }
+            .navigationDestination(for: Product.self) { product in
+                ProductView(product: product)
                     .toolbar {
                         Button("Show similar") {
                             path.append(product.similar[0])
                         }
                     }
-            }
-            .task { await store.fetch() }
-            .navigationDestination(for: Product.self) { product in
-                ProductView(product: product)
             }
         }
     }
@@ -48,21 +48,20 @@ struct ShopContainerView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List(store.products) { product in
-                Text(product.title)
-                    .toolbar {
-                        Button("Show similar") {
-                            path.append(product.similar[0])
-                        }
-                    }
+                NavigationLink(product.title, value: product)
             }
             .task { await store.fetch() }
             .navigationDestination(for: Product.self) { product in
                 ProductView(product: product)
-            }
-            .toolbar {
-                Button("Back to the list") {
-                    path.removeAll()
-                }
+                    .toolbar {
+                        Button("Show similar") {
+                            path.append(product.similar[0])
+                        }
+                        
+                        Button("Back to the list") {
+                            path.removeAll()
+                        }
+                    }
             }
         }
     }
@@ -85,12 +84,7 @@ struct ShopContainerView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List(store.products) { product in
-                Text(product.title)
-                    .toolbar {
-                        Button("Show similar") {
-                            path.append(.related(product))
-                        }
-                    }
+                NavigationLink(product.title, value: Route.product(product))
             }
             .task { await store.fetch() }
             .navigationDestination(for: Route.self) { route in
@@ -99,6 +93,9 @@ struct ShopContainerView: View {
                     ProductView(product: product.similar[0])
                 case let .product(product):
                     ProductView(product: product)
+                        .toolbar {
+                            NavigationLink("Show similar, value: Route.related(product))
+                        }
                 case let .search(query):
                     SearchView(query: query)
                 }
@@ -139,7 +136,7 @@ struct ShopContainerView: View {
     var body: some View {
         NavigationStack(path: $path) {
             List(store.products) { product in
-                Text(product.title)
+                NavigationLink(product.title, value: Route.product(product))
             }
             .task { await store.fetch() }
             .navigationDestination(for: Route.self) { route in
