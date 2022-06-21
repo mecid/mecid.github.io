@@ -7,7 +7,7 @@ image: /public/navigation.png
 
 This week we will continue exploring the new Navigation API in SwiftUI. One of the benefits of the new data-driven Navigation API is the programmatic navigation with deep-linking possibilities. Let's dive into the new API by learning how to build programmatic deep navigation flows.
 
-> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my "Mastering NavigationStack in SwiftUI. Navigator Pattern." post.
+> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
 
 #### Programmatic navigation
 There is a special NavigationStack initializer accepting a binding to a mutable collection. SwiftUI maps values of the mutable collection into a view hierarchy and allows us to push and pop views into the NavigationStack programmatically. Let's take a look at the example.
@@ -168,7 +168,7 @@ struct ShopContainerView: View {
 #### State restoration
 State restoration is one of the essential features that you should implement to provide a pleasant user experience. SwiftUI provides the SceneStorage property wrapper, allowing us to keep data in the specific storage bound to the scene and survive when the system shuts down the app.
 
-> To learn more about state restoration in SwiftUI, look at my "State restoration in SwiftUI" post.
+> To learn more about state restoration in SwiftUI, look at my ["State restoration in SwiftUI"](/2022/03/10/state-restoration-in-swiftui/) post.
 
 We can use the SceneStorage property wrapper to encode our navigation path and store it in the scene memory. Whenever the system kills the app, we can restore the path from the scene storage and programmatically navigate to the last entry.
 
