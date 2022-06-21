@@ -249,4 +249,4 @@ struct RootView: View {
 As you can see in the example above, we use the task view modifier to restore the navigation from the scene storage and observe the navigation path to save it as soon as any changes appear.
 
 #### Conclusion
-Today we learned how to use the new data-driven Navigation API to control our navigation stack programmatically and implement the deep linking feature.
+Today we learned how to use the new data-driven Navigation API to control our navigation stack programmatically and implement the deep linking feature. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
