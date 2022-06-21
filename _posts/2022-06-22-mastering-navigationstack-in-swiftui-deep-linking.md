@@ -94,7 +94,10 @@ struct ShopContainerView: View {
                 case let .product(product):
                     ProductView(product: product)
                         .toolbar {
-                            NavigationLink("Show similar", value: Route.related(product))
+                            NavigationLink(
+                                "Show similar",
+                                value: Route.related(product)
+                             )
                         }
                 case let .search(query):
                     SearchView(query: query)
