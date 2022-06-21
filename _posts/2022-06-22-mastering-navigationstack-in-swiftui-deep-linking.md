@@ -10,7 +10,7 @@ This week we will continue exploring the new Navigation API in SwiftUI. One of t
 > To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
 
 #### Programmatic navigation
-There is a special NavigationStack initializer accepting a binding to a mutable collection. SwiftUI maps values of the mutable collection into a view hierarchy and allows us to push and pop views into the NavigationStack programmatically. Let's take a look at the example.
+There is a special *NavigationStack* initializer accepting a binding to a mutable collection. SwiftUI maps values of the mutable collection into a view hierarchy and allows us to push and pop views into the *NavigationStack* programmatically. Let's take a look at the example.
 
 ```swift
 struct ShopContainerView: View {
@@ -109,7 +109,7 @@ struct ShopContainerView: View {
 ```
 
 #### Programmatic navigation with multiple scenes
-One thing I have to mention is that you never should define the path in the App protocol. In this case, you will have a synchronized navigation stack across all of the scenes of your app. Usually, users create multiple scenes of our apps to use different parts of our apps simultaneously.
+One thing I have to mention is that you never should define the path in the *App* protocol. In this case, you will have a synchronized navigation stack across all of the scenes of your app. Usually, users create multiple scenes of our apps to use different parts of our apps simultaneously.
 
 ```swift
 @main
@@ -166,11 +166,11 @@ struct ShopContainerView: View {
 ```
 
 #### State restoration
-State restoration is one of the essential features that you should implement to provide a pleasant user experience. SwiftUI provides the SceneStorage property wrapper, allowing us to keep data in the specific storage bound to the scene and survive when the system shuts down the app.
+State restoration is one of the essential features that you should implement to provide a pleasant user experience. SwiftUI provides the *SceneStorage* property wrapper, allowing us to keep data in the specific storage bound to the scene and survive when the system shuts down the app.
 
 > To learn more about state restoration in SwiftUI, look at my ["State restoration in SwiftUI"](/2022/03/10/state-restoration-in-swiftui/) post.
 
-We can use the SceneStorage property wrapper to encode our navigation path and store it in the scene memory. Whenever the system kills the app, we can restore the path from the scene storage and programmatically navigate to the last entry.
+We can use the *SceneStorage* property wrapper to encode our navigation path and store it in the scene memory. Whenever the system kills the app, we can restore the path from the scene storage and programmatically navigate to the last entry.
 
 ```swift
 @MainActor final class NavigationStore<Route: Hashable>: ObservableObject {
@@ -213,7 +213,7 @@ extension NavigationStore where Route: Codable {
 }
 ```
 
-Here we have the NavigationStore class providing the common functionality for deep linking and handoff support. It also allows us to encode our path and decode it from the serialized representation. Now we can use it in our root view for state restoration whenever needed.
+Here we have the *NavigationStore* class providing the common functionality for deep linking and handoff support. It also allows us to encode our path and decode it from the serialized representation. Now we can use it in our root view for state restoration whenever needed.
 
 ```swift
 struct RootView: View {
@@ -246,7 +246,7 @@ struct RootView: View {
 }
 ```
 
-As you can see in the example above, we use the task view modifier to restore the navigation from the scene storage and observe the navigation path to save it as soon as any changes appear.
+As you can see in the example above, we use the *task* view modifier to restore the navigation from the scene storage and observe the navigation path to save it as soon as any changes appear.
 
 #### Conclusion
 Today we learned how to use the new data-driven Navigation API to control our navigation stack programmatically and implement the deep linking feature. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
