@@ -1,6 +1,7 @@
 ---
 title: Mastering NavigationStack in SwiftUI. Deep Linking.
 layout: post
+category: Mastering SwiftUI views
 ---
 
 This week we will continue exploring the new Navigation API in SwiftUI. One of the benefits of the new data-driven Navigation API is the programmatic navigation with deep-linking possibilities. Let's dive into the new API by learning how to build programmatic deep navigation flows.
