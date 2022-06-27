@@ -173,6 +173,16 @@ State restoration is one of the essential features that you should implement to 
 We can use the *SceneStorage* property wrapper to encode our navigation path and store it in the scene memory. Whenever the system kills the app, we can restore the path from the scene storage and programmatically navigate to the last entry.
 
 ```swift
+protocol UrlHandler<Route> {
+    associatedtype Route: Hashable
+    func handle(_ url: URL, mutating: inout [Route])
+}
+
+protocol ActivityHandler<Route> {
+    associatedtype Route: Hashable
+    func handle(_ activity: NSUserActivity, mutating: inout [Route])
+}
+
 @MainActor final class NavigationStore<Route: Hashable>: ObservableObject {
     @Published var path: [Route] = []
 
