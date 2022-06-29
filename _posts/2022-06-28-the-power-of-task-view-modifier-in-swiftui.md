@@ -44,10 +44,6 @@ The *task* view modifier starts the unstructured async task and binds it to the 
             // Ignore CancellationError
         }
     }
-    
-    func search(matching query: String) async {
-        
-    }
 }
 ```
 
