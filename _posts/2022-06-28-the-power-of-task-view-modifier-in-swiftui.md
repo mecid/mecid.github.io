@@ -101,6 +101,8 @@ struct ContentView: View {
 }
 ```
 
+> To learn more about building search functionality in SwiftUI, take a look at my ["Mastering search in SwiftUI"](/2021/06/23/mastering-search-in-swiftui/) post.
+
 In the example above, whenever the user types the query in the search bar SwiftUI creates a task. SwiftUI makes a task for every change in the search query in this case. Usually, we want to debounce requests to our servers and make them after a slight pause. We can quickly achieve this effect by leveraging the power of the cooperative cancellation and data observing capabilities of the *task* view modifier.
 
 ```swift
@@ -184,6 +186,8 @@ extension View {
 ```
 
 Debouncing via *task* view modifier becomes very handy in my projects. That's why I created a small wrapper around the *task* view modifier, allowing us to debounce tasks without this boilerplate.
+
+> To learn more about building custom view modifiers, take a look at my ["ViewModifiers in SwiftUI"](/2019/08/07/viewmodifiers-in-swiftui/) post.
 
 ```swift
 struct ContentView: View {
