@@ -161,6 +161,24 @@ struct DebouncingTaskViewModifier<ID: Equatable>: ViewModifier {
         }
     }
 }
+
+extension View {
+    func task<ID: Equatable>(
+        id: ID,
+        priority: TaskPriority = .userInitiated,
+        nanoseconds: UInt64 = 0,
+        task: @Sendable @escaping () async -> Void
+    ) -> some View {
+        modifier(
+            DebouncingTaskViewModifier(
+                id: id,
+                priority: priority,
+                nanoseconds: nanoseconds,
+                task: task
+            )
+        )
+    }
+}
 ```
 
 Debouncing via *task* view modifier becomes very handy in my projects. That's why I created a small wrapper around the *task* view modifier, allowing us to debounce tasks without this boilerplate.
