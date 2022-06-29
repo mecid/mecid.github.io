@@ -49,7 +49,7 @@ The *task* view modifier starts the unstructured async task and binds it to the 
 }
 ```
 
-As you can see in the example above, we pause the task by using the *sleep* function that throws *CancellationError* whenever a task is canceled during the sleep. Alternatively, you can use the *isCancelled* property on the *Task* type to indicate whether or not the current task is canceled.
+As you can see in the example above, we pause the task by using the *sleep* function that throws *CancellationError* whenever a task is canceled during the sleep. Alternatively, you can use the *isCancelled* property on the *Task* type indicating whether or not the current task is canceled.
 
 By default, the *task* view modifier uses the user-initiated (highest) priority for the created task, but you can also use lower preferences like utility or background. 
 
