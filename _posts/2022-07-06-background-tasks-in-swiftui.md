@@ -2,6 +2,7 @@
 title: Background tasks in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/wwdc22.jpg
 ---
 One of the exciting frameworks released along with iOS 13 was the BackgroundTasks framework. It allows you to schedule work intelligently in the background. Finally, we can handle background tasks using the SwiftUI app lifecycle. This week we will learn how to schedule and handle background tasks in SwiftUI.
 
