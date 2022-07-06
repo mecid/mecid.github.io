@@ -83,7 +83,7 @@ struct MyApp: App {
 }    
 ```
 
-As you can see in the example above, we the *backgroundTask* modifier to register an app refresh handler. SwiftUI relies on the new Swift Concurrency feature and allows us to build complex async jobs using the async/await syntax. It also fully supports cooperative cancelation, and you can quickly check if your task is out of background runtime using the static *isCancelled* property on the Task type.
+As you can see in the example above, we the *backgroundTask* modifier to register an app refresh handler for a particular identifier. SwiftUI relies on the new Swift Concurrency feature and allows us to build complex async jobs using the async/await syntax. It also fully supports cooperative cancelation, and you can quickly check if your task is out of background runtime using the static *isCancelled* property on the Task type.
 
 #### URLSession tasks
 Whenever you need a long-running task like downloading a file, you should use an instance of *URLSession* with background configuration. In this case, you can handle task suspension and continue your work later.
