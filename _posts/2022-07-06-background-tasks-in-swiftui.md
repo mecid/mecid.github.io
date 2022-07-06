@@ -83,6 +83,8 @@ struct MyApp: App {
 }    
 ```
 
+> To learn more about scenes in SwiftUI, take a look at my ["Managing scenes in SwiftUI"](https://swiftwithmajid.com/2020/08/26/managing-scenes-in-swiftui/) post. 
+
 As you can see in the example above, we the *backgroundTask* modifier to register an app refresh handler for a particular identifier. SwiftUI relies on the new Swift Concurrency feature and allows us to build complex async jobs using the async/await syntax. It also fully supports cooperative cancelation, and you can quickly check if your task is out of background runtime using the static *isCancelled* property on the Task type.
 
 #### URLSession tasks
