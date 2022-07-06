@@ -139,4 +139,4 @@ struct MyApp: App {
 We can handle events from the *URLSession* with background configuration by using the *backgroundTask* modifier with the particular identifier.
 
 #### Conclusion
-Today we learned how to use the BackgroundTasks framework in SwiftUI by leveraging the power of the new Swift Concurrency feature.
+Today we learned how to use the BackgroundTasks framework in SwiftUI by leveraging the power of the new Swift Concurrency feature. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
