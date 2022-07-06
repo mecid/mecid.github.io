@@ -16,7 +16,7 @@ func scheduleAppRefresh() {
 }
 ```
 
-As you can see in the example above, we have the *scheduleAppRefresh* function using the shared instance of *BGTaskScheduler* to schedule an app refresh task. Every app refresh task should have a unique identifier. We must also define the list of all the identifiers in the Info.plist file within the "Permitted background task scheduler identifiers" key. Now we can call the *scheduleAppRefresh* function within the SwiftUI app lifecycle.
+As you can see in the example above, we have the *scheduleAppRefresh* function using the shared instance of *BGTaskScheduler* to schedule an app refresh task. An app refresh task should have a unique identifier. We must also define the list of all the identifiers in the Info.plist file within the "Permitted background task scheduler identifiers" key. Now we can call the *scheduleAppRefresh* function within the SwiftUI app lifecycle.
 
 ```swift
 @main
