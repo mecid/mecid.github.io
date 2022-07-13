@@ -64,7 +64,7 @@ struct ContentView: View {
 ![labeled-content](/public/labeled-content3.png)
 
 #### Styling
-Like many SwiftUI views, the *LabeledContent* view supports styling via the particular *LabeledContentStyle* protocol. You only need to create a type conforming to *LabeledContentStyle* and implement your *makeBody* function.
+Like many SwiftUI views, the *LabeledContent* view supports styling via the particular *LabeledContentStyle* protocol. You only need to create a type conforming to *LabeledContentStyle* protocol and implement your *makeBody* function.
 
 ```swift
 struct AccentedLabeledContentStyle: LabeledContentStyle {
