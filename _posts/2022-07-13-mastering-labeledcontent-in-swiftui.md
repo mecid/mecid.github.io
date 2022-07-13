@@ -1,6 +1,7 @@
 ---
 title: Mastering LabeledContent in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 One of the new SwiftUI views released during WWDC22 was *LabeledContent*. And it became one of my favorite views that I try to use everywhere because it fits very well into Human Design Guidelines. This week we will learn how to use *LabeledContent* to provide a platform-oriented experience. 
