@@ -26,11 +26,17 @@ struct ContentView: View {
 As you can see in the example above, the usage of the *LabeledContent* view is straightforward. But it works not only for *String* values. You can use it to present any data supporting the *FormatStyle* protocol.
 
 ```swift
-LabeledContent(
-    "Number",
-    value: 100.0,
-    format: .number.precision(.fractionLength(0))
-)
+struct ContentView: View {
+    var body: some View {
+        Form {
+            LabeledContent(
+                "Number",
+                value: 100.0,
+                format: .number.precision(.fractionLength(0))
+            )
+        }
+    }
+}
 ```
 
 ![labeled-content](/public/labeled-content2.png)
