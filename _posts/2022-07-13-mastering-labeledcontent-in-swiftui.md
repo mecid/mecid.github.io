@@ -79,12 +79,26 @@ As you can see in the example above, we create another instance of the LabeledCo
 ```swift
 struct VerticalLabeledContentStyle: LabeledContentStyle {
     func makeBody(configuration: Configuration) -> some View {
-        VStack {
+        VStack(alignment: .leading) {
             configuration.label
             Spacer()
             configuration.content
         }
         .foregroundColor(.accentColor)
+    }
+}
+
+extension LabeledContentStyle where Self == VerticalLabeledContentStyle {
+    static var vertical: VerticalLabeledContentStyle { .init() }
+}
+
+
+struct ContentView: View {
+    var body: some View {
+        Form {
+            LabeledContent("Label", value: "Content")
+                .labeledContentStyle(.vertical)
+        }
     }
 }
 ```
