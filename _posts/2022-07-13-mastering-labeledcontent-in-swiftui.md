@@ -21,6 +21,8 @@ struct ContentView: View {
 }
 ```
 
+![labeled-content](/public/labeled-content1.png)
+
 As you can see in the example above, the usage of the *LabeledContent* view is straightforward. But it works not only for *String* values. You can use it to present any data supporting the *FormatStyle* protocol.
 
 ```swift
@@ -30,6 +32,8 @@ LabeledContent(
     format: .number.precision(.fractionLength(0))
 )
 ```
+
+![labeled-content](/public/labeled-content2.png)
 
 The *LabeledContent* view allows you to present any SwiftUI view as a label or content. For example, you might use it to display a *Stepper* inside the *Form*.
 
@@ -50,6 +54,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![labeled-content](/public/labeled-content3.png)
 
 #### Styling
 Like many SwiftUI views, the *LabeledContent* view supports styling via the particular *LabeledContentStyle* protocol. You only need to create a type conforming to *LabeledContentStyle* and implement your *makeBody* function.
