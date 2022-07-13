@@ -124,5 +124,7 @@ struct ContentView: View {
 }
 ```
 
+> To learn more about sharing styles using the environment, take a look at my ["Styling custom SwiftUI views using environment"](/2020/12/09/styling-custom-swiftui-views-using-environment/) post.
+
 #### Conclusion
 Today we learned about another great view that SwiftUI provides to simplify our lives. To be honest, I have a similar view in my codebase that doing the same, but it is always great to have this kind of thing provided by the SDK. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
