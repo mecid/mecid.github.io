@@ -88,7 +88,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we create another instance of the *LabeledContent* view and pass the instance of the *Configuration* type that holds the label and content views. It works great when you want to apply custom styling options. Sometimes we need to provide a completely different layout with our custom styling. We can achieve it by implementing the *makeBody* function without using *LabeledContent*.
+As you can see in the example above, we create another instance of the *LabeledContent* view and pass the instance of the *Configuration* type that holds the label and content views. It works great when you want to apply custom styling options. But sometimes we need to provide a completely different layout with our custom styling. We can achieve it by implementing the *makeBody* function without using *LabeledContent*.
 
 ```swift
 struct VerticalLabeledContentStyle: LabeledContentStyle {
