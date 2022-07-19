@@ -54,6 +54,8 @@ struct ContentView: View {
 }
 ```
 
+![bottom-sheet](/public/new-bottom-sheet.png)
+
 The new bottom sheet API is very flexible and allows you to tune the height of the sheet as you need by using the following options.
 
 ```swift
