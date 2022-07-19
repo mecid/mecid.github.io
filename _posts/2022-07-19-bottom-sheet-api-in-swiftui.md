@@ -30,6 +30,8 @@ struct ContentView: View {
 }
 ```
 
+> To learn how to create a bottom sheet in SwiftUI from scratch, take a look at my ["Building Bottom sheet in SwiftUI"](/2019/12/11/building-bottom-sheet-in-swiftui/) post.
+
 As you can see in the example above, we use the *presentationDetents* view modifier to display a sheet as the bottom sheet. We also set the size of the bottom sheet to *medium*. In this case, it will take half of the screen.
 You can use the *presentationDetents* view modifier to pass an array of available sizes, allowing the user to resize the sheet by dragging it.
 
