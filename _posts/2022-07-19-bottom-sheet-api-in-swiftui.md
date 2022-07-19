@@ -5,7 +5,7 @@ layout: post
 
 Two years ago, I wrote a post about building a custom bottom sheet in SwiftUI. Nowadays, there is no need to make it manually, at least if you don't need a super custom behavior. SwiftUI introduces a new API to display a bottom sheet in a few lines of code. This week we learn the new API allowing us to present bottom sheets in different appearances.
 
-The new bottom sheet API in SwiftUI is straightforward to use. All you need to do is to attach the presentationDetents view modifier to the content of the sheet view modifier.
+The new bottom sheet API in SwiftUI is straightforward to use. All you need to do is to attach the *presentationDetents* view modifier to the content of the *sheet* view modifier.
 
 ```swift
 struct ContentView: View {
@@ -28,8 +28,8 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the presentationDetents view modifier to display a sheet as the bottom sheet. We also set the size of the bottom sheet to medium. In this case, it will take half of the screen.
-You can use the presentationDetents view modifier to pass an array of available sizes, allowing the user to resize the sheet by dragging it.
+As you can see in the example above, we use the *presentationDetents* view modifier to display a sheet as the bottom sheet. We also set the size of the bottom sheet to *medium*. In this case, it will take half of the screen.
+You can use the *presentationDetents* view modifier to pass an array of available sizes, allowing the user to resize the sheet by dragging it.
 
 ```swift
 struct ContentView: View {
@@ -82,7 +82,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the fraction function to set the height of the sheet to a particular fraction of the available space. You can also use the height function to set the height to a fixed size. Remember that you can mix different fractions to achieve the appearance you need.
+As you can see in the example above, we use the *fraction* function to set the height of the sheet to a particular fraction of the available space. You can also use the *height* function to set the height to a fixed size. Remember that you can mix different fractions to achieve the appearance you need.
 
 Depending on the current environment, we might need to build a super custom sizing logic. For example, I would like to display a bottom sheet by taking 80% of the available space on the iPad and full height on the iPhone. We can implement this custom presentation logic and reuse it across multiple screens.
 
@@ -98,7 +98,7 @@ struct MyCustomDetent: CustomPresentationDetent {
 }
 ```
 
-First, we should create a type conforming to the CustomPresentationDetent protocol. Second, we should implement the only required function called height which takes the context as the parameter. Parameter context holds all the SwiftUI's environment values, and you can use it to decide what height you need in a particular environment. I use vertical size classes in the example above to decide on the sheet's height.
+First, we should create a type conforming to the *CustomPresentationDetent* protocol. Second, we should implement the only required function called *height* which takes the *context* as the parameter. Parameter *context* holds all the SwiftUI's environment values, and you can use it to decide what height you need in a particular environment. I use vertical size classes in the example above to decide on the sheet's height.
 
 ```swift
 struct ContentView: View {
