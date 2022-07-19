@@ -2,6 +2,7 @@
 title: Bottom sheet API in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/new-bottom-sheet.png
 ---
 
 Two years ago, I wrote a post about building a custom bottom sheet in SwiftUI. Nowadays, there is no need to make it manually, at least if you don't need a super custom behavior. SwiftUI introduces a new API to display a bottom sheet in a few lines of code. This week we learn the new API allowing us to present bottom sheets in different appearances.
