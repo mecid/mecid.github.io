@@ -127,7 +127,7 @@ struct ContentView: View {
 }
 ```
 
-You can control the size of the bottom sheet in a programmatic way also. In this case, you have to pass the *Binding* to the selected size among the available sizes.
+You can change the size of the bottom sheet not only by dragging but also in a programmatic way. In this case, you have to pass the *Binding* to the selected size among the available sizes.
 
 ```swift
 struct ContentView: View {
