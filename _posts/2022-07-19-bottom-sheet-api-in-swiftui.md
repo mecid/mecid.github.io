@@ -127,6 +127,34 @@ struct ContentView: View {
 }
 ```
 
+You can control the size of the bottom sheet in a programmatic way also. In this case, you have to pass the *Binding* to the selected size among the available sizes.
+
+```swift
+struct ContentView: View {
+    @State private var sheetShown = false
+    @State private var sheetSize: PresentationDetent = .medium
+
+    var body: some View {
+        VStack {
+            Picker("Size", selection: $sheetSize) {
+                Text("Medium").tag(PresentationDetent.medium)
+                Text("Large").tag(PresentationDetent.large)
+            }
+            
+            Button("Display bottom sheet") {
+                sheetShown = true
+            }
+            .sheet(isPresented: $sheetShown) {
+                NavigationStack {
+                    Text("Sheet content")
+                }
+                .presentationDetents([.medium, .large], selection: $sheetSize)
+            }
+        }
+    }
+}
+``` 
+
 The last thing we can customize is the drag indicator of the bottom sheet. We can make it always visible, hidden, or allow SwiftUI to decide whether it should be visible.
 
 ```swift
