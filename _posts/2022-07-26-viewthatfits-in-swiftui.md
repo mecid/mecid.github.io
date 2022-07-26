@@ -1,6 +1,7 @@
 ---
 title: ViewThatFits in SwiftUI
 layout: post
+image: /public/wwdc22.png
 ---
 
 How often did you use *GeometryReader* to measure layout and place different views? *GeometryReader* was always a great tool in our toolbox, but It is elementary to break the layout while using the *GeometryReader*. Fortunately, the next generation of the SwiftUI framework introduces a new way to measure available space and place different views. This week we will learn how to use the brand new *ViewThatFits* view.
