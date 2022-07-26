@@ -9,13 +9,33 @@ How often did you use GeometryReader to measure layout and place different views
 
 The introduced ViewThatFits view is elementary to use. You don't need to manually measure available space or calculate if the particular view fits into the available space. All you need to do is to create an instance of the ViewThatFits view and place in its ViewBuilder closure up to 10 views. ViewThatFits automatically measures available space and the size of its children and takes the first view that perfectly fits the available space. That's it.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        ViewThatFits {
+            HugeView()
+            MediumView()
+            SmallView()
+        }
+    }
+}
+```
 
 As you can see in the example above, it is straightforward to use the new ViewThatFits view. But you should be careful about the order of the passed views. ViewThatFits uses the first view that fits the available space. It means that you should usually place your views from the biggest to the smallest.
 
 By default, the ViewThatFits view considers all the available space, but you can set the particular axis you need to measure. For example, it might be a horizontal or vertical axis.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        ViewThatFits(in: .horizontal) {
+            HugeView()
+            MediumView()
+            SmallView()
+        }
+    }
+}
+```
 
 In the current example, we completely ignore the vertical axis and consider only horizontally available space. Let me describe the steps the ViewThatFit view applies while choosing a view.
 
