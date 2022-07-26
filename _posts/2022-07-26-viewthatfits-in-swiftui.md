@@ -45,4 +45,4 @@ In the current example, we completely ignore the vertical axis and consider only
 2. It measures the size of the second view if the first one doesn't fit the available space.
 3. It places the last view in the *ViewBuilder* closure if no view fits the available space.
 
-Today we learned the new and easy way of measuring available space and placing a view fitting that space.
+Today we learned the new and easy way of measuring available space and placing a view fitting that space. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
