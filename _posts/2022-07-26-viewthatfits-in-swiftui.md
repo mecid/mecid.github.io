@@ -40,9 +40,9 @@ struct ContentView: View {
 
 In the current example, we completely ignore the vertical axis and consider only horizontally available space. Let me describe the steps the *ViewThatFits* view applies while choosing a view.
 
-*ViewThatFits* measures available space for a particular axis or both of them.
-1. It measures the size of the first view and places it if it fits the available space.
-2. It measures the size of the second view if the first one doesn't fit the available space.
-3. It places the last view in the *ViewBuilder* closure if no view fits the available space.
+1. *ViewThatFits* measures available space for a particular axis or both of them.
+2. It measures the size of the first view and places it if it fits the available space.
+3. It measures the size of the second view if the first one doesn't fit the available space.
+4. It places the last view in the *ViewBuilder* closure if no view fits the available space.
 
 Today we learned the new and easy way of measuring available space and placing a view fitting that space. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
