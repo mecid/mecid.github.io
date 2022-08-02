@@ -145,4 +145,4 @@ struct ContentView: View {
 }
 ```
 
-Today we learned about new content transitions in SwiftUI. Not so many views currently support them, but their count can change in the future. Feel free to support it in your views by adopting the new APIs we covered today.
+Today we learned about new content transitions in SwiftUI. Not so many views currently support them, but their count can change in the future. Try to support it in your views by adopting the new APIs we covered today. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
