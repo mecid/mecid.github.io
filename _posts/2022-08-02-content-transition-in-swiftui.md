@@ -26,7 +26,7 @@ struct ContentView: View {
 }
 ```
 
-The previous version of SwiftUI doesn't support any transition for Text view content, and it applies changes immediately without any visual effect. Fortunately, the latest iteration of SwiftUI allows us to apply a content transition to the Text view by using the contentTransition view modifier.
+The previous version of SwiftUI doesn't support any transition for *Text* view content, and it applies changes immediately without any visual effect. Fortunately, the latest iteration of SwiftUI allows us to apply a content transition to the *Text* view by using the *contentTransition* view modifier.
 
 ```swift
 struct ContentView: View {
@@ -48,7 +48,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, the only line of code we added is the contentTransition view modifier. It accepts an instance of a particular transition that SwiftUI applies to the view whenever content changes. In this case, we use interpolation because transition affects the size and color of the text.
+As you can see in the example above, the only line of code we added is the *contentTransition* view modifier. It accepts an instance of a particular transition that SwiftUI applies to the view whenever content changes. In this case, we use interpolation because transition affects the size and color of the text.
 
 ```swift
 struct ContentView: View {
@@ -70,9 +70,9 @@ struct ContentView: View {
 }
 ```
 
-In the current example, we use another instance of ContentTransition called opacity. In this case, SwiftUI uses fade in/out whenever the text changes.
+In the current example, we use another instance of *ContentTransition* called opacity. In this case, SwiftUI uses fade in/out whenever the text changes.
 
-SwiftUI provides a type of ContentTransition that works with numeric text. It works only with numeric text, understands how the number changed, and provides a nice visual effect that changes only the needed part of the Text view representing a number.
+SwiftUI provides a type of *ContentTransition* that works with numeric text. It works only with numeric text, understands how the number changed, and provides a nice visual effect that changes only the needed part of the *Text* view representing a number.
 
 ```swift
 struct TextContentView: View {
@@ -91,7 +91,7 @@ struct TextContentView: View {
 }
 ```
 
-The contentTransition view modifier passes the provided instance of the ContentTransition via the SwiftUI environment and allows us to access it via a particular EnvironmentKey.
+The *contentTransition* view modifier passes the provided instance of the *ContentTransition* via the SwiftUI environment and allows us to access it via a particular *EnvironmentKey*.
 
 ```swift
 struct MySuperCustomTextView: View {
@@ -116,7 +116,7 @@ struct MySuperCustomTextView: View {
 
 Here we have our super custom text view that uses the SwiftUI environment to understand which transition should be used while applying the custom drawing technique of the passed text.
 
-There is another content transition-related EnvironmentKey, allowing us to control whenever we want to use GPU-accelerated rendering by wrapping the transition content into a drawing group.
+There is another content transition-related *EnvironmentKey*, allowing us to control whenever we want to use GPU-accelerated rendering by wrapping the transition content into a drawing group.
 
 ```swift
 struct ContentView: View {
