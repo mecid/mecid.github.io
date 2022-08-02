@@ -2,3 +2,35 @@
 title: Content transition in SwiftUI
 layout: post
 ---
+
+View transitions are available from the very first version of the SwiftUI framework. The framework can apply a particular transition whenever the view is removed or added to the view hierarchy. The latest iteration of the SwiftUI framework brings us a new type of transition called content transitions. It allows us to apply a particular transition to the content of the view whenever it changes. This week we will learn how to use the new API to apply content transition in SwiftUI.
+
+In the previous versions of SwiftUI, we couldn't apply transitions to the view's content. And if you run this example on iOS 15, you will see no transition.
+
+=====================================================
+
+The previous version of SwiftUI doesn't support any transition for Text view content, and it applies changes immediately without any visual effect. Fortunately, the latest iteration of SwiftUI allows us to apply a content transition to the Text view by using the contentTransition view modifier.
+
+=====================================================
+
+As you can see in the example above, the only line of code we added is the contentTransition view modifier. It accepts an instance of a particular transition that SwiftUI applies to the view whenever content changes. In this case, we use interpolation because transition affects the size and color of the text.
+
+=====================================================
+
+In the current example, we use another instance of ContentTransition called opacity. In this case, SwiftUI uses fade in/out whenever the text changes.
+
+SwiftUI provides a type of ContentTransition that works with numeric text. It works only with numeric text, understands how the number changed, and provides a nice visual effect that changes only the needed part of the Text view representing a number.
+
+=====================================================
+
+The contentTransition view modifier passes the provided instance of the ContentTransition via the SwiftUI environment and allows us to access it via a particular EnvironmentKey.
+
+=====================================================
+
+Here we have our super custom text view that uses the SwiftUI environment to understand which transition should be used while applying the custom drawing technique of the passed text.
+
+There is another content transition-related EnvironmentKey, allowing us to control whenever we want to use GPU-accelerated rendering by wrapping the transition content into a drawing group.
+
+=====================================================
+
+Today we learned about new content transitions in SwiftUI. Not so many views currently support them, but their count can change in the future. Feel free to support it in your views by adopting the new APIs we covered today.
