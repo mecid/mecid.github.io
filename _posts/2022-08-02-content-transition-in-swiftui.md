@@ -93,7 +93,7 @@ struct TextContentView: View {
 }
 ```
 
-> To learn more about other options to animate text changes, take a look at my ["AnimatableModifier in SwiftUI"](/2021/01/11/animatablemodifier-in-swiftui/) post.
+> To learn more about other options for animating text changes, take a look at my ["AnimatableModifier in SwiftUI"](/2021/01/11/animatablemodifier-in-swiftui/) post.
 
 The *contentTransition* view modifier passes the provided instance of the *ContentTransition* via the SwiftUI environment and allows us to access it via a particular *EnvironmentKey*.
 
