@@ -1,6 +1,7 @@
 ---
 title: Content transition in SwiftUI
 layout: post
+category: Interactions
 ---
 
 View transitions are available from the very first version of the SwiftUI framework. The framework can apply a particular transition whenever the view is removed or added to the view hierarchy. The latest iteration of the SwiftUI framework brings us a new type of transition called content transitions. It allows us to apply a particular transition to the content of the view whenever it changes. This week we will learn how to use the new API to apply content transition in SwiftUI.
