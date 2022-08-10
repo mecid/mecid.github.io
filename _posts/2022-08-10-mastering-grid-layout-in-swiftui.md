@@ -31,7 +31,9 @@ struct ContentView: View {
 
 ![new-grid](/public/egrid.png)
 
-Here we define a grid layout with leading alignment and particular vertical and horizontal spacing. SwiftUI renders every view inside a row as a column and uses the alignment we pass to align the view inside the available space of the cell. SwiftUI uses spacing parameters to preserve the space between cells. Because of the eager nature of the *Grid* layout, it measures the sizes of all children and lays them into strict columns and rows. As you can see in the example, we also can tune the alignment inside the particular grid row. Now let's add the separator after every grid row.
+Here we define a grid layout with leading alignment and particular vertical and horizontal spacing. SwiftUI renders every view inside a row as a column and uses the alignment we pass to align the view inside the available space of the cell. 
+
+SwiftUI uses spacing parameters to preserve the space between cells. Because of the eager nature of the *Grid* layout, it measures the sizes of all children and lays them into strict columns and rows. As you can see in the example, we also can tune the alignment inside the particular grid row. Now let's add the separator after every grid row.
 
 ```swift
 struct ContentView: View {
