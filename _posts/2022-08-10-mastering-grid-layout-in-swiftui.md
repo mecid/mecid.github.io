@@ -186,4 +186,4 @@ struct ContentView: View {
 
 In this case, we ask our separator view to take place by respecting the width of other rows and don't fill all the available width.
 
-Today we learned how to use the new grid layout in SwiftUI. Try to use it by default whenever you need a grid and switch to the lazy version of the grid component whenever performance issues appear.
+Today we learned how to use the new grid layout in SwiftUI. Try to use it by default whenever you need a grid and switch to the lazy version of the grid component whenever performance issues appear. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
