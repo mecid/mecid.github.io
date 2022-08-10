@@ -27,6 +27,8 @@ struct ContentView: View {
 }
 ```
 
+![new-grid](/public/egrid.png)
+
 Here we define a grid layout with leading alignment and particular vertical and horizontal spacing. SwiftUI renders every view inside a row as a column and uses the alignment we pass to align the view inside the available space of the cell. SwiftUI uses spacing parameters to preserve the space between cells. Because of the eager nature of the *Grid* layout, it measures the sizes of all children and lays them into strict columns and rows. As you can see in the example, we also can tune the alignment inside the particular grid row. Now let's add the separator after every grid row.
 
 ```swift
@@ -52,6 +54,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![new-grid](/public/egrid1.png)
 
 As I said, the grid layout immediately measures all the children and draws strict columns. It understands that there is three column layout and renders our separator in the first and only column. We can expand our divider to fill all three columns using the *gridCellColumns* view modifier on the view representing the cell.
 
@@ -79,6 +83,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![new-grid](/public/egrid2.png)
 
 Another solution is to put the separator outside the *GridRow* view. All the views placed directly inside the grid without the *GridRow* view fill the available space.
 
@@ -124,6 +130,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![new-grid](/public/egrid3.png)
 
 SwiftUI allows us to set not only the alignment of the particular cell but also its anchor point. For example, we might want to shift the cell content to 25% of the horizontally available space. In this case, we can use the *gridCellAnchor* view modifier.
 
@@ -173,6 +181,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![new-grid](/public/egrid4.png)
 
 In this case, we ask our separator view to take place by respecting the width of other rows and don't fill all the available width.
 
