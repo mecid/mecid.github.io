@@ -2,6 +2,7 @@
 title: Mastering grid layout in SwiftUI
 layout: post
 image: /public/egrid2.png
+category: Mastering SwiftUI views
 ---
 
 You might be familiar with the *LazyVGrid* and *LazyHGrid* views we have from the second iteration of the SwiftUI framework. They work great for the massive data arrays you want to display as the grid. But it is not always possible to arrange the columns and rows strictly because of their lazy nature. For these cases, SwiftUI introduces another type of grid that immediately lays out all of its children. This week we will learn how to use the new grid layout in SwiftUI and the benefits of the new grid over the lazy version of the grid component.
