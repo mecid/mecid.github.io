@@ -114,7 +114,7 @@ struct ContentView: View {
 }
 ```
 
-We set the grid cell alignment for all cells while defining a grid layout, but we can set a particular alignment only for the cell we need using the *gridColumnAlignment*.
+We set the grid cell alignment for all cells while defining a grid layout, but we can set a particular alignment only for the cell we need using the *gridColumnAlignment* view modifier.
 
 ```swift
 struct ContentView: View {
