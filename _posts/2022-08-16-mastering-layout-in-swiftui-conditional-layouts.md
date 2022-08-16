@@ -71,7 +71,7 @@ As you can see in the example above, we display our views conditionally in a hor
 
 This is how conditions work in ViewBuilders. While SwiftUI destroys your views, it also clears all the state of destroyed views, which might not be suitable for your app's user experience. It happens because the structural identity of your view changes while switching from HStack to VStack.
 
-> I highly encourage you to read my "Structural identity in SwiftUI" post to understand better how SwiftUI identifies your views and the way conditions work in SwiftUI.
+> I highly encourage you to read my ["Structural identity in SwiftUI"](/2021/12/09/structural-identity-in-swiftui/) post to understand better how SwiftUI identifies your views and the way conditions work in SwiftUI.
 
 SwiftUI provides a new way to keep the structural identity of our view hierarchy while changing the layout container using the new AnyLayout type.
 
