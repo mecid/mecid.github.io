@@ -113,6 +113,6 @@ struct ConditionalLayoutExample2: View {
 ```
 
 #### Conclusion
-Today we learned about the new *Layout* protocol and the type-eraser *AnyLayout* type. Now we can build more fluid transitions in our apps using these new tools.
+Today we learned about the new *Layout* protocol and the type-eraser *AnyLayout* type. Now we can build more fluid transitions in our apps using these new tools. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
 
