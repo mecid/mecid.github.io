@@ -1,6 +1,7 @@
 ---
 title: Mastering layout in SwiftUI. Conditional Layouts.
 layout: post
+image: /public/layout.png
 category: Layout
 ---
 
