@@ -67,9 +67,9 @@ struct WidgetView: View {
 
 It would be best to remember that the system uses different rendering modes for lock screen and home screen widgets. The system provides us with three different rendering modes.
 
-Full-color mode for home screen widgets and watchOS complications supporting colors. And yes, you can also use WidgetKit to implement watchOS complications, starting with watchOS 9.
-Vibrant mode is where the system desaturates text, images, and gauges into monochrome and colors them properly for the Lock Screen background.
-The accented mode is used only on watchOS, where the system divides the widget into two groups, default and accented. The system colors the accented part of your widget with the tint color the user chooses in the watch face settings.
+1. Full-color mode for home screen widgets and watchOS complications supporting colors. And yes, you can also use WidgetKit to implement watchOS complications, starting with watchOS 9.
+2. Vibrant mode is where the system desaturates text, images, and gauges into monochrome and colors them properly for the Lock Screen background.
+3. The accented mode is used only on watchOS, where the system divides the widget into two groups, default and accented. The system colors the accented part of your widget with the tint color the user chooses in the watch face settings.
 
 Rendering mode is available via the SwiftUI environment, so you can always check which rendering mode is active and reflect it in your design. For example, you might use different images with different rendering modes.
 
@@ -94,7 +94,7 @@ struct WidgetView: View {
 }
 ```
 
-As you can see in the example above, we use the widgetRenderingMode environment value to get the actual rendering mode and behave differently. As I said before, in the accented mode, the system divides your widget into two parts and colors them specially. You can mark the part of your view hierarchy with the widgetAccentable view modifier. The system will know which views apply the tint color in this case.
+As you can see in the example above, we use the *widgetRenderingMode* environment value to get the actual rendering mode and behave differently. As I said before, in the accented mode, the system divides your widget into two parts and colors them specially. You can mark the part of your view hierarchy with the *widgetAccentable* view modifier. The system will know which views apply the tint color in this case.
 
 ```swift
 struct AccentedWidgetView: View {
