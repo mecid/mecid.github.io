@@ -1,6 +1,7 @@
 ---
 title: Lock screen widgets in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 One of the most requested features for iOS was customizable lock screens. And finally, we have got it with the latest iOS 16. We can populate our lock screen with glanceable widgets. Implementing a lock screen widget is straightforward because its API shares the same code with home screen widgets. This week we will learn how to implement lock screen widgets for our apps.
