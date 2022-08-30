@@ -172,4 +172,4 @@ struct MyAppWidget: Widget {
 }
 ```
 
-Today we learned how to implement new lock screen widgets in iOS 16. Remember that we can reuse the same API to build watchOS complications. And you can easily share the widget codebase by looking into environment values to understand which rendering mode is active at the very moment.
+Today we learned how to implement new lock screen widgets in iOS 16. Remember that we can reuse the same API to build watchOS complications. And you can easily share the widget codebase by looking into environment values to understand which rendering mode is active at the very moment. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
