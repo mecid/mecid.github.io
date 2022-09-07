@@ -45,7 +45,7 @@ struct ContentView: View {
 ```
 
 #### Toolbar background visibility
-Another new view modifier allows us to control the visibility of any bar owned by SwiftUI.
+Another new view modifier allows us to control the background visibility of any bar owned by SwiftUI.
 
 ```swift
 struct ContentView: View {
