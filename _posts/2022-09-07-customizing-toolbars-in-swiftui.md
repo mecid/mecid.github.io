@@ -119,7 +119,7 @@ struct TitleMenuExample: View {
 The code above displays a little arrow in the navigation bar's title, allowing the user to press it. SwiftUI shows a popup menu with a button presenting a date picker in the modal sheet.
 
 #### Toolbar role
-Another new appearance in iPadOS 16 is the editor toolbar. You can set the role of the toolbar to the editor. In this case, SwiftUI displays toolbar items in the center of the particular toolbar. It also allows the user to customize toolbar items by adding and removing them.
+Another new appearance in iPadOS 16 is the editor toolbar. You can set the role of the toolbar to the editor. In this case, SwiftUI displays toolbar items in the center of the particular toolbar. It also allows the user to customize secondary toolbar items by adding and removing them.
 
 ```swift
 struct CollapsingToolbarItems: View {
