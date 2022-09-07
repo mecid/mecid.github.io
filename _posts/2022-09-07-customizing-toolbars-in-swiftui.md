@@ -5,7 +5,7 @@ category: Mastering SwiftUI views
 image: /public/toolbar-title-menu.png
 ---
 
-Toolbars API is one of my favorite APIs in SwiftUI. It allows you to define the toolbar and its items in a very declarative way behaving differently on separate platforms. The next generation of the SwiftUI framework brings us more ways of customizing toolbars. This week we will learn about the new APIs allowing us to customize toolbars in SwiftUI.
+Toolbars API is one of my favorite APIs in SwiftUI. It allows you to define the toolbar and its items in a very declarative way behaving differently on separate platforms. The next generation of the SwiftUI framework brings us more ways of customizing toolbars. This week we will learn about new Toolbar APIs in SwiftUI.
 
 > Look at my dedicated ["Mastering toolbars in SwiftUI"](/2020/07/15/mastering-toolbars-in-swiftui/) post to learn about Toolbar API basics.
 
