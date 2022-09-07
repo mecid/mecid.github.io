@@ -180,4 +180,4 @@ struct SecondaryToolbarItemsExample: View {
 ```
 
 #### Conclusion
-Today we learned a bunch of new APIs allowing us to customize toolbars in SwiftUI.
+Today we learned a bunch of new APIs allowing us to customize toolbars in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
