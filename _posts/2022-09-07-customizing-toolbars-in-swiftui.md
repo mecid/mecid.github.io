@@ -2,6 +2,7 @@
 title: Customizing toolbars in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/toolbar-title-menu.png
 ---
 
 Toolbars API is one of my favorite APIs in SwiftUI. It allows you to define the toolbar and its items in a very declarative way behaving differently on separate platforms. The next generation of the SwiftUI framework brings us more ways of customizing toolbars. This week we will learn about the new APIs allowing us to customize toolbars in SwiftUI.
@@ -112,6 +113,8 @@ struct TitleMenuExample: View {
     }
 }
 ```
+
+![toolbar-title-menu](/public/toolbar-title-menu.png)
 
 The code above displays a little arrow in the navigation bar's title, allowing the user to press it. SwiftUI shows a popup menu with a button presenting a date picker in the modal sheet.
 
