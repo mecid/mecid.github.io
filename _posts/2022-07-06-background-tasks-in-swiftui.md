@@ -142,5 +142,22 @@ struct MyApp: App {
 
 We can handle events from the *URLSession* with background configuration by using the *backgroundTask* modifier with the particular identifier.
 
+#### Debugging
+The only way of debugging background tasks is to keep your phone connected to Xcode debugger, but we don’t know when iOS will decide to run our jobs because it uses some hidden logic for that. Luckily, Apple provides two private functions, which we can use in the debugger to start and expire background tasks. Please remember that you can use it only during development, don’t include them in release.
+
+For starting background tasks, pause your app and run in the debugger this code:
+
+```
+e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateLaunchForTaskWithIdentifier:@"TASK_IDENTIFIER"]
+```
+
+To force early termination use
+
+```
+e -l objc -- (void)[[BGTaskScheduler sharedScheduler] _simulateExpirationForTaskWithIdentifier:@"TASK_IDENTIFIER"]
+```
+
+Don't forget to replace TASK_IDENTIFIER with the real identifier.
+
 #### Conclusion
 Today we learned how to use the BackgroundTasks framework in SwiftUI by leveraging the power of the new Swift Concurrency feature. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
