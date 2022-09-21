@@ -2,6 +2,7 @@
 title: Displaying live activities in iOS 16
 layout: post
 category: Mastering SwiftUI views
+image: live-activity.jpg
 ---
 
 One of the most prominent features of iOS 16 is live activity widgets. iOS 16 allows us to display the live state of ongoing activities from our apps on the lock screen or in the Dynamic Island of the new iPhone 14 Pro. This week we will learn how to build live activity widgets for our apps using the new ActivityKit framework.
