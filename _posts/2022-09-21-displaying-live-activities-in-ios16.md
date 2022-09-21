@@ -29,9 +29,9 @@ struct FootballMatch: ActivityAttributes {
 }
 ```
 
-The ActivityKit framework requires us to create a type conforming to the ActivityAttributes protocol. The type conforming to the ActivityAttributes should provide static information about the activity and define the ContentState type containing the dynamic part of the data. 
+The ActivityKit framework requires us to create a type conforming to the *ActivityAttributes* protocol. The type conforming to the *ActivityAttributes* should provide static information about the activity and define the *ContentState* type containing the dynamic part of the data. 
 
-Your app must be in the foreground to start a live activity, and don't forget to add the "Supports Live Activities" key with YES value to the app target's Info.plist. Now you can start a live activity using the following code:
+Your app must be in the foreground to start a live activity, and don't forget to add the **Supports Live Activities** key with **YES** value to the app target's *Info.plist*. Now you can start a live activity using the following code:
 
 ```swift
 let activity = try Activity.request(
@@ -68,7 +68,7 @@ Task {
 You can use the BackgroundTasks framework or push notifications to update or end your live activity without running the app in the foreground.
 
 #### Live activity presentation
-We have to use the WidgetKit framework to display a live activity. WidgetKit provides us with the particular ActivityConfiguration type allowing us to define a live activity widget.
+We have to use the WidgetKit framework to display a live activity. WidgetKit provides us with the particular *ActivityConfiguration* type allowing us to define a live activity widget.
 
 ```swift
 @available(iOSApplicationExtension 16.1, *)
@@ -97,7 +97,7 @@ struct FastingActivityWidget: Widget {
 }
 ```
 
-You should define the widget type using ActivityConfiguration and add it to your widget bundle. ActivityConfiguration requires us to provide a view that represents the activity on the lock screen and the Dynamic Island configuration to display activity on the iPhone 14 Pro. 
+You should define the widget type using *ActivityConfiguration* and add it to your widget bundle. *ActivityConfiguration* requires us to provide a view that represents the activity on the lock screen and the Dynamic Island configuration to display activity on the iPhone 14 Pro. 
 
 ```swift
 @main struct FastBotWidgetBundle: WidgetBundle {
