@@ -116,4 +116,4 @@ You should define the widget type using *ActivityConfiguration* and add it to yo
 > Look at my dedicated ["Building widgets in SwiftUI"](/2020/09/09/building-widgets-in-swiftui/) post to learn more about the WidgetKit framework.
 
 #### Conclusion
-Today we learned how to build a live activity widget for iOS 16. In the next post, I will try to cover the Dynamic Island configuration type allowing us to layout our content in a few ways.
+Today we learned how to build a live activity widget for iOS 16. In the next post, I will try to cover the Dynamic Island configuration type allowing us to layout our content in a few ways. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
