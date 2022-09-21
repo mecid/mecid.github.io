@@ -69,6 +69,8 @@ Task {
 
 You can use the BackgroundTasks framework or push notifications to update or end your live activity without running the app in the foreground.
 
+> To learn more about the BackgroundTasks framework, take a look at my ["Background tasks in SwiftUI"](/2022/07/06/background-tasks-in-swiftui/) post.
+
 #### Live activity presentation
 We have to use the WidgetKit framework to display a live activity. WidgetKit provides us with the particular *ActivityConfiguration* type allowing us to define a live activity widget.
 
