@@ -7,6 +7,8 @@ image: /public/accessibility.jpeg
 
 SwiftUI Release 3 contains many new APIs that we can utilize to improve accessibility in our apps, and one of them is the new *accessibilityRotor* view modifier. This week we will learn how to use the *accessibilityRotor* view modifier to provide custom VoiceOver navigation using rotors.
 
+{% include friends.html %}
+
 #### Basics
 Usually, we navigate through the app using the left and right swipes while VoiceOver is on. But sometimes, we need a custom path for navigation through a specific collection of elements. A particular group of elements is called a custom rotor. You can create as many as you need custom rotors in your app.
 
