@@ -7,7 +7,7 @@ image: /public/dynamic-island-expanded-wide.png
 
 In the previous post, we talked about live activity widgets displaying your app's ongoing events. Live activity widgets can utilize the dynamic island of the iPhone 14 Pro. In this post, we will discuss possible configurations and customization points of the dynamic island feature using the new API available in the WidgetKit framework.
 
-> To learn about the basics of live activity widgets, take a look at my dedicated "Displaying live activities in iOS 16" post.
+> To learn about the basics of live activity widgets, take a look at my dedicated ["Displaying live activities in iOS 16"](/2022/09/21/displaying-live-activities-in-ios16/) post.
 
 The WidgetKit framework provides us with a particular type of configuration called *ActivityConfiguration*, allowing us to define a live activity widget.
 
