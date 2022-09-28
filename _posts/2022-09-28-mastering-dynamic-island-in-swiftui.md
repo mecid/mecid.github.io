@@ -146,5 +146,5 @@ struct FastingActivityWidget: Widget {
 }
 ```
 
-Today we learned how to use the dynamic island feature to display live activities from your app on iPhone 14 Pro.
+Today we learned how to use the dynamic island feature to display live activities from your app on iPhone 14 Pro. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
 
