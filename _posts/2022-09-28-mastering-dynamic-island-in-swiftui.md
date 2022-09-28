@@ -9,7 +9,32 @@ In the previous post, we talked about live activity widgets displaying your app'
 
 The WidgetKit framework provides us with a particular type of configuration called ActivityConfiguration, allowing us to define a live activity widget.
 
-=====================================================
+```swift
+@available(iOSApplicationExtension 16.1, *)
+struct FastingActivityWidget: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: FastingAttributes.self) { context in
+            LiveActivityView(context: context)
+                .padding(.horizontal)
+        } dynamicIsland: { context in
+            DynamicIsland {
+                DynamicIslandExpandedRegion(.leading, priority: 1) {
+                    LiveActivityView(context: context)
+                }
+            } compactLeading: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            } compactTrailing: {
+                Text(verbatim: context.state.progress.formatted(.percent.precision(.fractionLength(0))))
+                    .foregroundColor(context.state.stage?.color)
+            } minimal: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            }
+        }
+    }
+}
+```
 
 We use the ActivityConfiguration type to define a SwiftUI view to display on the lock screen. In this case, we will use our custom LiveActivityView. We also provide a dynamic island layout configuration to display on iPhone 14 Pro.
 
@@ -21,15 +46,101 @@ Whenever your app is the only app running live activity widget at the moment, th
 
 The expanded dynamic island divides its space into four areas and allows us to control where we want to place the content. We also can use the priority parameter to enable the system to prioritize the views while sizing them.
 
-=====================================================
+```swift
+@available(iOSApplicationExtension 16.1, *)
+struct FastingActivityWidget: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: FastingAttributes.self) { context in
+            LiveActivityView(context: context)
+        } dynamicIsland: { context in
+            DynamicIsland {
+                DynamicIslandExpandedRegion(.leading, priority: 1) {
+                    LiveActivityView(context: context)
+                }
+                
+                DynamicIslandExpandedRegion(.trailing) {
+                    LiveActivityView(context: context)
+                }
+                
+                DynamicIslandExpandedRegion(.center) {
+                    LiveActivityView(context: context)
+                }
+                
+                DynamicIslandExpandedRegion(.bottom) {
+                    LiveActivityView(context: context)
+                }
+            } compactLeading: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            } compactTrailing: {
+                Text(verbatim: context.state.progress.formatted(.percent.precision(.fractionLength(0))))
+                    .foregroundColor(context.state.stage?.color)
+            } minimal: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            }
+        }
+    }
+}
+```
 
 Sometimes we might have too wide content in the leading view that doesn't fit into the available space. In this case, we can use the dynamicIsland view modifier to move the leading view below the True Depth camera.
 
-=====================================================
+```swift
+@available(iOSApplicationExtension 16.1, *)
+struct FastingActivityWidget: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: FastingAttributes.self) { context in
+            LiveActivityView(context: context)
+        } dynamicIsland: { context in
+            DynamicIsland {
+                DynamicIslandExpandedRegion(.leading, priority: 1) {
+                    LiveActivityView(context: context)
+                        .dynamicIsland(verticalPlacement: .belowIfTooWide)
+                }
+            } compactLeading: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            } compactTrailing: {
+                Text(verbatim: context.state.progress.formatted(.percent.precision(.fractionLength(0))))
+                    .foregroundColor(context.state.stage?.color)
+            } minimal: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            }
+        }
+    }
+}
+```
 
 Another customization point is the background color of compact and minimal views. By default, the system uses black color to fill the compact and minimal views, but we can use the keylineTint view modifier to change the color.
 
-=====================================================
+```swift
+@available(iOSApplicationExtension 16.1, *)
+struct FastingActivityWidget: Widget {
+    var body: some WidgetConfiguration {
+        ActivityConfiguration(for: FastingAttributes.self) { context in
+            LiveActivityView(context: context)
+        } dynamicIsland: { context in
+            DynamicIsland {
+                DynamicIslandExpandedRegion(.leading, priority: 1) {
+                    LiveActivityView(context: context)
+                        .dynamicIsland(verticalPlacement: .belowIfTooWide)
+                }
+            } compactLeading: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            } compactTrailing: {
+                Text(verbatim: context.state.progress.formatted(.percent.precision(.fractionLength(0))))
+                    .foregroundColor(context.state.stage?.color)
+            } minimal: {
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
+            }
+        }
+    }
+}
+```
 
 Today we learned how to use the dynamic island feature to display live activities from your app on iPhone 14 Pro.
 
