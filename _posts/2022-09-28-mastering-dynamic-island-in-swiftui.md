@@ -42,7 +42,15 @@ We use the *ActivityConfiguration* type to define a SwiftUI view to display on t
 
 WidgetKit has a particular *DynamicIsland* type allowing us to specify how we want to use the dynamic island layout. The *DynamicIsland* type is not a SwiftUI view but requires us to provide views for compact leading and compact trailing, expanded, and minimal cases.
 
-Whenever your app is the only app running live activity widget at the moment, the system displays both compact leading and compact trailing views accordingly. The system uses minimal view whenever there is more than one live activity widget at the moment. The expanded view is used when the user uses a long press gesture to expand the dynamic island.
+Whenever your app is the only app running live activity widget at the moment, the system displays both compact leading and compact trailing views accordingly. 
+
+![dynamic-island-compact](/public/dynamic-island-compact.png)
+
+The system uses minimal view whenever there is more than one live activity widget at the moment and displays it as detached trailing view.
+
+![dynamic-island-minimal](/public/dynamic-island-minimal.png)
+
+ The expanded view is used when the user uses a long press gesture to expand the dynamic island.
 
 ![dynamic-island-expanded](/public/dynamic-island-expanded.png)
 
