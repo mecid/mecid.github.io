@@ -20,7 +20,7 @@ struct FastingActivityWidget: Widget {
                 .padding(.horizontal)
         } dynamicIsland: { context in
             DynamicIsland {
-                DynamicIslandExpandedRegion(.leading, priority: 1) {
+                DynamicIslandExpandedRegion(.leading) {
                     LiveActivityView(context: context)
                 }
             } compactLeading: {
