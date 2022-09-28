@@ -44,7 +44,7 @@ WidgetKit has a particular *DynamicIsland* type allowing us to specify how we wa
 
 Whenever your app is the only app running live activity widget at the moment, the system displays both compact leading and compact trailing views accordingly. The system uses minimal view whenever there is more than one live activity widget at the moment. The expanded view is used when the user uses a long press gesture to expand the dynamic island.
 
-=====================image==========================
+![dynamic-island-expanded](/public/dynamic-island-expanded.png)
 
 The expanded dynamic island divides its space into four areas and allows us to control where we want to place the content. We also can use the *priority* parameter to enable the system to prioritize the views while sizing them.
 
@@ -87,6 +87,8 @@ struct FastingActivityWidget: Widget {
 ```
 
 Sometimes we might have too wide content in the leading view that doesn't fit into the available space. In this case, we can use the *dynamicIsland* view modifier to move the leading view below the True Depth camera.
+
+![dynamic-island-expanded-wide](/public/dynamic-island-expanded-wide.png)
 
 ```swift
 @available(iOSApplicationExtension 16.1, *)
