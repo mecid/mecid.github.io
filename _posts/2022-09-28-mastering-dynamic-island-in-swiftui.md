@@ -2,6 +2,7 @@
 title: Mastering Dynamic Island in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/dynamic-island-expanded-wide.png
 ---
 
 In the previous post, we talked about live activity widgets displaying your app's ongoing events. Live activity widgets can utilize the dynamic island of the iPhone 14 Pro. In this post, we will discuss possible configurations and customization points of the dynamic island feature using the new API available in the WidgetKit framework.
