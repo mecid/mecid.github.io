@@ -149,6 +149,7 @@ struct FastingActivityWidget: Widget {
                 Image(systemName: "circle")
                     .foregroundColor(.green)
             }
+            .keylineTint(.white)
         }
     }
 }
