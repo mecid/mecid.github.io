@@ -7,6 +7,8 @@ image: /public/blur1.png
 
 SwiftUI has the *blur* view modifier from the very first day. It allows us to build super custom blur effects quickly. On the other hand, SwiftUI Release 3 gives us the new *Material* type that specifies different blur effects defined in Human Interface Guidelines. This week we will learn how to use the *blur* view modifier and the new *Material* type to build translucent effects.
 
+{% include friends.html %}
+
 #### Basics
 Let's start with learning how to use the *blur* view modifier in SwiftUI. All you need to do is to apply the view modifier to any view you want to blur.
 
