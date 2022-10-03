@@ -7,6 +7,8 @@ image: /public/safearea10.png
 
 A safe area defines the area within a view that isn't covered by a navigation bar, tab bar, toolbar, or other views. SwiftUI views respect safe areas out of the box. But there are plenty of situations when you need to customize this behavior. This week we will learn how to manage the safe area in SwiftUI.
 
+{% include friends.html %}
+
 #### Basics
 Safe areas help us to keep our views inside the visible parts of the screen. For example, we can easily place our views between the navigation bar and home indicator using a safe area.
 
