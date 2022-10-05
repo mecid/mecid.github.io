@@ -153,4 +153,6 @@ struct AppContainerView: View {
 
 As you can see in the example above, we use our *NavigationStore* to serialize and store the state of navigation in the scene storage.
 
+> To learn more about state restoration in SwiftUI, look at my ["State restoration in SwiftUI"](/2022/03/10/state-restoration-in-swiftui/) post.
+
 Today we learned how to use the *NavigationPath* type to push different views programmatically without defining additional types. We also learned how to serialize and store the current state of navigation in the scene storage to provide a better user experience. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
