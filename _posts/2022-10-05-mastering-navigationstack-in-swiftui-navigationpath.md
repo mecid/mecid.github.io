@@ -7,6 +7,8 @@ image: /public/navigation.png
 
 SwiftUI provides us with a brand new data-driven navigation API allowing us to map a value to a destination in the view hierarchy. This week I want to continue the story of the new navigation API in SwiftUI by covering another tool. We will learn how to use the *NavigationPath* type to build a navigation stack with multiple destinations.
 
+> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
+
 As you might know from my previous posts, SwiftUI provides value-based navigation links allowing us to bind value programmatically to any view in the navigation stack. Here is a quick example.
 
 ```swift
