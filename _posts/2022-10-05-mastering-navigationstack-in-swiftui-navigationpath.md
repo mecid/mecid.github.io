@@ -1,6 +1,7 @@
 ---
 title: Mastering NavigationStack in SwiftUI. NavigationPath.
 layout: post
+image: /public/navigation.png
 ---
 
 SwiftUI provides us with a brand new data-driven navigation API allowing us to map a value to a destination in the view hierarchy. This week I want to continue the story of the new navigation API in SwiftUI by covering another tool. We will learn how to use the *NavigationPath* type to build a navigation stack with multiple destinations.
