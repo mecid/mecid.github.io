@@ -1,6 +1,7 @@
 ---
 title: Mastering NavigationStack in SwiftUI. NavigationPath.
 layout: post
+category: Mastering SwiftUI views
 image: /public/navigation.png
 ---
 
