@@ -35,7 +35,7 @@ struct ShopContainerView: View {
 }
 ```
 
-In the example above, we define the piece of state that derives our navigation stack. In this case, we can push only values of type *Product*. Usually, we want to push different views into the navigation stack. To achieve that, we can define an enum type covering all the possible cases of navigation destinations we have in the app. But suppose you are a bit lazy to define an enum type. In that case, SwiftUI provides you with a type called *NavigationPath*, allowing us to store any hashable value and map them to the destination in the navigation stack.
+In the example above, we define the piece of state that controls our navigation stack. In this case, we can push only values of type *Product*. Usually, we want to push different views into the navigation stack. To achieve that, we can define an enum type covering all the possible cases of navigation destinations we have in the app. But suppose you are a bit lazy to define an enum type. In that case, SwiftUI provides you with a type called *NavigationPath*, allowing us to store any hashable value and map them to the destination in the navigation stack.
 
 ```swift
 struct ShopContainerView: View {
