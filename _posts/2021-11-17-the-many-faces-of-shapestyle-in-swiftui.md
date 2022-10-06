@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 *ShapeStyle* is the protocol that we have from the very first release of the SwiftUI framework. *ShapeStyle* defines a color or pattern to use when rendering a shape. This week we will learn the many faces of *ShapeStyle* protocol and different implementations provided by the SwiftUI framework.
 
+{% include friends.html %}
+
 #### Colors
 Usually, we don't use the *ShapeStyle* protocol itself. We use the many implementations of the protocol that SwiftUI provides us. One of them is the *Color* struct. We can use an instance of the *Color* struct to fill or stroke a shape in SwiftUI. Let's take a look at the quick example.
 
