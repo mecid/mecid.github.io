@@ -7,6 +7,8 @@ image: /public/progress.png
 
 Many of our apps do heavy work on background threads like networking or data processing. We usually want to display progress or the activity indicator of the ongoing work. This week we will learn how to use *ProgressView* to present both indeterminate and determinate progress in SwiftUI.
 
+{% include friends.html %}
+
 #### indeterminate progress
 All you need to do to display indeterminate progress is to place *ProgressView* anywhere in your layout. Let's try to do that in a simple example.
 
