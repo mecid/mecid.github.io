@@ -7,6 +7,8 @@ image: /public/swiftui.png
 
 Usually, SwiftUI uses rectangles to render views, but we can control the shape of the view by using the *clipShape* view modifier. This week we will learn how to modify the interactable shape of the view during hit-testing or previewing drag and drop by using the brand new *contentShape* view modifier.
 
+{% include friends.html %}
+
 Let's start with a simple view that displays text and an image in a vertical stack.
 
 ```swift
