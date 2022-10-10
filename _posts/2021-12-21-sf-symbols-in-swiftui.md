@@ -7,6 +7,8 @@ image: /public/sf.png
 
 Apple provides us with a set of different icons available across all the platforms called SF Symbols. SF Symbols package contains more than 3200 icons that we can use to visualize different states and actions in our apps. This week we will learn how to utilize the power of SF Symbols in SwiftUI views.
 
+{% include friends.html %}
+
 #### Basics
 You can easily display an SF Symbols in SwiftUI by using a particular initializer of the *Image* struct. Let's take a look at a few quick examples.
 
