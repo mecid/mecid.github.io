@@ -7,6 +7,8 @@ category: Architecture
 
 In the first post of the current series, I talked about Swift Package Manager basics and how we can maintain the project with many Swift modules. This week we continue the topic of Microapps architecture by introducing feature modules.
 
+{% include friends.html %}
+
 [Last week](/2022/01/12/microapps-architecture-in-swift-spm-basics/) we created a separate module for the design system of our app that contains buttons and other shared UI components. We call them foundation modules because we will import them into many different modules and use their functionality. Another excellent example of the foundation module is the networking layer. We can also extract it into a separate module and import it whenever needed.
 
 In the current post, I want to focus on the feature modules. Feature module provides complete functionality for a dedicated app feature. We can also call them product modules because they usually implement a particular part of the final product. Let's create the first feature module that onboards users on the first app launch. As always, we should start with declaring our module in the *Package.swift* file.
