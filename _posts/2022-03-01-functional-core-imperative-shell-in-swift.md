@@ -7,6 +7,8 @@ category: Architecture
 
 We love value types because they provide us with safety and predictability, allowing us to reason about the code we write. But we still need objects to hold and mutate our app's shared state. This week, we will discuss modeling our app's logic by leveraging the value and reference semantics.
 
+{% include friends.html %}
+
 Value types are great, and one of the reasons for that is instance isolation. Whenever you pass a value type as a parameter or assign it to another variable, you get a new copy with the very same data. You always have a warranty that there are no side effects across the app while mutating the local copy of the value type.
 
 ```swift
