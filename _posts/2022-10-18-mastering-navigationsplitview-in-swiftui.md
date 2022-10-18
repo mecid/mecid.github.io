@@ -92,6 +92,8 @@ struct ContentView: View {
 
 As you can see in the example above, we display the hierarchy of folders and items using the three-column navigation. We use value-based navigation links in conjunction with selection-based lists. SwiftUI automatically assigns the list selection to the value of a navigation link whenever the user presses it.
 
+> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
+
 All the navigation links inside selection-based lists work unless you have a navigation link outside of the list, as we have in the content column. In this case, we should wrap the content view with the *NavigationStack* to provide additional destination points.
 
 ```swift
