@@ -2,6 +2,7 @@
 title: Mastering NavigationSplitView in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/navigation.png
 ---
 
 My final post in the new navigation APIs series in SwiftUI is about building two-three column apps. I have been waiting for all the betas to solve the critical issues with the brand-new *NavigationSplitView*, and it looks like it is almost ready to use. This week we will learn how to use and customize *NavigationSplitView* to build multi-column apps in SwiftUI.
