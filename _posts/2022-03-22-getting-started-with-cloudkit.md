@@ -108,11 +108,7 @@ In the example above, you see the simple *Fasting* value type that I want to sto
 ```swift
 extension CloudKitService {
     func save(_ record: CKRecord) async throws {
-        do {
-            try await CKContainer.default().privateCloudDatabase.save(record)
-        } catch {
-            Self.logger.error("\(error.localizedDescription, privacy: .public)")
-        }
+        try await CKContainer.default().privateCloudDatabase.save(record)
     }
 }
 ```
