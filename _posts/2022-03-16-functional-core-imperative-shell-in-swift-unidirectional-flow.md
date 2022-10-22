@@ -7,10 +7,12 @@ image: /public/store.png
 
 A few weeks ago, we talked about the idea of Functional core and Imperative shell in Swift. The goal is to extract the pure logic using value types and keep side effects in the thin object layer. This week, we will look at how we can apply this approach in an opinionated way by using unidirectional flow.
 
-> If you are not familiar with the idea of unidirectional flow, I highly encourage you to read my series of posts about ["Redux-like state container in SwiftUI"](/2019/09/18/redux-like-state-container-in-swiftui/).
+{% include friends.html %}
 
 #### Functional Core
 The functional core is the layer responsible for all the logic in our app that we want to verify using unit tests. It should be pure, without any side effects. We want to provide the input and verify the output. Usually, the implementation of unidirectional flow requires many reducer functions that accept the state and action and return a new state. Let's define the reducer function in code.
+
+> If you are not familiar with the idea of unidirectional flow, I highly encourage you to read my series of posts about ["Redux-like state container in SwiftUI"](/2019/09/18/redux-like-state-container-in-swiftui/).
 
 ```swift
 typealias Reducer<State, Action> = (State, Action) -> State
