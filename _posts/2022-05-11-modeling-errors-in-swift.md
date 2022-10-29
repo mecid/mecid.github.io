@@ -7,6 +7,8 @@ image: /public/swift.png
 
 The new Swift Concurrency feature doesn't only bring new opportunities for writing safer and more maintainable async code but also changes the way we handle errors. I didn't use *throw-catch* keywords too much in my legacy code because usually, I had a completion callback with the *Result* type handled by the *switch* operator. This week we will talk about modeling error types and how we will address them in Swift with *throw-catch* keywords.
 
+{% include friends.html %}
+
 #### Basics
 Let's look at a small but typical example of error handling in Swift. Here is the in-memory cache implementation that we can use in our apps to store some data by key. There is an option to limit the capacity of the in-memory cache and the list of errors that a cache instance can throw.
 
