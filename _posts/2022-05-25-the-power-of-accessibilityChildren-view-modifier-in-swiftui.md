@@ -7,7 +7,7 @@ image: /public/accessibility.jpeg
 
 SwiftUI provides us with a rich set of view modifiers to manipulate the accessibility tree of views. I covered many of them, and you can find them in the blog's dedicated Accessibility category. This week we will talk about the *accessibilityChildren* view modifier and how we can benefit from it.
 
-> To learn more about accessibility view modifiers available in SwiftUI, take a look at the [Accessibility category](/categories) on the blog.
+{% include friends.html %}
 
 The *accessibilityChildren* view modifier allows us to create an accessibility container for a view and populate it with the elements from a view you provide using a *ViewBuilder* closure. Let's take a look at a quick example.
 
@@ -37,6 +37,8 @@ struct BarChartShape: Shape {
 ```
 
 As you can see in the example above, we have the shape-type drawing data points we pass. We can't provide accessibility values for every data point because the shape becomes a single view after stroking or filling it. 
+
+> To learn more about accessibility view modifiers available in SwiftUI, take a look at the [Accessibility category](/categories) on the blog.
 
 Fortunately, SwiftUI gives us the *accessibilityChildren* view modifier, especially for this case.
 
