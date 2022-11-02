@@ -1,6 +1,7 @@
 ---
 title: Window management in SwiftUI
 layout: post
+category: View Composition
 ---
 
 One of the significant additions to the current iteration of the SwiftUI framework was window management APIs. We can open a separate window using the new environment APIs and create a menu bar app using the new scene APIs. This week we will learn how to use new window management APIs in SwiftUI.
