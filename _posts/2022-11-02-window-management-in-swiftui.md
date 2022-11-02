@@ -150,12 +150,24 @@ You can control the visibility of the menu bar icon via another overload accepti
 Menu bar apps can render their content as a menu or inside a dedicated window. You can control this behavior using the *menuBarExtraStyle* view modifier.
 
 ```swift
-MenuBarExtra {
-    MenuBarView()
-} label: {
-    Label("MyApp", systemImage: "star")
+@main struct MyApp: App {
+    @State private var menuBarExtraShown = true
+    
+    var body: some Scene {
+        #if os(macOS)
+        MenuBarExtra(isInserted: $menuBarExtraShown) {
+            MenuBarView()
+        } label: {
+            Label("MyApp", systemImage: "star")
+        }
+        .menuBarExtraStyle(.window)
+        #endif
+        
+        WindowGroup {
+            ContentView()
+        }
+    }
 }
-.menuBarExtraStyle(.window)
 ```
 
 #### Conclusion
