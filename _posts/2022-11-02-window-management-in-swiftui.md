@@ -84,8 +84,7 @@ In the example above, we register a window group for a particular identifier typ
 
 ```swift
 struct ContentView: View {
-    @Environment(\.openWindow)
-    private var openWindow
+    @Environment(\.openWindow) private var openWindow
     
     let items: [Item]
     
