@@ -7,6 +7,8 @@ image: /public/wwdc22.jpg
 
 WWDC22 brings tons of new features to SwiftUI and makes it a full-featured UI framework that we can use daily. Unfortunately, most of the new features are available on iOS 16 and macOS 13. This post will cover the most significant additions and changes to the SwiftUI framework.
 
+{% include friends.html %}
+
 #### Navigation
 SwiftUI 4 provides a new way to build programmatic navigation with deep linking quickly. The old *NavigationView* is deprecated now, and we should use the new *NavigationStack* instead. Here is a quick example of how we can use it.
 
