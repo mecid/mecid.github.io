@@ -104,7 +104,7 @@ The SwiftUI framework provides a few ways of styling windows using view modifier
 Another option is to use the *presentedWindowStyle* view modifier on the view hierarchy, which will set the particular style for windows created by this view hierarchy.
 
 #### Menubar window
-Menu bar apps are very popular on macOS, and now we have a native way to build them in SwiftUI. There is a new scene type called *MenuBarExtra*. It appears in the system menu bar and presents its content in a popover-like window.
+Menu bar apps are very popular on macOS, and now we have a native way to build them in SwiftUI. There is a new scene type called *MenuBarExtra*. It appears in the system menu bar and presents its content in a pull-down menu.
 
 ```swift
 @main struct MyApp: App {
