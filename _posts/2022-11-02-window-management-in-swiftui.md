@@ -159,4 +159,5 @@ MenuBarExtra {
 ```
 
 #### Conclusion
-Today we learned how to use new APIs to manage windows in SwiftUI. The declarative approach we used to see for views is working for high-level concepts like windows now. Feel free to use it to build iOS, iPadOS, and macOS apps in a single codebase.
+Today we learned how to use new APIs to manage windows in SwiftUI. The declarative approach we used to see for views is working for high-level concepts like windows now. Feel free to use it to build iOS, iPadOS, and macOS apps in a single codebase. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
