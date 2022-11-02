@@ -6,7 +6,7 @@ layout: post
 One of the significant additions to the current iteration of the SwiftUI framework was window management APIs. We can open a separate window using the new environment APIs and create a menu bar app using the new scene APIs. This week we will learn how to use new window management APIs in SwiftUI.
 
 #### Multiple windows support
-You can always check whenever the platform you are running supports multiple window environments using the supportsMultipleWindows environment value.
+You can always check whenever the platform you are running supports multiple window environments using the *supportsMultipleWindows* environment value.
 
 ```swift
 struct ContentView: View {
@@ -43,7 +43,7 @@ SwiftUI provides a new scene type to define a single window on macOS.
 
 ```
 
-As you can see in the example above, we use the new Window type to define a single window assigned to a particular identifier. Now we can use the openWindow environment value to open a window with the dedicated identifier.
+As you can see in the example above, we use the new Window type to define a single window assigned to a particular identifier. Now we can use the *openWindow* environment value to open a window with the dedicated identifier.
 
 ```swift
 struct ContentView: View {
@@ -59,7 +59,7 @@ struct ContentView: View {
 ```
 
 #### Window group
-Another addition to the scene API is the new overload of the WindowGroup scene type allowing us to register a window group displaying items by identifier.
+Another addition to the scene API is the new overload of the *WindowGroup* scene type allowing us to register a window group displaying items by identifier.
 
 ```swift
 @main struct MyApp: App {
@@ -97,12 +97,12 @@ struct ContentView: View {
 ```
 
 #### Window styling
-The SwiftUI framework provides a few ways of styling windows using view modifiers. First, we can display or hide the title of the window by applying the windowStyle view modifier. It accepts hiddenTitleBar or titleBar values. This view modifier should be used on the window itself. 
+The SwiftUI framework provides a few ways of styling windows using view modifiers. First, we can display or hide the title of the window by applying the *windowStyle* view modifier. It accepts *hiddenTitleBar* or *titleBar* values. This view modifier should be used on the window itself. 
 
-Another option is to use the presentedWindowStyle view modifier on the view hierarchy, which will set the particular style for windows created by this view hierarchy.
+Another option is to use the *presentedWindowStyle* view modifier on the view hierarchy, which will set the particular style for windows created by this view hierarchy.
 
 #### Menubar window
-Menu bar apps are very popular on macOS, and now we have a native way to build them in SwiftUI. There is a new scene type called MenuBarExtra. It appears in the system menu bar and presents its content in a popover-like window.
+Menu bar apps are very popular on macOS, and now we have a native way to build them in SwiftUI. There is a new scene type called *MenuBarExtra*. It appears in the system menu bar and presents its content in a popover-like window.
 
 ```swift
 @main struct MyApp: App {
@@ -145,7 +145,7 @@ You can control the visibility of the menu bar icon via another overload accepti
 
 ```
 
-Menu bar apps can render their content as a menu or inside a dedicated window. You can control this behavior using the menuBarExtraStyle view modifier.
+Menu bar apps can render their content as a menu or inside a dedicated window. You can control this behavior using the *menuBarExtraStyle* view modifier.
 
 ```swift
 MenuBarExtra {
