@@ -60,6 +60,8 @@ struct ContentView: View {
 }
 ```
 
+> To learn more about scenes in SwiftUI, take a look at my dedicated ["Managing scenes in SwiftUI"](/2020/08/26/managing-scenes-in-swiftui/) post.
+
 #### Window group
 Another addition to the scene API is the new overload of the *WindowGroup* scene type allowing us to register a window group displaying items by identifier.
 
