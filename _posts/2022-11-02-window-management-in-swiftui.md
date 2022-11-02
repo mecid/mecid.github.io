@@ -45,7 +45,7 @@ SwiftUI provides a new scene type to define a single window on macOS.
 
 ```
 
-As you can see in the example above, we use the new Window type to define a single window assigned to a particular identifier. Now we can use the *openWindow* environment value to open a window with the dedicated identifier.
+As you can see in the example above, we use the new Window scene type to define a single window assigned to a particular identifier. Now we can use the *openWindow* environment value to open a window with the dedicated identifier.
 
 ```swift
 struct ContentView: View {
