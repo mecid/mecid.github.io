@@ -49,8 +49,7 @@ As you can see in the example above, we use the new Window scene type to define 
 
 ```swift
 struct ContentView: View {
-    @Environment(\.openWindow)
-    private var openWindow
+    @Environment(\.openWindow) private var openWindow
     
     var body: some View {        
         Button("Open statistics") {
