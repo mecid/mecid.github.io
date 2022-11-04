@@ -7,7 +7,7 @@ image: /public/navigation.png
 
 SwiftUI is the declarative data-driven framework allowing us to build complex user interfaces by defining the data rendering on the screen. Navigation was the main pain point of the framework from the very first day. Fortunately, things have changed since WWDC 22, and SwiftUI provides the new data-driven Navigation API. This week we will learn how to use the new Navigation API to build complex user flows.
 
-> To learn more about other new features of SwiftUI, take a look at my ["What is new in SwiftUI after WWDC22"](/2022/06/07/what-is-new-in-swiftui-after-wwdc22/) post.
+{% include friends.html %}
 
 #### Basics
 First, I must mention that the old *NavigationView* is deprecated, and we should use the new *NavigationStack* instead. Let's take a look at a quick example.
@@ -40,6 +40,8 @@ struct ProductDetailView: View {
 ```
 
 In the example above, we define a simple master-detail flow. We place *NavigationStack* at the root of our view hierarchy. Next, we define a list of messages where every message provides a link to the details screen of the particular message. As you can see, we still use the old *NavigationLink* type here, and it works great for this use case.
+
+> To learn more about other new features of SwiftUI, take a look at my ["What is new in SwiftUI after WWDC22"](/2022/06/07/what-is-new-in-swiftui-after-wwdc22/) post.
 
 The *NavigationLink* type adds new data-driven capabilities. A brand new initializer allows us to create a link bound to some value. Here is the previous example refactored using the new data-driven Navigation API.
 
