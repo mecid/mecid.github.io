@@ -7,7 +7,7 @@ image: /public/navigation.png
 
 This week we will continue exploring the new Navigation API in SwiftUI. One of the benefits of the new data-driven Navigation API is the programmatic navigation with deep-linking possibilities. Let's dive into the new API by learning how to build programmatic deep navigation flows.
 
-> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
+{% include friends.html %}
 
 #### Programmatic navigation
 There is a special *NavigationStack* initializer accepting a binding to a mutable collection. SwiftUI maps values of the mutable collection into a view hierarchy and allows us to push and pop views into the *NavigationStack* programmatically. Let's take a look at the example.
@@ -37,6 +37,8 @@ struct ShopContainerView: View {
 ```
 
 As you can see in the example above, we define a piece of state that drives our navigation via binding. We also display a button that adds another product to the path. SwiftUI automatically maps the contents of the path binding to the view hierarchy in the navigation stack and automatically removes the product from the path whenever the user presses the back button.
+
+> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
 
 We also can quickly implement pop to the root view by removing all the items from the path. With this new data-driven approach, SwiftUI is responsible for keeping your navigation stack in sync with the path binding.
 
