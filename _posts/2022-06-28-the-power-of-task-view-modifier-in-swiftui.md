@@ -7,6 +7,8 @@ image: /public/swiftui.png
 
 *Task* view modifier is the key to the Swift Concurrency world through SwiftUI. It allows us to build complex async tasks by leveraging the power of cooperative cancellation and the lifecycle of a SwiftUI view. This week we will learn all the powerful features of the *task* view modifier in SwiftUI.
 
+{% include friends.html %}
+
 ```swift
 struct ContentView: View {
     @StateObject private var store = Store()
