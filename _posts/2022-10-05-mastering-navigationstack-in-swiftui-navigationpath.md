@@ -7,7 +7,7 @@ image: /public/navigation.png
 
 SwiftUI provides us with a brand new data-driven navigation API allowing us to map a value to a destination in the view hierarchy. This week I want to continue the story of the new navigation API in SwiftUI by covering another tool. We will learn how to use the *NavigationPath* type to build a navigation stack with different destinations.
 
-> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
+{% include friends.html %}
 
 As you might know from my previous posts, SwiftUI provides value-based navigation links allowing us to bind value programmatically to any view in the navigation stack. Here is a quick example.
 
@@ -65,6 +65,8 @@ struct ShopContainerView: View {
 ```
 
 As you can see in the example above, we define a variable of the type *NavigationPath* to store the whole navigable state. *NavigationPath* erases the type of pushed values and allows us to keep values of different types. The only requirement is to push only hashable values.
+
+> To learn about the basics of the new data-driven Navigation API in SwiftUI, look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
 
 Another bonus of using *NavigationPath* is the codable representation of pushed values. The *NavigationPath* provides the codable property of type *CodableRepresentation*, allowing us to encode pushed values into the *Data* type and store it somewhere. Make sure that the values you push conform to *Codable*. Otherwise, the codable representation of the *NavigationPath* will be *nil*.
 
