@@ -7,6 +7,8 @@ image: /public/ipad.jpg
 
 One of the significant additions to the current iteration of the SwiftUI framework was window management APIs. We can open a separate window using the new environment APIs and create a menu bar app using the new scene APIs. This week we will learn how to use new window management APIs in SwiftUI.
 
+{% include friends.html %}
+
 #### Multiple windows support
 You can always check whenever the platform you are running supports multiple window environments using the *supportsMultipleWindows* environment value.
 
