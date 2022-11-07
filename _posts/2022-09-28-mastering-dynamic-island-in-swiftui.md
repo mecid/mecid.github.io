@@ -7,7 +7,7 @@ image: /public/dynamic-island-expanded-wide.png
 
 In the previous post, we talked about live activity widgets displaying your app's ongoing events. Live activity widgets can utilize the dynamic island of the iPhone 14 Pro. In this post, we will discuss possible configurations and customization points of the dynamic island feature using the new API available in the WidgetKit framework.
 
-> To learn about the basics of live activity widgets, take a look at my dedicated ["Displaying live activities in iOS 16"](/2022/09/21/displaying-live-activities-in-ios16/) post.
+{% include friends.html %}
 
 The WidgetKit framework provides us with a particular type of configuration called *ActivityConfiguration*, allowing us to define a live activity widget.
 
@@ -39,6 +39,8 @@ struct FastingActivityWidget: Widget {
 ```
 
 We use the *ActivityConfiguration* type to define a SwiftUI view to display on the lock screen. In this case, we will use our custom *LiveActivityView*. We also provide a dynamic island layout configuration to display on iPhone 14 Pro.
+
+> To learn about the basics of live activity widgets, take a look at my dedicated ["Displaying live activities in iOS 16"](/2022/09/21/displaying-live-activities-in-ios16/) post.
 
 WidgetKit has a particular *DynamicIsland* type allowing us to specify how we want to use the dynamic island layout. The *DynamicIsland* type is not a SwiftUI view but requires us to provide views for compact leading and compact trailing, expanded, and minimal cases.
 
