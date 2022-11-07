@@ -7,6 +7,8 @@ image: /public/wwdc22.jpg
 
 One of the new SwiftUI views released during WWDC22 was *LabeledContent*. And it became one of my favorite views that I try to use everywhere because it fits very well into Human Design Guidelines. This week we will learn how to use *LabeledContent* to provide a platform-oriented experience. 
 
+{% include friends.html %}
+
 *LabeledContent* view is a simple view that composes a label and content. Usually, it displays the label on the leading edge and the content on the trailing edge. You can achieve similar behavior by inserting the label and content into the *HStack* and placing the *Spacer* view between them.
 
 But *LabeledContent* is not that simple. It understands its parent container and can display the content in different ways. *LabeledContent* can also apply additional styling like using secondary color as foreground color for its content. Let's take a look at how we can use it.
