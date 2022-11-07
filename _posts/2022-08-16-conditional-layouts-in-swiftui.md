@@ -7,6 +7,8 @@ category: Layout
 
 From the first day of the SwiftUI framework, we have primary layout containers like *VStack*, *HStack*, and *ZStack*. The current iteration of the SwiftUI framework brings another layout container allowing us to place views in a grid. But the most important addition was the *Layout* protocol that all layout containers conform to. It also allows us to build our super-custom layout containers from scratch. This week we will learn the basics of the *Layout* protocol in SwiftUI and how to build conditional layouts using *AnyLayout* type.
 
+{% include friends.html %}
+
 #### Basics
 The way layout works in SwiftUI was always a hidden gem because of private APIs that Apple doesn't show us. Nowadays, we have the *Layout* protocol that expands the magical world of layout calculations in SwiftUI. 
 
