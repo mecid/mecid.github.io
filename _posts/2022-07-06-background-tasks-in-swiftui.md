@@ -4,7 +4,10 @@ layout: post
 category: Mastering SwiftUI views
 image: /public/wwdc22.jpg
 ---
+
 One of the exciting frameworks released along with iOS 13 was the BackgroundTasks framework. It allows you to schedule work intelligently in the background. Finally, we can handle background tasks using the SwiftUI app lifecycle. This week we will learn how to schedule and handle background tasks in SwiftUI.
+
+{% include friends.html %}
 
 #### Basics
 First, you must add background mode to your Xcode project on the capabilities page. You should choose background fetch in the list of available background modes to enable your app to make network requests in the background. Let's see how we can schedule a background task.
