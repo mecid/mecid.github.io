@@ -7,7 +7,7 @@ image: /public/wwdc22.jpg
 
 One of the most requested features for iOS was customizable lock screens. And finally, we have got it with the latest iOS 16. We can populate our lock screen with glanceable widgets. Implementing a lock screen widget is straightforward because its API shares the same code with home screen widgets. This week we will learn how to implement lock screen widgets for our apps.
 
-> Look at my dedicated ["Building widgets in SwiftUI"](/2020/09/09/building-widgets-in-swiftui/) post to learn more about home screen widgets.
+{% include friends.html %}
 
 Let's start with a code you might already have in your app for displaying home screen widgets.
 
@@ -72,6 +72,8 @@ It would be best to remember that the system uses different rendering modes for 
 1. Full-color mode for home screen widgets and watchOS complications supporting colors. And yes, you can also use WidgetKit to implement watchOS complications, starting with watchOS 9.
 2. Vibrant mode is where the system desaturates text, images, and gauges into monochrome and colors them properly for the Lock Screen background.
 3. The accented mode is used only on watchOS, where the system divides the widget into two groups, default and accented. The system colors the accented part of your widget with the tint color the user chooses in the watch face settings.
+
+> Look at my dedicated ["Building widgets in SwiftUI"](/2020/09/09/building-widgets-in-swiftui/) post to learn more about home screen widgets.
 
 Rendering mode is available via the SwiftUI environment, so you can always check which rendering mode is active and reflect it in your design. For example, you might use different images with different rendering modes.
 
