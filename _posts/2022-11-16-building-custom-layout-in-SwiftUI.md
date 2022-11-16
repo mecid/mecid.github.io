@@ -5,6 +5,8 @@ layout: post
 
 Nowadays, SwiftUI provides the Layout protocol allowing us to build super-custom layouts by digging into the layout system without using GeometryReader. Layout protocol brings us the incredible power of building and reusing any layout you can imagine. This week we will learn how to use the new Layout protocol to build a FlowLayout in SwiftUI.
 
+{% include friends.html %}
+
 Any layout you want to build must conform to the new Layout protocol. It has two required functions to implement.
 
 =====================================================
