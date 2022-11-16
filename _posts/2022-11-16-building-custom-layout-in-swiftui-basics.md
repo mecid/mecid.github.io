@@ -1,5 +1,5 @@
 ---
-title: Building custom layout in SwiftUI
+title: Building custom layout in SwiftUI. Basics
 layout: post
 image: /public/flowlayout.png
 category: Layout
