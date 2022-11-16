@@ -130,4 +130,4 @@ struct ContentView: View {
 
 ![flow-layout](/public/flowlayout.png)
 
-Today we learned the *Layout* protocol's basics and built an elementary version of the flow layout. We will continue digging into the *Layout* protocol in the following posts to create more flexible configurations.
+Today we learned the *Layout* protocol's basics and built an elementary version of the flow layout. We will continue digging into the *Layout* protocol in the following posts to create more flexible configurations. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
