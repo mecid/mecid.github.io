@@ -106,7 +106,7 @@ struct FlowLayout: Layout {
 
 As you can see in the example above, the *placeSubviews* function has the same set of parameters we had in the *sizeThatFits* but also provides us with the bounds rectangle. The bounds rectangle is the place in the view hierarchy we will fill with our subviews. Please don't assume that it has zero origin because it can be placed anywhere on the screen, and you should use the *minX, minY, maxX, maxY, midX, midY* properties to put your views ideally.
 
-*Subviews* type allows us to access the view proxy by index and use its place function to put the view into a specific position. It also allows us to move the view's anchor point according to the position we pass.
+*Subviews* type allows us to access the view proxy by index and use its *place* function to put the view into a specific position. It also allows us to move the view's anchor point according to the position we pass.
 
 ```swift
 struct ContentView: View {
