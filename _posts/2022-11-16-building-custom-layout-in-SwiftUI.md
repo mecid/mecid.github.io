@@ -2,6 +2,7 @@
 title: Building custom layout in SwiftUI
 layout: post
 image: /public/flowlayout.png
+category: Layout
 ---
 
 Nowadays, SwiftUI provides the *Layout* protocol allowing us to build super-custom layouts by digging into the layout system without using *GeometryReader*. *Layout* protocol brings us the incredible power of building and reusing any layout you can imagine. This week we will learn how to use the new *Layout* protocol to build a flow layout in SwiftUI.
