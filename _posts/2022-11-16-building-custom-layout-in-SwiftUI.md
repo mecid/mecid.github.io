@@ -106,6 +106,6 @@ As you can see in the example above, the placeSubviews function has the same set
 
 Subviews type allows us to access the view proxy by index and use its place function to put the view into a specific position. It also allows us to move the view's anchor point according to the position we pass.
 
-=====================================================
+![flow-layout](/public/flowlayout.png)
 
 Today we learned the Layout protocol's basics and built an elementary version of the flow layout. We will continue digging into the Layout protocol in the following posts to create more flexible configurations.
