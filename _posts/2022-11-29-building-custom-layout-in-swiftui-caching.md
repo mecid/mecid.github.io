@@ -9,15 +9,50 @@ SwiftUI calls functions of your custom layout many times across the lifecycle to
 
 The Layout protocol has an associated type called Cache, which is Void by default. But you can define any type you need instead and implement your custom caching behavior. The easiest way is to define a nested type with the name Cache inside your custom layout type.
 
-=====================================================
+```swift
+struct FlowLayout: Layout {
+    struct Cache {
+        var sizes: [CGSize]? = nil
+        var positions: [CGPoint]? = nil
+    }
+}
+```
 
 The Layout protocol has the makeCache function, which we can implement to provide a cache instance and make some initial calculations to store during layout changes.
 
-=====================================================
+```swift
+struct FlowLayout: Layout {
+    struct Cache {
+        var sizes: [CGSize]? = nil
+        var positions: [CGPoint]? = nil
+    }
+    
+    func makeCache(subviews: Subviews) -> Cache {
+        let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
+        return Cache(sizes: sizes, positions: nil)
+    }
+}
+```
 
 The layout protocol also provides the updateCache function, which we can use to update our cache. The SwiftUI framework calls this function as soon as children of the layout change. You can ignore the updateCache function. In this case, SwiftUI calls the makeCache function and builds the cache from scratch.
 
-=====================================================
+```swift
+struct FlowLayout: Layout {
+    struct Cache {
+        var sizes: [CGSize]? = nil
+        var positions: [CGPoint]? = nil
+    }
+    
+    func makeCache(subviews: Subviews) -> Cache {
+        let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
+        return Cache(sizes: sizes, positions: nil)
+    }
+    
+    func updateCache(_ cache: inout Cache, subviews: Subviews) {
+        // Tune your cache data here
+    }
+}
+```
 
 As you can see in the example above, the updateCache function provides cache instance as the inout parameter allowing us to mutate it during the call.
 
@@ -25,7 +60,46 @@ Keep in mind that both makeCache and updateCache functions provide you only the 
 
 Instead, the Layout protocol allows us to mutate our cache in sizeThatFits and placeSubviews functions where we have the proposed size.
 
-=====================================================
+```swift
+struct FlowLayout: Layout {
+    // ....
+
+    func placeSubviews(
+        in bounds: CGRect,
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout Cache
+    ) {
+        var lineX = bounds.minX
+        var lineY = bounds.minY
+        var lineHeight: CGFloat = 0
+        
+        for index in subviews.indices {
+            if lineX + cache.sizes[index].width > (proposal.width ?? 0) {
+                lineY += lineHeight
+                lineHeight = 0
+                lineX = bounds.minX
+            }
+            
+            let position = CGPoint(
+                x: lineX + cache.sizes[index].width / 2,
+                y: lineY + cache.sizes[index].height / 2
+            )
+            
+            cache.positions.append(position)
+            
+            lineHeight = max(lineHeight, cache.sizes[index].height)
+            lineX += cache.sizes[index].width
+            
+            subviews[index].place(
+                at: position,
+                anchor: .center,
+                proposal: ProposedViewSize(cache.sizes[index])
+            )
+        }
+    }
+}
+```
 
 As you can see in the example above, we populate our cache with the exact position values during the placeSubviews function. Whenever SwiftUI calls this function, we check our cache and place subviews in the cached position. In the case where our cache is empty, we populate it with the correct values.
 
