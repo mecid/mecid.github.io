@@ -47,17 +47,20 @@ struct FlowLayout: Layout {
         var lineWidth: CGFloat = 0
         var lineHeight: CGFloat = 0
         
-        for size in sizes {
-            lineHeight = max(size.height, lineHeight)
-            
-            if lineWidth + size.width > (proposal.width ?? 0) {
+          for size in sizes {
+            if lineWidth + size.width > proposal.width ?? 0 {
                 totalHeight += lineHeight
-                lineHeight = 0
+                lineWidth = size.width
+                lineHeight = size.height
             } else {
                 lineWidth += size.width
-                totalWidth = max(totalWidth, lineWidth)
+                lineHeight = max(lineHeight, size.height)
             }
+
+            totalWidth = max(totalWidth, lineWidth)
         }
+
+        totalHeight += lineHeight
         
         return .init(width: totalWidth, height: totalHeight)
     }
