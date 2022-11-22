@@ -5,6 +5,8 @@ layout: post
 
 In the previous post, we talked about the basics of the new *Layout* protocol. Today I'm going to continue the series of posts about the new opportunity to build super-custom reusable layouts by covering the idea of caching layout information and tuning its performance.
 
+{% include friends.html %}
+
 SwiftUI calls functions of your custom layout many times across the lifecycle to measure different sizing options during the layout process. It caches a few things automatically, but you can also implement your own caching mechanics if you need to improve your layout performance.
 
 The *Layout* protocol has an associated type called *Cache*, which is *Void* by default. But you can define any type you need instead and implement your custom caching behavior. The easiest way is to define a nested type with the name *Cache* inside your custom layout type.
