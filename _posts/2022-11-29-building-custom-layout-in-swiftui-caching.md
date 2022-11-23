@@ -1,6 +1,7 @@
 ---
 title: Building custom layout in SwiftUI. Caching.
 layout: post
+image: /public/flowlayout.png
 ---
 
 In the previous post, we talked about the basics of the new *Layout* protocol. Today I'm going to continue the series of posts about the new opportunity to build super-custom reusable layouts by covering the idea of caching layout information and tuning its performance.
