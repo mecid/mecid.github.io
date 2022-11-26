@@ -11,7 +11,7 @@ In the previous post, we talked about the basics of the new *Layout* protocol. T
 
 SwiftUI calls functions of your custom layout many times across the lifecycle to measure different sizing options during the layout process. It caches a few things automatically, but you can also implement your own caching mechanics if you need to improve your layout performance.
 
-> To learn more about the basics of the *Layout* protocol, take a look at my dedicated ["Building custom layout in SwiftUI. Basics."](/2022/11/16/building-custom-layout-in-swiftui-basics/) post 
+> To learn more about the basics of the *Layout* protocol, take a look at my dedicated ["Building custom layout in SwiftUI. Basics"](/2022/11/16/building-custom-layout-in-swiftui-basics/) post 
 
 The *Layout* protocol has an associated type called *Cache*, which is *Void* by default. But you can define any type you need instead and implement your custom caching behavior. The easiest way is to define a nested type with the name *Cache* inside your custom layout type.
 
