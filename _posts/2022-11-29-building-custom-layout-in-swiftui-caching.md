@@ -18,8 +18,8 @@ The *Layout* protocol has an associated type called *Cache*, which is *Void* by 
 ```swift
 struct FlowLayout: Layout {
     struct Cache {
-        var sizes: [CGSize]? = nil
-        var positions: [CGPoint]? = nil
+        var sizes: [CGSize] = []
+        var positions: [CGPoint] = []
     }
 }
 ```
