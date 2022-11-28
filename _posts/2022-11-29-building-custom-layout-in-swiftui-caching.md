@@ -55,7 +55,7 @@ struct FlowLayout: Layout {
     }
     
     func updateCache(_ cache: inout Cache, subviews: Subviews) {
-        // Tune your cache data here
+        cache.sizes = subviews.map { $0.sizeThatFits(.unspecified) }
     }
 }
 ```
