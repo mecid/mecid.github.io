@@ -109,4 +109,4 @@ struct FlowLayout: Layout {
 
 As you can see in the example above, we populate our cache with the exact position values during the *placeSubviews* function. Whenever SwiftUI calls this function, we can check our cache and place subviews in the cached position. In the case where our cache is empty, we can populate it with the correct values.
 
-The *Layout* protocol provides us with all the necessary APIs for building performant custom layouts. We will continue learning the massive set of APIs SwiftUI gives us to create reusable and flexible layouts.
+The *Layout* protocol provides us with all the necessary APIs for building performant custom layouts. We will continue learning the massive set of APIs SwiftUI gives us to create reusable and flexible layouts. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
