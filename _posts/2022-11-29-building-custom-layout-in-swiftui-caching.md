@@ -19,7 +19,6 @@ The *Layout* protocol has an associated type called *Cache*, which is *Void* by 
 struct FlowLayout: Layout {
     struct Cache {
         var sizes: [CGSize] = []
-        var positions: [CGPoint] = []
     }
 }
 ```
@@ -29,13 +28,12 @@ The *Layout* protocol has the *makeCache* function, which we can implement to pr
 ```swift
 struct FlowLayout: Layout {
     struct Cache {
-        var sizes: [CGSize]? = nil
-        var positions: [CGPoint]? = nil
+        var sizes: [CGSize] = []
     }
     
     func makeCache(subviews: Subviews) -> Cache {
         let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
-        return Cache(sizes: sizes, positions: nil)
+        return Cache(sizes: sizes)
     }
 }
 ```
@@ -45,13 +43,12 @@ The *Layout* protocol also provides the *updateCache* function, which we can use
 ```swift
 struct FlowLayout: Layout {
     struct Cache {
-        var sizes: [CGSize]? = nil
-        var positions: [CGPoint]? = nil
+        var sizes: [CGSize] = []
     }
     
     func makeCache(subviews: Subviews) -> Cache {
         let sizes = subviews.map { $0.sizeThatFits(.unspecified) }
-        return Cache(sizes: sizes, positions: nil)
+        return Cache(sizes: sizes)
     }
     
     func updateCache(_ cache: inout Cache, subviews: Subviews) {
@@ -92,7 +89,8 @@ struct FlowLayout: Layout {
                 y: lineY + cache.sizes[index].height / 2
             )
             
-            cache.positions.append(position)
+            // you can populate cache
+            // with additional information here
             
             lineHeight = max(lineHeight, cache.sizes[index].height)
             lineX += cache.sizes[index].width
