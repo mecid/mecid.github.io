@@ -7,6 +7,8 @@ category: Layout
 
 Multiple layouts allow us to compose views in different ways. One crucial thing is the spacing between children of the concrete layout. This week we will learn how to build a custom layout allowing us to specify a particular spacing between views and how to respect the platform-oriented predefined spacing rules in SwiftUI.
 
+{% include friends.html %}
+
 As many types we create in Swift, the type conforming to the *Layout* protocol can define its properties and initialize it via the *init* function. Our *FlowLayout* type is not an exception here. Let's add the *spacing* property to the *FlowLayout* type.
 
 ```swift
