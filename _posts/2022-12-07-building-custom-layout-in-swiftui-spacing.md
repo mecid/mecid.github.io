@@ -24,7 +24,11 @@ struct FlowLayout: Layout {
         return Cache(sizes: sizes)
     }
 }
+```
 
+> To learn more about the basics of the *Layout* protocol, take a look at my dedicated ["Building custom layout in SwiftUI. Basics"](/2022/11/16/building-custom-layout-in-swiftui-basics/) post 
+
+```swift
 struct ContentView: View {
     var body: some View {
         FlowLayout(spacing: 8) {
