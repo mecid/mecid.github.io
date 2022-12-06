@@ -156,6 +156,8 @@ struct FlowLayout: Layout {
 
 Let's start by adding the *spacing* property to our cache. It is a perfect candidate to live in the cache because we want to calculate it once when the list of the subviews changes.
 
+Next, we iterate over the subviews and use the *spacing* property on the *Subview* type to call the *distance* function with the following view as a parameter to calculate the preferred spacing between two views in the horizontal axis. We also can measure vertical spacing between views if needed by using the same function with vertical parameter for axis.
+
 > To learn more about implementing a layout cache, take a look at my dedicated ["Building custom layout in SwiftUI. Caching."](/2022/11/29/building-custom-layout-in-swiftui-caching/) post.
 
 Let's tune the *sizeThatFits* function to respect the spacing between views while calculating the final size of the layout.
