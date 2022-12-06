@@ -2,6 +2,7 @@
 title: Building custom layout in SwiftUI. Spacing.
 layout: post
 image: /public/flowlayout.png
+category: Layout
 ---
 
 Multiple layouts allow us to compose views in different ways. One crucial thing is the spacing between children of the concrete layout. This week we will learn how to build a custom layout allowing us to specify a particular spacing between views and how to respect the platform-oriented predefined spacing rules in SwiftUI.
