@@ -236,4 +236,20 @@ struct FlowLayout: Layout {
 
 Finally, we have a flow layout that respects the preferred view spacing by default. The *Layout* protocol provides us with the reach API to build reusable layouts across all the platforms. We should carefully learn the API SwiftUI provides to create layouts respecting the platform-oriented rules.
 
+```swift
+struct ContentView: View {
+    var body: some View {
+        FlowLayout {
+            Text("Hello")
+                .font(.largeTitle)
+            Text("World")
+                .font(.title)
+            Text("!!!")
+                .font(.title3)
+        }
+        .border(Color.red)
+    }
+}
+```
+
 I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
