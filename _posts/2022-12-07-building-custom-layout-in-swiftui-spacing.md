@@ -154,7 +154,7 @@ struct FlowLayout: Layout {
 }
 ```
 
-Let's start by adding the spacing property to our cache. It is a perfect candidate to live in the cache because we want to calculate it once when the list of the subviews changes.
+Let's start by adding the *spacing* property to our cache. It is a perfect candidate to live in the cache because we want to calculate it once when the list of the subviews changes.
 
 > To learn more about implementing a layout cache, take a look at my dedicated ["Building custom layout in SwiftUI. Caching."](/2022/11/29/building-custom-layout-in-swiftui-caching/) post.
 
