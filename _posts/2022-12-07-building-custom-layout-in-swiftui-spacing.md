@@ -123,7 +123,7 @@ struct FlowLayout: Layout {
 Finally, we have a fully working *FlowLayout* that allows us to set the custom spacing between views.
 
 #### Preferred spacing
-As you can see, most of the layouts in SwiftUI allow us to set the spacing to *nil*, where the layout uses the preferred spacing instead of 0. SwiftUI has spacing preferences between views. For example, it has preferred spacing between *Image* and *Text* views, but this value might differ from *Text* to *Text* views. And these spacing preferences might be different for iOS, macOS, watchOS, and tvOS.
+As you can see, most of the layouts in SwiftUI allow us to set the spacing to *nil*, where the layout uses the preferred spacing instead of zero. SwiftUI has spacing preferences between views. For example, it has preferred spacing between *Image* and *Text* views, but this value might differ from *Text* to *Text* views. And these spacing preferences might be different for iOS, macOS, watchOS, and tvOS.
 
 Fortunately, SwiftUI provides an API to calculate spacing between views by respecting platform-oriented spacing preferences. This API is a part of the *Layout* protocol and lives in the *Subview* proxy type.
 
