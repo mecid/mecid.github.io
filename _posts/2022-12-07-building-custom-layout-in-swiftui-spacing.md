@@ -26,7 +26,7 @@ struct FlowLayout: Layout {
 }
 ```
 
-> To learn more about the basics of the *Layout* protocol, take a look at my dedicated ["Building custom layout in SwiftUI. Basics"](/2022/11/16/building-custom-layout-in-swiftui-basics/) post 
+> To learn more about the basics of the *Layout* protocol, take a look at my dedicated ["Building custom layout in SwiftUI. Basics"](/2022/11/16/building-custom-layout-in-swiftui-basics/) post.
 
 ```swift
 struct ContentView: View {
