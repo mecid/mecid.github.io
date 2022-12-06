@@ -20,6 +20,20 @@ struct FlowLayout: Layout {
         return Cache(sizes: sizes)
     }
 }
+
+struct ContentView: View {
+    var body: some View {
+        FlowLayout(spacing: 8) {
+            Text("Hello")
+                .font(.largeTitle)
+            Text("World")
+                .font(.title)
+            Text("!!!")
+                .font(.title3)
+        }
+        .border(Color.red)
+    }
+}
 ```
 
 As you can see in the example above, now we can place an instance of the *FlowLayout* type with the particular spacing between views. But first, we should tune the *sizeThatFits* function to respect the spacing between views while calculating the final size of the layout.
