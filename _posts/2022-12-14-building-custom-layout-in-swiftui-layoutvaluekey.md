@@ -45,7 +45,7 @@ Text("!!!")
     .anchor(.top)
 ```
 
-Now, we can define a flow layout with the set of views and pass the custom anchor point for each view inside the layout. Whenever we don't set the value for the custom layout parameter, SwiftUI uses the default value.
+Now, we can define a flow layout with the set of views and pass the custom anchor point for each view inside the layout. Whenever we don't set the value for the custom layout parameter, SwiftUI uses the default value we provide.
 
 ```swift
 struct ContentView: View {
