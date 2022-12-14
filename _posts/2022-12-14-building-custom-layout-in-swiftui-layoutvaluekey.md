@@ -15,7 +15,7 @@ In the previous posts, we built the flow layout type using the new *Layout* prot
 
 SwiftUI provides us with the *LayoutValueKey* protocol allowing us to register a custom layout parameter. We can use this type to attach any value we need to a view inside the layout and extract this value later in the layout cycle.
 
-First, we should define a type conforming to the LayoutValueKey protocol.
+First, we should define a type conforming to the *LayoutValueKey* protocol.
 
 ```swift
 struct UnitPointKey: LayoutValueKey {
