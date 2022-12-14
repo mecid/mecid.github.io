@@ -39,6 +39,10 @@ As you can see in the example above, we use the *layoutValue* view modifier to a
 Text("!!!")
     .font(.title3)
     .layoutValue(key: UnitPointKey.self, value: .top)
+    
+Text("!!!")
+    .font(.title3)
+    .anchor(.top)
 ```
 
 Now, we can define a flow layout with the set of views and pass the custom anchor point for each view inside the layout. Whenever we don't set the value for the custom layout parameter, SwiftUI uses the default value.
