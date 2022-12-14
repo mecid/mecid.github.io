@@ -5,11 +5,11 @@ category: Layout
 image: /public/flowlayout.png
 ---
 
-During the last weeks, we covered many aspects of building custom layouts using the new Layout protocol in SwiftUI. But we still have a lot to cover. This week we will learn how to use the LayoutValueKey protocol to pass custom layout parameters while composing views in the custom layout.
+During the last weeks, we covered many aspects of building custom layouts using the new *Layout* protocol in SwiftUI. But we still have a lot to cover. This week we will learn how to use the *LayoutValueKey* protocol to pass custom layout parameters while composing views in the custom layout.
 
-In the previous posts, we built the flow layout type using the new Layout protocol in SwiftUI. Let's continue the work on the FlowLayout type by adding another feature. Assume that we want to tune the anchor point while placing views in the layout. The first view might use the top point and the second one use the bottom.
+In the previous posts, we built the flow layout type using the new *Layout* protocol in SwiftUI. Let's continue the work on the *FlowLayout* type by adding another feature. Assume that we want to tune the anchor point while placing views in the layout. The first view might use the top point and the second one use the bottom.
 
-SwiftUI provides us with the LayoutValueKey protocol allowing us to register a custom layout parameter. We can use this type to attach any value we need to a view inside the layout and extract this value later in the layout cycle.
+SwiftUI provides us with the *LayoutValueKey* protocol allowing us to register a custom layout parameter. We can use this type to attach any value we need to a view inside the layout and extract this value later in the layout cycle.
 
 First, we should define a type conforming to the LayoutValueKey protocol.
 
@@ -19,7 +19,7 @@ struct UnitPointKey: LayoutValueKey {
 }
 ```
 
-Creating a custom layout parameter is pretty straightforward. The only thing we have to do is to provide a default value for the parameter. Second, we should create an extension on the View type to simplify passing the custom layout parameters.
+Creating a custom layout parameter is pretty straightforward. The only thing we have to do is to provide a default value for the parameter. Second, we should create an extension on the *View* type to simplify passing the custom layout parameters.
 
 ```swift
 extension View {
@@ -29,7 +29,7 @@ extension View {
 }
 ```
 
-As you can see in the example above, we use the layoutValue view modifier to attach the particular value to the specific type conforming to the LayoutValueKey protocol. We can use the layoutValue view modifier without creating an extension on the View type, but the extension provides a much nicer and cleaner API.
+As you can see in the example above, we use the *layoutValue* view modifier to attach the particular value to the specific type conforming to the *LayoutValueKey* protocol. We can use the *layoutValue* view modifier without creating an extension on the *View* type, but the extension provides a much nicer and cleaner API.
 
 ```swift
 Text("!!!")
@@ -57,7 +57,7 @@ struct ContentView: View {
 }
 ```
 
-The last step is to use the custom layout parameter while placing or sizing the layout. We can access custom layout parameters by using the subscript on the Subview proxy type.
+The last step is to use the custom layout parameter while placing or sizing the layout. We can access custom layout parameters by using the subscript on the *Subview* proxy type.
 
 ```swift
 struct FlowLayout: Layout {
@@ -98,6 +98,6 @@ struct FlowLayout: Layout {
 }
 ```
 
-As you can see in the example above, we use the subscript on the Subview proxy type to extract the value of the UnitPointKey type. In the end, we use this value to provide an anchor point while placing the views in the final layout.
+As you can see in the example above, we use the subscript on the *Subview* proxy type to extract the value of the *UnitPointKey* type. In the end, we use this value to provide an anchor point while placing the views in the final layout.
 
 Custom layout parameters allow us to build super customizable and reusable layouts in SwiftUI very easily.
