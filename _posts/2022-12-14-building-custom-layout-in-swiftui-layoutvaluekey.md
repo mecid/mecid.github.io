@@ -60,7 +60,6 @@ struct ContentView: View {
             Text("!!!")
                 .font(.title3)
         }
-        .border(.red)
     }
 }
 ```
