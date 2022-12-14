@@ -11,23 +11,90 @@ SwiftUI provides us with the LayoutValueKey protocol allowing us to register a c
 
 First, we should define a type conforming to the LayoutValueKey protocol.
 
-=====================================================
+```swift
+struct UnitPointKey: LayoutValueKey {
+    static var defaultValue: UnitPoint = .center
+}
+```
 
 Creating a custom layout parameter is pretty straightforward. The only thing we have to do is to provide a default value for the parameter. Second, we should create an extension on the View type to simplify passing the custom layout parameters.
 
-=====================================================
+```swift
+extension View {
+    func anchor(_ anchor: UnitPoint) -> some View {
+        layoutValue(key: UnitPointKey.self, value: anchor)
+    }
+}
+```
 
 As you can see in the example above, we use the layoutValue view modifier to attach the particular value to the specific type conforming to the LayoutValueKey protocol. We can use the layoutValue view modifier without creating an extension on the View type, but the extension provides a much nicer and cleaner API.
 
-=====================================================
+```swift
+Text("!!!")
+    .font(.title3)
+    .layoutValue(key: UnitPointKey.self, value: .top)
+```
 
 Now, we can define a flow layout with the set of views and pass the custom anchor point for each view inside the layout. Whenever we don't set the value for the custom layout parameter, SwiftUI uses the default value.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        FlowLayout {
+            Text("Hello")
+                .font(.largeTitle)
+                .anchor(.bottom)
+            Text("World")
+                .font(.title)
+                .anchor(.top)
+            Text("!!!")
+                .font(.title3)
+        }
+        .border(.red)
+    }
+}
+```
 
 The last step is to use the custom layout parameter while placing or sizing the layout. We can access custom layout parameters by using the subscript on the Subview proxy type.
 
-=====================================================
+```swift
+struct FlowLayout: Layout {
+//  ....
+    func placeSubviews(
+        in bounds: CGRect,
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout Cache
+    ) {
+        var lineX = bounds.minX
+        var lineY = bounds.minY
+        var lineHeight: CGFloat = 0
+        
+        for index in subviews.indices {
+            if lineX + cache.sizes[index].width > (proposal.width ?? 0) {
+                lineY += lineHeight
+                lineHeight = 0
+                lineX = bounds.minX
+            }
+            
+            let anchor = subviews[index][UnitPointKey.self]
+            let position = CGPoint(
+                x: lineX + cache.sizes[index].width / 2,
+                y: lineY + cache.sizes[index].height / 2
+            )
+            
+            lineHeight = max(lineHeight, cache.sizes[index].height)
+            lineX += cache.sizes[index].width
+            
+            subviews[index].place(
+                at: position,
+                anchor: anchor,
+                proposal: ProposedViewSize(cache.sizes[index])
+            )
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the subscript on the Subview proxy type to extract the value of the UnitPointKey type. In the end, we use this value to provide an anchor point while placing the views in the final layout.
 
