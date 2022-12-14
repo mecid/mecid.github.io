@@ -7,6 +7,8 @@ image: /public/flowlayout.png
 
 During the last weeks, we covered many aspects of building custom layouts using the new *Layout* protocol in SwiftUI. But we still have a lot to cover. This week we will learn how to use the *LayoutValueKey* protocol to pass custom layout parameters while composing views in the custom layout.
 
+{% include friends.html %}
+
 In the previous posts, we built the flow layout type using the new *Layout* protocol in SwiftUI. Let's continue the work on the *FlowLayout* type by adding another feature. Assume that we want to tune the anchor point while placing views in the layout. The first view might use the top point and the second one use the bottom.
 
 > To learn more about the basics of the *Layout* protocol, take a look at my dedicated ["Building custom layout in SwiftUI. Basics"](/2022/11/16/building-custom-layout-in-swiftui-basics/) post.
