@@ -2,6 +2,7 @@
 title: Building custom layout in SwiftUI. LayoutValueKey.
 layout: post
 category: Layout
+image: /public/flowlayout.png
 ---
 
 During the last weeks, we covered many aspects of building custom layouts using the new Layout protocol in SwiftUI. But we still have a lot to cover. This week we will learn how to use the LayoutValueKey protocol to pass custom layout parameters while composing views in the custom layout.
