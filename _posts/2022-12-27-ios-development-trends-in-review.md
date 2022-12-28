@@ -33,6 +33,10 @@ Mobile apps become bigger and bigger by providing a complete set of business fea
 
 Fortunately, modularization solves all of these problems. Swift Package Manager became the heart of this approach. It allows us to extract every feature into a separate Swift module and reduce the compile time of your project. Teams can produce a module per app feature and run it as a separate app to improve the value delivery.
 
+* [Microapps architecture in Swift. SPM basics.](/2022/01/12/microapps-architecture-in-swift-spm-basics/)
+* [Microapps architecture in Swift. Feature modules.](/2022/01/19/microapps-architecture-in-swift-feature-modules/)
+* [Microapps architecture in Swift. Dependency Injection.](/2022/02/02/microapps-architecture-in-swift-dependency-injection/)
+
 #### Testing
 As I said before, apps have become the primary source of income for many types of businesses around the world. We as developers, should take care of the stability and consistency of the apps. It is tough to achieve a good level of crash and bug-free sessions of the app without good test coverage.
 
