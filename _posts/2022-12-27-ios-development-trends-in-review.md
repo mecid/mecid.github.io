@@ -12,7 +12,7 @@ SwiftUI has a lot of criticism about its functionality compared to more mature U
 
 This year we finally got the new data-driven Navigation API allowing us to move the user through the app using a value-oriented approach. The new Navigation API is also simplifying deep linking and state restoration.
 
-Another great addition was the Layout protocol which provided us with a very low-level API to build custom layouts. Now we can create reusable layout types with the same API as VStack and HStack.
+Another great addition was the Layout protocol which provided us with a very low-level API to build custom layouts. Now we can create reusable layout types with the same API as *VStack* and *HStack*.
 
 Nowadays, many system-oriented features of the apps require using the SwiftUI framework. The SwiftUI framework is the only way to build home screen, lock screen, live activity widgets, etc.
 
