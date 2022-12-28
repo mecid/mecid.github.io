@@ -44,6 +44,9 @@ UI tests become essential for validating crucial user flows in our apps. UI test
 
 Usually, UI tests require many more lines of code than unit tests, and keeping the test codebase as clean as possible is vital. I saw that many developers treated differently to testing code. But it is important to design testing code as we do with the feature code. A few patterns allow us to keep UI tests in excellent shape. 
 
+* [UI Testing in Swift with XCTest framework](/2021/03/18/ui-testing-in-swift-with-xctest-framework/)
+* [UI Testing using Page Object pattern in Swift](/2021/03/24/ui-testing-using-page-object-pattern-in-swift/)
+
 #### Accessibility
 Last but not least is accessibility. Accessibility isn't a feature or a "nice to have." It's a necessity. First, I would like to mention that Apple has done a great job with the Accessibility framework. Most of the things are handled by the system without our action.
 
