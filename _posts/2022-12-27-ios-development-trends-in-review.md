@@ -54,3 +54,7 @@ Usually, your app is accessible by default. You only need to test your app with 
 
 Don't hesitate to add a few lines of code to improve your app's user experience significantly.
 
+* [Make your app accessible for everyone](/2018/07/09/make-your-app-accessible-for-everyone/)
+* [Accessibility in SwiftUI](/2019/09/10/accessibility-in-swiftui/)
+* [Dynamic Type in SwiftUI](/2019/10/09/dynamic-type-in-swiftui/)
+* [Custom accessibility content in SwiftUI](/2021/10/06/custom-accessibility-content-in-swiftui/)
