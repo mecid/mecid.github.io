@@ -1,6 +1,7 @@
 ---
 title: iOS development trends in review
 layout: post
+category: Meta
 ---
 
 2022 has come to an end, and it is a perfect time for retrospective analysis. Today I want to review trends in iOS development over the past year that I notice while building my own apps or consulting others.
