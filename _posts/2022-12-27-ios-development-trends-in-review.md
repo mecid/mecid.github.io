@@ -43,7 +43,7 @@ As I said before, apps have become the primary source of income for many types o
 
 UI tests become essential for validating crucial user flows in our apps. UI tests are very slow, and we should try to cover as much logic as we can with unit tests and use UI tests only for important user flows like checkout or add to cart.
 
-Usually, UI tests require much more effort than unit tests, and keeping the test codebase as clean as possible is vital. I saw that many developers treated differently to testing code. But it is important to design testing code as we do with the feature code. A few patterns allow us to keep UI tests in excellent shape. 
+Usually, UI tests require much more effort than unit tests, and keeping the test codebase as clean as possible is vital. I saw that many developers treated differently to testing code. But it is important to design testing code the same way we do with the feature code. A few patterns allow us to keep UI tests in excellent shape. 
 
 * [UI Testing in Swift with XCTest framework](/2021/03/18/ui-testing-in-swift-with-xctest-framework/)
 * [UI Testing using Page Object pattern in Swift](/2021/03/24/ui-testing-using-page-object-pattern-in-swift/)
