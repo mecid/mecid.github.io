@@ -7,6 +7,8 @@ image: /public/debug-preview.jpeg
 
 2022 has come to an end, and it is a perfect time for retrospective analysis. Today I want to review trends in iOS development over the past year that I notice while building my own apps or consulting others.
 
+{% include friends.html %}
+
 #### SwiftUI
 SwiftUI has a lot of criticism about its functionality compared to more mature UIKit. During the last few years, Apple invested a lot of time into the SwiftUI framework and improved it in a few ways. SwiftUI became a robust framework allowing you to build great apps declaratively.  
 
