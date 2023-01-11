@@ -1,5 +1,5 @@
 ---
-title: Mastering charts in SwiftUI
+title: Mastering charts in SwiftUI. Basics.
 layout: post
 category: Mastering SwiftUI views
 image: /public/chart4.png
