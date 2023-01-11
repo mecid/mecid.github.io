@@ -60,7 +60,7 @@ struct ContentView: View {
 
 ![mastering-chart](/public/chart2.png)
 
-In the example above, we use the *PointMark* type to draw a circular point for every data point. As you can see, we easily compose different marks on the same chart.
+In the example above, we use the *PointMark* type to draw a circular point for every data point. We also use *RuleMark* to draw a horizontal limit line. As you can see, we easily compose different marks on the same chart.
 
 The heart of the Swift Charts framework is the *Plottable* protocol. It allows us to define a mark with any value that conforms to the *Plottable* protocol. By default, types like *Int*, *String*, *Double*, *Date*, and *Decimal* conform to the *Plottable* protocol. But you can always conform your own type to the *Plottable* protocol if needed.
 
