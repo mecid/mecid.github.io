@@ -24,6 +24,8 @@ struct ContentView: View {
 }
 ```
 
+![mastering-chart](/public/chart1.png)
+
 As you can see in the example above, we define an instance of the *Chart* view. Then inside the *ViewBuilder* closure of the *Chart* view, we use the *ForEach* view to place the array of numbers using the *LineMark*. The *Chart* view is smart enough to plot the single line passing all the points defined via *LineMark*.
 
 Swift Charts allow us to compose different types of marks on a single chart. We have plenty of marks in use, like *AreaMark*, *BarMark*, *LineMark*, *PointMark*, *RectangleMark*, and *RuleMark*.
@@ -51,6 +53,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![mastering-chart](/public/chart2.png)
 
 In the example above, we use the *PointMark* type to draw a circular point for every data point. As you can see, we easily compose different marks on the same chart.
 
@@ -91,6 +95,8 @@ struct ContentView1: View {
 }
 ```
 
+![mastering-chart](/public/chart3.png)
+
 As you can see in the example above, we use the *BarMark* type to draw the population of the provided cities. We use the city name, which is categorical type as X position. That's why the *Chart* view concatenate every mark with the same X position.
 
 ```swift
@@ -110,6 +116,8 @@ struct ContentView1: View {
     }
 }
 ```
+
+![mastering-chart](/public/chart4.png)
 
 We can use different foreground styles for the *BarMark* type and style using gender value. It allows us to see the different ranges in a single bar.
 
