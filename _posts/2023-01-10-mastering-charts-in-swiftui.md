@@ -97,6 +97,22 @@ struct ContentView1: View {
         }
     }
 }
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationStack {
+            ContentView1(
+                stats: [
+                    .init(city: "NY", population: 10_164_966, gender: .female),
+                    .init(city: "NY", population: 9_581_261, gender: .male),
+                    .init(city: "LA", population: 5_133_906, gender: .female),
+                    .init(city: "LA", population: 4_982_799, gender: .male)
+                ]
+            )
+            .preferredColorScheme(.dark)
+        }
+    }
+}
 ```
 
 ![mastering-chart](/public/chart3.png)
