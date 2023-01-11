@@ -181,4 +181,4 @@ Now we conform the *Gender* type to the *Plottable* protocol to simplify our cod
 
 Today we learned basics of the new Swift Charts framework. Charts framework provides us a lot of defaults out of the box. Every chart we build supports accessibility and automatically provides us legends, correctly scaled plotting area, etc. 
 
-In the next posts, we will learn more about customization options in the new Charts framework.
+In the next posts, we will learn more about customization options in the new Charts framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
