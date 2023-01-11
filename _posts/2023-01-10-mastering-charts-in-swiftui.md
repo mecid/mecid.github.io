@@ -139,7 +139,7 @@ struct ContentView1: View {
 
 ![mastering-chart](/public/chart4.png)
 
-We can use different foreground styles for the *BarMark* type and style using gender value. It allows us to see the different ranges in a single bar.
+We can use different foreground styles for the *BarMark* type and style them using gender value. It allows us to see the different ranges in a single bar.
 
 ```swift
 enum Gender: String {
