@@ -24,9 +24,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we define an instance of the Chart view. Then inside the ViewBuilder closure of the Chart view, we use the ForEach view to place the array of numbers using the LineMark. The Chart view is smart enough to plot the single line passing all the points defined via LineMark.
+As you can see in the example above, we define an instance of the *Chart* view. Then inside the *ViewBuilder* closure of the *Chart* view, we use the *ForEach* view to place the array of numbers using the *LineMark*. The *Chart* view is smart enough to plot the single line passing all the points defined via *LineMark*.
 
-Swift Charts allow us to compose different types of marks on a single chart. We have plenty of marks in use, like AreaMark, BarMark, LineMark, PointMark, RectangleMark, and RuleMark.
+Swift Charts allow us to compose different types of marks on a single chart. We have plenty of marks in use, like *AreaMark*, *BarMark*, *LineMark*, *PointMark*, *RectangleMark*, and *RuleMark*.
 
 ```swift
 struct ContentView: View {
@@ -52,11 +52,11 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we use the PointMark type to draw a circular point for every data point. As you can see, we easily compose different marks on the same chart.
+In the example above, we use the *PointMark* type to draw a circular point for every data point. As you can see, we easily compose different marks on the same chart.
 
-The heart of the Swift Charts framework is the Plottable protocol. It allows us to define a mark with any value that conforms to the Plottable protocol. By default, types like Int, String, Double, Date, and Decimal conform to the Plottable protocol. But you can always conform your own type to the Plottable protocol if needed.
+The heart of the Swift Charts framework is the *Plottable* protocol. It allows us to define a mark with any value that conforms to the *Plottable* protocol. By default, types like *Int*, *String*, *Double*, *Date*, and *Decimal* conform to the *Plottable* protocol. But you can always conform your own type to the *Plottable* protocol if needed.
 
-Swift Charts support quantitative, categorical, and temporal values. For example, Double is quantitative, String is categorical, and Date is temporal value.
+Swift Charts support quantitative, categorical, and temporal values. For example, *Double* is quantitative, *String* is categorical, and *Date* is temporal value.
 
 ```swift
 enum Gender: String {
@@ -72,7 +72,7 @@ struct Stats {
 }
 ```
 
-Here we create a type called Stats to define a city's population by gender. The city's population is a quantitative value. The name and gender are categorical.
+Here we create a type called *Stats* to define a city's population by gender. The city's population is a quantitative value. The name and gender are categorical.
 
 ```swift
 struct ContentView1: View {
@@ -91,7 +91,7 @@ struct ContentView1: View {
 }
 ```
 
-As you can see in the example above, we use the BarMark type to draw the population of the provided cities. We use the city name, which is categorical type as X position. That's why Charts concatenate every mark with the same X position.
+As you can see in the example above, we use the *BarMark* type to draw the population of the provided cities. We use the city name, which is categorical type as X position. That's why the *Chart* view concatenate every mark with the same X position.
 
 ```swift
 struct ContentView1: View {
@@ -111,7 +111,7 @@ struct ContentView1: View {
 }
 ```
 
-We can use different foreground styles for the BarMark type and style using gender value. It allows us to see the different ranges in a single bar.
+We can use different foreground styles for the *BarMark* type and style using gender value. It allows us to see the different ranges in a single bar.
 
 ```swift
 enum Gender: String {
@@ -149,4 +149,4 @@ struct ContentView1: View {
 }
 ```
 
-Now we conform the Gender type to the Plottable protocol to simplify our code a little bit. Remember that you can provide any logic you need to convert your custom data to plottable primitives.
+Now we conform the *Gender* type to the *Plottable* protocol to simplify our code a little bit. Remember that you can provide any logic you need to convert your custom data to plottable primitives.
