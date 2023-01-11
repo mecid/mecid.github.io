@@ -178,3 +178,7 @@ struct ContentView1: View {
 ```
 
 Now we conform the *Gender* type to the *Plottable* protocol to simplify our code a little bit. Remember that you can provide any logic you need to convert your custom data to plottable primitives.
+
+Today we learned basics of the new Swift Charts framework. Charts framework provides us a lot of defaults out of the box. Every chart we build supports accessibility and automatically provides us legends, correctly scaled plotting area, etc. 
+
+In the next posts, we will learn more about customization options in the new Charts framework.
