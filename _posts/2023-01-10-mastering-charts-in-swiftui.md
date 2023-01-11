@@ -28,6 +28,8 @@ struct ContentView: View {
 
 As you can see in the example above, we define an instance of the *Chart* view. Then inside the *ViewBuilder* closure of the *Chart* view, we use the *ForEach* view to place the array of numbers using the *LineMark*. The *Chart* view is smart enough to plot the single line passing all the points defined via *LineMark*.
 
+> To learn more about the logic behind the ViewBuilder type, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
+
 Swift Charts allow us to compose different types of marks on a single chart. We have plenty of marks in use, like *AreaMark*, *BarMark*, *LineMark*, *PointMark*, *RectangleMark*, and *RuleMark*.
 
 ```swift
