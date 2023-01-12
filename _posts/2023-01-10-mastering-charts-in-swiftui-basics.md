@@ -5,7 +5,7 @@ category: Mastering SwiftUI views
 image: /public/chart4.png
 ---
 
-Swift Charts is a new framework by Apple allowing us to visualize our data in a declarative way using SwiftUI. The Swift Chars framework inherits from SwiftUI its declarative nature and the power of intelligent defaults. This week we will start with the basics of the Charts framework.
+Swift Charts is a new framework by Apple allowing us to visualize our data in a declarative way using SwiftUI. The Swift Charts framework inherits from SwiftUI its declarative nature and the power of intelligent defaults. This week we will start with the basics of the Charts framework.
 
 Let's start by plotting a simple line chart from an array of numbers.
 
