@@ -1,6 +1,7 @@
 ---
 title: Mastering charts in SwiftUI. Mark styling.
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Last week we started a series of posts about the new Charts framework available on the latest Apple platforms. We talked about basic stuff and learned how to plot data. This week we will continue mastering the Charts framework by learning different customization and styling options available.
