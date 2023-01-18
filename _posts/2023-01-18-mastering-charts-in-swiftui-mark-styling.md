@@ -5,6 +5,8 @@ layout: post
 
 Last week we started a series of posts about the new Charts framework available on the latest Apple platforms. We talked about basic stuff and learned how to plot data. This week we will continue mastering the Charts framework by learning different customization and styling options available.
 
+{% include friends.html %}
+
 As we learned in the previous post, the Charts framework provides different mark types, allowing us to plot our data differently. AreaMark, BarMark, LineMark, PointMark, RectangleMark, and RuleMark, all of these mark types let us apply modifiers we used to have in SwiftUI views.
 
 For example, we can use the foregroundStyle modifier to change the mark's color using any ShapeStyle we need or the opacity modifier to change the alpha of the mark. 
