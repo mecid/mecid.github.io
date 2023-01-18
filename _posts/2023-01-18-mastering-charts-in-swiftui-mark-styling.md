@@ -67,6 +67,7 @@ struct ContentView1: View {
                     x: .value("City", stat.city),
                     y: .value("Population", stat.population)
                 )
+                .foregroundStyle(by: .value("Gender", stat.gender))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .position(by: .value("Gender", stat.gender))
             }
