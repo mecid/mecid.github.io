@@ -153,15 +153,7 @@ struct ContentView1: View {
                 )
                 .clipShape(RoundedRectangle(cornerRadius: 16))
                 .position(by: .value("Gender", stat.gender))
-                .annotation(position: .overlay, alignment: .trailing, spacing: 16) {
-                    Text(verbatim: stat.population.formatted())
-                        .font(.caption)
-                }
                 .annotation(position: .bottom, alignment: .trailing, spacing: 16) {
-                    Text(verbatim: stat.population.formatted())
-                        .font(.caption)
-                }
-                .annotation(position: .top, alignment: .trailing, spacing: 16) {
                     Text(verbatim: stat.population.formatted())
                         .font(.caption)
                 }
