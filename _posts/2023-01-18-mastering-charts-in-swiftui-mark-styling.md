@@ -11,6 +11,8 @@ Last week we started a series of posts about the new Charts framework available 
 
 As we learned in the previous post, the Charts framework provides different mark types, allowing us to plot our data differently. *AreaMark*, *BarMark*, *LineMark*, *PointMark*, *RectangleMark*, and *RuleMark*, all of these mark types let us apply modifiers we used to have in SwiftUI views.
 
+> To learn more about the basics of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Basics."](/2023/01/10/mastering-charts-in-swiftui-basics/) post.
+
 For example, we can use the *foregroundStyle* modifier to change the mark's color using any *ShapeStyle* we need or the *opacity* modifier to change the alpha of the mark. 
 
 ```swift
@@ -112,6 +114,8 @@ In the example above, we use the *lineStyle* modifier to provide a custom stroke
 The Charts framework has smart defaults and can extract value from your data to do some stuff automatically without your notice. For example, it can understand your data and color it or automatically generate a legend for your chart. 
 
 One of my favorite things about the new Charts framework is how data annotating works. You can annotate any mark on your chart with a SwiftUI view. It means you can plot your data and place SwiftUI views inside your chart close to your data point.
+
+> To learn more about the logic behind the *ViewBuilder* type, take a look at my ["The power of @ViewBuilder in SwiftUI"](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
 
 Annotating data points with the new Chart framework is easy. Every mark type provides us with the *annotation* modifier accepting a *ViewBuilder* closure where we can construct our SwiftUI view.
 
