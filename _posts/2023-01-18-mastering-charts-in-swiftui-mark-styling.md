@@ -52,7 +52,7 @@ struct ContentView1: View {
 }
 ```
 
-![chart-with-opacity-and-shape](/public/chart5.png)
+![chart-with-opacity-and-color](/public/chart10.png)
 
 The *clipShape* modifier allows us to change the shape of the bar mark, and the *position* modifier will enable us to stack bar marks in a group differently.
 
@@ -112,6 +112,8 @@ struct ContentView: View {
 In the example above, we use the *lineStyle* modifier to provide a custom stroke style. Here we use particular dash values allowing us to draw the dashed line. We also apply the *interpolationMethod* modifier with *catmullRom* value to draw a curved line instead of a straight one.
 
 The Charts framework has smart defaults and can extract value from your data to do some stuff automatically without your notice. For example, it can understand your data and color it or automatically generate a legend for your chart. 
+
+![chart-with-legend](/public/chart11.png)
 
 One of my favorite things about the new Charts framework is how data annotating works. You can annotate any mark on your chart with a SwiftUI view. It means you can plot your data and place SwiftUI views inside your chart close to your data point.
 
