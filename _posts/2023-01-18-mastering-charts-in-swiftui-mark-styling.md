@@ -169,4 +169,4 @@ struct ContentView1: View {
 
 We can put an annotation under the bar, above it, or overlay it. Remember that you can place as many annotations as you need, but try to leave your charts manageable with annotations.
 
-Today we learned how to style our data points in the new Charts framework.
+Today we learned how to style our data points in the new Charts framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
