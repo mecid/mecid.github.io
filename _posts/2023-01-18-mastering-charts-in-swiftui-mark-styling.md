@@ -9,17 +9,93 @@ As we learned in the previous post, the Charts framework provides different mark
 
 For example, we can use the foregroundStyle modifier to change the mark's color using any ShapeStyle we need or the opacity modifier to change the alpha of the mark. 
 
-=====================================================
+```swift
+enum Gender: String {
+    case male
+    case female
+    case notSet
+}
+
+extension Gender: Plottable {
+    var primitivePlottable: String {
+        rawValue
+    }
+}
+
+struct Stats {
+    let city: String
+    let population: Int
+    let gender: Gender
+}
+
+struct ContentView1: View {
+    let stats: [Stats]
+    
+    var body: some View {
+        Chart {
+            ForEach(stats, id: \.city) { stat in
+                BarMark(
+                    x: .value("City", stat.city),
+                    y: .value("Population", stat.population)
+                )
+                .opacity(0.3)
+                .foregroundStyle(.red)
+            }
+        }
+    }
+}
+```
 
 The clipShape modifier allows us to change the shape of the bar mark, and the position modifier will enable us to stack bar marks in a group differently.
 
-===================================================== 
+```swift
+struct ContentView1: View {
+    let stats: [Stats]
+    
+    var body: some View {
+        Chart {
+            ForEach(stats, id: \.city) { stat in
+                BarMark(
+                    x: .value("City", stat.city),
+                    y: .value("Population", stat.population)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .position(by: .value("Gender", stat.gender))
+            }
+        }
+    }
+}
+``` 
 
 As you can see in the example above, we use the clipShape modifier to round the rectangles of our bars. We also use the position modifier to stack them horizontally. By default, the Charts framework accumulates bars in a single group vertically.
 
 On the other hand, the LineMark type allows us to use the lineStyle modifier to change the stroke style of the plotted line. We can also use the interpolationMethod modifier to change how the framework draws the line.
 
-=====================================================
+```swift
+struct ContentView: View {
+    let numbers: [Double]
+    
+    var body: some View {
+        Chart {
+            RuleMark(y: .value("Limit", 50))
+            
+            ForEach(Array(numbers.enumerated()), id: \.offset) { index, value in
+                LineMark(
+                    x: .value("Index", index),
+                    y: .value("Value", value)
+                )
+                .interpolationMethod(.catmullRom)
+                .lineStyle(StrokeStyle(lineWidth: 1, dash: [2]))
+                
+                PointMark(
+                    x: .value("Index", index),
+                    y: .value("Value", value)
+                )
+            }
+        }
+    }
+}
+```
 
 In the example above, we use the lineStyle modifier to provide a custom stroke style. Here we use particular dash values allowing us to draw the dashed line. We also apply the interpolationMethod modifier with catmullRom value to draw a curved line instead of a straight one.
 
@@ -29,11 +105,61 @@ One of my favorite things about the new Charts framework is how data annotating 
 
 Annotating data points with the new Chart framework is easy. Every mark type provides us with the annotation modifier accepting a ViewBuilder closure where we can construct our SwiftUI view.
 
-=====================================================
+```swift
+struct ContentView1: View {
+    let stats: [Stats]
+    
+    var body: some View {
+        Chart {
+            ForEach(stats, id: \.city) { stat in
+                BarMark(
+                    x: .value("City", stat.city),
+                    y: .value("Population", stat.population)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .position(by: .value("Gender", stat.gender))
+                .annotation {
+                    Text(verbatim: stat.population.formatted())
+                        .font(.caption)
+                }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the annotation modifier to place the text with the population above the bar mark. The annotation modifier also accepts the position, alignment, and spacing parameters.
 
-=====================================================
+```swift
+struct ContentView1: View {
+    let stats: [Stats]
+    
+    var body: some View {
+        Chart {
+            ForEach(stats, id: \.city) { stat in
+                BarMark(
+                    x: .value("City", stat.city),
+                    y: .value("Population", stat.population)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .position(by: .value("Gender", stat.gender))
+                .annotation(position: .overlay, alignment: .trailing, spacing: 16) {
+                    Text(verbatim: stat.population.formatted())
+                        .font(.caption)
+                }
+                .annotation(position: .bottom, alignment: .trailing, spacing: 16) {
+                    Text(verbatim: stat.population.formatted())
+                        .font(.caption)
+                }
+                .annotation(position: .top, alignment: .trailing, spacing: 16) {
+                    Text(verbatim: stat.population.formatted())
+                        .font(.caption)
+                }
+            }
+        }
+    }
+}
+```
 
 We can put an annotation under the bar, above it, or overlay it. Remember that you can place as many annotations as you need, but try to leave your charts manageable with annotations.
 
