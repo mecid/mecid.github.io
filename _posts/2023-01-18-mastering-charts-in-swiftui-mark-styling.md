@@ -48,6 +48,8 @@ struct ContentView1: View {
 }
 ```
 
+![chart-with-opacity-and-shape](/public/chart5.png)
+
 The clipShape modifier allows us to change the shape of the bar mark, and the position modifier will enable us to stack bar marks in a group differently.
 
 ```swift
@@ -68,6 +70,8 @@ struct ContentView1: View {
     }
 }
 ``` 
+
+![bar-chart-with-custom-stacking](/public/chart6.png)
 
 As you can see in the example above, we use the clipShape modifier to round the rectangles of our bars. We also use the position modifier to stack them horizontally. By default, the Charts framework accumulates bars in a single group vertically.
 
@@ -99,6 +103,8 @@ struct ContentView: View {
 }
 ```
 
+![line-chart-with-custom-curve](/public/chart7.png)
+
 In the example above, we use the lineStyle modifier to provide a custom stroke style. Here we use particular dash values allowing us to draw the dashed line. We also apply the interpolationMethod modifier with catmullRom value to draw a curved line instead of a straight one.
 
 The Charts framework has smart defaults and can extract value from your data to do some stuff automatically without your notice. For example, it can understand your data and color it or automatically generate a legend for your chart. 
@@ -129,6 +135,8 @@ struct ContentView1: View {
     }
 }
 ```
+
+![chart-with-annotation](/public/chart8.png)
 
 As you can see in the example above, we use the annotation modifier to place the text with the population above the bar mark. The annotation modifier also accepts the position, alignment, and spacing parameters.
 
@@ -162,6 +170,8 @@ struct ContentView1: View {
     }
 }
 ```
+
+![chart-with-annotation](/public/chart9.png)
 
 We can put an annotation under the bar, above it, or overlay it. Remember that you can place as many annotations as you need, but try to leave your charts manageable with annotations.
 
