@@ -51,6 +51,7 @@ struct ContentView1: View {
     }
 }
 ```
+> To learn more about the *ShapeStyle* protocol, take a look at my ["The many faces of ShapeStyle in SwiftUI"](/2021/11/17/the-many-faces-of-shapestyle-in-swiftui/) post.
 
 ![chart-with-opacity-and-color](/public/chart10.png)
 
