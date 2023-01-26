@@ -2,6 +2,7 @@
 title: Mastering charts in SwiftUI. Custom Marks.
 layout: post
 category: Mastering SwiftUI views
+image: /public/chart12.png
 ---
 
 The Swift Charts framework is an excellent example of composition. In the previous posts, we saw how we could use different marks on the same chart view to plot different data points. This week we will learn how to use composition to build new custom mark types and reuse them across the app.
