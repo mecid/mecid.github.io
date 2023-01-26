@@ -86,7 +86,9 @@ struct ContentView2: View {
 
 ![candlestick-chart](/public/chart12.png)
 
-As you can see in the example above, we use *RectangleMark* type to plot candles. We use the composition of two rectangle marks where the first rectangle displays the low/high price pair, and the second one presents the open/close price pair. *RectangeMark* type provides the width parameter allowing us to tune the width of the plotted rectangle on the chart. We efficiently use it to separate two pairs of prices visually. 
+As you can see in the example above, we use *RectangleMark* type to plot candles. We use the composition of two rectangle marks where the first rectangle displays the low/high price pair, and the second one presents the open/close price pair. 
+
+*RectangeMark* type provides the *width* parameter allowing us to tune the width of the plotted rectangle on the chart. We efficiently use it to separate two pairs of prices visually. 
 
 Ok, it looks good, but in the case of the chart-heavy financial apps, we might have a bunch of screens with different candlestick charts, and I don't want to duplicate this code so many times. I want to extract my code in the particular *CandlestickMark* type and reuse it across my app.
 
