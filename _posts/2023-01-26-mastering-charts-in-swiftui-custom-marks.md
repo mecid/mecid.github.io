@@ -147,4 +147,6 @@ struct ContentView: View {
 
 By conforming our type to the *ChartContent* protocol, we create another fully-functional mark type that inherits all the modifiers we used to see in standard marks. We can easily apply the *foregroundStyle* or *offset* modifiers on it.
 
+> To learn more about customization options available via the *ChartContent* protocol, take a look at my dedicated ["Mastering charts in SwiftUI. Mark styling."](/2023/01/18/mastering-charts-in-swiftui-mark-styling/) post.
+
 Today we learned how to use composition in the Swift Charts framework to create new types of marks and reuse them across the app. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
