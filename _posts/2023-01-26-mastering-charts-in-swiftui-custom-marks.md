@@ -32,6 +32,8 @@ struct ContentView1: View {
 }
 ```
 
+![line-chart-with-points](/public/chart13.png)
+
 As you can see in the example above, we use a single chart view to plot both lines and points on it. We can use the same strategy to create super custom marks that the Swift Charts framework doesn't provide out of the box.
 
 Charts are viral in the financial industry, and a unique candlestick chart is used to present market prices visually. The Swift Charts framework doesn't provide us with the candlestick mark, but fortunately, we can build it by using the composition of other primitive marks.
@@ -77,6 +79,8 @@ struct ContentView2: View {
     }
 }
 ```
+
+![candlestick-chart](/public/chart12.png)
 
 As you can see in the example above, we use *RectangleMark* type to plot candles. We use the composition of two rectangle marks where the first rectangle displays the low/high price pair, and the second one presents the open/close price pair. *RectangeMark* type provides the width parameter allowing us to tune the width of the plotted rectangle on the chart. We efficiently use it to separate two pairs of prices visually. 
 
