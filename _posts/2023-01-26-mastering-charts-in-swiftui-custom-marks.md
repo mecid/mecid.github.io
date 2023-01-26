@@ -40,7 +40,7 @@ As you can see in the example above, we use a single chart view to plot both lin
 
 > To learn more about the basics of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Basics."](/2023/01/10/mastering-charts-in-swiftui-basics/) post.
 
-Charts are viral in the financial industry, and a unique candlestick chart is used to present market prices visually. The Swift Charts framework doesn't provide us with the candlestick mark, but fortunately, we can build it by using the composition of other primitive marks.
+Charts are viral in the financial industry, and the unique candlestick chart is used to present market prices visually. The Swift Charts framework doesn't provide us with the candlestick mark, but fortunately, we can build it by using the composition of other primitive marks.
 
 Let's think about candlestick marks and how we can implement them using the Swift Charts framework. Every candlestick mark should display the lowest and highest prices. It doesn't stop there because it also should present another two prices indicating market open and close prices.
 
