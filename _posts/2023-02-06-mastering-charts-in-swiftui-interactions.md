@@ -1,6 +1,7 @@
 ---
 title: Mastering charts in SwiftUI. Interactions.
 layout: post
+category: Mastering SwiftUI views
 ---
 
 The Swift Charts framework provides excellent functionality for implementing super custom charts. This week we will learn how to handle user input with gestures to build interactive charts. The *Chart* type is a simple SwiftUI view, which means you can attach any gestures and buttons to interact with the chart.
