@@ -39,6 +39,8 @@ struct ContentView: View {
 
 As you can see in the example above, we reflect the user input by changing the foreground color of the line mark. Being a SwiftUI view allows us to update the chart's content as soon as the state of the view changes. It is a simple rule you must keep in mind and interact with the *Chart* view as you used to interact with other SwiftUI views.
 
+> To learn more about the basics of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Basics."](/2023/01/10/mastering-charts-in-swiftui-basics/) post.
+
 We have looked at the elementary example, but usually, we need to understand which part of the chart user touches and interacts with the particular mark on the chart. The Charts framework provides us with the *ChartProxy* type for these special cases.
 
 The *ChartProxy* type allows us to do a few essential calculations. First, we can get a *Plottable* value by providing a position on the chart. The second thing we can do with the instance of the *ChartProxy* type is to calculate a position for a particular *Plottable* value. Both of these operations might be very helpful for plotting additional content for the points the user interacts with at the very moment.
