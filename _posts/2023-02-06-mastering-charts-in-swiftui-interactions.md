@@ -125,7 +125,7 @@ struct ContentView1: View {
 }
 ```
 
-Finally, we store the index value of the recent drag gesture in the state variable and update our chart content to plot the rectangle to cover the selected area.
+Finally, we store the index value of the recent drag gesture in the state variable and update our chart content to plot the rectangle to cover the selected area. Remember that you can update your chart as you want to create interactive charts. For example, you can show annotations, plot additional content, change colors, etc. 
 
 In the recent example, we use the *value(forX:)* function on the *ChartProxy* type to read the value by providing the point on the X-axis, but we can also use *value(forY:)* to read by Y-axis, or *value(for:)* to read both by X and Y.
 
