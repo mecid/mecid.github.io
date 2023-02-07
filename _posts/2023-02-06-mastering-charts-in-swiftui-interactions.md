@@ -127,4 +127,5 @@ Finally, we store the index value of the recent drag gesture in the state variab
 
 In the recent example, we use the *value(forX:)* function on the *ChartProxy* type to read the value by providing the point on the X-axis, but we can also use *value(forY:)* to read by Y-axis, or *value(for:)* to read both by X and Y.
 
-A few functions also allow us to get the location point on the chart by providing a *Plottable* value. Look at the *position(for:)* function on the *ChartProxy* type.
+A few functions also allow us to get the location point on the chart by providing a *Plottable* value. Look at the *position(for:)* function on the *ChartProxy* type. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
