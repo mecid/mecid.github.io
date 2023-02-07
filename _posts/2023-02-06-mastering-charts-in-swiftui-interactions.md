@@ -7,7 +7,31 @@ The Swift Charts framework provides excellent functionality for implementing sup
 
 Let's start with a simple example where we attach a drag gesture and change the line's color while the user touches the chart.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var isDragging = false
+    @State private var numbers = (0...10).map { _ in
+        Int.random(in: 0...10)
+    }
+    
+    var body: some View {
+        Chart {
+            ForEach(Array(zip(numbers, numbers.indices)), id: \.0) { number, index in
+                LineMark(
+                    x: .value("Index", index),
+                    y: .value("Value", number)
+                )
+                .foregroundStyle(isDragging ? .red : .blue)
+            }
+        }
+        .gesture(
+            DragGesture()
+                .onChanged { _ in isDragging = true }
+                .onEnded { _ in isDragging = false }
+        )
+    }
+}
+```
 
 As you can see in the example above, we reflect the user input by changing the foreground color of the line mark. Being a SwiftUI view allows us to update the chart's content as soon as the state of the view changes. It is a simple rule you must keep in mind and interact with the Chart view as you used to interact with other SwiftUI views.
 
@@ -19,11 +43,81 @@ The ChartProxy type also provides us with two beneficial properties, plotAreaSiz
 
 There is no way to create an instance of the ChartProxy type, but we can access it through the chartOverlay and chartBackground modifiers. Let's see how we can use it.
 
-=====================================================
+```swift
+struct ContentView1: View {
+    @State private var selectedIndex: Int? = nil
+    @State private var numbers = (0...10).map { _ in
+        Int.random(in: 0...10)
+    }
+    
+    var body: some View {
+        Chart {
+            // ...
+        }
+        .chartOverlay { chart in
+            GeometryReader { geometry in
+                Rectangle()
+                    .fill(Color.clear)
+                    .contentShape(Rectangle())
+                    .gesture(
+                        DragGesture()
+                            .onChanged { value in
+                                let currentX = value.location.x - geometry[chart.plotAreaFrame].origin.x
+                                guard currentX >= 0, currentX < chart.plotAreaSize.width else {
+                                    return
+                                }
+                                
+                                guard let index = chart.value(atX: currentX, as: Int.self) else {
+                                    return
+                                }
+                                selectedIndex = index
+                            }
+                            .onEnded { _ in
+                                selectedIndex = nil
+                            }
+                    )
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the chartOverlay modifier to put an overlay view over the chart view with the instance of the GeometryReader inside. We need the GeometryReader here because the plotAreaFrame property provides us an instance of the Anchor type, which we can use only in conjunction with the instance of GeometryProxy provided by the GeometryReader.
 
 After converting the location of the drag gesture to the chart coordinate space, we can use the instance of the ChartProxy type to extract the value of the X-axis for the position of the drag gesture.
+
+```swift
+struct ContentView1: View {
+    @State private var selectedIndex: Int? = nil
+    @State private var numbers = (0...10).map { _ in
+        Int.random(in: 0...10)
+    }
+    
+    var body: some View {
+        Chart {
+            ForEach(Array(zip(numbers, numbers.indices)), id: \.0) { number, index in
+                if let selectedIndex, selectedIndex == index {
+                    RectangleMark(
+                        x: .value("Index", index),
+                        yStart: .value("Value", 0),
+                        yEnd: .value("Value", number),
+                        width: 16
+                    )
+                    .opacity(0.4)
+                }
+
+                LineMark(
+                    x: .value("Index", index),
+                    y: .value("Value", number)
+                )
+            }
+        }
+        .chartOverlay { chart in
+            // ...
+        }
+    }
+}
+```
 
 Finally, we store the index value of the recent drag gesture in the state variable and update our chart content to plot the rectangle to cover the selected area.
 
