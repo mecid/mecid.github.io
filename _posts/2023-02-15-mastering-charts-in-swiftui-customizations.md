@@ -44,7 +44,7 @@ struct ContentView: View {
             AxisMarks(
                 preset: .aligned,
                 position: .bottom,
-                values: .stride(by: 1000),
+                values: .stride(by: 500),
                 stroke: StrokeStyle(
                     lineWidth: 4,
                     lineCap: .butt,
@@ -72,7 +72,7 @@ struct ContentView: View {
             // ...
         }
         .chartXAxis {
-            AxisMarks(values: .stride(by: 1000)) { value in
+            AxisMarks(values: .stride(by: 500)) { value in
                 AxisGridLine(
                     centered: true,
                     stroke: StrokeStyle(
