@@ -34,6 +34,8 @@ As you can see in the example above, we use the *chartPlotStyle* view modifier t
 
 As you know, the *Chart* view is also a SwiftUI view, and we can apply the *frame* view modifier to it, but in this case, it will affect the whole chart view with its legend view, which is not a good idea.
 
+> To learn more about the basics of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Basics."](/2023/01/10/mastering-charts-in-swiftui-basics/) post.
+
 #### Axis
 The Charts framework provides us *chartXAxis* and *chartYAxis* view modifiers allowing us to control the look and feel of the particular axis completely. These view modifiers accept *AxisContentBuilder* closure, where we can define how we want to build the axis.
 
