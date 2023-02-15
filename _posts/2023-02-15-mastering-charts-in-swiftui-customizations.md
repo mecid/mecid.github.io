@@ -5,7 +5,7 @@ image: /public/chart14.png
 category: Mastering SwiftUI views
 ---
 
-The Swift Charts framework became a huge topic on my blog. But I decided to continue this subject to cover everything I've experienced with the Charts framework. This week we will learn how to customize the Chart view using a bunch of chart view modifiers provided by the framework.
+The Swift Charts framework became a huge topic on my blog. But I decided to continue this subject to cover everything I've experienced with the Charts framework. This week we will learn how to customize the *Chart* view using a bunch of chart view modifiers provided by the framework.
 
 {% include friends.html %}
 
