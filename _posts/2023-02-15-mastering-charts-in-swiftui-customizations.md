@@ -103,3 +103,4 @@ struct ContentView: View {
 
 As you can see in the example above, we use another variant of the *AxisMarks* initializer, allowing us to configure the axis look and feel per value. We use the concrete value to decide whether to show the tick. The last example demonstrates how we can use *AxisGridLine*, *AxisValueLabel*, and *AxisTick* types to compose the axis. They provide many customization points, allowing you to reach the desired look and feel.
 
+ I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
