@@ -27,6 +27,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *chartPlotStyle* view modifier to access the chart's content view. It is a simple SwiftUI view, meaning we can apply any view modifiers we need. In our case, we use the *frame* view modifier to set a particular height and the *background* view modifier to fill the background with a gray color. 
 
+![stacked-bar-chart](/public/chart14.png)
+
 As you know, the *Chart* view is also a SwiftUI view, and we can apply the *frame* view modifier to it, but in this case, it will affect the whole chart view with its legend view, which is not a good idea.
 
 #### Axis
