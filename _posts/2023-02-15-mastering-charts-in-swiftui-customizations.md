@@ -10,7 +10,7 @@ The Swift Charts framework became a huge topic on my blog. But I decided to cont
 {% include friends.html %}
 
 #### Plot area
-The first thing you might need is the tuning plot area of the Chart view. The Charts framework provides the *chartPlotStyle* view modifier allowing us to style the view representing the chart's plot area. Let's take a look at how we can use it.
+The first thing you might need is the tuning plot area of the *Chart* view. The Charts framework provides the *chartPlotStyle* view modifier allowing us to style the view representing the chart's plot area. Let's take a look at how we can use it.
 
 ```swift
 struct ContentView: View {
