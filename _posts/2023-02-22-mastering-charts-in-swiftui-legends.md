@@ -5,7 +5,7 @@ category: Mastering SwiftUI views
 image: /public/chart14.png
 ---
 
-Last week we started the topic of the Swift Charts framework customization using a bunch of chart view modifiers. It is a vast topic that I divide into a few small posts. This week we will discuss configuring the legend view using the new Swift Charts framework.
+Last week we started the topic of the Swift Charts framework customization options using a bunch of chart view modifiers. It is a vast topic that I divide into a few small posts. This week we will discuss configuring the legend view using the new Swift Charts framework.
 
 {% include friends.html %}
 
