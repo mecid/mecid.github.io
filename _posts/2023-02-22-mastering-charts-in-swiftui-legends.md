@@ -5,6 +5,8 @@ layout: post
 
 Last week we started the topic of Swift Chart customization using a bunch of chart view modifiers. It is a vast topic that I divide into a few small posts. This week we will discuss configuring the legend view using the new Swift Charts framework.
 
+{% include friends.html %}
+
 The Swift Charts framework is smart enough to infer and display the legend view for your chart automatically. Let's take a look at the concrete example.
 
 =====================================================
