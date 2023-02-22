@@ -33,3 +33,4 @@ You might need to provide static data for your legend view in some specific case
 
 In the example above, we use the chartForegroundStyleScale and pass the dictionary with gender-color pairs. Usually, we generate this data dynamically using some logic, but you can also hardcode these values if needed.
 
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
