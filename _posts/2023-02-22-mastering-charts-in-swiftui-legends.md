@@ -103,6 +103,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the chartForegroundStyleScale modifier to provide both values and colors representing that values. The chartForegroundStyleScale modifier pairs with the foregroundStyle modifier and maps values you pass to colors on the chart and in the legend view.
 
+> To learn more about customization options of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Customizations."](/2023/02/15/mastering-charts-in-swiftui-customizations/) post.
+
 You might need to provide static data for your legend view in some specific cases. For that, you can use another overload of the chartForegroundStyleScale modifier accepting a key-value literal.
 
 ```swift
