@@ -9,7 +9,44 @@ First of all, I should mention that the Swift Charts framework understands your 
 
 But remember that you should provide meaningful labels within instances of the PlottableValue type. The Swift Charts framework will use these labels to provide information for you VoiceOver users. Let's take a look at a quick example.
 
-=====================================================
+```swift
+import SwiftUI
+import Charts
+
+enum Gender: String, CaseIterable {
+    case male
+    case female
+    case notSet
+}
+
+extension Gender: Plottable {
+    var primitivePlottable: String {
+        rawValue
+    }
+}
+
+struct Stats {
+    let city: String
+    let population: Int
+    let gender: Gender
+}
+
+struct ContentView: View {
+    let stats: [Stats]
+    
+    var body: some View {
+        Chart {
+            ForEach(stats, id: \.city) { stat in
+                BarMark(
+                    x: .value(Text(verbatim: "City"), stat.city),
+                    y: .value("Population", stat.population)
+                )
+                .foregroundStyle(by: .value("Gender", stat.gender))
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we use City, Population, and Gender strings as instances of the LocalizedStringKey type. Fortunately, the PlottableValue type provides a few overloads allowing us to use String, LocalizedStringKey, and Text as its label.
 
@@ -19,7 +56,23 @@ The Swift Charts automatically group accessibility elements for the same cities,
 
 Whenever you need to provide additional information for your data point, you can always use the accessibilityLabel and accessibilityValue modifiers on your mark type.
 
-=====================================================
+```swift
+struct ContentView1: View {
+    let stats: [Stats]
+    
+    var body: some View {
+        Chart {
+            ForEach(stats.filter { $0.gender == .female }, id: \.city) { stat in
+                BarMark(
+                    x: .value(Text(verbatim: "City"), stat.city),
+                    y: .value("Population", stat.population)
+                )
+                .accessibilityValue("Female population: \(stat.population)")
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the accessibilityValue modifier on the mark type to provide more information about the mark's value.
 
