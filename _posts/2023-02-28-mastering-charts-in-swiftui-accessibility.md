@@ -56,9 +56,9 @@ struct ContentView: View {
 
 As you can see in the example above, we use City, Population, and Gender strings as instances of the *LocalizedStringKey* type. Fortunately, the *PlottableValue* type provides a few overloads allowing us to use *String*, *LocalizedStringKey*, and *Text* as its label.
 
-![chart-accessibility-tree](/public/chart16.png)
-
 The Swift Charts automatically group accessibility elements for the same cities, calculate the total population per city and provide it as accessibility value.
+
+![chart-accessibility-tree](/public/chart16.png)
 
 Whenever you need to provide additional information for your data point, you can always use the *accessibilityLabel* and *accessibilityValue* modifiers on your mark type.
 
