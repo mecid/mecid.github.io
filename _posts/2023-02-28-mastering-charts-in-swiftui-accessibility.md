@@ -80,7 +80,7 @@ struct ContentView1: View {
 }
 ```
 
-As you can see in the example above, we use the *accessibilityValue* modifier on the mark type to provide more information about the mark's value.
+As you can see in the example above, we use the *accessibilityValue* modifier on the *BarMark* type to provide meaningful information about its value.
 
 iOS 15 and later versions have a feature called audio graphs. It allows to represent any visual information using sounds and works excellently with charts. Fortunately, we don't need to do anything to support audio graphs. The Swift Charts framework extracts valuable information from your data and builds audio graphs automatically.
 
