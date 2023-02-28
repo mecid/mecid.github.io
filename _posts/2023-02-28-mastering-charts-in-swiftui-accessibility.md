@@ -5,6 +5,8 @@ layout: post
 
 The last but not least post in the series is about accessibility. It is essential to make your app accessible to VoiceOver users. Usually, it is much harder to make your visual content accessible. Fortunately, Apple provides AudioGraph features allowing us to make any chart representable with sound. This week we will learn how to improve the accessibility of our graphs using the Swift Charts framework.
 
+{% include friends.html %}
+
 First of all, I should mention that the Swift Charts framework understands your data and build an accessibility tree for your chart automatically for free. You don't need to do any specific steps to make your chart accessible with the Swift Charts framework.
 
 But remember that you should provide meaningful labels within instances of the PlottableValue type. The Swift Charts framework will use these labels to provide information for you VoiceOver users. Let's take a look at a quick example.
