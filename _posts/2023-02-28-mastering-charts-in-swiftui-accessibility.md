@@ -82,7 +82,7 @@ struct ContentView1: View {
 
 As you can see in the example above, we use the *accessibilityValue* modifier on the mark type to provide more information about the mark's value.
 
-iOS 15 and later versions have a feature called Audio Graphs. It allows to represent any visual information using sounds and works excellently with charts. Fortunately, we don't need to do anything to support audio Graphs. The Swift Charts framework extracts valuable information from your data and builds Audio Graphs automatically.
+iOS 15 and later versions have a feature called audio graphs. It allows to represent any visual information using sounds and works excellently with charts. Fortunately, we don't need to do anything to support audio graphs. The Swift Charts framework extracts valuable information from your data and builds audio graphs automatically.
 
 Audio graphs are available via the rotors menu. To use the rotor, rotate two fingers on your iOS device's screen as if you're turning a dial. VoiceOver will say the first rotor option. Keep rotating your fingers to hear more options. Lift your fingers to choose audio graphs. Then flick your finger up or down on the screen to navigate to chart details and double-tap to select it.
 
