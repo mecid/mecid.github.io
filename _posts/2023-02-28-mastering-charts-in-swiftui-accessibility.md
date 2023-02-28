@@ -53,7 +53,7 @@ struct ContentView: View {
 
 As you can see in the example above, we use City, Population, and Gender strings as instances of the LocalizedStringKey type. Fortunately, the PlottableValue type provides a few overloads allowing us to use String, LocalizedStringKey, and Text as its label.
 
-=====image====
+![chart-accessibility-tree](/public/chart16.png)
 
 The Swift Charts automatically group accessibility elements for the same cities, calculate the total population per city and provide it as accessibility value.
 
@@ -83,7 +83,7 @@ iOS 15 and later versions have a feature called Audio Graphs. It allows to repre
 
 Audio graphs are available via the rotors menu. To use the rotor, rotate two fingers on your iOS device's screen as if you're turning a dial. VoiceOver will say the first rotor option. Keep rotating your fingers to hear more options. Lift your fingers to choose audio graphs. Then flick your finger up or down on the screen to navigate to chart details and double-tap to select it.
 
-=======image======
+![audio-graph](/public/chart17.png)
 
 As you can see, the Swift Charts framework understands your data series, builds summary and statistics from your data, and displays it in the audio graph menu automatically.
 
