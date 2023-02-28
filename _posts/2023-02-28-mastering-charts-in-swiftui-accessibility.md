@@ -13,7 +13,7 @@ First of all, I should mention that the Swift Charts framework understands your 
 
 > To learn more about the basics of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Basics."](/2023/01/10/mastering-charts-in-swiftui-basics/) post.
 
-But remember that you should provide meaningful labels within instances of the *PlottableValue* type. The Swift Charts framework will use these labels to provide information for you VoiceOver users. Let's take a look at a quick example.
+But remember that you should provide meaningful labels within instances of the *PlottableValue* type. The Swift Charts framework will use these labels to provide information to your VoiceOver users. Let's take a look at a quick example.
 
 ```swift
 import SwiftUI
