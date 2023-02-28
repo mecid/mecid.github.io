@@ -161,7 +161,7 @@ In the current implementation, I've created a private class that holds all the l
 
 ```swift
 @propertyWrapper struct SecureStorage<Value: Codable>: DynamicProperty {
-    @StateObject private var storage: KeychainStorage<Value>
+    @ObservedObject private var storage: KeychainStorage<Value>
 
     var wrappedValue: Value {
         get { storage.value }
@@ -172,12 +172,7 @@ In the current implementation, I've created a private class that holds all the l
     }
 
     init(wrappedValue: Value, _ key: String) {
-        self._storage = StateObject(
-            wrappedValue: KeychainStorage(
-                defaultValue: wrappedValue,
-                for: key
-            )
-        )
+        self.storage = KeychainStorage(defaultValue: wrappedValue, for: key)
     }
 
     var projectedValue: Binding<Value> {
