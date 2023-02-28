@@ -11,6 +11,8 @@ The last but not least post in the series is about accessibility. It is essentia
 
 First of all, I should mention that the Swift Charts framework understands your data and build an accessibility tree for your chart automatically for free. You don't need to do any specific steps to make your chart accessible with the Swift Charts framework.
 
+> To learn more about the basics of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Basics."](/2023/01/10/mastering-charts-in-swiftui-basics/) post.
+
 But remember that you should provide meaningful labels within instances of the PlottableValue type. The Swift Charts framework will use these labels to provide information for you VoiceOver users. Let's take a look at a quick example.
 
 ```swift
