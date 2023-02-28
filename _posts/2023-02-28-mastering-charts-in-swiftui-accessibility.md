@@ -13,7 +13,7 @@ First of all, I should mention that the Swift Charts framework understands your 
 
 > To learn more about the basics of the Charts framework, take a look at my dedicated ["Mastering charts in SwiftUI. Basics."](/2023/01/10/mastering-charts-in-swiftui-basics/) post.
 
-But remember that you should provide meaningful labels within instances of the PlottableValue type. The Swift Charts framework will use these labels to provide information for you VoiceOver users. Let's take a look at a quick example.
+But remember that you should provide meaningful labels within instances of the *PlottableValue* type. The Swift Charts framework will use these labels to provide information for you VoiceOver users. Let's take a look at a quick example.
 
 ```swift
 import SwiftUI
@@ -54,13 +54,13 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use City, Population, and Gender strings as instances of the LocalizedStringKey type. Fortunately, the PlottableValue type provides a few overloads allowing us to use String, LocalizedStringKey, and Text as its label.
+As you can see in the example above, we use City, Population, and Gender strings as instances of the *LocalizedStringKey* type. Fortunately, the *PlottableValue* type provides a few overloads allowing us to use *String*, *LocalizedStringKey*, and *Text* as its label.
 
 ![chart-accessibility-tree](/public/chart16.png)
 
 The Swift Charts automatically group accessibility elements for the same cities, calculate the total population per city and provide it as accessibility value.
 
-Whenever you need to provide additional information for your data point, you can always use the accessibilityLabel and accessibilityValue modifiers on your mark type.
+Whenever you need to provide additional information for your data point, you can always use the *accessibilityLabel* and *accessibilityValue* modifiers on your mark type.
 
 ```swift
 struct ContentView1: View {
@@ -80,7 +80,7 @@ struct ContentView1: View {
 }
 ```
 
-As you can see in the example above, we use the accessibilityValue modifier on the mark type to provide more information about the mark's value.
+As you can see in the example above, we use the *accessibilityValue* modifier on the mark type to provide more information about the mark's value.
 
 iOS 15 and later versions have a feature called Audio Graphs. It allows to represent any visual information using sounds and works excellently with charts. Fortunately, we don't need to do anything to support audio Graphs. The Swift Charts framework extracts valuable information from your data and builds Audio Graphs automatically.
 
