@@ -1,6 +1,7 @@
 ---
 title: Mastering charts in SwiftUI. Accessibility.
 layout: post
+category: Mastering SwiftUI views
 ---
 
 The last but not least post in the series is about accessibility. It is essential to make your app accessible to VoiceOver users. Usually, it is much harder to make your visual content accessible. Fortunately, Apple provides AudioGraph features allowing us to make any chart representable with sound. This week we will learn how to improve the accessibility of our graphs using the Swift Charts framework.
