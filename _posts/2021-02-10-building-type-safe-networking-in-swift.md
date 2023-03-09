@@ -112,6 +112,12 @@ extension URLSession {
             .mapError { $0 }
             .eraseToAnyPublisher()
     }
+    
+    func data(for request: Request) async throws -> Data {
+        let (data, _) = try await self.data(for: request.urlRequest)
+        try Task.checkCancellation()
+        return data
+    }
 }
 ```
 
