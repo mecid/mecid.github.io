@@ -74,6 +74,32 @@ It also uses a separated screen with *List* to show the items of *Picker*. We do
 
 ![Settings screen](/public/settings.jpg)
 
-#### Conclusion
+#### Styling
+The SwiftUI framework provides us the *formStyle* view modifier allowing to set one of the three available styles: *automatic*, *grouped* and *columns*. The *grouped* style uses a grouped list, *columns* styles uses grid-based layout similar to macOS forms, *automatic* style uses default form style on the current platform.
 
+```swift
+struct CustomFormStyle: FormStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.content
+            .border(Color.red)
+    }
+}
+
+extension FormStyle where Self == CustomFormStyle {
+    static var custom: CustomFormStyle { .init() }
+}
+
+struct ContentView: View {
+    var body: some View {
+        Form {
+            // content
+        }
+        .formStyle(.custom)
+    }
+}
+```  
+
+You can also create your own form style by creating a type conforming to the *FormStyle* protocol. The only requirement is the *makeBody* function taking an instance of *FormStyleConfiguration* as the parameter. You can access the content of the form by reading *content* property on *FormStyleConfiguration* type.
+
+#### Conclusion
 I enjoy how easy we can build apps with SwiftUI. You can use *Form* component for making complex form layouts with a lot of sections and choices for data entry. I hope you love SwiftUI as much as me because I'm going to cover more SwiftUI topics soon. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!  
