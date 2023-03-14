@@ -45,6 +45,37 @@ struct ContentView: View {
     }
 }
 ```
+#### Toggle collection
+The SwiftUI framework allows us to create a *Toggle* that binds to a collection of values. In the example below, we define a *Toggle* that uses keypath to boolean on the array of tasks. 
+
+```swift
+struct Task: Identifiable {
+    let id = UUID()
+    var done = false
+    var title = ""
+}
+    
+struct ContentView: View {
+    @State private var tasks: [Task] = [
+        .init(title: "Task 1"),
+        .init(title: "Task 2"),
+    ]
+    
+    var body: some View {
+        List {
+            ForEach($tasks, id: \.id) { $task in
+                Toggle(isOn: $task.done) {
+                    Text(verbatim: task.title)
+                }
+            }
+            
+            Toggle(sources: $tasks, isOn: \.done) {
+                Text("Mark all")
+            }
+        }
+    }
+}
+```
 
 #### Styling
 We learned how to change the tint color of *Toggle*, but what about real styling options. For example, you might want to replace the *UISwitch* presentation of toggles with a checkbox. SwiftUI provides a *ToggleStyle* protocol that allows us to customize toggles in a way we can imagine. 
