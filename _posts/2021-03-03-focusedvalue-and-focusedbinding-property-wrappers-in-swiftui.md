@@ -70,8 +70,12 @@ Here we have the *ContentView* with *NoteEditor* that uses a binding from the vi
 
 We also define the *NotePreview* view. *NotePreview* uses the *FocusedValue* property wrapper to monitor the content of the focused note. SwiftUI will set the value of *FocusedValue* to *nil* as soon as the view loses the focus.
 
+You can use the *focusedSceneValue* view modifier whenever you need to share focused value between views in different scenes.
+
 #### FocusedObject
 The *FocusedValue* property wrapper and view modifier works great for value types. But if you need this behavior for a class conforming to the *ObservableObject* protocol you can use the pair of the *focusedObject* view modifier and *FocusedObject* property wrapper.
+
+You can use the *focusedSceneObject* view modifier whenever you need to share focused object between views in different scenes.
 
 #### FocusedBinding
 OK, we learned how to pass a read-only value for a recently focused note. But what if we want to modify it? For example, we can have a *NoteFormatter* view that formats the note's content and overrides it. We can't achieve it with the *FocusedValue* property wrapper because it provides us a get-only value.
