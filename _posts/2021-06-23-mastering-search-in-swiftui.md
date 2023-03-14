@@ -178,5 +178,44 @@ struct ContentView: View {
 }
 ```
 
+#### Tokens
+Another version of the *searchable* view modifier allows us to display tokens in the search bar. 
+
+```swift
+struct Token: Identifiable {
+    let id = UUID()
+    let value: String
+}
+    
+struct ContentView: View {
+    @State private var query = ""
+    @State private var tokens: [Token] = []
+    @State private var suggestedTokens: [Token] = [
+        .init(value: "Token1"),
+        .init(value: "Token2"),
+        .init(value: "Token3"),
+        .init(value: "Token4")
+    ]
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                // ...
+            }
+            .searchable(
+                text: $query,
+                tokens: $tokens,
+                suggestedTokens: $suggestedTokens
+            ) { token in
+                Text(verbatim: token.value)
+            }
+            .navigationTitle("Search")
+        }
+    }
+}
+```
+
+In the example above, we use the *searchable* view modifier and pass two bindings for suggested tokens and selected tokens. The SwiftUI displays suggested tokens and move them into the search bar as soon as user taps one of them. It also moves the token from the suggested collection to the selected collection of tokens.
+
 #### Conclusion
 Today we learned how to build a great search experience using the brand new *searchable* view modifier. It is incredible how easy you can make things like suggestions, the platform adopted placement using the only *searchable* view modifier. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
