@@ -171,11 +171,11 @@ extension URLSession {
             .eraseToAnyPublisher()
     }
     
-    public func decode<Value: Decodable>(
+    func decode<Value: Decodable>(
         from request: Request<Value>,
         using decoder: JSONDecoder = .init()
     ) async throws -> Value {
-        let decoded: Task<Value, Error> = .detached(priority: .userInitiated) {
+        let decoded = Task.detached(priority: .userInitiated) {
             let (data, _) = try await self.data(for: request.urlRequest)
             try Task.checkCancellation()
             return try decoder.decode(Value.self, from: data)
