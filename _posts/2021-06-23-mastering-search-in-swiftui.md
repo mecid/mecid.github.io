@@ -21,7 +21,7 @@ struct RootView: View {
             Master()
             Details()
         }
-        .searchable(text: $query, prompt: "Search")
+        .searchable(text: $query, prompt: Text("Search"))
     }
 }
 ```
@@ -40,9 +40,9 @@ struct RootView: View {
             Details()
         }
         .searchable(
-            "Type something...",
             text: $query,
-            placement: .toolbar
+            placement: .toolbar,
+            prompt: "Type something..."
         )
     }
 }
