@@ -5,7 +5,7 @@ image: /public/tabs.png
 category: Data Flow
 ---
 
-The last year Apple has done a great job in terms of focus management in SwiftUI. We got a few new modifiers to set up an entry point for the focus system and programmatically handle focus changes. We still have some gaps, and I hope Apple will fill them during WWDC21. This week I want to talk about *FocusedValue* and *FocusedBinding* property wrappers.
+The last year Apple has done a great job in terms of focus management in SwiftUI. We got a few new modifiers to set up an entry point for the focus system and programmatically handle focus changes. We still have some gaps, and I hope Apple will fill them during WWDC21. This week I want to talk about *FocusedValue*, *FocusedObject*, and *FocusedBinding* property wrappers.
 
 {% include friends.html %}
 
