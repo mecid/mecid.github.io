@@ -154,5 +154,29 @@ As you can see in the example above, we use the *searchSuggestions* view modifie
 
 Keep in mind that *searchCompletion* modifier wraps its content in a *Button*. It means you should apply it to the view that doesn't have user interaction like *Text* or *Label*.
 
+#### Scopes
+The SwiftUI framework provides us another view modifier allowing us to improve search experience. We can use the *searchScopes* view modifier to provide search scopes displayed in the segmented control under the search bar.
+
+```swift
+struct ContentView: View {
+    @State private var query = ""
+    @State private var scope: Scope = .local
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                // ...
+            }
+            .searchable(text: $query)
+            .searchScopes($scope) {
+                ForEach(Scope.allCases, id: \.self) { scope in
+                    Text(scope.rawValue)
+                }
+            }
+        }
+    }
+}
+```
+
 #### Conclusion
 Today we learned how to build a great search experience using the brand new *searchable* view modifier. It is incredible how easy you can make things like suggestions, the platform adopted placement using the only *searchable* view modifier. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
