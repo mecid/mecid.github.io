@@ -70,6 +70,9 @@ Here we have the *ContentView* with *NoteEditor* that uses a binding from the vi
 
 We also define the *NotePreview* view. *NotePreview* uses the *FocusedValue* property wrapper to monitor the content of the focused note. SwiftUI will set the value of *FocusedValue* to *nil* as soon as the view loses the focus.
 
+#### FocusedObject
+The *FocusedValue* property wrapper and view modifier works great for value types. But if you need this behavior for a class conforming to the *ObservableObject* protocol you can use the pair of the *focusedObject* view modifier and *FocusedObject* property wrapper.
+
 #### FocusedBinding
 OK, we learned how to pass a read-only value for a recently focused note. But what if we want to modify it? For example, we can have a *NoteFormatter* view that formats the note's content and overrides it. We can't achieve it with the *FocusedValue* property wrapper because it provides us a get-only value.
 
@@ -125,7 +128,7 @@ struct NoteFormatter: View {
 ```
 
 #### Conclusion
-Today we learned how to use *FocusedValue* and *FocusedBinding* property wrappers. One of the possible use cases for these property wrappers is commands that we can use to create the main menu for macOS apps. You can access the currently focused view's content and implement some logic that lives in your macOS app's main menu.
+Today we learned how to use *FocusedValue*, *FocusedObject*, and *FocusedBinding* property wrappers. One of the possible use cases for these property wrappers is commands that we can use to create the main menu for macOS apps. You can access the currently focused view's content and implement some logic that lives in your macOS app's main menu.
 
 > To learn more about building the main menu for macOS apps, take a look at my ["Commands in SwiftUI"](/2020/11/24/commands-in-swiftui/) post.
 
