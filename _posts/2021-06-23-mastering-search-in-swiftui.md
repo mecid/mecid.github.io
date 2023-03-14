@@ -111,7 +111,7 @@ Another search-related environment value we have is *dismissSearch*. *dismissSea
 > To learn more about environment in SwiftUI, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
 #### Suggestions 
-Suggestions are a vital part of the excellent search experience, and SwiftUI gives us a very nice API that we can use to provide search suggestions to our users. The *searchable* view modifier has the optional *suggestions* parameter, which is a *@ViewBuilder* closure. Let's see how we can use it.
+Suggestions are a vital part of the excellent search experience, and SwiftUI gives us a very nice API that we can use to provide search suggestions to our users. The *searchSuggestions* view modifier allows us to pass a *@ViewBuilder* closure displaying search suggestions. Let's see how we can use it.
 
 ```swift
 struct ContentView: View {
@@ -133,7 +133,8 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Search")
-            .searchable(text: $query) {
+            .searchable(text: $query)
+            .searchSuggestions {
                 ForEach(suggestions, id: \.self) { suggestion in
                     Text(suggestion)
                         .searchCompletion(suggestion)
@@ -149,7 +150,7 @@ struct ContentView: View {
 
 ![search-suggestions](/public/search1.png)
 
-As you can see in the example above, we use the *searchable* modifier and provide a *@ViewBuilder* closure with *ForEach* view that iterates over an array of suggestions. We also use the *searchCompletion* view modifier to wrap every text view in a button that assigns its value to the search query binding.
+As you can see in the example above, we use the *searchSuggestions* view modifier and provide a *@ViewBuilder* closure with *ForEach* view that iterates over an array of suggestions. We also use the *searchCompletion* view modifier to wrap every text view in a button that assigns its value to the search query binding.
 
 Keep in mind that *searchCompletion* modifier wraps its content in a *Button*. It means you should apply it to the view that doesn't have user interaction like *Text* or *Label*.
 
