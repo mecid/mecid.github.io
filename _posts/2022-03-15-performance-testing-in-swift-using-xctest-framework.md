@@ -9,11 +9,37 @@ The XCTest framework includes support for measuring the performance of specific 
 
 To measure the performance of a specific code path, you can use the measure function provided by the XCTest framework. This method takes a closure containing the code you want to measure, and it runs that code multiple times to accurately measure its performance.
 
-=====================================================
+```swift
+import XCTest
+
+final class PerformanceTests: XCTestCase {
+    func testPerformanceOfMyFunction() {
+        self.measure {
+            myFunction()
+        }
+    }
+}
+```
 
 When you run this test, the measure function will run the code inside the closure multiple times and calculate the average execution time. It will also report the minimum and maximum execution times and the standard deviation.
 
-=====================================================
+```swift
+import XCTest
+
+final class PerformanceTests: XCTestCase {
+    func testPerformanceOfMyFunction() {
+        let firstExecutionTime = self.measure {
+            myFunction()
+        }
+
+        let secondExecutionTime = self.measure {
+            myFunction()
+        }
+
+        XCTAssertLessThan(firstExecutionTime, secondExecutionTime)
+    }
+}
+```
 
 In addition to measuring code performance, XCTest allows us to compare the performance of different code paths using the XCTAssertLessThan() method. This method takes two execution times and asserts that the first execution time is less than the second execution time.
 
@@ -21,12 +47,31 @@ Remember that we should use the measure function to measure the performance of s
 
 To test the performance of larger code paths, we can use another overload of the measure function, allowing us to specify a particular metric or set of metrics to measure while testing.
 
-=====================================================
+```swift
+import XCTest
+
+final class PerformanceTests: XCTestCase {
+    var app: XCUIApplication!
+
+    override func setUp() {
+        continueAfterFailure = false
+        app = XCUIApplication()
+        app.launch()
+    }
+    
+    func testPerformanceOfSearchFlow() {
+         self.measure(metrics: [XCTMemoryMetric()]) {
+            SearchScreen(app: app)
+                .goToSearch()
+                .query("Pasta")
+                .verifyResults(contains: "Pasta")
+        }
+    }
+}
+```
 
 As you can see in the example above, we create an instance of the XCTMemoryMetric type to measure only memory usage. There are a bunch of available metric types like XCTApplicationLaunchMetric, XCTMemoryMetric, XCTCPUMetric, XCTStorageMetric, XCTClockMetric, and XCTOSSignpostMetric.
 
 You can use these measurements to optimize the performance of your code by identifying any bottlenecks or areas where the execution time is longer than expected.
 
 In this article, we've explored the XCTest framework and its capabilities for performance testing in Swift. We've learned how to write and run performance tests using the XCTest framework.
-
-
