@@ -68,7 +68,7 @@ struct ContentView: View {
             .navigationTitle("Search")
             .searchable(text: $query)
             .onChange(of: query) { newQuery in
-                async { await viewModel.search(matching: query) }
+                Task { await viewModel.search(matching: query) }
             }
         }
     }
@@ -91,7 +91,8 @@ struct StarredReposList: View {
     var body: some View {
         List(viewModel.repos) { repo in
             RepoView(repo: repo)
-        }.overlay {
+        }
+        .overlay {
             if isSearching && !query.isEmpty {
                 VStack {
                     Button("Dismiss search") {
@@ -141,7 +142,7 @@ struct ContentView: View {
                 }
             }
             .onChange(of: query) { newQuery in
-                async { await viewModel.search(matching: query) }
+                Task { await viewModel.search(matching: query) }
             }
         }
     }
