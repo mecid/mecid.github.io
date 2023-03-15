@@ -78,3 +78,5 @@ As you can see in the example above, we create an instance of the XCTMemoryMetri
 You can use these measurements to optimize the performance of your code by identifying any bottlenecks or areas where the execution time is longer than expected.
 
 In this article, we've explored the XCTest framework and its capabilities for performance testing in Swift. We've learned how to write and run performance tests using the XCTest framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
+Written by ChatGPT, redacted by Majid Jabrayilov.
