@@ -72,6 +72,8 @@ final class PerformanceTests: XCTestCase {
 
 As you can see in the example above, we create an instance of the XCTMemoryMetric type to measure only memory usage. There are a bunch of available metric types like XCTApplicationLaunchMetric, XCTMemoryMetric, XCTCPUMetric, XCTStorageMetric, XCTClockMetric, and XCTOSSignpostMetric.
 
+> To learn about the Page Object pattern I've used in the example above, take a look at my ["UI Testing using Page Object pattern in Swift"](/2021/03/24/ui-testing-using-page-object-pattern-in-swift/) post.
+
 You can use these measurements to optimize the performance of your code by identifying any bottlenecks or areas where the execution time is longer than expected.
 
 In this article, we've explored the XCTest framework and its capabilities for performance testing in Swift. We've learned how to write and run performance tests using the XCTest framework.
