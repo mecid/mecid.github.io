@@ -5,7 +5,7 @@ category: Testing
 image: /public/visual.png
 ---
 
-In Swift, we can do performance testing using the XCTest framework, which is a part of the Xcode development environment. XCTest provides a comprehensive set of tools for writing, running, and analyzing unit and performance tests for Swift applications.
+In Swift, we can do performance testing using the XCTest framework, which is a part of the Xcode development environment. XCTest provides a comprehensive set of tools for writing, running, and analyzing unit and performance tests for Swift applications. This week we will learn how to do performance testing in Swift using the XCTest framework.
 
 The XCTest framework includes support for measuring the performance of specific code paths in your application using XCTest's performance testing API. This API allows you to write tests that measure the execution time of a particular block of code, and we can use it to measure how the performance of your application changes over time as you make changes to your code.
 
