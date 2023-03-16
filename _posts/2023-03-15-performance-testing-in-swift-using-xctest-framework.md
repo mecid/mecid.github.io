@@ -9,7 +9,7 @@ In Swift, we can do performance testing using the XCTest framework, which is a p
 
 The XCTest framework includes support for measuring the performance of specific code paths in your application using XCTest's performance testing API. This API allows you to write tests that measure the execution time of a particular block of code, and we can use it to measure how the performance of your application changes over time as you make changes to your code.
 
-To measure the performance of a specific code path, you can use the measure function provided by the XCTest framework. This method takes a closure containing the code you want to measure, and it runs that code multiple times to accurately measure its performance.
+To measure the performance of a specific code path, you can use the *measure* function provided by the XCTest framework. This method takes a closure containing the code you want to measure, and it runs that code multiple times to accurately measure its performance.
 
 ```swift
 import XCTest
@@ -23,7 +23,7 @@ final class PerformanceTests: XCTestCase {
 }
 ```
 
-When you run this test, the measure function will run the code inside the closure multiple times and calculate the average execution time. It will also report the minimum and maximum execution times and the standard deviation.
+When you run this test, the *measure* function will run the code inside the closure multiple times and calculate the average execution time. It will also report the minimum and maximum execution times and the standard deviation.
 
 ```swift
 import XCTest
@@ -43,11 +43,11 @@ final class PerformanceTests: XCTestCase {
 }
 ```
 
-In addition to measuring code performance, XCTest allows us to compare the performance of different code paths using the XCTAssertLessThan() method. This method takes two execution times and asserts that the first execution time is less than the second execution time.
+In addition to measuring code performance, XCTest allows us to compare the performance of different code paths using the *XCTAssertLessThan* function. This function takes two execution times and asserts that the first execution time is less than the second execution time.
 
-Remember that we should use the measure function to measure the performance of small code paths, such as a single method or function. Don't use the measure function to measure the performance of an entire application or a large portion of code, as this can lead to inaccurate results.
+Remember that we should use the *measure* function to measure the performance of small code paths, such as a single method or function. Don't use the *measure* function to measure the performance of an entire application or a large portion of code, as this can lead to inaccurate results.
 
-To test the performance of larger code paths, we can use another overload of the measure function, allowing us to specify a particular metric or set of metrics to measure while testing.
+To test the performance of larger code paths, we can use another overload of the *measure* function, allowing us to specify a particular metric or set of metrics to measure while testing.
 
 ```swift
 import XCTest
@@ -72,7 +72,7 @@ final class PerformanceTests: XCTestCase {
 }
 ```
 
-As you can see in the example above, we create an instance of the XCTMemoryMetric type to measure only memory usage. There are a bunch of available metric types like XCTApplicationLaunchMetric, XCTMemoryMetric, XCTCPUMetric, XCTStorageMetric, XCTClockMetric, and XCTOSSignpostMetric.
+As you can see in the example above, we create an instance of the *XCTMemoryMetric* type to measure only memory usage. There are a bunch of available metric types like *XCTApplicationLaunchMetric*, *XCTMemoryMetric*, *XCTCPUMetric*, *XCTStorageMetric*, *XCTClockMetric*, and *XCTOSSignpostMetric*.
 
 > To learn about the Page Object pattern I've used in the example above, take a look at my ["UI Testing using Page Object pattern in Swift"](/2021/03/24/ui-testing-using-page-object-pattern-in-swift/) post.
 
