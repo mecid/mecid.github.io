@@ -27,7 +27,7 @@ final class UITests: XCTestCase {
 }
 ```
 
-=========================image========================
+![XCTest activity](/public/test-activity-1.png)
 
 It is excellent that Xcode logs every action, and we can review them later, but it is hard to understand who is who here. And for this particular case, we can use XCTest activities. An XCTest activity allows us to group and name a set of actions inside the test. Let's take a look at how we can use this API.
 
@@ -58,7 +58,7 @@ final class UITests: XCTestCase {
 As you can see in the example above, we use the runActivity function on the XCTContext type. This function accepts two parameters: the name of the activity and the closure defining the activity. It allows us to easily group and name actions in the test and review them in the report navigator much more easily.
 
 
-===========================image======================
+![XCTest activity](/public/test-activity-2.png)
 
 #### Attachment
 The second great feature of the XCTest framework is the concept of attachments. You can add attachments to any test case or activity. For example, it might be a screenshot of the current state of your app while running a particular action. Let's see how we can use the XCTest activity to add some screenshots.
@@ -138,3 +138,5 @@ final class UITests: XCTestCase {
 ```
 
 And finally, we can review and save all of these attachments in the Report navigator section of the Xcode. It allows us to do many exciting things. For example, you can run a UI tests suite that goes through the main flows of your app and collects screenshots for the App Store page. And you can run it under different locales to automate collecting app screenshots.
+
+![XCTest activity](/public/test-activity-3.png)
