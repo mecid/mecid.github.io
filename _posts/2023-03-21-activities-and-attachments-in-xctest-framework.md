@@ -81,7 +81,7 @@ extension Screen {
     }
 }
 ```
-As you can see in the example above, we use the *XCTContext* to run an activity and use the add function on the *XCTActivity* type to attach the screenshot. But keep in mind that the *XCTAttachment* type allows us to attach screenshots and any instance of *String* and *Data* types or the content of a file.
+As you can see in the example above, we use the *XCTContext* to run an activity and use the *add* function on the *XCTActivity* type to attach the screenshot. But keep in mind that the *XCTAttachment* type allows us to attach screenshots and any instance of *String* and *Data* types or the content of a file.
 
 ```swift
 struct FeedScreen: Screen {
