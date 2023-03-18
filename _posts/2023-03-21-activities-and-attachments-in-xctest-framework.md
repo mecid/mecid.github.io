@@ -5,7 +5,7 @@ image: /public/test-activity-3.png
 category: Testing
 ---
 
-I love UI testing and protecting the primary user flows in my app. Today I want to continue the topic of UI testing in Swift by covering another great set of tools the XCTest framework provides us. This week we will talk about the hidden gems of the XCTest framework, which are activities and attachments.
+Today I want to continue the topic of UI testing in Swift by covering another great set of tools the XCTest framework provides us. I love UI testing and protecting the primary user flows in my app. This week we will talk about the hidden gems of the XCTest framework, which are activities and attachments.
 
 #### Activity
 Let's start with the concept of the XCTest activity. When you run a UI test in the Report navigator section of the Xcode, you can find the log of every action you run in the particular UI test.
