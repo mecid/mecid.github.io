@@ -120,7 +120,6 @@ I'm a big fan of the Page Object pattern and build my UI tests suite using it. I
 
 > To learn about the Page Object pattern I've used in the example above, take a look at my ["UI Testing using Page Object pattern in Swift"](/2021/03/24/ui-testing-using-page-object-pattern-in-swift/) post.
 
-
 ```swift
 import XCTest
 
@@ -145,3 +144,5 @@ final class UITests: XCTestCase {
 And finally, we can review and save all of these attachments in the Report navigator section of the Xcode. It allows us to do many exciting things. For example, you can run a UI tests suite that goes through the main flows of your app and collects screenshots for the App Store page. And you can run it under different locales to automate collecting app screenshots.
 
 ![XCTest activity](/public/test-activity-3.png)
+
+ I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
