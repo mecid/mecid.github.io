@@ -57,7 +57,7 @@ final class UITests: XCTestCase {
 }
 ```
 
-As you can see in the example above, we use the runActivity function on the XCTContext type. This function accepts two parameters: the name of the activity and the closure defining the activity. It allows us to easily group and name actions in the test and review them in the report navigator much more easily.
+As you can see in the example above, we use the *runActivity* function on the *XCTContext* type. This function accepts two parameters: the name of the activity and the closure defining the activity. It allows us to easily group and name actions in the test and review them in the report navigator much more easily.
 
 
 ![XCTest activity](/public/test-activity-2.png)
@@ -81,7 +81,7 @@ extension Screen {
     }
 }
 ```
-As you can see in the example above, we use the XCTContext to run an activity and use the add function on the XCTActivity type to attach the screenshot. But keep in mind that the XCTAttachment type allows us to attach screenshots and any instance of String and Data types or the content of a file.
+As you can see in the example above, we use the *XCTContext* to run an activity and use the add function on the *XCTActivity* type to attach the screenshot. But keep in mind that the *XCTAttachment* type allows us to attach screenshots and any instance of *String* and *Data* types or the content of a file.
 
 ```swift
 struct FeedScreen: Screen {
@@ -116,7 +116,7 @@ struct SearchScreen: Screen {
 }
 ```
 
-I'm a big fan of the Page Object pattern and build my UI tests suite using it. I define the Screen protocol that every Page Object in my app conforms to. It contains many useful functions, one of which is the takeScreenshot function.
+I'm a big fan of the Page Object pattern and build my UI tests suite using it. I define the *Screen* protocol that every Page Object in my app conforms to. It contains many useful functions, one of which is the *takeScreenshot* function.
 
 ```swift
 import XCTest
