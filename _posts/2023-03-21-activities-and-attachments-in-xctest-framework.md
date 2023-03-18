@@ -118,6 +118,9 @@ struct SearchScreen: Screen {
 
 I'm a big fan of the Page Object pattern and build my UI tests suite using it. I define the *Screen* protocol that every Page Object in my app conforms to. It contains many useful functions, one of which is the *takeScreenshot* function.
 
+> To learn about the Page Object pattern I've used in the example above, take a look at my ["UI Testing using Page Object pattern in Swift"](/2021/03/24/ui-testing-using-page-object-pattern-in-swift/) post.
+
+
 ```swift
 import XCTest
 
