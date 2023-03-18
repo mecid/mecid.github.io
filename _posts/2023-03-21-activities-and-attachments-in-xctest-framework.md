@@ -1,6 +1,7 @@
 ---
 title: Activities and attachments in the XCTest framework
 layout: post
+image: /public/test-activity-3.png
 ---
 
 I love UI testing and protecting the primary user flows in my app. Today I want to continue the topic of UI testing in Swift by covering another great set of tools the XCTest framework provides us. This week we will talk about the hidden gems of the XCTest framework, which are activities and attachments.
