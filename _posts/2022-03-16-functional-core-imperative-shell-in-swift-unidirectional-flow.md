@@ -90,7 +90,7 @@ The imperative shell is the object layer holding the app's state represented by 
 }
 ```
 
-Here is the imperative shell defined using the *Store* class. As you can see, we use the object layer to hold the app state represented by a value type. We also provide thread safety by utilizing the *MainActor* and allowing mutations only by feeding actions into the store using the *send* method on *Store* type. This is how we implement unidirectional flow with the idea of Functional core and Imperative shell. But we still miss side effects.
+Here is the imperative shell defined using the *Store* class. As you can see, we use the object layer to hold the app state represented by a value type. Object layer allows us to share the state in the app and make it a single source of truth. We also provide thread safety by utilizing the *MainActor* and allowing mutations only by feeding actions into the store using the *send* method on *Store* type. This is how we implement unidirectional flow with the idea of Functional core and Imperative shell. But we still miss side effects.
 
 #### Side effects
 The imperative shell should provide us with a way to make side effects. We should separate side effects from the pure logic of our app, but we still want to test side effects using integration tests. Let's introduce a new type called *Middleware* that defines a side effect handler.
