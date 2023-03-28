@@ -47,7 +47,7 @@ struct ContentView: View {
 
 As you can see in the example above, we have the *Food* struct containing a title and an array of ingredients. There is a form allowing us to populate the instance of the *Food* type with data. At the bottom of the form, we have an instance of the *ShareLink* view that exports the content of the food to a plain string by joining ingredients. The code above is simple but handles a share sheet presentation and data export.
 
-The example above is pretty simple and exports plain string, but what about other data types like images, binary data, or any other custom format? All the magic here is hidden behind *ShareLink's* **item** parameter. It works with any type conforming to the *Transferable* protocol. *String*, *Data*, and many other types conform to the *Transferable* protocol out of the box, and you don't need to do anything to share them.
+But what about other data types like images, binary data, or any other custom format? All the magic here is hidden behind *ShareLink's* **item** parameter. It works with any type conforming to the *Transferable* protocol. *String*, *Data*, and many other types conform to the *Transferable* protocol out of the box, and you don't need to do anything to share them.
 
 #### Transferable
 Now we know how the *ShareLink* view works in SwiftUI. It relies on the *Transferable* protocol from the CoreTransferable framework. But what if we want to share our custom type? In this case, we must conform our type to the *Transferable* protocol.
