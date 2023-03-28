@@ -88,4 +88,6 @@ extension Food: Transferable {
 
 The *transferRepresentation* property is marked with the *TransferRepresentationBuilder* and allows us to combine different representations. For example, you can define different representations for different content types. Remember, the order makes sense; you should keep the most important representations above others.
 
-Today we learned about the new CoreTransferable framework and how to use the *ShareLink* view in SwiftUI. The CoreTransferable framework plays a massive role in exporting your data and in drag and drop, and I will cover the drag and drop part next week. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today we learned about the new CoreTransferable framework and how to use the *ShareLink* view in SwiftUI. The CoreTransferable framework plays a massive role in exporting your data and in drag and drop, and I will cover the drag and drop part next week.
+
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
