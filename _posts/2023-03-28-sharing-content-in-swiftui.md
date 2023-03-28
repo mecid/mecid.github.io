@@ -2,6 +2,7 @@
 title: Sharing content in SwiftUI 
 layout: post
 category: Mastering SwiftUI views
+image: /public/wwdc22.jpg
 ---
 
 Apple introduced a brand new CoreTransferable framework and *ShareLink* view in SwiftUI, allowing us to share and export content from our apps very declaratively. This week we will learn how to make data transferable and use the new *ShareLink* view in SwiftUI.
