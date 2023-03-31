@@ -7,6 +7,8 @@ image: /public/wwdc22.jpg
 
 Apple introduced a brand new CoreTransferable framework and *ShareLink* view in SwiftUI, allowing us to share and export content from our apps very declaratively. This week we will learn how to make data transferable and use the new *ShareLink* view in SwiftUI.
 
+{% include friends.html %}
+
 #### ShareLink
 The new *ShareLink* looks like a plain button but integrates the share sheet and exports data in the provided format. Let's look at the simple example of using the *ShareLink* view in SwiftUI.
 
