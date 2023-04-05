@@ -61,7 +61,37 @@ struct BookmarksList: View {
 ```
 
 #### Drop
-Unlike drag operation, drop interaction is a little bit complicated. SwiftUI gave us three overloads of *onDrop* modifier. The most interesting one is the overload that accepts *DropDelegate*. *DropDelegate* is the protocol that we can implement to control drop interaction. Let's take a look at the quick example.
+Unlike drag operation, drop interaction is a little bit complicated. SwiftUI gave us three overloads of *onDrop* modifier.
+
+```swift
+struct BookmarksList: View {
+    @State private var links: [URL] = [
+        URL(string: "https://twitter.com/mecid")!
+    ]
+    
+    var body: some View {
+        List {
+            ForEach(links, id: \.self) { url in
+                Text(url.absoluteString)
+                    .onDrag { NSItemProvider(object: url as NSURL) }
+            }
+            .onDrop(of: ["public.url"], isTargeted: nil) { providers in
+                providers.forEach { provider in
+                    _ = provider.loadObject(ofClass: URL.self) { url, _ in
+                        if let url {
+                            links.append(url)
+                        }
+                    }
+                }
+                return true
+            }
+        }
+        .navigationBarTitle("Bookmarks")
+    }
+}
+```
+ 
+The most interesting one is the overload that accepts *DropDelegate*. *DropDelegate* is the protocol that we can implement to control drop interaction. Let's take a look at the quick example.
 
 ```swift
 struct BookmarksDropDelegate: DropDelegate {
