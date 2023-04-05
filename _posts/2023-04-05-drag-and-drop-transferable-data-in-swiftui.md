@@ -2,6 +2,7 @@
 title: Drag and drop transferable data in SwiftUI
 layout: post
 image: /public/wwdc22.jpg
+category: Interactions
 ---
 
 Last we discussed the new *ShareLink* view and the *Transferable* protocol powering it. The new *Transferable* protocol is useful for sharing your data from the app, but it also powers drag and drop in your app. This week we will learn how we can drag and drop data conforming to the *Transferable* protocol in SwiftUI.
