@@ -62,7 +62,7 @@ struct BookmarksList: View {
 }
 ```
 
-As you can see in the example above, we use the *dropDestination* view modifier to register an area that takes drops of the URL type. We also use the *dropDestination* view modifier to register closure handling drops. It takes two parameters: *items* and *location*. The *items* parameter defines an array of transferable data, and the *location* parameter indicates the drop position on the screen.
+As you can see in the example above, we use the *dropDestination* view modifier to register an area that takes drops of the *URL* type. We also use the *dropDestination* view modifier to register closure handling drops. It takes two parameters: *items* and *location*. The *items* parameter defines an array of transferable data, and the *location* parameter indicates the drop position on the screen.
 
 #### Conclusion
 As you can see, it is straightforward to support the drag and drop feature in your apps with the new *draggable* and *dropDestination* view modifiers. Both of them are powered by the brand new CoreTransferable framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
