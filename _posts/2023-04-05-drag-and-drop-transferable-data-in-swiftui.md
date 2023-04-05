@@ -30,7 +30,7 @@ struct BookmarksList: View {
 }
 ```
 
-As you can see in the example above, we use the new *draggable* view modifier to enable dragging URLs from the list. The URL type conforms to the new *Transferable* protocol out of the box, and you don't need to do anything here to implement the conversion of URL data to the transferable format. We also provide a preview for the draggable content by creating a *Text* view with the URL string.
+As you can see in the example above, we use the new *draggable* view modifier to enable dragging URLs from the list. The *URL* type conforms to the new *Transferable* protocol out of the box, and you don't need to do anything here to implement the conversion of URL data to the transferable format. We also provide a preview for the draggable content by creating a *Text* view with the URL string.
 
 The example above shows how you can enable the drag and drop feature for the URL item, but you can do it for any type conforming to the *Transferable* protocol.
 
