@@ -32,6 +32,8 @@ As you can see in the example above, we use the new *draggable* view modifier to
 
 The example above shows how you can enable the drag and drop feature for the URL item, but you can do it for any type conforming to the *Transferable* protocol.
 
+> To learn more about basics of the *Transferable* protocol, take a look at my ["Sharing content in SwiftUI"](/2023/03/28/sharing-content-in-swiftui/) post.
+
 #### Dropping
 The next step is allowing your app to accept transferable content via drops. All you need to do is to attach the new *dropDestination* view modifier to any view you want to take drops.
 
