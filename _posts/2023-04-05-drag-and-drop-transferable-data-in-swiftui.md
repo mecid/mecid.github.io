@@ -7,6 +7,8 @@ category: Interactions
 
 Last week we discussed the new *ShareLink* view and the *Transferable* protocol powering it. The new *Transferable* protocol is useful for sharing your data from the app, but it also powers drag and drop in your app. This week we will learn how we can drag and drop data conforming to the *Transferable* protocol in SwiftUI.
 
+{% include friends.html %}
+
 #### Dragging
 The new *Transferable* protocol allows us to implement the drag-and-drop experience in our apps much more easily. All you need to do is to attach the *draggable* view modifier to any view in the view hierarchy and pass the data you want to drag. The data you pass have to conform to the new *Transferrable* protocol.
 
