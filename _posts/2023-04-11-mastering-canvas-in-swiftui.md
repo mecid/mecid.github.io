@@ -27,6 +27,8 @@ struct ContentView: View {
 }
 ```
 
+![canvas-with-a-circle](/public/canvas1.png)
+
 As you can see in the example above, we create a Canvas view as the root view of our ContentView. It accepts a few parameters allowing us to configure the canvas with opaque, color mode, and asynchronous rendering options.
 
 We should place all the drawing logic in the closure we pass to the Canvas view. This closure is called a renderer. A renderer closure provides us with an instance of GraphicalContext that we use to draw content and the size of the canvas.
@@ -55,6 +57,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![canvas-with-two-circles](/public/canvas2.png)
 
 As you can see in the example above, we tune the opacity of the context, and it affects all the drawing logic appearing after that line. The GraphicsContext type allows us to adjust many drawing process parameters, like opacity, scaling, and blend mode. It also allows us to add different filters using the addFilter function.
 
