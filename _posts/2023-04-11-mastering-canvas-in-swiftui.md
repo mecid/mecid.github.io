@@ -2,6 +2,7 @@
 title: Mastering Canvas in SwiftUI
 layout: post
 image: /public/canvas2.png
+category: Mastering SwiftUI views
 ---
 
 You can draw 2D graphics in SwiftUI using Shape API, but in the end, the framework converts all the shapes into SwiftUI views and render them. This approach has its pros and cons. Fortunately, we can draw rich 2D graphics without combining multiple shapes. This week we will learn how to use Canvas view in SwiftUI.
