@@ -152,4 +152,4 @@ struct ContentView: View {
 The *Canvas* view doesn't have an accessibility tree because it is a simple 2D graphics engine. Instead, you can attach a set of accessibility view modifiers that SwiftUI provides us to make its content accessible to everyone.
 
 #### Conclusion
-Today we learned how to use the *Canvas* view to draw rich 2D graphics in SwiftUI without using Shape API. You should use the *Canvas* view whenever you need immediate mode drawing by skipping SwiftUI rendering.
+Today we learned how to use the *Canvas* view to draw rich 2D graphics in SwiftUI without using Shape API. You should use the *Canvas* view whenever you need immediate mode drawing by skipping SwiftUI rendering. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
