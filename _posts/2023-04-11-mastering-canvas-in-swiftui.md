@@ -86,7 +86,7 @@ struct ContentView: View {
 }
 ```
 
-We can't draw an instance of *Text* or *Image* type directly. We should convert them into the format the draw function accepts using the *resolve* function on the *GraphicsContext* type. The *resolve* function returns us an instance of the *ResolvedText* or *ResolvedImage* types that allows us to tune the shading of the resolved object.
+We can't draw an instance of *Text* or *Image* type directly. Instead, we should convert them into the format the draw function accepts using the *resolve* function on the *GraphicsContext* type. The *resolve* function returns us an instance of the *ResolvedText* or *ResolvedImage* types that allows us to tune the shading of the resolved object.
 
 You can use the *Canvas* type to draw not only text and images, but you can draw any SwiftUI view. But before, we should register them by using symbols closure while creating a canvas. Every SwiftUI view in the symbols closure should have its unique tag allowing us to resolve the view by id later in the renderer closure.
 
