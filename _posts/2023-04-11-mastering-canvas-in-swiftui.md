@@ -6,6 +6,8 @@ image: /public/canvas2.png
 
 You can draw 2D graphics in SwiftUI using Shape API, but in the end, the framework converts all the shapes into SwiftUI views and render them. This approach has its pros and cons. Fortunately, we can draw rich 2D graphics without combining multiple shapes. This week we will learn how to use Canvas view in SwiftUI.
 
+{% include friends.html %}
+
 #### Basics
 Canvas view supports immediate mode drawing without using Shape API. We can use it to draw anything we want in a procedural way, line by line. Let's take a look at a small example.
 
