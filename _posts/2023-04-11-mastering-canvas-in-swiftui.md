@@ -145,6 +145,8 @@ struct ContentView: View {
 }
 ```
 
+> To learn more about the power of TimelineView, take a look at my ["Mastering TimelineView in SwiftUI"](/2022/05/18/mastering-timelineview-in-swiftui/) post.
+
 #### Accessibility
 The Canvas view doesn't have an accessibility tree because it is a simple 2D graphics engine. Instead, you can attach a set of accessibility view modifiers that SwiftUI provides us to make its content accessible to everyone.
 
