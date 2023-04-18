@@ -1,6 +1,7 @@
 ---
 title: ImageRenderer in SwiftUI 
 layout: post
+category: Interactions
 ---
 
 I work on a medical app where the user needs to export health data rendered by using the Swift Charts framework. It was straightforward to achieve by leveraging the power of the new *ImageRenderer* type. This week we will learn how to use the *ImageRenderer* type to export SwiftUI view as image or PDF.
