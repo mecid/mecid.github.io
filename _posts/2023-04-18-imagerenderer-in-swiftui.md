@@ -47,7 +47,7 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *StateObject* property wrapper to define an instance of the *ImageRenderer* type. The *ImageRenderer* type conforms to the *ObservableObject* protocol, and SwiftUI automatically updates the view hierarchy whenever an instance of the *ImageRenderer* marked with the *StateObject* property wrapper changes.
 
-The only parameter we need to create an instance of the *ImageRenderer* type is the content, and it has to be a SwiftUI view. The *ImageRenderer* type provides us *uiImage* and *cgImage* properties allowing us to access the rendered image of the content view.
+The only parameter we need to create an instance of the *ImageRenderer* type is the *content*, and it has to be a SwiftUI view. The *ImageRenderer* type provides us *uiImage* and *cgImage* properties allowing us to access the rendered image of the content view.
 
 In the previous example, we create an instance of the *ImageRenderer* type by passing an instance of the *MyChartView* type, which uses the Swift Charts framework to display its content. In the body of the *ContentView*, we place *Image* view to show rendered version of the *MyChartView*. As soon as the renderer is ready, SwiftUI updates the body of the *ContentView*.
 
