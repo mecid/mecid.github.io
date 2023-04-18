@@ -121,25 +121,28 @@ Another exciting feature of the ImageRenderer type is the ability to draw the re
 
 ```swift
 struct SummaryContainerView: View {
-    @State private var image: UIImage?
-    @State private var shareSheetShown = false
-    @Environment(\.displayScale) private var scale
-    
     var body: some View {
         List {
             summarySection
         }
         .toolbar {
-            Button("Export") {
+            Button("Save as PDF") {
                 let renderer = ImageRenderer(content: summarySection)
-                renderer.scale = scale
-                image = renderer.uiImage
-                shareSheetShown = true
-            }
-        }
-        .sheet(isPresented: $shareSheetShown) {
-            if let image = image {
-                Image(uiImage: image)
+                renderer.render { size, renderInContext in
+                    var box = CGRect(
+                        origin: .zero,
+                        size: .init(width: 600, height: 800)
+                    )
+                    
+                    guard let context = CGContext(fileUrl as CFURL, mediaBox: &box, nil) else {
+                        return
+                    }
+                    
+                    context.beginPDFPage(nil)
+                    renderInContext(context)
+                    context.endPage()
+                    context.closePDF()
+                }
             }
         }
     }
