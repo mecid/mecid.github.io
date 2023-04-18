@@ -158,3 +158,5 @@ struct SummaryContainerView: View {
 ```
 
 As you can see in the example above, we create an instance of the *CGContext* to generate a PDF file. We use the render function of the *ImageRenderer* type allowing us to access the size of the image displaying a SwiftUI view, and the renderer function that we can use to inject the image into an instance of the *CGContext* type.
+
+ I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
