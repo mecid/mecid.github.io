@@ -114,7 +114,7 @@ struct ContentView: View {
 }
 ```
 
-You can also provide a binding to an array of the *PhotoPickerItem* type to enable multiple selections. In this case, you can use the *maxSelectionCount* parameter to control the number of allowed images.
+You can also provide a binding to an array of the *PhotoPickerItem* type to enable multiple selections. In this case, you can use the *maxSelectionCount* parameter to control the maximal number of allowed items.
 
 ```swift
 struct ContentView: View {
