@@ -179,4 +179,4 @@ struct ContentView: View {
 
 The *PhotoPickerItem* type also has the *supportedContentTypes* property defining the supported content type of the selected image or video item, allowing us to understand how to decode the item.
 
-Today we learned how to use the *PhotoPicker* view in SwiftUI to implement the image-picking functionality in our app. I enjoy the API it provides and believe it is an excellent example of SwiftUI and Swift Concurrency feature usage.
+Today we learned how to use the *PhotoPicker* view in SwiftUI to implement the image-picking functionality in our app. I enjoy the API it provides and believe it is an excellent example of SwiftUI and Swift Concurrency feature usage. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
