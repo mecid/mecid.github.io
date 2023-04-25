@@ -170,7 +170,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *loadTransferable* function to decode the image by using the new Swift Concurrency feature. The *PhotoPickerItem* type also provides a callback-based alternative if you don't use Swift Concurrency.
+As you can see in the example above, we use the *loadTransferable* function to decode the image by using the new Swift Concurrency feature. The *PhotoPickerItem* type also provides a callback-based alternative if you don't use Swift Concurrency feature.
 
 ```swift
 struct ContentView: View {
