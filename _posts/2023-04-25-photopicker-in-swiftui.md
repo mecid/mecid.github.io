@@ -91,6 +91,33 @@ Remember, you can pick not only images but also video content by using the *Phot
 
 ```swift
 struct ContentView: View {
+    @State private var selectedPhoto: PhotosPickerItem?
+    @State private var image: Image?
+    
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                image?
+                    .resizable()
+                    .scaledToFit()
+            }
+            .toolbar {
+                PhotosPicker(
+                    selection: $selectedPhoto,
+                    matching: .videos
+                ) {
+                    Image(systemName: "pencil")
+                }
+            }
+        }
+    }
+}
+```
+
+You can also provide a binding to an array of the *PhotoPickerItem* type to enable multiple selections. In this case, you can use the *maxSelectionCount* parameter to control the number of allowed images.
+
+```swift
+struct ContentView: View {
     @State private var selectedPhotos: [PhotosPickerItem] = []
     @State private var image: Image?
     
@@ -110,8 +137,6 @@ struct ContentView: View {
     }
 }
 ```
-
-You can also provide a binding to an array of the *PhotoPickerItem* type to enable multiple selections. In this case, you can use the *maxSelectionCount* parameter to control the number of allowed images.
 
 OK, we know how to provide a photo-picking experience, but what next? How can we load the selected images? The *PhotosPickerItem* type contains the whole image and video loading logic. It provides the *loadTransferable* function allowing us to load any type conforming to the *Transferable* protocol.
 
