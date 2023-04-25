@@ -111,6 +111,8 @@ You can also provide a binding to an array of the *PhotoPickerItem* type to enab
 
 OK, we know how to provide a photo-picking experience, but what next? How can we load the selected images? The *PhotosPickerItem* type contains the whole image and video loading logic. It provides the *loadTransferable* function allowing us to load any type conforming to the *Transferable* protocol.
 
+> To learn more about the basics of the *Transferable* protocol, take a look at my ["Sharing content in SwiftUI"](/2023/03/28/sharing-content-in-swiftui/) post.
+
 ```swift
 struct ContentView: View {
     @State private var selectedPhoto: PhotosPickerItem?
