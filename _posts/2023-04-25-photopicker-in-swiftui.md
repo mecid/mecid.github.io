@@ -1,6 +1,7 @@
 ---
 title: PhotoPicker in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Nowadays, many frameworks Xcode provides us contain SwiftUI views, including the PhotosUI framework. The PhotosUI framework provides the *PhotoPicker* button, allowing us to offer photo-picking functionality in our apps quickly. This week we will learn how use the *PhotoPicker* in SwiftUI.
