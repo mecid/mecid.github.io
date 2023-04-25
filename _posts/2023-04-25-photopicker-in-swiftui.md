@@ -60,7 +60,7 @@ struct ContentView: View {
 }
 ```
 
-We can also filter the type of the photo by using the *matching* parameter, an instance of the *PHPickerFilter* type. The *PHPickerFilter* provides predefined filters like images, screenshots, live photos, etc. You can also combine filters by using *any*, *all*, and *not* functions.
+We can also limit the type of the photos user allowed to pick by using the *matching* parameter, an instance of the *PHPickerFilter* type. The *PHPickerFilter* provides predefined filters like images, screenshots, live photos, etc. You can also combine filters by using *any*, *all*, and *not* functions.
 
 ```swift
 struct ContentView: View {
