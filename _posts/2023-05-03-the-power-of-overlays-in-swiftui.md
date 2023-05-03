@@ -113,5 +113,5 @@ Here is another example where the overlay trick shines. Instead of *NavigationLi
 
 > Matched geometry link
 
-Today we learned how valuable is the *overlay* view modifier in SwiftUI, and with the latest addition allowing us to build overlays by using the *ViewBuilder* closure, it became effortless.
+Today we learned how valuable is the *overlay* view modifier in SwiftUI, and with the latest addition allowing us to build overlays by using the *ViewBuilder* closure, it became effortless. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
