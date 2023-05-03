@@ -56,7 +56,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *overlay* view modifier to display the progress view on the top button and disable it by using one of the inert view modifiers.
+As you can see in the example above, we use the *overlay* view modifier to display the progress view on the top button and disable it by using one of the inert view modifiers. SwiftUI will never create a new button in this case.
 
 #### Custom transitions with overlays
 From the very first day, the SwiftUI framework shows us how easily we can animate changes in the view hierarchy. Working with SwiftUI to build fluid animations is super easy. The only downside I can find is the custom navigation transitions. Unfortunately, there is no way to customize navigation transitions inside the *NavigationView* or *NavigationStack*.
