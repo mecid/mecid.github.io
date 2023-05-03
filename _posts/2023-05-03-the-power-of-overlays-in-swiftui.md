@@ -1,6 +1,7 @@
 ---
 title: The power of overlays in SwiftUI
 layout: post
+image: /public/layout.png
 ---
 
 An overlay is a view drawing on top of another view. And today, we will talk about two interesting use cases of using overlays in SwiftUI. One of them allows us to keep the structural identity of the view, and another one becomes very handy whenever you build custom navigation transitions.
