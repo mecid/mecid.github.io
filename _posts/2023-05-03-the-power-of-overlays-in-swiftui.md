@@ -32,7 +32,7 @@ struct ContentView: View {
 
 In the example above, whenever the *isDownloading* property changes, the framework creates a new button or new progress view. In the case of our custom button, it completely loses its state because SwiftUI makes a new one. This behavior can be unexpected in different scenarios, so avoid branching using **if** statements in *ViewBuilder* closures as much as possible.
 
-> Structural identity link
+> To learn more about structural identity in SwiftUI, take a look at my dedicated ["Structural identity in SwiftUI"](/2021/12/09/structural-identity-in-swiftui/) post.
 
 Instead of branching via **if** statements, we can use overlays to keep the structural identity of the view.
 
@@ -111,7 +111,7 @@ struct ContentView: View {
 
 Here is another example where the overlay trick shines. Instead of *NavigationLink*, we pair the overlay view modifier with the *matchedGeomerty* view modifier. This pair allows us to build super custom navigation transitions like hero animation. Yes, it adds some work to maintain the navigation state, but it will enable us to provide an excellent user experience in our apps.
 
-> Matched geometry link
+> To learn more about the matchedGeometry view modifier, take a look at my ["Hero animations in SwiftUI"](/2020/12/17/hero-animations-in-swiftui/) post.
 
 Today we learned how valuable is the *overlay* view modifier in SwiftUI, and with the latest addition allowing us to build overlays by using the *ViewBuilder* closure, it became effortless. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
