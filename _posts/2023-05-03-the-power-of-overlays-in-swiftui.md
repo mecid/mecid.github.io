@@ -7,6 +7,8 @@ category: View Composition
 
 An overlay is a view drawing on top of another view. And today, we will talk about two interesting use cases of using overlays in SwiftUI. One of them allows us to keep the structural identity of the view, and another one becomes very handy whenever you build custom navigation transitions.
 
+{% include friends.html %}
+
 #### Keeping structural identity with overlays
 Structural identity is the type of identity that SwiftUI uses to understand your views without an explicit identifier by using your layout description. It is essential to keep your view hierarchy without unnecessary branches that you may create using **if** statements in the body of a *ViewBuilder* closure because it may hurt the performance of your views and produce state losses.
 
