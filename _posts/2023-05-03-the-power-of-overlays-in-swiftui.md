@@ -109,7 +109,9 @@ struct ContentView: View {
 }
 ```
 
-Here is another example where the overlay trick shines. Instead of *NavigationLink*, we pair the overlay view modifier with the *matchedGeomerty* view modifier. This pair allows us to build super custom navigation transitions like hero animation. Yes, it adds some work to maintain the navigation state, but it will enable us to provide an excellent user experience in our apps.
+Here is another example where the overlay trick shines. Instead of *NavigationLink*, we pair the overlay view modifier with the *matchedGeomerty* view modifier. We show the overlay with the matched geometry animation only when the user makes a selection.
+
+This pair allows us to build super custom navigation transitions like hero animation. Yes, it adds some work to maintain the navigation state, but it will enable us to provide an excellent user experience in our apps.
 
 > To learn more about the matchedGeometry view modifier, take a look at my ["Hero animations in SwiftUI"](/2020/12/17/hero-animations-in-swiftui/) post.
 
