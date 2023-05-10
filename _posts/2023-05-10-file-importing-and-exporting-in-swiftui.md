@@ -5,6 +5,8 @@ layout: post
 
 A few weeks ago, we talked about photo and video picking in SwiftUI. Today we will continue the topic and learn how to import and export files in SwiftUI views. Fortunately, it is straightforward to do with the help of new *fileImporter* and *fileExporter* view modifiers.
 
+{% include friends.html %}
+
 #### Import
 The SwiftUI framework provides us the *fileImporter* view modifier allowing us to enable file-picking user experience easily. It completely handles the dialog and navigation between folders. Let's take a look at how we can use it.
 
