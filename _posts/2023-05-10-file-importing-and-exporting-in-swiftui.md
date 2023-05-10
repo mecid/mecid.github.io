@@ -2,6 +2,7 @@
 title: File importing and exporting in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/files.jpg
 ---
 
 A few weeks ago, we talked about photo and video picking in SwiftUI. Today we will continue the topic and learn how to import and export files in SwiftUI views. Fortunately, it is straightforward to do with the help of new *fileImporter* and *fileExporter* view modifiers.
