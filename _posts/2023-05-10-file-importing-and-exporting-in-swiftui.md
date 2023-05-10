@@ -123,3 +123,5 @@ struct MovingExampleView: View {
 ```
 
 In the example above, we use the *fileMover* view modifier to present the file-moving dialog to the user. We should pass the file URL we want to move and can verify the result in the completion closure.
+
+Today we learned how to move, export and import files in SwiftUI views using a set of view modifiers. I enjoy the API it provides and how easy we can enable file management experience in our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
