@@ -69,7 +69,7 @@ extension View {
 }
 ```
 
-We also can define a function as deprecated or obsoleted by using the *@available* attribute. In the example above, we define a function as introduced in iOS 14, deprecated in iOS 15, and obsoleted in iOS 16.
+We also can define a function as deprecated or obsoleted by using the *@available* attribute. In the example below, we define a function as introduced in iOS 14, deprecated in iOS 15, and obsoleted in iOS 16.
 
 ```swift
 extension View {
