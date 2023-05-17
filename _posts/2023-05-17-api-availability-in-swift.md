@@ -7,6 +7,8 @@ image: /public/swift.png
 
 WWDC is coming pretty soon, and we are going to use a bunch of new APIs. But how to use new APIs available only for the latest version of iOS? This week we will learn about availability conditions in Swift.
 
+{% include friends.html %}
+
 Swift provides **#available** attributes allowing us to check the availability of the function. Here is a quick example.
 
 ```swift
