@@ -2,6 +2,7 @@
 title: API availability in Swift
 layout: post
 category: Swift Language Features
+image: /public/swift.png
 ---
 
 WWDC is coming pretty soon, and we are going to use a bunch of new APIs. But how to use new APIs available only for the latest version of iOS? This week we will learn about availability conditions in Swift.
