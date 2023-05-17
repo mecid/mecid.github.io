@@ -136,4 +136,5 @@ extension View {
 
 Another variant of the *@available* attribute allows us to mark the function or type as renamed. In this case, Xcode allows the user to press the warning message and show the fix button that replaces the old name with the new one.
 
-Today we learned not only how to use the new APIs in the legacy codebase but also how to be a good citizen on the platform and define the functions and types with the platform availability information, which is crucial when you work on a framework or library.
+Today we learned not only how to use the new APIs in the legacy codebase but also how to be a good citizen on the platform and define the functions and types with the platform availability information, which is crucial when you work on a framework or library. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
