@@ -110,7 +110,7 @@ extension View {
 }
 ```
 
-You can also use the Swift compiler's *message* parameter to show an error or warning. The *introduced* parameter defines the minimal platform version needed to run the particular function.
+You can also use the *message* parameter to allow Swift compiler use it to show an error or warning during compilation. The *introduced* parameter defines the minimal platform version needed to run the particular function.
 
 ```swift
 extension View {
