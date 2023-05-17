@@ -69,7 +69,7 @@ extension View {
 }
 ```
 
-We also can define a function as deprecated or obsoleted by using the *@available* attribute. In the example below, we define a function as introduced in iOS 14, deprecated in iOS 15, and obsoleted in iOS 16.
+We also can define a function as deprecated or obsoleted by using the *@available* attribute. In the example below, we define a function as introduced in iOS 14, deprecated in iOS 15, and obsoleted in iOS 16. The *introduced* parameter defines the minimal platform version needed to run the particular function.
 
 ```swift
 extension View {
@@ -110,7 +110,7 @@ extension View {
 }
 ```
 
-You can also use the *message* parameter to allow Swift compiler use it to show an error or warning during compilation. The *introduced* parameter defines the minimal platform version needed to run the particular function.
+You can also use the *message* parameter to allow Swift compiler use it to show an error or warning during compilation.
 
 ```swift
 extension View {
