@@ -114,7 +114,7 @@ extension View {
 }
 ```
 
-You can also use the *message* parameter to allow Swift compiler use it to show an error or warning during compilation.
+You can also use the *message* parameter to allow Swift compiler provide an error or warning message during compilation.
 
 ```swift
 extension View {
