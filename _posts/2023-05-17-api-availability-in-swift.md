@@ -73,8 +73,8 @@ We also can define a function as deprecated or obsoleted by using the *@availabl
 
 ```swift
 extension View {
-    @available(iOS, introduced: 14, deprecated: 16, obsoleted: 17)
-    @available(macOS, introduced: 12, deprecated: 13, obsoleted: 14)
+    @available(iOS, introduced: 14, deprecated: 15, obsoleted: 16)
+    @available(macOS, introduced: 11, deprecated: 12, obsoleted: 13)
     func backportedTask<Value: Equatable>(
         id: Value,
         task: @Sendable @escaping () async -> Void
