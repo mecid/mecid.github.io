@@ -136,5 +136,22 @@ extension View {
 
 Another variant of the *@available* attribute allows us to mark the function or type as renamed. In this case, Xcode allows the user to press the warning message and shows the fix button that replaces the old name with the new one.
 
+Swift 5.8 introduced the *@backDeployed* attribute allowing you to back-deploy the functionality introduced in new versions but relying on the old code.
+
+```swift
+extension View {
+    @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
+    @backDeployed(before: iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0)
+    func task<Value: Equatable>(
+        id: Value,
+        closure: @Sendable @escaping () async -> Void
+    ) -> some View {
+        return self.onChange(of: id) { _ in
+            Task { await closure() }
+        }
+    }
+}
+```
+
 Today we learned not only how to use the new APIs in the legacy codebase but also how to be a good citizen on the platform and define the functions and types with the platform availability information, which is crucial when you work on a framework or library. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
