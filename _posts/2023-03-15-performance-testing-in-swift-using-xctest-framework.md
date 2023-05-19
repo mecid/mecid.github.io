@@ -25,27 +25,7 @@ final class PerformanceTests: XCTestCase {
 }
 ```
 
-When you run this test, the *measure* function will run the code inside the closure multiple times and calculate the average execution time. It will also report the minimum and maximum execution times and the standard deviation.
-
-```swift
-import XCTest
-
-final class PerformanceTests: XCTestCase {
-    func testPerformanceOfMyFunction() {
-        let firstExecutionTime = self.measure {
-            myFunction()
-        }
-
-        let secondExecutionTime = self.measure {
-            myFunction()
-        }
-
-        XCTAssertLessThan(firstExecutionTime, secondExecutionTime)
-    }
-}
-```
-
-In addition to measuring code performance, XCTest allows us to compare the performance of different code paths using the *XCTAssertLessThan* function. This function takes two execution times and asserts that the first execution time is less than the second execution time.
+When you run this test, the *measure* function will run the code inside the closure multiple times and calculate the average execution time. It will also report the minimum and maximum execution times 
 
 Remember that we should use the *measure* function to measure the performance of small code paths, such as a single method or function. Don't use the *measure* function to measure the performance of an entire application or a large portion of code, as this can lead to inaccurate results.
 
