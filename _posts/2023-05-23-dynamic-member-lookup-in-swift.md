@@ -108,4 +108,4 @@ print(store.favorites) // Compiler error
 
 In the example above, we access the private *state* property of the *Store* using the subscript accepting the *KeyPath*. It looks similar to the previous example, but in this case, the compiler shows an error whenever you try to access an unavailable property of the *State* type.
 
-Today we learned how to improve the API of a particular type by using the *@dynamicMemberLookup* attribute. You don't need it in every type, but you can use it carefully to improve the API.
+Today we learned how to improve the API of a particular type by using the *@dynamicMemberLookup* attribute. You don't need it in every type, but you can use it carefully to improve the API. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
