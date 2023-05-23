@@ -7,6 +7,8 @@ image: /public/swift.png
 
 One of my favorite features of the Swift Language is the dynamic member lookup. We don't use it very often, but it improves the API of the provided type significantly by improving the way we access the data of the particular type.
 
+{% include friends.html %}
+
 #### Basics
 Assume that we are working on a type providing caching functionality, and we model it as the struct called *Cache*.
 
