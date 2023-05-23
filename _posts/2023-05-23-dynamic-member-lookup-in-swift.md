@@ -1,6 +1,7 @@
 ---
 title: Dynamic member lookup in Swift
 layout: post
+category: Swift Language Features
 ---
 
 One of my favorite features of the Swift Language is the dynamic member lookup. We don't use it very often, but it improves the API of the provided type significantly by improving the way we access the data of the particular type.
