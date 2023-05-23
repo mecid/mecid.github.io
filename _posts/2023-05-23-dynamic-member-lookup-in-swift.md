@@ -46,7 +46,7 @@ var cache = Cache()
 let profile = cache.profile
 ```
 
-Now, we can access the profile data of our *Cache* type more nicely. The user of our API may assume that the profile is the property of the *Cache type*. But it is not.
+Now, we can access the profile data of our *Cache* type more nicely. The user of our API may assume that the *profile* is the property of the *Cache type*. But it is not.
 
 This feature works completely in runtime and leverages the name of any property we type after the dot symbol to the subscript of the *Cache* type with the *dynamicMember* parameter. The whole logic runs in runtime, and the result is undefined during compilation. It is entirely up to you to decide which data you should return from the subscript during runtime.
 
