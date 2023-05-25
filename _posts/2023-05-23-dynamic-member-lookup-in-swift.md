@@ -30,7 +30,7 @@ Nothing is exceptional here. We access the dictionary as we used by using the su
 ```swift
 @dynamicMemberLookup
 struct Cache {
-    var storage: [String: Data] = [:]
+    private var storage: [String: Data] = [:]
     
     subscript(dynamicMember key: String) -> Data? {
         storage[key]
@@ -42,7 +42,6 @@ As you can see in the example above, we mark our *Cache* type with the *@dynamic
 
 ```swift
 var cache = Cache()
-//let profile = cache.storage["profile"]
 let profile = cache.profile
 ```
 
