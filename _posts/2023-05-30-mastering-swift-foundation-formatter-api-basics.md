@@ -7,6 +7,8 @@ image: /public/swift.png
 
 One of the significant additions to Swift Foundation was the new Formatter API. After almost two years of using it, I use it in every project, and even more, I try to build my data formatting logic around this API. Today we will learn how to use the new Swift Foundation Formatter APIs.
 
+{% include friends.html %}
+
 #### Old-style formatters
 
 ```swift
