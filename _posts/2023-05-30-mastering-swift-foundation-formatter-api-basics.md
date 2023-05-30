@@ -23,7 +23,7 @@ The old-style formatters have a few problems that make our lives more complicate
 The second issue is the error-prone class-based API we inherited from the Objective-C era. You can accidentally override the configuration of the formatter instance, and it will affect all the places where you are using it. It is a classical reference type-related issue and why we love Swift value types.
 
 #### Swift Foundation Formatter API
-Many types in Swift Foundation provide the new *formatted* function allowing us to format the instance in place. You don't need to initialize any formatter instance or cache them because the Foundation automatically handles it. The new Swift Foundation Formatter API also provides a new value-oriented approach for customizing formatting options.
+Many types in Swift Foundation provide the new **formatted** function allowing us to format the instance in place. You don't need to initialize any formatter instance or cache them because the Foundation automatically handles it. The new Swift Foundation Formatter API also provides a new value-oriented approach for customizing formatting options.
 
 ```swift
 Date.now.formatted()
