@@ -44,7 +44,7 @@ Date.now.formatted(.dateTime.day(.twoDigits).month(.abbreviated).year(.twoDigits
 Date.now.formatted(.iso8601)
 ```
 
-As you can see in the example above, there are many options for customization of date formatting logic. You can mix and match many of them to display the needed data in a user-friendly format.
+As you can see in the example above, there are many options for customization of the date formatting logic. You can mix and match many of them to display the needed date in a user-friendly format.
 
 ```swift
 1_000_000_000.formatted()
