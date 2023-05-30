@@ -60,4 +60,4 @@ Measurement<UnitMass>(value: 1, unit: .kilograms)
 
 As you can see in the example above, even the *Measurement* type supports the new Formatter API and allows us to present the data in the appropriate format in a few keystrokes. 
 
-Today we learned about the basics of the new Swift Foundation Formatter APIs. In the following posts, we will continue the topic by implementing custom format styles for our own types.
+Today we learned about the basics of the new Swift Foundation Formatter APIs. In the following posts, we will continue the topic by implementing custom format styles for our own types. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
