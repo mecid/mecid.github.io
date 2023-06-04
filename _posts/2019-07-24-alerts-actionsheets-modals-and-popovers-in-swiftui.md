@@ -40,8 +40,6 @@ As you can see in the example above to present an action sheet, we use *actionSh
 
 The interesting fact here is that SwiftUI resets the binding to initial value after *Alert* or *Action Sheet* dismissal.
 
-> To learn more about *Property Wrappers* available in SwiftUI, take a look at ["Understanding Property Wrappers in SwiftUI"](/2019/06/12/understanding-property-wrappers-in-swiftui/) post.
-
 It is a straightforward approach to present alerts or action sheets. But sometimes it is not enough, because we need some data to show in an alert or action sheet. For this case, we have another versions of *alert* and *actionSheet* modifiers, which use an optional identifiable binding instead of boolean binding.
 
 ```swift
