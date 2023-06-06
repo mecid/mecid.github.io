@@ -4,7 +4,10 @@ layout: post
 category: Meta
 image: /public/wwdc23.jpg
 ---
+
 WWDC 23 is here, so many things have changed and been added to the SwiftUI framework. In this post, you can find the summary of the most significant SwiftUI features available in the 5th iteration of the framework.
+
+{% include friends.html %}
 
 #### Data flow
 Swift 5.9 introduced the macros feature, which became the heart of the SwiftUI data flow. SwiftUI became Combine-free and uses the new Observation framework now. The Observation framework provides us with the Observable protocol that we have to use to allow SwiftUI to subscribe to changes and update views.
