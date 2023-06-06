@@ -204,7 +204,7 @@ struct ContentView: View {
 You can now change the scroll behavior by using the *scrollTargetBehavior* view modifier. It allows you to enable paging in a scroll view.
 
 #### Search
-Search-related view modifiers have a few great additions. For example, you can programmatically focus on a search field.
+Search-related view modifiers have a few great additions too. For example, you can programmatically focus on a search field.
 
 ```swift
 struct ProductsView: View {
