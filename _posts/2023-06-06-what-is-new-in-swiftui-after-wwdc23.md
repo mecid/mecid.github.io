@@ -281,5 +281,13 @@ struct ProductsView: View {
 
 There are also a pair of new view modifiers allowing us to tune the spacing in the list. You can use the *listRowSpacing* and *listSectionSpacing* view modifier to set the spacing you need in the list. The *EnvironmentValues* struct includes a bunch of new properties related to the latest platform updates like *isActivityFullscreen* and *showsWidgetContainerBackground*.
 
+```swift
+#Preview {
+    ContentView()
+}
+```
+
+There is a new *Preview* macro allowing us to build previews easily both for UIKit and SwiftUI in a few lines of code.
+
 #### Conclusion
 There are tons of small additions all over the SwiftUI framework that we will cover during the upcoming months. So stay tuned to my blog, and don't miss anything. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
