@@ -1,5 +1,5 @@
 ---
-title: What is new in SwiftUI after WWDC 23.
+title: What is new in SwiftUI after WWDC 23
 layout: post
 category: Meta
 image: /public/wwdc23.jpg
