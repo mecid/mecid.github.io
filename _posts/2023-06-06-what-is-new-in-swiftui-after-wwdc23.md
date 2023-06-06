@@ -294,7 +294,7 @@ struct ProductsView: View {
 }
 ```
 
-There are also a pair of new view modifiers allowing us to tune the spacing in the list. You can use the *listRowSpacing* and *listSectionSpacing* view modifier to set the spacing you need in the list. The *EnvironmentValues* struct includes a bunch of new properties related to the latest platform updates like *isActivityFullscreen* and *showsWidgetContainerBackground*.
+There are also a pair of new view modifiers allowing us to tune the spacing in the list. You can use the *listRowSpacing* and *listSectionSpacing* view modifier to set the spacing you need in the list. The *EnvironmentValues* struct includes a bunch of new properties related to the latest platform updates like *isActivityFullscreen* and *showsWidgetContainerBackground*. Swift Charts also became scrollable and SF Symbols animatable.
 
 ```swift
 #Preview {
