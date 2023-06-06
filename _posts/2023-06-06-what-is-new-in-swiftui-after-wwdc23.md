@@ -146,6 +146,15 @@ enum Phase: CaseIterable {
     case start
     case loading
     case finish
+    
+    var offset: CGFloat {
+        // Calculate offset for the particular phase
+        switch self {
+        case start: 100.0
+        case loading: 0.0
+        case finish: 50.0
+        }
+    }
 }
 
 struct PhasedAnimationExample: View {
@@ -153,17 +162,8 @@ struct PhasedAnimationExample: View {
     
     var body: some View {
         PhaseAnimator(Phase.allCases, trigger: value) { phase in
-            switch phase {
-            case .start:
-                StartPhaseView()
-                    .onTapGesture {
-                        value.toggle()
-                    }
-            case .loading:
-                LoadingPhaseView()
-            case .finish:
-                FinishPhaseView()
-            }
+            LoadingView()
+                .offset(x: phase.offset)
         } animation: { phase in
             switch phase {
             case .start: .easeIn(duration: 0.3)
