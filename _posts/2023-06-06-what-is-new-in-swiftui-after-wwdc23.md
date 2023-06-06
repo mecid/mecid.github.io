@@ -103,6 +103,21 @@ struct ProductsView: View {
 
 You can also use the *Environment* property wrapper in pair with the *environment* view modifier to put the observable type into the SwiftUI environment. There is no need to use the *@EnvironmentObject* property wrapper or the *environmentObject* view modifier. The same *Environment* property wrapper works with the observable types now.
 
+```swift
+struct BindanbleViewExample: View {
+    @Bindable var store: Store
+    
+    var body: some View {
+        List($store.products, id: \.self) { $product in
+            TextField(text: $product) {
+                Text(verbatim: product)
+            }
+        }
+    }
+}
+```
+You can use the new *Bindable* property wrapper whenever you need to extract *Binding* from the observable type.
+
 #### Animations
 Animations always was the most vital part of the SwiftUI framework. It is effortless to animate anything in SwiftUI, but previous framework versions lack some features that we have now.  
 
