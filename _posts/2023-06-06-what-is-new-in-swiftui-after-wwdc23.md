@@ -1,6 +1,7 @@
 ---
 title: What is new in SwiftUI after WWDC 23.
 layout: post
+image: /public/wwdc23.jpg
 ---
 WWDC 23 is here, so many things have changed and been added to the SwiftUI framework. In this post, you can find the summary of the most significant SwiftUI features available in the 5th iteration of the framework.
 
