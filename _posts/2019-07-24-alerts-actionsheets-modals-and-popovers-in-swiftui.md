@@ -36,7 +36,7 @@ struct MasterView: View {
 ```
 As you can see in the example above to present an action sheet, we use *actionSheet* modifier bound to a boolean value and a closure which creates an action sheet. Alternatively, to display an alert, we have to use *alert* modifier instead.
 
-> *ActionSheet* is deprecated now, use confirmation dialogs instead. To learn more, take a look at my [Confirmation dialogs in SwiftUI](/2021/07/28/confirmation-dialogs-in-swiftui/) post.
+> *ActionSheet* is deprecated now, use confirmation dialogs instead. To learn more, take a look at my ["Confirmation dialogs in SwiftUI"](/2021/07/28/confirmation-dialogs-in-swiftui/) post.
 
 The interesting fact here is that SwiftUI resets the binding to initial value after *Alert* or *Action Sheet* dismissal.
 
