@@ -148,11 +148,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Sign in")
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    focus = .email
-                }
-            }
+            .defaultFocus($focus, .email)
         }
     }
 
@@ -162,7 +158,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see, we use another version of the *focused* view modifier to bind a view to a concrete case of the *Field* enum. SwiftUI updates the value of the *FocusState* property whenever the user focuses on any of the bound views. Remember that we should make our *FocusState* property optional to use combined with *Hashable* enum because there might be no focused view at the moment.
+As you can see, we use another version of the *focused* view modifier to bind a view to a concrete case of the *Field* enum. SwiftUI updates the value of the *FocusState* property whenever the user focuses on any of the bound views. We also use, the *defaultFocus* view modifier to programmatically focus on the email field as soon as view appears.
+
+Remember that we should make our *FocusState* property optional to use it with *Hashable* enum because there might be no focused view at the moment.
 
 > To learn more about toolbars in SwiftUI, take a look at my ["Mastering toolbars in SwiftUI"](/2020/07/15/mastering-toolbars-in-swiftui/) post.
 

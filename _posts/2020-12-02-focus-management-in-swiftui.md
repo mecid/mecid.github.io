@@ -120,7 +120,8 @@ struct LoginView: View {
                 hasFilledCredentials = false
                 resetFocus(in: namespace)
             }
-        }.focusScope(namespace)
+        }
+        .focusScope(namespace)
     }
 }
 ```
