@@ -40,7 +40,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *focusable* modifier to enable focusing abilities on *RoundedRectangle*. We also scale our rectangle whenever the user focuses on it. *Focusable* modifier accepts two parameters. The first one is the bool value that indicates whenever the view is focusable or not. The second one is the closure that SwiftUI runs whenever the focus state of the view changes. This modifier is available on all platforms except iOS.
+As you can see in the example above, we use the *focusable* modifier to enable focusing abilities on *RoundedRectangle*. We also scale our rectangle whenever the user focuses on it. *Focusable* modifier accepts two parameters. The first one is the bool value that indicates whenever the view is focusable or not. The second one is the closure that SwiftUI runs whenever the focus state of the view changes. This modifier is available on all Apple platforms.
 
 Another thing that SwiftUI provides us to handle the focused state in our views is environment value, which allows us to recognize if the view's nearest focusable ancestor has focus.
 
@@ -63,7 +63,8 @@ struct ContentView: View {
                 ForEach(0..<100) { index in
                     ZStack {
                         Poster()
-                    }.focusable()
+                    }
+                    .focusable()
                 }
             }
         }
@@ -72,6 +73,22 @@ struct ContentView: View {
 ```
 
 In this example, we use the *isFocused* environment value to understand whenever our parent *ZStack* is focused. The view itself doesn't have to be focusable because this environment value checks if the view is within the focused view. 
+
+```swift
+struct MyCustomButton: View {
+    @Environment(\.isFocused) private var isFocused
+    
+    var body: some View {
+        Button("Some title") {
+            // action
+        }
+        .focusEffectDisabled()
+        .border(isFocused ? .red: .clear)
+    }
+}
+```
+
+You can also disable the default focus effect by using the *focusEffectDisabled* view modifier and apply your own customizations by tracking *isFocused* environment value.
 
 > SwiftUI uses environment to pass system-wide and application-related information. To learn more about environment, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
 
