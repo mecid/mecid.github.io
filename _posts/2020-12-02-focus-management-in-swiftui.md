@@ -34,7 +34,7 @@ As you can see in the example above, we use the *focusable* modifier to enable f
 Another thing that SwiftUI provides us to handle the focused state in our views is environment value, which allows us to recognize if the view's nearest focusable ancestor has focus.
 
 ```swift
-struct Poster: View {
+struct PosterView: View {
     @Environment(\.isFocused) var isFocused
 
     var body: some View {
@@ -51,7 +51,7 @@ struct ContentView: View {
             LazyHStack {
                 ForEach(0..<100) { index in
                     ZStack {
-                        Poster()
+                        PosterView()
                     }
                     .focusable()
                 }
