@@ -15,24 +15,13 @@ Focus indicates the act of selecting an element of a graphical user interface. O
 You can easily make any view focusable by using the *focusable* modifier. Remember that you don't need to use it with already focusable views like *List* and *Button*. Let's take a look at how we can use this modifier in code.
 
 ```swift
-struct Poster: View {
-    @State private var isFocused = false
-
-    var body: some View {
-        RoundedRectangle(cornerRadius: 8)
-            .frame(width: 100, height: 150)
-            .scaleEffect(isFocused ? 1.2 : 1)
-            .focusable(true) { newState in isFocused = newState }
-            .animation(.easeInOut, value: isFocused)
-    }
-}
-
 struct ContentView: View {
     var body: some View {
         ScrollView(.horizontal) {
             LazyHStack {
                 ForEach(0..<100) { index in
-                    Poster()
+                    PosterView()
+                        .focusable(true, interactions: .automatic)
                 }
             }
         }
@@ -40,7 +29,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *focusable* modifier to enable focusing abilities on *RoundedRectangle*. We also scale our rectangle whenever the user focuses on it. *Focusable* modifier accepts two parameters. The first one is the bool value that indicates whenever the view is focusable or not. The second one is the closure that SwiftUI runs whenever the focus state of the view changes. This modifier is available on all Apple platforms.
+As you can see in the example above, we use the *focusable* modifier to enable focusing abilities on *PosterView*. *Focusable* modifier accepts two parameters. The first one is the bool value that indicates whenever the view is focusable or not. The second one is an instance of the *FocusInteractions* type indicating the focus interaction type, like *activate*, *edit* or *automatic*. This modifier is available on all Apple platforms.
 
 Another thing that SwiftUI provides us to handle the focused state in our views is environment value, which allows us to recognize if the view's nearest focusable ancestor has focus.
 
