@@ -2,6 +2,7 @@
 title: Mastering ScrollView in SwiftUI. Transitions
 layout: post
 category: Mastering SwiftUI views
+image: /public/scroll-transition.png
 ---
 
 The fifth iteration of the SwiftUI framework brings a lot of new APIs related to ScrollView, making it much more powerful than before. This week will begin the series of posts about new abilities of the ScrollView in SwiftUI, and we will start with scroll transitions.
