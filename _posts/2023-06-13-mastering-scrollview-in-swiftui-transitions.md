@@ -97,7 +97,7 @@ struct ContentView: View {
 
 We also can use different configurations for topLeading and bottomTrailing transitions. I use the identity configuration to disable transition effects in this direction.
 
-Today we learned how to use the new scrollTransition view modifier to animate viewport transitions in the ScrollView.
+Today we learned how to use the new scrollTransition view modifier to animate viewport transitions in the ScrollView. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
 
 
