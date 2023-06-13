@@ -7,7 +7,22 @@ The fifth iteration of the SwiftUI framework brings a lot of new APIs related to
 
 The brand new scrollTransition view modifier allows us to observe the transition of the view while the user scrolls content. It will enable us to understand whenever a view is in the viewport of the ScrollView and allows us to apply visual effects like scaling, rotating, etc. Let's take a look at a quick example.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        ScrollView {
+            ForEach(0..<10, id: \.self) { _ in
+                Rectangle()
+                    .fill(Color.random)
+                    .frame(width: 300, height: 300)
+                    .scrollTransition { view, transition in
+                        view.opacity(transition.isIdentity ? 1 : 0.3)
+                    }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the new scrollTransition view modifier to accept a closure with two parameters. The first is the view without any effects, and the second is an instance of the ScrollTransitionPhase type.
 
@@ -17,17 +32,65 @@ Usually, you display the view in the identity phase without any effects. The Swi
 
 The ScrollTransitionPhase enum provides another property called value. It ranges from -1 to 1 and defines the numeric phase of transition where -1 means topLeading and 1 means bottomTrailing. We can use it to scale our visual effects while a view transition from topLeading to bottomTrailing.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        ScrollView {
+            ForEach(0..<10, id: \.self) { _ in
+                Rectangle()
+                    .fill(Color.random)
+                    .frame(width: 300, height: 300)
+                    .scrollTransition { view, transition in
+                        view.scaleEffect(transition.isIdentity ? 1 : transition.value)
+                    }
+            }
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the value property on the ScrollTransitionPhase type to scale our view while transitioning from one phase to another.
 
 The scrollTransition view modifier allows us to tune the animation we want to use while interpolating the transition.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        ScrollView {
+            ForEach(0..<10, id: \.self) { _ in
+                Rectangle()
+                    .fill(Color.random)
+                    .frame(width: 300, height: 300)
+                    .scrollTransition(.animated(.bouncy)) { view, transition in
+                        view.scaleEffect(transition.isIdentity ? 1 : transition.value)
+                    }
+            }
+        }
+    }
+}
+```
 
 Here we use the bouncy animation to interpolate between transition phases. You can use a few options to configure the transition: .interactive, animated with the particular animation you provide, and identity to disable animation.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        ScrollView {
+            ForEach(0..<10, id: \.self) { _ in
+                Rectangle()
+                    .fill(Color.random)
+                    .frame(width: 300, height: 300)
+                    .scrollTransition(
+                        topLeading: .identity,
+                        bottomTrailing: .interactive
+                    ) { view, transition in
+                        view.rotationEffect(.radians(transition.value))
+                    }
+            }
+        }
+    }
+}
+```
 
 We also can use different configurations for topLeading and bottomTrailing transitions. I use the identity configuration to disable transition effects in this direction.
 
