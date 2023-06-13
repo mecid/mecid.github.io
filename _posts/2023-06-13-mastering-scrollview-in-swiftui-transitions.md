@@ -32,7 +32,7 @@ As you can see in the example above, we use the new *scrollTransition* view modi
 
 The *ScrollTransitionPhase* type defines a state of a view transition in the viewport of an instance of the *ScrollView*. The *ScrollTransitionPhase* type is an enum with three cases: *topLeading*, *bottomTrailing*, and *identity*. The *ScrollTransitionPhase* enum provides the *isIdentity* property allowing us to check whenever the view finished its transition.
 
-Usually, you display the view in the identity phase without any effects. The SwiftUI framework animates all the changes you apply during the transition. In our example, I use the opacity view modifier to change the view's alpha during the transition.
+Usually, you display the view in the identity phase without any effects. The SwiftUI framework animates all the changes you apply during the transition. In our example, I use the *opacity* view modifier to change the view's alpha during the transition.
 
 The *ScrollTransitionPhase* enum provides another property called value. It ranges from -1 to 1 and defines the numeric phase of transition where -1 means *topLeading* and 1 means *bottomTrailing*. We can use it to scale our visual effects while a view transition from *topLeading* to *bottomTrailing*.
 
