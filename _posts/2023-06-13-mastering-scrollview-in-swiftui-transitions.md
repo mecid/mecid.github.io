@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 The fifth iteration of the SwiftUI framework brings a lot of new APIs related to ScrollView, making it much more powerful than before. This week will begin the series of posts about new abilities of the ScrollView in SwiftUI, and we will start with scroll transitions.
 
+{% include friends.html %}
+
 The brand new scrollTransition view modifier allows us to observe the transition of the view while the user scrolls content. It will enable us to understand whenever a view is in the viewport of the ScrollView and allows us to apply visual effects like scaling, rotating, etc. Let's take a look at a quick example.
 
 ```swift
