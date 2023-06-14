@@ -30,6 +30,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the new *scrollTransition* view modifier to accept a closure with two parameters. The first is the view without any effects, and the second is an instance of the *ScrollTransitionPhase* type.
 
+![scroll-transition-video](/public/scroll-transition.mp4)
+
 The *ScrollTransitionPhase* type defines a state of a view transition in the viewport of an instance of the *ScrollView*. The *ScrollTransitionPhase* type is an enum with three cases: *topLeading*, *bottomTrailing*, and *identity*. The *ScrollTransitionPhase* enum provides the *isIdentity* property allowing us to check whenever the view finished its transition.
 
 Usually, you display the view in the identity phase without any effects. The SwiftUI framework animates all the changes you apply during the transition. In our example, I use the *opacity* view modifier to change the view's alpha during the transition.
