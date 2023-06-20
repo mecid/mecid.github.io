@@ -49,7 +49,7 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *scrollTargetBehavior* view modifier with the *viewAligned* option to enable view snapping. *ScrollView* automatically decelerates after scrolling to align with the first visible item in its viewport. The *ScrollView* uses the views inside to find the next item to align.
 
-Usually, you define the *ScrollView* with the lazy container inside, like *LazyVGrid* or *LazyVStack*. In this case, you should use the *scrollTargetLayout* view modifier on an instance of the *LazyVGrid* or *LazyVStack* to allow the *ScrollView* to target views inside the container.
+Usually, you define the *ScrollView* with the layout container inside, like *LazyVGrid* or *LazyVStack*. In this case, you should use the *scrollTargetLayout* view modifier on an instance of the *LazyVGrid* or *LazyVStack* to allow the *ScrollView* to target views inside the container.
 
 ```swift
 struct ExampleScrollView: View {
