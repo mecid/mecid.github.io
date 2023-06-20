@@ -1,6 +1,7 @@
 ---
 title: Mastering ScrollView in SwiftUI. Target Behavior
 layout: post
+category: Mastering SwiftUI views
 ---
 
 This year we have massive additions for all APIs related to the ScrollView in SwiftUI. This week we will talk about snapping behavior in ScrollView and how we can customize the scroll target.
