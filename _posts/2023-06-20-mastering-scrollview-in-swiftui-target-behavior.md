@@ -152,5 +152,7 @@ The *target* parameter is an inout instance of the *ScrollTarget* type and allow
 
 The *context* parameter is an instance of the *ScrollTargetBehaviorContext* type and provides information about the context in which the scroll target updates. It provides access to enabled axes, velocity, container size, content size, original target, etc.
 
+> To learn more about additions to the *ScrollView*, take a look at my ["Mastering ScrollView in SwiftUI. Transitions"](/2023/06/13/mastering-scrollview-in-swiftui-transitions/) post.
+
 With these additions, the *ScrollView* type gains a lot of power and allows us to build a super-custom experience for our users on all Apple platforms. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
