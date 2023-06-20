@@ -71,7 +71,7 @@ struct ExampleScrollView: View {
 }
 ```
 
-You can also use the *scrollTarget* view modifier to mark individual views as scroll targets.
+You can also use the *scrollTarget* and *scrollTargetLayout* view modifiers in a single *ScrollView* to mark individual views as scroll targets in pair with the items in the layout container.
 
 ```swift
 struct AnotherExampleScrollView: View {
