@@ -129,11 +129,7 @@ struct CustomScrollTargetBehavior: ScrollTargetBehavior {
 extension ScrollTargetBehavior where Self == CustomScrollTargetBehavior {
     static var custom: CustomScrollTargetBehavior { .init() }
 }
-```
 
-As you can see in the example above, we define the *CustomScrollTargetBehavior* type conforming to the *ScrollTargetBehavior* protocol. It needs to implement the only required function called *updateTarget*. The *updateTarget* function has two parameters *target* and *context*.
-
-```swift
 struct ContentView: View {
     var body: some View {
         ScrollView {
@@ -148,6 +144,8 @@ struct ContentView: View {
     }
 }
 ```
+
+As you can see in the example above, we define the *CustomScrollTargetBehavior* type conforming to the *ScrollTargetBehavior* protocol. It needs to implement the only required function called *updateTarget*. The *updateTarget* function has two parameters *target* and *context*.
 
 The *target* parameter is an inout instance of the *ScrollTarget* type and allows us to set the *rect* and *anchor* point for our target inside the *ScrollView*.
 
