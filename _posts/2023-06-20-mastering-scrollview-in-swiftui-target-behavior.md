@@ -7,6 +7,8 @@ image: /public/scroll-transition.png
 
 This year we have massive additions for all APIs related to the ScrollView in SwiftUI. This week we will talk about snapping behavior in ScrollView and how we can customize the scroll target.
 
+{% include friends.html %}
+
 The SwiftUI framework provides the brand-new scrollTargetBehavior view modifier allowing us to specify a particular snapping behavior. Let's take a look at a quick example.
 
 ```swift
