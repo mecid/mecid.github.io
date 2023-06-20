@@ -87,6 +87,7 @@ struct AnotherExampleScrollView: View {
             CustomFooterView()
                 .scrollTarget()
         }
+        .scrollTargetBehavior(.viewAligned)
     }
 }
 ```
