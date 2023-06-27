@@ -78,6 +78,8 @@ As you can see in the example above, we use the scrollPosition view modifier wit
 
 Remember that you should always use the scrollTargetLayout or scrollTarget view modifiers to allow the ScrollView to understand where to find the identifiers for the binding.
 
+> To learn more about the scrollTargetLayout and scrollTarget view modifiers, take a look at my ["Mastering ScrollView in SwiftUI. Target Behavior"](/2023/06/20/mastering-scrollview-in-swiftui-target-behavior/) post.
+
 As I said before, you can use the scrollPosition view modifier not only for reading but also to change the scroll content offset. In the following example, we will add the button changing the value of the binding, and the scroll view updates content offset accordingly.
 
 ```swift
