@@ -2,6 +2,7 @@
 title: Mastering ScrollView in SwiftUI. Scroll Position
 layout: post
 category: Mastering SwiftUI views
+image: /public/scroll-transition.png
 ---
 
 This week we will continue the series of posts dedicated to mastering ScrollView. Today we will talk about a set of new options for controlling the scroll content position of a ScrollView in SwiftUI.
