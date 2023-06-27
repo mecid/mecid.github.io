@@ -7,6 +7,8 @@ image: /public/scroll-transition.png
 
 This week we will continue the series of posts dedicated to mastering ScrollView. Today we will talk about a set of new options for controlling the scroll content position of a ScrollView in SwiftUI.
 
+{% include friends.html %}
+
 #### Initial position
 The SwiftUI framework provides us the brand new scrollPosition view modifier allowing us to set the initial anchor for the content in the ScrollView. Let's take a look at a very quick example.
 
