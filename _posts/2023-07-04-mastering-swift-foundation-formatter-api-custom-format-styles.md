@@ -5,6 +5,8 @@ layout: post
 
 Swift Foundation Formatter API is one of my favorite recent additions to the Swift ecosystem. I use it in every project and build my custom-type formatting logic using the same approach. This week we will learn how to introduce custom formatters and use them with our own types.
 
+{% include friends.html %}
+
 As I said in the previous post, many types from the Swift Foundation provides *formatted* function allowing us to format dates, numbers, etc., into the user-presentable style. The whole formatting logic lives outside of the concrete type. The Swift Foundation defines many different types conforming to the *FormatStyle* protocol, allowing encapsulation of the formatting logic.
 
 ```swift
