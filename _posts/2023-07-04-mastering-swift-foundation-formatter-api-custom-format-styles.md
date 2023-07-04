@@ -9,7 +9,7 @@ Swift Foundation Formatter API is one of my favorite recent additions to the Swi
 
 {% include friends.html %}
 
-As I said in the previous post, many types from the Swift Foundation provide *formatted* function allowing us to format dates, numbers, etc., into the user-presentable style. The whole formatting logic lives outside of the concrete type. The Swift Foundation defines many different types conforming to the *FormatStyle* protocol, allowing encapsulation of the formatting logic.
+As I said in the previous post, many types from the Swift Foundation provide the *formatted* function allowing us to format dates, numbers, etc., into the user-presentable style. The whole formatting logic lives outside of the concrete type. The Swift Foundation defines many different types conforming to the *FormatStyle* protocol, allowing encapsulation of the formatting logic.
 
 > To learn more about the basics of the Swift Foundation Formatter API, take a look at my ["Mastering Swift Foundation Formatter API. Basics"](/2023/05/30/mastering-swift-foundation-formatter-api-basics/) post.
 
