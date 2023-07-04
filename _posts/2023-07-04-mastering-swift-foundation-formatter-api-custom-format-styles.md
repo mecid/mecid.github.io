@@ -2,6 +2,7 @@
 title: Mastering Swift Foundation Formatter API. Custom Format Styles
 layout: post
 image: /public/swift.png
+category: Swift Language Features
 ---
 
 Swift Foundation Formatter API is one of my favorite recent additions to the Swift ecosystem. I use it in every project and build my custom-type formatting logic using the same approach. This week we will learn how to introduce custom formatters and use them with our own types.
