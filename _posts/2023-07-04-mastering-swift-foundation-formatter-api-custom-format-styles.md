@@ -161,4 +161,4 @@ let anotherProduct = Product(title: "Another app", price: 0.99, oldPrice: 1.99)
 Text(anotherProduct.formatted(.price))
 ```
 
-This week we discussed encapsulating formatting logic for our model types by reusing the lovely approach from the Swift Foundation.
+This week we discussed encapsulating formatting logic for our model types by reusing the lovely approach from the Swift Foundation. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
