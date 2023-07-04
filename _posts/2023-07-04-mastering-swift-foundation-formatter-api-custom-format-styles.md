@@ -116,7 +116,7 @@ extension FormatStyle where Self == ProductPriceFormat {
 }
 ```
 
-As you can see in the example above, we define the formatted function on our *Product* type. We also create the *ProductPriceFormat* type that uses current and old prices to generate an attributed string with a price where the old price is crossed out.
+As you can see in the example above, we define the *formatted* function on our *Product* type. We also create the *ProductPriceFormat* type that uses current and old prices to generate an attributed string with a price where the old price is crossed out.
 
 ```swift
 let product = Product(title: "App", price: 0.99, oldPrice: 1.99)
