@@ -106,13 +106,6 @@ Finally, we can create an extension on *URLSession* to make requests with our ne
 
 ```swift
 extension URLSession {
-    func publisher(for request: Request) -> AnyPublisher<Data, Error> {
-        dataTaskPublisher(for: request.urlRequest)
-            .map(\.data)
-            .mapError { $0 }
-            .eraseToAnyPublisher()
-    }
-    
     func data(for request: Request) async throws -> Data {
         let (data, _) = try await self.data(for: request.urlRequest)
         try Task.checkCancellation()
@@ -136,43 +129,8 @@ As you can see, we define *Response* type, but we didn't use it anywhere in the 
 
 ```swift
 extension URLSession {
-    enum Error: Swift.Error {
-        case networking(URLError)
-        case decoding(Swift.Error)
-    }
-
-    func publisher(
-        for request: Request<Data>
-    ) -> AnyPublisher<Data, Swift.Error> {
-        dataTaskPublisher(for: request.urlRequest)
-            .mapError(Error.networking)
-            .map(\.data)
-            .eraseToAnyPublisher()
-    }
-
-    func publisher(
-        for request: Request<URLResponse>
-    ) -> AnyPublisher<URLResponse, Swift.Error> {
-        dataTaskPublisher(for: request.urlRequest)
-            .mapError(Error.networking)
-            .map(\.response)
-            .eraseToAnyPublisher()
-    }
-
-    func publisher<Value: Decodable>(
-        for request: Request<Value>,
-        using decoder: JSONDecoder = .init()
-    ) -> AnyPublisher<Value, Swift.Error> {
-        dataTaskPublisher(for: request.urlRequest)
-            .mapError(Error.networking)
-            .map(\.data)
-            .decode(type: Value.self, decoder: decoder)
-            .mapError(Error.decoding)
-            .eraseToAnyPublisher()
-    }
-    
     func decode<Value: Decodable>(
-        from request: Request<Value>,
+        _ request: Request<Value>,
         using decoder: JSONDecoder = .init()
     ) async throws -> Value {
         let decoded = Task.detached(priority: .userInitiated) {
@@ -185,7 +143,7 @@ extension URLSession {
 }
 ```
 
-In the example above, we also introduced proper error management to handle errors more gracefully. Let's define a Github repo search request using the new API.
+In the example above, we introduce the *decode* function allowing us to fetch and decode data using our *Request* type. Take a look at how we use the phantom type to decode value. Let's define a Github repo search request using the new API.
 
 ```swift
 extension Request where Response == SearchResponse {
@@ -200,10 +158,7 @@ extension Request where Response == SearchResponse {
 }
 
 let request: Request<SearchResponse> = .search(matching: "Swift")
-let cancellable = URLSession.shared.publisher(for: request)
-    .map(\.items)
-    .replaceError(with: [])
-    .sink { print($0) }
+let response = try await URLSession.shared.decode(request)
 ```
 
 > To learn more about the benefits of using phantom types, look at my ["Phantom types in Swift"](/2021/02/18/phantom-types-in-swift/) post.
