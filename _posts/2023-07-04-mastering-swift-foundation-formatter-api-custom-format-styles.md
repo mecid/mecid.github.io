@@ -26,15 +26,15 @@ The *FormatStyle* protocol is simple. It has the only required function called *
 
 ```swift
 struct ShortNumberFormat: FormatStyle {
-    let length: Int
+    let maxFractionLength: Int
     func format(_ value: Double) -> String {
-        value.formatted(.number.precision(.fractionLength(0...length)))
+        value.formatted(.number.precision(.fractionLength(0...maxFractionLength)))
     }
 }
 
 extension FormatStyle where Self == ShortNumberFormat {
-    static func short(length: Int = 1) -> ShortNumberFormat {
-        .init(length: length)
+    static func short(maxFractionLength: Int = 1) -> ShortNumberFormat {
+        .init(maxFractionLength: maxFractionLength)
     }
 }
 ```
@@ -43,7 +43,8 @@ As you can see in the example above, we create the *ShortNumberFormat* type conf
 
 ```swift
 let number = 100.001
-Text(verbatim: number.formatted(.short(length: 2)))
+Text(verbatim: number.formatted(.short(maxFractionLength: 2)))
+// Text displays 100
 ```
 
 Now we can easily reuse our short number format style across the codebase and cover it with unit tests to verify the formatting logic. As I said before, the *FormatStyle* protocol allows us to convert any type into anything we might need. In the following example, we will create a format style converting a double to an attributed string.
