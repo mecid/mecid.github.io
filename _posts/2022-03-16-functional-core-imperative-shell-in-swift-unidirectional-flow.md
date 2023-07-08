@@ -237,6 +237,7 @@ struct RootView: View {
             VStack {
                 if let start = store.state.start, store.state.end == nil {
                     Text(start, style: .timer)
+                    
                     Button("Stop") {
                         Task { await store.send(.finish) }
                     }
