@@ -220,7 +220,7 @@ final class TimerMiddlewareTests: XCTestCase {
 
 > To learn more about using async closures as dependencies, take a look at my ["Microapps architecture in Swift. Dependency Injection"](/2022/02/02/microapps-architecture-in-swift-dependency-injection/) post.
 
-And here is the example code showing how to implement a middleware. As you can see, we intercept the action fed into the store, make an async request, and provide another action to the system. We also can easily write integration test by mocking *TimerDependencies* type.
+And here is the example code showing how to implement a middleware. As you can see, we intercept the action feed into the store, make an async request, and provide another action to the system. We also can easily write integration test by mocking *TimerDependencies* type.
 
 ```swift
 import SwiftUI
