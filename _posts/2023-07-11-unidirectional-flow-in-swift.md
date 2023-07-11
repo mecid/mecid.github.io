@@ -116,7 +116,7 @@ final class ShopReducerTests: XCTestCase {
 All we need to do is to create an initial state and call the *reduce* function with the particular action. Then, we can verify that the new state returned by the *reduce* function contains all the required changes.
 
 #### Previewable
-This approach works great with Xcode previews. You can create multiple previews with different initial states. For example, one for the empty list and another for the list of products.
+This approach works great with Xcode previews. You can create multiple previews with different initial states. For example, one for the empty list and another for the list of products. There is no need for mocking protocols because the state is a simple struct you can create and put into the store to render in the view.
 
 ```swift
 #Preview {
@@ -137,8 +137,6 @@ This approach works great with Xcode previews. You can create multiple previews 
     )
 }
 ```
-
-There is no need for mocking protocols because the state is a simple struct you can create and put into the store to render in the view.
 
 #### Debuggable
 Debugging and logging became very easy. If something goes wrong, you know where to look. The *reduce* function is the only place containing app logic, and it is the best place to put log messages because all actions go through the *reduce* function. It means your logs will never miss any state change.
