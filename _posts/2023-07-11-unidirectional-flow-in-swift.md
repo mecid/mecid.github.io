@@ -1,6 +1,7 @@
 ---
 title: Unidirectional flow in Swift
 layout: post
+image: /public/store.png
 ---
 
 This week I will talk about the state management approach I have used in my apps for years. We will cover building a predictable, testable, debuggable, and serializable state management system in Swift.
