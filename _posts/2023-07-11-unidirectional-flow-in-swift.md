@@ -1,6 +1,7 @@
 ---
 title: Unidirectional flow in Swift
 layout: post
+category: Architecture
 image: /public/store.png
 ---
 
