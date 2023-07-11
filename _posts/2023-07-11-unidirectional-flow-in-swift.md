@@ -149,7 +149,7 @@ Many of my colleagues correlate the unidirectional flow with a single-state cont
 Usually, I define a store per feature. So every independent feature has its own store. It allows us to optimize for the performance because, in the case of a huge app, a single store in the app can lead to performance degradation where the whole app hierarchy refreshes on every small state change.
 
 #### References
-After years of building apps similarly, these ideas resulted in a Swift Package called swift-unidirectional-flow. It implements all the ideas we discussed in a production-ready code supporting concurrency and other features you might need to build a real-life app.
+After years of building apps similarly, these ideas resulted in a Swift Package called [swift-unidirectional-flow](http://github.com/mecid/swift-unidirectional-flow). It implements all the ideas we discussed in a production-ready code supporting concurrency and other features you might need to build a real-life app.
 
 #### Conclusion
 I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
