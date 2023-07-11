@@ -148,3 +148,4 @@ Usually, I define a store per feature. So every independent feature has its own 
 After years of building apps similarly, these ideas resulted in a Swift Package called swift-unidirectional-flow. It implements all the ideas we discussed in a production-ready code supporting concurrency and other features you might need to build a real-life app.
 
 #### Conclusion
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
