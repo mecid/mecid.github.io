@@ -11,6 +11,8 @@ This week I will talk about the state management approach I have used in my apps
 
 Swift promotes type-safe code by using a set of language features allowing us to encode the correct behavior into the type system. We aim to model our types so that the logical mistake becomes a compile-time error instead of a runtime error. We can achieve that by using value types, enums, optionals, protocols, generics, phantom types, etc.
 
+> To learn more about writing type-safe code in Swift, take a look at my ["Writing idiomatic Swift code"](/2021/04/01/writing-idiomatic-swift-code/) post.
+
 But what about type-safe state management systems? How can we build it using Swift language features? We will apply the same tools to build a functional and safe state management system.
 
 ```swift
