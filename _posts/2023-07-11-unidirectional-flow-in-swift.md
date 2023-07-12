@@ -146,7 +146,7 @@ By keeping the feature state in a single place, we can easily track the history 
 #### Modular
 Many of my colleagues correlate the unidirectional flow with a single-state container where the whole app state lives in a single instance of the particular *AppState* struct. Yes, it is possible, but it is not the only way.
 
-> To learn more about modularizing your app, take a look at my ["Microapps architecture in Swift. Feature modules"](/2023/07/11/unidirectional-flow-in-swift/) post.
+> To learn more about modularizing your app, take a look at my ["Microapps architecture in Swift. Feature modules"](/2022/01/19/microapps-architecture-in-swift-feature-modules/) post.
 
 Usually, I define a store per feature. So every independent feature has its own store. It allows us to optimize for the performance because, in the case of a huge app, a single store in the app can lead to performance degradation where the whole app hierarchy refreshes on every small state change.
 
