@@ -156,6 +156,30 @@ struct ContentView: View {
     }
 }
 ```
+#### Adaptive navigation 
+Selection-based list is not the only way to navigate through columns of the split view. You can provide destination points by using the *navigationDestination* view modifier. In this case, SwiftUI will navigate to the particular view in the column coming next to the one with the *navigationDestination* view modifier. But make sure, you don't embed the view with *navigationDestination* view modifier into the *NavigationStack*, because in this case it will push the view to the current *NavigationStack*.  
+
+```swift
+NavigationSplitView {
+	List {
+        NavigationLink {
+            InsightsFeatureView()
+        } label: {
+            Label("insights", systemImage: "chart.xyaxis.line")
+        }   
+        
+        NavigationLink {
+            SettingsFeatureView()
+        } label: {
+            Label("settings", systemImage: "gear")
+        }
+    }
+} content: {
+    ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
+} detail: {
+	ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
+}
+```
 
 #### Styling
 *NavigationSplitView* allows us to control the visibility of columns by providing a binding for the *NavigationSplitViewVisibility* type. You can change it programmatically also. Here is an example of changing column visibility programmatically.
