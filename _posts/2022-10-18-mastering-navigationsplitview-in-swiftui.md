@@ -161,7 +161,7 @@ Selection-based list is not the only way to navigate through columns of the spli
 
 ```swift
 NavigationSplitView {
-	List {
+    List {
         NavigationLink {
             InsightsFeatureView()
         } label: {
@@ -177,7 +177,7 @@ NavigationSplitView {
 } content: {
     ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
 } detail: {
-	ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
+    ContentUnavailableView("Use sidebar navigation", systemImage: "sidebar.left")
 }
 ```
 
