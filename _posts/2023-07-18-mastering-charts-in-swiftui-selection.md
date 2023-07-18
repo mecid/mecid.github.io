@@ -5,6 +5,8 @@ layout: post
 
 Swift Charts provides a lovely API allowing you to customize it and add custom interactions within a few lines of code. The following framework iteration goes further and allows us to track chart selection in a single line of code. This week we will learn about new APIs allowing us to handle selection in Swift Charts.
 
+{% include friends.html %}
+
 The pre-iOS17 version of Swift Charts provides us with the *chartOverlay* view modifier allowing us to build custom overlays, including gestures. It also provides APIs for converting geometry position into a chart value. Let's look at how we can use the *chartOverlay* view modifier to build selection tracking in Swift Charts.
 
 ```swift
