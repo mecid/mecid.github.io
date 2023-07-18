@@ -61,6 +61,8 @@ struct SelectionExample: View {
 
 As you can see in the example above, we use the *chartOverlay* view modifier to add a transparent overlay with a drag gesture. We use an instance of the *ChartProxy* type to convert the drag position to the chart data. We also draw a *RuleMark* in the place where the chart is selected.
 
+> To learn more about building interactions with the Swift Charts framework, take a look at my ["Mastering charts in SwiftUI. Interactions."](/2023/02/06/mastering-charts-in-swiftui-interactions/) post.
+
 The code above is simple, but writing for every chart that needs a selection feature is repetitive. Fortunately, the next iteration of the Swift Charts framework includes the *chartXSelection* and *chartYSelection* view modifiers allowing us to implement the chart selection feature in a single line.
 
 ```swift
