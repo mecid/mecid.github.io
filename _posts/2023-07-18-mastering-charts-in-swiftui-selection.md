@@ -5,7 +5,7 @@ image: /public/chart15.png
 category: Mastering SwiftUI views
 ---
 
-Swift Charts provides a lovely API allowing you to customize it and add custom interactions within a few lines of code. The following framework iteration goes further and allows us to track chart selection in a single line of code. This week we will learn about new APIs allowing us to handle selection in Swift Charts.
+Swift Charts provides a lovely API allowing you to tune charts and add custom interactions within a few lines of code. The following framework iteration goes further and allows us to track chart selection in a single line of code. This week we will learn about new APIs allowing us to handle selection in Swift Charts.
 
 {% include friends.html %}
 
