@@ -165,3 +165,5 @@ struct RangeSelectionExample: View {
 ```
 
 As you can see, we tuned an instance of the *DragGesture* type to handle selection in our chart. The *chartGesture* view modifier provides us access to an instance of the *ChartProxy* type that we can use to select values or ranges in the chart.
+
+This week we learned about the new APIs allowing us to implement chart data selection easily. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
