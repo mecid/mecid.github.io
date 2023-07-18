@@ -46,7 +46,8 @@ struct SelectionExample: View {
                                     return
                                 }
                                 
-                                let currentX = value.location.x - geometry[plotFrame].origin.x
+                                let startX = geometry[plotFrame].origin.x
+                                let currentX = value.location.x - startX
                                 
                                 if let index: Int = chart.value(atX: currentX) {
                                     selectedIndex = index
