@@ -1,6 +1,7 @@
 ---
 title: Mastering charts in SwiftUI. Selection
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Swift Charts provides a lovely API allowing you to customize it and add custom interactions within a few lines of code. The following framework iteration goes further and allows us to track chart selection in a single line of code. This week we will learn about new APIs allowing us to handle selection in Swift Charts.
