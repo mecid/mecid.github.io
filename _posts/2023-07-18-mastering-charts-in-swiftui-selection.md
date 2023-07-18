@@ -1,6 +1,7 @@
 ---
 title: Mastering charts in SwiftUI. Selection
 layout: post
+image: /public/chart15.png
 category: Mastering SwiftUI views
 ---
 
