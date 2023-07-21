@@ -50,7 +50,6 @@ You can also use the *chartYVisibleDomain* modifier if you make your chart scrol
 
 ```swift
 struct ContentView: View {
-    @State private var scrollPosition = 50
     @State private var numbers = (0..<100)
         .map { _ in Double.random(in: 0...100) }
     
