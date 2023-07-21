@@ -137,7 +137,12 @@ struct ContentView: View {
             )
         }
         .chartScrollableAxes(.horizontal)
-        .chartScrollTargetBehavior(.valueAligned(unit: 5, majorAlignment: .unit(10)))
+        .chartScrollTargetBehavior(
+            .valueAligned(
+                unit: 5,
+                majorAlignment: .unit(10)
+            )
+        )
     }
 }
 ```
