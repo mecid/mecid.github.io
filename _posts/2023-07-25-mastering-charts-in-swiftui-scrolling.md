@@ -120,9 +120,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *chartScrollTargetBehavior* modifier with the value-aligned behavior. The Swift Charts uses the unit parameter to calculate the next target while the user snaps the chart. 
+As you can see in the example above, we use the *chartScrollTargetBehavior* modifier with the value-aligned behavior. The Swift Charts uses the *unit* parameter to calculate the next target while the user snaps the chart. 
 
-In contrast, the *majorAlignment* parameter estimates the next target while scrolling. In our example, we use the page option as *majorAlignment*, which means the chart will use the visible region's size to calculate the next target. We can also use units to define the major alignment.
+In contrast, the *majorAlignment* parameter estimates the next target while scrolling. In our example, we use the *page* option as *majorAlignment*, which means the chart will use the visible region's size to calculate the next target. We can also use units to define the major alignment.
 
 ```swift
 struct ContentView: View {
