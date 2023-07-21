@@ -93,7 +93,7 @@ struct ContentView: View {
 }
 ```
 
-Remember that you can both read and write to the current position of the chart using the *chartScrollPosition* modifier accepting a binding. It updates the value of the binding whenever the user changes the visible region of the chart.
+Remember that you can both read and write to the current position of the chart using the *chartScrollPosition* modifier accepting a binding. It updates the value of the binding whenever the user changes the visible region of the chart. It also updates the visible region of the chart whenever you change the value of the binding programmatically.
 
 The Swift Charts framework allows us to control the scrolling behavior using the *chartScrollTargetBehavior* modifier. For example, we can use it to enable paging in the chart.
 
