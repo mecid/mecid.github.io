@@ -7,6 +7,8 @@ image: /public/chart15.png
 
 Another feature we have been waiting for is scrolling charts. The latest version of the Swift Charts framework provides the functionality, allowing us to make any chart scroll in a few different ways. This week we will learn how to make our charts scroll, and the customization points the Swift Charts framework provides.
 
+{% include friends.html %}
+
 We can make any chart scrollable by applying to it the *chartScrollableAxes* modifier. You can make it scroll in the horizontal or vertical direction or both. Let's take a look at a quick example.
 
 ```swift
