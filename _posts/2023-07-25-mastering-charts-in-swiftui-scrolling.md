@@ -165,3 +165,5 @@ struct ContentView: View {
 The value-aligned behavior is an instance of the *ValueAlignedChartScrollTargetBehavior* type conforming to the *ChartScrollTargetBehavior* protocol. You can build your own behaviors by defining a type conforming to the *ChartScrollTargetBehavior* protocol.
 
 > To learn more about *ChartScrollTargetBehavior* protocol and building custom target behaviors, take a look at my ["Mastering ScrollView in SwiftUI. Target Behavior"](/2023/06/20/mastering-scrollview-in-swiftui-target-behavior/) post.
+
+Today we learned how to make our charts scrolling using new APIs available in the Swift Charts framework. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
