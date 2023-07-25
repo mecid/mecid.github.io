@@ -213,4 +213,4 @@ struct MyApp: App {
 }
 ```
 
-Today we started the series of posts about StoreKit 2. As you can see, it is really easy to use and it handle a bunch of use-case out of the box for you.
+Today we started the series of posts about StoreKit 2. As you can see, it is really easy to use and it handle a bunch of use-case out of the box for you. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
