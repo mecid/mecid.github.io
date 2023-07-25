@@ -1,5 +1,5 @@
 ---
-title: Mastering charts in SwiftUI. Scrolling
+title: Mastering charts in SwiftUI. Scrolling.
 layout: post
 category: Mastering SwiftUI views
 image: /public/chart15.png
