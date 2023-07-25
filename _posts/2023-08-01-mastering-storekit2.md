@@ -1,6 +1,7 @@
 ---
 title: Mastering StoreKit 2
 layout: post
+image: /public/storekit.png
 ---
 
 StoreKit provides us with an opportunity to make revenue from our apps. It allows us to set up the purchase flow for in-app purchases and subscriptions. StoreKit 2 introduces a modern Swift-based API to build type-safe in-app purchases. This week we will start the series of posts about StoreKit 2.
