@@ -191,7 +191,7 @@ StoreKit 2 provides an easy way to fetch all active subscriptions and purchased 
 }
 ```
 
-We can use the *currentEntitlements* property to fetch the all active purchases on every app launch or more often.
+We can use the *currentEntitlements* property to fetch all the active purchases on every app launch or more often. By actively monitoring the *currentEntitlements* property we eliminate need for restoring purchases because the *currentEntitlements* always contains the latest list of active subscriptions and non-consumable purchases even if they purchased on another device.
 
 ```swift
 @main
