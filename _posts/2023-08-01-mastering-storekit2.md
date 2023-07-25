@@ -6,6 +6,8 @@ image: /public/storekit.png
 
 StoreKit provides us with an opportunity to make revenue from our apps. It allows us to set up the purchase flow for in-app purchases and subscriptions. StoreKit 2 introduces a modern Swift-based API to build type-safe in-app purchases. This week we will start the series of posts about StoreKit 2.
 
+{% include friends.html %}
+
 First, we must configure our project by adding in-app purchases in the projects' "Signing & Capabilities" tab. Next, we should create a StoreKit configuration file to test in-app purchases without a network connection with the App Store. Go to File -> New -> File and choose "StoreKit Configuration File". 
 
 You can create a local-only configuration file and populate it with test subscriptions and in-app purchases. Another option is to fetch the list of subscriptions and in-app purchases from the App Store Connect by enabling the "Sync this file with an app in App Store Connect" checkbox.
