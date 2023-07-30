@@ -28,6 +28,26 @@ struct RootView: View {
 
 ![search](/public/search.png)
 
+We can also control the search visibility programmatically by using the *isPresented* parameter of the *searchable* view modifier accepting a boolean binding defining the current visibility of the search.
+
+```swift
+struct RootView: View {
+    @State private var query: String = ""
+    @State private var searchShown = false
+
+    var body: some View {
+        NavigationView {
+            Master()
+            Details()
+        }
+        .searchable(text: $query, isPresented: $searchShown)
+        .onAppear {
+            searchShown = true
+        }
+    }
+}
+```
+
 We attach the *searchable* view modifier to the *NavigationView* at the root of our app. SwiftUI can put the search bar in different places depending on the environment. For example, it will put a search bar in the *Master* view on iOS and iPadOS. On macOS, SwiftUI places the search bar in the toolbar of the trailing column of the *NavigationView*.
 
 ```swift
