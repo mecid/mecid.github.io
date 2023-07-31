@@ -148,7 +148,7 @@ struct ContentView: View {
 }
 ```
 
-The *StoreView* displays the layout for displaying a collection of products. For example, on tvOS *StoreView* uses a grid to show the products. You can still customize the look and feel of the products displayed in the *StoreView* by applying the *productViewStyle* view modifier to the *StoreView*.
+The *StoreView* displays the layout of a collection of products. For example, on tvOS *StoreView* uses a grid to show the products. You can still customize the look and feel of the products displayed in the *StoreView* by applying the *productViewStyle* view modifier to the *StoreView*.
 
 ```swift
 struct ContentView: View {
