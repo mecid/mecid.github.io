@@ -174,4 +174,6 @@ struct ContentView: View {
 
 The *StoreView* provides a set of buttons like restore transactions or paywall cancellation buttons out of the box. You can manipulate the visibility of a particular button by using the *storeButton* view modifier.
 
+> To learn more about the basics of the StoreKit 2, take a look at my ["Mastering StoreKit 2"](/2023/08/01/mastering-storekit2/) post.
+
 Today we learned about SwiftUI views that StoreKit 2 provides us to build paywalls in our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
