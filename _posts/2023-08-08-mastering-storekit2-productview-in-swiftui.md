@@ -19,6 +19,8 @@ struct ContentView: View {
 }
 ```
 
+![storekit-product](/public/storekit-product.png)
+
 As you can see in the example above, we can place an instance of the *ProductView* in a single line of code, but this line hides the complexity of loading and purchasing products from the App Store. StoreKit provides us with a set of styles to display a product in different appearances. We can use the *productViewStyle* view modifier to attach a particular style. StoreKit uses the *automatic* style by default, but we can use *large*, *regular*, or *compact* styles.
 
 ```swift
@@ -116,6 +118,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![paywall-screen](/public/paywall.png)
 
 As you can see, we use different style options to display the list of available in-app purchases just in a few lines of code. And the UI we build supports purchasing and observes refunds automatically. But StoreKit views in SwiftUI don't stop here. It provides us with the *StoreView* view displaying the collection of products in different layouts depending on the available space.
 
