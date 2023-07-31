@@ -1,6 +1,7 @@
 ---
 title: Mastering StoreKit 2. ProductView and StoreView.
 layout: post
+image: /public/paywall.png
 ---
 
 We started a series of posts about StoreKit 2 last week. We learned the basics of StoreKit 2 and how easily we can monetize our apps. This week, we will continue the topic by learning about StoreKit views in SwiftUI. The StoreKit 2 introduces SwiftUI views, allowing us to quickly build paywalls or digital product shop screens.
