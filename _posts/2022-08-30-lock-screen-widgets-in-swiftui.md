@@ -123,6 +123,7 @@ struct MyAppWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WidgetView(entry: entry)
+                .containerBackground(.regularMaterial, for: .widget)
         }
         .configurationDisplayName("My app widget")
         .supportedFamilies(
@@ -140,40 +141,6 @@ struct MyAppWidget: Widget {
 }
 ```
 
-If you still support iOS 15, you can check the availability of new lock screen widgets.
-
-```swift
-@main
-struct MyAppWidget: Widget {
-    let kind: String = "Widget"
-    
-    private var supportedFamilies: [WidgetFamily] {
-        if #available(iOSApplicationExtension 16.0, *) {
-            return [
-                .systemSmall,
-                .systemMedium,
-                .systemLarge,
-                .accessoryCircular,
-                .accessoryRectangular,
-                .accessoryInline
-            ]
-        } else {
-            return [
-                .systemSmall,
-                .systemMedium,
-                .systemLarge
-            ]
-        }
-    }
-    
-    var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            WidgetView(entry: entry)
-        }
-        .configurationDisplayName("My app widget")
-        .supportedFamilies(supportedFamilies)
-    }
-}
-```
+As you can see in the example above, we use the *containerBackground* view modifier allowing us to set a removable background for the view. It is required for all widgets to use the removable background from iOS 17. The system removes the background in StandBy and in smart stack on watch.
 
 Today we learned how to implement new lock screen widgets in iOS 16. Remember that we can reuse the same API to build watchOS complications. And you can easily share the widget codebase by looking into environment values to understand which rendering mode is active at the very moment. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
