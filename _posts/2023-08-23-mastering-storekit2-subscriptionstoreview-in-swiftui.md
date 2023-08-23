@@ -34,6 +34,8 @@ struct ContentView: View {
 
 Another option is to provide a list of loaded instances of the Product type that StoreKit 2 uses to encapsulate a particular in-app purchase product.
 
+> To learn more about the basics of the StoreKit 2, take a look at my ["Mastering StoreKit 2"](/2023/08/01/mastering-storekit2/) post.
+
 As I said before, the *SubscriptionStoreView* handles the subscription management flow completely. So it provides the user interface for upgrades, downgrades, crossgrades, etc. By default, it displays all available actions, but you can control the availability of the provided actions by using the *visibleRelationships* parameter.
 
 ```swift
