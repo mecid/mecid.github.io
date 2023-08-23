@@ -1,5 +1,5 @@
 ---
-title: Mastering StoreKit 2. ProductView and StoreView.
+title: Mastering StoreKit 2. ProductView and StoreView in SwiftUI.
 layout: post
 image: /public/paywall.png
 category: StoreKit
