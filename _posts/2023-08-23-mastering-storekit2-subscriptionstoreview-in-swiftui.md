@@ -1,5 +1,5 @@
 ---
-title: Mastering StoreKit 2. SubscriptionStoreView
+title: Mastering StoreKit 2. SubscriptionStoreView in SwiftUI
 layout: post
 ---
 
