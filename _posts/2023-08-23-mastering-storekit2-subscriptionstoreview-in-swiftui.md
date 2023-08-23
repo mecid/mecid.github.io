@@ -96,7 +96,7 @@ struct ContentView: View {
 }
 ```
 
-The *subscriptionStoreControlStyle* view modifier allows us to set the style to the following options: buttons, picker, prominent picker, and automatic. The *SubscriptionStoreView* works on all Apple platforms, but only some control styles work on some platforms. That's why default is the automatic style that uses a different look and feel depending on the platform.
+The *subscriptionStoreControlStyle* view modifier allows us to set the style to the following options: buttons, picker, prominent picker, and automatic. The *SubscriptionStoreView* works on all Apple platforms, but only some control styles work on some platforms. That's why default is the *automatic* style that uses a different look and feel depending on the platform.
 
 We also have the *subscriptionStoreButtonLabel* view modifier allowing us to customize store buttons. When you use pickers in your subscription store, the *subscriptionStoreButtonLabel* view modifier affects only a single button that calls to action.
 
