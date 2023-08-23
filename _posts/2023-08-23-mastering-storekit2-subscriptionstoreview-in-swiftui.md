@@ -56,6 +56,8 @@ struct ContentView: View {
 
 In the example above, we use the *SubscriptionStoreView* only to display the subscription the user has already subscribed for.
 
+> *SubscriptionStoreView* supports the *storeButton* view modifier allowing to set the visibility for a set of buttons provided by the store. To learn more take a look at my ["Mastering StoreKit 2. ProductView and StoreView in SwiftUI"](/2023/08/08/mastering-storekit2-productview-in-swiftui/) post. 
+
 #### Styling
 By default, *SubscriptionStoreView* uses the app icon and the title of the subscription group as additional content to display above the list of subscriptions. It works great for my apps on watchOS, but something other than what I want to show on iOS or iPadOS.
 
