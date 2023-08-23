@@ -53,7 +53,7 @@ struct ContentView: View {
 In the example above, we use the *SubscriptionStoreView* only to display the subscription the user has already subscribed for.
 
 #### Styling
-By default, *SubscriptionStoreView* uses the app icon and the title of the subscription group as additional content to display above the list of subscriptions. It works great for my apps on watchOS, but something other than what I want to show on my iOS or iPadOS.
+By default, *SubscriptionStoreView* uses the app icon and the title of the subscription group as additional content to display above the list of subscriptions. It works great for my apps on watchOS, but something other than what I want to show on iOS or iPadOS.
 
 Fortunately, you can quickly provide your super custom view to display above the list of subscriptions. I usually use that area to give information on features included in the subscription.
 
