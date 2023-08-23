@@ -20,6 +20,8 @@ struct ContentView: View {
 
 All you need is to place an instance of the *SubscriptionStoreView* with a single parameter defining the subscription group. Ensure you provide the group identifier, not the group title or any other string. The *SubscriptionStoreView* completely handles subscription flow, including loading and purchasing products. You don't need to do anything.
 
+![default-subscription-store](/public/subs3.png)
+
 You can customize the list of subscriptions in the *SubscriptionStoreView* by providing a list of product identifiers for every subscription you want to include. Keep in mind that *SubscriptionStoreView* can handle only subscriptions in the same group.
 
 ```swift
@@ -87,6 +89,8 @@ struct ContentView: View {
 
 As you can see, we can control the placement of the background by using the second parameter of the *containerBackground* view modifier. We can set different backgrounds for marketing content or the whole store view.
 
+![default-subscription-store](/public/subs1.png)
+
 Another styling option *SubscriptionStoreView* provides us is the control style. By default, it uses pickers, but we can easily change it to use buttons instead by using the *subscriptionStoreControlStyle* view modifier.
 
 ```swift
@@ -123,5 +127,7 @@ struct ContentView: View {
 ```
 
 You can use the multiline option to include more information about your subscription in the button. Whenever you use the buttons style as the subscription control, the *subscriptionStoreButtonLabel* view modifier affects that buttons also.
+
+![default-subscription-store](/public/subs2.png)
 
 This week we learned about the *SubscriptionStoreView* from StoreKit 2 and how to use it to make a recurring revenue for your app.
