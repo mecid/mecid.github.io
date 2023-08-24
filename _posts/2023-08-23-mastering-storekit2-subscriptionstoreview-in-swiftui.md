@@ -11,6 +11,9 @@ This week we will continue the series of posts about StoreKit views in SwiftUI b
 The *SubscriptionStoreView* provides a complete subscription management flow in a single line of code.
 
 ```swift
+import SwiftUI
+import StoreKit
+
 struct ContentView: View {
     var body: some View {
         SubscriptionStoreView(groupID: "598392E1")
