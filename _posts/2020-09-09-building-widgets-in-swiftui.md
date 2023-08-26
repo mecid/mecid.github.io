@@ -151,5 +151,7 @@ struct CardioBotWidgets: WidgetBundle {
 
 Remember to remove *@main* from your widget definitions and add it only to your widget bundle.
 
+> To learn about building lock screen widgets take a look at my dedicated ["Lock screen widgets in SwiftUI"](/2022/08/30/lock-screen-widgets-in-swiftui/) post.
+
 #### Conclusion
 Today we learned about another feature that is released during WWDC20. Remember that widgets are available on macOS in the notification center also. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
