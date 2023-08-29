@@ -1,6 +1,7 @@
 ---
 title: Mastering StoreKit 2. SwiftUI view modifiers.
 layout: post
+category: StoreKit
 ---
 
 We talked a lot about StoreKit 2 in this series of posts. This week, we will finalize the series by covering the set of view modifiers StoreKit 2 provides us to use in SwiftUI views.
