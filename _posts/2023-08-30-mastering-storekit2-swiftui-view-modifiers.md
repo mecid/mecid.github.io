@@ -66,8 +66,9 @@ struct ContentView: View {
                 PaywallView()
             }
             .currentEntitlementTask(for: "1232") { taskState in
-                if let transaction = try? taskState.transaction?.payloadValue {
-                    isPro = true
+                if let verification = taskState.transaction,
+                   let transaction = try? verification.payloadValue {
+                    isPro = transaction.revocationDate == nil
                 } else {
                     isPro = false
                 }
