@@ -105,4 +105,4 @@ struct ContentView: View {
 }
 ```
 
-Today, we learned how to query StoreKit 2 from SwiftUI views using brand-new view modifiers.
+Today, we learned how to query StoreKit 2 from SwiftUI views using brand-new view modifiers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
