@@ -51,7 +51,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *subscriptionStatusTask* view modifier to observe the status of the particular subscription group. As you may have noticed, we provide a closure handling the subscription status changes, and it takes an array of the subscription statuses as the parameter. It uses an array instead of a single value because the user might purchase a subscription but also has access to the subscription by family sharing. So, it is up to you which level of access should be granted to the user.
+As you can see in the example above, we use the *subscriptionStatusTask* view modifier to observe the status of the particular subscription group. As you may have noticed, we provide a closure handling the subscription status changes, and it takes an array of the subscription statuses as the parameter. It uses an array instead of a single value because the user might purchase a subscription but also has access to the subscription by family sharing.
 
 The *subscriptionStatusTask* view modifier works only with subscriptions. StoreKit 2 provides the *currentEntitlementTask* view modifier for consumable and non-consumable in-app purchases. It works similarly to the *subscriptionStatusTask* view modifier but instead gives you an optional transaction of the particular product.
 
