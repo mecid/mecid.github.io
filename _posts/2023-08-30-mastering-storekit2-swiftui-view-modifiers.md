@@ -5,6 +5,8 @@ layout: post
 
 We talked a lot about StoreKit 2 in this series of posts. This week, we will finalize the series by covering the set of view modifiers StoreKit 2 provides us to use in SwiftUI views.
 
+{% include friends.html %}
+
 As I said before, StoreKit views handle loading and purchasing in-app purchases completely. But sometimes, you must be aware of the current step in the flow to react. For example, you might need to dismiss the paywall whenever the user finishes the purchase or show a loading indicator while waiting for the App Store server result.
 
 ```swift

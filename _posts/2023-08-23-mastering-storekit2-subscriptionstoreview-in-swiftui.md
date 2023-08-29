@@ -7,6 +7,8 @@ image: /public/subs3.png
 
 This week we will continue the series of posts about StoreKit views in SwiftUI by covering another StoreKit view called *SubscriptionStoreView*. This view allows us to easily display and handle subscriptions in a single group.
 
+{% include friends.html %}
+
 #### Basics
 The *SubscriptionStoreView* provides a complete subscription management flow in a single line of code.
 
