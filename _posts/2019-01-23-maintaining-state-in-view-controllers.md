@@ -149,6 +149,4 @@ extension HistoryViewController: StatePresentable {
 All we need is to conform *StatePresentable* protocol, add the *didSet* observer for state property and implement *render* method, where we add data presenting logic for the actual screen.
 
 #### Conclusion
-Protocol with associated types can be robust by enabling the power of generic constraints and making codebase more reusable. I really suggest to read great [post](https://www.natashatherobot.com/swift-what-are-protocols-with-associated-types/) by NatashaTheRobot about protocols with associated types. 
-
-Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
+Protocol with associated types can be robust by enabling the power of generic constraints and making codebase more reusable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading and see you next week!
