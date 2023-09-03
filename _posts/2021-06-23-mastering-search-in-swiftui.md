@@ -28,26 +28,6 @@ struct RootView: View {
 
 ![search](/public/search.png)
 
-We can also control the search visibility programmatically by using the *isPresented* parameter of the *searchable* view modifier accepting a boolean binding defining the current visibility of the search.
-
-```swift
-struct RootView: View {
-    @State private var query: String = ""
-    @State private var searchShown = false
-
-    var body: some View {
-        NavigationView {
-            Master()
-            Details()
-        }
-        .searchable(text: $query, isPresented: $searchShown)
-        .onAppear {
-            searchShown = true
-        }
-    }
-}
-```
-
 We attach the *searchable* view modifier to the *NavigationView* at the root of our app. SwiftUI can put the search bar in different places depending on the environment. For example, it will put a search bar in the *Master* view on iOS and iPadOS. On macOS, SwiftUI places the search bar in the toolbar of the trailing column of the *NavigationView*.
 
 ```swift
@@ -96,6 +76,37 @@ struct ContentView: View {
 ```
 
 Whenever we use the *searchable* modifier, we should provide a binding to a string value. We can observe changes and filter our content depending on the query term using that binding.
+
+```swift
+struct ContentView: View {
+    @StateObject private var viewModel = SearchViewModel()
+    @State private var searchShown = false
+    @State private var query = ""
+
+    var body: some View {
+        NavigationView {
+            List(viewModel.repos) { repo in
+                VStack(alignment: .leading) {
+                    Text(repo.name)
+                        .font(.headline)
+                    Text(repo.description ?? "")
+                        .foregroundColor(.secondary)
+                }
+            }
+            .navigationTitle("Search")
+            .searchable(text: $query, isPresented: $searchShown)
+            .onChange(of: query) { newQuery in
+                Task { await viewModel.search(matching: query) }
+            }
+            .onAppear {
+                searchShown = true
+            }
+        }
+    }
+}
+```
+
+We can also control the search visibility programmatically by using the *isPresented* parameter of the *searchable* view modifier accepting a boolean binding defining the current visibility of the search.
 
 #### Environment
 SwiftUI provides us *isSearching* environment value that indicated whether the user is currently interacting with the search bar that has been placed by a surrounding *searchable* modifier. We can use this value to understand whether to show quick search results. 
