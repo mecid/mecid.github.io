@@ -1,6 +1,7 @@
 ---
 title: Thread safety in Swift with locks
 layout: post
+category: Swift Language Features
 ---
 
 Today, we will discuss thread safety, an essential programming aspect. I decided to cover this topic because of the issue I've noticed in the codebase I helped to build. This type of bug is straightforward to create but very hard to fix. So investing time into building a type-safe type in your codebase is much better.
