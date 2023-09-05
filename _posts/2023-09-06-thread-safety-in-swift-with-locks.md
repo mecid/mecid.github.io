@@ -85,7 +85,7 @@ We can control the concurrent access to the state variable using a lock mechanis
 }
 ```
 
-As you can see in the example above, we wrap our state property with an instance of the *OSAllocatedUnfairLock* type. Whenever we need to read or write the state property, we cover the logic with the *withLock* function. It automatically locks and releases at the end of the closure we provide.
+As you can see in the example above, we wrap our *state* property with an instance of the *OSAllocatedUnfairLock* type. Whenever we need to read or write the *state* property, we cover the logic with the *withLock* function. It automatically locks and releases at the end of the closure we provide.
 
 *OSAllocatedUnfairLock* is very fast, but it doesn't support recursive locking. It crashes whenever you lock it twice from the same thread, so you should be careful while using it and not call it recursively. Instead, you can use the *NSRecursiveLock* type, allowing the same thread to lock recursively, but this implementation is a bit slower than *OSAllocatedUnfairLock*.
 
