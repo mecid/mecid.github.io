@@ -149,4 +149,4 @@ We use the @unchecked attribute to turn off compiler checks on Sendable conforma
 
 Finally, we can safely share an instance of the Store type between different threads and never worry about strange crashes. You should always make your classes thread-safe whenever possible to use them in the multithreaded environment, even accidentally. Invest earlier and save your time in the future.
 
-Today we learned how to use the NSRecursiveLock and OSAllocatedUnfairLock types to make any class thread safe. Happy multithreading!
+Today we learned how to use the NSRecursiveLock and OSAllocatedUnfairLock types to make any class thread safe. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and happy multithreading!
