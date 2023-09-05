@@ -117,7 +117,7 @@ As you can see in the example above, we wrap our *state* property with an instan
 }
 ```
 
-Finally, we can mark our *Store* type with the *Sendable* protocol, which means you can share an instance of the type between different threads, and it implements an internal synchronization mechanism.
+Finally, we can mark our *Store* type with the *Sendable* protocol, which means you can share an instance of the type between different threads.
 
 ```swift
 @dynamicMemberLookup final class Store<State, Action>: @unchecked Sendable {
