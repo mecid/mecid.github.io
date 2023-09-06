@@ -120,8 +120,8 @@ As you can see in the example above, we wrap our *state* property with an instan
 Finally, we can mark our *Store* type with the *Sendable* protocol, which means you can share an instance of the type between different threads.
 
 ```swift
-@dynamicMemberLookup final class Store<State, Action>: @unchecked Sendable {
-    typealias Reduce = (State, Action) -> State
+@dynamicMemberLookup final class Store<State: Sendable, Action: Sendable>: @unchecked Sendable {
+    typealias Reduce = @Sendable (State, Action) -> State
     
     private var state: State
     private let reduce: Reduce
