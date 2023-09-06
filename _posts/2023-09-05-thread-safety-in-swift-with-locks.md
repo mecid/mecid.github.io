@@ -117,38 +117,6 @@ As you can see in the example above, we wrap our *state* property with an instan
 }
 ```
 
-Finally, we should mark our *Store* type with the *Sendable* protocol, which means you can share an instance of the type between different threads.
-
-```swift
-@dynamicMemberLookup final class Store<State: Sendable, Action: Sendable>: @unchecked Sendable {
-    typealias Reduce = @Sendable (State, Action) -> State
-    
-    private var state: State
-    private let reduce: Reduce
-    
-    private let lock = NSRecursiveLock()
-    
-    init(state: State, reduce: @escaping Reduce) {
-        self.state = state
-        self.reduce = reduce
-    }
-    
-    subscript<T>(dynamicMember keyPath: KeyPath<State, T>) -> T {
-        lock.withLock {
-            state[keyPath: keyPath]
-        }
-    }
-    
-    func send(_ action: Action) {
-        lock.withLock {
-            state = reduce(state, action)
-        }
-    }
-}
-```
-
-We use the **@unchecked** attribute to turn off compiler checks on *Sendable* conformance because, in our case, the *Store* type implements internal synchronization via locks.
-
 Finally, we can safely share an instance of the *Store* type between different threads and never worry about strange crashes. You should always make your classes thread-safe whenever possible to use them in the multithreaded environment, even accidentally. Invest earlier and save your time in the future.
 
 Today we learned how to use the *NSRecursiveLock* and *OSAllocatedUnfairLock* types to make any class thread safe. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and happy multithreading!
