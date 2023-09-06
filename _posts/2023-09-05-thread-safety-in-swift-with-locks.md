@@ -147,7 +147,7 @@ Finally, we should mark our *Store* type with the *Sendable* protocol, which mea
 }
 ```
 
-We use the **@unchecked** attribute to turn off compiler checks on *Sendable* conformance because, in our case, the *Store* type implements internal synchronization.
+We use the **@unchecked** attribute to turn off compiler checks on *Sendable* conformance because, in our case, the *Store* type implements internal synchronization via locks.
 
 Finally, we can safely share an instance of the *Store* type between different threads and never worry about strange crashes. You should always make your classes thread-safe whenever possible to use them in the multithreaded environment, even accidentally. Invest earlier and save your time in the future.
 
