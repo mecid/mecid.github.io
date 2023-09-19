@@ -161,3 +161,5 @@ The *await* keyword is part of the Swift Concurrency feature, allowing us to awa
 Now let's talk about actor reentrancy. What if we run async code on an actor? In this case, the actor suspends execution and switches threads to run an async function outside the actor. During this time, the actor allows other threads access its isolated properties and functions because it doesn't run the async code itself. When the async code finishes, the actor switches threads back to run actor-isolated code.
 
 Remember that every use of the *await* keyword inside an actor type is a possible suspension point where other threads may access or mutate actor-isolated properties. This situation is called actor reentrancy. You may have race conditions during actor reentrancy if you assume that actors always run code atomically.
+
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and happy multithreading!
