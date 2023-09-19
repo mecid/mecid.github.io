@@ -2,6 +2,7 @@
 title: Thread safety in Swift with actors
 layout: post
 image: /public/swift.png
+category: Swift Language Features
 ---
 
 Actors is the new Swift language feature, making your types thread-safe. This week, we will learn how to use actors and their benefits over locks. We will also discuss actor reentrancy, the main confusing point of using actors.
