@@ -95,7 +95,7 @@ Swift language introduced a feature called actors to solve these complex issues.
 }
 ```
 
-As you can see in the example above, we define our Store type by using **actor** keyword instead of *class*. That's all you need to make your *Store* thread-safe. Actor isolation guarantees exclusive access to the stored fields of an actor type. You must use the **await** keyword to access or function on an actor type.
+As you can see in the example above, we define our Store type by using **actor** keyword instead of *class*. That's all you need to make your *Store* thread-safe. Actor isolation guarantees exclusive access to the stored fields of an actor type. You must use the **await** keyword to access property or function on an actor type.
 
 ```swift
 final class StoreTests: XCTestCase {
