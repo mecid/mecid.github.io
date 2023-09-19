@@ -5,6 +5,8 @@ layout: post
 
 Actors is the new Swift language feature, making your types thread-safe. This week, we will learn how to use actors and their benefits over locks. We will also discuss actor reentrancy, the main confusing point of using actors.
 
+{% include friends.html %}
+
 In the previous post, we modeled a *Store* type, allowing us to implement state management predictably.
 
 ```swift
