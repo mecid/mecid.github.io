@@ -125,7 +125,7 @@ final class StoreTests: XCTestCase {
 }
 ```
 
-The *await* keyword is part of the Swift Concurrency feature, allowing us to await the results whenever we switch threads. In the example above, we use *await* on every touch to the actor because another thread might use the actor, and we must wait for our exclusive access. Swift Compiler guarantees exclusive access, and we have compiler time verification on thread safety.
+The *await* keyword is part of the Swift Concurrency feature, allowing us to await the results whenever we switch threads. In the example above, we use *await* on every touch to the actor because another thread might use the actor, and we must wait for our exclusive access. Swift Compiler guarantees exclusive access, and we have compile-time verification on thread safety.
 
 ```swift
 @dynamicMemberLookup actor Store<State, Action> {
