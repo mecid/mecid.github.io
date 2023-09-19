@@ -69,6 +69,8 @@ First, you must wrap every use of the state property with the withLock function.
 
 Second, when you call the *lock* or *withLock* functions, they completely hang the current thread until the lock is released, which may lead to performance issues when many threads access the protected value.
 
+> To learn more about locks in Swift, take a look at my ["Thread safety in Swift with locks"](/2023/09/05/thread-safety-in-swift-with-locks/) post.
+
 Swift language introduced a feature called actors to solve these complex issues. Actors like classes are reference types but protect their stored properties from multithread access.
 
 ```swift
