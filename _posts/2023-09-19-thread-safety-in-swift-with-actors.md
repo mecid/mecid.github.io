@@ -65,7 +65,7 @@ At this point, the *Store* type is not thread-safe, and using it from multiple t
 
 As you can see in the example above, we use an instance of the *NSRecursiveLock* type whenever we access the protected part of the store. We made our store thread-safe, but let me tell you about a few downsides of using locks.
 
-First, you must wrap every use of the state property with the withLock function. Whenever you miss it accidentally or not, the *Store* type is not thread-safe anymore. So, you should be very careful while using locks.
+First, you must wrap every use of the state property with the *withLock* function. Whenever you miss it accidentally or not, the *Store* type is not thread-safe anymore. So, you should be very careful while using locks.
 
 Second, when you call the *lock* or *withLock* functions, they completely hang the current thread until the lock is released, which may lead to performance issues when many threads access the protected value.
 
