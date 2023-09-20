@@ -89,7 +89,7 @@ Swift language introduced a feature called actors to solve these complex issues.
         state[keyPath: keyPath]
     }
     
-    func send(_ aciton: Action) async {
+    func send(_ aciton: Action) {
         state = reduce(state, aciton)
     }
 }
