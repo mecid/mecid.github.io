@@ -114,4 +114,4 @@ struct SectorChartExample: View {
 }
 ```
 
-As you can see, the SectorMark type is a simple chart mark that supports all the modifiers we use for other mark types to customize them.
+As you can see, the SectorMark type is a simple chart mark that supports all the modifiers we use for other mark types to customize them. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
