@@ -225,8 +225,6 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.13.10-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.10-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
     octokit (4.21.0)
@@ -274,6 +272,7 @@ PLATFORMS
   universal-darwin-20
   universal-darwin-21
   universal-darwin-22
+  universal-darwin-23
   x86_64-linux
 
 DEPENDENCIES
