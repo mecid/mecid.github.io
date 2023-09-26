@@ -34,9 +34,7 @@ struct SectorChartExample: View {
                 angle: .value(
                     Text(verbatim: product.title),
                     product.revenue
-                ),
-                innerRadius: .ratio(0.6),
-                angularInset: 8
+                )
             )
             .foregroundStyle(
                 by: .value(
