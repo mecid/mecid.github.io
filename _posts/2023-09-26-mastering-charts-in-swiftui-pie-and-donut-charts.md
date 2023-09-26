@@ -1,7 +1,7 @@
 ---
 title: Mastering charts in SwiftUI. Pie and Donut charts.
 layout: post
-image: /public/donut.png
+image: /public/donut1.png
 category: Mastering SwiftUI views
 ---
 
@@ -49,6 +49,8 @@ struct SectorChartExample: View {
 }
 ```
 
+![pie-chart](/public/pie.png)
+
 As you can see in the example above, we use the SectorMark type to plot a pie chart. We use the foregroundStyle modifier to fill sections with different colors as we do with other mark types.
 
 Whenever we create an instance of the SectorMark type, we must pass the angle parameter. It might be a plottable value defining an angle portion of the section, or we can pass a range with exact start and end values of the angle for a particular area.
@@ -83,6 +85,8 @@ struct SectorChartExample: View {
 }
 ```
 
+![donut-chart](/public/donut.png)
+
 As you can see in the example above, we use the innerRadius parameter to plot a donut chart. The innerRadius parameter accepts ration, inset, and fixed sizes. We can use the angularInset parameter to set the spacing between sectors of the pie or donut charts.
 
 ```swift
@@ -113,5 +117,7 @@ struct SectorChartExample: View {
     }
 }
 ```
+
+![donut-chart-with-spacing](/public/donut1.png)
 
 As you can see, the SectorMark type is a simple chart mark that supports all the modifiers we use for other mark types to customize them. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
