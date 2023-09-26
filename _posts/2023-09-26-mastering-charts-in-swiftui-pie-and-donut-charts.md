@@ -51,6 +51,8 @@ struct SectorChartExample: View {
 
 As you can see in the example above, we use the *SectorMark* type to plot a pie chart. We use the *foregroundStyle* modifier to fill sections with different colors as we do with other mark types.
 
+> To learn more about mark styling, take a look at my dedicated ["Mastering charts in SwiftUI. Mark styling."](/2023/01/18/mastering-charts-in-swiftui-mark-styling/) post.
+
 Whenever we create an instance of the *SectorMark* type, we must pass the *angle* parameter. It might be a plottable value defining an angle portion of the section, or we can pass a range with exact start and end values of the angle for a particular area.
 
 The second parameter of the *SectorMark* initializer is the *innerRadius* value. We can use it to transform our pie chart into a donut chart.
