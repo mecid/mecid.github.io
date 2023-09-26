@@ -2,6 +2,7 @@
 title: Mastering charts in SwiftUI. Pie and Donut charts.
 layout: post
 image: /public/donut.png
+category: Mastering SwiftUI views
 ---
 
 One of the additions to the Swift Chars framework after WWDC 23 was a brand new SectorMark type. The SectorMark allows us to build pie and donut charts in SwiftUI easily. This week, we will learn how to plot the data using SectorMark.
