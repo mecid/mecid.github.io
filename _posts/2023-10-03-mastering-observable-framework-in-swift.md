@@ -51,7 +51,7 @@ func startObservation() {
 }
 ```
 
-The Observation framework runs the *onChange* only ones, which means you should call it recursively to observe changes constantly. Another thing you should be aware of is that *onChange* closure runs before the actual change applies. That's why we postpone the *onChange* action by starting a new task.
+The Observation framework runs the *onChange* only once, which means you should call it recursively to observe changes constantly. Another thing you should be aware of is that *onChange* closure runs before the actual change applies. That's why we postpone the *onChange* action by starting a new task.
 
 In SwiftUI, you don't need to use the *withObservationTracking* function to observe changes. SwiftUI automatically tracks changes of any observable type's property used inside the view body.
 
