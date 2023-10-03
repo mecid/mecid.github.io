@@ -5,7 +5,7 @@ layout: post
 
 Apple introduced the new Observation framework powered by the macro feature of the Swift language. The new Observation framework, in combination with the Swift Concurrency features, allows us to replace the Combine framework that looks deprecated by Apple. This week, we will learn how to use the Observation framework to handle data flow in our apps.
 
-Using the new Observation Framework is super easy. All you need to do is to mark your class with the @Observable macro.
+Using the new Observation Framework is super easy. All you need to do is to mark your class with the **@Observable** macro.
 
 ```swift
 @Observable final class Store<State, Action> {
@@ -25,7 +25,7 @@ Using the new Observation Framework is super easy. All you need to do is to mark
 }
 ```
 
-As you can see in the example above, we use the @Observable macro to annotate our Store type. After that, we can observe any variable in the Store type. We have only one variable in the Store type that defines the store's state. Another field is a let constant that never changes.
+As you can see in the example above, we use the *@Observable* macro to annotate our *Store* type. After that, we can observe any variable in the *Store* type. We have only one variable in the *Store* type that defines the store's state. Another field is a *let* constant that never changes.
 
 ```swift
 withObservationTracking {
@@ -35,7 +35,7 @@ withObservationTracking {
 }
 ```
 
-To observe an instance of the Store type, we need to call the withObservationTracking function with two closures. In the first closure, we can touch all the needed properties of the observable type. The Observation framework calls the second closure only once as soon as any touched property of the observed type changes.
+To observe an instance of the *Store* type, we need to call the *withObservationTracking* function with two closures. In the first closure, we can touch all the needed properties of the observable type. The Observation framework calls the second closure only once as soon as any touched property of the observed type changes.
 
 ```swift
 func startObservation() {
@@ -47,9 +47,9 @@ func startObservation() {
 }
 ```
 
-The Observation framework runs the onChange only ones, which means you should call it recursively to observe changes constantly. Another thing you should be aware of is that onChange closure runs before the actual change applies. That's why we postpone the onChange action by starting a new task.
+The Observation framework runs the *onChange* only ones, which means you should call it recursively to observe changes constantly. Another thing you should be aware of is that *onChange* closure runs before the actual change applies. That's why we postpone the *onChange* action by starting a new task.
 
-In SwiftUI, you don't need to use the withObservationTracking function to observe changes. SwiftUI automatically tracks changes of any observable type inside the SwiftUI view.
+In SwiftUI, you don't need to use the *withObservationTracking* function to observe changes. SwiftUI automatically tracks changes of any observable type inside the SwiftUI view.
 
 ```swift
 struct ProductsView: View {
@@ -66,9 +66,9 @@ struct ProductsView: View {
 }
 ```
 
-As you can see in the example above, we don't use any property wrappers to observe the store. SwiftUI does it automatically. As soon as the state property of the store changes, SwiftUI updates the view. We don't need the @ObservedObject property wrapper to track changes in observable types, but we still need the @StateObject alternative to survive through the SwiftUI lifecycle.
+As you can see in the example above, we don't use any property wrappers to observe the store. SwiftUI does it automatically. As soon as the state property of the store changes, SwiftUI updates the view. We don't need the *@ObservedObject* property wrapper to track changes in observable types, but we still need the *@StateObject* alternative to survive through the SwiftUI lifecycle.
 
-Apple simplifies the set of property wrappers we should use with the new Observation framework. Instead of the @StateObject property wrapper, we can use @State now. @State property wrapper works for simple value types and any observable types now.
+Apple simplifies the set of property wrappers we should use with the new Observation framework. Instead of the *@StateObject* property wrapper, we can use *@State* now. *@State* property wrapper works for simple value types and any observable types now.
 
 ```swift
 struct ContentView: View {
@@ -83,7 +83,7 @@ struct ContentView: View {
 }
 ```
 
-The same approach goes to the environment feature of the SwiftUI framework. There is no need for the @EnvironmentObject property wrapper now. You can now use the @Environment property wrapper and the environment view modifier with observable types.
+The same approach goes to the environment feature of the SwiftUI framework. There is no need for the *@EnvironmentObject* property wrapper now. You can now use the *@Environment* property wrapper and the *environment* view modifier with observable types.
 
 ```swift
 struct ContentView: View {
@@ -112,7 +112,7 @@ struct ProductsView: View {
 }
 ```
 
-The last thing you may wonder is how to derive a binding from an observable type. SwiftUI introduces a @Bindable property wrapper for this case that works only with observable types.
+The last thing you may wonder is how to derive a binding from an observable type. SwiftUI introduces a *@Bindable* property wrapper for this case that works only with observable types.
 
 ```swift
 @Observable final class AuthViewModel {
@@ -146,7 +146,7 @@ struct AuthView: View {
 }
 ```
 
-You can use the @Bindanble property wrapper to create bindings from the properties of any observable type easily. Sometimes, you may need to inline @Bindable inside the view body to create bindings.
+You can use the *@Bindanble* property wrapper to create bindings from the properties of any observable type easily. Sometimes, you may need to inline *@Bindable* inside the view body to create bindings.
 
 ```swift
 struct InlineAuthView: View {
