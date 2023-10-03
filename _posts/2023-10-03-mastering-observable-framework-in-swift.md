@@ -154,7 +154,7 @@ You can use the *@Bindanble* property wrapper to create bindings from the proper
 
 ```swift
 struct InlineAuthView: View {
-    @State var viewModel = AuthViewModel()
+    @Environment(AuthViewModel.self) var viewModel
     
     var body: some View {
         @Bindable var viewModel = viewModel
