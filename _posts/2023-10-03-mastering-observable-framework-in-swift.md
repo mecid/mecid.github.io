@@ -2,6 +2,7 @@
 title: Mastering Observation framework in Swift
 layout: post
 image: /public/swift.png
+category: Data Flow
 ---
 
 Apple introduced the new Observation framework powered by the macro feature of the Swift language. The new Observation framework, in combination with the Swift Concurrency features, allows us to replace the Combine framework that looks deprecated by Apple. This week, we will learn how to use the Observation framework to handle data flow in our apps.
