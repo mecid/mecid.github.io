@@ -2,6 +2,7 @@
 title: Haptic feedback in iOS apps
 layout: post
 category: Interactions
+image: /public/haptic.png
 ---
 
 Feedback helps people know what an app is doing, discover what they can do next, and understand the results of actions. This week I am going to talk about the Haptic Feedback Engine which provided by Apple in most of the devices.
