@@ -2,6 +2,7 @@
 title: Sensory feedback in SwiftUI
 layout: post
 category: Interactions
+image: /public/haptic.png
 ---
 
 SwiftUI introduced the new *sensoryFeedback* view modifier, allowing us to play haptic feedback on all Apple platforms. This week, we will learn how to use the *sensoryFeedback* modifier to give haptic feedback on different actions in our apps.
