@@ -90,6 +90,6 @@ struct ContentView: View {
 }
 ```
 
-SwiftUI also provides an option to define a condition on trigger value, deciding whenever it should play a predefined feedback style.
+SwiftUI also provides an option to define a condition on trigger value, deciding whenever it should play or not a predefined feedback style.
 
 This week, we learned how to use the new *sensoryFeedback* view modifier to play haptic feedback in our SwiftUI views. Remember that you shouldn't overwhelm the user with haptics. Use them to improve accessibility and significant task results.
