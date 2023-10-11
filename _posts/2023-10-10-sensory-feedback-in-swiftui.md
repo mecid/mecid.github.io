@@ -70,7 +70,7 @@ struct ContentView: View {
 }
 ```
 
-Another variant of the *sensoryFeedback* view modifier allows us to choose a particular feedback style depending on the trigger value. Here, we place success feedback whenever our store contains results and play error feedback whenever results are empty.
+Another variant of the *sensoryFeedback* view modifier allows us to choose a particular feedback style depending on the trigger value. Here, we play *success* feedback whenever our store contains results and play *error* feedback whenever results are empty.
 
 ```swift
 struct ContentView: View {
