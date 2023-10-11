@@ -27,7 +27,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *sensoryFeedback* view modifier with success style. We also define the results property of the store as a trigger. It means SwiftUI will play the success-styled haptic feedback whenever store results change.
+As you can see in the example above, we use the *sensoryFeedback* view modifier with *success* style. We also define the *results* property of the store as a trigger. It means SwiftUI will play the success-styled haptic feedback whenever store results change.
 
 SwiftUI provides a bunch of predefined feedback styles like *success*, *warning*, *error*, *selection*, *increase*, *decrease*, *start*, *stop*, *alignment*, *levelChange*, *impact*, etc.
 
