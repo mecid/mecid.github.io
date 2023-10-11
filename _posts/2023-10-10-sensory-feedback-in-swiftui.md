@@ -5,6 +5,8 @@ layout: post
 
 SwiftUI introduced the new *sensoryFeedback* view modifier, allowing us to play haptic feedback on all Apple platforms. This week, we will learn how to use the *sensoryFeedback* modifier to give haptic feedback on different actions in our apps.
 
+{% include friends.html %}
+
 All we need to play haptic feedback in a SwiftUI view is to attach the *sensoryFeedback* view modifier with two parameters. The first defines a feedback style, and the second is a trigger value.
 
 ```swift
