@@ -50,7 +50,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see, the impact style allows us to tune the *weight* and *intensity* of the feedback. Remember that it is always better to use the predefined style and customize the haptic feedback for super custom cases.
+As you can see, the *impact* style allows us to tune the *weight* and *intensity* of the feedback. Remember that it is always better to use the predefined style and customize the haptic feedback for super custom cases.
 
 ```swift
 struct ContentView: View {
