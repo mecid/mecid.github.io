@@ -33,17 +33,17 @@ SwiftUI provides a bunch of predefined feedback styles like *success*, *warning*
 
 ```swift
 struct ContentView: View {
-    @State private var store = Store()
+    @State private var trigger = false
     
     var body: some View {
         NavigationStack {
-            List(store.results, id: \.self) { result in
-                Text(result)
+            Button("Action") {
+                // do something
+                trigger.toggle()
             }
-            .searchable(text: $store.query)
             .sensoryFeedback(
                 .impact(weight: .heavy, intensity: 0.9),
-                trigger: store.results
+                trigger: trigger
             )
         }
     }
