@@ -50,7 +50,7 @@ Whenever you have more than one preview, you should give them different titles t
 }
 ```
 
-The *#Preview* macro has the traits parameter, allowing us to display your preview in landscape or a particular size. This version of the *#Preview* macro is not working on previous versions and requires an availability attribute.
+The *#Preview* macro has the *traits* parameter, allowing us to display your preview in landscape or a particular size. This version of the *#Preview* macro is not working on previous versions and requires an availability attribute.
 
 ```swift
 @available(iOS 17, *)
