@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 Xcode Preview Canvas is a crucial part of my development experience. Previews have significant changes this year by introducing the new #Preview macro. This week, we will learn about using the new #Preview macro and the benefits of this approach.
 
+{% include friends.html %}
+
 The new #Preview macro is super easy to use. Let's take a look at the first example.
 
 ```swift
