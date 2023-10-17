@@ -57,6 +57,11 @@ The *#Preview* macro has the *traits* parameter, allowing us to display your pre
 #Preview(traits: .landscapeLeft) {
     ContentView()
 }
+
+@available(iOS 17, *)
+#Preview(traits: .fixedLayout(width: 300, height: 300)) {
+    ContentView()
+}
 ```
 
 Another option is to use the *#Preview* macro with widgets to provide a timeline provider and display an interactive widget timeline.
