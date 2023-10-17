@@ -69,4 +69,6 @@ Another option is to use the #Preview macro with widgets to provide a timeline p
 }
 ```
 
-Today, we learned how to use the new #Preview macro to improve our development experience. Remember that you can create a Swift file containing only previews for your design system package or an example case displaying how to use your custom view. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today, we learned how to use the new #Preview macro to improve our development experience. Remember that you can create a Swift file containing only previews for your design system package or an example case displaying how to use your custom view.
+
+I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
