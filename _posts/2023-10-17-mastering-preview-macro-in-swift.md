@@ -10,6 +10,7 @@ The new #Preview macro is super easy to use. Let's take a look at the first exam
 ```swift
 #Preview {
     ContentView()
+        .preferredColorScheme(.dark)
 }
 ```
 
