@@ -1,6 +1,7 @@
 ---
 title: Mastering Preview macro in Swift
 layout: post
+image: /public/debug-preview.jpeg
 ---
 
 Xcode Preview Canvas is a crucial part of my development experience. Previews have significant changes this year by introducing the new #Preview macro. This week, we will learn about using the new #Preview macro and the benefits of this approach.
