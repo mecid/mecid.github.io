@@ -41,7 +41,7 @@ You may want to have a set of previews displaying different states of your view.
 Whenever you have more than one preview, you should give them different titles to differentiate them in the preview canvas. You can easily do that by passing a title as a parameter of the *#Preview* macro.
 
 ```swift
-#Preview("Empty state) {
+#Preview("Empty state") {
     ItemsView(data: .empty)
 }
 
