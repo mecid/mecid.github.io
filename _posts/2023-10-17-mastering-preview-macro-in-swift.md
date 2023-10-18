@@ -26,6 +26,8 @@ As you can see in the example above, all you need to do is embed your SwiftUI vi
 }
 ```
 
+> To learn more about Xcode Preview Canvas, take a look at my ["Mastering SwiftUI previews"](/2021/03/10/mastering-swiftui-previews/) post.
+
 You may want to have a set of previews displaying different states of your view. In this case, you can put as many *#Preview* macros as you want to display more than one preview.
 
 ```swift
