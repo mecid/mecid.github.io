@@ -122,7 +122,7 @@ Whenever you have a search screen displaying search results, you can use the *se
 
 ![empty-state](/public/ContentUnavailableView4.png)
 
-Remember that you should place the *searchable* view modifier under the overlay if you want to extract the text from the search bar otherwise it doesn't personalize the message.
+Remember that you should place the *searchable* view modifier below the overlay if you want to extract the text from the search bar otherwise it doesn't personalize the message.
 
 ```swift
 struct ContentView: View {
