@@ -147,4 +147,4 @@ struct ContentView: View {
 
 You can also provide query into the description manually by using the *search* function of the *ContentUnavailableView* type with a single parameter.
 
-Today, we learned how to use the *ContentUnavailableView* type in SwiftUI to display empty states in a user-friendly manner.
+Today, we learned how to use the *ContentUnavailableView* type in SwiftUI to display empty states in a user-friendly manner. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
