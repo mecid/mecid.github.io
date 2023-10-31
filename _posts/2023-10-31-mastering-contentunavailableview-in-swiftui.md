@@ -23,7 +23,7 @@ struct ContentView: View {
                 if store.products.isEmpty {
                     ContentUnavailableView(
                         "Connection issue",
-                        systemImage: "wifi.slash"
+                        systemImage: "circle"
                     )
                 }
             }
