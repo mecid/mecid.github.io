@@ -2,6 +2,7 @@
 title: Mastering ContentUnavailableView in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/ContentUnavailableView1.png
 ---
 
 SwiftUI introduces the new *ContentUnavailableView* type, allowing us to display empty, error states or any other state where content is unavailable in our apps. This week, we will learn how to use the *ContentUnavailableView* to guide users through empty states of your app.
