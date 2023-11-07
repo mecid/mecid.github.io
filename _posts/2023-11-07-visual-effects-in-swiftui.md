@@ -7,7 +7,16 @@ During WWDC 23, SwiftUI introduced a new view modifier called visualEffect. This
 
 Let's start with the most simple example of using the visualEffect view modifier.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        Text("Hello World!")
+            .visualEffect { initial, geometry in
+                initial.offset(geometry.size)
+            }
+    }
+}
+```
 
 As you can see in the example above, we define a text view and attach the visualEffect view modifier. Whenever you attach the visualEffect view modifier, you should specify the effect closure. This is the place where you apply all the effects that you need.
 
@@ -15,7 +24,20 @@ The effect closure provides you with two parameters. The first is an initial sta
 
 What is a visual effect? The visual effect is anything that can change the visual appearance of the view but doesn't affect its layout. In the previous iterations of the SwiftUI framework, we had view modifiers like scale, offset, blur, contrast, saturation, opacity, rotation, etc. All of them are visual effects and conform to the VisualEffect protocol now. You can use any of them inside the visualEffect closure.
 
-=====================================================
+```swift
+struct ContentView: View {
+    
+    var body: some View {
+        Text("Hello World!")
+            .visualEffect { initial, geometry in
+                initial
+                    .blur(radius: 8)
+                    .opacity(0.9)
+                    .scaleEffect(.init(width: 2, height: 2))
+            }
+    }
+}
+```
 
 Things like frame and padding are not visual effects, and you can't use them inside the visualEffect closure because they modify the layout of the view hierarchy.
 
@@ -23,6 +45,29 @@ The visualEffect view modifier is the new way to do old things. We can modify th
 
 The visualEffect view modifier supports animatable values. So you can continue using it to animate your view's visual appearance depending on its frame and bounds in the view hierarchy that you can access via an instance of the GeometryProxy type.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var isScaled = false
+    
+    var body: some View {
+        VStack {
+            Button("Scale") {
+                isScaled.toggle()
+            }
+            
+            Text("Hello World!")
+                .visualEffect { initial, geometry in
+                    initial.scaleEffect(
+                        CGSize(
+                            width: isScaled ? 2 : 1,
+                            height: isScaled ? 2 : 1
+                        )
+                    )
+                }
+                .animation(.smooth, value: isScaled)
+        }
+    }
+}
+```
 
 Today, we learned about the benefits and usage of the new visualEffect view modifier in SwiftUI. It is not backward compatible with previous versions of Apple platforms, so keep in mind that you can achieve the same effect by using old but gold view modifiers.
