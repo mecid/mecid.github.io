@@ -22,7 +22,7 @@ struct ContentView: View {
 
 As you can see in the example above, we define a text view and attach the *visualEffect* view modifier. Whenever you attach the *visualEffect* view modifier, you should specify the effect closure. This is the place where you apply all the effects that you need.
 
-The effect closure provides you with two parameters. The first is an initial state of the collections of effects attached to the view. This is a plain view without any effects. The second parameter is an instance of the *GeometryProxy* type containing all the layout information you might need, like frame, safe area, etc.
+The effect closure provides you with two parameters. The first is an initial state of the collections of effects attached to the view. This is a plain view without any effects. The second parameter is an instance of the *GeometryProxy* type containing all the layout information of the view you might need, like frame, safe area, etc.
 
 > To learn how to use the *GeometryProxy* type, take a look at my ["Mastering ScrollView in SwiftUI"](/2020/09/24/mastering-scrollview-in-swiftui/) post.
 
