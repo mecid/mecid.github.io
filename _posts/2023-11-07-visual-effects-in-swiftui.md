@@ -2,6 +2,7 @@
 title: Visual effects in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/swiftui.png
 ---
 
 During WWDC 23, SwiftUI introduced a new view modifier called *visualEffect*. This modifier allows us to attach a set of animatable visual effects by accessing layout information of the particular view. This week, we will learn how to use the new *visualEffect* view modifier in SwiftUI.
