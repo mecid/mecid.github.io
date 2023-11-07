@@ -70,4 +70,4 @@ struct ContentView: View {
 }
 ```
 
-Today, we learned about the benefits and usage of the new *visualEffect* view modifier in SwiftUI. It is not backward compatible with previous versions of Apple platforms, so keep in mind that you can achieve the same effect by using old but gold view modifiers.
+Today, we learned about the benefits and usage of the new *visualEffect* view modifier in SwiftUI. It is not backward compatible with previous versions of Apple platforms, so keep in mind that you can achieve the same effect by using old but gold view modifiers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
