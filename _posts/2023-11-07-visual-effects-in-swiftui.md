@@ -24,6 +24,8 @@ As you can see in the example above, we define a text view and attach the *visua
 
 The effect closure provides you with two parameters. The first is an initial state of the collections of effects attached to the view. This is a plain view without any effects. The second parameter is an instance of the *GeometryProxy* type containing all the layout information you might need, like frame, safe area, etc.
 
+> To learn how to use the *GeometryProxy* type, take a look at my ["Mastering ScrollView in SwiftUI"](/2020/09/24/mastering-scrollview-in-swiftui/) post.
+
 What is a visual effect? The visual effect is anything that can change the visual appearance of the view but doesn't affect its layout. In the previous iterations of the SwiftUI framework, we had view modifiers like *scale*, *offset*, *blur*, *contrast*, *saturation*, *opacity*, *rotation*, etc. All of them are visual effects and conform to the *VisualEffect* protocol now. You can use any of them inside the *visualEffect* closure.
 
 ```swift
