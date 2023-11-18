@@ -214,3 +214,8 @@ struct MyApp: App {
 ```
 
 Today we started the series of posts about StoreKit 2. As you can see, it is really easy to use and it handle a bunch of use-cases out of the box for you. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
+1. Mastering StoreKit 2
+2. [Mastering StoreKit 2. ProductView and StoreView in SwiftUI.](/2023/08/08/mastering-storekit2-productview-in-swiftui/)
+3. [Mastering StoreKit 2. SubscriptionStoreView in SwiftUI](/2023/08/23/mastering-storekit2-subscriptionstoreview-in-swiftui/)
+4. [Mastering StoreKit 2. SwiftUI view modifiers.](/2023/08/29/mastering-storekit2-swiftui-view-modifiers/)
