@@ -33,7 +33,7 @@ struct ContentView: View {
 
 As you can see in the example above, we have a view hierarchy with a button and two views placed in the vertical stack. We attach the *animation* view modifier to the whole stack to animate any change inside. 
 
-When we press the button, the stack animates any changes inside. Still, the *animation* view modifier doesn't connect to the *animating* property, which means it will animate any change that can happen. Some of these changes can be unexpected, like environmental value change.
+When we press the button, the stack animates any changes inside. Still, the *animation* view modifier doesn't connect to the *isHidden* property, which means it will animate any change that can happen. Some of these changes can be unexpected, like environmental value change.
 
 We can eliminate unexpected animations by using another version of the *animation* view modifier where we can bind to a particular value and animate only when the value changes.
 
