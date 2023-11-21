@@ -59,7 +59,7 @@ struct ContentView: View {
 
 In the example above, we use the *animation* view modifier with the *value* parameter. It allows us to scope the animation to a single value and animate changes only correlated with the particular value. In this case, we don't have any unexpected animations.
 
-What if we have more than one animatable property? We must attach an *animation* modifier for every animatable property in this case. This solution works very well but has a few issues on the ergonomic side.
+What if we have more than one animatable property? We must attach an *animation* modifier for every animatable property in this case. This solution works very well but has a downside on the ergonomic side.
 
 ```swift
 struct ContentView: View {
