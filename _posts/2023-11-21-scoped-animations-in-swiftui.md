@@ -119,6 +119,33 @@ As you can see in the example above, we use the *animation* view modifier by pro
 As a starting point, the *ViewBuilder* closure provides a single parameter, the placeholder for the view where you have applied the *animation* view modifier. It is safe to apply any view modifiers to your view inside the *ViewBuilder* closure and expect animation only for this code block.
 
 ```swift
+struct ContentView: View {
+    @State private var firstStep = false
+    @State private var secondStep = false
+    
+    var body: some View {
+        VStack {
+            Button("Animate") {
+                Task {
+                    firstStep.toggle()
+                    try? await Task.sleep(nanoseconds: 1_000_000_000)
+                    secondStep.toggle()
+                }
+            }
+            
+            // other views here
+            
+            SomeView()
+                .transaction { t in
+                    t.animation = t.animation?.speed(2)
+                } body: { content in
+                    content
+                        .opacity(firstStep ? 1.0 : 0.0)
+                        .blur(radius: secondStep ? 0 : 20.0)
+                }
+        }
+    }
+}
 ```
 
 As you can see, SwiftUI provides a similar way to maintain scoped transactions in the view hierarchy.
