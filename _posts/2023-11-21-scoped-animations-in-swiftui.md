@@ -2,6 +2,7 @@
 title: Scoped animations in SwiftUI
 layout: post
 category: Interactions
+image: /public/wwdc23.jpg
 ---
 
 Animations were the most powerful feature of SwiftUI from day one. You can quickly build fluid animations in SwiftUI. The only downside was how we control animations whenever we need to run multi-step animation or scope the animation to a particular part of the view hierarchy.
