@@ -154,4 +154,6 @@ struct ContentView: View {
 
 As you can see, SwiftUI provides a similar way to maintain scoped transactions in the view hierarchy.
 
+> To learn more about transactions in SwiftUI, take a look at my dedicated ["Transactions in SwiftUI"](/2020/10/07/transactions-in-swiftui/) post.
+
 This week, we have learned about a new approach for building precise and scoped animations in SwiftUI. Remember that it is available only on the latest platforms and is not backward compatible.
