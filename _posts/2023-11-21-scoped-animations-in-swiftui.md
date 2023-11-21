@@ -88,7 +88,7 @@ struct ContentView: View {
 }
 ```
 
-Fortunately, SwiftUI introduced a new variant of the animation view modifier, allowing us to scope animations using a *ViewBuilder* closure.
+Fortunately, SwiftUI introduced a new variant of the *animation* view modifier, allowing us to scope animations using a *ViewBuilder* closure.
 
 ```swift
 struct ContentView: View {
@@ -156,4 +156,4 @@ As you can see, SwiftUI provides a similar way to maintain scoped transactions i
 
 > To learn more about transactions in SwiftUI, take a look at my dedicated ["Transactions in SwiftUI"](/2020/10/07/transactions-in-swiftui/) post.
 
-This week, we have learned about a new approach for building precise and scoped animations in SwiftUI. Remember that it is available only on the latest platforms and is not backward compatible.
+This week, we have learned about a new approach for building precise and scoped animations in SwiftUI. Remember that it is available only on the latest platforms and is not backward compatible. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
