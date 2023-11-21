@@ -7,6 +7,8 @@ image: /public/swiftui.png
 
 During WWDC 23, SwiftUI introduced a new view modifier called *visualEffect*. This modifier allows us to attach a set of animatable visual effects by accessing layout information of the particular view. This week, we will learn how to use the new *visualEffect* view modifier in SwiftUI.
 
+{% include friends.html %}
+
 Let's start with the most simple example of using the *visualEffect* view modifier.
 
 ```swift

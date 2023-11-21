@@ -7,6 +7,8 @@ image: /public/ContentUnavailableView4.png
 
 SwiftUI introduces the new *ContentUnavailableView* type, allowing us to display empty, error states or any other state where content is unavailable in our apps. This week, we will learn how to use the *ContentUnavailableView* to guide users through empty states of your app.
 
+{% include friends.html %}
+
 Let's start with the very first example showing the basic usage of the *ContentUnavailableView* view.
 
 ```swift
