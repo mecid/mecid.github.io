@@ -7,7 +7,7 @@ MapKit integration with SwiftUI significantly changed this year. In the previous
 
 As I said before, in the previous versions of the SwiftUI framework, we had a *Map* view providing us with basic functionality for MapKit, which is deprecated now. Using the deprecated Map view still makes sense whenever you target previous versions of Apple platforms.
 
-> To learn more about the old MapKit integration with SwiftUI, take a look at my dedicated "Using MapKit with SwiftUI" post.
+> To learn more about the old MapKit integration with SwiftUI, take a look at my dedicated ["Using MapKit with SwiftUI"](/2020/07/29/using-mapkit-with-swiftui/) post.
 
 The new MapKit API introduces the *MapContentBuilder* result builder that looks similar to the *ViewBuilder* but instead uses the types conforming to the *MapContent* protocol. Let's start with the basic example of using the new MapKit APIs in SwiftUI.
 
