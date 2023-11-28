@@ -57,6 +57,8 @@ struct ContentView: View {
 
 As you can see in the example above, we define the map and place the content on it by using the *MapContentBuilder* closure. The *MapContentBuilder* type works with any type conforming to the *MapContent* protocol. 
 
+![map-with-markers](/public/map3.png)
+
 In our example, we use *Marker* and *Annotation* types. The *Marker* is the essential item that allows us to place a predefined pin on the map. The *Annotation* type is more advanced and will enable us to place a SwiftUI on the map using the latitude and longitude.
 
 SwiftUI provides us with a bunch of types conforming to the *MapContent* protocol. We already used two of them: *Marker* and *Annotation*. Many of them include *MapCircle*, *MapPolygon*, *MapPolyline*, *UserAnnotation*, etc.
