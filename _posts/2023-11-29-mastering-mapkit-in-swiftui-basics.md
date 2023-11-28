@@ -1,6 +1,7 @@
 ---
 title: Mastering MapKit in SwiftUI. Basics
 layout: post
+category: Mastering SwiftUI views
 ---
 
 MapKit integration with SwiftUI significantly changed this year. In the previous version of SwiftUI, we had very basic functionality of *MKMapView* wrapped into the SwiftUI view named *Map*. Fortunately, things changed, and SwiftUI introduced a new API for MapKit integration. This week, we will learn how to use the new full-featured APIs available in the latest iteration of SwiftUI to integrate with MapKit.
