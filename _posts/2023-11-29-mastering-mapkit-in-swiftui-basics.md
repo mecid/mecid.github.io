@@ -65,6 +65,28 @@ In our example, we use *Marker* and *Annotation* types. The *Marker* is the esse
 
 SwiftUI provides us with a bunch of types conforming to the *MapContent* protocol. We already used two of them: *Marker* and *Annotation*. Many of them include *MapCircle*, *MapPolygon*, *MapPolyline*, *UserAnnotation*, etc.
 
+```swift
+struct ContentView: View {
+    var body: some View {
+        Map {
+            Annotation("Seattle", coordinate: .seattle) {
+                Image(systemName: "mappin")
+                    .foregroundStyle(.black)
+                    .padding()
+                    .background(.red)
+                    .clipShape(Circle())
+            }
+            
+            Marker(coordinate: .newYork) {
+                Label("New York", systemImage: "mappin")
+            }
+            
+            UserAnnotation()
+        }
+    }
+}
+```
+
 You can control the initial position of the map by using another overload of the Map initializer that provides the *initialPosition* parameter.
 
 ```swift
