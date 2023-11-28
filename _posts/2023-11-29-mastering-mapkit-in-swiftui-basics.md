@@ -135,4 +135,4 @@ struct ContentView: View {
 
 You can control the types of interactions allowed with the map by using the *interactionModes* parameters. The *MapInteractionModes* type defines a set of interactions like *pan*, *pitch*, *rotate* and *zoom*. By default, it enables all the available interaction types.
 
-Today, we learned the basics of the MapKit integration in SwiftUI. We will continue the topic in the upcoming weeks by covering camera manipulations, map controls, and other advanced topics.
+Today, we learned the basics of the MapKit integration in SwiftUI. We will continue the topic in the upcoming weeks by covering camera manipulations, map controls, and other advanced topics. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
