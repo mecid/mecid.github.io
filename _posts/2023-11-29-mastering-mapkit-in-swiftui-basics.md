@@ -11,7 +11,47 @@ As I said before, in the previous versions of the SwiftUI framework, we had a Ma
 
 The new MapKit API introduces the MapContentBuilder result builder that looks similar to the ViewBuilder but instead uses the types conforming to the MapContent protocol. Let's start with the basic example of using the new MapKit APIs in SwiftUI.
 
-=====================================================
+```swift
+import MapKit
+import SwiftUI
+
+extension CLLocationCoordinate2D {
+    static let newYork: Self = .init(
+        latitude: 40.730610,
+        longitude: -73.935242
+    )
+    
+    static let seattle: Self = .init(
+        latitude: 47.608013,
+        longitude: -122.335167
+    )
+    
+    static let sanFrancisco: Self = .init(
+        latitude: 37.733795,
+        longitude: -122.446747
+    )
+}
+
+struct ContentView: View {
+    var body: some View {
+        Map {
+            Annotation("Seattle", coordinate: .seattle) {
+                Image(systemName: "mappin")
+                    .foregroundStyle(.black)
+                    .padding()
+                    .background(.red)
+                    .clipShape(Circle())
+            }
+            
+            Marker(coordinate: .newYork) {
+                Label("New York", systemImage: "mappin")
+            }
+            
+            Marker("San Francisco", monogram: Text("SF"), coordinate: .sanFrancisco)
+        }
+    }
+}
+```
 
 As you can see in the example above, we define the map and place the content on it by using the MapContentBuilder closure. The MapContentBuilder type works with any type conforming to the MapContent protocol. 
 
@@ -21,18 +61,72 @@ SwiftUI provides us with a bunch of types conforming to the MapContent protocol.
 
 You can control the initial position of the map by using another overload of the Map initializer that provides the initialPosition parameter.
 
-=====================================================
+```swift
+struct ContentView: View {
+    let initialPosition: MapCameraPosition = .userLocation(
+        fallback: .camera(
+            MapCamera(centerCoordinate: .newYork, distance: 0)
+        )
+    )
+    
+    var body: some View {
+        Map(initialPosition: initialPosition) {
+            Annotation("Seattle", coordinate: .seattle) {
+                Image(systemName: "mappin")
+                    .foregroundStyle(.black)
+                    .padding()
+                    .background(.red)
+                    .clipShape(Circle())
+            }
+            
+            Marker(coordinate: .newYork) {
+                Label("New York", systemImage: "mappin")
+            }
+            
+            Marker("San Francisco", monogram: Text("SF"), coordinate: .sanFrancisco)
+        }
+    }
+}
+```
 
 The initialPosition parameter takes an instance of the MapCameraPosition type. The MapCameraPosition allows us to define the map position in a few ways. It can be the user location that we use in our example, or you can point it to any area on the map using the camera, region, rect, or item static functions. By default, it uses the automatic instance of the MapCameraPosition type that fits the map content.
 
 Whenever you need constant control over the camera position, you can use another overload of the Map initializer, allowing you to provide two-way binding to the map camera position.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var position: MapCameraPosition = .userLocation(
+        fallback: .camera(
+            MapCamera(centerCoordinate: .newYork, distance: 0)
+        )
+    )
+    
+    var body: some View {
+        Map(position: $position) {
+            // ...
+        }
+    }
+}
+```
 
 SwiftUI updates the position binding once the user drags the map. It also updates the map camera position as soon as you update the position property programmatically.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var position: MapCameraPosition = .userLocation(
+        fallback: .camera(
+            MapCamera(centerCoordinate: .newYork, distance: 0)
+        )
+    )
+    
+    var body: some View {
+        Map(position: $position, interactionModes: .pitch) {
+            // ...
+        }
+    }
+}
+```
 
-You can control the types of interactions allowed with the map by using the interactionModes parameters. The MapInteractionModes type defines a set of interactions like pan, zoom and all. By default, it enables all the available interaction types.
+You can control the types of interactions allowed with the map by using the interactionModes parameters. The MapInteractionModes type defines a set of interactions like pan, pitch, rotate and zoom. By default, it enables all the available interaction types.
 
 Today, we learned the basics of the MapKit integration in SwiftUI. We will continue the topic in the upcoming weeks by covering camera manipulations, map controls, and other advanced topics.
