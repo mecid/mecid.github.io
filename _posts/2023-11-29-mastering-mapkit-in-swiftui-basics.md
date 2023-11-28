@@ -7,6 +7,8 @@ image: /public/map2.png
 
 MapKit integration with SwiftUI significantly changed this year. In the previous version of SwiftUI, we had very basic functionality of *MKMapView* wrapped into the SwiftUI view named *Map*. Fortunately, things changed, and SwiftUI introduced a new API for MapKit integration. This week, we will learn how to use the new full-featured APIs available in the latest iteration of SwiftUI to integrate with MapKit.
 
+{% include friends.html %}
+
 As I said before, in the previous versions of the SwiftUI framework, we had a *Map* view providing us with basic functionality for MapKit, which is deprecated now. Using the deprecated Map view still makes sense whenever you target previous versions of Apple platforms.
 
 > To learn more about the old MapKit integration with SwiftUI, take a look at my dedicated ["Using MapKit with SwiftUI"](/2020/07/29/using-mapkit-with-swiftui/) post.
