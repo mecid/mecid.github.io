@@ -1,5 +1,5 @@
 ---
-title: Mastering StoreKit 2. SubscriptionStoreView in SwiftUI
+title: Mastering StoreKit 2. SubscriptionStoreView in SwiftUI.
 layout: post
 category: StoreKit
 image: /public/subs3.png
