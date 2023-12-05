@@ -25,6 +25,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the mapStyle view modifier with the imagery style and realistic elevation. Another option for the elevation parameter of the imagery style is flat.
 
+![imagery-map](/public/map4.png)
+
 SwiftUI provides us with a set of predefined and configurable map styles. In the previous example, we used a style called imagery. By default, the SwiftUI framework uses the standard style. The standard style allows us to configure the elevation of the map, points of interest we want to include or exclude from the map, and whenever we need to show traffic.
 
 ```swift
