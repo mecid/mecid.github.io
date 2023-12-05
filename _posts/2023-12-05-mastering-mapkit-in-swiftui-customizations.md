@@ -139,4 +139,5 @@ struct MapScopeExample: View {
 }
 ```
 
-Today, we learned how to customize map presentation in SwiftUI. SwiftUI provides a flexible and easy-to-use API for configuring map controls, styles, and interaction modes.
+Today, we learned how to customize map presentation in SwiftUI. SwiftUI provides a flexible and easy-to-use API for configuring map controls, styles, and interaction modes. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
