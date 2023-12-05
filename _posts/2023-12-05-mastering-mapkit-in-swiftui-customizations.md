@@ -1,6 +1,7 @@
 ---
 title: Mastering MapKit in SwiftUI. Customizations.
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Last week, we started a series of posts about the new MapKit API in SwiftUI. We talked about the basics of the new API, and now we can continue the topic by covering the customization part of new APIs. This week, we will learn the customization points of MapKit API in SwiftUI.
