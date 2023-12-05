@@ -119,8 +119,7 @@ struct MapScopeExample: View {
     }
 }
 ```
-
-You can also use the *mapControlVisibility* view modifier when you need to change the automatic visibility configuration to always visible or hidden.
+As you can see in the example above, we use *Namespace* property wrapper to generate a map identifier to bind controls to the map instance. You can also use the *mapControlVisibility* view modifier when you need to change the automatic visibility configuration to always visible or hidden.
 
 ```swift
 struct MapScopeExample: View {
