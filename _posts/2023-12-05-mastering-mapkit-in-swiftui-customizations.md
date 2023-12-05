@@ -10,7 +10,7 @@ Last week, we started a series of posts about the new MapKit API in SwiftUI. We 
 {% include friends.html %}
 
 #### Map style
-The new MapKit API introduces the mapStyle view modifier, allowing us to customize the style of the data presented on the map.
+The new MapKit API introduces the *mapStyle* view modifier, allowing us to customize the style of the data presented on the map.
 
 ```swift
 struct ContentView: View {
@@ -23,11 +23,11 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the mapStyle view modifier with the imagery style and realistic elevation. Another option for the elevation parameter of the imagery style is flat.
+As you can see in the example above, we use the *mapStyle* view modifier with the *imagery* style and realistic elevation. Another option for the elevation parameter of the imagery style is flat.
 
 ![imagery-map](/public/map4.png)
 
-SwiftUI provides us with a set of predefined and configurable map styles. In the previous example, we used a style called imagery. By default, the SwiftUI framework uses the standard style. The standard style allows us to configure the elevation of the map, points of interest we want to include or exclude from the map, and whenever we need to show traffic.
+SwiftUI provides us with a set of predefined and configurable map styles. In the previous example, we used a style called *imagery*. By default, the SwiftUI framework uses the *standard* style. The standard style allows us to configure the elevation of the map, points of interest we want to include or exclude from the map, and whenever we need to show traffic.
 
 ```swift
 struct ContentView: View {
@@ -46,7 +46,7 @@ struct ContentView: View {
 }
 ```
 
-Another option is the hybrid style, allowing us to display imagery, roads, and road names on the map. The hybrid style also configures elevation, traffic, and points of interest.
+Another option is the *hybrid* style, allowing us to display imagery, roads, and road names on the map. The hybrid style also configures elevation, traffic, and points of interest.
 
 ```swift
 struct ContentView: View {
@@ -66,7 +66,7 @@ struct ContentView: View {
 ```
 
 #### Map interactions
-MapKit supports different types of interactions with the map. You can zoom, pan, pitch, and rotate the content on the map. By default, SwiftUI activates all of the available gestures. But you can easily limit available interactions to the list of the preferred ones.
+MapKit supports different types of interactions with the map. You can *zoom*, *pan*, *pitch*, and *rotate* the content on the map. By default, SwiftUI activates all of the available gestures. But you can easily limit available interactions to the list of the preferred ones.
 
 ```swift
 struct ContentView: View {
@@ -79,7 +79,7 @@ struct ContentView: View {
 ```
 
 #### Map controls
-Whenever you import MapKit in pair with SwiftUI, you will get access to the particular SwiftUI views you can use as map controls. These views include MapScaleView, MapCompass, MapPitchToggle, MapUserLocationButton, and MapZoomStepper views.
+Whenever you import MapKit in pair with SwiftUI, you will get access to the particular SwiftUI views you can use as map controls. These views include *MapScaleView*, *MapCompass*, *MapPitchToggle*, *MapUserLocationButton*, and *MapZoomStepper* views.
 
 ```swift
 struct ContentView: View {
@@ -95,11 +95,11 @@ struct ContentView: View {
 }
 ```
 
-You can use these views in pair with the mapControls view modifier to specify controls for any map instances sharing the same environment in the SwiftUI view hierarchy.
+You can use these views in pair with the *mapControls* view modifier to specify controls for any map instances sharing the same environment in the SwiftUI view hierarchy.
 
-Whenever you place MapScaleView or MapCompass views inside the mapControls view modifier, you allow SwiftUI to control the placement of the map controls. In this case, SwiftUI decides the placement of the control depending on the platform running the app.
+Whenever you place *MapScaleView* or *MapCompass* views inside the *mapControls* view modifier, you allow SwiftUI to control the placement of the map controls. In this case, SwiftUI decides the placement of the control depending on the platform running the app.
 
-As you may have noticed, MapScaleView and other map controls are simple SwiftUI views, which means you can use them outside of the mapControls view modifier anywhere you want. In this case, to bind a map control to a particular map instance, you should use the mapScope view modifier.
+As you may have noticed, *MapScaleView* and other map controls are simple SwiftUI views, which means you can use them outside of the *mapControls* view modifier anywhere you want. In this case, to bind a map control to a particular map instance, you should use the *mapScope* view modifier.
 
 ```swift
 struct MapScopeExample: View {
@@ -120,7 +120,7 @@ struct MapScopeExample: View {
 }
 ```
 
-You can also use the mapControlVisibility view modifier when you need to change the automatic visibility configuration to always visible or hidden.
+You can also use the *mapControlVisibility* view modifier when you need to change the automatic visibility configuration to always visible or hidden.
 
 ```swift
 struct MapScopeExample: View {
