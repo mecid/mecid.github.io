@@ -20,3 +20,26 @@
   padding: 24px 16px 16px 16px;
   font-size: 85%;
 }
+
+.friends {
+  position: relative;
+   &::before {
+    content: "FRIEND";
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    color: #fff;
+    background-color: $swift;
+    border-radius: 4px;
+    height: 20px;
+    left: 20px;
+    top:-10px;
+  }
+
+  border: 2px solid $swift;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  padding: 24px 16px 16px 16px;
+  font-size: 85%;
+}
