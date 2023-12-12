@@ -101,7 +101,10 @@ We can also use the *MapCameraPosition* type to ask for a map view to follow the
 
 ```swift
 struct ContentView: View {
-    @State private var position: MapCameraPosition = .automatic
+    @State private var position: MapCameraPosition = .userLocation(
+        followsHeading: true,
+        fallback: .rect(rect)
+    )
     
     var body: some View {
         Map(
@@ -113,15 +116,6 @@ struct ContentView: View {
             )
         ) {
             Marker("New York", monogram: Text("NY"), coordinate: .newYork)
-        }
-        .onChange(of: position) {
-            print(position.positionedByUser)
-            print(position.camera)
-            print(position.region)
-            print(position.rect)
-        }
-        .onAppear {
-            position = .camera(.init(centerCoordinate: .newYork, distance: 0))
         }
     }
 }
