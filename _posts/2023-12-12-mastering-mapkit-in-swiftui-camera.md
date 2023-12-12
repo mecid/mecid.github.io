@@ -32,7 +32,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *MKMapRect* type to define the visible bounds of the map. To create an instance of the *MKMapRect* type, we should call the initializer with *origin* and *size* parameters. We can use any instance of the *CLLocationCoordinate2D* type to define an origin point. The second parameter must be an instance of the *MKMapSize*, representing the width and height in map points.
+As you can see in the example above, we use the *MKMapRect* type to define the visible bounds of the map that user can't leave by using any interaction.
+
+ To create an instance of the *MKMapRect* type, we should call the initializer with *origin* and *size* parameters. We can use any instance of the *CLLocationCoordinate2D* type to define an origin point. The second parameter must be an instance of the *MKMapSize*, representing the width and height in map points.
 
 Now, we can use an instance of the *MKMapRect* type to pass into the initializer of the *MapCameraBounds* type to limit our map to a particular rectangle. We can also allow users to zoom in or out to a limited amount of meters using *maximumDistance* and *minimumDistance* parameters of the *MapCameraBounds* initializer.
 
