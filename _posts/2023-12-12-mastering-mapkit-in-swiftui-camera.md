@@ -72,11 +72,8 @@ The MapKit provides the *MapCameraPosition* type that we can use for two-way bin
 
 ```swift
 struct ContentView: View {
-    @State private var position: MapCameraPosition = .rect(
-        MKMapRect(
-            origin: MKMapPoint(.newYork),
-            size: MKMapSize(width: 1, height: 1)
-        )
+    @State private var position: MapCameraPosition = .camera(
+        .init(centerCoordinate: .newYork, distance: 0)
     )
     
     var body: some View {
@@ -125,7 +122,12 @@ As I said before, we can use *MapCameraPosition* for two-way binding, which mean
 
 ```swift
 struct ContentView: View {
-    @State private var position: MapCameraPosition = .automatic
+    @State private var position: MapCameraPosition = .rect(
+        MKMapRect(
+            origin: MKMapPoint(.newYork),
+            size: MKMapSize(width: 1, height: 1)
+        )
+    )
     
     var body: some View {
         Map(
