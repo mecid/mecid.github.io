@@ -161,3 +161,4 @@ Today, we learned the basics of the MapKit integration in SwiftUI. We will conti
 
 1. Mastering MapKit in SwiftUI. Basics.
 2. [Mastering MapKit in SwiftUI. Customizations.](/2023/12/05/mastering-mapkit-in-swiftui-customizations/)
+3. [Mastering MapKit in SwiftUI. Camera.](/2023/12/12/mastering-mapkit-in-swiftui-camera/)
