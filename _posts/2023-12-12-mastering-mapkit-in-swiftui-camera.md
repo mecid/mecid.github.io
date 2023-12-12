@@ -5,6 +5,8 @@ layout: post
 
 In this post, we will continue the topic of the new MapKit API in SwiftUI. We will cover one of the most critical cases of displaying a map. This week, we will learn about camera position and map bounds.
 
+{% include friends.html %}
+
 #### Map bounds
 The new MapKit API introduces the MapCameraBounds type, allowing us to limit the bounds of the map view. The MapCameraBounds type has a few initializers that we can use to create camera bounds from the instance of MKMapRect or MKCoordinateRegion.
 
