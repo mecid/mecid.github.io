@@ -145,3 +145,4 @@ Today, we learned how to customize map presentation in SwiftUI. SwiftUI provides
 
 1. [Mastering MapKit in SwiftUI. Basics.](/2023/11/28/mastering-mapkit-in-swiftui-basics/)
 2. Mastering MapKit in SwiftUI. Customizations.
+3. [Mastering MapKit in SwiftUI. Camera.](/2023/12/12/mastering-mapkit-in-swiftui-camera/)
