@@ -161,3 +161,6 @@ There is also the *positionedByUser* property. It is a boolean value defining wh
 
 Today, we learned how to manage the map camera position using the new *MapCameraPosition* type, part of the new rich MapKit API. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
+1. [Mastering MapKit in SwiftUI. Basics.](/2023/11/28/mastering-mapkit-in-swiftui-basics/)
+2. [Mastering MapKit in SwiftUI. Customizations.](/2023/12/05/mastering-mapkit-in-swiftui-customizations/)
+3. Mastering MapKit in SwiftUI. Camera.
