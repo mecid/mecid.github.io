@@ -2,6 +2,7 @@
 title: Mastering MapKit in SwiftUI. Camera.
 layout: post
 image: /public/map2.png
+category: Mastering SwiftUI views
 ---
 
 In this post, we will continue the topic of the new MapKit API in SwiftUI. We will cover one of the most critical cases of displaying a map. This week, we will learn about camera position and map bounds.
