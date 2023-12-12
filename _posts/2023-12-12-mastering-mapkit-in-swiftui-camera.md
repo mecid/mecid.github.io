@@ -159,4 +159,5 @@ As you can see in the example above, we use an instance of the *MapCameraPositio
 
 There is also the *positionedByUser* property. It is a boolean value defining whenever the camera is positioned by the user or positioned by the developer programmatically.
 
-Today, we learned how to manage the map camera position using the new *MapCameraPosition* type, part of the new rich MapKit API.
+Today, we learned how to manage the map camera position using the new *MapCameraPosition* type, part of the new rich MapKit API. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
