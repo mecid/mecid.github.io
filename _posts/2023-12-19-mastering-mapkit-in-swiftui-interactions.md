@@ -150,3 +150,8 @@ struct ContentView: View {
 In the example above, we define a state property to store the currently selected value of the map. We also annotate our markers using the *tag* view modifier. Remember that the type of the *selection* property must be the same as the *tag* you provide to the map content.
 
 Today, we learned how to handle interactions on the map using the set of new view modifiers which is the part of the new rich MapKit API in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
+1. [Mastering MapKit in SwiftUI. Basics.](/2023/11/28/mastering-mapkit-in-swiftui-basics/)
+2. [Mastering MapKit in SwiftUI. Customizations.](/2023/12/05/mastering-mapkit-in-swiftui-customizations/)
+3. [Mastering MapKit in SwiftUI. Camera.](/2023/12/12/mastering-mapkit-in-swiftui-camera/)
+4. Mastering MapKit in SwiftUI. Interactions.
