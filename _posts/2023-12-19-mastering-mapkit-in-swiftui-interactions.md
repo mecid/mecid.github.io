@@ -118,7 +118,7 @@ The second parameter of the *mapCameraKeyframeAnimator* view modifier is the *Ke
 
 As you can see, we can animate all the properties of the *MapCamera* type. In our example, we animate the map camera's center location and distance. The *KeyframesBuilder* closure also provides us with the initial value of the map camera, allowing us to read the value of the map camera before animation. 
 
-Last, the topic to cover is the map selection feature. The Map view provides an initializer with a *selection* parameter, allowing us to offer a two-way binding for map content selection.
+Last, the topic to cover is the map selection feature. The *Map* view provides an initializer with a *selection* parameter, allowing us to offer a two-way binding for map content selection.
 
 ```swift
 struct ContentView: View {
