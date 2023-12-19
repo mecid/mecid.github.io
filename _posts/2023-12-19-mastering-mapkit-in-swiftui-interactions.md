@@ -50,7 +50,9 @@ struct ContentView: View {
 }
 ```
 
-In the example above, we use the *onMapCameraChange* view modifier to track camera changes as soon as the camera position changes. MapKit API allows us to set the frequency of the *onMapCameraChange* listener by passing an instance of the *MapCameraUpdateFrequency* type. The *MapCameraUpdateFrequency* enum provides us with two options: *continuous* and *onEnd*. The first defines nearly real-time changes in the camera position. The second fires whenever the camera position drags finish.
+In the example above, we use the *onMapCameraChange* view modifier to track camera changes as soon as the camera position changes. MapKit API allows us to set the frequency of the *onMapCameraChange* listener by passing an instance of the *MapCameraUpdateFrequency* type.
+
+The *MapCameraUpdateFrequency* enum provides us with two options: *continuous* and *onEnd*. The first defines nearly real-time changes in the camera position. The second fires whenever the camera position drags finish.
 
 ```swift
 struct ContentView: View {
