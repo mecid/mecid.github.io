@@ -87,7 +87,7 @@ struct ContentView: View {
     )
     
     var body: some View {
-        Map(position: $position, selection: $selection) {
+        Map(position: $position) {
             Marker("New York", monogram: Text("NY"), coordinate: .newYork)
             Marker("Seattle", monogram: Text("SE"), coordinate: .seattle)
             Marker("San Francisco", monogram: Text("SF"), coordinate: .sanFrancisco)
