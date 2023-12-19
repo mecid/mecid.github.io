@@ -5,6 +5,8 @@ layout: post
 
 MapKit provides us with a very rich API as part of the next iteration of the SwiftUI framework. This week, we will continue the topic by learning how to handle interactions using the new MapKit API in SwiftUI.
 
+{% include friends.html %}
+
 In the previous post, we discussed the map view's camera position. Let me update your memory with the quick code example.
 
 ```swift
