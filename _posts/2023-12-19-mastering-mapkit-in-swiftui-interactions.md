@@ -1,6 +1,7 @@
 ---
 title: Mastering MapKit in SwiftUI. Interactions.
 layout: post
+image: /public/map2.png
 ---
 
 MapKit provides us with a very rich API as part of the next iteration of the SwiftUI framework. This week, we will continue the topic by learning how to handle interactions using the new MapKit API in SwiftUI.
