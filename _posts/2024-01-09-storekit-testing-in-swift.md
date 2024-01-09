@@ -115,3 +115,5 @@ try session.approveAskToBuyTransaction(identifier: UInt(approved.id))
 ```
 
 As you can see in the example above, we use an instance of the SKTestSession type to simulate ask-to-buy and verify the behavior of our app while the purchase is approved or declined.
+
+This week, we learned how to use the StoreKitTest framework to verify how our app handles in-app purchases and user flows like refunds, ask-to-buy, and subscription expiration. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
