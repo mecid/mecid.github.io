@@ -13,6 +13,8 @@ The StoreKitTest framework allows us to write tests for in-app product purchasin
 
 The StoreKitTest framework provides us with the *SKTestSession* type. Using an instance of the *SKTestSession* type, we can purchase in-app products, manage transactions, refund and expire subscriptions, etc.
 
+> To learn more about the basics of the StoreKit 2, take a look at my ["Mastering StoreKit 2"](/2023/08/01/mastering-storekit2/) post.
+
 Let's start by creating a test case for our StoreKit-related features. I usually have a type called *SettingsStore*, which defines user configuration and handles in-app purchases. We will cover the in-app purchase management part of the *SettingsStore* with tests by using the StoreKitTest framework.
 
 ```swift
