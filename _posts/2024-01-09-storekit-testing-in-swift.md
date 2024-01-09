@@ -113,3 +113,5 @@ let approved = store.pendingTrancations.first?.id ?? 0
 try session.approveAskToBuyTransaction(identifier: UInt(approved.id))
 // verify purchase ...
 ```
+
+As you can see in the example above, we use an instance of the SKTestSession type to simulate ask-to-buy and verify the behavior of our app while the purchase is approved or declined.
