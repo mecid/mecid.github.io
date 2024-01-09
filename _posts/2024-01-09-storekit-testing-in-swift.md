@@ -7,6 +7,8 @@ category: StoreKit
 
 The second iteration of the StoreKit framework was the most significant change in my apps during the last few years. The recent version of the StoreKit framework has fully adopted Swift language features like *async* and *await*. This week, we will talk about the StoreKitTest framework, which is not a part of StoreKit 2 but is tightly coupled with it.
 
+{% include friends.html %}
+
 The StoreKitTest framework allows us to write tests for in-app product purchasing, refunding, and restoring features. You can cover almost every aspect of the in-app purchase with tests using the StoreKitTest framework. Before starting, you should create a StoreKit Configuration File.
 
 The StoreKitTest framework provides us with the *SKTestSession* type. Using an instance of the *SKTestSession* type, we can purchase in-app products, manage transactions, refund and expire subscriptions, etc.
