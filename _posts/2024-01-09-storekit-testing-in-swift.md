@@ -44,11 +44,12 @@ Now, we can use our *SettingsStore* type to purchase products and process subscr
         session.disableDialogs = true
         session.clearTransactions()
         
+        try await session.buyProduct(identifier: "annual")
+        
         guard let product = try await Product.products(for: ["annual"]).first else {
             return XCTFail("Can't load products...")
         }
         
-        await store.purchase(product)
         let status = try await product.subscription?.status ?? []
         await store.processSubscriptionStatus(status)
         
