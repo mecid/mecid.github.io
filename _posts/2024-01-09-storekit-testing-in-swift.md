@@ -1,6 +1,8 @@
 ---
 title: StoreKit testing in Swift
 layout: post
+category: StoreKit
+
 ---
 
 The second iteration of the StoreKit framework was the most significant change in my apps during the last few years. The recent version of the StoreKit framework has fully adopted Swift language features like *async* and *await*. This week, we will talk about the StoreKitTest framework, which is not a part of StoreKit 2 but is tightly coupled with it.
