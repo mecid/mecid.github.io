@@ -112,3 +112,4 @@ Today, we learned how to query StoreKit 2 from SwiftUI views using brand-new vie
 2. [Mastering StoreKit 2. ProductView and StoreView in SwiftUI.](/2023/08/08/mastering-storekit2-productview-in-swiftui/)
 3. [Mastering StoreKit 2. SubscriptionStoreView in SwiftUI](/2023/08/23/mastering-storekit2-subscriptionstoreview-in-swiftui/)
 4. Mastering StoreKit 2. SwiftUI view modifiers.
+5. [StoreKit testing in Swift](/2024/01/09/storekit-testing-in-swift/)
