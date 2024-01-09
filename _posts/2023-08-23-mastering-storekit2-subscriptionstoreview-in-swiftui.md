@@ -145,3 +145,4 @@ This week we learned about the *SubscriptionStoreView* from StoreKit 2 and how t
 2. [Mastering StoreKit 2. ProductView and StoreView in SwiftUI.](/2023/08/08/mastering-storekit2-productview-in-swiftui/)
 3. Mastering StoreKit 2. SubscriptionStoreView in SwiftUI
 4. [Mastering StoreKit 2. SwiftUI view modifiers.](/2023/08/29/mastering-storekit2-swiftui-view-modifiers/)
+5. [StoreKit testing in Swift](/2024/01/09/storekit-testing-in-swift/)
