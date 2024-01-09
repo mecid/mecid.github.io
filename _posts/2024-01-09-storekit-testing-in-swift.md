@@ -100,7 +100,7 @@ try session.refundTransaction(identifier: UInt(transaction.id))
 // verify refund ...
 ```
 
-For example, you can use the *askToBuyEnabled* property to enable the ask-to-buy feature and then use the *approveAskToBuyTransaction* or *declineAskToBuyTransaction* functions to approve or decline purchases. In this case, the transaction should change from pending to successful.
+You can also use the *askToBuyEnabled* property to enable the ask-to-buy feature and then use the *approveAskToBuyTransaction* or *declineAskToBuyTransaction* functions to approve or decline purchases. In this case, the transaction should change from pending to successful.
 
 ```swift
 session.askToBuyEnabled = true
