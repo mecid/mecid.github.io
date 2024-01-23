@@ -6,6 +6,8 @@ image: /public/visionOS.webp
 
 Apple Vision Pro is coming soon, and it is the perfect time to look at SwiftUI API, which allows us to adapt our apps to the immersive world that visionOS provides us. Apple states that the best way to build an app is with Swift and SwiftUI. This week, we will learn how to use SwiftUI to build a visionOS app.
 
+{% include friends.html %}
+
 #### Windows
 What I love about SwiftUI is how it adapts automatically to the platform. You don't need to do anything to run your app written in SwiftUI on visionOS. It works out of the box. But you can always improve the user experience by going forward and adapting the platform features.
 
