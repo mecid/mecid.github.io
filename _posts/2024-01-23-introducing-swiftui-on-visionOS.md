@@ -1,5 +1,5 @@
 ---
-title: Mastering SwiftUI on visionOS
+title: Introducing SwiftUI on visionOS
 layout: post
 image: /public/visionOS.webp
 ---
