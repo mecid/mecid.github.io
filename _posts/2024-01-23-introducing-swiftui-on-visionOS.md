@@ -9,7 +9,7 @@ Apple Vision Pro is coming soon, and it is the perfect time to look at SwiftUI A
 {% include friends.html %}
 
 #### Windows
-What I love about SwiftUI is how it adapts automatically to the platform. You don't need to do anything to run your app written in SwiftUI on visionOS. It works out of the box. But you can always improve the user experience by going forward and adapting the platform features.
+What I love about SwiftUI is how it automatically adapts to the platform. You don't need to do anything to run your app written in SwiftUI on visionOS. It works out of the box. But you can always improve the user experience by going forward and adapting the platform features.
 
 ```swift
 struct ContentView: View {
