@@ -62,6 +62,8 @@ struct ContentView: View {
 
 The new *ornament* view modifier allows us to create an ornament with a particular anchor point for the window it is connected to. Another option to adapt your app content to the immersive experience that visionOS provides is to use the *transform3DEffect* and *rotation3DEffect* view modifiers to incorporate depth effects.
 
+![visionOS](/public/visionOS.webp)
+
 #### Volumes
 Your apps can display 2D and 3D content side by side in the same scene on visionOS. We can use the RealityKit framework to present 3D content in this case. For example, RealityKit provides us with the *Model3D* SwiftUI view, allowing us to display 3D models from the USDZ or reality files.
 
