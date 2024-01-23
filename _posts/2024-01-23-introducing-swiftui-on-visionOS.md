@@ -40,6 +40,8 @@ struct ContentView: View {
 }
 ```
 
+> To learn more about building apps supporting multiple windows, take a look at my dedicated ["Window management in SwiftUI"](/2022/11/02/window-management-in-swiftui/) post. 
+
 In the example above, we use the new toolbar placement called *bottomOrnament*. Ornament in visionOS is the place outside the window presenting controls connected to the window. You can also create them manually by using the new *ornament* view modifier.
 
 ```swift
