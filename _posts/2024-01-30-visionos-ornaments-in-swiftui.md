@@ -1,6 +1,7 @@
 ---
 title: visionOS ornaments in SwiftUI
 layout: post
+category: visionOS
 ---
 
 The new Apple Vision Pro device is almost here, and SwiftUI is the best way to build a VisionOS app quickly and natively. This week, we will continue the topic of the new SwiftUI APIs that we can use to adapt our apps to visionOS. We will learn about the new user interface component called ornaments.
