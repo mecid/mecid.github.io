@@ -9,7 +9,7 @@ The new Apple Vision Pro device is almost here, and SwiftUI is the best way to b
 
 {% include friends.html %}
 
-In visionOS, an ornament presents controls and information related to a window without crowding or obscuring the window's contents. visionOS uses ornaments to display toolbars, tab bars, etc. But you can build your custom ornaments too. Let's start by creating our first ornament using old but gold TabView.
+In visionOS, an ornament presents controls and information related to a window without crowding or obscuring the window's contents. visionOS uses ornaments to display toolbars, tab bars, etc. But you can build your custom ornaments too. Let's start by creating our first ornament using old but gold *TabView*.
 
 ```swift
 struct ExampleView1: View {
@@ -31,11 +31,11 @@ struct ExampleView1: View {
 
 ![ornament-example](/public/ornament1.png)
 
-As you can see in the example above, we don't do something special. We use the TabView that the SwiftUI framework offers us from the very first version. This is another place where the magic of the declarative framework works seamlessly. SwiftUI automatically adapts its environment and creates an ornament to display the tab bar. We can't control the ornament that the system creates, and it provides us with default behavior while we hover it.
+As you can see in the example above, we don't do something special. We use the *TabView* that the SwiftUI framework offers us from the very first version. This is another place where the magic of the declarative framework works seamlessly. SwiftUI automatically adapts its environment and creates an ornament to display the tab bar. We can't control the ornament that the system creates, and it provides us with default behavior while we hover it.
 
 ![ornament-example](/public/ornament2.png)
 
-TabView automatically creates an ornament to provide us access to navigation in a very native way. We can also use the Toolbar API that the SwiftUI framework provides to build another type of ornament.
+*TabView* automatically creates an ornament to provide us access to navigation in a very native way. We can also use the Toolbar API that the SwiftUI framework provides to build another type of ornament.
 
 ```swift
 struct ExampleView2: View {
@@ -60,7 +60,7 @@ struct ExampleView2: View {
 
 ![ornament-example](/public/ornament3.png)
 
-In the example above, we use the Toolbar API to place action controls in an ornament. The ToolbarPlacement type provides us the bottomOrnament property, allowing us to place controls in the ornament below the window. While adapting your app to visionOS, you might need different toolbar placements depending on the platform. In this case, you can use conditional compilation directives to provide the particular placement.
+In the example above, we use the Toolbar API to place action controls in an ornament. The *ToolbarPlacement* type provides us the *bottomOrnament* property, allowing us to place controls in the ornament below the window. While adapting your app to visionOS, you might need different toolbar placements depending on the platform. In this case, you can use conditional compilation directives to provide the particular placement.
 
 ```swift
 struct ExampleView2: View {
@@ -121,12 +121,13 @@ struct ContentView: View {
 
 ![ornament-example](/public/ornament4.png)
 
-As you can see in the example above, we use the ornament view modifier. The ornament view modifier takes a set of parameters. The visibility parameter allows us to control when the framework displays the ornament. We can hide it by passing the hidden value.
+As you can see in the example above, we use the *ornament* view modifier. The *ornament* view modifier takes a set of parameters. The *visibility* parameter allows us to control when the framework displays the ornament. We can hide it by passing the *hidden* value.
 
-The attachmentAnchor parameter allows us to control the position of the ornament. It will enable us to define the point of the scene where we want to attach the ornament.
+The *attachmentAnchor* parameter allows us to control the position of the ornament. It will enable us to define the point of the scene where we want to attach the ornament.
 
-The contentAlignment parameter allows us to define which point of the ornament framework should use while calculating its attachment point in conjuction with the attachmentAnchor parameter.
+The *contentAlignment* parameter allows us to define which point of the ornament framework should use while calculating its attachment point in conjuction with the *attachmentAnchor* parameter.
 
-The last parameter of the ornament view modifier is the ViewBuilder closure, which allows us to provide the content of the ornament. As you can see, we also use the glassBackgroundEffect view modifier to add the visionOS-styled background to our content.
+The last parameter of the *ornament* view modifier is the *ViewBuilder* closure, which allows us to provide the content of the ornament. As you can see, we also use the *glassBackgroundEffect* view modifier to add the visionOS-styled background to our content.
 
-Today, we learned how to use the SwiftUI framework to improve the user experience of our apps on visionOS by using the new ornament concept.
+Today, we learned how to use the SwiftUI framework to improve the user experience of our apps on visionOS by using the new ornament concept. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
