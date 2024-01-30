@@ -27,7 +27,11 @@ struct ExampleView1: View {
 }
 ```
 
+![ornament-example](/public/ornament1.png)
+
 As you can see in the example above, we don't do something special. We use the TabView that the SwiftUI framework offers us from the very first version. This is another place where the magic of the declarative framework works seamlessly. SwiftUI automatically adapts its environment and creates an ornament to display the tab bar. We can't control the ornament that the system creates, and it provides us with default behavior while we hover it.
+
+![ornament-example](/public/ornament2.png)
 
 TabView automatically creates an ornament to provide us access to navigation in a very native way. We can also use the Toolbar API that the SwiftUI framework provides to build another type of ornament.
 
@@ -51,6 +55,8 @@ struct ExampleView2: View {
     }
 }
 ```
+
+![ornament-example](/public/ornament3.png)
 
 In the example above, we use the Toolbar API to place action controls in an ornament. The ToolbarPlacement type provides us the bottomOrnament property, allowing us to place controls in the ornament below the window. While adapting your app to visionOS, you might need different toolbar placements depending on the platform. In this case, you can use conditional compilation directives to provide the particular placement.
 
@@ -110,6 +116,8 @@ struct ContentView: View {
     }
 }
 ```
+
+![ornament-example](/public/ornament4.png)
 
 As you can see in the example above, we use the ornament view modifier. The ornament view modifier takes a set of parameters. The visibility parameter allows us to control when the framework displays the ornament. We can hide it by passing the hidden value.
 
