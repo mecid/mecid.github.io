@@ -157,7 +157,7 @@ The purchase becomes pending whenever the ask to buy is enabled. In this case, t
         updates = Task {
             for await update in StoreKit.Transaction.updates {
                 if let transaction = try? update.payloadValue {
-                    activeTransactions.insert(transaction)
+                    await fetchActiveTransactions()
                     await transaction.finish()
                 }
             }
