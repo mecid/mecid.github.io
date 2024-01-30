@@ -91,7 +91,7 @@ struct ExampleView2: View {
 }
 ```
 
-We learned how easily SwiftUI creates ornaments to adapt the look and feel of visionOS. But we can go further and create custom ornaments to control its position, look, and feel. SwiftUI provides the ornament view modifier, allowing us to develop super-custom ornament.
+We learned how easily SwiftUI creates ornaments to adapt the look and feel of visionOS. But we can go further and create custom ornaments to control its position, look, and feel. SwiftUI provides the *ornament* view modifier, allowing us to develop super-custom ornament.
 
 ```swift
 struct ContentView: View {
