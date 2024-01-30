@@ -7,6 +7,8 @@ image: /public/visionOS.webp
 
 The new Apple Vision Pro device is almost here, and SwiftUI is the best way to build a VisionOS app quickly and natively. This week, we will continue the topic of the new SwiftUI APIs that we can use to adapt our apps to visionOS. We will learn about the new user interface component called ornaments.
 
+{% include friends.html %}
+
 In visionOS, an ornament presents controls and information related to a window without crowding or obscuring the window's contents. visionOS uses ornaments to display toolbars, tab bars, etc. But you can build your custom ornaments too. Let's start by creating our first ornament using old but gold TabView.
 
 ```swift
