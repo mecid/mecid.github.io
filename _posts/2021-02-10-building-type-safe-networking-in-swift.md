@@ -108,7 +108,6 @@ Finally, we can create an extension on *URLSession* to make requests with our ne
 extension URLSession {
     func data(for request: Request) async throws -> Data {
         let (data, _) = try await self.data(for: request.urlRequest)
-        try Task.checkCancellation()
         return data
     }
 }
@@ -133,12 +132,16 @@ extension URLSession {
         _ request: Request<Value>,
         using decoder: JSONDecoder = .init()
     ) async throws -> Value {
-        let decoded = Task.detached(priority: .userInitiated) {
-            let (data, _) = try await self.data(for: request.urlRequest)
-            try Task.checkCancellation()
-            return try decoder.decode(Value.self, from: data)
+        let (data, _) = try await self.data(for: request.urlRequest)
+        return try await withCheckedThrowingContinuation { continuation in
+            DispatchQueue.global().async {
+                let result = Result {
+                    try decoder.decode(Value.self, from: data)
+                }
+                
+                continuation.resume(with: result)
+            }
         }
-        return try await decoded.value
     }
 }
 ```
