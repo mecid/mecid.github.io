@@ -133,15 +133,7 @@ extension URLSession {
         using decoder: JSONDecoder = .init()
     ) async throws -> Value {
         let (data, _) = try await self.data(for: request.urlRequest)
-        return try await withCheckedThrowingContinuation { continuation in
-            DispatchQueue.global().async {
-                let result = Result {
-                    try decoder.decode(Value.self, from: data)
-                }
-                
-                continuation.resume(with: result)
-            }
-        }
+        return try decoder.decode(Value.self, from: data)
     }
 }
 ```
