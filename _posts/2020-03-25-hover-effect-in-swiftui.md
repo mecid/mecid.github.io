@@ -5,7 +5,7 @@ image: /public/visionOS.webp
 category: Interactions
 ---
 
-Last week Apple updated iPad Pro and added trackpad support to iPadOS. We finally have Xcode 11.4, which introduces the *onHover* and *hoverEffect* modifiers to help us utilize trackpad and mouse support in SwiftUI. This week we will learn how to be a good iOS citizen and add support for the trackpad to our SwiftUI views.
+Apple introduced the hover effect a few years ago to improve the interaction of the trackpads on iPadOS. Later, it became available on tvOS, producing the same effect while the user navigated through the app using Apple TV Remote. Nowadays, we can use the hover effect in response to eye focus on visionOS. This week, we will learn all about hover effect interaction in SwiftUI.
 
 {% include friends.html %}
 
