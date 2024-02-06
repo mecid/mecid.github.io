@@ -61,6 +61,20 @@ struct ContentView: View {
 
 As you can see in the example above, the *hoverEffect* view modifier also allows us to control whenever to turn the effect on or off by using the *isEnabled* parameter.
 
+The only downside of the *hoverEffect* view modifier is that you must apply it to every view you want to enable the hover effect. You can easily forget to add it to a particular view. Fortunately, SwiftUI provides the *defaultHoverEffect* view modifier, allowing us to enable selected hover effects on every view in the hierarchy with a single line of code.
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("Hello")
+            Text("World")
+        }
+        .defaultHoverEffect(.lift)
+    }
+}
+```
+
 #### onHover modifier
 Now we are familiar with the standard types of hover effect that SwiftUI provides us. But what about custom effects? Happily, SwiftUI enables us to create super custom hover effects by using *onHover* modifier. This modifier allows us to register a closure that will be called whenever the pointer of the trackpad or mouse covers the view. *onHover* modifier enables all the power of animations in SwiftUI that we can use to highlight changes.
 
