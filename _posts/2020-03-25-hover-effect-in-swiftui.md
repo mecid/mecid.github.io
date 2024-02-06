@@ -9,7 +9,7 @@ Apple introduced the hover effect a few years ago to improve the interaction of 
 
 {% include friends.html %}
 
-#### The hoverEffect view modifier
+#### hoverEffect view modifier
 SwiftUI provides us the *hoverEffect* modifier that we can attach to any view. This modifier enables the transformation of eye focus or mouse pointer into the covering view shape. It is tough to explain this transformation and better to see. Let's run the example on an iPad or Vision Pro simulator.
 
 ```swift
@@ -90,7 +90,7 @@ struct ContentView: View {
 }
 ```
 
-#### onHover modifier
+#### onHover view modifier
 Now we are familiar with the standard types of hover effect that SwiftUI provides us. But what about custom effects? Happily, SwiftUI enables us to create super custom hover effects by using *onHover* modifier. This modifier allows us to register a closure that will be called whenever the pointer of the trackpad or mouse covers the view. *onHover* modifier enables all the power of animations in SwiftUI that we can use to highlight changes.
 
 ```swift
