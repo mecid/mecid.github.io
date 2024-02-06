@@ -94,9 +94,7 @@ struct ContentView: View {
 Now we are familiar with the standard types of hover effect that SwiftUI provides us. But what about custom effects? Happily, SwiftUI enables us to create super custom hover effects by using *onHover* modifier. This modifier allows us to register a closure that will be called whenever the pointer of the trackpad or mouse covers the view. *onHover* modifier enables all the power of animations in SwiftUI that we can use to highlight changes.
 
 ```swift
-import SwiftUI
-
-struct RootView: View {
+struct CustomView: View {
     @State private var hovered = false
     
     var body: some View {
@@ -113,6 +111,24 @@ struct RootView: View {
 As you can see in the example above, we use *onHover* modifier to register a closure that delivers us a *Boolean* value. This *Boolean* value is *true* whenever the pointer covers the view. We save the value into a state variable and scale our view using default animation.
 
 > To learn more about the power of animation modifier in SwiftUI, take a look at my ["Animations in SwiftUI"](/2019/06/26/animations-in-swiftui/) post.
+
+When you build the custom view, you can use the *isHoverEffectEnabled* environment value to understand whether to apply a custom hover effect.
+
+```swift
+struct CustomView: View {
+    @Environment(\.isHoverEffectEnabled) var isEnabled
+    @State private var hovered = false
+    
+    var body: some View {
+        Text("Hello World!")
+            .scaleEffect(hovered && isEnabled ? 2.0 : 1.0)
+            .animation(.default, value: hovered)
+            .onHover { isHovered in
+                self.hovered = isHovered
+            }
+    }
+}
+```
 
 #### Conclusion
 I am pleased to see that iPadOS gains the support of trackpad. I hope we will see Xcode running on iPadOS pretty soon, and iPad will replace Macbook. For now, let's support trackpad and mouse in our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
