@@ -1,7 +1,7 @@
 ---
 title: Hover effect in SwiftUI
 layout: post
-image: /public/ipad.jpg
+image: /public/visionOS.webp
 category: Interactions
 ---
 
