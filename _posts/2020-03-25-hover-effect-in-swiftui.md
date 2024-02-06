@@ -25,7 +25,7 @@ struct RootView: View {
 
 Fortunately, iPad simulator supports trackpad simulation. You have to enable it by using *I/O -> Input -> Send cursor to Device* menu. Now we can see the pointer on the screen. Let's cover the text view with the pointer.
 
-SwiftUI provides us a *HoverEffect* struct that describes three types of transformation of the pointer into a view shape. By default, *hoverEffect* modifier uses the first one, which is called *automatic*. Besides that, we have *highlight* and *lift* transformations. You can use them by only passing it as a parameter to the *hoverEffect* modifier.
+SwiftUI provides us the *HoverEffect* struct that describes three types of transformation of the pointer into a view shape. By default, *hoverEffect* modifier uses the first one, which is called *automatic*. Besides that, we have *highlight* and *lift* transformations. You can use them by only passing it as a parameter of the *hoverEffect* modifier.
 
 ```swift
 struct RootView: View {    
