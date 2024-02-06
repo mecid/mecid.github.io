@@ -28,8 +28,16 @@ Fortunately, iPad simulator supports trackpad simulation. You have to enable it 
 SwiftUI provides us a *HoverEffect* struct that describes three types of transformation of the pointer into a view shape. By default, *hoverEffect* modifier uses the first one, which is called *automatic*. Besides that, we have *highlight* and *lift* transformations. You can use them by only passing it as a parameter to the *hoverEffect* modifier.
 
 ```swift
-.hoverEffect(.lift)
-.hoverEffect(.highlight)
+struct RootView: View {    
+    var body: some View {
+        VStack {
+            Text("Hello")
+                .hoverEffect(.lift)
+            Text("World")
+                .hoverEffect(.highlight)
+        }
+    }
+}
 ```
 
 Highlight transformation describes an effect that morphs the pointer into a platter behind the view and shows a light source indicating position. On the other hand, lift transformation defines an effect that slides the pointer under the view and disappears as the view scales up and gains a shadow. Usually, we need the *automatic* transformation that attempts to determine the effect automatically.
