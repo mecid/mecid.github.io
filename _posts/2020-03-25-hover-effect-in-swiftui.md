@@ -9,7 +9,7 @@ Apple introduced the hover effect a few years ago to improve the interaction of 
 
 {% include friends.html %}
 
-#### hoverEffect modifier
+#### The hoverEffect view modifier
 SwiftUI provides us the *hoverEffect* modifier that we can attach to any view. This modifier enables the transformation of eye focus or mouse pointer into the covering view shape. It is tough to explain this transformation and better to see. Let's run the example on an iPad or Vision Pro simulator.
 
 ```swift
