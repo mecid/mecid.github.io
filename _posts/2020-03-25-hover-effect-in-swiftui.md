@@ -42,7 +42,7 @@ struct RootView: View {
 
 Highlight transformation describes an effect that morphs the pointer into a platter behind the view and shows a light source indicating position. On the other hand, lift transformation defines an effect that slides the pointer under the view and disappears as the view scales up and gains a shadow. Usually, we need the *automatic* transformation that attempts to determine the effect automatically.
 
-```
+```swift
 struct ContentView: View {
     @State private var isEnabled = false
     
@@ -69,6 +69,21 @@ struct ContentView: View {
         VStack {
             Text("Hello")
             Text("World")
+        }
+        .defaultHoverEffect(.lift)
+    }
+}
+```
+
+Whenever you use the *defaultHoverEffect* on the whole hierarchy, you can use the *hoverEffectDisabled* view modifier to turn off the hover effect on the particular view.
+
+```swift
+struct ContentView: View {
+    var body: some View {
+        VStack {
+            Text("Hello")
+            Text("World")
+                .hoverEffectDisabled(true)
         }
         .defaultHoverEffect(.lift)
     }
