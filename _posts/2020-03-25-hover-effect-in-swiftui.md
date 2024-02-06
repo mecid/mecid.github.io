@@ -42,6 +42,25 @@ struct RootView: View {
 
 Highlight transformation describes an effect that morphs the pointer into a platter behind the view and shows a light source indicating position. On the other hand, lift transformation defines an effect that slides the pointer under the view and disappears as the view scales up and gains a shadow. Usually, we need the *automatic* transformation that attempts to determine the effect automatically.
 
+```
+struct ContentView: View {
+    @State private var isEnabled = false
+    
+    var body: some View {
+        VStack {
+            Toggle(isOn: $isEnabled) {
+                Text(isEnabled ? "Disable" : "Enable")
+            }
+            
+            Text("Hello World!")
+                .hoverEffect(.lift, isEnabled: isEnabled)
+        }
+    }
+}
+```
+
+As you can see in the example above, the *hoverEffect* view modifier also allows us to control whenever to turn the effect on or off by using the *isEnabled* parameter.
+
 #### onHover modifier
 Now we are familiar with the standard types of hover effect that SwiftUI provides us. But what about custom effects? Happily, SwiftUI enables us to create super custom hover effects by using *onHover* modifier. This modifier allows us to register a closure that will be called whenever the pointer of the trackpad or mouse covers the view. *onHover* modifier enables all the power of animations in SwiftUI that we can use to highlight changes.
 
