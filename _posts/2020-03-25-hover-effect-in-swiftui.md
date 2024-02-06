@@ -130,5 +130,28 @@ struct CustomView: View {
 }
 ```
 
+#### onContinuousHover view modifier
+SwiftUI also provides the *onContinuousHover* view modifier, allowing us to track the hover phases. For example, you can read the hover's location and react whenever it changes.
+
+```swift
+struct CustomView: View {
+    @State private var scale = 1.0
+    
+    var body: some View {
+        Text("Hello World!")
+            .scaleEffect(scale)
+            .animation(.default, value: scale)
+            .onContinuousHover { phase in
+                switch phase {
+                case .active(let location):
+                    scale = location.y / location.x
+                case .ended:
+                    scale = 1
+                }
+            }
+    }
+}
+```
+
 #### Conclusion
 I am pleased to see that iPadOS gains the support of trackpad. I hope we will see Xcode running on iPadOS pretty soon, and iPad will replace Macbook. For now, let's support trackpad and mouse in our apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
