@@ -91,7 +91,7 @@ struct ContentView: View {
 ```
 
 #### onHover view modifier
-Now we are familiar with the standard types of hover effect that SwiftUI provides us. But what about custom effects? Happily, SwiftUI enables us to create super custom hover effects by using *onHover* modifier. This modifier allows us to register a closure that will be called whenever the pointer of the trackpad or eye focuses on the view. *onHover* modifier enables all the power of animations in SwiftUI that we can use to highlight interaction.
+Now we are familiar with the standard types of hover effect that SwiftUI provides us. But what about custom effects? Happily, SwiftUI enables us to create super custom hover effects by using *onHover* modifier. This modifier allows us to register a closure that will be called whenever the pointer intersects the view. *onHover* modifier enables all the power of animations in SwiftUI that we can use to highlight interaction.
 
 ```swift
 struct CustomView: View {
