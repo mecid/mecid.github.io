@@ -80,7 +80,6 @@ Another common task is to remove the duplicates from a collection of elements, a
 
 ```swift
 let numbers = [1, 2, 3, 3, 2, 3, 3, 2, 2, 2, 1]
-
 let unique = numbers.uniqued()
 // Array(unique) == [1, 2, 3]
 ```
