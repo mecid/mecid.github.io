@@ -7,6 +7,8 @@ image: /public/spm.jpg
 
 Almost every app I built and supported includes the Swift Algorithms package. However, I noticed that only some developers are familiar with it. Today, we will discover what the Swift Algorithms package offers us to write better, safer code for complex algorithms.
 
+{% include friends.html %}
+
 #### Reason
 You can write every algorithm from the Swift Algorithms package, but you must maintain and test it in this case. On the other hand, you can depend on the ready-to-use package that you can include in every app you work on without code duplication and be sure that the community members well-tested the package.
 
