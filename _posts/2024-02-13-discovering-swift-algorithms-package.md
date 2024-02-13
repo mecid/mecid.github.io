@@ -15,7 +15,7 @@ You can write every algorithm from the Swift Algorithms package, but you must ma
 > Remember, you can always become a part of this great community by contributing to this package.
 
 #### Setup
-First, you must add the package to the project in the Xcode project settings screen. The "Package Dependencies" tab allows you to add or remove any package you need. The Swift Algorithms package lives on Github, where you can easily follow updates, browse pull requests, and monitor issues.
+First, you must add the package to the project in the Xcode project settings screen. The "Package Dependencies" tab allows you to add or remove any package you need. The [Swift Algorithms](https://github.com/apple/swift-algorithms) package lives on Github, where you can easily follow updates, browse pull requests, and monitor issues.
 
 The Swift Algorithms package contains tons of valuable collections and sequence algorithms. It is nearly impossible to cover them as part of a single post, but I will cover my favorite things.
 
