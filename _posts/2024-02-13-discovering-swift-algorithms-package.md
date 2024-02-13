@@ -44,7 +44,7 @@ Still, instead of returning an item, it returns the index of the first item, div
 
 We must wrap its results with an additional guard statement verifying them. Whenever the *partitioningIndex* function can't find the relevant index, it returns the end of the collection.
 
-We also verify that the resulting index divides the array into two partitions, and an item for the first index also equals the item we are looking for. There might be a case where you can find an index dividing the array using your predicate, but the array doesn't contain the value you want.
+We also verify that the resulting index divides the array into two partitions, and an item for the index also equals the item we are looking for. There might be a case where you can find an index dividing the array using your predicate, but the array doesn't contain the value you want.
 
 #### Chunking
 Dividing a collection into chunks is another common task in my apps. You might need to divide the collection into chunks of any count or by any additional logic. The Swift Algorithms package provides us with chunking API for this particular case.
