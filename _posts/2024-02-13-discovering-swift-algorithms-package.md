@@ -20,7 +20,19 @@ I mainly work on health-related apps, and my users' privacy is crucial to me. Th
 
 As you may know, the binary search is the best way to find an item in the sorted data array. Usually, we query HealthKit for sorted data, allowing us to use binary search efficiently. Binary search requires your data to be sorted by the key you seek.
 
-=====================================================
+```swift
+let someDate = Date.now
+let index = heartRates.partitioningIndex { $0.startDate >= someDate }
+
+guard
+    index != heartRates.endIndex,
+    heartRates[index].startDate == someDate
+else {
+    return nil
+}
+
+return heartRates[index]
+```
 
 The Swift Algorithms package provides the partitioningIndex function, the generalized version of the binary search. It uses the same logic as the binary search. 
 
@@ -33,37 +45,74 @@ We also verify that the resulting index divides the array into two partitions, a
 #### Chunking
 Dividing a collection into chunks is another common task in my apps. You might need to divide the collection into chunks of any count or by any additional logic. The Swift Algorithms package provides us with chunking API for this particular case.
 
-=====================================================
+```swift
+let numbers = [1, 2, 3, 4, 5, 6]
+print(numbers.chunks(ofCount: 2))
+// [1, 2]
+// [3, 4]
+// [5, 6]
+```
 
 The Swift Algorithms package provides the chunks function, taking a count of items in a single chunk as the parameter and returning the subsequence array.
 
 My app has a more interesting situation where the particular logic should drive chunking. In my case, I need the chunks where items have time intervals between them no longer than one hour. 
 
-=====================================================
+```swift
+sleepSamples.chunked { $1.startDate.timeIntervalSince($0.endDate) < 3600 }
+```
 
 As you can see in the example above, we use the chunked function with the predicate, where we can compare two adjacent elements of the collection and decide whenever we want to put them into the same chunk.
 
 #### Filtering
 Almost every app has a situation where you have a collection with optional values, and you need to keep only non-nil values. For this case, the Swift Algorithms package introduces the compacted functions.
 
-===================================================
+```swift
+let array: [Int?] = [10, nil, 30, nil, 2, 3, nil, 5]
+let withNoNils = array.compacted()
+// Array(withNoNils) == [10, 30, 2, 3, 5]
+```
 
 Another common task is to remove the duplicates from a collection of elements, and you can easily do it with the help of the unique function.
 
-=====================================================
+```swift
+let numbers = [1, 2, 3, 3, 2, 3, 3, 2, 2, 2, 1]
+
+let unique = numbers.uniqued()
+// Array(unique) == [1, 2, 3]
+```
 
 #### Sampling
 Another situation I came across in my apps is extracting some minimal or maximal elements from the collection. You can easily do that with the Swift Algorithms package's min, max, or minAndMax functions.
 
-=====================================================
+```swift
+let numbers = [7, 1, 6, 2, 8, 3, 9]
+let smallestThree = numbers.min(count: 3)
+// [1, 2, 3]
+
+let numbers = [7, 1, 6, 2, 8, 3, 9]
+let largestThree = numbers.max(count: 3)
+// [7, 8, 9]
+```
 
 How often do you need to get the particular count of the random elements from the collection? The Swift Algorithms package has the randomSample function, taking the count as a single parameter and returning an array of the random elements. 
 
-=====================================================
+```swift
+let numbers = [7, 1, 6, 2, 8, 3, 9]
+let randomNumbers = numbers.randomSample(count: 3)
+```
 
 #### Combinations
 The Swift Algorithms package provides us with the combinations function, allowing us to combine every element of the collection with each other.
 
-=====================================================
+```swift
+let colors = ["fuchsia", "cyan", "mauve", "magenta"]
+for combo in colors.combinations(ofCount: 3) {
+    print(combo.joined(separator: ", "))
+}
+// fuchsia, cyan, mauve
+// fuchsia, cyan, magenta
+// fuchsia, mauve, magenta
+// cyan, mauve, magenta
+```
 
 As you can see in the example above, the combinations function takes only one parameter, defining the number of elements that it should use per combination.
