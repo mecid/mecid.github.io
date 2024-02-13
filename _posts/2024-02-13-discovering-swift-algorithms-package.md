@@ -1,6 +1,7 @@
 ---
 title: Discovering Swift Algorithms package
 layout: post
+category: Swift Language Features
 ---
 
 Almost every app I built and supported includes the Swift Algorithms package. However, I noticed that only some developers are familiar with it. Today, we will discover what the Swift Algorithms package offers us to write better, safer code for complex algorithms.
