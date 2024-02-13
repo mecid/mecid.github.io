@@ -85,7 +85,7 @@ let unique = numbers.uniqued()
 ```
 
 #### Sampling
-Another situation I came across in my apps is extracting some minimal or maximal elements from the collection. You can easily do that with the Swift Algorithms package's *min*, *max*, or *minAndMax* functions.
+Another situation I came across in my apps is extracting some number of minimal or maximal elements from the collection. You can easily do that with the Swift Algorithms package's *min*, *max*, or *minAndMax* functions.
 
 ```swift
 let numbers = [7, 1, 6, 2, 8, 3, 9]
