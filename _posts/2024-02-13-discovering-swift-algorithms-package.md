@@ -120,3 +120,5 @@ for combo in colors.combinations(ofCount: 3) {
 ```
 
 As you can see in the example above, the *combinations* function takes only one parameter, defining the number of elements that it should use per combination.
+
+Today, we discovered only the visible part of Swift Algorithms iceberg. There are many things to learn, and I encourage you to check its documentation and replace your custom implementation with it. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
