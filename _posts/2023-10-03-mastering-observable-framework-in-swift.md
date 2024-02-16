@@ -150,7 +150,7 @@ struct AuthView: View {
 }
 ```
 
-You can use the *@Bindanble* property wrapper to create bindings from the properties of any observable type easily. Sometimes, you may need to inline *@Bindable* inside the view body to create bindings.
+You can use the *@Bindable* property wrapper to create bindings from the properties of any observable type easily. Sometimes, you may need to inline *@Bindable* inside the view body to create bindings.
 
 ```swift
 struct InlineAuthView: View {
