@@ -117,7 +117,7 @@ printArray(letters.elements) // Array
 printSet(letters.unordered) // Set
 ```
 
-Whenever you need to pass the elements of the *OrderedSet* as an *Array*, you can use the *elements* property, or you can use the *unordered* property whenever you want to extract the plain *Set* of the elements. Remember, the *OrderedSet* type implements most of the functions from the *SetAlgebra* protocol but doesn't conform to it.
+Whenever you need to pass the elements of the *OrderedSet* as an *Array*, you can use the *elements* property, or you can use the *unordered* property whenever you want to extract the plain *Set* of the elements. Remember, the *OrderedSet* type implements most of the functions from the *SetAlgebra* protocol but doesn't conform to it, that's why it has the *unordered* property.
 
 ```swift
 let lettersAndNumbers: OrderedDictionary = [
