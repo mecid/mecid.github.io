@@ -7,6 +7,8 @@ layout: post
 
 I want to continue the topic of the valuable Swift Package that I use in my apps. This we will talk about the Swift Collections package, providing us with a bunch of helpful collection types that Swift language doesn't include out of the box.
 
+{% include friends.html %}
+
 The Swift Collections package contains a few collection types that may help you improve the performance of your apps if you apply them whenever needed instead of using generic Array, Dictionary, and Set types. The Swift Collections package lives on Github, where you can find it and your project.
 
 #### Tree-based dictionary and set
