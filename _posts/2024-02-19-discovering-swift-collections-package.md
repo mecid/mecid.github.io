@@ -63,7 +63,7 @@ struct Event: Identifiable, Comparable {
 @Observable final class EventStore {
     typealias Fetch = () async -> [Event]
     
-    private(set) var events: Heap<Event>
+    private(set) var events: Heap<Event> = []
     private let fetch: Fetch
     
     init(fetch: @escaping Fetch) {
@@ -83,7 +83,7 @@ As you can see in the example above, we fetch the calendar events and populate t
 
 ```swift
 @Observable final class EventStore {
-    private(set) var events: Heap<Event>
+    private(set) var events: Heap<Event> = []
     
     func printEvents() {
         for event in events.unordered {
