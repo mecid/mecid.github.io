@@ -1,6 +1,7 @@
 ---
 title: Discovering Swift Collections package
 category: Swift Language Features
+image: /public/spm.jpg
 layout: post
 ---
 
