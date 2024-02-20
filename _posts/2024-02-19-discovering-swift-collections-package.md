@@ -5,7 +5,7 @@ image: /public/spm.jpg
 layout: post
 ---
 
-I want to continue the topic of the valuable Swift packages that I use in my apps. This we will talk about the Swift Collections package, providing us with a bunch of helpful collection types that Swift language doesn't include out of the box.
+I want to continue the topic of the valuable Swift packages that I use in my apps. This time, we will talk about the Swift Collections package, providing us with a bunch of helpful collection types that Swift language doesn't include out of the box.
 
 {% include friends.html %}
 
