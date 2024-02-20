@@ -133,7 +133,7 @@ print(lettersAndNumbers.elements[0])
 The *OrderedDictionary* behaves very similarly to the *OrderedSet* type and allows you to access the dictionary both by key and index.
 
 #### Deque
-*Deque* is another collection type that the Swift Collections package provides us. *Deque* is almost identical to the *Array* type, except it offers efficient insert and removal to both ends of the collection.
+*Deque* is another collection type that the Swift Collections package provides us. *Deque* is almost identical to the *Array* type, except it offers efficient insert and removal from both ends of the collection.
 
 ```swift
 var deque: Deque = [1, 2, 3, 4]
