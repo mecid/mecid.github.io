@@ -149,4 +149,4 @@ deque[0]
 The *Deque* type implements a double-ended queue, allowing us to insert and remove elements from the ends of the collection at O(1) complexity, which may become very handy when you build any queue functionality in your app.
 
 #### Conclusion
-Today, we discovered another great Swift package provided by Apple. The community constantly works on the package and adds more value to it. So, check the documentation and find the valuable collection types that may improve your apps.
+Today, we discovered another great Swift package provided by Apple. The community constantly works on the package and adds more value to it. So, check the documentation and find the valuable collection types that may improve your apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
