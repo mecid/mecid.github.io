@@ -9,7 +9,7 @@ I want to continue the topic of the valuable Swift packages that I use in my app
 
 {% include friends.html %}
 
-The Swift Collections package contains a few collection types that may help you improve the performance of your apps if you apply them whenever needed instead of using generic *Array*, *Dictionary*, and *Set* types. The [Swift Collections](https://github.com/apple/swift-collections) package lives on Github, where you can find it and your project.
+The Swift Collections package contains a few collection types that may help you improve the performance of your apps if you apply them whenever needed instead of using generic *Array*, *Dictionary*, and *Set* types. The [Swift Collections](https://github.com/apple/swift-collections) package lives on Github, where you can find it and add to your project.
 
 #### Tree-based dictionary and set
 Dictionary and Set types that Swift language provides us store values in a single flat hash table that you copy on every write or mutation. The Swift Collection package introduces *TreeDictionary* and *TreeSet* types implementing Compressed Hash-Array Mapped Prefix Trees. In other words, *TreeDictionary* and *TreeSet* types hold values in the tree-based structure, allowing the efficient updating of only the needed branches.
