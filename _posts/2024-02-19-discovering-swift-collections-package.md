@@ -12,7 +12,7 @@ I want to continue the topic of the valuable Swift packages that I use in my app
 The Swift Collections package contains a few collection types that may help you improve the performance of your apps if you apply them whenever needed instead of using generic *Array*, *Dictionary*, and *Set* types. The [Swift Collections](https://github.com/apple/swift-collections) package lives on Github, where you can find it and add to your project.
 
 #### Tree-based dictionary and set
-Dictionary and Set types that Swift language provides us store values in a single flat hash table that you copy on every write or mutation. The Swift Collection package introduces *TreeDictionary* and *TreeSet* types implementing Compressed Hash-Array Mapped Prefix Trees. In other words, *TreeDictionary* and *TreeSet* types hold values in the tree-based structure, allowing the efficient updating of only the needed branches.
+*Dictionary* and *Set* types that Swift language provides us store values in a single flat hash table that you copy on every write or mutation. The Swift Collection package introduces *TreeDictionary* and *TreeSet* types implementing Compressed Hash-Array Mapped Prefix Trees. In other words, *TreeDictionary* and *TreeSet* types hold values in the tree-based structure, allowing the efficient updating of only the needed branches.
 
 Imagine a calendar app where you store an event array per date and use the standard *Dictionary* type. You might need to implement paging and load events per visible month and store them in an instance of the *Dictionary* type. While the user scrolls through months, your app loads a bunch of events and copies the whole dictionary on every load, even when previously loaded events didn't change.
 
@@ -40,8 +40,8 @@ For this case, the Swift Collections package introduces the *TreeDictionary* and
 The *TreeDictionary* is still a struct, but the implementation uses the *UnsafeMutablePointer* type to access memory and mutate it directly without copying on write. Another benefit of the *TreeDictionary* and *TreeSet* types is the optimized way to compare because of their tree-based nature. Usually, they handle this operation in a constant time.
 
 ```swift
-let oldEvents: TreeDictionary<Date, [Event]> = [:]
-let newEvents: TreeDictionary<Date, [Event]> = [:]
+let oldEvents: TreeDictionary<Date, [Event]> = //...
+let newEvents: TreeDictionary<Date, [Event]> = //...
     
 newEvents.keys.subtracting(oldEvents.keys)
 ```
