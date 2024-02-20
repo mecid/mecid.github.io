@@ -1,5 +1,6 @@
 ---
 title: Discovering Swift Collections package
+category: Swift Language Features
 layout: post
 ---
 
