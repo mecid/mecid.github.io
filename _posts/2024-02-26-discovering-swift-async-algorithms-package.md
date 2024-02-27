@@ -1,7 +1,8 @@
 ---
 title: Discovering Swift Async Algorithms package
-layout: post
+category: Swift Language Features
 image: /public/spm.jpg
+layout: post
 ---
 
 Another week on a series of posts about discovering Swift packages. This week, we will discover the Swift Async Algorithms package, allowing us to completely switch from the Combine framework to the Swift Concurrency feature with async/await. We will learn what the Swift Async Algorithms package offers to eliminate the Combine framework.
