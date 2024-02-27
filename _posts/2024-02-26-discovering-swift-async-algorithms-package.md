@@ -119,7 +119,7 @@ await channel.send(UUID())
 await channel.finish()
 ```
 
-As you can see in the example above, we use the send function on an instance of the *AsyncChannel* type to emit values. Conversely, the *AsyncChannel* conforms to the *AsyncSequence* protocol to support for-each loop with the *await* keyword. Remember to call the *finish* function on the channel to close the sequence.
+As you can see in the example above, we use the *send* function on an instance of the *AsyncChannel* type to emit values. Conversely, the *AsyncChannel* conforms to the *AsyncSequence* protocol to support for-each loop with the *await* keyword. Remember to call the *finish* function on the channel to close the sequence.
 
 ```swift
 let channel = AsyncThrowingChannel<UUID>()
