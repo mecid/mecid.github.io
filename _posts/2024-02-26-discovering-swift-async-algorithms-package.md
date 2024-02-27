@@ -5,6 +5,8 @@ layout: post
 
 Another week on a series of posts about discovering Swift packages. This week, we will discover the Swift Async Algorithms package, allowing us to completely switch from the Combine framework to the Swift Concurrency feature with async/await. We will learn what the Swift Async Algorithms package offers to eliminate the Combine framework.
 
+{% include friends.html %}
+
 The Swift Async Algorithms package is another package that Apple maintains and provides us. You can always become a part of this great community by contributing to the package on GitHub.
 
 #### Combining
