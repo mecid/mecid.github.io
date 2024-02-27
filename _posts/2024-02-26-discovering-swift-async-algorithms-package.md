@@ -130,3 +130,6 @@ await channel.fail(SomeError())
 ```
 
 There is also the AsyncThrowingChannel type with a similar functionality supporting failing with errors. Whenever you need to close the channel with the error, you can use the fail function on an instance of the AsyncThrowingChannel type.
+
+#### Conclusion
+Today we discovered the Swift Async Algorithms package, allowing us to move completely from the Combine framework to the Swift Concurrency feature. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
