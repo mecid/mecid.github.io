@@ -12,7 +12,7 @@ Another week on a series of posts about discovering Swift packages. This week, w
 The [Swift Async Algorithms package](https://github.com/apple/swift-async-algorithms) is another package that Apple maintains and provides us. You can always become a part of this great community by contributing to the package on GitHub.
 
 #### Combining
-The Swift Async Algorithms package offers a set of functions allowing us to combine two or three async sequences into a single sequence. For example, you can merge two async sequences in a single one and observe values from the single resulting sequence.
+The Swift Async Algorithms package offers a set of functions allowing us to combine two or three async sequences into a single sequence. For example, you can merge two async sequences in a single one and observe values from the resulting sequence.
 
 ```swift
 @Observable final class CalendarStore {
