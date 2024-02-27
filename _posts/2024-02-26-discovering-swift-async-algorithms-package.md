@@ -56,7 +56,7 @@ As you can see in the example above, we use the *merge* function that allows us 
 
 The Swift Async Algorithms package also includes grouping and filtering operators from the Swift Algorithms package but applies to async sequences like *compacted* for filtering *nil* values or chunking and removing duplicates.
 
-> To learn more about the Swift Algorithms package, take a look at my "Discovering Swift Algorithms package" post.
+> To learn more about the Swift Algorithms package, take a look at my ["Discovering Swift Algorithms package"](/2024/02/13/discovering-swift-algorithms-package/) post.
 
 #### Time manipulations
 The Swift Async Algorithms package introduces a few operators, allowing us to manipulate the sequence using time, similar to the Combine framework. For example, you can debounce and throttle async sequences.
