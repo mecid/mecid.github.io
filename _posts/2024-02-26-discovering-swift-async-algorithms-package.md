@@ -33,7 +33,7 @@ The Swift Async Algorithms package offers a set of functions allowing us to comb
 }
 ```
 
-As you can see in the example above, we use the *merge* function that allows us to create a single sequence and observe and handle day and timezone changes at once. The Swift Async Algorithms package provides not only *merge* functions but also *combineLatest*, *zip*, *chain*, and *join*.
+As you can see in the example above, we use the *merge* function that allows us to create a single sequence then observe day and timezone changes at once. The Swift Async Algorithms package provides not only *merge* functions but also *combineLatest*, *zip*, *chain*, and *join*.
 
 ```swift
 @Observable final class CalendarStore {
