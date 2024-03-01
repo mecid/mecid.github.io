@@ -89,8 +89,8 @@ Swift language introduced a feature called actors to solve these complex issues.
         state[keyPath: keyPath]
     }
     
-    func send(_ aciton: Action) {
-        state = reduce(state, aciton)
+    func send(_ action: Action) {
+        state = reduce(state, action)
     }
 }
 ```
@@ -150,10 +150,10 @@ The *await* keyword is part of the Swift Concurrency feature, allowing us to awa
         state[keyPath: keyPath]
     }
     
-    func send(_ aciton: Action) async {
-        state = reduce(state, aciton)
+    func send(_ action: Action) async {
+        state = reduce(state, action)
         
-        if let nextAction = await intercept(state, aciton) {
+        if let nextAction = await intercept(state, action) {
             await send(nextAction)
         }
     }
