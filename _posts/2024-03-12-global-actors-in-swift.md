@@ -68,7 +68,7 @@ As you can see in the example above, we define the *StorageActor* type conformin
     }
     
     func search(matching query: String) -> [Value] {
-        
+        // ...
     }
 }
 ```
