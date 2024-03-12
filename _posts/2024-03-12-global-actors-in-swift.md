@@ -1,6 +1,7 @@
 ---
 title: Global actors in Swift
 layout: post
+category: Swift Language Features
 ---
 
 The Swift language allows us to define thread-safe types using actors. Actor type automatically manages serial access to the data it protects. But what if we must have multiple types protected by a single serial access queue? That's why we have global actors, and today, we will learn how to use global actors in Swift.
