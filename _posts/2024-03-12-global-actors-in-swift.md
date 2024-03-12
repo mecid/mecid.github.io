@@ -90,4 +90,4 @@ Why do we use global actors rather than defining *Cache* and *Database* types as
 
 Remember that you can mark with the *@StorageActor* attribute not only types but also functions or properties of any type.
 
-Today, we learned why and how to use global actors in Swift. You don't need to use global actors often in your apps. However, in particular cases, such as main thread rendering, they become handy.
+Today, we learned why and how to use global actors in Swift. You don't need to use global actors often in your apps. However, they become handy in particular cases, such as main thread rendering.
