@@ -33,7 +33,7 @@ As you can see in the code example above, the *MainActor* type is defined with *
 
 Now, we can easily mark any type we need with the *@MainActor* attribute to isolate it to the main actor. This means all the work in the particular type runs serially on the main actor.	
 
-Let's move forward and build our own global actor. Assume that you have many types of defining access to the local storage and want to keep them conflict-free and run in a serial order.
+Let's move forward and build our own global actor. Assume that you have a set of types accessing the local storage and you want to keep files conflict-free on the disk by running only in a serial order.
 
 ```swift
 @globalActor actor StorageActor: GlobalActor {
