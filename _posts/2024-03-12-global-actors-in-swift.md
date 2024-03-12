@@ -5,6 +5,8 @@ layout: post
 
 The Swift language allows us to define thread-safe types using actors. Actor type automatically manages serial access to the data it protects. But what if we must have multiple types protected by a single serial access queue? That's why we have global actors, and today, we will learn how to use global actors in Swift.
 
+{% include friends.html %}
+
 The main thread rendering is the best example of why we need to protect multiple types with a single serial access queue. You may have a massive collection of *UIViewControllers*, *UIViews*, or SwiftUI views running concurrently, but in the end, you should update your user interface on the serial main thread. 
 
 That's why Swift provides us *@MainActor*. Any *UIViewController* or *UIView* you create inherits *@MainActor* access from its definition. SwiftUI's *View* protocol also defines its *body* property with *@MainActor*. This means your view's body, view, or controller always runs on the main thread and protects you from accidentally updating the user interface from the background thread.
