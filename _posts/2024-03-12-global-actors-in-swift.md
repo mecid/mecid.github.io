@@ -1,6 +1,7 @@
 ---
 title: Global actors in Swift
 layout: post
+image: /public/swift.png
 category: Swift Language Features
 ---
 
