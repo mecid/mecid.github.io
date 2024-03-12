@@ -9,6 +9,8 @@ The Swift language allows us to define thread-safe types using actors. Actor typ
 
 The main thread rendering is the best example of why we need to protect multiple types with a single serial access queue. You may have a massive collection of *UIViewControllers*, *UIViews*, or SwiftUI views running concurrently, but in the end, you should update your user interface on the serial main thread. 
 
+> If you are unfamiliar with the actor concept, look at my dedicated ["Thread safety in Swift with actors"](/2023/09/19/thread-safety-in-swift-with-actors/) post.
+
 That's why Swift provides us *@MainActor*. Any *UIViewController* or *UIView* you create inherits *@MainActor* access from its definition. SwiftUI's *View* protocol also defines its *body* property with *@MainActor*. This means your view's body, view, or controller always runs on the main thread and protects you from accidentally updating the user interface from the background thread.
 
 To fully understand the idea of the global actors, let's inspect the *@MainActor* type a bit further.
