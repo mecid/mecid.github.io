@@ -73,7 +73,7 @@ As you can see in the example above, we define the *StorageActor* type conformin
 }
 ```
 
-Here, we create *Сache* and *Database* types using the *@StorageActor* attribute. It allows us to run them on a single serial queue managed by the *StorageActor* we created before. 
+Here, we create *Сache* and *Database* types using the *@StorageActor* attribute. It allows us to run them on a shared serial queue managed by the *StorageActor* we created before. 
 
 Why do we use global actors rather than defining *Cache* and *Database* types as actors? We can define *Cache* and *Database* as actors. Still, in this case, every instance of the *Cache* or *Database* types will run on an independent serial queue and protect its access alone. By marking our types with the *@StorageActor*, we belong them to a single serial queue managed by the shared instance of the *StorageActor*.
 
