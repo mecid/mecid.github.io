@@ -5,11 +5,11 @@ image: /public/swift.png
 category: Swift Language Features
 ---
 
-The Swift language allows us to define thread-safe types using actors. Actor type automatically manages serial access to the data it protects. But what if we need multiple types protected by a single serial access queue? That's why we have global actors, and today, we will learn how to use global actors in Swift.
+The Swift language allows us to define thread-safe types using actors. Actor type automatically manages exclusive access to the data it protects. But what if we need multiple types protected with a mutually exclusive access? That's why we have global actors, and today, we will learn how to use global actors in Swift.
 
 {% include friends.html %}
 
-The main thread rendering is the best example of why we need to protect multiple types with a single serial access queue. You may have a massive collection of *UIViewControllers*, *UIViews*, or SwiftUI views running concurrently, but in the end, you should update your user interface on the serial main thread. 
+The main thread rendering is the best example of why we need to protect multiple types with a mutually exclusive access. You may have a massive collection of *UIViewControllers*, *UIViews*, or SwiftUI views running in paralel, but in the end, you should update your user interface on the main thread. 
 
 > If you are unfamiliar with the actor concept, look at my dedicated ["Thread safety in Swift with actors"](/2023/09/19/thread-safety-in-swift-with-actors/) post.
 
@@ -31,9 +31,9 @@ As you can see in the code example above, the *MainActor* type is defined with *
 }
 ```
 
-Now, we can easily mark any type we need with the *@MainActor* attribute to isolate it to the main actor. This means all the work in the particular type runs serially on the main actor.	
+Now, we can easily mark any type we need with the *@MainActor* attribute to isolate it to the main actor. This means all the work in the particular type runs exclusively on the main actor.	
 
-Let's move forward and build our own global actor. Assume that you have a set of types accessing the local storage and you want to keep files conflict-free on the disk by running only in a serial order.
+Let's move forward and build our own global actor. Assume that you have a set of types accessing the local storage and you want to keep files conflict-free on the disk by running exclusively.
 
 ```swift
 @globalActor actor StorageActor: GlobalActor {
@@ -73,9 +73,9 @@ As you can see in the example above, we define the *StorageActor* type conformin
 }
 ```
 
-Here, we create *Сache* and *Database* types using the *@StorageActor* attribute. It allows us to run them on a shared serial queue managed by the *StorageActor* we created before. 
+Here, we create *Сache* and *Database* types using the *@StorageActor* attribute. It allows us to run them on a shared, mutually exclusive actor, managed by the *StorageActor* we created before. 
 
-Why do we use global actors rather than defining *Cache* and *Database* types as actors? We can define *Cache* and *Database* as actors. Still, in this case, every instance of the *Cache* or *Database* types will run on an independent serial queue and protect its access alone. By marking our types with the *@StorageActor*, we belong them to a single serial queue managed by the shared instance of the *StorageActor*.
+Why do we use global actors rather than defining *Cache* and *Database* types as actors? We can define *Cache* and *Database* as actors. Still, in this case, every instance of the *Cache* or *Database* types will run on an independent actor and protect its access alone. By marking our types with the *@StorageActor*, we belong them to a single, mutually exclusive, shared instance of the *StorageActor*.
 
 ```swift
 @Observable final class Store {
