@@ -7,11 +7,17 @@ Apple released Swift 5.5 almost three years ago. The main addition to the releas
 
 First, let's look at creating an async function in Swift. To do so, you simply need to add the async keyword to the function's definition.
 
-====================================================
+```swift
+func foo() async {
+    // ...
+}
+```
 
 The async keyword in the function's definition means that the function may suspend its execution to switch threads. To run an async function, you have to use the await keyword.
 
-=====================================================
+```swift
+await foo()
+```
 
 The await keyword allows the calling thread to wait while an async function performs its job. When the async function finishes, the calling thread resumes where it is suspended.
 
@@ -27,17 +33,74 @@ Swift applies the second rule if your function isn't isolated to an actor. The S
 
 Let's dive into some examples.
 
-=====================================================
+```swift
+@MainActor final class Store {
+    var messages: [String] = []
+    
+    func boo() {
+        messages = ["boo"]
+    }
+    
+    
+    func foo() async {
+        messages = ["foo"]
+    }
+}
+```
 
 As you can see in the example above, we have an actor-isolated Store type. It doesn't matter where you call foo or boo functions. They will always run on the main thread because the Store type is isolated to the global @MainActor.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        Text("Hello")
+            .task {
+                boo()
+            }
+            .task {
+                await foo()
+            }
+    }
+    
+    func boo() {
+        // ...
+    }
+    
+    func foo() async {
+        // ...
+    }
+}
+```
 
 Here, we have a more complex example confusing many developers in our community. You should remember that SwiftUI views are not isolated to any actor. Only the body property of the View protocol is isolated to the main actor.
 
 So, we have two non-isolated functions here. The foo function is async, and Swift runs it in the cooperative thread pool. The boo function is not async, and Swift will run it on the calling thread. As I said before, the body property of the View protocol is isolated to the main actor, which means in this particular example boo function will run on the main thread, where you should avoid doing heavy work.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        content
+    }
+    
+    private var content: some View {
+        Text("Hello")
+            .task {
+                boo()
+            }
+            .task {
+                await foo()
+            }
+    }
+    
+    func boo() {
+        // ...
+    }
+    
+    func foo() async {
+        // ...
+    }
+}
+```
 
 I've slightly changed the example by introducing the content property on the ContentView type. The content property isn't isolated to the main actor, so both functions will run on the cooperative thread pool.
  
