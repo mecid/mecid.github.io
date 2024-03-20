@@ -29,6 +29,8 @@ The next step is always to be sure where the Swift language will run your code. 
 
 If your function is isolated to an actor, it will run as part of that actor. It doesn't matter if it is an async function or not. Actors always run on the Cooperative Thread Pool, and all their functions are isolated. You can also isolate any type or function you need using global actors.
 
+> To learn more about global actors, take a look at my ["Global actors in Swift"](https://swiftwithmajid.com/2024/03/12/global-actors-in-swift/) post.
+
 Swift applies the second rule if your function isn't isolated to an actor. The Swift language runs your function on the Cooperative Thread Pool whenever your function is async. On the other hand, non-async functions run as part of the calling thread, which means they don't switch threads and will run where you call them.
 
 Let's dive into some examples.
