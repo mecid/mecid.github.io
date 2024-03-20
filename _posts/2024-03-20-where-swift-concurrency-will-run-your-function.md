@@ -48,16 +48,18 @@ Let's dive into some examples.
 }
 ```
 
-As you can see in the example above, we have an actor-isolated *Store* type. It doesn't matter where you call foo or boo functions. They will always run on the main thread because the Store type is isolated to the global *@MainActor*.
+As you can see in the example above, we have an actor-isolated *Store* type. It doesn't matter where you call *foo* or *boo* functions. They will always run on the main thread because the *Store* type is isolated to the global *@MainActor*.
 
 ```swift
 struct ContentView: View {
     var body: some View {
         Text("Hello")
             .task {
+                // runs on the main thread
                 boo()
             }
             .task {
+                // runs on the cooperative thread pool
                 await foo()
             }
     }
