@@ -3,9 +3,9 @@ title: Where Swift Concurrency will run your function?
 layout: post
 ---
 
-Apple released Swift 5.5 almost three years ago. The main addition to the release was the Swift Concurrency feature. It introduced async and await keywords, allowing us to build concurrent apps in a new way. This week, we will learn how Swift determines where to run your function in a concurrent environment.
+Apple released Swift 5.5 almost three years ago. The main addition to the release was the Swift Concurrency feature. It introduced **async** and **await** keywords, allowing us to build concurrent apps in a new way. This week, we will learn how Swift determines where to run your function in a concurrent environment.
 
-First, let's look at creating an async function in Swift. To do so, you simply need to add the async keyword to the function's definition.
+First, let's look at creating an async function in Swift. To do so, you simply need to add the **async** keyword to the function's definition.
 
 ```swift
 func foo() async {
@@ -13,13 +13,13 @@ func foo() async {
 }
 ```
 
-The async keyword in the function's definition means that the function may suspend its execution to switch threads. To run an async function, you have to use the await keyword.
+The *async* keyword in the function's definition means that the function may suspend its execution to switch threads. To run an async function, you have to use the **await** keyword.
 
 ```swift
 await foo()
 ```
 
-The await keyword allows the calling thread to wait while an async function performs its job. When the async function finishes, the calling thread resumes where it is suspended.
+The **await** keyword allows the calling thread to wait while an async function performs its job. When the async function finishes, the calling thread resumes where it is suspended.
 
 The Swift language introduces the Cooperative Thread Pool, which allows you to run concurrent parts of your apps. The number of threads in the pool is limited to your CPU's cores, which prevents thread explosion.
 
@@ -48,7 +48,7 @@ Let's dive into some examples.
 }
 ```
 
-As you can see in the example above, we have an actor-isolated Store type. It doesn't matter where you call foo or boo functions. They will always run on the main thread because the Store type is isolated to the global @MainActor.
+As you can see in the example above, we have an actor-isolated *Store* type. It doesn't matter where you call foo or boo functions. They will always run on the main thread because the Store type is isolated to the global *@MainActor*.
 
 ```swift
 struct ContentView: View {
@@ -72,9 +72,9 @@ struct ContentView: View {
 }
 ```
 
-Here, we have a more complex example confusing many developers in our community. You should remember that SwiftUI views are not isolated to any actor. Only the body property of the View protocol is isolated to the main actor.
+Here, we have a more complex example confusing many developers in our community. You should remember that SwiftUI views are not isolated to any actor. Only the *body* property of the *View* protocol is isolated to the main actor.
 
-So, we have two non-isolated functions here. The foo function is async, and Swift runs it in the cooperative thread pool. The boo function is not async, and Swift will run it on the calling thread. As I said before, the body property of the View protocol is isolated to the main actor, which means in this particular example boo function will run on the main thread, where you should avoid doing heavy work.
+So, we have two non-isolated functions here. The *foo* function is async, and Swift runs it in the cooperative thread pool. The *boo* function is not async, and Swift will run it on the calling thread. As I said before, the *body* property of the *View* protocol is isolated to the main actor, which means in this particular example *boo* function will run on the main thread, where you should avoid doing heavy work.
 
 ```swift
 struct ContentView: View {
@@ -102,6 +102,6 @@ struct ContentView: View {
 }
 ```
 
-I've slightly changed the example by introducing the content property on the ContentView type. The content property isn't isolated to the main actor, so both functions will run on the cooperative thread pool.
+I've slightly changed the example by introducing the content property on the *ContentView* type. The *content* property isn't isolated to the main actor, so both functions will run on the cooperative thread pool.
  
 I hope this post will make running async functions less confusing.
