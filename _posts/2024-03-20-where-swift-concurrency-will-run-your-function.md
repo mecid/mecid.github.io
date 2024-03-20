@@ -23,7 +23,7 @@ The **await** keyword allows the calling thread to wait while an async function 
 
 The Swift language introduces the Cooperative Thread Pool, which allows you to run concurrent parts of your apps. The number of threads in the pool is limited to your CPU's cores, which prevents thread explosion.
 
-So, we have two crucial places where Swift Concurrency can run our code: Main Thread and Cooperative Thread Pool. We should use the main thread to update the UI of our apps, but we should avoid blocking it by running heavy work on it. That's why we have the Cooperative Thread Pool to run heavy jobs.
+So, we have two crucial places where Swift can run our code: Main Thread and Cooperative Thread Pool. We should use the main thread to update the UI of our apps and we should avoid blocking it by running heavy work on it. That's why we have the Cooperative Thread Pool to run heavy jobs.
 
 The next step is always to be sure where the Swift language will run your code. The Swift language uses a few rules to determine where to run your code.
 
