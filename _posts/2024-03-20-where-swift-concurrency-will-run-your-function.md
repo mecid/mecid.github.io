@@ -2,6 +2,7 @@
 title: Where Swift Concurrency will run your function?
 layout: post
 image: /public/swift.png
+category: Swift Language Features
 ---
 
 Apple released Swift 5.5 almost three years ago. The main addition to the release was the Swift Concurrency feature. It introduced **async** and **await** keywords, allowing us to build concurrent apps in a new way. This week, we will learn how Swift determines where to run your function in a concurrent environment.
