@@ -110,6 +110,6 @@ struct ContentView: View {
 }
 ```
 
-I've slightly changed the example by introducing the content property on the *ContentView* type. The *content* property isn't isolated to the main actor, so both functions will run on the cooperative thread pool.
+I've slightly changed the example by introducing the *content* property on the *ContentView* type. The *content* property isn't isolated to the main actor, so both functions will run on the cooperative thread pool.
  
 I hope this post will make running async functions less confusing. Feel free to follow me on Twitter and ask your questions related to this post. Thanks for reading, and see you next week!
