@@ -7,6 +7,8 @@ image: /public/swiftui.png
 
 Swift Concurrency became a vital part of my development stack. I leverage the power of the new Swift Concurrency features like async/await and task groups almost everywhere. SwiftUI Button type doesn't support Swift Concurrency out of the box, but it is flexible enough to allow us to build a button type supporting Swift Concurrency.
 
+{% include friends.html %}
+
 Almost every interaction starting a task in our apps is displayed as a button. A considerable part of this task should be non-blocking for other user interface parts. Let's start with a simple example demonstrating how to start an async task when the user presses a button.
 
 ```swift
