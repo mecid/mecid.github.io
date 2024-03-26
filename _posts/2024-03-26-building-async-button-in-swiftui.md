@@ -1,6 +1,7 @@
 ---
 title: Building async button in SwiftUI
 layout: post
+category: Building custom views
 ---
 
 Swift Concurrency became a vital part of my development stack. I leverage the power of the new Swift Concurrency features like async/await and task groups almost everywhere. SwiftUI Button type doesn't support Swift Concurrency out of the box, but it is flexible enough to allow us to build a button type supporting Swift Concurrency.
