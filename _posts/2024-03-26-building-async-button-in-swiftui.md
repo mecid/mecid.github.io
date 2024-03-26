@@ -213,4 +213,5 @@ struct AsyncButtonExampleView: View {
 
 The simple toggling of a boolean value is enough to run the *onChange* view modifier and cancel the task. This approach is used widely across SwiftUI. For example, the same pattern is used in the sensory feedback and scroll view APIs.
 
-Today, we learned how to build a custom button type that supports the Swift Concurrency feature. We were also introduced to the new trigger pattern, which is a declarative way of doing imperative things.
+Today, we learned how to build a custom button type that supports the Swift Concurrency feature. We were also introduced to the new trigger pattern, which is a declarative way of doing imperative things. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
