@@ -138,6 +138,8 @@ struct AsyncButtonExampleView: View {
 }
 ```
 
+> To learn more about styling buttons in SwiftUI, take a look at my dedicated ["The many faces of button in SwiftUI"](/2021/06/30/the-many-faces-of-button-in-swiftui/) post.
+
 The final touch we need to add to our *AsyncButton* type is cancelation support. We need to be able to cancel the running task. I will use the trigger value, a commonly used pattern in the SwiftUI framework, to achieve this. The idea is straightforward. You only need an equatable value to observe and react to its change.
 
 ```swift
