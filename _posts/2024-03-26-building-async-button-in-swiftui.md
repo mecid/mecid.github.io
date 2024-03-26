@@ -179,7 +179,7 @@ struct AsyncButton<Label: View, Trigger: Equatable>: View {
 }
 ```
 
-As you can see, we have introduced the *trigger* property and used the *onChange* view modifier to observe it. As soon as the trigger property changes, we cancel the button's ongoing task. Let's look at how to use the trigger pattern in a simple example.
+As you can see, we have introduced the *trigger* property and used the *onChange* view modifier to observe it. As soon as the *trigger* property changes, we cancel the button's ongoing task. Let's look at how to use the trigger pattern in a simple example.
 
 ```swift
 struct AsyncButtonExampleView: View {
