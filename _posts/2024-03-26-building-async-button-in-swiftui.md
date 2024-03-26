@@ -38,7 +38,7 @@ struct ExampleView: View {
 }
 ```
 
-As you can see in the example above, we define a button that starts a task on every press. The heavyUpdate function simulates the long-running task by sleeping for some time. You can press the button as many times as you need, and it will create numerous tasks. Usually, you need to disable the button while the action is in progress.
+As you can see in the example above, we define a button that starts a task on every press. The *heavyUpdate* function simulates the long-running task by sleeping for some time. You can press the button as many times as you need, and it will create numerous tasks. Usually, you need to disable the button while the action is in progress.
 
 ```swift
 struct ExampleView: View {
@@ -75,7 +75,7 @@ struct ExampleView: View {
 }
 ```
 
-Now, we define the isRunning property, which allows us to track the state of the async task. When the isRunning property changes to true, we disable the button. Let's extract the button's logic into the dedicated view.
+Now, we define the *isRunning* property, which allows us to track the state of the async task. When the *isRunning* property changes to true, we disable the button. Let's extract the button's logic into the dedicated view.
 
 ```swift
 struct AsyncButton<Label: View>: View {
@@ -107,7 +107,7 @@ struct AsyncButton<Label: View>: View {
 }
 ```
 
-As you can see in the example above, we have extracted our button's logic into a separate AsyncButton type. The SwiftUI framework's environment feature allows us to style any instance of the AsyncButton type the same way we style plain buttons.
+As you can see in the example above, we have extracted our button's logic into a separate *AsyncButton* type. The SwiftUI framework's environment feature allows us to style any instance of the *AsyncButton* type the same way we style plain buttons.
 
 ```swift
 struct AsyncButtonExampleView: View {
@@ -134,7 +134,7 @@ struct AsyncButtonExampleView: View {
 }
 ```
 
-The final touch we need to add to our AsyncButton type is cancelation support. We need to be able to cancel the running task. I will use the trigger value, a commonly used pattern in the SwiftUI framework, to achieve this. The idea is straightforward. You only need an equatable value to observe and react to its change.
+The final touch we need to add to our *AsyncButton* type is cancelation support. We need to be able to cancel the running task. I will use the trigger value, a commonly used pattern in the SwiftUI framework, to achieve this. The idea is straightforward. You only need an equatable value to observe and react to its change.
 
 ```swift
 struct AsyncButton<Label: View, Trigger: Equatable>: View {
@@ -173,7 +173,7 @@ struct AsyncButton<Label: View, Trigger: Equatable>: View {
 }
 ```
 
-As you can see, we have introduced the trigger property and used the onChange view modifier to observe it. As soon as the trigger property changes, we cancel the button's ongoing task. Let's look at how to use the trigger pattern in a simple example.
+As you can see, we have introduced the *trigger* property and used the *onChange* view modifier to observe it. As soon as the trigger property changes, we cancel the button's ongoing task. Let's look at how to use the trigger pattern in a simple example.
 
 ```swift
 struct AsyncButtonExampleView: View {
@@ -207,6 +207,6 @@ struct AsyncButtonExampleView: View {
 }
 ```
 
-The simple toggling of a boolean value is enough to run the onChange view modifier and cancel the task. This approach is used widely across SwiftUI. For example, the same pattern is used in the sensory feedback and scroll view APIs.
+The simple toggling of a boolean value is enough to run the *onChange* view modifier and cancel the task. This approach is used widely across SwiftUI. For example, the same pattern is used in the sensory feedback and scroll view APIs.
 
 Today, we learned how to build a custom button type that supports the Swift Concurrency feature. We were also introduced to the new trigger pattern, which is a declarative way of doing imperative things.
