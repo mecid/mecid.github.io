@@ -38,7 +38,7 @@ struct TriggerValueExample: View {
 }
 ```
 
-The *scrollIndicatorsFlash* view modifier allows us to flash the indicator of the scroll view whenever the messages property changes. The idea behind this pattern is pretty simple. We observe an equatable value and run the action whenever it changes.
+The *scrollIndicatorsFlash* view modifier allows us to flash the indicator of the scroll view whenever the *messages* property changes. The idea behind this pattern is pretty simple. We observe an equatable value and run the action whenever it changes.
 
 Let's implement a similar view modifier playing a sound whenever the trigger value changes.
 
