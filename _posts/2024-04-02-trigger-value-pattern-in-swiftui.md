@@ -1,6 +1,7 @@
 ---
 title: Trigger value pattern in SwiftUI
 layout: post
+category: View Composition
 image: /public/swiftui.png
 ---
 
