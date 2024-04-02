@@ -5,6 +5,8 @@ layout: post
 
 The recent version of the SwiftUI framework introduces a trigger value pattern across its APIs. Trigger value allows us to attach a view modifier that runs its action whenever the trigger value changes. You can find this pattern while using sensory feedback or launching keyframe animation in SwiftUI. This week, we will learn how to build custom view modifiers using trigger value patterns.
 
+{% include friends.html %}
+
 As I said before, the trigger value pattern became very popular in the recent version of the SwiftUI framework. Let's look at the example showing the usage of the *sensoryFeedback* view modifier in SwiftUI.
 
 ```swift
