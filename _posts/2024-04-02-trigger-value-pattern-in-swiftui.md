@@ -161,5 +161,7 @@ struct AsyncButtonExampleView: View {
 
 As you can see, we use the trigger value pattern to cancel the disabled button's ongoing task and make it active again.
 
+> To learn more about building `AsyncButton`, take a look at my ["Building async button in SwiftUI"](/2024/03/26/building-async-button-in-swiftui/) post.
+
 Today, we learned how to build custom APIs by introducing the trigger value pattern in our codebase. The trigger value pattern is widespread across the SwiftUI framework, and I'm sure more APIs will use this pattern soon. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
