@@ -23,6 +23,8 @@ struct TriggerValueExample: View {
 }
 ```
 
+> To learn more about providing haptic feedback in SwiftUI, take a look at my ["Sensory feedback in SwiftUI"](/2023/10/10/sensory-feedback-in-swiftui/) post.
+
 In the example above, we attach the *sensoryFeedback* view modifier to run haptic feedback on the device. Haptic feedback doesn't run on view appearance. It only runs whenever the trigger value changes. Another example is the *scrollIndicatorsFlash* view modifier.
 
 ```swift
