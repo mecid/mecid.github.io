@@ -48,7 +48,10 @@ extension UNUserNotificationCenter {
         let request = UNNotificationRequest(
             identifier: "offer", 
             content: content,
-            trigger: UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
+            trigger: UNTimeIntervalNotificationTrigger(
+                timeInterval: 1800,
+                repeats: false
+            )
         )
         
         add(request)
