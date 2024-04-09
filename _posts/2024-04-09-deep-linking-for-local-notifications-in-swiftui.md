@@ -1,6 +1,7 @@
 ---
 title: Deep linking for local notifications in SwiftUI
 layout: post
+image: /public/swiftui.png
 ---
 
 Notifications are crucial for keeping users engaged with your app. Almost all of my apps provide notifications that not only launch the app but also navigate to different parts of the app. Today, I want to share how I build deep links for local notifications in my apps.
@@ -128,4 +129,3 @@ struct MyApp: App {
 In the example above, we use the *UIApplicationDelegateAdaptor* property wrapper to define an *AppDelegate* for the SwiftUI app. We also observe the scene phase to schedule the offer notification after the first launch.
 
 Today, we learned how to implement deep linking functionality in pair with local notifications in a SwiftUI-based app. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
-
