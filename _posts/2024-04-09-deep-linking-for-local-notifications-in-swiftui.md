@@ -5,6 +5,8 @@ layout: post
 
 Notifications are crucial for keeping users engaged with your app. Almost all of my apps provide notifications that not only launch the app but also navigate to different parts of the app. Today, I want to share how I build deep links for local notifications in my apps.
 
+{% include friends.html %}
+
 SwiftUI introduced the *onOpenURL* view modifier to handle universal links in our apps. Here is a quick example showing how to use the *onOpenURL* view modifier.
 
 ```swift
