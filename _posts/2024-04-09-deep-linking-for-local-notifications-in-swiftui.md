@@ -2,6 +2,7 @@
 title: Deep linking for local notifications in SwiftUI
 layout: post
 image: /public/swiftui.png
+category: Interactions
 ---
 
 Notifications are crucial for keeping users engaged with your app. Almost all of my apps provide notifications that not only launch the app but also navigate to different parts of the app. Today, I want to share how I build deep links for local notifications in my apps.
