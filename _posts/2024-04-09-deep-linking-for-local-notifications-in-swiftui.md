@@ -35,6 +35,8 @@ struct MyApp: App {
 
 As you can see in the example above, we use the *onOpenURL* view modifier to parse the opened URL and provide navigation inside the app by displaying the offer sheet.
 
+> To learn more about the *onOpenURL* view modifier, take a look at my ["Mastering NavigationStack in SwiftUI. Deep Linking."](/2022/06/21/mastering-navigationstack-in-swiftui-deep-linking/) post.
+
 Before using the *onOpenURL* view modifier, you must register the URL scheme you want to open in the app. Go to project settings, choose your target, and register a URL scheme in the URL types section.
 
 Now, you are ready to handle links in your app. You can try to test how the app handles links by opening a link in Safari, for example, *myapp://offer*.
