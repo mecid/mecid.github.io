@@ -63,7 +63,7 @@ As you can see in the example above, I've created the *addOfferNotification* fun
 
 The idea is to intercept notifications with the URL field in the *userInfo* dictionary and open the URL instead of launching the app. The *UNUserNotificationCenter* type allows us to provide a delegate to handle the moment the user taps the notification.
 
-The only place where you should set the delegate for the *UNUserNotificationCenter* type is the *AppDelegate*'s *willFinishLaunchingWithOptions* method. So, we need to define *AppDelegate* for our SwiftUI app. Fortunately, it is possible.
+The only place where you should set the delegate for the *UNUserNotificationCenter* type is the *AppDelegate*'s *willFinishLaunchingWithOptions* method. So, we need to define *AppDelegate* for our SwiftUI app.
 
 ```swift
 final class AppDelegate: NSObject, UIApplicationDelegate {
