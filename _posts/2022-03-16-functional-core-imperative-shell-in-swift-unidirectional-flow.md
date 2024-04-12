@@ -229,7 +229,8 @@ struct RootView: View {
     @StateObject var store = Store(
         initialState: TimerState(goal: 13 * 3600),
         reducer: timerReducer,
-        dependencies: TimerDependencies.production
+        dependencies: TimerDependencies.production,
+        middlewares: [timerMiddleware]
     )
 
     var body: some View {
