@@ -7,7 +7,21 @@ SwiftUI introduced a set of view modifiers, allowing us to manage the safe areas
 
 Let's start with a simple example demonstrating the list with a hundred items.
 
-=====================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(1..<100) { index in
+                    Text("Item \(index)")
+                }
+            }
+            .font(.title)
+            .navigationTitle("Item list")
+        }
+    }
+}
+```
 
 As you can see in the example above, we place the List view with a bunch of Text views inside. It might look great on an iPhone, but it seems very strange on an iPad, as it places all the text on the leading edge and keeps the center of the screen empty.
 
@@ -15,13 +29,51 @@ While using UIKit, we have access to the readableContentGuide layout guide. Lite
 
 We can workaround the issue by increasing the safe area on the iPad like this:
 
-=====================================================
+```swift
+struct ContentView: View {
+    @Environment(\.horizontalSizeClass) private var sizeClass
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(1..<100) { index in
+                    Text("Item \(index)")
+                }
+            }
+            .font(.title)
+            .navigationTitle("Item list")
+            .safeAreaPadding(.horizontal, sizeClass == .regular ? 200 : 0)
+        }
+    }
+}
+```
 
 We were able to shift the content to the center on the iPad by using the horizontalSizeClass environment value and the safeAreaPadding view modifier. However, as you can see, this also shifts the scrollbar indicator from the trailing edge to the center.
 
 We need a way to differentiate the content and toolbars of the view and shift only the content while keeping the toolbars in the same place. Fortunately, SwiftUI introduces the new contentMargins view modifier, allowing us to shift a particular type of content in the view.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @Environment(\.horizontalSizeClass) private var sizeClass
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(1..<100) { index in
+                    Text("Item \(index)")
+                }
+            }
+            .font(.title)
+            .navigationTitle("Item list")
+            .contentMargins(
+                .horizontal,
+                sizeClass == .regular ? 200 : 0,
+                for: .scrollContent
+            )
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the contentMargins view modifier to shift only scrollable content away from the safe area. But it keeps the scrollbar on the trailing edge of the view.
 
