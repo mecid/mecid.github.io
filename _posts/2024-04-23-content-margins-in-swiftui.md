@@ -1,6 +1,7 @@
 ---
 title: Content margins in SwiftUI
 layout: post
+image: /public/margins3.png
 ---
 
 SwiftUI introduced a set of view modifiers, allowing us to manage the safe areas in our views efficiently. In many cases, the safe area is where you want to put your content. Today, we will learn about the new content margin concept that SwiftUI introduced and how it differs from the safe area.
