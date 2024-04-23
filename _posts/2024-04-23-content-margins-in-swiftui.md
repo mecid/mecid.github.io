@@ -33,6 +33,9 @@ As you can see in the example above, we place the *List* view with a bunch of *T
 
 While using UIKit, we have access to the *readableContentGuide* layout guide. Literally, it is another safe area, but only for your text content. Unfortunately, we don't have access to *readableContentGuide* in SwiftUI.
 
+
+> To learn more about managing safe area in SwiftUI, take a look at my ["Managing safe area in SwiftUI"](/2021/11/03/managing-safe-area-in-swiftui/) post.
+
 We can workaround the issue by increasing the safe area on the iPad like this:
 
 ```swift
