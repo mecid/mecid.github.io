@@ -39,6 +39,8 @@ struct ItemDetailsView: View {
 
 ![inspector](/public/inspector.png)
 
+> To learn more about other presentational view modifiers in SwiftUI, take a look at my ["Alerts, Action Sheets, Modals and Popovers in SwiftUI"](/2024/04/30/inspectors-in-swiftui/) post.
+
 As you can see in the example above, the *inspector* view modifier works similarly to the *sheet* view modifier. It also needs the *isPresenting* binding to control its visibility. The SwiftUI framework allows us to tune the width of the inspector view by using the *inspectorColumnWidth* view modifier.
 
 ```swift
