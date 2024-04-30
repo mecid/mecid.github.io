@@ -37,6 +37,8 @@ struct ItemDetailsView: View {
 }
 ```
 
+![inspector](/public/inspector.png)
+
 As you can see in the example above, the *inspector* view modifier works similarly to the *sheet* view modifier. It also needs the *isPresenting* binding to control its visibility. The SwiftUI framework allows us to tune the width of the inspector view by using the *inspectorColumnWidth* view modifier.
 
 ```swift
