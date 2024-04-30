@@ -99,6 +99,8 @@ struct ItemDetailsView: View {
 }
 ```
 
+> To learn more about bottom sheet API in SwiftUI, take a look at my ["Bottom sheet API in SwiftUI"](/2024/04/30/inspectors-in-swiftui/) post.
+
 Whenever you use inspectors in the SwiftUI app, you can add commands to your scene to enable inspector-based keyboard shortcuts, such as show/hide inspector. The SwiftUI framework allows us to insert inspector keyboard shortcuts using the *InspectorCommands* type easily.
 
 ```swift
