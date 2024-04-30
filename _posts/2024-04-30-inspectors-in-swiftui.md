@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 What I love most about SwiftUI is how the same code adapts to the environment and provides platform-specific solutions. This is how SwiftUI allows us to run the same code on all Apple platforms available on the market. This week, we will talk about inspectors, another API that perfectly adapts the platform it is running for.
 
+{% include friends.html %}
+
 Inspector is a context-dependent presentation. It appears as a sheet in a compact environment, whereas it displays a trailing column in your view hierarchy in a regular environment. The SwiftUI API for inspectors looks very similar to the sheet API. Let's take a look at the simple example.
 
 ```swift
