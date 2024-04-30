@@ -2,6 +2,7 @@
 title: Inspectors in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/inspector.png
 ---
 
 What I love most about SwiftUI is how the same code adapts to the environment and provides platform-specific solutions. This is how SwiftUI allows us to run the same code on all Apple platforms available on the market. This week, we will talk about inspectors, another API that perfectly adapts the platform it is running for.
