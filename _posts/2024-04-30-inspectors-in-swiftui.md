@@ -117,4 +117,4 @@ struct MyApp: App {
 
 As you can see in the example above, we use the *commands* modifier to add an instance of the *InspectorCommands* type to our scene. It enables keyboard shortcuts, allowing us to manipulate the inspector whenever the current view uses the *inspector* view modifier.
 
-I love the SwiftUI features, which allow me to run the same code on different platforms by adopting best practices without modifying the code for the particular operating system. Scenes, navigation, and toolbar APIs allow you to write the same code to provide a platform-agnostic experience for your users.
+I love the SwiftUI features, which allow me to run the same code on different platforms by adopting best practices without modifying the code for the particular operating system. Scenes, navigation, and toolbar APIs allow you to write the same code to provide a platform-agnostic experience for your users. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
