@@ -4,7 +4,7 @@ layout: post
 category: Mastering SwiftUI views
 ---
 
-Last week we talked about [Navigation in SwiftUI](/2019/07/17/navigation-in-swiftui/). This week I want to continue the topic with sheets, alerts, action sheets, and popovers. SwiftUI has a set of dedicated modifiers for presenting this kind of stuff. Let's take a look at how we can use different view modifiers to display sheets, alerts, action sheets, and popovers.
+SwiftUI has a set of dedicated modifiers for presenting sheets, alerts, action sheets, and popovers. Let's take a look at how we can use them to display views in different ways.
 
 {% include friends.html %}
 
