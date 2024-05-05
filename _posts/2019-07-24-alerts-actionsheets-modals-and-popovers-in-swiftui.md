@@ -39,9 +39,9 @@ As you can see in the example above to present an action sheet, we use *actionSh
 
 > *ActionSheet* is deprecated now, use confirmation dialogs instead. To learn more, take a look at my ["Confirmation dialogs in SwiftUI"](/2021/07/28/confirmation-dialogs-in-swiftui/) post.
 
-The interesting fact here is that SwiftUI resets the binding to initial value after *Alert* or *Action Sheet* dismissal.
+The interesting fact here is that SwiftUI resets the binding to initial value after alert or action sheet dismissal.
 
-It is a straightforward approach to present alerts or action sheets. But sometimes it is not enough, because we need some data to show in alert. For this case, we have another versions of the *alert* view modifier, which use an optional *presenting* parameter.
+It is a straightforward approach to present alerts or action sheets. But sometimes it is not enough, because we need some data to show in alert. For this case, we have another versions of the *alert* view modifier, which use an optional **presenting** parameter.
 
 ```swift
 struct EditorView: View {
@@ -77,7 +77,9 @@ struct EditorView: View {
 As you can see in the example above, the *alert* view modifier provides additional parameter *presenting* allowing us to pass the value we want to display in the alert message and actions builder. 
 
 #### Sheets
-To present modals, SwiftUI provides the special view modifier called *sheet*. *Sheet* view modifier is very similar to *alert* and *actionSheet*, it uses boolean or optional identifiable binding to understand when to present a sheet. It also needs a closure which returns a content view for a sheet. Besides that, *sheet* view modifier has an optional *onDismiss* closure parameter, SwiftUI calls this closure after modal dismiss. Like with alerts, SwiftUI will reset binding to the initial value after modal dismissal.
+To present modals, SwiftUI provides the special view modifier called *sheet*. *Sheet* view modifier is very similar to *alert* and *actionSheet*, it uses boolean or optional identifiable binding to understand when to present a sheet. It also needs a closure which returns a content view for a sheet.
+
+Besides that, *sheet* view modifier has an optional *onDismiss* closure parameter, SwiftUI calls this closure after modal dismiss. Like with alerts, SwiftUI will reset binding to the initial value after modal dismissal.
 
 ```swift
 struct MasterView: View {
