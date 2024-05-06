@@ -38,17 +38,17 @@ By using @*Environment property wrapper*, we can read and subscribe on changes f
 Now let's see how we can modify *Environment* values. In SwiftUI we don't have separation like *Controllers* or *Views*. Everything is a *View*, and because of that, we can easily modify *Environment* for an entire view hierarchy of the app by adding *environment modifier* to the root view.
 
 ```swift
-func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        window = UIWindow(windowScene: scene as! UIWindowScene)
-        window?.rootViewController = UIHostingController(
-            rootView: RootView()
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
                 .environment(\.multilineTextAlignment, .center)
                 .environment(\.lineLimit, nil)
                 .environment(\.lineSpacing, 8)
-        )
-
-        window?.makeKeyAndVisible()
+        }
     }
+}
 ```
 
 In the example above, we made all the text in the app center-aligned with line spacing 8pt without any line limit.
@@ -88,11 +88,11 @@ We already covered how SwiftUI pass system-wide settings via *Environment*, but 
 
 ```swift
 struct ModalView: View {
-    @Environment(\.presentationMode) var presentation
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         Button("dismiss") {
-            self.presentation.value.dismiss()
+            dismiss()
         }
     }
 }
