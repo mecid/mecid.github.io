@@ -1,5 +1,5 @@
 ---
-title: Discovering app features with TipKit. Basics
+title: Discovering app features with TipKit. Basics.
 layout: post
 category: Interactions
 ---
