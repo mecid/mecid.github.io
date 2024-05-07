@@ -71,6 +71,8 @@ struct MyApp: App {
 
 ```
 
+![tip-image](/public/tip1.png)
+
 Finally, we can see our tip on the screen. The TipKit framework provides us not only the *popoverTip* view modifier but also the *TipView* that we can use inline.
 
 ```swift
