@@ -6,6 +6,8 @@ category: Interactions
 
 When I first discovered the title TipKit, I didn't expect that it would be super helpful for every app I built. TipKit is a new framework that allows you to highlight your app's features easily. This week, we will learn how to use the TipKit framework to make our app content more discoverable.
 
+{% include friends.html %}
+
 #### Basics
 TipKit provides a straightforward foundation for displaying hints in your app. Each hint you wish to display needs to conform to the Tip protocol that TipKit offers, making hint display a breeze.
 
