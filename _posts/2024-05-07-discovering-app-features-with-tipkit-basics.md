@@ -211,5 +211,18 @@ struct MyApp: App {
 }
 ```
 
+#### Debugging
+TipKit framework also provides us a few functions that might be helpful while testing and debugging tips in our apps.
+
+```swift
+try? Tips.resetDatastore()
+
+Tips.showTipsForTesting([FeedTip.self])
+Tips.showAllTipsForTesting()        
+
+Tips.hideTipsForTesting([FeedTip.self])        
+Tips.hideAllTipsForTesting()
+```
+
 #### Conclusion
 Today, we learned the basics of the TipKit framework. In the following week, I will cover customization points and tip interactions. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
