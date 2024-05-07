@@ -29,7 +29,7 @@ enum FeedTip: Tip {
 }
 ```
 
-As you can see in the example above, we introduce the *FeedTip* type and conform to the *Tip* protocol. The only property required for the *Tip* protocol is the title. Let's see how we can actually display our tip.
+As you can see in the example above, we introduce the *FeedTip* type and conform to the *Tip* protocol. The only property required for the *Tip* protocol is the *title*. Let's see how we can actually display our tip.
 
 ```swift
 struct FeedView: View {
