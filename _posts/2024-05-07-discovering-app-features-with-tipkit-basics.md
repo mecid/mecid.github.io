@@ -53,7 +53,7 @@ struct FeedView: View {
 
 Here, the *FeedView* type displays the list of items and the button for adding more items. We use the *popoverTip* view modifier on a button to display our hint using a popover.
 
-If you try to run the code above, you will not see any hints in your app. The last step to display hints is the TipKit configuration. To set up hints in our apps, we have to call the static function configure on the *Tips* class.
+If you try to run the code above, you will not see any hints in your app. The last step to display hints is the TipKit configuration. To set up hints in our apps, we have to call the static function *configure* on the *Tips* class.
 
 ```swift
 @main
