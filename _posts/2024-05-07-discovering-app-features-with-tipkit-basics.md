@@ -211,6 +211,17 @@ struct MyApp: App {
 }
 ```
 
+#### UIKit
+The TipKit framework is not a SwiftUI-based framework, you can easily use it in your UIKit-based code. It provides us *TipUIView*, *TipUIPopoverViewController*, and *TipUICollectionViewCell* types.
+
+```swift
+ let tipVC = TipUIPopoverViewController(
+    FeedTip.add,
+    sourceItem: addButton
+)
+present(tipVC, animated: animated)
+```
+
 #### Debugging
 TipKit framework also provides us a few functions that might be helpful while testing and debugging tips in our apps.
 
