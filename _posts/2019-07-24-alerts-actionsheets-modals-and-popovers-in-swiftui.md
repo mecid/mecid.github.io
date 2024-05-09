@@ -115,6 +115,8 @@ struct ModalView: View {
 ```
 You can also use *fullScreenCover* view modifier to present full screen modals. It works the same way as the *sheet* view modifier. The *dismiss* property is an environment value that allows us to dismiss the current presentated view. We can use it to programmatically dismiss the sheet. 
 
+> SwiftUI introduced the bottom sheet API allowing us to easily convert any sheet into the bottom sheet. To learn more, take a look at my ["Bottom sheet API in SwiftUI"](/2022/07/19/bottom-sheet-api-in-swiftui/) post.
+
 #### Popovers
 Using popovers in SwiftUI is very similar to alerts and action sheets. *Popover* modifier also has two overloads for boolean and optional identifiable bindings. Another additional parameter in the *popover* view modifier is *arrowEdge*, by providing *Edge* value you can draw an arrow in a specified direction. Here is the example of the *popover* view modifier usage.
 
