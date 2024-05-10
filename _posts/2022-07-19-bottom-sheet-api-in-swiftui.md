@@ -157,7 +157,7 @@ struct ContentView: View {
 }
 ``` 
 
-The last thing we can customize is the drag indicator of the bottom sheet. We can make it always visible, hidden, or allow SwiftUI to decide whether it should be visible.
+Besides the sheet size, we can customize the drag indicator of the bottom sheet. We can make it always visible, hidden, or allow SwiftUI to decide whether it should be visible.
 
 ```swift
 struct ContentView: View {
