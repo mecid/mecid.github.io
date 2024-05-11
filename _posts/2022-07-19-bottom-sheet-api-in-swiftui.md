@@ -181,4 +181,28 @@ struct ContentView: View {
 }
 ```
 
+By using the *presentationCornerRadius* view modifier we can easily tune the corner radius of the presented bottom sheet.
+
+```swift
+struct ContentView: View {
+    @State private var sheetShown = false
+    @State private var query = ""
+
+    var body: some View {
+        Button("Display bottom sheet") {
+            sheetShown = true
+        }
+        .sheet(isPresented: $sheetShown) {
+            NavigationStack {
+                Text("You query: \(query)")
+                    .searchable(text: $query)
+                    .navigationTitle("Search")
+            }
+            .presentationDetents([.medium, .large])
+            .presentationCornerRadius(16)
+        }
+    }
+}
+```
+
 Today we learned how to use the new bottom sheet API in SwiftUI. I love the level of customization it provides. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
