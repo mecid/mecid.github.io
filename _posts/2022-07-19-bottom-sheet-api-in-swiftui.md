@@ -205,4 +205,30 @@ struct ContentView: View {
 }
 ```
 
+The *presentationBackground* view modifier allows us to set any instance of the *ShapeStyle* as the background of the bottom sheet.
+
+```swift
+struct ContentView: View {
+    @State private var sheetShown = false
+    @State private var query = ""
+
+    var body: some View {
+        Button("Display bottom sheet") {
+            sheetShown = true
+        }
+        .sheet(isPresented: $sheetShown) {
+            NavigationStack {
+                Text("You query: \(query)")
+                    .searchable(text: $query)
+                    .navigationTitle("Search")
+            }
+            .presentationDetents([.medium, .large])
+            .presentationBackground(Material.ultraThin)
+        }
+    }
+}
+```
+
+As you can see in the example above, we set the ultra thin material as the background of the presented bottom sheet.
+
 Today we learned how to use the new bottom sheet API in SwiftUI. I love the level of customization it provides. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
