@@ -6,6 +6,8 @@ category: Interactions
 
 This week, we will continue discussing how to highlight app features using the TipKit framework. TipKit provides a flexible way of customizing the condition under which tips should appear. 
 
+{% include friends.html %}
+
 As I said, we can manage the rules under which tips appear. For example, you can turn off a tip whenever the user has already used the feature.
 
 ```swift
