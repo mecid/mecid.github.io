@@ -196,6 +196,10 @@ enum FeedTip: Tip {
         }
         
         #Rule(Self.itemAdded) {
+            $0.donations.donatedWithin(.week).count == 0
+        }
+        
+        #Rule(Self.itemAdded) {
             $0.donations.count >= 3
         }
     }
