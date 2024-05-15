@@ -1,6 +1,7 @@
 ---
 title: Discovering app features with TipKit. Rules.
 layout: post
+category: Interactions
 ---
 
 This week, we will continue discussing how to highlight app features using the TipKit framework. TipKit provides a flexible way of customizing the condition under which tips should appear. 
