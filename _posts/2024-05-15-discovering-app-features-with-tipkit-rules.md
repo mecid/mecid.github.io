@@ -202,4 +202,4 @@ enum FeedTip: Tip {
 
 Here, we define the options parameter on the *FeedTip* type. We use the *MaxDisplayCount* type to limit the number of tip displays. Remember that options have priority over rules, and the framework will not display the tip more than three times even if the app meets all the conditions in the rules property.
 
-Today, we learned how to customize the logic that decides whenever to display your tips using the rules, parameters, events, and options.
+Today, we learned how to customize the logic that decides whenever to display your tips using the rules, parameters, events, and options. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
