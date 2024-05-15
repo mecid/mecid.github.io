@@ -37,6 +37,8 @@ struct ContentView: View {
 }
 ```
 
+> To learn more about the basics of the TipKit framework, take a look at my ["Discovering app features with TipKit. Basics."](/2024/05/07/discovering-app-features-with-tipkit-basics/) post.
+
 #### Rules
 Let's move forward by discussing another concept of the TipKit framework: rules and parameters. The TipKit framework provides the **#Rule** macro, which allows us to define dynamic rules based on the app state.
 
