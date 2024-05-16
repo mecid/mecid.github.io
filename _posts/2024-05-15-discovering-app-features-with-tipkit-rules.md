@@ -23,11 +23,11 @@ struct ContentView: View {
                 }
                 
                 Button("Add") {
+                    FeedTip.add.invalidate(reason: .actionPerformed)
                     store.addItem()
                 }
                 .popoverTip(FeedTip.add) { action in
                     if action.id == "add" {
-                        FeedTip.add.invalidate(reason: .actionPerformed)
                         store.addItem()
                     }
                 }
