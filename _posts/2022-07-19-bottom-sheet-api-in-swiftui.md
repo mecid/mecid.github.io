@@ -175,7 +175,7 @@ struct ContentView: View {
                     .navigationTitle("Search")
             }
             .presentationDetents([.medium, .large])
-            .presentationDragIndicator(.automatic)
+            .presentationDragIndicator(.hidden)
         }
     }
 }
