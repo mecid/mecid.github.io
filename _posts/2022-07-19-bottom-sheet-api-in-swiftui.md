@@ -97,10 +97,10 @@ Depending on the current environment, we might need to build a super custom sizi
 ```swift
 struct MyCustomDetent: CustomPresentationDetent {
     static func height(in context: Context) -> CGFloat? {
-        if context.verticalSizeClass == .regular {
-            return context.maxDetentValue * 0.8
-        } else {
+        if context.dynamicTypeSize.isAccessibilitySize {
             return context.maxDetentValue
+        } else {
+            return context.maxDetentValue * 0.8
         }
     }
 }
