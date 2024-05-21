@@ -18,18 +18,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
+                TipView(FeedTip.add)
+                
                 ForEach(store.items, id: \.self) { item in
                     Text(verbatim: item)
                 }
                 
                 Button("Add") {
                     store.addItem()
-                }
-                .popoverTip(FeedTip.add) { action in
-                    if action.id == "add" {
-                        FeedTip.add.invalidate(reason: .actionPerformed)
-                        store.addItem()
-                    }
                 }
             }
             .tipCornerRadius(8, antialiased: true)
@@ -47,18 +43,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
+                TipView(FeedTip.add)
+                
                 ForEach(store.items, id: \.self) { item in
                     Text(verbatim: item)
                 }
                 
                 Button("Add") {
                     store.addItem()
-                }
-                .popoverTip(FeedTip.add) { action in
-                    if action.id == "add" {
-                        FeedTip.add.invalidate(reason: .actionPerformed)
-                        store.addItem()
-                    }
                 }
             }
             .tipImageSize(CGSize(width: 24, height: 24))
@@ -76,18 +68,14 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
+                TipView(FeedTip.add)
+                
                 ForEach(store.items, id: \.self) { item in
                     Text(verbatim: item)
                 }
                 
                 Button("Add") {
                     store.addItem()
-                }
-                .popoverTip(FeedTip.add) { action in
-                    if action.id == "add" {
-                        FeedTip.add.invalidate(reason: .actionPerformed)
-                        store.addItem()
-                    }
                 }
             }
             .tipBackground(Material.regular)
