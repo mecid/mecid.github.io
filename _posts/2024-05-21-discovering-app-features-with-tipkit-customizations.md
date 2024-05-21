@@ -86,6 +86,8 @@ struct ContentView: View {
 
 Another view modifier we use to customize the tip is the *tipBackground* view modifier. We can use the *tipBackground* view modifier to set any *ShapeStyle* as the background of the tip view. In the example above, we use the regular material to set the background for tip views.
 
+> To learn more about the basics of the TipKit framework, take a look at my ["Discovering app features with TipKit. Basics."](/2024/05/07/discovering-app-features-with-tipkit-basics/) post.
+
 We talked about the ready-to-use view modifiers, which allow us to customize them roughly. The TipKit framework provides the *tipViewStyle* view modifier, enabling us to set a fully custom style of the tip view.
 
 ```swift
