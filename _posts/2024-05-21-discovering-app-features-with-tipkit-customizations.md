@@ -1,6 +1,7 @@
 ---
 title: Discovering app features with TipKit. Customizations.
 layout: post
+category: Interactions
 ---
 
 The final post on the topic of the TipKit framework is customization points. This week, we will learn how to customize a tip look and feel in our apps using the TipKit framework.
