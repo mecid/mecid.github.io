@@ -201,4 +201,4 @@ struct ContentView: View {
 
 Now, we can use the tipViewStyle view modifier to set the instance of the MyCustomTipViewStyle type. Remember that it also uses the environment to propagate the custom style into the view hierarchy.
 
-As you can see, the TipKit framework provides many tools, allowing full customization of the views displaying our tips.
+As you can see, the TipKit framework provides many tools, allowing full customization of the views displaying our tips. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
