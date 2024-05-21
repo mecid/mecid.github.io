@@ -7,6 +7,8 @@ image: /public/tip1.png
 
 The final post on the topic of the TipKit framework is customization points. This week, we will learn how to customize a tip look and feel in our apps using the TipKit framework.
 
+{% include friends.html %}
+
 The TipKit framework provides a set of view modifiers, allowing us to customize the look and feel of a tip. Let's start with the simple ones.
 
 ```swift
