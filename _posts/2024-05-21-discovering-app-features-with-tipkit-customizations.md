@@ -9,7 +9,7 @@ The final post on the topic of the TipKit framework is customization points. Thi
 
 {% include friends.html %}
 
-The TipKit framework provides a set of view modifiers, allowing us to customize the look and feel of a tip. Let's start with the simple ones.
+The TipKit framework provides a set of view modifiers, allowing us to customize the visual appearance of a tip. Let's start with the simple ones.
 
 ```swift
 struct ContentView: View {
