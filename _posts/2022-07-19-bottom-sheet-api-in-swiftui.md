@@ -92,7 +92,7 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *fraction* function to set the height of the sheet to a particular fraction of the available space. You can also use the *height* function to set the height to a fixed size. Remember that you can mix different options to achieve the appearance you need.
 
-Depending on the current environment, we might need to build a super custom sizing logic. For example, I would like to display a bottom sheet by taking 80% of the available space on the iPad and full height on the iPhone. We can implement this custom presentation logic and reuse it across multiple screens.
+Depending on the current environment, we might need to build a super custom sizing logic. For example, I would like to display a bottom sheet by taking full size whenever accessibility fonts enabled. We can implement this custom presentation logic and reuse it across multiple screens.
 
 ```swift
 struct MyCustomDetent: CustomPresentationDetent {
