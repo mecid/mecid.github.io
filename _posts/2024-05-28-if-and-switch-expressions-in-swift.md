@@ -63,7 +63,7 @@ update(
 
 As you can see, we refactored our code. In the example above, we define the *bmr* constant and initialize it inline with the switch expression. Now, we win back local reasoning by guaranteeing that the switch expression provides the initial value to our constant.
 
-Let's discuss some points you must remember while using if and swift expressions in Swift. Each branch of the if, or each case of the switch, must be a single expression. Each of these expressions becomes the value of the overall expression if the branch is chosen.
+Let's discuss some points you must remember while using if and switch expressions in Swift. Each branch of the if, or each case of the switch, must be a single expression. Each of these expressions becomes the value of the overall expression if the branch is chosen.
 
 ```swift
 let weight = user.weight.doubleValue(for: .gramUnit(with: .kilo))
