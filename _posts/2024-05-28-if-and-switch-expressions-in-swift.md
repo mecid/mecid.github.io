@@ -25,7 +25,7 @@ default:
 let factoredByActivityBMR = bmr * activity.factor
 
 update(
-    with: .init(
+    with: HKQuantity(
         unit: .largeCalorie(),
         doubleValue: factoredByActivityBMR
     ), 
@@ -53,7 +53,7 @@ default:
 let factoredByActivityBMR = bmr * activity.factor
 
 update(
-    with: .init(
+    with: HKQuantity(
         unit: .largeCalorie(),
         doubleValue: factoredByActivityBMR
     ),
@@ -79,7 +79,7 @@ default:
 let factoredByActivityBMR = bmr * activity.factor
 
 update(
-    with: .init(
+    with: HKQuantity(
         unit: .largeCalorie(),
         doubleValue: factoredByActivityBMR
     ),
