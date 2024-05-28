@@ -15,9 +15,9 @@ let bmr: Double
         
 switch user.gender {
 case .male:
-    bmr = 66.47 + (13.75 * weight) + (5.0003 * height) - (6.755 * Double(user.age))
+    bmr = 66.47 + (13.75 * weight) + (5.0003 * height) - (6.755 * user.age)
 default:
-    bmr = 655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * Double(user.age))
+    bmr = 655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * user.age)
 }
         
 let factoredByActivityBMR = bmr * activity.factor
@@ -43,9 +43,9 @@ let height = user.height.doubleValue(for: .meterUnit(with: .centi))
         
 let bmr = switch user.gender {
 case .male:
-    66.47 + (13.75 * weight) + (5.0003 * height) - (6.755 * Double(user.age))
+    66.47 + (13.75 * weight) + (5.0003 * height) - (6.755 * user.age)
 default:
-    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * Double(user.age))
+    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * user.age)
 }
         
 let factoredByActivityBMR = bmr * activity.factor
@@ -69,9 +69,9 @@ let height = user.height.doubleValue(for: .meterUnit(with: .centi))
         
 let bmr = switch user.gender {
 case .male where user.age > 30:
-    66.47 + (13.75 * weight) + (5.0003 * height) - (6.755 * Double(user.age))
+    66.47 + (13.75 * weight) + (5.0003 * height) - (6.755 * user.age)
 default:
-    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * Double(user.age))
+    655.1 + (9.563 * weight) + (1.85 * height) - (4.676 * user.age)
 }
         
 let factoredByActivityBMR = bmr * activity.factor
