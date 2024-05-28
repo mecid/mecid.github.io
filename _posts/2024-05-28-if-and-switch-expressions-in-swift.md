@@ -35,7 +35,7 @@ update(
 
 As you can see in the example above, we define the bmr constant and initialize it later in the switch statement because we have to apply some calculations.
 
-This kind of situation has a few problems with readability due to the loss of local reasoning. We define a non-optional constant without the value, which means we have to set the initial value later in the code before first use. 
+This kind of situation has a few problems with readability due to the loss of local reasoning. We define a non-optional constant without the value, which means we have to set the initial value later in the code before first use to make compiler happy. 
 
 Now, we have to scan the whole function to find all the places providing the initial value for our constant. Fortunately, Swift 5.9 introduced a new way of solving this issue. We can use if and switch statements as expressions.
 
