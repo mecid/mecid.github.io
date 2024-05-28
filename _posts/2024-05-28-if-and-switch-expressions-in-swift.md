@@ -2,3 +2,33 @@
 title: If and switch expressions in Swift
 layout: post
 ---
+
+One of the silent changes in Swift 5.9 was if and switch expressions. I only saw a little about this option, but it can improve your code in many ways. This week, we will learn about if and switch expressions in Swift.
+
+Let's dive into the practicality of these changes with a real-world example from my codebase. We'll be calculating some health-related metrics, a scenario that many of you may find relatable and interesting. This will help you see the immediate benefits of the new if and switch expressions in Swift 5.9.
+
+=====================================================
+
+As you can see in the example above, we define the bmr constant and initialize it later in the switch statement because we have to apply some calculations.
+
+This kind of situation has a few problems with readability due to the loss of local reasoning. We define a non-optional constant without the value, which means we have to set the initial value later in the code before first use. 
+
+Now, we have to scan the whole function to find all the places providing the initial value for our constant. Fortunately, Swift 5.9 introduced a new way of solving this issue. We can use if and switch statements as expressions.
+
+=====================================================
+
+As you can see, we refactored our code. In the example above, we define the bmr constant and initialize it inline with the switch expression. Now, we win back local reasoning by guaranteeing that the switch expression provides the initial value to our constant.
+
+Let's discuss some points you must remember while using if and swift expressions in Swift. Each branch of the if, or each case of the switch, must be a single expression. Each of these expressions becomes the value of the overall expression if the branch is chosen.
+
+=====================================================
+
+As you can see in the example above, you can still use pattern matching or where clauses while using if and switch as expressions. Let's look at the example where we use the if as an expression.
+
+=====================================================
+
+Using if as the expression looks similar to using the ternary operator at first glance. I prefer the ternary in this particular case, but the real power of the new approach is revealed when you need to use the if with pattern matching in the expression.
+
+> 
+
+Today, we learned how to use if and switch as expressions in Swift 5.9. Switch as expression will become very handy when you start using it. I already introduced it many times across my codebase and enjoy how it improves the local reasoning of my code.
