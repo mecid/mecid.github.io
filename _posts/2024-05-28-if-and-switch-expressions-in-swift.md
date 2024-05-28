@@ -99,4 +99,4 @@ Using if as the expression looks similar to using the ternary operator at first 
 
 > To learn more about pattern matching in Swift, take a look at my dedicated ["Pattern Matching with case let"](/2019/02/06/pattern-matching-with-case-let/) post.
 
-Today, we learned how to use if and switch as expressions in Swift 5.9. Switch as expression will become very handy when you start using it. I already introduced it many times across my codebase and enjoy how it improves the local reasoning of my code.
+Today, we learned how to use if and switch as expressions in Swift 5.9. Switch as expression will become very handy when you start using it. I already introduced it many times across my codebase and enjoy how it improves the local reasoning of my code. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
