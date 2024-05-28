@@ -33,7 +33,7 @@ update(
 )
 ```
 
-As you can see in the example above, we define the bmr constant and initialize it later in the switch statement because we have to apply some calculations.
+As you can see in the example above, we define the *bmr* constant and initialize it later in the switch statement because we have to apply some calculations.
 
 This kind of situation has a few problems with readability due to the loss of local reasoning. We define a non-optional constant without the value, which means we have to set the initial value later in the code before first use to make compiler happy. 
 
@@ -61,7 +61,7 @@ update(
 )
 ```
 
-As you can see, we refactored our code. In the example above, we define the bmr constant and initialize it inline with the switch expression. Now, we win back local reasoning by guaranteeing that the switch expression provides the initial value to our constant.
+As you can see, we refactored our code. In the example above, we define the *bmr* constant and initialize it inline with the switch expression. Now, we win back local reasoning by guaranteeing that the switch expression provides the initial value to our constant.
 
 Let's discuss some points you must remember while using if and swift expressions in Swift. Each branch of the if, or each case of the switch, must be a single expression. Each of these expressions becomes the value of the overall expression if the branch is chosen.
 
