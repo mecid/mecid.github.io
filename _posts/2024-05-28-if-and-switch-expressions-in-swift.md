@@ -97,6 +97,6 @@ let ruleValue = if values.isEmpty { 0.0 } else { values.reduce(0, +) / Double(va
 
 Using if as the expression looks similar to using the ternary operator at first glance. I prefer the ternary in this particular case, but the real power of the new approach is revealed when you need to use the if with pattern matching in the expression.
 
-> 
+> To learn more about pattern matching in Swift, take a look at my dedicated ["Pattern Matching with case let"](/2019/02/06/pattern-matching-with-case-let/) post.
 
 Today, we learned how to use if and switch as expressions in Swift 5.9. Switch as expression will become very handy when you start using it. I already introduced it many times across my codebase and enjoy how it improves the local reasoning of my code.
