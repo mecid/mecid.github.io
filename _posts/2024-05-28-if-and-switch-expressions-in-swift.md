@@ -2,6 +2,7 @@
 title: If and switch expressions in Swift
 layout: post
 category: Swift Language Features
+image: /public/swift.png
 ---
 
 One of the silent changes in Swift 5.9 was if and switch expressions. I only saw a little about this option, but it can improve your code in many ways. This week, we will learn about if and switch expressions in Swift.
