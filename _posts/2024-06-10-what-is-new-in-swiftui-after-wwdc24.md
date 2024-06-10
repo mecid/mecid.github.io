@@ -144,6 +144,16 @@ extension EnvironmentValues {
 }
 ```
 
+#### Previews
+The new *Previewable* macro allows us to introduce the state to our previews without wrapping it into additional wrapper-view.
+
+```swift
+#Preview("toggle") {
+    @Previewable @State var toggled = true
+    return Toggle("Loud Noises", isOn: $toggled)
+}
+```
+
 #### Others
 The next iteration of the SwiftUI framework includes many new APIs, such as window pushing, text selection observation in the *TextField* and *TextEditor* views, search focus monitoring, custom text rendering, new *MeshGradient* type, and much more that I can't cover in a single post.
 
