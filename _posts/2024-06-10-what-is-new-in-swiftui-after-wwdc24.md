@@ -7,6 +7,8 @@ category: Meta
 
 WWDC 24 is here, and we have a lot to cover. Every year, SwiftUI matures by introducing more features to catch up with UIKit. This year is no exception. Let's dive into the new features that the SwiftUI framework introduces.
 
+{% include friends.html %}
+
 #### View collections
 SwiftUI introduced the new overloads for *Group* and *ForEach* views, allowing us to create custom containers like *List* or *TabView*.
 
