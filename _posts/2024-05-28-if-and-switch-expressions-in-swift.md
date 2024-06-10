@@ -7,6 +7,8 @@ image: /public/swift.png
 
 One of the silent changes in Swift 5.9 was if and switch expressions. I only saw a little about this option, but it can improve your code in many ways. This week, we will learn about if and switch expressions in Swift.
 
+{% include friends.html %}
+
 Let's dive into the practicality of these changes with a real-world example from my codebase. We'll be calculating some health-related metrics, a scenario that many of you may find relatable and interesting. This will help you see the immediate benefits of the new if and switch expressions in Swift 5.9.
 
 ```swift
