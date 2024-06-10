@@ -144,3 +144,5 @@ extension EnvironmentValues {
 
 #### Others
 The next iteration of the SwiftUI framework includes many new APIs, such as window pushing, text selection observation in the *TextField* and *TextEditor* views, search focus monitoring, custom text rendering, new *MeshGradient* type, and much more that I can't cover in a single post.
+
+We will cover in details all the new features of the SwiftUI framework during upcoming weeks. So, stay tuned. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
