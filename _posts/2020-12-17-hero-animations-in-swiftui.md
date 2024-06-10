@@ -146,6 +146,6 @@ If inserting a view in the same transaction that another view with the same iden
 ![hero-animation](/public/hero2.mp4)
 
 #### Conclusion
-Today we learned about implementing hero animations in SwiftUI using the *matchedGeometryEffect* view modifier. I love how easy we can achieve this effect in SwiftUI. Unfortunately, it doesn't work between different views inside navigation links, but I hope to see this working during the next iteration of SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
+Today we learned about implementing hero animations in SwiftUI using the *matchedGeometryEffect* view modifier. I love how easy we can achieve this effect in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
 
 
