@@ -9,6 +9,8 @@ WWDC 24 is here, and we have a lot to cover. Every year, SwiftUI matures by intr
 
 {% include friends.html %}
 
+The major change that I should mention first is the *@MainActor* isolation for *App*, *Scene* and *View* protocols. It might break your code, so keep it in mind. 
+
 #### View collections
 SwiftUI introduced the new overloads for *Group* and *ForEach* views, allowing us to create custom containers like *List* or *TabView*.
 
