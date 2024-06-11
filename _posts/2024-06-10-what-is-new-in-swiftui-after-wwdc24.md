@@ -22,12 +22,19 @@ struct AppStoreView<Content: View>: View {
         VStack {
             Group(subviewsOf: content) { subviews in
                 HStack {
-                    subviews[0]
-                    subviews[1]
+                    if !subviews.isEmpty {
+                        subviews[0]
+                    }
+                    
+                    if subviews.count > 1 {
+                        subviews[1]
+                    }
                 }
                 
-                VStack {
-                    subviews[2...]
+                if subviews.count > 2 {
+                    VStack {
+                        subviews[2...]
+                    }
                 }
             }
         }
