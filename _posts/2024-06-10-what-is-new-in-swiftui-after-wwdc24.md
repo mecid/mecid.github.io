@@ -130,7 +130,7 @@ struct ScrollPositionExample: View {
 ```
 
 #### Entry macro
-The new *Entry* macro allows us to quickly introduce environment values, focused values, etc, without boilerplate. Let's look at how we define environment values before the *Entry* macro.
+The new *Entry* macro allows us to quickly introduce environment values, focused values, container values, etc, without boilerplate. Let's look at how we define environment values before the *Entry* macro.
 
 ```swift
 struct ItemsPerPageKey: EnvironmentKey {
