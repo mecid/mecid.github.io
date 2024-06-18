@@ -13,14 +13,21 @@ The SwiftUI framework already allows us to track and set the scroll view positio
 
 ```swift
 struct ContentView: View {
+    @State private var position: Int?
+    
     var body: some View {
         ScrollView {
-            ForEach(0..<100) { index in
-                Text(verbatim: index.formatted())
-                    .id(index)
+            LazyVStack {
+                ForEach(0..<100) { index in
+                    Rectangle()
+                        .fill(Color.green.gradient)
+                        .frame(height: 300)
+                        .id(index)
+                }
             }
+            .scrollTargetLayout()
         }
-        .scrollPosition(initialAnchor: .center)
+        .scrollPosition(id: $position)
     }
 }
 ```
