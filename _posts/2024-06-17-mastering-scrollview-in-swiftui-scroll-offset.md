@@ -96,17 +96,9 @@ struct ContentView: View {
                 position.scrollTo(id: id, anchor: .center)
             }
             
-            Button("Scroll to bottom") {
-                position.scrollTo(edge: .bottom)
-            }
-            
             ForEach(1..<100) { index in
                 Text(verbatim: index.formatted())
                     .id(index)
-            }
-            
-            Button("Scroll to top") {
-                position.scrollTo(edge: .top)
             }
         }
         .scrollPosition($position)
