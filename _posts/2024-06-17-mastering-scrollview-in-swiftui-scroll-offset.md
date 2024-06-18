@@ -19,9 +19,7 @@ struct ContentView: View {
         ScrollView {
             LazyVStack {
                 ForEach(0..<100) { index in
-                    Rectangle()
-                        .fill(Color.green.gradient)
-                        .frame(height: 300)
+                    Text(verbatim: index.formatted())
                         .id(index)
                 }
             }
