@@ -30,7 +30,7 @@ struct ContentView: View {
 }
 ```
 
-Fortunately, the SwiftUI framework introduces the new *ScrollPosition* type, allowing us to combine the scroll position by offset, the edge of the scroll view, view identifier, etc.
+Fortunately, the SwiftUI framework introduced the new *ScrollPosition* type, allowing us to combine the scroll position by offset, the edge of the scroll view, view identifier, etc.
 
 ```swift
 struct ContentView: View {
