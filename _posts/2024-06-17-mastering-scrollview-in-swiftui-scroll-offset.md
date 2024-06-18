@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 WWDC 24 is over, and I decided to start writing posts about new features in the upcoming iteration of the SwiftUI framework. Apple continues filling gaps this year by introducing more granular control over the scroll position. This week, we will learn how to manipulate and read the scroll offset.
 
+{% include friends.html %}
+
 The SwiftUI framework already allows us to track and set the scroll view position by view identifiers. This approach works well but is not enough to track user interactions more accurately.
 
 ```swift
