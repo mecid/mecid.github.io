@@ -161,4 +161,7 @@ struct ContentView: View {
 
 We learned how to manipulate the scroll position using the new *ScrollPosition* type, which also allows us to read the position of the scroll view. The *ScrollPosition* provides the optional *edge*, *point*, and *viewID* properties to read the value when you scroll programmatically. Whenever the user interacts with the scroll view, these properties become **nil**. The *isPositionedByUser* property on the *ScrollPosition* type allows us to understand whenever the user gesture moves the scroll view content.
 
-Today, we learned how to programmatically set the offset of the content in a scroll view. However, we can't read the offset of the scroll view using the *ScrollPosition* type whenever a user interacts with a scroll view using a gesture. To make it possible, the SwiftUI framework provides us with the *onScrollGeometryChange* view modifier we will cover in the next post.
+Today, we learned how to programmatically set the offset of the content in a scroll view. However, we can't read the offset of the scroll view using the *ScrollPosition* type whenever a user interacts with a scroll view using a gesture.
+
+To make it possible, the SwiftUI framework provides us with the *onScrollGeometryChange* view modifier we will cover in the next post. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
