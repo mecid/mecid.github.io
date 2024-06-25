@@ -1,6 +1,7 @@
 ---
 title: Mastering ScrollView in SwiftUI. Scroll Geometry
 layout: post
+category: Mastering SwiftUI views
 ---
 
 The ScrollPosition type is all you need to programmatically read or change the scroll position. Still, it doesn't provide enough information when a user interacts with a scroll view using gestures. SwiftUI solves this problem by introducing the new ScrollGeometry type. This week, we will learn how to use the new onScrollGeometryChange view modifier to monitor scroll geometry.
