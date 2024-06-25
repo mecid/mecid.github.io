@@ -7,6 +7,8 @@ image: /public/scroll-transition.png
 
 The ScrollPosition type is all you need to programmatically read or change the scroll position. Still, it doesn't provide enough information when a user interacts with a scroll view using gestures. SwiftUI solves this problem by introducing the new ScrollGeometry type. This week, we will learn how to use the new onScrollGeometryChange view modifier to monitor scroll geometry.
 
+{% include friends.html %}
+
 Let me refresh your memory with the example showing the pros and cons of the ScrollPosition type.
 
 ```swift
