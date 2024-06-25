@@ -109,4 +109,4 @@ struct ContentView: View {
 
 As you can see in the example above, we introduce the ScrollData holding size and rectangle properties. While using the onScrollGeometryChange view modifier, we pass the ScrollData type as the returning type of the transform closure, where we extract all the needed data from the instance of the ScrollGeometry type.
 
-Today, we learned how to efficiently track and monitor scroll geometry changes in SwiftUI.
+Today, we learned how to efficiently track and monitor scroll geometry changes in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
