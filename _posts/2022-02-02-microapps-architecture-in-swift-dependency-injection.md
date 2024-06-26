@@ -177,7 +177,8 @@ As you can see, I also added the extension with calculated property to easily ex
 
 Today we learned how to inject the low-level functionality inside feature modules without exposing information about the concrete implementation. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
-#### References
-1. [Meet the microapps architecture](https://increment.com/mobile/microapps-architecture/)
-2. [Introduction to App Modularisation with Swift Package Manager](https://holyswift.app/introduction-to-app-modularisation-with-swift-package-manager-a-tale-to-be-told)
-3. [How to Control the World](https://www.pointfree.co/blog/posts/21-how-to-control-the-world)
+#### Continue reading the microapps series
+1. [Microapps architecture in Swift. SPM basics.](/2022/01/12/microapps-architecture-in-swift-spm-basics/)
+2. [Microapps architecture in Swift. Feature modules.](/2022/01/19/microapps-architecture-in-swift-feature-modules/)
+3. [Microapps architecture in Swift. Resources and localization.](/2022/01/26/microapps-architecture-in-swift-resources-and-localization/)
+4. Microapps architecture in Swift. Dependency Injection.

@@ -160,6 +160,8 @@ First, I try to keep resources only inside the module that uses them. Feature mo
 
  I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
-#### References
-1. [Meet the microapps architecture](https://increment.com/mobile/microapps-architecture/)
-2. [Introduction to App Modularisation with Swift Package Manager](https://holyswift.app/introduction-to-app-modularisation-with-swift-package-manager-a-tale-to-be-told)
+#### Continue reading the microapps series
+1. [Microapps architecture in Swift. SPM basics.](/2022/01/12/microapps-architecture-in-swift-spm-basics/)
+2. [Microapps architecture in Swift. Feature modules.](/2022/01/19/microapps-architecture-in-swift-feature-modules/)
+3. Microapps architecture in Swift. Resources and localization.
+4. [Microapps architecture in Swift. Dependency Injection.](/2022/02/02/microapps-architecture-in-swift-dependency-injection/)
