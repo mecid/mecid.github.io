@@ -25,11 +25,11 @@ The SwiftUI framework defines the *ScrollPhase* enum with a few cases. Let's exa
 
 As you can see, it is a frozen enum, which means it will not change in the future. We have five cases, each representing a particular scrolling phase.
 
-*Idle* - means nothing is happening, and the scroll view is idle now.
-*Tracking* - the user touches content inside the scroll view but doesn't drag the finger to scroll the content. 
-*Interacting* - the user drags the content to initiate or continue scrolling.
-*Decelerating* - the user finishes interacting with the scroll view, and it smoothly decelerates towards the final destination. 
-*Animating* - the phase indicates that the scroll view programmatically scrolls to the target using ScrollPosition or ScrollViewReader types.
+* *Idle* - means nothing is happening, and the scroll view is idle now.
+* *Tracking* - the user touches content inside the scroll view but doesn't drag the finger to scroll the content. 
+* *Interacting* - the user drags the content to initiate or continue scrolling.
+* *Decelerating* - the user finishes interacting with the scroll view, and it smoothly decelerates towards the final destination. 
+* *Animating* - the phase indicates that the scroll view programmatically scrolls to the target using ScrollPosition or ScrollViewReader types.
 
 Now, we are familiar with the list of scroll phases we can monitor. The SwiftUI framework introduces the *onScrollPhaseChange* view modifier, which allows us to observe scroll phase changes. Let's see how we can use it.
 
