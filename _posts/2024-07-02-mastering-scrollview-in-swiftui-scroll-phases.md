@@ -7,6 +7,8 @@ image: /public/scroll-transition.png
 
 This year, the SwiftUI framework introduced several new scrolling APIs, allowing us to track and tune everything in a scroll view. This week, we will discuss monitoring scroll phases in SwiftUI.
 
+{% include friends.html %}
+
 The SwiftUI framework defines the *ScrollPhase* enum with a few cases. Let's examine the definition file to understand which functionality it provides.
 
 ```swift
