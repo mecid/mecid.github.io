@@ -1,6 +1,7 @@
 ---
 title: Mastering ScrollView in SwiftUI. Scroll Phases
 layout: post
+category: Mastering SwiftUI views
 ---
 
 This year, the SwiftUI framework introduced several new scrolling APIs, allowing us to track and tune everything in a scroll view. This week, we will discuss monitoring scroll phases in SwiftUI.
