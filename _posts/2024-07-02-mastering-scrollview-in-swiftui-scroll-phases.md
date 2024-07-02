@@ -53,7 +53,7 @@ struct ContentView: View {
 
 As you can see in the example above, we attach the *onScrollPhaseChange* view modifier to the scroll view. The *onScrollPhaseChange* view modifier takes an action closure that the SwiftUI framework calls on every scroll phase change. The action closure provides us with two arguments: old and new phases. So you can inspect the recent and previous phases of the scroll view.
 
-Another version of the *onScrollPhaseChange* view modifier takes an action closure with the additional argument of type *ScrollGeometry*. 
+Another version of the *onScrollPhaseChange* view modifier takes an action closure with the additional argument of type *ScrollPhaseChangeContext*. 
 
 ```swift
 struct ContentView: View {
@@ -74,7 +74,7 @@ struct ContentView: View {
 }
 ```
 
-Having an instance of the *ScrollGeometry* type might be helpful in certain circumstances, as it provides many valuable properties, such as content size and visible rectangle.
+Having an instance of the *ScrollPhaseChangeContext* type might be helpful in certain circumstances, as it provides valuable information like *velocity* and provides access to the instance of the *ScrollGeometry* type.
 
 > To learn more about the *ScrollGeometry* type, take a look at my dedicated ["Mastering ScrollView in SwiftUI. Scroll Geometry"](/2024/06/25/mastering-scrollview-in-swiftui-scroll-geometry/) post.
 
