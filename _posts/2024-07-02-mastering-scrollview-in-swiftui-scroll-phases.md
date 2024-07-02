@@ -76,7 +76,7 @@ struct ContentView: View {
 
 Having an instance of the *ScrollGeometry* type might be helpful in certain circumstances, as it provides many valuable properties, such as content size and visible rectangle.
 
-> To learn more about the *ScrollGeometry* type, take a look at my dedicated "Mastering ScrollView in SwiftUI. Scroll Geometry" post.
+> To learn more about the *ScrollGeometry* type, take a look at my dedicated ["Mastering ScrollView in SwiftUI. Scroll Geometry"](/2024/06/25/mastering-scrollview-in-swiftui-scroll-geometry/) post.
 
 The *ScrollPhase* enum defines different scrolling phases, which is useful if you build something super custom. However, you usually want to know whether or not a scroll view is scrolling. For this particular case, the *ScrollPhase* enum introduces the calculatable property *isScrolling*, which is true when the scroll view is not idle.
 
