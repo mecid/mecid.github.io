@@ -5,6 +5,8 @@ layout: post
 
 The Swift macros feature became very popular last year in the community and inside Apple. As a result, the SwiftUI framework introduced a set of macro types that helped us reduce boilerplates in our codebases. This week, we will talk about the *Entry* macro type.
 
+{% include friends.html %}
+
 The SwiftUI framework introduces the environment feature, implicitly allowing us to share data in the view hierarchy. This feature becomes very useful when you need to share settings or the user state across many views of your app. Let's look at the example of defining a custom environment key holding the user subscription state.
 
 ```swift
