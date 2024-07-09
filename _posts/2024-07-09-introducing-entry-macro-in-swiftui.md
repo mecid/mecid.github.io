@@ -40,6 +40,8 @@ extension EnvironmentValues {
 
 As you can see in the example above, we define the *UserStateEnvironmentKey* type conforming to the *EnvironmentKey* protocol. The only requirement of the *EnvironmentKey* protocol is the *defaultValue* property. Next, we have to add an extension for the *EnvironmentValues* type where we provide access to the instance of the *UserStateEnvironmentKey* type.
 
+> To learn more about environment feature, take a look at my ["The power of Environment in SwiftUI"](/2019/08/21/the-power-of-environment-in-swiftui/) post.
+
 Imagine you have a set of custom properties you must share via the environment. In this case, you must create many types conforming to the *EnvironmentKey* protocol and repeat the code for every property. Fortunately, the new *Entry* macro saves us from making a boilerplate by simplifying the code we need to write to conform to the custom environment key.
 
 ```swift
