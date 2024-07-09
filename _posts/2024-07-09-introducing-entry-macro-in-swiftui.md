@@ -87,5 +87,5 @@ extension FocusedValues {
 
 As I said before, the Entry macro also works excellently with focused values. The only difference is the property that you define in the extension of the FocusedValues type must be optional because it is only available when the view is focused.
 
-Today, we learned how to use the Entry macro to simplify our code and reduce the boilerplate. The Entry macro is backward compatible, and you can use it even with previous versions of Apple platforms.
+Today, we learned how to use the Entry macro to simplify our code and reduce the boilerplate. The Entry macro is backward compatible, and you can use it even with previous versions of Apple platforms. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
