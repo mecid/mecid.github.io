@@ -1,6 +1,7 @@
 ---
 title: Introducing Entry macro in SwiftUI
 layout: post
+image: /public/wwdc24.webp
 ---
 
 The Swift macros feature became very popular last year in the community and inside Apple. As a result, the SwiftUI framework introduced a set of macro types that helped us reduce boilerplates in our codebases. This week, we will talk about the *Entry* macro type.
