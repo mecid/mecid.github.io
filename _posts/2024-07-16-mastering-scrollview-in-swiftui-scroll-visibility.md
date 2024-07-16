@@ -92,4 +92,4 @@ struct VideoPlayerView: View {
 
 In the example above, we define the threshold value, which means SwiftUI will run the action closure whenever at least 10% of the view is visible. Still, it also runs whenever the view transitions from visible to invisible by displaying less than 10% of the viewport.
 
-Today, we learned how to track the visibility of the particular view inside the scroll view and monitor the list of visible identifiers.
+Today, we learned how to track the visibility of the particular view inside the scroll view and monitor the list of visible identifiers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
