@@ -40,7 +40,7 @@ As you can see in the example above, we use the *scrollTargetLayout* view modifi
 
 We also attach the *onScrollTargetVisibilityChange* view modifier to the scroll view by providing the identifier type and the action closure. Inside the action closure, we get the list of visible identifiers and can do whatever we need with visible items.
 
-Sometimes, the view must act when it is visible or not in a scroll view. For these cases, the SwiftUI framework introduced the *onScrollVisibilityChange* view modifier, which you can attach to any view inside the scroll view to handle its visibility.
+Sometimes, the view must act whenever it changes the visibility state in a scroll view. For these cases, the SwiftUI framework introduced the *onScrollVisibilityChange* view modifier, which you can attach to any view inside the scroll view to handle its visibility.
 
 ```swift
 struct VideoPlayerView: View {
