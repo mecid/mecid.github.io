@@ -40,7 +40,6 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 300)
                     .background(Rectangle().fill(Color.green))
-                    .scrollTarget()
             }
         }
         .scrollTargetBehavior(.viewAligned)
@@ -48,7 +47,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the *scrollTargetBehavior* view modifier with the *viewAligned* option to enable view snapping. *ScrollView* automatically decelerates after scrolling to align with the first visible item in its viewport. The *ScrollView* looking for the views marked with the *scrollTarget* view modifier to align.
+As you can see in the example above, we use the *scrollTargetBehavior* view modifier with the *viewAligned* option to enable view snapping. *ScrollView* automatically decelerates after scrolling to align with the first visible item in its viewport.
 
 Usually, you define the *ScrollView* with the layout container inside, like *LazyVGrid* or *LazyVStack*. In this case, you should use the *scrollTargetLayout* view modifier on an instance of the *LazyVGrid* or *LazyVStack* to allow the *ScrollView* to target views inside the container.
 
@@ -71,14 +70,13 @@ struct ExampleScrollView: View {
 }
 ```
 
-You can also use the *scrollTarget* and *scrollTargetLayout* view modifiers in a single *ScrollView* to mark individual views as scroll targets in pair with the items in the layout container.
+You can also use the *scrollTargetLayout* view modifier to mark the layout container along with individual views in a single *ScrollView*.
 
 ```swift
 struct AnotherExampleScrollView: View {
     var body: some View {
         ScrollView {
             CustomHeaderView()
-                .scrollTarget()
             
             LazyVStack {
                 // some content here
@@ -86,7 +84,6 @@ struct AnotherExampleScrollView: View {
             .scrollTargetLayout()
             
             CustomFooterView()
-                .scrollTarget()
         }
         .scrollTargetBehavior(.viewAligned)
     }
