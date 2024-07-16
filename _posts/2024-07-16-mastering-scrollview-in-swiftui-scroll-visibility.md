@@ -32,7 +32,7 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *scrollTargetLayout* view modifier on the lazy stack to allow scroll view targeting for stack children instead of the stack itself. 
 
-> To learn more about the `scrollTargetLayout` view modifier, look at my "Mastering ScrollView in SwiftUI. Target Behavior" post.
+> To learn more about the `scrollTargetLayout` view modifier, look at my ["Mastering ScrollView in SwiftUI. Target Behavior"](/2023/06/20/mastering-scrollview-in-swiftui-target-behavior/) post.
 
 We also attach the *onScrollTargetVisibilityChange* view modifier to the scroll view by providing the identifier type and the action closure. Inside the action closure, we get the list of visible identifiers and can do whatever we need with visible items.
 
