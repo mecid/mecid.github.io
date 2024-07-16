@@ -5,6 +5,8 @@ layout: post
 
 Another great addition to our scrolling APIs this year is the scroll visibility. Nowadays, you can fetch the list of visible identifiers or quickly check and monitor the view visibility inside a scroll view. This week, we will learn how to use the new *onScrollTargetVisibilityChange* and *onScrollVisibilityChange* view modifiers.
 
+{% include friends.html %}
+
 Let's kick off with the *onScrollTargetVisibilityChange* view modifier. It's designed for ease of use, allowing you to attach it to any scroll view with a scroll target layout. Let's explore this with an example.
 
 ```swift
