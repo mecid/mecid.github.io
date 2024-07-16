@@ -1,6 +1,7 @@
 ---
 title: Mastering ScrollView in SwiftUI. Scroll Visibility
 layout: post
+image: /public/scroll-transition.png
 ---
 
 Another great addition to our scrolling APIs this year is the scroll visibility. Nowadays, you can fetch the list of visible identifiers or quickly check and monitor the view visibility inside a scroll view. This week, we will learn how to use the new *onScrollTargetVisibilityChange* and *onScrollVisibilityChange* view modifiers.
