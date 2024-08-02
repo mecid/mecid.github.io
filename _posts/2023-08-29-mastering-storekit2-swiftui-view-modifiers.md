@@ -104,7 +104,7 @@ struct ContentView: View {
     }
 }
 ```
-Whenever you build a custom paywall in SwiftUI, you should use the `purchase` environment value to start an in-app purchase for the given product. The `purchase` environment value is available on all Apple platforms, allowing you to reuse the paywall.
+Whenever you build a custom paywall in SwiftUI, you should use the *purchase* environment value to start an in-app purchase for the given product. The *purchase* environment value is available on all Apple platforms, allowing you to reuse the paywall.
 
 ```swift
 struct PaywallView: View {
