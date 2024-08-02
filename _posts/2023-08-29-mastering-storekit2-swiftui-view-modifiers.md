@@ -104,6 +104,40 @@ struct ContentView: View {
     }
 }
 ```
+Whenever you build a custom paywall in SwiftUI, you should use the `purchase` environment value to start an in-app purchase for the given product. The `purchase` environment value is available on all Apple platforms, allowing you to reuse the paywall.
+
+```swift
+struct PaywallView: View {
+    @Environment(Store.self) private var store
+    @Environment(\.purchase) private var purchase
+    @Environment(\.dismiss) private var dismiss
+    
+    var body: some View {
+        // ...
+    }
+    
+    var productSection: some View {
+        HStack {
+            ForEach(store.products) { product in
+                Button {
+                    Task {
+                        if let result = try? await purchase(product) {
+                            await store.process(result)
+                            dismiss()
+                        }
+                    }
+                } label: {
+                    VStack {
+                        Text(verbatim: product.displayName)
+                            .font(.headline)
+                        Text(verbatim: product.displayPrice)
+                    }
+                }
+            }
+        }
+    }
+}
+```
 
 Today, we learned how to query StoreKit 2 from SwiftUI views using brand-new view modifiers. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
