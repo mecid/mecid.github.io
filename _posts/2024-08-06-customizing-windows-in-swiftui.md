@@ -128,7 +128,7 @@ struct SugarBotApp: App {
 }
 ```
 
-On macOS, we don't have access to the *utilityPanel* position or other factory methods like the ones *leading* and *trailing*. However, we can access the display property on the *context* parameter of the closure and retrieve information about the current display. We also use the *content* parameter to measure the window's content size and calculate the precise position of the window on the screen.
+On macOS, we don't have access to the *utilityPanel* position or other factory methods like the ones *leading* and *trailing*. However, we can access the *display* property on the *context* parameter of the closure and retrieve information about the current display. We also use the *content* parameter to measure the window's content size and calculate the precise position of the window on the screen.
 
 #### Bonus tip
 The last but not least minor thing I want to talk about is the *WindowDragGesture* type. This is the gesture type that allows us to react to a window dragging event.
