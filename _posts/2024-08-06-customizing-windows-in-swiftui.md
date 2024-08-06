@@ -29,6 +29,8 @@ struct SugarBotApp: App {
 
 As you can see in the example above, we use the *defaultSize* view modifier to set the default window size to 300x500 points. Most of the Apple platforms support the window resizability feature. The SwiftUI framework introduces the *windowResizability* view modifier to control how users can resize the window.
 
+> To learn more about the basics of window management in SwiftUI, take a look at my ["Customizing windows in SwiftUI"](/2024/08/06/customizing-windows-in-swiftui/) post.
+
 ```swift
 struct SugarBotApp: App {
     var body: some Scene {
@@ -94,6 +96,8 @@ struct SugarBotApp: App {
 ```
 
 As you can see in the example above, we use the *defaultWindowPlacement* view modifier to tune the placement. The *defaultWindowPlacement* view modifier takes the closure and returns an instance of the *WindowPlacement* type. The *WindowPlacement* type defines the *Position* type, allowing us to control which edge to place a window on.
+
+> To learn more about windows on visionOS, take a look at my ["Introducing SwiftUI on visionOS"](/2024/01/23/introducing-swiftui-on-visionOS/) post.
 
 The SwiftUI framework defines the *utilityPanel* position on the visionOS, which displays the window slightly below the presenting window. We also got the identifier of the last presented window to display it on the trailing edge whenever it is a search window.
 
