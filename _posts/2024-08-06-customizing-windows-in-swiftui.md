@@ -147,3 +147,5 @@ struct SomeView: View {
 ```
 
 As you can see in the example above, we use the instance of the *WindowDragGesture* type to handle the window dragging event and redact the text while the user moves the window. 
+
+Today we learned how to customize windows on iPadOS, macOS and visionOS. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
