@@ -10,7 +10,7 @@ SwiftUI has become the leading framework for building apps on all Apple platform
 {% include friends.html %}
 
 #### Size
-The SwiftUI framework provides the *defaultSize* view modifier, which allows us to set the default size of the window presented.
+The SwiftUI framework provides the *defaultSize* view modifier, which allows us to set the default size of the window.
 
 ```swift
 struct SugarBotApp: App {
