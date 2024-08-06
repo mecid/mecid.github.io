@@ -22,7 +22,7 @@ struct SugarBotApp: App {
         WindowGroup(id: "search") {
             SearchFeatureView()
         }
-        .defaultSize(width: 500, height: 800)
+        .defaultSize(width: 500, height: 500)
     }
 }
 ```
