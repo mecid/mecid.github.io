@@ -2,6 +2,7 @@
 title: Customizing windows in SwiftUI
 layout: post
 image: /public/visionOS.webp
+category: View Composition
 ---
 
 SwiftUI has become the leading framework for building apps on all Apple platforms. Almost half of these platforms support multiple windows, so we see more APIs allowing us to manipulate windows. This week, we will learn how to customize windows in SwiftUI using new APIs.
