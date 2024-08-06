@@ -10,7 +10,7 @@ SwiftUI has become the leading framework for building apps on all Apple platform
 {% include friends.html %}
 
 #### Size
-The SwiftUI framework provides the defaultSize view modifier, which allows us to set the default size of the window presented.
+The SwiftUI framework provides the *defaultSize* view modifier, which allows us to set the default size of the window presented.
 
 ```swift
 struct SugarBotApp: App {
@@ -27,7 +27,7 @@ struct SugarBotApp: App {
 }
 ```
 
-As you can see in the example above, we use the defaultSize view modifier to set the default window size to 300x500 points. Most of the Apple platforms support the window resizability feature. The SwiftUI framework introduces the windowResizability view modifier to control how users can resize the window.
+As you can see in the example above, we use the *defaultSize* view modifier to set the default window size to 300x500 points. Most of the Apple platforms support the window resizability feature. The SwiftUI framework introduces the *windowResizability* view modifier to control how users can resize the window.
 
 ```swift
 struct SugarBotApp: App {
@@ -63,10 +63,10 @@ struct SugarBotApp: App {
 }
 ```
 
-Another option is the contentMinSize case, which prevents the user from changing the window size to less than its content but doesn't control the maximal size of the window.
+Another option is the *contentMinSize* case, which prevents the user from changing the window size to less than its content but doesn't control the maximal size of the window.
 
 #### Placement
-Whenever you use the openWindow environment value to open a window, it appears in front of the last opened window. However, you can control the window placement using the defaultWindowPlacement view modifier. 
+Whenever you use the *openWindow* environment value to open a window, it appears in front of the last opened window. However, you can control the window placement using the *defaultWindowPlacement* view modifier. 
 
 ```swift
 struct SugarBotApp: App {
@@ -93,9 +93,9 @@ struct SugarBotApp: App {
 }
 ```
 
-As you can see in the example above, we use the defaultWindowPlacement view modifier to tune the placement. The defaultWindowPlacement view modifier takes the closure and returns an instance of the WindowPlacement type. The WindowPlacement type defines the Position type, allowing us to control which edge to place a window on.
+As you can see in the example above, we use the *defaultWindowPlacement* view modifier to tune the placement. The *defaultWindowPlacement* view modifier takes the closure and returns an instance of the *WindowPlacement* type. The *WindowPlacement* type defines the *Position* type, allowing us to control which edge to place a window on.
 
-The SwiftUI framework defines the utilityPanel position on the visionOS, which displays the window slightly below the presenting window. We also got the identifier of the last presented window to display it on the trailing edge whenever it is a search window.
+The SwiftUI framework defines the *utilityPanel* position on the visionOS, which displays the window slightly below the presenting window. We also got the identifier of the last presented window to display it on the trailing edge whenever it is a search window.
 
 ```swift
 struct SugarBotApp: App {
@@ -124,10 +124,10 @@ struct SugarBotApp: App {
 }
 ```
 
-On macOS, we don't have access to the utilityPanel position or other factory methods like the ones above and below. However, we can access the display property on the context parameter of the closure and retrieve information about the current display. We also use the content parameter to measure the window's content size and calculate the precise position of the window on the screen.
+On macOS, we don't have access to the *utilityPanel* position or other factory methods like the ones above and below. However, we can access the display property on the *context* parameter of the closure and retrieve information about the current display. We also use the *content* parameter to measure the window's content size and calculate the precise position of the window on the screen.
 
 #### Bonus tip
-The last but not least minor thing I want to talk about is the WindowDragGesture type. This is the gesture type that allows us to react to a window dragging event.
+The last but not least minor thing I want to talk about is the *WindowDragGesture* type. This is the gesture type that allows us to react to a window dragging event.
 
 ```swift
 struct SomeView: View {
@@ -146,4 +146,4 @@ struct SomeView: View {
 }
 ```
 
-As you can see in the example above, we use the instance of the WindowDragGesture type to handle the window dragging event and redact the text while the user moves the window. 
+As you can see in the example above, we use the instance of the *WindowDragGesture* type to handle the window dragging event and redact the text while the user moves the window. 
