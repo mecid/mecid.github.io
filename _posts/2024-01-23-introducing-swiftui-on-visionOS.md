@@ -122,6 +122,17 @@ struct ContentView: View {
 
 While presenting 3D content in your app, you can use the *windowStyle* modifier to enable *volumetric* display of your content. The *volumetric* style allows your content to grow in the third dimension to match the model's size.
 
+```swift
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        .windowStyle(.volumetric)
+    }
+}
+```
+
 For more complex 3D scenes, we can use the *RealityView* and populate it with 3D content.
 
 ```swift
