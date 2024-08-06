@@ -27,9 +27,9 @@ struct SugarBotApp: App {
 }
 ```
 
-As you can see in the example above, we use the *defaultSize* view modifier to set the default window size to 300x500 points. Most of the Apple platforms support the window resizability feature. The SwiftUI framework introduces the *windowResizability* view modifier to control how users can resize the window.
-
 > To learn more about the basics of window management in SwiftUI, take a look at my ["Customizing windows in SwiftUI"](/2024/08/06/customizing-windows-in-swiftui/) post.
+
+As you can see in the example above, we use the *defaultSize* view modifier to set the default window size to 300x500 points. Most of the Apple platforms support the window resizability feature. The SwiftUI framework introduces the *windowResizability* view modifier to control how users can resize the window.
 
 ```swift
 struct SugarBotApp: App {
