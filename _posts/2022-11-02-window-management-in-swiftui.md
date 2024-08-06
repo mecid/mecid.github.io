@@ -69,20 +69,24 @@ Another addition to the scene API is the new overload of the *WindowGroup* scene
 ```swift
 @main struct MyApp: App {
     var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+        
         #if os(macOS)
         WindowGroup(for: Item.ID.self) { $itemId in
             ItemView(itemId: itemId ?? UUID())
         }
-        #endif
         
-        WindowGroup {
-            ContentView()
+        WindowGroup(id: "editor") {
+            EditorView()
         }
+        #endif
     }
 }
 ```
 
-In the example above, we register a window group for a particular identifier type. Now we can use the same environment value to open a window by providing an item identifier.
+In the example above, we register a window group for a particular identifier type. We also define another window group allowing us to open editor. Now we can use the same environment value to open a window by providing an item identifier.
 
 ```swift
 struct ContentView: View {
@@ -91,9 +95,15 @@ struct ContentView: View {
     let items: [Item]
     
     var body: some View {
-        List(items) { item in
-            Button("open \(item.title)") {
-                openWindow(id: "item", value: item.id)
+        List {
+            ForEach(items) { item in
+                Button("Open \(item.title)") {
+                    openWindow(id: "item", value: item.id)
+                }
+            }
+            
+            Button("Add new item") {
+                openWindow(id: "editor")
             }
         }
     }
@@ -173,5 +183,5 @@ Menu bar apps can render their content as a menu or inside a dedicated window. Y
 ```
 
 #### Conclusion
-Today we learned how to use new APIs to manage windows in SwiftUI. The declarative approach we used to see for views is working for high-level concepts like windows now. Feel free to use it to build iOS, iPadOS, and macOS apps in a single codebase. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today we learned how to use new APIs to manage windows in SwiftUI. The declarative approach we used to see for views is working for high-level concepts like windows now. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
