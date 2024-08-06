@@ -5,6 +5,8 @@ layout: post
 
 SwiftUI has become the leading framework for building apps on all Apple platforms. Almost half of these platforms support multiple windows, so we see more APIs allowing us to manipulate windows. This week, we will learn how to customize windows in SwiftUI using new APIs.
 
+{% include friends.html %}
+
 #### Size
 The SwiftUI framework provides the defaultSize view modifier, which allows us to set the default size of the window presented.
 
