@@ -2,6 +2,7 @@
 title: Tracking geometry changes in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/layout.png
 ---
 
 The SwiftUI framework became a mature tool for building apps on all Apple platforms. The recent WWDC introduced missing APIs, adding more value to the framework. One of them is even backward compatible with previous versions of Apple platforms. This week, we will discuss tracking geometry changes of any view in SwiftUI.
