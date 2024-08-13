@@ -67,7 +67,7 @@ struct ContentView: View {
 }
 ```
 
-Here is an example of building backward-compatible scroll offset tracking in SwiftUI. You can use this code even on iOS 16. As you can see, we use the *frame* function of the *GeometryProxy* type to calculate the frame of the particular view in different coordinate spaces. In our example, we use the scrollView coordinate space to calculate the frame inside the scroll view. You can also define custom coordinate spaces using the *coordinateSpace* view modifier.
+Here is an example of building backward-compatible scroll offset tracking in SwiftUI. You can use this code even on iOS 16. As you can see, we use the *frame* function of the *GeometryProxy* type to calculate the frame of the particular view in different coordinate spaces. In our example, we use the *scrollView* coordinate space to calculate the frame inside the scroll view. You can also define custom coordinate spaces using the *coordinateSpace* view modifier.
 
 ```swift
 struct ContentView: View {
