@@ -7,7 +7,24 @@ The SwiftUI framework became a mature tool for building apps on all Apple platfo
 
 The SwiftUI framework introduced the onGeometryChange view modifier, and I am happy to say that it is backward compatible with iOS 16, macOS 13, tvOS 16, watchOS 9, and visionOS 1. The onGeometryChange allows us to track geometry changes of any view in SwiftUI.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var size: CGSize = .zero
+    
+    var body: some View {
+        ScrollView {
+            Color.red.onGeometryChange(for: CGSize.self) { geometry in
+                return geometry.size
+            } action: { newValue in
+                size = newValue
+            }
+        }
+        .onChange(of: size) {
+            print(size)
+        }
+    }
+}
+```
 
 As you can see in the example above, we use the onGeometryChange view modifier on the instance of the Color view. The onGeometryChange view modifier takes three parameters. 
 
@@ -21,11 +38,54 @@ The third parameter is the action closure, where we take the result of the trans
 
 Remember that the result type of the onGeometryChange view modifier must conform to the Equatable protocol. This allows SwiftUI to manage performance and run the action closure only when it changes.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var offset: CGFloat = 0
+    
+    var body: some View {
+        ScrollView {
+            Color.clear
+                .frame(height: 0)
+                .onGeometryChange(for: CGFloat.self) { geometry in
+                    return geometry.frame(in: .scrollView).minY
+                } action: { newValue in
+                    offset = newValue
+                }
+            
+                // Scroll content here...
+        }
+        .onChange(of: offset) {
+            print(offset)
+        }
+    }
+}
+```
 
 Here is an example of building backward-compatible scroll offset tracking in SwiftUI. You can use this code even on iOS 16. As you can see, we use the frame function of the GeometryProxy type to calculate the frame of the particular view in different coordinate spaces. In our example, we use the scrollView coordinate space to calculate the frame inside the scroll view. You can also define custom coordinate spaces using the coordinateSpace view modifier.
 
-=====================================================
+```swift
+struct ContentView: View {
+    @State private var offset: CGFloat = 0
+    
+    var body: some View {
+        
+        ScrollView {
+            Color.clear
+                .frame(height: 0)
+                .onGeometryChange(for: CGFloat.self) { geometry in
+                    return geometry.frame(in: .scrollView).minY
+                } action: { old, new in
+                    offset = min(old, new)
+                }
+            
+                // Scroll content here...
+        }
+        .onChange(of: offset) {
+            print(offset)
+        }
+    }
+}
+```
 
 Another version of the onGeometryChange view modifier, with the action closure taking two parameters: old and new value, is only available on the latest Apple platforms and is not backward compatible.
 
