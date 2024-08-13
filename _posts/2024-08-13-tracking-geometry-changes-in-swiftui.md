@@ -6,6 +6,8 @@ category: Mastering SwiftUI views
 
 The SwiftUI framework became a mature tool for building apps on all Apple platforms. The recent WWDC introduced missing APIs, adding more value to the framework. One of them is even backward compatible with previous versions of Apple platforms. This week, we will discuss tracking geometry changes of any view in SwiftUI.
 
+{% include friends.html %}
+
 The SwiftUI framework introduced the *onGeometryChange* view modifier, and I am happy to say that it is backward compatible with iOS 16, macOS 13, tvOS 16, watchOS 9, and visionOS 1. The *onGeometryChange* allows us to track geometry changes of any view in SwiftUI.
 
 ```swift
