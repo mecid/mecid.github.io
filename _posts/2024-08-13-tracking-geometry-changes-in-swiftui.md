@@ -34,7 +34,7 @@ As you can see in the example above, we use the *onGeometryChange* view modifier
 
 The first one is an equatable type of transformation result you will observe. A view's geometry can change very often, especially when it is placed in a scrolling view like *ScrollView* or *List*. That's why you should avoid updating large parts of your app with every geometry update.
 
-The *onGeometryChange* view modifier helps us avoid performance issues by requiring the first parameter, which we have to define the derived type of *GeometryProxy*.
+The *onGeometryChange* view modifier helps us avoid performance issues by requiring the first parameter, which we have to define as the derived type of *GeometryProxy*.
 
 > To learn more about using *GeometryProxy* type in SwiftUI, take a look at my ["How to use GeometryReader without breaking SwiftUI layout"](/2020/11/04/how-to-use-geometryreader-without-breaking-swiftui-layout/) post.
 
