@@ -92,4 +92,4 @@ struct ContentView: View {
 
 Another version of the *onGeometryChange* view modifier, with the *action* closure taking two parameters: old and new value, is only available on the latest Apple platforms and is not backward compatible.
 
-Today, we learned how to use the new backward-compatible *onGeometryChange* view modifier in SwitUI. It should improve your codebase by reducing the direct usage of the *GeometryReader* type that can easily break your layout.
+Today, we learned how to use the new backward-compatible *onGeometryChange* view modifier in SwitUI. It should improve your codebase by reducing the direct usage of the *GeometryReader* type that can easily break your layout. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
