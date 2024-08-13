@@ -35,6 +35,8 @@ The first one is an equatable type of transformation result you will observe. A 
 
 The *onGeometryChange* view modifier helps us avoid performance issues by requiring the first parameter, which we have to define the derived type of *GeometryProxy*.
 
+> To learn more about using *GeometryProxy* type in SwiftUI, take a look at my ["How to use GeometryReader without breaking SwiftUI layout"](/2020/11/04/how-to-use-geometryreader-without-breaking-swiftui-layout/) post.
+
 The second parameter is the *transformation* closure, where we take the actual instance of the *GeometryProxy* type and make our transformations to derive the result of the type that we define as the first parameter of the *onGeometryChange* view modifier.
 
 The third parameter is the *action* closure, where we take the result of the transformation closure and can do whatever we want. In our example, we assign the new value to the state property.
