@@ -117,6 +117,4 @@ func foo() throws(Never) {
 }
 ```
 
-Today, we learned how to use new typed throws definitions of functions to make our codebase even more predictable and type-safe.
-
-
+Today, we learned how to use new typed throws definitions of functions to make our codebase even more predictable and type-safe. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
