@@ -1,6 +1,7 @@
 ---
 title: Typed throws in Swift
 layout: post
+category: Swift Language Features
 ---
 
 Swift was promoted as a type-safe programming language on its very first day, and it is solid and safe in many aspects. The part of type safety that needed to be added was throwing functions. Swift 6.0 introduces typed throws, and we will learn all about them this week.
