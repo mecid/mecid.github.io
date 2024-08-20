@@ -49,6 +49,7 @@ func boo() {
     }
 }
 ```
+To handle errors in throwing functions, we have to wrap a call with the *do-catch* block and cast to the particular error type or handle a type-erased error instance. You must always keep in mind which error type the function may throw because the compiler can't help you here.
 
 Fortunately, Swift 6.0 allows us to define the throwing error type explicitly. I say it allows because it doesn't require defining a type of throwing error.
 
