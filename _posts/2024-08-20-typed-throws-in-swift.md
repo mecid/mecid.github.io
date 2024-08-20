@@ -76,7 +76,7 @@ func foo() throws(FooError) -> Int {
 }
 ```
 
-We changed the function definition to provide a throwing error type. Now, we can handle every case of the error type in the catch block. The compiler understands the throwing type and will warn you whenever a new case is added to the error type.
+We changed the function definition to provide a throwing error type. Now, we can handle every case of the error type in the catch block. The compiler understands the throwing type and provides us an instance of the particular error type.
 
 ```swift
 func boo() {
