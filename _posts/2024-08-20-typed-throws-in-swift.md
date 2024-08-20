@@ -7,6 +7,8 @@ image: /public/swift.png
 
 Swift was promoted as a type-safe programming language on its very first day, and it is solid and safe in many aspects. The part of type safety that needed to be added was throwing functions. Swift 6.0 introduces typed throws, and we will learn all about them this week.
 
+{% include friends.html %}
+
 Let's start by exploring the straightforward definition of a throwing function in Swift 5.9 or any previous language version.
 
 ```swift
