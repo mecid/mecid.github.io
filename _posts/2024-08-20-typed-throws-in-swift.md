@@ -32,7 +32,7 @@ func foo() throws -> Int {
 }
 ```
 
-As you can see in the example above, we define the function that may throw an error while returning an integer value. There is no information on what type of error it may throw. You have to manually scan the function implementation to find all usages of the throw keyword.
+As you can see in the example above, we define the function that may throw an error while returning an integer value. There is no information on what type of error it may throw. You have to manually scan the function implementation to find all usages of the **throw** keyword.
 
 ```swift
 func boo() {
@@ -103,7 +103,7 @@ func foo() throws(any Error) {
 }
 ```
 
-As you can see, the Swift compiler converts throwing functions to typed throwing using any Error type. Note that even nonthrowing functions translated into throwing where the error type is Never.
+As you can see, the Swift compiler converts throwing functions to typed throwing using *any Error* type. Note that even nonthrowing functions translated into throwing where the error type is *Never*.
 
 ```swift
 func foo() {
