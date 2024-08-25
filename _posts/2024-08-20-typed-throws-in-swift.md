@@ -65,11 +65,11 @@ func foo() throws(FooError) -> Int {
     let value = Int.random(in: 1...100)
     
     guard value < 60 else {
-        throw FooError.tooBig
+        throw .tooBig
     }
     
     guard value > 20 else {
-        throw FooError.tooSmall
+        throw .tooSmall
     }
     
     return value
