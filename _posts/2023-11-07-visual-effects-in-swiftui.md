@@ -1,7 +1,7 @@
 ---
 title: Visual effects in SwiftUI
 layout: post
-category: Mastering SwiftUI views
+category: Interactions
 image: /public/swiftui.png
 ---
 
