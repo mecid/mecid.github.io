@@ -79,6 +79,6 @@ struct ContentView: View {
 }
 ```
 
-Here, we create the *ScaleEffect* type that conforms to the *CustomHoverEffect* protocol. As with many other protocols introduced by SwiftUI, the only requirement is the body function, where you implement your effect's logic. As you can see, we move the content of the *hoverEffect* view modifier inside the *ScaleEffect* type without any changes.
+Here, we create the *ScaleEffect* type that conforms to the *CustomHoverEffect* protocol. As with many other protocols introduced by SwiftUI, the only requirement is the *body* function, where you implement your effect's logic. As you can see, we move the content of the *hoverEffect* view modifier inside the *ScaleEffect* type without any changes.
 
 Today, we learned how to build custom hover effects in SwiftUI and discussed the importance of delaying effects that impact the size of the views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
