@@ -11,7 +11,7 @@ Since purchasing Apple Vision Pro, I have been fully immersed in adapting my app
 
 First of all, hover effects are not specific to visionOS only. The same API is used on tvOS to build interactions while the user navigates using remote and macOS, where the user uses a mouse or trackpad.
 
-> To learn more about the basic hover effects that SwiftUI provides us, take a look at my ["Hover effect in SwiftUI"](/2020/03/25/hover-effect-in-swiftui/) post.
+> To learn more about basic hover effects that SwiftUI provides us, take a look at my ["Hover effect in SwiftUI"](/2020/03/25/hover-effect-in-swiftui/) post.
 
 Let's take a look at the simple example of building a custom hover effect. Assume that you have a rounded button and want to scale it a bit whenever the user looks at it or drags the mouse onto it.
 
@@ -82,4 +82,3 @@ struct ContentView: View {
 Here, we create the *ScaleEffect* type that conforms to the *CustomHoverEffect* protocol. As with many other protocols introduced by SwiftUI, the only requirement is the body function, where you implement your effect's logic. As you can see, we move the content of the *hoverEffect* view modifier inside the *ScaleEffect* type without any changes.
 
 Today, we learned how to build custom hover effects in SwiftUI and discussed the importance of delaying effects that impact the size of the views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
-
