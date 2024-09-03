@@ -81,4 +81,5 @@ Here, we create the ScaleEffect type that conforms to the CustomHoverEffect prot
 
 As you can see, we copy the content of the hoverEffect view modifier from our view and move it inside the ScaleEffect type without any changes.
 
-Today, we learned how to build custom hover effects in SwiftUI and discussed the importance of delaying effects that impact the size of the views.
+Today, we learned how to build custom hover effects in SwiftUI and discussed the importance of delaying effects that impact the size of the views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
