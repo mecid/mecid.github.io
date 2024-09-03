@@ -29,11 +29,11 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the hoverEffect view modifier to build our custom effect. The hoverEffect view modifier works similarly to the visualEffect view modifier and provides us with a list of parameters we can use to implement our effect.
+As you can see in the example above, we use the *hoverEffect* view modifier to build our custom effect. The *hoverEffect* view modifier works similarly to the *visualEffect* view modifier and provides us with a list of parameters we can use to implement our effect.
 
 > To learn more about visual effects in SwiftUI, take a look at my ["Visual effects in SwiftUI"](/2023/11/07/visual-effects-in-swiftui/) post.
 
-The first parameter is the empty effect stub, which we can use to add more effects. The second parameter is a boolean value that becomes true whenever the user looks at the view. The third parameter is an instance of the GeometryProxy type, which allows us to read the necessary geometry data and derive its effect.
+The first parameter is the empty effect stub, which we can use to add more effects. The second parameter is a boolean value that becomes true whenever the user looks at the view. The third parameter is an instance of the *GeometryProxy* type, which allows us to read the necessary geometry data and derive its effect.
 
 You may clutter the user experience with many custom hover effects, all of which will move and highlight the user interface while the user is looking around. Fortunately, custom hover effects support animation, which allows us to delay our effects slightly.
 
@@ -53,9 +53,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see, we use the animation function on an empty hover effect stub to provide some delay. Animated delays are crucial whenever your custom effect significantly impacts the view, like changing its size to expand the content.
+As you can see, we use the *animation* function on an empty hover effect stub to provide some delay. Animated delays are crucial whenever your custom effect significantly impacts the view, like changing its size to expand the content.
 
-The custom scale hover effect we built above is neat, and I might need to use it in other parts of my app. I want to avoid copying and pasting it across my codebase. For this particular case, SwiftUI introduces the CustomHoverEffect protocol.
+The custom scale hover effect we built above is neat, and I might need to use it in other parts of my app. I want to avoid copying and pasting it across my codebase. For this particular case, SwiftUI introduces the *CustomHoverEffect* protocol.
 
 ```swift
 struct ScaleEffect: CustomHoverEffect {
@@ -79,9 +79,7 @@ struct ContentView: View {
 }
 ```
 
-Here, we create the ScaleEffect type that conforms to the CustomHoverEffect protocol. As with many other protocols introduced by SwiftUI, the only requirement is the body function, where you implement your effect's logic.
-
-As you can see, we copy the content of the hoverEffect view modifier from our view and move it inside the ScaleEffect type without any changes.
+Here, we create the *ScaleEffect* type that conforms to the *CustomHoverEffect* protocol. As with many other protocols introduced by SwiftUI, the only requirement is the body function, where you implement your effect's logic. As you can see, we move the content of the *hoverEffect* view modifier inside the *ScaleEffect* type without any changes.
 
 Today, we learned how to build custom hover effects in SwiftUI and discussed the importance of delaying effects that impact the size of the views. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
