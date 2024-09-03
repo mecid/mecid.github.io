@@ -7,6 +7,8 @@ image: /public/visionOS.webp
 
 Since purchasing Apple Vision Pro, I have been fully immersed in adapting my applications to visionOS. The first thing I noticed on the device was the need to customize hover effects in some views. This week, we will talk about building custom hover effects in SwiftUI.
 
+{% include friends.html %}
+
 First of all, hover effects are not specific to visionOS only. The same API is used on tvOS to build interactions while the user navigates using remote and macOS, where the user uses a mouse or trackpad.
 
 > To learn more about the basic hover effects that SwiftUI provides us, take a look at my ["Hover effect in SwiftUI"](/2020/03/25/hover-effect-in-swiftui/) post.
