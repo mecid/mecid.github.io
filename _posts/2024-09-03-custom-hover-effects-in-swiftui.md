@@ -9,7 +9,7 @@ Since purchasing Apple Vision Pro, I have been fully immersed in adapting my app
 
 {% include friends.html %}
 
-First of all, hover effects are not specific to visionOS only. The same API is used on tvOS to build interactions while the user navigates using remote and macOS, where the user uses a mouse or trackpad.
+First of all, hover effects are not specific to visionOS only. It is used on tvOS to build interactions while the user navigates using remote and macOS, where the user uses a mouse or trackpad.
 
 > To learn more about basic hover effects that SwiftUI provides us, take a look at my ["Hover effect in SwiftUI"](/2020/03/25/hover-effect-in-swiftui/) post.
 
