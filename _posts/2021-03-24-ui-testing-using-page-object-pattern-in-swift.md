@@ -112,10 +112,10 @@ struct LoginScreen: Screen {
         static let error = "error"
     }
 
-    func typeEmail(_ email1: String) -> Self {
+    func typeEmail(_ emailAddr: String) -> Self {
         let email = app.textFields[Identifiers.email]
         email.tap()
-        email.typeText(email1)
+        email.typeText(emailAddr)
         return self
     }
 
