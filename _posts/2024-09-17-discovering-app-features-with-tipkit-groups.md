@@ -3,7 +3,7 @@ title: Discovering app features with TipKit. Groups.
 layout: post
 ---
 
-A year ago, Apple released the TipKit framework, which has a bizarre title. TipKit became a framework, making app features much easier for users to discover. This week, we will talk about an enhancement that Apple introduced to improve tip-appearing logic called TipGroups.
+A year ago, Apple released the TipKit framework, which has a bizarre title. TipKit became a framework, making app features much easier for users to discover. This week, we will talk about an enhancement that Apple introduced to improve tip-appearing logic called tip groups.
 
 Maintaining order becomes difficult whenever you have more than one tip on a screen because TipKit tries to display everything at once. Let's take a look at the example of three tips displayed on a screen.
 
