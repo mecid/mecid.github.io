@@ -71,6 +71,8 @@ struct FeedView: View {
 
 As you can see, we define a state property of type *TipGroup*. The *TipGroup* allows us to set the priority and provide a collection of tips. In our case, we use ordered priority, which means the tip group will follow the order of the array we provide, and the add tip will only appear if the user invalidates the welcome tip.
 
+> To learn more about basics of the TipKit framework, take a look at my ["Discovering app features with TipKit. Basics."](/2024/05/07/discovering-app-features-with-tipkit-basics/) post.
+
 Another priority choice that the TipKit framework provides us is the *firstAvailable* option. In this case, the TipKit framework doesn't keep the order inside the group and displays the first available tip.
 
 ```swift
