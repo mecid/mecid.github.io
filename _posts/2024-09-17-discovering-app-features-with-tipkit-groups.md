@@ -1,6 +1,8 @@
 ---
 title: Discovering app features with TipKit. Groups.
 layout: post
+category: Interactions
+
 ---
 
 A year ago, Apple released the TipKit framework, which has a bizarre title. TipKit became a framework, making app features much easier for users to discover. This week, we will talk about an enhancement that Apple introduced to improve tip-appearing logic called tip groups.
