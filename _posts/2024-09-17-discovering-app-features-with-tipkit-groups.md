@@ -41,7 +41,7 @@ struct FeedView: View {
 }
 ```
 
-As you can see, we use the popoverTip view modifier three times to display the collection of tips on the screen. This way, we can't control timing, and all the tips appear as soon as possible. The SwiftUI framework introduced the TipGroup type, allowing us to group a set of tips and display them in order one by one.
+As you can see, we use the *popoverTip* view modifier three times to display the collection of tips on the screen. This way, we can't control timing, and all the tips appear as soon as possible. The SwiftUI framework introduced the *TipGroup* type, allowing us to group a set of tips and display them in order one by one.
 
 ```swift
 struct FeedView: View {
@@ -65,9 +65,9 @@ struct FeedView: View {
 }
 ```
 
-As you can see, we define a state property of type TipGroup. The TipGroup allows us to set the priority and provide a collection of tips. In our case, we use ordered priority, which means the tip group will follow the order of the array we provide, and the add tip will only appear if the user invalidates the welcome tip.
+As you can see, we define a state property of type *TipGroup*. The *TipGroup* allows us to set the priority and provide a collection of tips. In our case, we use ordered priority, which means the tip group will follow the order of the array we provide, and the add tip will only appear if the user invalidates the welcome tip.
 
-Another priority choice that the TipKit framework provides us is the firstAvailable option. In this case, the TipKit framework doesn't keep the order inside the group and displays the first available tip.
+Another priority choice that the TipKit framework provides us is the *firstAvailable* option. In this case, the TipKit framework doesn't keep the order inside the group and displays the first available tip.
 
 ```swift
 struct FeedView: View {
@@ -91,7 +91,7 @@ struct FeedView: View {
 }
 ```
 
-Remember that you should use the currentTip on an instance of the TipGroup type to access the active tip. The currentTip property automatically calculates the available tip. You can still invalidate tips programmatically whenever a user discovers the feature, and it will update the currentTip property automatically.
+Remember that you should use the *currentTip* on an instance of the *TipGroup* type to access the active tip. The *currentTip* property automatically calculates the available tip. You can still invalidate tips programmatically whenever a user discovers the feature, and it will update the *currentTip* property automatically.
 
 ```swift
 struct FeedView: View {
