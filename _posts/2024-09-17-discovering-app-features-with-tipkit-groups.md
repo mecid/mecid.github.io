@@ -162,4 +162,4 @@ struct FeedView: View {
 
 As you can see in the example above, we verify that the current tip has the expected identifier. Otherwise, we ignore it by providing *nil* value.
 
-Today, we learned how to improve the app's discoverability without disturbing the user with a bunch of tips. By using the TipGroups type, we can provide tips step by step in a calm manner. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today, we learned how to improve the app's discoverability without disturbing the user with a bunch of tips. By using the *TipGroup* type, we can provide tips step by step in a calm manner. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
