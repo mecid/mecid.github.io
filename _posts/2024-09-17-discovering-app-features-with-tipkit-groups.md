@@ -142,10 +142,14 @@ struct FeedView: View {
     var body: some View {
         NavigationStack {
             List {
-                TipView(tips.currentTip?.id == FeedTip.welcome.id ? tips.currentTip : nil)
+                TipView(
+                    tips.currentTip?.id == FeedTip.welcome.id ? tips.currentTip : nil
+                )
                 
                 Text(verbatim: "Item")
-                    .popoverTip(tips.currentTip?.id == FeedTip.remove.id ? tips.currentTip : nil)
+                    .popoverTip(
+                        tips.currentTip?.id == FeedTip.remove.id ? tips.currentTip : nil
+                    )
             }
             .navigationTitle("Items")
             .toolbar {
@@ -153,7 +157,9 @@ struct FeedView: View {
                     FeedTip.add.invalidate(reason: .actionPerformed)
                     // Add another item...
                 }
-                .popoverTip(tips.currentTip?.id == FeedTip.add.id ? tips.currentTip : nil)
+                .popoverTip(
+                    tips.currentTip?.id == FeedTip.add.id ? tips.currentTip : nil
+                )
             }
         }
     }
