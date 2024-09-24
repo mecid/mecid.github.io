@@ -43,6 +43,8 @@ Our card type is simple to use. You create a card and provide content using a cl
 
 This is the main benefit of using container views, as you can reuse them in different places across the app by encapsulating a shared functionality in the container view.
 
+> To learn more about *@ViewBuilder* closures, take a look at my [The power of @ViewBuilder in SwiftUI](/2019/12/18/the-power-of-viewbuilder-in-swiftui/) post.
+
 *@ViewBuilder* closures allow us to compose multiple views easily and embed one view into another. But what about extracting child views from the *@ViewBuilder* closure? SwiftUI introduced new APIs, allowing us to recompose views. For example, we can extract child from the content view built with the *@ViewBuilder* closure and place them as we need.
 
 ```swift
