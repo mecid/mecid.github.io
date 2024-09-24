@@ -140,4 +140,4 @@ struct ContentView: View {
 
 The new container APIs that SwiftUI introduced this year were missing the part about creating customizable and reusable views. I really love how easily it allows us to decompose views and compose them in other ways by hiding the implementation details of our container views.
 
-Today, we learned how to create custom container views in SwiftUI using new Group and ForEach APIs.
+Today, we learned how to create custom container views in SwiftUI using new Group and ForEach APIs. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
