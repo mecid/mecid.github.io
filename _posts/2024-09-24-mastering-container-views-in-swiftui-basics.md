@@ -5,6 +5,8 @@ layout: post
 
 Since the very first version of the framework, SwiftUI has had several container views. The most popular ones are HStack, VStack, List, etc. This year, Apple introduced new APIs that allow us to build custom container views in a new way. This week, we will learn about the benefits of SwiftUI's new decomposition APIs.
 
+{% include friends.html %}
+
 What is a container view? It is a view holding other views. We can easily define a container view using @ViewBuilder closures. Here is an example.
 
 ```swift
