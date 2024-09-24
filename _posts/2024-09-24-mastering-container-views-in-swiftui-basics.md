@@ -88,6 +88,8 @@ struct ContentView: View {
 
 SwiftUI uses a particular *Subview* type to expose the instance of an extracted view. It conforms to the *View* protocol, so we can still attach additional SwiftUI view modifiers. It also provides us with the *id* property, which is a unique identifier, and container values associated with the particular view. We will talk more about container values in the upcoming post.
 
+![carousel](/public/container1.png)
+
 Another new API allows us to access child views by index instead of iterating them using the *Group* view.
 
 ```swift
@@ -143,5 +145,7 @@ struct ContentView: View {
 ```
 
 The new container APIs that SwiftUI introduced this year were missing the part about creating customizable and reusable views. I really love how easily it allows us to decompose views and compose them in other ways by hiding the implementation details of our container views.
+
+![magazine](/public/container2.png)
 
 Today, we learned how to create custom container views in SwiftUI using new *Group* and *ForEach* APIs. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
