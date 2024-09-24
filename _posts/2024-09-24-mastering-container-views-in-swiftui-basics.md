@@ -85,7 +85,7 @@ SwiftUI uses a particular *Subview* type to expose the instance of an extracted 
 
 ![carousel](/public/container1.png)
 
-Another new API allows us to access child views by index instead of iterating them using the *Group* view.
+Another new API allows us to access child views by index instead of iterating them using the *ForEach* view.
 
 ```swift
 struct Magazine<Content: View>: View {
