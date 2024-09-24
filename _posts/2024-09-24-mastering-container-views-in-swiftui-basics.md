@@ -139,7 +139,7 @@ struct ContentView: View {
 }
 ```
 
-The new container APIs that SwiftUI introduced this year were missing the part about creating customizable and reusable views. I really love how easily it allows us to decompose views and compose them in other ways by hiding the implementation details of our container views.
+The new container APIs that SwiftUI introduced this year were missing part about creating customizable and reusable views. I really love how easily it allows us to decompose views and compose them in other ways by hiding the implementation details of our container views.
 
 ![magazine](/public/container2.png)
 
