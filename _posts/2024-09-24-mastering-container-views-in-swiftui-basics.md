@@ -54,12 +54,7 @@ struct Carousel<Content: View>: View {
             LazyHStack {
                 ForEach(subviews: content) { subview in
                     subview
-                        .containerRelativeFrame(.horizontal) { length, _ in
-                            return length / 1.2
-                        }
-                        .scrollTransition(.interactive, axis: .horizontal) { effect, phase in
-                            effect.scaleEffect(phase.isIdentity ? 1 : 0.9)
-                        }
+                        .containerRelativeFrame(.horizontal)
                 }
             }
             .scrollTargetLayout()
