@@ -28,12 +28,9 @@ var request = URLRequest(url: url)
 request.httpMethod = "GET"
 request.httpBody = nil
 
-let cancellable = URLSession.shared.dataTaskPublisher(for: request)
-    .map(\.data)
-    .decode(type: SearchResponse.self, decoder: JSONDecoder())
-    .map(\.items)
-    .replaceError(with: [])
-    .sink { print($0) }
+let decoder = JSONDecoder()
+let (data, _) = try await URLSession.shared.data(for: request)
+let searchResponse = try decoder.decode(SearchResponse.self, from: data)
 ```
 
 In the example above, we have a standard networking code that creates the request and decodes the response. There are a few things that I want to avoid in the future.
