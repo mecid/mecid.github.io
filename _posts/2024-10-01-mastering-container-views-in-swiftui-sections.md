@@ -7,6 +7,8 @@ image: /public/container.png
 
 In the previous post, we discussed the basics of the new container APIs introduced in SwiftUI this year. I want to continue the topic by touching on more advanced recomposition APIs that allow us to decompose sections and their content.
 
+{% include friends.html %}
+
 We have already discussed the recomposition of simple *@ViewBuilder* closures like this one.
 
 ```swift
