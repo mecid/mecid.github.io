@@ -147,6 +147,7 @@ struct Magazine<Content: View>: View {
                     if sections.count > 1 {
                         ForEach(sections[1...]) { section in
                             section.header
+                            
                             ScrollView(.horizontal) {
                                 LazyHStack {
                                     section.content
