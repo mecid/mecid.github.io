@@ -1,6 +1,7 @@
 ---
 title: Mastering container views in SwiftUI. Sections.
 layout: post
+category: View Composition
 image: /public/container.png
 ---
 
