@@ -86,6 +86,8 @@ struct Carousel<Content: View>: View {
 
 As you can see in the example above, we use the *ForEach* type with the new initializer, which allows us to decompose sections from the view. In this case, the *ForEach* view enumerates the sections of the view and provides us access to every section by giving an instance of the *SectionConfiguration* type.
 
+![carousel](/public/container3.png)
+
 The *SectionConfiguration* type is the new SwiftUI type conforming to the *Identifiable* protocol, which means it has a stable identifier. It also has the header, footer, and content properties of the *SubviewsCollection* type. 
 
 > To learn more about basics of the container view APIs in SwiftUI, take a look at my ["Mastering container views in SwiftUI. Basics."](/2024/09/24/mastering-container-views-in-swiftui-basics/) post.
@@ -165,6 +167,8 @@ struct Magazine<Content: View>: View {
 ```
 
 As you can see in the example above, we use the *Group* view with *sections* parameter, which allows us to extract an instance of the *SectionCollection* type and recompose it using our custom logic.
+
+![carousel](/public/container4.png)
 
 The *SectionCollection* type conforms to the *RandomAccessCollection* protocol, where the elements are instances of the *SectionCollection* type. So you can easily access the content, header, and footer of every section.
 
