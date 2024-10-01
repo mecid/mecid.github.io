@@ -166,4 +166,4 @@ As you can see in the example above, we use the *Group* view with *sections* par
 
 The *SectionCollection* type conforms to the *RandomAccessCollection* protocol, where the elements are instances of the *SectionCollection* type. So you can easily access the content, header, and footer of every section.
 
-Today, we discovered advanced use cases of the new recomposition APIs introduced in SwiftUI. We learned how to extract the sections and recompose them using custom logic.
+Today, we discovered advanced use cases of the new recomposition APIs introduced in SwiftUI. We learned how to extract the sections and recompose them using custom logic. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
