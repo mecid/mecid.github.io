@@ -50,7 +50,7 @@ struct ContentView: View {
 }
 ```
 
-SwiftUI introduces new APIs, allowing us to recompose complex view hierarchies, including sections. Similarly to the subviews parameter, SwiftUI defines another overload on the *ForEach* type, allowing us to enumerate sections.
+SwiftUI introduces new APIs, allowing us to recompose complex view hierarchies, including sections. Similarly to the *subviews* parameter, SwiftUI defines another overload on the *ForEach* type, allowing us to enumerate sections.
 
 ```swift
 struct Carousel<Content: View>: View {
