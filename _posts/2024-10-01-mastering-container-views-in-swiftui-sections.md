@@ -147,6 +147,8 @@ struct Magazine<Content: View>: View {
                                 }
                             }
                             .contentMargins(16)
+                            
+                            section.footer
                         }
                     }
                 }
