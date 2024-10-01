@@ -88,6 +88,8 @@ As you can see in the example above, we use the *ForEach* type with the new init
 
 The *SectionConfiguration* type is the new SwiftUI type conforming to the *Identifiable* protocol, which means it has a stable identifier. It also has the header, footer, and content properties of the *SubviewsCollection* type. 
 
+> To learn more about basics of the container view APIs in SwiftUI, take a look at my ["Mastering container views in SwiftUI. Basics."](/2024/09/24/mastering-container-views-in-swiftui-basics/) post.
+
 The *SubviewCollection* type provides indexed access to view proxies, allowing us to recompose the view hierarchy easily. Remember that you can treat an instance of the *SubviewCollection* type as a collection and iterate using the *ForEach* type or wrap it with another container view like *HStack* or *VStack*.
 
 ```swift
