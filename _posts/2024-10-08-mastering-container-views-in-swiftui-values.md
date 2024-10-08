@@ -189,4 +189,4 @@ As you can see in the example above, we use the containerValues property on inst
 
 We use the isFeatured container value to recompose the view hierarchy as needed. Container values propagate through the view hierarchy similar to environment values. Any view inside the featured section will have the isFeatured value of true.
 
-Today, we learned how to use container values to propagate data through container view and recompose view hierarchies using that information.
+Today, we learned how to use container values to propagate data through container view and recompose view hierarchies using that information. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
