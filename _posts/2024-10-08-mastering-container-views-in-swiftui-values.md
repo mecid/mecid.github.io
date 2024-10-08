@@ -185,6 +185,8 @@ struct Magazine<Content: View>: View {
 
 Both the Subview and SectionConfiguration types provide the containerValues property, which allows us to read any defined container value.
 
+> To learn more about basics of the container view APIs in SwiftUI, take a look at my ["Mastering container views in SwiftUI. Basics."](/2024/09/24/mastering-container-views-in-swiftui-basics/) post.
+
 As you can see in the example above, we use the containerValues property on instances of the SectionConfiguration type to filter featured and non-featured sections.
 
 We use the isFeatured container value to recompose the view hierarchy as needed. Container values propagate through the view hierarchy similar to environment values. Any view inside the featured section will have the isFeatured value of true.
