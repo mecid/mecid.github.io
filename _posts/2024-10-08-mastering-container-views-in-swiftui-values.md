@@ -7,6 +7,8 @@ image: /public/container.png
 
 In the series' final post about container views in SwiftUI, I will discuss container values and how SwiftUI allows us to propagate data through the container view logic. This week, we will learn how to declaratively define and pass container values.
 
+{% include friends.html %}
+
 Container values are similar to environment values, allowing us to pass data inside through the container view instead of the environment and access it later inside the container view.
 
 ```swift
