@@ -9,7 +9,7 @@ In the series final post about container views in SwiftUI, we will discuss conta
 
 {% include friends.html %}
 
-Container values are similar to environment values, allowing us to pass data inside through the container view instead of the environment and access it later inside the container view.
+Container values are similar to environment values, allowing us to pass data implicitly through the container view and access it later inside the container view.
 
 ```swift
 struct Magazine<Content: View>: View {
