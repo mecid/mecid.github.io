@@ -80,7 +80,7 @@ extension ContainerValues {
 }
 ```
 
-As you can see, we use the @Entry macro to define a container value with the default value. All we need to do is to create an extension for the ContainerValues type and specify a property with the @Entry macro. Now, we can use it to mark any section or view as featured.
+As you can see, we use the *@Entry* macro to define a container value with the default value. All we need to do is to create an extension for the *ContainerValues* type and specify a property with the *@Entry* macro. Now, we can use it to mark any section or view as featured.
 
 ```swift
 struct ContentView: View {
@@ -106,7 +106,7 @@ struct ContentView: View {
 }
 ```
 
-We use the containerValue view modifier to set the container value using the keypath. We can also write an extension to simplify the usage.
+We use the *containerValue* view modifier to set the container value using the keypath. We can also write an extension to simplify the usage.
 
 ```swift
 extension ContainerValues {
@@ -142,7 +142,7 @@ struct ContentView: View {
 }
 ```
 
-We know how to define a container value with a default state and change it using the containerValue view modifier. The next step is to read the value from the container view and decide on view recomposition.
+We know how to define a container value with a default state and change it using the *containerValue* view modifier. The next step is to read the value from the container view and decide on view recomposition.
 
 ```swift
 struct Magazine<Content: View>: View {
@@ -183,12 +183,12 @@ struct Magazine<Content: View>: View {
 }
 ```
 
-Both the Subview and SectionConfiguration types provide the containerValues property, which allows us to read any defined container value.
+Both the *Subview* and *SectionConfiguration* types provide the *containerValues* property, which allows us to read any defined container value.
 
 > To learn more about basics of the container view APIs in SwiftUI, take a look at my ["Mastering container views in SwiftUI. Basics."](/2024/09/24/mastering-container-views-in-swiftui-basics/) post.
 
-As you can see in the example above, we use the containerValues property on instances of the SectionConfiguration type to filter featured and non-featured sections.
+As you can see in the example above, we use the *containerValues* property on instances of the *SectionConfiguration* type to filter featured and non-featured sections.
 
-We use the isFeatured container value to recompose the view hierarchy as needed. Container values propagate through the view hierarchy similar to environment values. Any view inside the featured section will have the isFeatured value of true.
+We use the *isFeatured* container value to recompose the view hierarchy as needed. Container values propagate through the view hierarchy similar to environment values. Any view inside the featured section will have the *isFeatured* value of true.
 
 Today, we learned how to use container values to propagate data through container view and recompose view hierarchies using that information. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
