@@ -5,7 +5,7 @@ category: View Composition
 image: /public/container.png
 ---
 
-In the series final post about container views in SwiftUI, We will discuss container values and how SwiftUI allows us to propagate data through the container view logic. This week, we will learn how to declaratively define and pass container values.
+In the series final post about container views in SwiftUI, we will discuss container values and how SwiftUI allows us to propagate data through the container view logic. This week, we will learn how to declaratively define and pass container values.
 
 {% include friends.html %}
 
