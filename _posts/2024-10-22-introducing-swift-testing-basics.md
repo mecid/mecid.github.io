@@ -28,7 +28,7 @@ As you can see in the example above, we use the *@Test* macro to annotate our *v
 
 You can annotate the functions with *@Test* macro throwing and async. Throwing tests will fail whenever an unhandled error appears. You can also use them side-by-side with XCTest classes in a single project.
 
-The *expect* macro allows you to assert the values in your tests. It replaces the whole collection of the assert functions from the XCTest framework with a single one. You place the boolean expression inside the expect macro, which will pass whenever it is true and fail whenever it is false.
+The *expect* macro allows you to assert the values in your tests. It replaces the whole collection of the assert functions from the XCTest framework with a single one. You place the boolean expression inside the *expect* macro, which will pass whenever it is true and fail whenever it is false.
 
 ```swift
 @Test func verifyMagicNumber() {
