@@ -99,4 +99,4 @@ Another way to stop the test and document the issue is to use the *record* funct
 }
 ```
 
-The Swift Testing framework integrates well with Xcode, providing a rich, inline representation of test results. It also provides a new way to organize, group, and structure test suites, which I will cover in the next few posts.
+The Swift Testing framework integrates well with Xcode, providing a rich, inline representation of test results. It also provides a new way to organize, group, and structure test suites, which I will cover in the next few posts. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
