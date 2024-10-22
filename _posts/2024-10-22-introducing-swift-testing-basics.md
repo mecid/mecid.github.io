@@ -75,7 +75,7 @@ Another overload of the *expect* macro allows us to verify the function's throwi
 }
 ```
 
-Another macro introduced by the Swift Testing framework is the *require*. The *require* macro has the same API as the *expect* macro with a single difference. It is a throwing function that throws an error as soon as the boolean expression you pass into it is false. It allows us to stop the test when a required condition doesn't meet our expectations.
+The second macro type introduced by the Swift Testing framework is the *require*. The *require* macro has the same API as the *expect* macro with a single difference. It is a throwing function that throws an error as soon as the boolean expression you pass into it is false. It allows us to stop the test when a required condition doesn't meet our expectations.
 
 ```swift
 @Test func verifyOptionalFunc() throws {
