@@ -5,6 +5,8 @@ layout: post
 
 Swift Testing is a new framework with expressive and intuitive APIs that improve your testing experience. It is powered by macros that allow you to organize and assert your tests. This week, we will learn about the basics of the Swift Testing framework and how we can use it side-by-side with XCTest.
 
+{% include friends.html %}
+
 To start using the Swift Testing framework, we only need to import it. Then, we will gain access to all macro types provided by the framework.
 
 ```swift
