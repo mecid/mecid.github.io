@@ -1,6 +1,7 @@
 ---
 title: Introducing Swift Testing. Basics.
 layout: post
+category: Testing
 ---
 
 Swift Testing is a new framework with expressive and intuitive APIs that improve your testing experience. It is powered by macros that allow you to organize and assert your tests. This week, we will learn about the basics of the Swift Testing framework and how we can use it side-by-side with XCTest.
