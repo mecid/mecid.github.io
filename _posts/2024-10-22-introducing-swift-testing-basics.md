@@ -45,14 +45,6 @@ You can use the *expect* macro to verify any boolean expression that you can ima
 Assume that you have a throwing function that might throw an error in a particular case and want to test that behavior. You can still use the *expect* macro to verify the error throw.
 
 ```swift
-enum MyError: Error {
-    case invalidInput
-}
-
-func throwingFunction() throws {
-    throw MyError.invalidInput
-}
-
 @Test func verifyThrowingFunction() {
     #expect(throws: MyError.self) {
         try throwingFunction()
