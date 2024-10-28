@@ -26,7 +26,7 @@ func add(_ a: Int, _ b: Int) -> Int {
 
 As you can see in the example above, we use the *@Test* macro to annotate our *verifyAdd* function. You don't need to name your test functions with any prefix; you only need to annotate tests with the *@Test* macro.
 
-You can annotate the functions with *@Test* macro throwing and async. Throwing tests will fail whenever an unhandled error appears. You can also use them side-by-side with XCTest classes in a single project.
+You can annotate the functions with *@Test* macro throwing and async. Throwing tests will fail whenever an unhandled error appears. Async test cases allows us to await values and verify the outcomes using the Swift Concurrency feature. You can also use them side-by-side with XCTest classes in a single project.
 
 The *expect* macro allows you to assert the values in your tests. It replaces the whole collection of the assert functions from the XCTest framework with a single one. You place the boolean expression inside the *expect* macro, which will pass whenever it is true and fail whenever it is false.
 
