@@ -20,6 +20,8 @@ Let's take a look at a simple example of a test using the Swift Testing framewor
 
 As you can see in the example above, we use the *@Test* macro to mark our *verifyAdd* function. That's it. It is all you need to define a test using the Swift Testing framework.
 
+> To learn more about the basics of the Swift Testing framework, take a look at my ["Introducing Swift Testing. Basics."](/2024/10/22/introducing-swift-testing-basics/) post.
+
 Let's discuss a more complex example where you have a set of tests that you want to group in a single test suite. In this case, you can simply embed a set of test functions into a struct.
 
 ```swift
