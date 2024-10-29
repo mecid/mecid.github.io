@@ -62,7 +62,7 @@ struct ModelTests {
 
 As you can see in the example above, we define the *init* function in the *ModelTests* type. Swift Testing will call this function before every test case. We can use the *init* function to set up a database connection, preload mock data, etc.
 
-Whenever you need the teardown function to run after each test case, you can change the type of the test suite from *struct* to *class* and use the *deinit* function.
+Whenever you need the teardown function to run after each test case, you can change the type of the test suite from struct to class and use the *deinit* function.
 
 ```swift
 class ModelTests {
@@ -89,7 +89,7 @@ class ModelTests {
 
 ```
 
-In the example above, we change the *ModelTests* type from being a *struct* to a *class*. Now we can define the *deinit* function. The Swift Testing will run the *deinit* function after every test case. In our example, we use it to erase all data after each test.
+In the example above, we change the *ModelTests* type from being a struct to a class. Now we can define the *deinit* function. The Swift Testing will run the *deinit* function after every test case. In our example, we use it to erase all data after each test.
 
 
 The Swift Testing framework runs tests in parallel with each other using task groups. You might need to run them serially in some cases, and you can achieve that using the *@Suite* macro.
