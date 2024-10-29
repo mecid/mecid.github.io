@@ -5,7 +5,7 @@ category: Testing
 image: /public/testing.png
 ---
 
-Any function marked with the *@Test* macro can be a test in the world of the Swift Testing framework. But how do you handle the lifecycle of the tests? How do you define test suites and provide setup and teardown functionality? This week, we will learn how to handle the test lifecycle in Swift Testing.
+Any function marked with the *@Test* macro can be a test in the world of the Swift Testing framework. But how do you handle the lifecycle of the tests? How do you define test suites and provide setup and teardown functionality? This week, we will learn how to handle the test lifecycle in Swift Testing framework.
 
 {% include friends.html %}
 
