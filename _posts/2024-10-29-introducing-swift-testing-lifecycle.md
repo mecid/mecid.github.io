@@ -7,6 +7,8 @@ image: /public/testing.png
 
 Any function marked with the *@Test* macro can be a test in the world of the Swift Testing framework. But how do you handle the lifecycle of the tests? How do you define test suites and provide setup and teardown functionality? This week, we will learn how to handle the test lifecycle in Swift Testing.
 
+{% include friends.html %}
+
 Let's take a look at a simple example of a test using the Swift Testing framework.
 
 ```swift
