@@ -1,5 +1,5 @@
 ---
-title: Introducing Swift Testing. Lifecycle
+title: Introducing Swift Testing. Lifecycle.
 layout: post
 category: Testing
 image: /public/testing.png
