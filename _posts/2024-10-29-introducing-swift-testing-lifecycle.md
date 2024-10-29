@@ -92,7 +92,7 @@ class ModelTests {
 In the example above, we change the *ModelTests* type from being a struct to a class. Now we can define the *deinit* function. The Swift Testing will run the *deinit* function after every test case. In our example, we use it to erase all data after each test.
 
 
-The Swift Testing framework runs tests in parallel with each other using task groups. You might need to run them serially in some cases, and you can achieve that using the *@Suite* macro.
+The Swift Testing framework runs tests in parallel with respect to each other using task groups. You might need to run them serially in some cases, and you can achieve that using the *@Suite* macro.
 
 ```swift
 @Suite(.serialized) class ModelTests {
