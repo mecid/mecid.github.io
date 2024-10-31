@@ -115,6 +115,16 @@ The Swift Testing framework runs tests in parallel with respect to each other us
         
         #expect(count == 100)
     }
+    
+    @Test func verifyCleanup() throws {
+        User.bulkImport()
+        User.cleanup()
+        
+        let modelContext = ModelContext(container)
+        let count = try modelContext.fetchCount(FetchDescriptor<User>())
+        
+        #expect(count == 0)
+    }
 }
 ```
 
@@ -142,6 +152,16 @@ Still, we can use the *@Suite* macro for additional attribution. For example, we
         let count = try modelContext.fetchCount(FetchDescriptor<User>())
         
         #expect(count == 100)
+    }
+    
+    @Test func verifyCleanup() throws {
+        User.bulkImport()
+        User.cleanup()
+        
+        let modelContext = ModelContext(container)
+        let count = try modelContext.fetchCount(FetchDescriptor<User>())
+        
+        #expect(count == 0)
     }
 }
 ```
