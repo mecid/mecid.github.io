@@ -103,4 +103,4 @@ First of all, we have to define a tag. We can create tags only by defining exten
 }
 ```
 
-As you can see in the example above, we define the *crucial* tag and mark two test cases with it. The Test Navigator in Xcode has a special tab showing tags allowing you to run the tests by tag and visualize if all the tests in the tag pass.
+As you can see in the example above, we define the *crucial* tag and mark two test cases with it. The Test Navigator in Xcode has a special tab showing tags allowing you to run the tests by tag and visualize if all the tests in the tag pass. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
