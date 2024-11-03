@@ -7,6 +7,8 @@ image: /public/testing.png
 
 The most powerful feature of the Swift Testing framework is the trait system. Traits allow us to annotate a test or test suite to customize its behavior. This week, we will learn how to use built-in trait types to modify tests.
 
+{% include friends.html %}
+
 The Test and Suite macros allow us to enable a trait or set of traits related to the test or test suite and pass built-in trait types.
 
 ```swift
