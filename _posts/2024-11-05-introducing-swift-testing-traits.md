@@ -14,7 +14,7 @@ The Test and Suite macros allow us to enable a trait or set of traits related to
 }
 ```
 
-As you can see in the example above, we use the disabled trait to skip the test. Xcode Test Navigator shows disabled tests as skipped by coloring them in gray.
+As you can see in the example above, we use the *disabled* trait to skip the test. Xcode Test Navigator shows disabled tests as skipped by coloring them in gray.
 
 ```swift
 @Test(.disabled("Disabled for some reason")) func verifyAdd() {
@@ -34,9 +34,9 @@ You can also provide a comment to indicate the reason for skipping the test, whi
 }
 ```
 
-As you can see, we use the enabled trait with a boolean value to conditionally allow the test. We can use conditions both with disable and enable test traits.
+As you can see, we use the *enabled* trait with a boolean value to conditionally allow the test. We can use conditions both with *disable* and *enable* test traits.
 
-The real power of the traits system appears when you combine multiple traits to achieve the desired behavior. For example, you can use numerous enabled traits to run the test only when all conditions are met.
+The real power of the traits system appears when you combine multiple traits to achieve the desired behavior. For example, you can use numerous *enabled* traits to run the test only when all conditions are met.
 
 ```swift
 @Test(
@@ -48,7 +48,7 @@ The real power of the traits system appears when you combine multiple traits to 
 }
 ```
 
-Whenever you use multiple conditions, all of them should pass to run the test. Sometimes, you might skip the test because of a bug. For this case, the Swift Testing introduces the bug trait, allowing us to attribute the corresponding bug identifier or URL.
+Whenever you use multiple conditions, all of them should pass to run the test. Sometimes, you might skip the test because of a bug. For this case, the Swift Testing introduces the *bug* trait, allowing us to attribute the corresponding bug identifier or URL.
 
 ```swift
 @Test(
@@ -85,7 +85,7 @@ extension Tag {
 }
 ```
 
-First of all, we have to define a tag. We can create tags only by defining extensions on the Tag type in pair with the Tag macro. Then, we can use the tag trait to add tags to the particular test or test suite.
+First of all, we have to define a tag. We can create tags only by defining extensions on the *Tag* type in pair with the *@Tag* macro. Then, we can use the *tag* trait to add tags to the particular test or test suite.
 
 ```swift
 @Test(.tags(.crucial)) func veryImportantVerification() {
@@ -97,4 +97,4 @@ First of all, we have to define a tag. We can create tags only by defining exten
 }
 ```
 
-As you can see in the example above, we define the crucial tag and mark two test cases with it. The Test Navigator in Xcode has a special tab showing tags allowing you to run the tests by tag and visualize if all the tests in the tag pass.
+As you can see in the example above, we define the *crucial* tag and mark two test cases with it. The Test Navigator in Xcode has a special tab showing tags allowing you to run the tests by tag and visualize if all the tests in the tag pass.
