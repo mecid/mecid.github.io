@@ -40,6 +40,8 @@ You can also provide a comment to indicate the reason for skipping the test, whi
 
 As you can see, we use the *enabled* trait with a boolean value to conditionally allow the test. We can use conditions both with *disable* and *enable* test traits.
 
+> To learn more about the basics of the Swift Testing framework, take a look at my ["Introducing Swift Testing. Basics."](/2024/10/22/introducing-swift-testing-basics/) post.
+
 The real power of the traits system appears when you combine multiple traits to achieve the desired behavior. For example, you can use numerous *enabled* traits to run the test only when all conditions are met.
 
 ```swift
