@@ -80,13 +80,14 @@ struct ContentView: View {
             Color.clear
                 .frame(height: 0)
                 .onGeometryChange(for: CGFloat.self) { geometry in
-                    return geometry.frame(in: .scrollView).minY
+                    return geometry.frame(in: .named("scrollView")).minY
                 } action: { old, new in
                     offset = min(old, new)
                 }
             
                 // Scroll content here...
         }
+        .coordinateSpace(name: "scrollView")
         .onChange(of: offset) {
             print(offset)
         }
