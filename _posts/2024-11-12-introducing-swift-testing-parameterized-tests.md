@@ -46,7 +46,7 @@ func verifyNormalHeartRate(age: Int, bpm: Double) {
 
 As you can see in the example above, we use the zip function while using arguments parameter of the @Test macro. Now, the Swift Testing framework pairs the arguments and run our test 5 times. In the Test Navigator we can clearly see that the test fails on the first pair.
 
-Image
+![parameterized-test-navigator](/public/parameterized-test.png)
 
 We use arrays to pass our arguments, but the Swift Testing framework allows us to use any type conforming to the Collection protocol, including the Range type, which might be useful when dealing with numeric arguments. It also provides a special option for passing instances of the Zip2Sequence type, which we used in our examples.
 
