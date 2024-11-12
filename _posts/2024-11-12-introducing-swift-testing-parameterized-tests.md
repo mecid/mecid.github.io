@@ -5,6 +5,8 @@ layout: post
 
 I decided to finalize the topic of the Swift Testing framework with its unique feature called parameterized tests. In a few cases, you need to verify your functions with different outputs, and parameterized tests easily solve this by providing you with a nice overview.
 
+{% include friends.html %}
+
 Let's first talk about why we might need parameterized tests. For the example, I will show you a test from my codebase. In my CardioBot app, I try to divide user heart rate measurements into a few heart rate zones. The heart rate zone formula heavily depends on the user’s age, and the normal heart rate values are unique for every user and based on the user’s birthday date.
 
 ```swift
