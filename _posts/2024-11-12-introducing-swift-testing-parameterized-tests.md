@@ -54,4 +54,4 @@ As you can see in the example above, we use the zip function while using argumen
 
 We use arrays to pass our arguments, but the Swift Testing framework allows us to use any type conforming to the Collection protocol, including the Range type, which might be useful when dealing with numeric arguments. It also provides a special option for passing instances of the Zip2Sequence type, which we used in our examples.
 
-Today, we learned how to use parameterized tests to verify different inputs of our tests. The clear view in the Test Navigator will help you to deal with your tests and write bug-free code.
+Today, we learned how to use parameterized tests to verify different inputs of our tests. The clear view in the Test Navigator will help you to deal with your tests and write bug-free code. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
