@@ -1,6 +1,7 @@
 ---
 title: Introducing Swift Testing. Parameterized Tests
 layout: post
+category: Testing
 ---
 
 I decided to finalize the topic of the Swift Testing framework with its unique feature called parameterized tests. In a few cases, you need to verify your functions with different outputs, and parameterized tests easily solve this by providing you with a nice overview.
