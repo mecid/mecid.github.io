@@ -1,5 +1,5 @@
 ---
-title: Introducing Swift Testing. Parameterized Tests
+title: Introducing Swift Testing. Parameterized Tests.
 layout: post
 category: Testing
 image: /public/testing.png
