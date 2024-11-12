@@ -5,7 +5,7 @@ category: Testing
 image: /public/testing.png
 ---
 
-I decided to finalize the topic of the Swift Testing framework with its unique feature called parameterized tests. In a few cases, you need to verify your functions with different outputs, and parameterized tests easily solve this by providing you with a nice overview.
+I decided to finalize the topic of the Swift Testing framework with its unique feature called parameterized tests. In a few cases, you need to verify your functions with different inputs, and parameterized tests easily solve this by providing you with a nice overview.
 
 {% include friends.html %}
 
