@@ -37,6 +37,8 @@ func verifyNormalHeartRate(age: Int, bpm: Double) {
 
 Here we use the arguments parameter of the @Test macro, allowing us to pass parameters to the test functions. As you can see, we define two parameters on the test function itself. Whenever you declare a test function with parameters, you have to use the arguments parameter to provide them.
 
+> To learn more about the basics of the Swift Testing framework, take a look at my ["Introducing Swift Testing. Basics."](/2024/10/22/introducing-swift-testing-basics/) post.
+
 By default, the Swift Testing framework uses a combination of all available parameters and runs our test 25 times with different combinations. This might be good for any other test case, but in our case, we need to apply parameters by pairing them. Fortunately, we can solve it by using the zip function.
 
 ```swift
