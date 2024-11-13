@@ -80,22 +80,18 @@ struct ContentView: View {
 }
 ```
 
-Here, we have a more complex example confusing many developers in our community. You should remember that SwiftUI views are not isolated to any actor. Only the *body* property of the *View* protocol is isolated to the main actor.
-
-So, we have two non-isolated functions here. The *foo* function is async, and Swift runs it in the cooperative thread pool. The *boo* function is not async, and Swift will run it on the calling thread. As I said before, the *body* property of the *View* protocol is isolated to the main actor, which means in this particular example *boo* function will run on the main thread, where you should avoid doing heavy work.
+Here, we have a more complex example confusing many developers in our community. You should remember that SwiftUI views are isolated to the *MainActor*. SwiftUI views inherits theirs isolation from the *View* protocol which is main actor isolated in its definition. That is why both *foo* and *boo* functions will run on the main thread, because views are isolated to the main actor.
 
 ```swift
 struct ContentView: View {
     var body: some View {
-        content
-    }
-    
-    private var content: some View {
         Text("Hello")
             .task {
+                // runs on the main thread
                 boo()
             }
             .task {
+                // runs on the cooperative thread pool
                 await foo()
             }
     }
@@ -104,12 +100,12 @@ struct ContentView: View {
         // ...
     }
     
-    func foo() async {
+    nonisolated func foo() async {
         // ...
     }
 }
 ```
 
-I've slightly changed the example by introducing the *content* property on the *ContentView* type. The *content* property isn't isolated to the main actor, so both functions will run on the cooperative thread pool.
+I've slightly changed the example by adding *nonisolated* attribute to the *foo* function to escape its actor isolation. In this case, the *foo* function becomes nonisolated async function which means it will run on the Cooperative Thread Pool.
  
 I hope this post will make running async functions less confusing. Feel free to follow me on Twitter and ask your questions related to this post. Thanks for reading, and see you next week!
