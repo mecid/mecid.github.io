@@ -31,7 +31,7 @@ So, we have two crucial places where Swift can run our code: Main Thread and Coo
 
 The next step is always to be sure where the Swift language will run your code. The Swift language uses a few rules to determine where to run your code.
 
-If your function is isolated to an actor, it will run as part of that actor. It doesn't matter if it is an async function or not. All actors run on the Cooperative Thread Pool. The main actor is exception, because it runs on the main thread. You can also isolate any type or function you need using global actors.
+If your function is isolated to an actor, it will run as part of that actor. It doesn't matter if it is an async function or not. You can isolate any type or function you need using global actors. All actors run on the Cooperative Thread Pool. The main actor is exception, because it runs on the main thread.
 
 > To learn more about global actors, take a look at my ["Global actors in Swift"](https://swiftwithmajid.com/2024/03/12/global-actors-in-swift/) post.
 
