@@ -31,7 +31,7 @@ So, we have two crucial places where Swift can run our code: Main Thread and Coo
 
 The next step is always to be sure where the Swift language will run your code. The Swift language uses a few rules to determine where to run your code.
 
-If your function is isolated to an actor, it will run as part of that actor. It doesn't matter if it is an async function or not. Actors always run on the Cooperative Thread Pool, and all their functions are isolated. You can also isolate any type or function you need using global actors.
+If your function is isolated to an actor, it will run as part of that actor. It doesn't matter if it is an async function or not. Almost all actors run on the Cooperative Thread Pool. The main actor is exception, because it runs on the main thread. You can also isolate any type or function you need using global actors.
 
 > To learn more about global actors, take a look at my ["Global actors in Swift"](https://swiftwithmajid.com/2024/03/12/global-actors-in-swift/) post.
 
@@ -80,7 +80,7 @@ struct ContentView: View {
 }
 ```
 
-Here, we have a more complex example confusing many developers in our community. You should remember that SwiftUI views are isolated to the *MainActor*. SwiftUI views inherits theirs isolation from the *View* protocol which is main actor isolated in its definition. That is why both *foo* and *boo* functions will run on the main thread, because views are isolated to the main actor.
+Here, we have a more complex example confusing many developers in our community. You should remember that SwiftUI views are isolated to the *MainActor*. SwiftUI views inherits theirs isolation from the *View* protocol which is main actor isolated in its definition. That is why both *foo* and *boo* functions will run on the main thread.
 
 ```swift
 struct ContentView: View {
