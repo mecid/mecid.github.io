@@ -61,11 +61,9 @@ struct ContentView: View {
     var body: some View {
         Text("Hello")
             .task {
-                // runs on the main thread
                 boo()
             }
             .task {
-                // runs on the cooperative thread pool
                 await foo()
             }
     }
@@ -87,11 +85,9 @@ struct ContentView: View {
     var body: some View {
         Text("Hello")
             .task {
-                // runs on the main thread
                 boo()
             }
             .task {
-                // runs on the cooperative thread pool
                 await foo()
             }
     }
