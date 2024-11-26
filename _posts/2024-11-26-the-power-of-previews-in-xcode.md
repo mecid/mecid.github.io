@@ -50,6 +50,8 @@ The *Previewable* macro type allows us to inline the state definition into the *
 
 As you can see, we inline the *State* property into the *Preview* macro by adding the *Previewable* macro. It allows us to significantly reduce the code we need to run a preview in Xcode.
 
+> To learn more about the Preview macro, take a look at my ["Mastering Preview macro in Swift"](/2023/10/17/mastering-preview-macro-in-swift/) post.
+
 Another great addition to Xcode Previews is the *PreviewModifier* protocol. The *PreviewModifier* type allows us to create reusable preview environments that we can share across multiple previews. 
 
 For example, we can create the *MockDataPreviewModifier* type that populates the Swift Data container with the mock data to display while using it in previews.
@@ -90,7 +92,5 @@ In the *body* function, you have access to the previously created context. The *
 ```
 
 As you can see, we have to pass an instance of the *MockDataPreviewProvider* type to the *Preview* macro’s *trait* parameter to apply it.
-
-> To learn more about the Preview macro, take a look at my ["Mastering Preview macro in Swift"](/2023/10/17/mastering-preview-macro-in-swift/) post.
 
 The great thing about the *PreviewModifier* is that the Xcode Preview system caches instances returned from the *makeSharedContext* function. Which makes significant performance boost whenever you preview multiple instances with the same trait. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
