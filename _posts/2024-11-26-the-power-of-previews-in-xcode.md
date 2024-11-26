@@ -91,4 +91,6 @@ In the *body* function, you have access to the previously created context. The *
 
 As you can see, we have to pass an instance of the *MockDataPreviewProvider* type to the *Preview* macro’s *trait* parameter to apply it.
 
+> To learn more about the Preview macro, take a look at my ["Mastering Preview macro in Swift"](/2023/10/17/mastering-preview-macro-in-swift/) post.
+
 The great thing about the *PreviewModifier* is that the Xcode Preview system caches instances returned from the *makeSharedContext* function. Which makes significant performance boost whenever you preview multiple instances with the same trait. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
