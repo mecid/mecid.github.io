@@ -5,6 +5,8 @@ layout: post
 
 Previews in Xcode become more powerful every year. Previews in Xcode are not about SwiftUI; you can use them even with UIKit. This week, we will talk about enhancing *Previewable* and *PreviewModifier* types, allowing us to build reusable preview environments.
 
+{% include friends.html %}
+
 Let’s take a look at the situation where you have a SwiftUI view with a binding. To run a preview for views with binding requires additional boilerplate where you have to wrap the view with another view defining a state for your binding and then pass it to the previewing view.
 
 ```swift
