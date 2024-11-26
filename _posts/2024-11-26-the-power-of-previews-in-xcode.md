@@ -57,7 +57,7 @@ Another great addition to Xcode Previews is the *PreviewModifier* protocol. The 
 For example, we can create the *MockDataPreviewModifier* type that populates the Swift Data container with the mock data to display while using it in previews.
 
 ```swift
-struct MockDataPreviewProvider: PreviewProvider {
+struct MockDataPreviewModifier: PreviewModifier {
     static func makeSharedContext() throws -> ModelContainer {
         let container = try ModelContainer(
             for: Item.self,
@@ -79,18 +79,18 @@ struct MockDataPreviewProvider: PreviewProvider {
 }
 ```
 
-Here we define the *MockDataPreviewProvider* type conforming to the *PreviewProvider* protocol. The *PreviewProvider*s protocol has two requirements the *makeSharedContext* and *body* functions. 
+Here we define the *MockDataPreviewModifier* type conforming to the *PreviewModifier* protocol. The *PreviewModifier* protocol has two requirements the *makeSharedContext* and *body* functions. 
 
 In the *makeSharedContext* you can create and prepare anything you might need in your preview. For example, it might be a mock data-backed instance of the *ModelContainer* or any store type specific to your app logic.
 
 In the *body* function, you have access to the previously created context. The *body* function is the place where you can apply your context. In our example, we use the *modelContainer* view modifier to set the model container for the view hierarchy. For the instance of a custom store type, you can use the *environment* view modifier to pass it in.
 
 ```swift
-#Preview(traits: MockDataPreviewProvider()) {
+#Preview(traits: .modifier(MockDataPreviewModifier())) {
     ItemsView()
 }
 ```
 
-As you can see, we have to pass an instance of the *MockDataPreviewProvider* type to the *Preview* macro’s *trait* parameter to apply it.
+As you can see, we have to pass an instance of the *MockDataPreviewModifier* type to the *Preview* macro’s *trait* parameter to apply it.
 
 The great thing about the *PreviewModifier* is that the Xcode Preview system caches instances returned from the *makeSharedContext* function. Which makes significant performance boost whenever you preview multiple instances with the same trait. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
