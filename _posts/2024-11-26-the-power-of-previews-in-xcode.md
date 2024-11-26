@@ -2,6 +2,7 @@
 title: The power of previews in Xcode
 layout: post
 category: Mastering SwiftUI views
+image: /public/debug-preview.jpeg
 ---
 
 Previews in Xcode become more powerful every year. Previews in Xcode are not about SwiftUI; you can use them even with UIKit. This week, we will talk about enhancing *Previewable* and *PreviewModifier* types, allowing us to build reusable preview environments.
