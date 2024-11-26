@@ -81,7 +81,7 @@ Here we define the *MockDataPreviewProvider* type conforming to the *PreviewProv
 
 In the *makeSharedContext* you can create and prepare anything you might need in your preview. For example, it might be a mock data-backed instance of the *ModelContainer* or any store type specific to your app logic.
 
-In the *body* function, you have access to the previously created context. The body function is the place where you can apply your context. In our example, we use the *modelContainer* view modifier to set the model container for the view hierarchy. For the instance of a custom store type, you can use the *environment* view modifier to pass it in.
+In the *body* function, you have access to the previously created context. The *body* function is the place where you can apply your context. In our example, we use the *modelContainer* view modifier to set the model container for the view hierarchy. For the instance of a custom store type, you can use the *environment* view modifier to pass it in.
 
 ```swift
 #Preview(traits: MockDataPreviewProvider()) {
