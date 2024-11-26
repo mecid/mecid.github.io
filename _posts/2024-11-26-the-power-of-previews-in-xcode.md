@@ -9,7 +9,7 @@ Previews in Xcode become more powerful every year. Previews in Xcode are not abo
 
 {% include friends.html %}
 
-Let’s take a look at the situation where you have a SwiftUI view with a binding. To run a preview for views with binding requires additional boilerplate where you have to wrap the view with another view defining a state for your binding and then pass it to the previewing view.
+Let’s take a look at the situation where you have a SwiftUI view with a binding. Running a preview for views with binding requires additional boilerplate where you have to wrap the view with another view defining a state for your binding and then pass it to the previewing view.
 
 ```swift
 struct SleepDetailsView: View {
