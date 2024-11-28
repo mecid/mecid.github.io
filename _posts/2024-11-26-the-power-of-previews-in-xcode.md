@@ -50,6 +50,17 @@ The *Previewable* macro type allows us to inline the state definition into the *
 
 As you can see, we inline the *State* property into the *Preview* macro by adding the *Previewable* macro. It allows us to significantly reduce the code we need to run a preview in Xcode.
 
+```swift
+#Preview {
+    @Previewable @Query var items: [Item]
+    
+    ItemsView(items: items)
+        .preferredColorScheme(.dark)
+}
+```
+
+Keep in mind that you can use *Previewable* macro not only with the *State* property wrapper, but also any other SwiftUI property wrapper, like *Environment* and *Query*.
+
 > To learn more about the Preview macro, take a look at my ["Mastering Preview macro in Swift"](/2023/10/17/mastering-preview-macro-in-swift/) post.
 
 Another great addition to Xcode Previews is the *PreviewModifier* protocol. The *PreviewModifier* type allows us to create reusable preview environments that we can share across multiple previews. 
