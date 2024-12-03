@@ -5,6 +5,8 @@ layout: post
 
 From the very first release of the SwiftUI framework, text fields were a weak point of the framework. Over the years, Apple introduced a few enhancements to text fields to improve the developer experience. This week, we will talk about the improvements that SwiftUI introduces for text fields.
 
+{% include friends.html %}
+
 One of the most common issues of the *TextField* type in SwiftUI was the ability to increase the size of the view whenever text doesn’t fit on a single line. There were a bunch of tricks to achieve this behaviour, but lately SwiftUI introduced the *axis* parameter for the *TextField* type, allowing us to scroll the text field whenever its content doesn’t fit available space.
 
 ```swift
