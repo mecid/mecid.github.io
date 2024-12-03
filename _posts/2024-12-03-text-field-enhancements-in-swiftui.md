@@ -70,3 +70,5 @@ struct ContentView: View {
     }
 }
 ```
+
+This week, we discussed the new APIs introduced by the SwiftUI framework to enhance the developer experience with text fields. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
