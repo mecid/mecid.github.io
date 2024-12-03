@@ -2,6 +2,7 @@
 title: Text field enhancements in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/text-field.png
 ---
 
 From the very first release of the SwiftUI framework, text fields were a weak point of the framework. Over the years, Apple introduced a few enhancements to text fields to improve the developer experience. This week, we will talk about the improvements that SwiftUI introduces for text fields.
