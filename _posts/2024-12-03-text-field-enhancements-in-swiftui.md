@@ -23,6 +23,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *axis* parameter while defining the text field to allow the view to enlarge to fit its content. Whenever it doesn’t fit the content, it becomes scrollable in the axis you provide.
 
+> To learn more about the basics of text fields in SwiftUI, take a look at my ["TextField in SwiftUI"](/2020/02/26/textfield-in-swiftui/) post.
+
 Another common issue related to text fields in SwiftUI is the opportunity to read and write the text selection. SwiftUI introduced another parameter called selection, allowing us to bind the text field selection to a property of type *TextSelection*.
 
 ```swift
