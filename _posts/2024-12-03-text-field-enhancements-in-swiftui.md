@@ -25,7 +25,7 @@ As you can see in the example above, we use the *axis* parameter while defining 
 
 > To learn more about the basics of text fields in SwiftUI, take a look at my ["TextField in SwiftUI"](/2020/02/26/textfield-in-swiftui/) post.
 
-Another common issue related to text fields in SwiftUI is the opportunity to programmatically read and write the text selection. SwiftUI introduced another parameter called selection, allowing us to bind the text field selection to a property of type *TextSelection*.
+Another common issue related to text fields in SwiftUI is the opportunity to programmatically read and write the text selection. SwiftUI introduced another parameter called *selection*, allowing us to bind the text field selection to a property of type *TextSelection*.
 
 ```swift
 struct ContentView: View {
