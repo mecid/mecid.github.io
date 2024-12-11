@@ -34,6 +34,13 @@ struct ContentView: View {
     
     var body: some View {
         TextField("Very long text here", text: $text, selection: $selection)
+            .onChange(of: selection) {
+                if let selection = selection.take() {
+                    if case let .selection(range) = selection.indices {
+                        print(text[range])
+                    }
+                }
+            }
     }
 }
 ```
