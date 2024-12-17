@@ -7,7 +7,36 @@ SwiftUI provides the UIViewRepresentable and UIViewControllerRepresentable proto
 
 The UIGestureRecognizerRepresentable works similarly to other representable protocols and allows us to wrap any instance of the UIGestureRecognizer type to introduce it in the SwiftUI views.
 
-===============================================================
+```swift
+struct MyGestureRecognizerRepresentable: UIGestureRecognizerRepresentable {
+    let action: () -> Void
+    
+    func makeUIGestureRecognizer(context: Context) -> some UIGestureRecognizer {
+        let recognizer = UITapGestureRecognizer()
+        recognizer.numberOfTouchesRequired = 2
+        return recognizer
+    }
+    
+    func handleUIGestureRecognizerAction(_ recognizer: UIGestureRecognizerType, context: Context) {
+        switch recognizer.state {
+        case .possible:
+        case .ended:
+            action()
+        default:
+            break
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        Circle()
+            .gesture(MyGestureRecognizerRepresentable {
+                print("two fingers tap happened")
+            })
+    }
+}
+```
 
 As you can see in the example above, we define the MyGestureRecognizerRepresentable type conforming to the UIGestureRecognizerRepresentable protocol. It has the only requirement, the makeUIGestureRecognizer function, where you have to initialize and return an instance of the UIGestureRecognizer type.
 
@@ -21,7 +50,52 @@ Usually, to use attached SwiftUI gestures, we use the gesture view modifier; the
 
 In almost every case when you build the custom gesture, you need to set up a gesture delegate. Similarly to other representable protocols, we can use the coordinator.
 
-===============================================================
+```swift
+struct MyGestureRecognizerRepresentable: UIGestureRecognizerRepresentable {
+    let action: () -> Void
+    
+    func makeUIGestureRecognizer(context: Context) -> some UIGestureRecognizer {
+        let recognizer = UITapGestureRecognizer()
+        recognizer.numberOfTouchesRequired = 2
+        recognizer.delegate = context.coordinator
+        return recognizer
+    }
+    
+    func makeCoordinator(converter: CoordinateSpaceConverter) -> Coordinator {
+        Coordinator(converter: converter)
+    }
+    
+    func handleUIGestureRecognizerAction(_ recognizer: UIGestureRecognizerType, context: Context) {
+        switch recognizer.state {
+        case .possible:
+        case .ended:
+            action()
+        default:
+            break
+        }
+    }
+    
+    final class Coordinator: NSObject, UIGestureRecognizerDelegate {
+        let converter: CoordinateSpaceConverter
+        init(converter: CoordinateSpaceConverter) {
+            self.converter = converter
+        }
+        
+        func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+            // your logic here
+        }
+    }
+}
+
+struct ContentView: View {
+    var body: some View {
+        Circle()
+            .gesture(MyGestureRecognizerRepresentable {
+                print("two fingers tap happened")
+            })
+    }
+}
+```
 
 As you can see, we define the Coordinator type conforming to the UIGestureRecognizerDelegate protocol and set it in the makeUIGestureRecognizer function. We also should define the makeCoordinator function where we create and return our instance of the coordinator.
 
