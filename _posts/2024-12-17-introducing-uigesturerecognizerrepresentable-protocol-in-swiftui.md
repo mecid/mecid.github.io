@@ -53,7 +53,7 @@ The SwiftUI framework offers a variety of pre-built gesture types, but the *UIGe
 
 > To learn more about using gestures in SwiftUI, take a look at my dedicated ["Gestures in SwiftUI"](/2019/07/10/gestures-in-swiftui/) post.
 
-Usually, to use attached SwiftUI gestures, we use the gesture view modifier; the same is true for types conforming to the *UIGestureRecognizerRepresentable* protocol.
+Usually, to attach SwiftUI gestures, we use the *gesture* view modifier; the same is true for types conforming to the *UIGestureRecognizerRepresentable* protocol.
 
 In almost every case when you build the custom gesture, you need to set up a gesture delegate. Similarly to other representable protocols, we can use the coordinator.
 
