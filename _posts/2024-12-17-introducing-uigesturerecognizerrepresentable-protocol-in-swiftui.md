@@ -1,6 +1,7 @@
 ---
 title: Introducing UIGestureRecognizerRepresentable protocol in SwiftUI
 layout: post
+category: Interactions
 ---
 
 SwiftUI provides the *UIViewRepresentable* and *UIViewControllerRepresentable* protocols since its inception. As you might know, we can use them to wrap any UIKit view or controller and place it in the SwiftUI hierarchy. The *UIGestureRecognizerRepresentable* protocol is another addition to the collection of representable protocols. This week, we will learn how to use the new *UIGestureRecognizerRepresentable* protocol.
@@ -100,3 +101,5 @@ struct ContentView: View {
 As you can see, we define the *Coordinator* type conforming to the *UIGestureRecognizerDelegate* protocol and set it in the *makeUIGestureRecognizer* function. We also should define the *makeCoordinator* function where we create and return our instance of the coordinator.
 
 While creating the coordinator, we have access to the instance of the *CoordinateSpaceConverter* type, which will be useful in your delegate. It allows us to convert coordinates between different spaces, for example, SwiftUI view and gesture recognizer touch location. You can also access the fresh instance of the *CoordinateSpaceConverter* via the context parameter in the *makeUIGestureRecognizer* and *handleUIGestureRecognizerAction* functions.
+
+
