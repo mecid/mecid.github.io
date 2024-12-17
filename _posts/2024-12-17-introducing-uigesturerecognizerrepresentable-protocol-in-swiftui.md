@@ -104,4 +104,4 @@ As you can see, we define the *Coordinator* type conforming to the *UIGestureRec
 
 While creating the coordinator, we have access to the instance of the *CoordinateSpaceConverter* type, which will be useful in your delegate. It allows us to convert coordinates between different spaces, for example, SwiftUI view and gesture recognizer touch location. You can also access the fresh instance of the *CoordinateSpaceConverter* via the context parameter in the *makeUIGestureRecognizer* and *handleUIGestureRecognizerAction* functions.
 
-
+This week, we learned about the new *UIGestureRecognizerRepresentable* protocol and how to use it. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
