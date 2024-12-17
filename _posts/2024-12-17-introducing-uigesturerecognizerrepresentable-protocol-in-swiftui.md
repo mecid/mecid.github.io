@@ -6,6 +6,8 @@ category: Interactions
 
 SwiftUI provides the *UIViewRepresentable* and *UIViewControllerRepresentable* protocols since its inception. As you might know, we can use them to wrap any UIKit view or controller and place it in the SwiftUI hierarchy. The *UIGestureRecognizerRepresentable* protocol is another addition to the collection of representable protocols. This week, we will learn how to use the new *UIGestureRecognizerRepresentable* protocol.
 
+{% include friends.html %}
+
 The *UIGestureRecognizerRepresentable* works similarly to other representable protocols and allows us to wrap any instance of the *UIGestureRecognizer* type to introduce it in the SwiftUI views.
 
 ```swift
