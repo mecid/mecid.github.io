@@ -1,13 +1,13 @@
 ---
-title: Adopting Swift 6 across the app codebase.
+title: Adopting Swift 6 across the app codebase
 layout: post
 ---
 
-I’ve been using Swift Concurrency since its initial version, which introduced the async and await keywords to enable asynchronous work. Over time, Swift Concurrency has become more powerful and provides robust data-race safety by allowing the Swift compiler to identify potential issues. 
+I’ve been using Swift Concurrency since its initial version, which introduced the **async** and **await** keywords to enable asynchronous work. Over time, Swift Concurrency has become more powerful and provides robust data-race safety by allowing the Swift compiler to identify potential issues. 
 
 However, using Swift 6 mode with all the warnings and errors it generates can be cumbersome. This week, I’ll share some tips and guidance that I use in my codebase to keep Swift 6 mode enabled and maximize the benefits of code safety. 
 
-Swift 6’s compiler frequently complains about sendability because it’s the primary cause of data races. A data race occurs when one part of your code writes to a memory simultaneously with another part reading the same memory reference. In this case your app crashes with strange EXC_BAD_ACCESS error.
+Swift 6’s compiler frequently complains about sendability because it’s the primary cause of data races. A data race occurs when one part of your code writes to a memory simultaneously with another part reading the same memory reference. In this case your app crashes with strange **EXC_BAD_ACCESS** error.
 
 Usually, data races occur when multiple threads share an instance of a class while one of them writes to it. To avoid this, I strive to minimize the use of classes in my codebase. Let me share some tips that help me maintain a data-race-free codebase.
 
@@ -25,7 +25,7 @@ public struct Statistics: Sendable, Hashable {
 }
 ```
 
-In the example above, we define the Statistics type as sendable structure. In many cases, structs can implicitly infer sendability but whenever you define it as public you have to do it explicitly.
+In the example above, we define the *Statistics* type as sendable structure. In many cases, structs can implicitly infer sendability but whenever you define it as public you have to do it explicitly.
 
 Not only data types can be structs. I define my service types that doesn’t hold any state as structs also.
 
@@ -55,7 +55,7 @@ Structs are incredibly powerful and cost-effective in terms of creation compared
 
 Structs are great, but it is not possible to build the whole app without reference types. Classes are great for one particular thing; they allow us to share state without duplicating it. A set of views in your app may depend on a single piece of state that you want to share between them. Unfortunately, structs will not help you here because every view will get its own copy of the struct instance, that is not what we usually want.
 
-I try to use classes in my app only for view-related stuff. So, it might be a view model or delegate type. Both of them are view-related, that’s why I annotate them with @MainActor. Global actors are another way to make a type  implicitly sendable. Whenever your type is isolated to a global actor, there is no chance to concurrently read and write the data it stores. Thanks to actors.
+I try to use classes in my app only for view-related stuff. So, it might be a view model or delegate type. Both of them are view-related, that’s why I annotate them with *@MainActor*. Global actors are another way to make a type  implicitly sendable. Whenever your type is isolated to a global actor, there is no chance to concurrently read and write the data it stores. Thanks to actors.
 
 ```swift
 @MainActor @Observable final class Store<State, Action> {
