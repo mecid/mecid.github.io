@@ -92,6 +92,6 @@ actor SearchService {
 }
 ```
 
-This category of types are potentially source of data races in our apps and I’m happy to say that it is easy to solve by using actors for this particular category. As you may know an actor protect its state and allows only mutually exclusive access eliminating data-races.
+This category of types are potentially source of data races in our apps and I’m happy to say that it is easy to solve by using a single **actor** keyword. As you may know an actor protect its state and allows only mutually exclusive access eliminating data-races.
 
 Swift is an excellent language that enables you to write expressive and secure code. It offers a comprehensive set of tools to help you accomplish your goals. It’s always beneficial to be aware of the available tools and select the most suitable one for each specific task.
