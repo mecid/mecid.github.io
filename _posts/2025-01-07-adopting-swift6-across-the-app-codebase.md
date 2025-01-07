@@ -29,7 +29,7 @@ public struct Statistics: Sendable, Hashable {
 }
 ```
 
-In the example above, we define the *Statistics* type as sendable structure. In many cases, structs can implicitly infer sendability but whenever you define it as public you have to do it explicitly.
+In the example above, we define the *Statistics* type as sendable structure. In many cases, structs can implicitly infer sendability but whenever you define it as public you have to do it explicitly. By conforming to the *Sendable* protocol, you notify the compiler that you can safely share instances of the particular type between threads.
 
 Not only data types can be structs. I define my service types that doesn’t hold any state as structs also.
 
