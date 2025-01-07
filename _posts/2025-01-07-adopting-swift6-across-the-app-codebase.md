@@ -2,6 +2,7 @@
 title: Adopting Swift 6 across the app codebase
 layout: post
 category: Swift Language Features
+image: /public/swift.png
 ---
 
 I’ve been using Swift Concurrency since its initial version, which introduced the **async** and **await** keywords to enable asynchronous work. Over time, Swift Concurrency has become more powerful and provides robust data-race safety by allowing the Swift compiler to identify potential issues. 
