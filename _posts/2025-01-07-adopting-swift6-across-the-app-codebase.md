@@ -57,6 +57,8 @@ Structs are incredibly powerful and cost-effective in terms of creation compared
 
 Structs are great, but it is not possible to build the whole app without reference types. Classes are good for one particular thing; they allow us to share state without duplicating it. A set of views in your app may depend on a single piece of state that you want to share between them. Unfortunately, structs will not help you here because every view will get its own copy of the struct instance, that is not what we usually want.
 
+> To learn more about global actors and their benefits, take a look at my ["Global actors in Swift"](/2024/03/12/global-actors-in-swift/) post.
+
 I try to use classes in my app only for view-related stuff. So, it might be a view model or delegate type. Both of them are view-related, that’s why I annotate them with *@MainActor*. Global actors are another way to make a type  implicitly sendable. Whenever your type is isolated to a global actor, there is no chance to concurrently read and write the data it stores. Thanks to actors.
 
 ```swift
@@ -95,5 +97,7 @@ actor SearchService {
 ```
 
 This category of types are potentially source of data races in our apps and I’m happy to say that it is easy to solve by using a single **actor** keyword. As you may know an actor protect its state and allows only mutually exclusive access eliminating data-races.
+
+> To learn more about actors in Swift, take a look at my ["Thread safety in Swift with actors"](/2023/09/19/thread-safety-in-swift-with-actors/) post.
 
 Swift is an excellent language that enables you to write expressive and secure code. It offers a comprehensive set of tools to help you accomplish your goals. It’s always beneficial to be aware of the available tools and select the most suitable one for each specific task.
