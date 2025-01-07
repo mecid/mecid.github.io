@@ -103,3 +103,5 @@ This category of types are potentially source of data races in our apps and I’
 > To learn more about actors in Swift, take a look at my ["Thread safety in Swift with actors"](/2023/09/19/thread-safety-in-swift-with-actors/) post.
 
 Swift is an excellent language that enables you to write expressive and secure code. It offers a comprehensive set of tools to help you accomplish your goals. It’s always beneficial to be aware of the available tools and select the most suitable one for each specific task.
+
+Today, I've share my tips and guidance on adopting Swift 6 language mode in a codebase. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
