@@ -86,7 +86,9 @@ actor SearchService {
     
     func search() async throws -> [Food] {
         // read history
-        // search
+        
+        // make network request
+        
         // mutate history
     }
 }
