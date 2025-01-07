@@ -7,6 +7,8 @@ image: /public/swift.png
 
 I’ve been using Swift Concurrency since its initial version, which introduced the **async** and **await** keywords to enable asynchronous work. Over time, Swift Concurrency has become more powerful and provides robust data-race safety by allowing the Swift compiler to identify potential issues. 
 
+{% include friends.html %}
+
 However, using Swift 6 mode with all the warnings and errors it generates can be cumbersome. This week, I’ll share some tips and guidance that I use in my codebase to keep Swift 6 mode enabled and maximize the benefits of code safety. 
 
 Swift 6’s compiler frequently complains about sendability because it’s the primary cause of data races. A data race occurs when one part of your code writes to a memory simultaneously with another part reading the same memory reference. In this case your app crashes with strange **EXC_BAD_ACCESS** error.
