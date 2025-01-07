@@ -55,7 +55,7 @@ public struct HealthService: Sendable {
 
 Structs are incredibly powerful and cost-effective in terms of creation compared to classes. Swift 6 allows you to effortlessly pass sendable structs between threads without encountering any warnings or data races. Therefore, I strongly recommend incorporating structs into your code as much as possible.
 
-Structs are great, but it is not possible to build the whole app without reference types. Classes are great for one particular thing; they allow us to share state without duplicating it. A set of views in your app may depend on a single piece of state that you want to share between them. Unfortunately, structs will not help you here because every view will get its own copy of the struct instance, that is not what we usually want.
+Structs are great, but it is not possible to build the whole app without reference types. Classes are good for one particular thing; they allow us to share state without duplicating it. A set of views in your app may depend on a single piece of state that you want to share between them. Unfortunately, structs will not help you here because every view will get its own copy of the struct instance, that is not what we usually want.
 
 I try to use classes in my app only for view-related stuff. So, it might be a view model or delegate type. Both of them are view-related, that’s why I annotate them with *@MainActor*. Global actors are another way to make a type  implicitly sendable. Whenever your type is isolated to a global actor, there is no chance to concurrently read and write the data it stores. Thanks to actors.
 
