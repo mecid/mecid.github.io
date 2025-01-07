@@ -13,13 +13,43 @@ Usually, data races occur when multiple threads share an instance of a class whi
 
 If there’s no way to modify something, there’s no chance of a data race. This principle encourages the use of structs as much as possible. For instance, I define all my data types as sendable and immutable structs.
 
-=========================================================
+```swift
+public struct Statistics: Sendable, Hashable {
+    public let value: Double
+    public let interval: DateInterval
+    
+    public init(value: Double, interval: DateInterval) {
+        self.value = value
+        self.interval = interval
+    }
+}
+```
 
 In the example above, we define the Statistics type as sendable structure. In many cases, structs can implicitly infer sendability but whenever you define it as public you have to do it explicitly.
 
 Not only data types can be structs. I define my service types that doesn’t hold any state as structs also.
 
-=========================================================
+```swift
+public struct HealthService: Sendable {
+    private let store: HKHealthStore
+    
+    public init(store: HKHealthStore) {
+        self.store = store
+    }
+    
+    public var age: Int {
+        guard
+            let dateOfBirthComponents = try? store.dateOfBirthComponents(),
+            let dateOfBirth = Calendar.current.date(from: dateOfBirthComponents)
+        else {
+            return 0
+        }
+        
+        let age = Calendar.current.dateComponents([.year], from: dateOfBirth, to: .now)
+        return age.year ?? 0
+    }
+}
+```
 
 Structs are incredibly powerful and cost-effective in terms of creation compared to classes. Swift 6 allows you to effortlessly pass sendable structs between threads without encountering any warnings or data races. Therefore, I strongly recommend incorporating structs into your code as much as possible.
 
@@ -27,11 +57,38 @@ Structs are great, but it is not possible to build the whole app without referen
 
 I try to use classes in my app only for view-related stuff. So, it might be a view model or delegate type. Both of them are view-related, that’s why I annotate them with @MainActor. Global actors are another way to make a type  implicitly sendable. Whenever your type is isolated to a global actor, there is no chance to concurrently read and write the data it stores. Thanks to actors.
 
-=========================================================
+```swift
+@MainActor @Observable final class Store<State, Action> {
+    private(set) var state: State
+    private let reduce: (State, Action) -> State
+    
+    init(
+        initialState state: State,
+        reduce: @escaping (State, Action) -> State
+    ) {
+        self.state = state
+        self.reduce = reduce
+    }
+    
+    func send(_ action: Action) {
+        state = reduce(state, action)
+    }
+}
+```
 
 We already talked about data types, stateless service types and view-related stuff. The last category of types that my apps have is statefull service types. For example, you might have a search service that caches results. It might be used concurrently by multiple threads and it hold the state of the cache. 
 
-=========================================================
+```swift
+actor SearchService {
+    private var history = Tree<Food>()
+    
+    func search() async throws -> [Food] {
+        // read history
+        // search
+        // mutate history
+    }
+}
+```
 
 This category of types are potentially source of data races in our apps and I’m happy to say that it is easy to solve by using actors for this particular category. As you may know an actor protect its state and allows only mutually exclusive access eliminating data-races.
 
