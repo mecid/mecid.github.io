@@ -11,7 +11,7 @@ I’ve been using Swift Concurrency since its initial version, which introduced 
 
 However, using Swift 6 mode with all the warnings and errors it generates can be cumbersome. This week, I’ll share some tips and guidance that I use in my codebase to keep Swift 6 mode enabled and maximize the benefits of code safety. 
 
-Swift 6’s compiler frequently complains about sendability because it’s the primary cause of data races. A data race occurs when one part of your code writes to a memory simultaneously with another part reading the same memory reference. In this case your app crashes with strange **EXC_BAD_ACCESS** error.
+Swift 6’s compiler frequently complains about sendability because it’s the primary cause of data races. A data race occurs when one part of your code writes to a memory simultaneously with another part reading the same memory reference. In this case your app may crash with strange **EXC_BAD_ACCESS** error.
 
 Usually, data races occur when multiple threads share an instance of a class while one of them writes to it. To avoid this, I strive to minimize the use of classes in my codebase. Let me share some tips that help me maintain a data-race-free codebase.
 
