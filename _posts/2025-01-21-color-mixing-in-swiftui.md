@@ -19,7 +19,7 @@ struct ContentView: View {
 
 As you can see in the provided example, the *Color* struct introduces a new function called *mix*. This function accepts three parameters. The first parameter specifies the color you intend to blend with. The second parameter represents the proportion of the primary color in the blend. 
 
-The third parameter specifies the color space for blending. By default, the *perceptual* color space is used, which closely resembles human eye color recognition. Alternatively, you can select the *onDevice* color space, which slightly alters the final result and interpolates colors in the device’s color space.
+The third parameter specifies the color space for blending. By default, the *perceptual* color space is used, which closely resembles human eye color recognition. Alternatively, you can select the *device* color space, which slightly alters the final result and interpolates colors in the device’s color space.
 
 ```swift
 struct ContentView: View {
