@@ -15,9 +15,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the provided example, the Color struct introduces a new function called mix. This function accepts three parameters. The first parameter specifies the color you intend to blend with. The second parameter represents the proportion of the primary color in the blend. 
+As you can see in the provided example, the *Color* struct introduces a new function called *mix*. This function accepts three parameters. The first parameter specifies the color you intend to blend with. The second parameter represents the proportion of the primary color in the blend. 
 
-The third parameter specifies the color space for blending. By default, the perceptual color space is used, which closely resembles human eye color recognition. Alternatively, you can select the onDevice color space, which slightly alters the final result and interpolates colors in the device’s color space.
+The third parameter specifies the color space for blending. By default, the *perceptual* color space is used, which closely resembles human eye color recognition. Alternatively, you can select the *onDevice* color space, which slightly alters the final result and interpolates colors in the device’s color space.
 
 ```swift
 struct ContentView: View {
@@ -33,7 +33,7 @@ struct ContentView: View {
 }
 ```
 
-Remember that the mix function is fully animatable, and you can use the animation view modifier to animate it.
+Remember that the mix function is fully animatable, and you can use the *animation* view modifier to animate it.
 
 Now that we understand how to use color mixing in SwiftUI, let’s explore its practical usage in our applications. This versatile function empowers us to generate a multitude of creative possibilities. As a developer of a heart rate app, I immediately thought of utilizing color mixing to fill the heart rate status view with a dynamically changing color.
 
@@ -68,7 +68,6 @@ struct Theme {
 ```
 
 We use the current hour of the day retrieved from the calendar to calculate the fraction of the day that has passed. This fraction value is then used as a parameter to mix colors.
-
 
 SwiftUI’s color mixing function offers a wealth of possibilities to enhance the visual appeal of your applications. Any view that utilizes colors as a status indicator can greatly benefit from color mixing. For instance, the priority indicator can represent the priority of a task, calendar event, or any other entity that facilitates calculating the mixing fraction.
 
