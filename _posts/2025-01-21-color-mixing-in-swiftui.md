@@ -10,7 +10,7 @@ Let’s start with a simple example demonstrating the usage of the color mixing 
 ```swift
 struct ContentView: View {
     var body: some View {
-        Color.blue.mix(with: .red, by: 0.5, in: .device)
+        Color.blue.mix(with: .red, by: 0.5)
     }
 }
 ```
