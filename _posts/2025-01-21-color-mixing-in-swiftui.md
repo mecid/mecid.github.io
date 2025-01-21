@@ -82,4 +82,4 @@ Color.gray.mix(with: .red, by: eventPriority / maximalPriority)
 
 We can begin by utilizing the system colors provided by SwiftUI and then apply color mixing based on user input to create visually appealing and dynamic color schemes in our applications.
 
-This week, we delved into the color mixing functionality in SwiftUI. I hope this post inspires you to create more creative apps by harnessing the power of color mixing. 
+This week, we delved into the color mixing functionality in SwiftUI. I hope this post inspires you to create more creative apps by harnessing the power of color mixing. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
