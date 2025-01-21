@@ -55,7 +55,7 @@ struct HeartRateStatusView: View {
 
 As you can see, I combine the user’s recent heart rate with the maximal possible heart rate value to determine the ratio of mixing blue and red colors representing the normal and elevated heart rate. 
 
-Another intriguing application of color mixing is dynamic theming opportunities. For instance, we can utilize color mixing to create a seamless transition between light and dark colors within the app as the day progresses.
+Another intriguing adoption of color mixing is dynamic theming opportunities. For instance, we can utilize color mixing to create a seamless transition between light and dark colors within the app as the day progresses.
 
 ```swift
 struct Theme {
