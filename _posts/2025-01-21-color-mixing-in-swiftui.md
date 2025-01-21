@@ -37,7 +37,7 @@ struct ContentView: View {
 
 Remember that the mix function is fully animatable, and you can use the *animation* view modifier to animate it.
 
-Now that we understand how to use color mixing in SwiftUI, let’s explore its practical usage in our applications. This versatile function empowers us to generate a multitude of creative possibilities. As a developer of a heart rate app, I immediately thought of utilizing color mixing to fill the heart rate status view with a dynamically changing color.
+Now that we understand how to use color mixing in SwiftUI, let’s explore its practical usage in our applications. As a developer of a heart rate app, I immediately thought of utilizing color mixing to fill the heart rate status view with a dynamically changing color.
 
 ```swift
 struct HeartRateStatusView: View {
