@@ -3,7 +3,7 @@ title: Color mixing in SwiftUI
 layout: post
 ---
 
-With the latest release of SwiftUI, Apple has introduced a new feature called color mixing. It’s a single function that enables you to perform various creative tasks. In this week’s discussion, we’ll dive into color mixing in SwiftUI and explore its potential applications.
+With the latest release of SwiftUI, Apple has introduced a new feature called color mixing. It’s a single function that enables you to perform various creative tasks. In this week’s discussion, we’ll dive into color mixing in SwiftUI and explore its potential adoption.
 
 Let’s start with a simple example demonstrating the usage of the color mixing function.
 
