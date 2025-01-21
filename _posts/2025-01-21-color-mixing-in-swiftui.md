@@ -71,7 +71,7 @@ struct Theme {
 
 We use the current hour of the day retrieved from the calendar to calculate the fraction of the day that has passed. This fraction value is then used as a parameter to mix colors.
 
-SwiftUI’s color mixing function offers a wealth of possibilities to enhance the visual appeal of your applications. Any view that utilizes colors as a status indicator can greatly benefit from color mixing. For instance, the priority indicator can represent the priority of a task, calendar event, or any other entity that facilitates calculating the mixing fraction.
+SwiftUI’s color mixing function offers huge possibilities to enhance the visual appeal of your applications. Any view that utilizes colors as a status indicator can greatly benefit from color mixing. For instance, the priority indicator can represent the priority of a task, calendar event, or any other entity that facilitates calculating the mixing fraction.
 
 ```swift
 let eventPriority: Double
