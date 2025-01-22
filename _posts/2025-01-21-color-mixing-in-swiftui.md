@@ -68,7 +68,7 @@ struct Theme {
     
     func resolve() -> Color {
         let hour = Calendar.current.component(.hour, from: .now)
-        return light.mix(with: dark, by: Double(hour) / 24.0)
+        return dark.mix(with: light, by: Double(hour) / 24.0)
     }
 }
 ```
