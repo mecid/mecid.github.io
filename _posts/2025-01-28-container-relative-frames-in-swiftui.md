@@ -2,6 +2,7 @@
 title: Container relative frames in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/crf2.png
 ---
 
 Container relative frames in SwiftUI
