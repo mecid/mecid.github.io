@@ -5,7 +5,7 @@ category: Mastering SwiftUI views
 image: /public/crf2.png
 ---
 
-The easiest way to size a view in SwiftUI is to place it in a container and allow it to fit its content size. You can also use the frame view modifier to specify a particular concrete size. Anything related to the size of its parent needs hard work using *GeometryReader*, which is not the easiest way to do things correctly in SwiftUI.
+The easiest way to size a view in SwiftUI is to place it in a container and allow it to fit its content size. You can also use the *frame* view modifier to specify a particular concrete size. Anything related to the size of its parent needs hard work using *GeometryReader*, which is not the easiest way to do things correctly in SwiftUI.
 
 {% include friends.html %}
 
