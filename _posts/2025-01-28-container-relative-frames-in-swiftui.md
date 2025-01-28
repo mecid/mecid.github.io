@@ -23,6 +23,7 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *containerRelativeFrame* view modifier and provide the axis we want to fill. It is the easiest way to fill an entire parent by providing an axis. You can provide both vertical and horizontal axes to fill the entire space. The second parameter allows us to set the alignment in the filled space.
 
+> To learn about *GeometryReader*, take a look at my ["How to use GeometryReader without breaking SwiftUI layout"](/2020/11/04/how-to-use-geometryreader-without-breaking-swiftui-layout/) post.
 
 Another overload of the *containerRelativeFrame* view modifier allows us to size the view inside the parent according to the number of items that should be visible at the same time inside a container. It becomes super useful when you use it inside a scroll view with a lazy container.
 
