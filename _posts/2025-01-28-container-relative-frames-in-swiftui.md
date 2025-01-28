@@ -5,9 +5,9 @@ category: Mastering SwiftUI views
 image: /public/crf2.png
 ---
 
-Container relative frames in SwiftUI
-
 The easiest way to size a view in SwiftUI is to place it in a container and allow it to fit its content size. You can also use the frame view modifier to specify a particular concrete size. Anything related to the size of its parent needs hard work using GeometryReader, which is not the easiest way to do things correctly in SwiftUI.
+
+{% include friends.html %}
 
 Fortunately, Apple introduced container-relative sizing APIs in SwiftUI, that we will learn how to use this week. The new containerRelativeFrame view modifier allows us to set the frame of the view relative to its parent. It provides many options allowing us to customize the size, but let’s start with the simplest one.
 
