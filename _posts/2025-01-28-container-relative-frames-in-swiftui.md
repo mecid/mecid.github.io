@@ -82,4 +82,4 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *containerRelativeFrame* view modifier and provide a special closure where we calculate the size of the view depending on available space and the axis. This overload provides you full control on the size calculation of the view.
 
- Today, we learned how to use the *containerRelativeFrame* view modifier allowing us easily to setup the parent relative size for our views without need of touching the *GeometryReader* type. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+ Today, we learned how to use the *containerRelativeFrame* view modifier, allowing us to easily set up the parent relative size for our views without the need to touch the *GeometryReader* type. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
