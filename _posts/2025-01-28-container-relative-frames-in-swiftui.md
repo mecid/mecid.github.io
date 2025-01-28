@@ -58,7 +58,10 @@ struct ContentView: View {
             LazyHStack(spacing: 0) {
                 ForEach(0..<10) { _ in
                     Color.random
-                        .containerRelativeFrame([.horizontal], alignment: .center) { len, axis in
+                        .containerRelativeFrame(
+                            [.horizontal],
+                            alignment: .center
+                        ) { len, axis in
                             switch axis {
                             case .horizontal:
                                 return len / 3
