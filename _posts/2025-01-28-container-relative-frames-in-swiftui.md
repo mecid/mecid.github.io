@@ -1,6 +1,7 @@
 ---
 title: Container relative frames in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Container relative frames in SwiftUI
