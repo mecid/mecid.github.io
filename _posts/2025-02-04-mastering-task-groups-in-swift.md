@@ -47,7 +47,7 @@ The closure provides us with an instance of the *TaskGroup* type conforming to t
 
 We use the *add* function on the *TaskGroup* type to add child tasks. We also can add tasks with the particular priority. Keep in mind that the task group doesn’t inherit the actor from the parent and runs the task group on the Cooperative Thread Pool.
 
-Task groups are part of the Structured Swift Concurrency, which means they use cooperative cancellation, and it is up to you to check the *Task.isCancelled* property and decide what to do next when task is cancelled.
+Task groups are part of the Swift Structured Concurrency, which means they use cooperative cancellation, and it is up to you to check the *Task.isCancelled* property and decide what to do next when task is cancelled.
 
 ```swift
 @MainActor @Observable final class Store {
@@ -89,7 +89,7 @@ Task groups are part of the Structured Swift Concurrency, which means they use c
 }
 ```
 
-As you can see, we check the *Task.isCancelled* property, and if the task is cancelled, we return an empty string instead of doing the network request. In the example above, we cancelled the group itself, but it also can be cancelled whenever the parent task is cancelled.
+As you can see, we check the *Task.isCancelled* property, and if the task is cancelled, we return an empty string instead of doing the network request. In the example above, we cancelled the group manually, but it also can be cancelled whenever the parent task is cancelled.
 
 Let’s talk a bit about how we can optimize task groups in Swift. As I said before, task groups run on the Cooperative Thread Pool, which means it doesn’t matter how many child tasks you add; they will run on the limited amount of threads. And it is great because our goal is to speed up our app logic and not slow it down because of too many threads.
 
