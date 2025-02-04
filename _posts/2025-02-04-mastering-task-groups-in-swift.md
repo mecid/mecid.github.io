@@ -89,8 +89,6 @@ Task groups are part of the Structured Swift Concurrency, which means they use c
 
 As you can see, we check the Task.isCancelled property, and if the task is cancelled, we return an empty string instead of doing the network request. In the example above, we cancelled the group itself, but it also can be cancelled whenever the parent task is cancelled.
 
-Swift Concurrency features are back-deployed to iOS 13 and macOS 10.15, which means there is no reason to ignore them until you support older platform versions.
-
 Let’s talk a bit about how we can optimize task groups in Swift. As I said before, task groups run on the Cooperative Thread Pool, which means it doesn’t matter how many child tasks you add; they will run on the limited amount of threads. And it is great because our goal is to speed up our app logic and not slow it down because of too many threads.
 
 ```swift
@@ -181,3 +179,5 @@ It looks like there is nothing wrong with the code, but even if it doesn’t run
 Here we set a limit of 10 child tasks and add the initial portion of the child tasks. Then we add tasks one by one after the previous task finishes its work. In this way, we can significantly improve the memory consumption of our code.
 
 Another nice API, that task groups provide us, is the addTaskUnlessCancelled function, which adds a task only if the task group is not cancelled. We can use this function to optimize task creation and avoid running new tasks when a task group is cancelled.
+
+Swift Concurrency features are back-deployed to iOS 13 and macOS 10.15, which means there is no reason to ignore them until you support older platform versions. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
