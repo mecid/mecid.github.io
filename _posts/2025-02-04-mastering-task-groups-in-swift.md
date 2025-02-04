@@ -45,7 +45,7 @@ As you can see in the example above, we use the *withTaskGroup* function to crea
 
 The closure provides us with an instance of the *TaskGroup* type conforming to the *AsyncSequence* protocol, allowing us to await the results of the task group in the for loop.
 
-We use the *add* function on the *TaskGroup* type to add child tasks. We also can add the tasks with particular priorities. Keep in mind that the task group doesn’t inherit the actor from the parent and runs the task group on the Cooperative Thread Pool.
+We use the *add* function on the *TaskGroup* type to add child tasks. We also can add tasks with the particular priority. Keep in mind that the task group doesn’t inherit the actor from the parent and runs the task group on the Cooperative Thread Pool.
 
 Task groups are part of the Structured Swift Concurrency, which means they use cooperative cancellation, and it is up to you to check the *Task.isCancelled* property and decide what to do next when task is cancelled.
 
