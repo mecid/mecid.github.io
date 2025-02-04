@@ -5,6 +5,8 @@ layout: post
 
 Structured Swift Concurrency makes our lives much easier by introducing task groups. Task groups are a way to run a dynamic number of child tasks, await all of them, or cancel. This week, we will learn how to use and optimize TaskGroups in Swift.
 
+{% include friends.html %}
+
 Let’s begin with a fundamental example to illustrate the usage of task groups in Swift.
 
 ```swift
