@@ -168,6 +168,7 @@ It looks like there is nothing wrong with the code, but even if it doesn’t run
                     group.addTaskUnlessCancelled {
                         let nextURL = urls[index]
                         // fetch next url
+                        index += 1
                     }
                 }
             }
