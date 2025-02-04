@@ -49,6 +49,8 @@ The closure provides us with an instance of the *TaskGroup* type conforming to t
 
 We use the *add* function on the *TaskGroup* type to add child tasks. We also can add tasks with the particular priority. Keep in mind that the task group doesn’t inherit the actor from the parent and runs the task group on the Cooperative Thread Pool.
 
+> To learn more about Swift Concurrency, take a look at my ["Where Swift Concurrency will run your function?"](/2024/03/20/where-swift-concurrency-will-run-your-function/) post.
+
 Task groups are part of the Swift Structured Concurrency, which means they use cooperative cancellation, and it is up to you to check the *Task.isCancelled* property and decide what to do next when task is cancelled.
 
 ```swift
