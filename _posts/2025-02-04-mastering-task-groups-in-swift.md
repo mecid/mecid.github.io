@@ -22,12 +22,7 @@ Let’s begin with a fundamental example to illustrate the usage of task groups 
         ) { group in
             for url in urls {
                 group.addTask(priority: .high) {
-                    do {
-                        let (data, _) = try await URLSession.shared.data(from: url)
-                        return String(decoding: data, as: UTF8.self)
-                    } catch {
-                        return ""
-                    }
+                    return await fetch(url)
                 }
             }
             
@@ -39,6 +34,10 @@ Let’s begin with a fundamental example to illustrate the usage of task groups 
             
             return messages
         }
+    }
+    
+    private func fetch(_ url: URL) async -> String {
+      // ...
     }
 }
 ```
@@ -64,15 +63,10 @@ Task groups are part of the Swift Structured Concurrency, which means they use c
         ) { group in
             for url in urls {
                 group.addTask {
-                    do {
-                        if Task.isCancelled {
-                            return ""
-                        } else {
-                            let (data, _) = try await URLSession.shared.data(from: url)
-                            return String(decoding: data, as: UTF8.self)
-                        }
-                    } catch {
+                    if Task.isCancelled {
                         return ""
+                    } else {
+                        return await fetch(url)
                     }
                 }
             }
@@ -89,6 +83,10 @@ Task groups are part of the Swift Structured Concurrency, which means they use c
             
             return messages
         }
+    }
+    
+    private func fetch(_ url: URL) async -> String {
+      // ...
     }
 }
 ```
@@ -111,8 +109,7 @@ Let’s talk a bit about how we can optimize task groups in Swift. As I said bef
                 group.addTask {
                     do {
                         try Task.checkCancellation()
-                        let (data, _) = try await URLSession.shared.data(from: url)
-                        return String(decoding: data, as: UTF8.self)
+                        return fetch(url)
                     } catch {
                         return ""
                     }
@@ -127,6 +124,10 @@ Let’s talk a bit about how we can optimize task groups in Swift. As I said bef
             
             return messages
         }
+    }
+    
+    private func fetch(_ url: URL) async -> String {
+      // ...
     }
 }
 ```
