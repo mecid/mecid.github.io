@@ -150,16 +150,8 @@ It looks like there is nothing wrong with the code, but even if it doesn’t run
             // 1000 urls are here
             for _ in 0..<maxConcurrentRequests {
                 group.addTask {
-                    do {
-                        try Task.checkCancellation()
-                        let (data, _) = try await URLSession.shared.data(from: urls[index])
-                        
-                        index += 1
-                        
-                        return String(decoding: data, as: UTF8.self)
-                    } catch {
-                        return ""
-                    }
+                    index += 1
+                    return await self.fetch(urls[index])
                 }
             }
             
@@ -170,15 +162,18 @@ It looks like there is nothing wrong with the code, but even if it doesn’t run
                 
                 if index < urls.count {
                     group.addTaskUnlessCancelled {
-                        let nextURL = urls[index]
-                        // fetch next url
                         index += 1
+                        return await self.fetch(urls[index])
                     }
                 }
             }
             
             return messages
         }
+    }
+    
+    private func fetch(_ url: URL) async -> String {
+      // ...
     }
 }
 ```
