@@ -145,7 +145,7 @@ It looks like there is nothing wrong with the code, but even if it doesn’t run
             returning: [String].self
         ) { group in
             let maxConcurrentRequests = min(urls.count, 10)
-            var index = 0
+            var index = -1
             
             // 1000 urls are here
             for _ in 0..<maxConcurrentRequests {
