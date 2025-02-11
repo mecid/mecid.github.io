@@ -1,6 +1,7 @@
 ---
 title: Task Cancellation in Swift Concurrency
 layout: post
+category: Swift Language Features
 ---
 
 Swift Concurrency provides a cooperative cancellation model to handle task cancellation. This week, we will learn what a cooperative cancellation model is, how to use it, and how to be a good citizen and handle it correctly.
