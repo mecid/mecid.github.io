@@ -112,7 +112,7 @@ actor SearchService {
 
 The *isCancelled* property provides you information about task status, you can check it whenever needed to decide how to model your next steps.
 
-Usually, you don’t need to manually cancel a task using Swift Concurrency, and it handles it for you. In some cases, you might need unstructured tasks. You can create them using the Task type, and it also provides us with the cancel function, allowing us to mark the task as cancelled.
+Usually, you don’t need to manually cancel a task using Swift Concurrency, and it handles it for you. In some cases, you might need unstructured tasks. You can create them using the Task type, and it also provides us with the *cancel* function, allowing us to mark the task as cancelled.
 
 ```swift
 struct ExampleView: View {
