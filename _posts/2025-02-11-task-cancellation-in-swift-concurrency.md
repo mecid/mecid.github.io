@@ -28,9 +28,9 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the task view modifier with the id parameter, which means it cancels the previous task as soon as the id changes and creates a new one. 
+As you can see in the example above, we use the *task* view modifier with the *id* parameter, which means it cancels the previous task as soon as the *id* changes and creates a new one. 
 
-I will rephrase it to make it more obvious: as soon as the id changes, SwiftUI marks the task as cancelled. It only marks the task as cancelled but doesn’t stop the execution. So, on every new symbol in the search field, SwiftUI starts a task and marks the previous one as cancelled.
+I will rephrase it to make it more obvious: as soon as the *id* changes, SwiftUI marks the task as cancelled. It only marks the task as cancelled but doesn’t stop the execution. So, on every new symbol in the search field, SwiftUI starts a task and marks the previous one as cancelled.
 
 ```swift
 @MainActor @Observable final class Store {
@@ -55,9 +55,9 @@ I will rephrase it to make it more obvious: as soon as the id changes, SwiftUI m
 }
 ```
 
-Here is the example of the Store type having an async search function. Inside the search function, we make an async network request. After that, we call the checkCancellation function on the Task type. The checkCancellation function is pretty simple; it throws an error whenever the task is already cancelled, and that way, we can stop the execution of the search function.
+Here is the example of the *Store* type having the async *search* function. Inside the *search* function, we make an async network request. After that, we call the *checkCancellation* function on the *Task* type. The *checkCancellation* function is pretty simple; it throws an error whenever the task is already cancelled, and that way, we can stop the execution of the *search* function.
 
-In our example, we just catch the error and clean the results variable. In more complex cases, you might have multiple sequenced async calls, and the checkCancellation function can save you from doing unnecessary work.
+In our example, we just catch the error and clean the results variable. In more complex cases, you might have multiple sequenced async calls, and the *checkCancellation* function can save you from doing unnecessary work.
 
 ```swift
 @MainActor @Observable final class Store {
@@ -84,7 +84,7 @@ In our example, we just catch the error and clean the results variable. In more 
 }
 ```
 
-There is another option allowing us to check cancellation without throwing an error. The Task type provides us with the isCancelled property, which is a boolean value indicating whenever the task is cancelled.
+There is another option allowing us to check cancellation without throwing an error. The *Task* type provides us with the *isCancelled* property, which is a boolean value indicating whenever the task is cancelled.
 
 
 ```swift
@@ -110,7 +110,9 @@ actor SearchService {
 }
 ```
 
-The isCancelled property provides you information about task status, you can check it whenever needed to decide how to model your next steps.
+The *isCancelled* property provides you information about task status, you can check it whenever needed to decide how to model your next steps.
+
+Usually, you don’t need to manually cancel a task using Swift Concurrency, and it handles it for you. In some cases, you might need unstructured tasks. You can create them using the Task type, and it also provides us with the cancel function, allowing us to mark the task as cancelled.
 
 ```swift
 struct ExampleView: View {
@@ -129,6 +131,3 @@ struct ExampleView: View {
     }
 }
 ```
-
-Usually, you don’t need to manually cancel a task using Swift Concurrency, and it handles it for you. In some cases, you might need unstructured tasks. You can create them using the Task type, and it also provides us with the cancel function, allowing us to mark the task as cancelled.
-
