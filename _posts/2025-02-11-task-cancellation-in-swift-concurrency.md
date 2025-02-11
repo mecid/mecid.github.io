@@ -7,6 +7,8 @@ image: /public/swift.png
 
 Swift Concurrency provides a cooperative cancellation model to handle task cancellation. This week, we will learn what a cooperative cancellation model is, how to use it, and how to be a good citizen and handle it correctly.
 
+{% include friends.html %}
+
 Cooperative cancellation means that Swift will never stop your task automatically, but it will provide you with information about the cancellation. It is totally up to you to decide how to handle this information.
 
 Swift Concurrency provides us with the Task API, which we can use to understand when the task is cancelled by the caller. The caller can’t stop the task in any way; it can only mark it as cancelled. It is our responsibility to take care of cancellation and decide how to stop the execution. We can return from the function with an empty result or deliver partial results. But it is totally up to us how to handle the case.
