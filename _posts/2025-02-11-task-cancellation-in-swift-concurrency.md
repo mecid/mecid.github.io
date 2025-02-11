@@ -137,6 +137,6 @@ struct ExampleView: View {
 }
 ```
 
-Even in this case, the task is not stopped by the button action; Swift only marks it as cancelled, and it is still up to you to handle cancellation in the fetch function of the Store type.
+Even in this case, the task is not stopped by the button action; Swift only marks it as cancelled, and it is still up to you to handle cancellation in the *fetch* function of the *Store* type.
 
 Today, we learned how to use the cooperative cancellation model provided by Swift’s Concurrency feature. In the future post, I will continue the topic by covering more advanced subjects related to Swift’s Concurrency language feature. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
