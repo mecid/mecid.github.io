@@ -57,7 +57,7 @@ I will rephrase it to make it more obvious: as soon as the *id* changes, SwiftUI
 
 Here is the example of the *Store* type having the async *search* function. Inside the *search* function, we make an async network request. After that, we call the *checkCancellation* function on the *Task* type. The *checkCancellation* function is pretty simple; it throws an error whenever the task is already cancelled, and that way, we can stop the execution of the *search* function.
 
-In our example, we just catch the error and clean the results variable. In more complex cases, you might have multiple sequenced async calls, and the *checkCancellation* function can save you from doing unnecessary work.
+In our example, we just catch the error and clean the *results* variable. In more complex cases, you might have multiple sequenced async calls, and the *checkCancellation* function can save you from doing unnecessary work.
 
 ```swift
 @MainActor @Observable final class Store {
