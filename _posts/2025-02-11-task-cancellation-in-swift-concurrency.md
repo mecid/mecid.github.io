@@ -131,3 +131,5 @@ struct ExampleView: View {
     }
 }
 ```
+
+Today, we learned how to use the cooperative cancellation model provided by Swift’s Concurrency feature. In the future post, I will continue the topic by covering more advanced subjects related to Swift’s Concurrency language feature. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
