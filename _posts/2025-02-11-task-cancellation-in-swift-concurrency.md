@@ -120,12 +120,13 @@ Usually, you don’t need to manually cancel a task using Swift Concurrency, and
 
 ```swift
 struct ExampleView: View {
+    @State private var store = Store()
     @State private var task: Task<Void, Never>?
     
     var body: some View {
         Button("Tap me") {
             task = Task {
-                // call async function here
+                await store.fetch()
             }
         }
         
