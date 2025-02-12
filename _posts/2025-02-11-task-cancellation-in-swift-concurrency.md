@@ -37,21 +37,27 @@ As you can see in the example above, we use the *task* view modifier with the *i
 I will rephrase it to make it more obvious: as soon as the *id* changes, SwiftUI marks the task as cancelled. It only marks the task as cancelled but doesn’t stop the execution. So, on every new symbol in the search field, SwiftUI starts a task and marks the previous one as cancelled.
 
 ```swift
+import HealthKit
+
 @MainActor @Observable final class Store {
-    static let searchURL = URL(string: "https://domain.com/api/search")!
-    private(set) var results: [String] = []
+    private(set) var results: [HKCorrelation] = []
+    private let store = HKHealthStore()
     
     func search(matching query: String) async {
-        let url = Self.searchURL.appending(
-            queryItems: [
-                .init(name: "q", value: query)
-            ]
+        let foodQuery = HKSampleQueryDescriptor(
+            predicates: [.correlation(type: .init(.food))],
+            sortDescriptors: []
         )
         
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let food = try await foodQuery.result(for: store)
+            
             try Task.checkCancellation()
-            results = try JSONDecoder().decode([String].self, from: data)
+            
+            results = food.filter { food in
+                let title = food.metadata?["title"] as? String ?? ""
+                return title.localizedStandardContains(query)
+            }
         } catch {
             results = []
         }
@@ -59,28 +65,34 @@ I will rephrase it to make it more obvious: as soon as the *id* changes, SwiftUI
 }
 ```
 
-Here is the example of the *Store* type having the async *search* function. Inside the *search* function, we make an async network request. After that, we call the *checkCancellation* function on the *Task* type. The *checkCancellation* function is pretty simple; it throws an error whenever the task is already cancelled, and that way, we can stop the execution of the *search* function.
+Here is the example of the *Store* type having the async *search* function. Inside the *search* function, we make an async health request. After that, we call the *checkCancellation* function on the *Task* type. The *checkCancellation* function is pretty simple; It throws an error whenever the task is already cancelled, and that way, we can stop the execution of the *search* function and avoid redundant filtering.
 
 In our example, we just catch the error and clean the *results* variable. In more complex cases, you might have multiple sequenced async calls, and the *checkCancellation* function can save you from doing unnecessary work.
 
 ```swift
+import HealthKit
+
 @MainActor @Observable final class Store {
-    static let searchURL = URL(string: "https://domain.com/api/search")!
-    private(set) var results: [String] = []
+    private(set) var results: [HKCorrelation] = []
+    private let store = HKHealthStore()
     
     func search(matching query: String) async {
-        let url = Self.searchURL.appending(
-            queryItems: [
-                .init(name: "q", value: query)
-            ]
+        let foodQuery = HKSampleQueryDescriptor(
+            predicates: [.correlation(type: .init(.food))],
+            sortDescriptors: []
         )
         
         do {
-            let (data, _) = try await URLSession.shared.data(from: url)
+            let food = try await foodQuery.result(for: store)
+            
             try Task.checkCancellation()
-            // make another network request
+            // another query here
             try Task.checkCancellation()
-            results = try JSONDecoder().decode([String].self, from: data)
+            
+            results = food.filter { food in
+                let title = food.metadata?["title"] as? String ?? ""
+                return title.localizedStandardContains(query)
+            }
         } catch {
             results = []
         }
@@ -93,22 +105,30 @@ There is another option allowing us to check cancellation without throwing an er
 
 ```swift
 actor SearchService {
-    static let searchURL = URL(string: "https://domain.com/api/search")!
-    private var cachedResults: [String] = []
+    private var cachedResults: [HKCorrelation] = []
+    private let store = HKHealthStore()
     
-    func search(matching query: String) async throws -> [String] {
+    func search(matching query: String) async throws -> [HKCorrelation] {
         guard !Task.isCancelled else {
             return cachedResults
         }
         
-        let url = Self.searchURL.appending(
-            queryItems: [
-                .init(name: "q", value: query)
-            ]
+        let foodQuery = HKSampleQueryDescriptor(
+            predicates: [.correlation(type: .init(.food))],
+            sortDescriptors: []
         )
         
-        let (data, _) = try await URLSession.shared.data(from: url)
-        cachedResults = try JSONDecoder().decode([String].self, from: data)
+        let food = try await foodQuery.result(for: store)
+        
+        guard !Task.isCancelled else {
+            return cachedResults
+        }
+        
+        cachedResults = food.filter { food in
+            let title = food.metadata?["title"] as? String ?? ""
+            return title.localizedStandardContains(query)
+        }
+        
         return cachedResults
     }
 }
