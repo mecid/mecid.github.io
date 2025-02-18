@@ -75,7 +75,7 @@ Swift concurrency doesn’t provide a particular function for debouncing tasks, 
 
 Whenever a task is cancelled while sleeping, it throws an error and interrupts the execution without running the heavy job. This way, you can reduce the amount of work you run to display the final results.
 
-Let’s talk about task yielding. Assume that you have a non-async function call that can take a long time to run. For example, in one of my recent projects, I receive a collection of huge JSON files, then I should process them and save them on disk.
+Let’s talk about task yielding. Assume that you have a non-async function call that can take a long time to run. For example, in one of my recent projects, I receive a collection of huge JSON files, that I should process and save on disk.
 
 ```swift
 struct Item: Decodable {
