@@ -119,6 +119,6 @@ struct DataHandler {
 }
 ```
 
-As you can see in the example above, we use the *yield* function after every decoded JSON file. The yield function allows us to suspend the execution and return the thread to the pool to run other asynchronous tasks. After that, it resumes execution of our task. This way, we can fairly distribute the computing power between parallel tasks. 
+As you can see in the example above, we use the *yield* function after every decoded JSON file. The *yield* function allows us to suspend the execution and return the thread to the pool to run other asynchronous tasks. After that, it resumes execution of our task. This way, we can fairly distribute the computing power between parallel tasks. 
 
 Today we learned how to be a good citizen while using Swift concurrency language features by utilizing yielding and debouncing. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
