@@ -41,6 +41,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the *task* view modifier with the *id* parameter. The code above starts a new task on every keystroke and cancels the previous one. As we know, the Swift concurrency language feature uses a cooperative cancellation model, which means it doesn’t halt your task; it only provides information about cancellation.
 
+> To learn more about cooperative task cancellation model, take a look at my ["Task Cancellation in Swift Concurrency"](/2025/02/11/task-cancellation-in-swift-concurrency/) post.
+
 As soon as you run the example, you will notice that you run a task on every keystroke, and even worse, they can race with each other. Fortunately, there is a solution for this kind of situation called debouncing.
 
 Debouncing is a simple technique allowing us to handle streaming data in a right way. Whenever the user types the word “apple”, we usually want to ignore terms: “a”, “ap”, “app”, “appl” and run the task on “apple”. 
