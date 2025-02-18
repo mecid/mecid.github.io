@@ -48,15 +48,6 @@ Debouncing is a simple technique allowing us to handle streaming data in a right
 Debouncing simply means that you don’t start the task immediately and wait for some amount of time. If the data changes, you don’t start a task and wait again until the data stays the same for some time. Then you can run your task. It allows us to eliminate unnecessary work for intermediate data and run only for final data.
 
 ```swift
-@MainActor @Observable final class Store {
-    private(set) var results: [HKCorrelation] = []
-    private let store = HKHealthStore()
-    
-    func search(matching query: String) async {
-        // heavy search
-    }
-}
-
 struct ContentView: View {
     @State private var store = Store()
     @State private var query = ""
