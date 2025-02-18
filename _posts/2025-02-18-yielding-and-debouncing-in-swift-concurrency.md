@@ -1,6 +1,7 @@
 ---
 title: Yielding and debouncing in Swift Concurrency
 layout: post
+category: Swift Language Features
 ---
 
 I decided to continue the topic of Swift Concurrency to cover some not-obvious things. This week we will talk about task yielding and debouncing. Swift concurrency language features provide us with two simple but very powerful functions: *yield* and *sleep*. We will try to learn how and when to use them.
