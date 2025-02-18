@@ -99,7 +99,7 @@ struct DataHandler {
 
 In the example above, I have the *DataHandler* type defining the *process* function. I made it asynchronous to run on the Cooperative Thread Pool provided by the Swift concurrency. Keep in mind that the Cooperative Thread Pool has a limited number of threads and its count is not so large.
 
-While executing a long-running task that can take minutes to run, we completely block a thread on the Cooperative Thread Pool. Running a few similar tasks might be a real bottleneck, stopping other tasks from running on the Cooperative Thread Pool. For this particular case, Swift concurrency provides us with a task yielding API.
+While executing a long-running task that can take minutes to run, we completely block a thread on the Cooperative Thread Pool. Running a few similar tasks might be a real bottleneck, stopping other tasks from running on the Cooperative Thread Pool. For this particular case, Swift concurrency provides us with task yielding API.
 
 ```swift
 struct DataHandler {
