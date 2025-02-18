@@ -5,6 +5,8 @@ layout: post
 
 I decided to continue the topic of Swift Concurrency to cover some not-obvious things. This week we will talk about task yielding and debouncing. Swift concurrency language features provide us with two simple but very powerful functions: *yield* and *sleep*. We will try to learn how and when to use them.
 
+{% include friends.html %}
+
 What is the task debouncing? Assume that you have a search field doing heavy search on a huge data structure. While the user types a search query, you start a search task to display results for the entered search term.
 
 ```swift
