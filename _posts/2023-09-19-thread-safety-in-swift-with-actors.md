@@ -162,6 +162,49 @@ The *await* keyword is part of the Swift Concurrency feature, allowing us to awa
 
 Now let's talk about actor reentrancy. What if we run async code on an actor? In this case, the actor suspends execution and switches threads to run an async function outside the actor. During this time, the actor allows other threads access its isolated properties and functions because it doesn't run the async code itself. When the async code finishes, the actor switches back to run actor-isolated code.
 
+```swift
+actor ImageCache {
+    private var cache: [URL: Data] = [:]
+    
+    func get(_ url: URL) async throws -> Data? {
+        if let data = cache[url] {
+            return data
+        } else {
+            let data = await download(url)
+            cache[url] = data
+            return data
+        }
+    }
+    
+    private func download(_ url: URL) async -> Data {
+        // download image
+    }
+}
+```
+
 Remember that every use of the *await* keyword inside an actor type is a possible suspension point where other threads may access or mutate actor-isolated properties. This situation is called actor reentrancy. You may have race conditions during actor reentrancy if you assume that actors always run code atomically.
+
+```swift
+actor ImageCache {
+    private var cache: [URL: Task<Data, Never>] = [:]
+    
+    func get(_ url: URL) async throws -> Data? {
+        if let task = cache[url] {
+            return await task.value
+        } else {
+            let task = Task {
+                return await download(url)
+            }
+            
+            cache[url] = task
+            return await task.value
+        }
+    }
+    
+    private func download(_ url: URL) async -> Data {
+        // download image
+    }
+}
+```
 
 Today we learned about another great feature of Swift language. In general, I suggest to use actors by default and switch to locks only when you need thread safety outside of async context. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and happy multithreading!
