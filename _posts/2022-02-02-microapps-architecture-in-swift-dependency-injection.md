@@ -147,6 +147,11 @@ struct SearchService {
 }
 
 struct AppDependencies {
+    static let production = Self(
+        searchService: SearchService()
+        storage: Storage()
+    )
+
     let searchService: SearchService
     let storage: Storage
 }
@@ -161,14 +166,12 @@ extension AppDependencies {
 }
 
 struct RootView: View {
-    let dependencies = AppDependencies()
+    @StateObject var viewModel = SearchViewModel(
+        dependencies: AppDependencies.production.search
+    )
 
     var body: some View {
-        SearchView(
-            viewModel: .init(
-                dependencies: dependencies.search
-            )
-        )
+        SearchView(viewModel: viewModel)
     }
 }
 ```
