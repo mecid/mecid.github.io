@@ -49,6 +49,8 @@ Every UIHostingController creates its own SwiftUI environment, which means you c
 
 Navigation in SwiftUI was really weak, very hard to build deep linking and a modular approach. But with the NavigationStack released on iOS 16, we gain a pretty new data-driven API allowing us to build deep-linking functionality in an easy way.
 
+> To learn more about new `Navigation API`, take a look at my ["Mastering NavigationStack in SwiftUI. Navigator Pattern."](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/) post.
+
 First of all, I should mention that building the app around UIKit is still a good idea if you are going to support platform versions prior to iOS 16. For modern apps targeting iOS 16 and above, I recommend building the core of the app using SwiftUI and incorporating UIKit in certain parts where SwiftUI’s performance may not meet your expectations.
 
 ```swift
