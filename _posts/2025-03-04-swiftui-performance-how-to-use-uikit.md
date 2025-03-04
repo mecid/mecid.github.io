@@ -1,7 +1,7 @@
 ---
 title: SwiftUI Performance - How to use UIKit
 layout: post
-category: View Composition
+category: Architecture
 image: /public/swiftui.png
 ---
 
