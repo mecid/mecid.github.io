@@ -49,6 +49,21 @@ Navigation in SwiftUI was really weak, very hard to build deep linking and a mod
 
 First of all, I should mention that building the app around UIKit is still a good idea if you are going to support platform versions prior to iOS 16. For modern apps targeting iOS 16 and above, I recommend building the core of the app using SwiftUI and incorporating UIKit in certain parts where SwiftUI’s performance may not meet your expectations.
 
+```swift
+@main
+struct ExamplesApp: App {
+    @State private var store = Store()
+    
+    var body: some Scene {
+        WindowGroup {
+            NavigationStack {
+                HugeListView(items: store.items)
+            }
+        }
+    }
+}
+```
+
 We can expect that SwiftUI App Lifecycle and the recent navigation API allow us to handle almost every feature we need: deep-linking, state restoration, etc. Unfortunately, there are some cases where the performance of SwiftUI may cause some glitches. Especially when you have infinite collections of data like social timelines or calendar layouts.
 
 Don’t worry because we already have a solution for this case called UIHostingConfiguration. It is a new type of UITableViewCell or UICollectionViewCell configuration allowing us to embed SwiftUI views into a cell, but still use the performant dequeuing capabilities of the UICollectionView. This approach works great where performance really matters.
