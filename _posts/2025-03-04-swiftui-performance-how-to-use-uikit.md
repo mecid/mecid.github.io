@@ -56,12 +56,19 @@ First of all, I should mention that building the app around UIKit is still a goo
 ```swift
 @main
 struct ExamplesApp: App {
+    @State private var path = NavigationPath()
     @State private var store = Store()
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationStack(path: $path) {
                 HugeListView(items: store.items)
+                    .navigationDestination(for: Item.self) { item in
+                        // push item details view
+                    }
+                    .onOpenURL { url in
+                        // parse url and push next view
+                    }
             }
         }
     }
