@@ -6,6 +6,8 @@ category: View Composition
 
 Nowadays, Apple platform development has undergone significant changes. Previously, we believed that building the core of an app around UIKit and using SwiftUI for certain screens was a good idea. This week, we’ll delve into the foundation of app development using SwiftUI, while also exploring UIKit for scenarios where performance truly matters.
 
+{% include friends.html %}
+
 Whenever I say core part of the app, I mean app lifecycle and navigation. Using UIKit, we can build the navigation using the pretty popular coordinator pattern and push SwiftUI views by wrapping them with UIHostingController. We can still use the app delegate for managing the app lifecycle. That works great in terms of performance and legacy codebase. But, unfortunately, this approach has its own downsides.
 
 ```swift
