@@ -117,4 +117,4 @@ struct HugeListView: UIViewRepresentable {
 
 Keep in mind that UIHostingConfiguration is created only for embedding SwiftUI views in the UICollectionView or UITableView. Don’t use NavigationLinks inside the UIHostingConfiguration. Instead, leverage the Coordinator to handle selection and push your values to the instance of  the NavigationStack.
 
-SwiftUI has evolved significantly, making it a viable choice for building the core of modern iOS apps, especially with the improved navigation system in iOS 16. However, UIKit remains essential for handling performance-sensitive scenarios, particularly when working with large datasets or complex UI structures.
+SwiftUI has evolved significantly, making it a viable choice for building the core of modern iOS apps, especially with the improved navigation system in iOS 16. However, UIKit remains essential for handling performance-sensitive scenarios, particularly when working with large datasets or complex UI structures. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
