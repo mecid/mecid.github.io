@@ -191,5 +191,7 @@ struct SearchView: View {
 
 SwiftUI also introduces the *searchFocused* view modifier, allowing us to bind the focus of a search field that we create using the *searchable* view modifier. It works the same way and supports binding both for boolean and *Hashable* types. The only difference is that it only affects the text field in the search bar of the current view hierarchy.
 
+> To learn more about building search user experience in SwiftUI, take a look at my ["Mastering search in SwiftUI"](/2021/06/23/mastering-search-in-swiftui/) post.
+
 Today we learned how to use the *FocusState* property wrapper to manage focus in our views. Remember that *FocusState* allows us both to read and change the focused view programmatically. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
