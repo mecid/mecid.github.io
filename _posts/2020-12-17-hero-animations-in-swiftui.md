@@ -145,7 +145,31 @@ If inserting a view in the same transaction that another view with the same iden
 
 ![hero-animation](/public/hero2.mp4)
 
+Hero animations are great, but usually we use them during navigation in the master-details flow. The *matchedGeometryEffect* doesn't work between different views in the navigation stack. For this particular case, SwiftUI introduced the *matchedTransitionSource* view modifier. It works the same way, but allows us to preserve the geometry between views in the navigation stack.
+
+```swift
+struct ContentView: View {
+    @Namespace private var namespace
+    
+    var body: some View {
+        NavigationStack {
+            NavigationLink {
+                Image(systemName: "globe")
+                    .resizable()
+                    .scaledToFit()
+                    .navigationTransition(.zoom(sourceID: "world", in: namespace))
+            } label: {
+                Image(systemName: "globe")
+                    .matchedTransitionSource(id: "world", in: namespace)
+            }
+        }
+    }
+}
+```
+
+As you can see in the example above, we use the *matchedTransitionSource* view modifier to mark the geometry source of the transition. We also use the *navigationTransition* view modifier to define the particular transition that we want to apply. In our example, we use a zooming transition.
+
 #### Conclusion
-Today we learned about implementing hero animations in SwiftUI using the *matchedGeometryEffect* view modifier. I love how easy we can achieve this effect in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
+Today we learned about implementing hero animations in SwiftUI using the *matchedGeometryEffect* and *matchedTransitionSource* view modifiers. I love how easy we can achieve this effect in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
 
 
