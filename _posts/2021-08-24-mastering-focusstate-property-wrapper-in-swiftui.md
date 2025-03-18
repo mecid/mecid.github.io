@@ -162,7 +162,34 @@ As you can see, we use another version of the *focused* view modifier to bind a 
 
 Remember that we should make our *FocusState* property optional to use it with *Hashable* enum because there might be no focused view at the moment.
 
-> To learn more about toolbars in SwiftUI, take a look at my ["Mastering toolbars in SwiftUI"](/2020/07/15/mastering-toolbars-in-swiftui/) post.
+```swift
+struct SearchView: View {
+    enum FocusSection: Hashable {
+        case results
+        case search
+    }
+    
+    @FocusState private var focus: FocusSection?
+    
+    @ObservedObject var store: SearchStore
+
+    var body: some View {
+        SearchResultsView(results: store.results)
+            .focused($focus, equals: .results)
+            .onAppear { focus = .search }
+            .searchable(
+                text: store.$query,
+                prompt: Text("pasta", bundle: .module)
+            )
+            .searchFocused($focus, equals: .search)
+            .task(id: store.query) {
+                await store.search()
+            }
+    }
+}
+```
+
+SwiftUI also introduces the *searchFocused* view modifier, allowing us to bind the focus of a search field that we create using the *searchable* view modifier. It works the same way and supports binding both for boolean and *Hashable* types. The only difference is that it only affects the text field in the search bar of the current view hierarchy.
 
 Today we learned how to use the *FocusState* property wrapper to manage focus in our views. Remember that *FocusState* allows us both to read and change the focused view programmatically. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
