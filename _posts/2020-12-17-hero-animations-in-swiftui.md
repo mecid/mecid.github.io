@@ -5,7 +5,7 @@ image: /public/swiftui.png
 category: Interactions
 ---
 
-Animation is one of the powerful features of SwiftUI. I was shocked when I saw how easy we could animate changes in view hierarchy by simply mutating *@State* properties and attaching animation modifiers. This week we will talk about another animation type called hero animation. We will learn how we can implement hero animations using the new *matchedGeometryEffect* view modifier.
+Animation is one of the powerful features of SwiftUI. I was shocked when I saw how easy we can animate changes in view hierarchy by simply mutating *@State* properties and attaching animation modifiers. This week we will talk about another animation type called hero animation. We will learn how we can implement hero animations using new *matchedGeometryEffect* and *matchedTransitionSource* view modifiers.
 
 {% include friends.html %}
 
@@ -170,6 +170,4 @@ struct ContentView: View {
 As you can see in the example above, we use the *matchedTransitionSource* view modifier to mark the geometry source of the transition. We also use the *navigationTransition* view modifier to define the particular transition that we want to apply. In our example, we use a zooming transition.
 
 #### Conclusion
-Today we learned about implementing hero animations in SwiftUI using the *matchedGeometryEffect* and *matchedTransitionSource* view modifiers. I love how easy we can achieve this effect in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
-
-
+Today we learned about implementing hero animations in SwiftUI using *matchedGeometryEffect* and *matchedTransitionSource* view modifiers. I love how easy we can achieve this effect in SwiftUI. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this article. Thanks for reading, and see you next week!
