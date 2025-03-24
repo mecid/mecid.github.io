@@ -49,6 +49,8 @@ print(result)
 
 Here, we create a task group with two children, enabling us to execute tasks A and B concurrently and accumulate their results. However, the code provided above appears overly complex for such a straightforward task. Task Groups are particularly useful for constructing asynchronous workflows with numerous tasks. Nevertheless, for simple tasks like this where we need to wait for two tasks to complete, the code seems overly cumbersome.
 
+> To learn more about benefits of flexible `Task Groups API`, take a look at the ["Mastering TaskGroups in Swift"](/2025/02/04/mastering-task-groups-in-swift/) post.  
+
 Fortunately, Swift introduced syntactic sugar over Task Groups API, allowing us easily run predefined amount of tasks using **async-let** syntax.
 
 ```swift
