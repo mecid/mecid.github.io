@@ -2,6 +2,7 @@
 title: Awaiting multiple async tasks in Swift
 layout: post
 category: Swift Language Features
+image: /public/swift.png
 ---
 
 A few weeks ago, we discussed Task Groups in Swift, which is an explicit way of executing multiple concurrent tasks and waiting for them to complete. This week, we’ll delve deeper into the topic by exploring the **async-let** syntax in Swift, which offers a convenient way to work with Task Groups implicitly.
