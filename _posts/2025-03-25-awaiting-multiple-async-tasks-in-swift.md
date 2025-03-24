@@ -59,3 +59,5 @@ As illustrated in the provided example, we employ the async-let syntax to define
 Notably, we avoid using the await keyword before invoking the taskA and taskB functions. This is because the async-let syntax facilitates the lazy initialization of values as soon as the asynchronous task returns its result. In this case, both tasks run concurrently in parallel, allowing us to improve the performance of our code.
 
 We still need to wait for the results of tasks because it can take some time to complete asynchronous tasks. Therefore, we should only use the await keyword whenever accessing the a and b variables.
+
+Async-let syntax is a part of the Structured Concurrency feature of the Swift language and provides us with all the benefits like memory and lifecycle management, and Cooperative Cancellation model out of the box.
