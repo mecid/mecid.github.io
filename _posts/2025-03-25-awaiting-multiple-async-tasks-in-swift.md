@@ -18,6 +18,7 @@ func taskB() async -> Int {
 
 let a = await taskA()
 let b = await taskB()
+
 print(a + b)
 ```
 
