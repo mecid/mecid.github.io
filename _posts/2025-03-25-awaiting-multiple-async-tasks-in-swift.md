@@ -54,7 +54,7 @@ async let b = taskB()
 await print(a + b)
 ```
 
-As illustrated in the provided example, we employ the **async-let** syntax to define variables initialized through asynchronous calls to the *taskA* and *taskB* functions. 
+As illustrated in the provided example, we employ the *async-let* syntax to define variables initialized through asynchronous calls to the *taskA* and *taskB* functions. 
 
 Notably, we avoid using the *await* keyword before invoking the *taskA* and *taskB* functions. This is because the *async-let* syntax facilitates the lazy initialization of values as soon as the asynchronous task returns its result. In this case, both tasks run concurrently in parallel, allowing us to improve the performance of our code.
 
