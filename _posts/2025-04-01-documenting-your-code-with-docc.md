@@ -116,7 +116,7 @@ extension Array {
 }
 ```
 
-Whenever you need to refer to another type in the documentation, use double backticks. It will allow you to link to the particular documentation entity.
+Whenever you need to refer to another type in the documentation, use double backticks. It will allow DocC to link to the particular documentation entity.
 
 ```swift
 extension Array {
