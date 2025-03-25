@@ -9,7 +9,7 @@ Today I would like to talk about documenting Swift code using the DocC. Document
 
 {% include friends.html %}
 
-I’m not here to persuade you to document your code, but I’d like to share a quote from a software engineering book that significantly influenced my approach as a software engineer. 
+I’m not here to persuade you to document your code, but I’d like to share a quote from a [software engineering book](https://www.amazon.com/dp/1732102201) that significantly influenced my approach as a software engineer. 
 
 > Many developers put off writing documentation until the end of the development process, after coding and unit testing are complete. This is one of the surest ways to produce poor quality documentation. 
 
