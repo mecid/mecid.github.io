@@ -62,7 +62,7 @@ extension Array {
 }
 ```
 
-You can add info about parameters using **- Parameters:** keyword. Both dash and colon are required and used as separation indicators. On a new line, you can start writing the name of the parameter after another dash with indentation; the colon after the name is required to separate the name of its description.
+You can add info about parameters using **- Parameters:** keyword. Both dash and colon are required and used as separation indicators. On a new line, you can start writing the name of the parameter after another dash with indentation; the colon after the name is required to separate the name and its description.
 
 ```swift
 extension Array {
