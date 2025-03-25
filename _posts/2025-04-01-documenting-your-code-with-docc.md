@@ -1,6 +1,7 @@
 ---
 title: Documenting your code with DocC
 layout: post
+category: Meta
 ---
 
 Today I would like to talk about documenting Swift code using the DocC. Documenting your code becomes even more important in the era of modularized apps. Whenever different parts of your app live in multiple Swift Packages, it becomes crucial to provide proper documentation.
