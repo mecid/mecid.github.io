@@ -145,6 +145,6 @@ extension Array {
 }
 ```
 
-I would finalize the post with another quoute from the book. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+I would finalize the post with another quoute from the [book](https://www.amazon.com/dp/1732102201). I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
 > Even if you do have the self-discipline to go back and write the comments (and don’t fool yourself: you probably don’t), the comments won’t be very good. By this time in the process, you have checked out mentally. In your mind, this piece of code is done; you are eager to move on to your next project.
