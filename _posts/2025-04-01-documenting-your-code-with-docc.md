@@ -38,6 +38,8 @@ extension Array {
 
 As you can see in the example above, we use triple slashes to add some documentation to the function. Now, you can use *Option+Click* in your Xcode editor to see the documentation of the function. That’s so easy.
 
+![docc-quick-help-preview](/public/docc-example.png)
+
 Whenever you need to add more details on the implementation of the function, you can add more paragraphs, and they will be displayed in the discussions section of the help dialog. Let’s move forward by adding more information about its parameters and return type.
 
 ```swift
