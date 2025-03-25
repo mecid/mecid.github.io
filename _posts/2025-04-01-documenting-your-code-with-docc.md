@@ -138,3 +138,5 @@ extension Array {
     }
 }
 ```
+
+> Even if you do have the self-discipline to go back and write the comments (and don’t fool yourself: you probably don’t), the comments won’t be very good. By this time in the process, you have checked out mentally. In your mind, this piece of code is done; you are eager to move on to your next project.
