@@ -5,7 +5,7 @@ category: Swift Language Features
 image: /public/swift.png
 ---
 
-A few weeks ago, we discussed Task Groups in Swift, which is an explicit way of executing multiple concurrent tasks and waiting for them to complete. This week, we’ll delve deeper into the topic by exploring the **async-let** syntax in Swift, which offers a convenient way to work with Task Groups implicitly.
+A few weeks ago, we discussed Task Groups in Swift, which is an explicit way of executing multiple concurrent tasks and waiting for them to complete. This week, we’ll delve deeper into the topic by exploring the **async let** syntax in Swift, which offers a convenient way to work with Task Groups implicitly.
 
 {% include friends.html %}
 
@@ -51,7 +51,7 @@ Here, we create a task group with two children, enabling us to execute tasks A a
 
 > To learn more about benefits of flexible `Task Groups API`, take a look at the ["Mastering TaskGroups in Swift"](/2025/02/04/mastering-task-groups-in-swift/) post.  
 
-Fortunately, Swift introduced syntactic sugar over Task Groups API, allowing us easily run predefined amount of tasks using **async-let** syntax.
+Fortunately, Swift introduced syntactic sugar over Task Groups API, allowing us easily run predefined amount of tasks using **async let** syntax.
 
 ```swift
 async let a = taskA()
@@ -60,10 +60,10 @@ async let b = taskB()
 await print(a + b)
 ```
 
-As illustrated in the provided example, we employ the *async-let* syntax to define variables initialized through asynchronous calls to the *taskA* and *taskB* functions. 
+As illustrated in the provided example, we employ the *async let* syntax to define variables initialized through asynchronous calls to the *taskA* and *taskB* functions. 
 
-Notably, we avoid using the *await* keyword before invoking the *taskA* and *taskB* functions. This is because the *async-let* syntax facilitates the lazy initialization of values as soon as the asynchronous task returns its result. In this case, both tasks run concurrently in parallel, allowing us to improve the performance of our code.
+Notably, we avoid using the *await* keyword before invoking the *taskA* and *taskB* functions. This is because the *async let* syntax facilitates the lazy initialization of values as soon as the asynchronous task returns its result. In this case, both tasks run concurrently in parallel, allowing us to improve the performance of our code.
 
 We still need to wait for the results of tasks because it can take some time to complete asynchronous tasks. Therefore, we should only use the *await* keyword whenever accessing the **a** and **b** variables.
 
-*Async-let* syntax is a part of the Structured Concurrency feature of the Swift language and provides us with all the benefits like memory and lifecycle management, and Cooperative Cancellation model out of the box. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+*Async let* syntax is a part of the Structured Concurrency feature of the Swift language and provides us with all the benefits like memory and lifecycle management, and Cooperative Cancellation model out of the box. I hope you find the post enjoyable. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
