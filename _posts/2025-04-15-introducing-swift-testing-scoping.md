@@ -93,11 +93,14 @@ Here we define the MockEnvironmentTrait type conforming to the TestTrait, SuiteT
 The last parameter is the performing function that describes the particular test function or the whole test suite. You should run the performing function to allow test function or test suite execution.
 
 ```swift
+@Test(.mockedEnvironment) func verifySomething() async throws {
+    Environment.current // provides access to the mocked environment
+}
+
 @Suite(.mockedEnvironment) struct ExamplesTests {
     func verifySomething() async throws {
         Environment.current // provides access to the mocked environment
     }
-
 }
 ```
 
