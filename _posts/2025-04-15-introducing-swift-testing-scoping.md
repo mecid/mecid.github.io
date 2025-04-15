@@ -7,6 +7,8 @@ image: /public/testing.png
 
 Apple recently released Swift 6.1, with most of the changes being cosmetic. However, I particularly like the scoping feature introduced in the Swift Testing framework. This week, we’ll delve into the new Test Scoping feature and explore how to effectively utilize it in Swift.
 
+{% include friends.html %}
+
 We already talked about test lifecycle in Swift Testing framework in previous posts. We can utilize init and deinit methods on class types to define setup and teardown function using Swift Testing framework.
 
 ======================================================
