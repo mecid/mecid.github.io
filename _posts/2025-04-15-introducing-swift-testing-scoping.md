@@ -9,7 +9,7 @@ Apple recently released Swift 6.1, with most of the changes being cosmetic. Howe
 
 {% include friends.html %}
 
-We already talked about test lifecycle in Swift Testing framework in previous posts. We can utilize init and deinit methods on class types to define setup and teardown functions using Swift Testing framework.
+We already talked about test lifecycle in Swift Testing framework in previous posts. We can utilize *init* and *deinit* methods on class types to define setup and teardown functions using Swift Testing framework.
 
 ```swift
 struct ModelTests {
@@ -31,7 +31,7 @@ struct ModelTests {
 }
 ```
 
-Assume that you have a bunch of test cases depending on the same ModelContainer, or predefined data. It means you have to write initialization code again and again for every test case. Fortunately, the Swift Testing framework solves it for us by introducing test scoping functionality. Test scoping works in pair with testing traits. Let me revise your memory with the example of testing traits.
+Assume that you have a bunch of test cases depending on the same *ModelContainer*, or predefined data. It means you have to write initialization code again and again for every test case. Fortunately, the Swift Testing framework solves it for us by introducing test scoping functionality. Test scoping works in pair with testing traits. Let me revise your memory with the example of testing traits.
 
 ```swift
 @Test(
@@ -66,7 +66,7 @@ extension Environment {
 }
 ```
 
-As you can see in the example above, we define the Environment struct holding all the app dependencies. We also define the task local value for the actual instance of the environment. Task local values are not only a great way of providing shared information with default values, but they also allow us to easily replace one value with another when needed.
+As you can see in the example above, we define the *Environment* struct holding all the app dependencies. We also define the task local value for the actual instance of the environment. Task local values are not only a great way of sharing information with default values, but they also allow us to easily replace one value with another when needed.
 
 In our example, we use task local values with default production-ready dependencies, but our final goal is to provide a mocked version of the environment for testing purposes.
 
@@ -88,7 +88,7 @@ extension Trait where Self == MockEnvironmentTrait {
 }
 ```
 
-Here we define the MockEnvironmentTrait type conforming to the TestTrait, SuiteTrait, and TestScoping protocols. The TestScoping protocol has the only requirement, which is the provideScope function. It has a few parameters providing you with information about calling the test function and test suite.
+Here we define the *MockEnvironmentTrait* type conforming to the *TestTrait*, *SuiteTrait*, and *TestScoping* protocols. The *TestScoping* protocol has the only requirement, which is the *provideScope* function. It has a few parameters providing you with information about calling the test function and test suite.
 
 The last parameter is the performing function that describes the particular test function or the whole test suite. You should run the performing function to allow test function or test suite execution.
 
