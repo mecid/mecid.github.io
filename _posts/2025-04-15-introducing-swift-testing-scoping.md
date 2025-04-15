@@ -12,7 +12,7 @@ Apple recently released Swift 6.1, with most of the changes being cosmetic. Howe
 We already talked about test lifecycle in Swift Testing framework in previous posts. We can utilize *init* and *deinit* methods on class types to define setup and teardown functions using Swift Testing framework.
 
 ```swift
-struct ModelTests {
+class ModelTests {
     let container: ModelContainer
     
     init() throws {
