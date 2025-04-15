@@ -2,6 +2,7 @@
 title: Introducing Swift Testing. Scoping
 layout: post
 category: Testing
+image: /public/testing.png
 ---
 
 Apple recently released Swift 6.1, with most of the changes being cosmetic. However, I particularly like the scoping feature introduced in the Swift Testing framework. This week, we’ll delve into the new Test Scoping feature and explore how to effectively utilize it in Swift.
