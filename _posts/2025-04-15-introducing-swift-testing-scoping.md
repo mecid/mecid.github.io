@@ -1,5 +1,5 @@
 ---
-title: Introducing Swift Testing. Scoping
+title: Introducing Swift Testing. Scoping.
 layout: post
 category: Testing
 image: /public/testing.png
