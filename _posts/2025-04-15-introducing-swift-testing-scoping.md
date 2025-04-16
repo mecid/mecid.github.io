@@ -92,6 +92,8 @@ Here we define the *MockEnvironmentTrait* type conforming to the *TestTrait*, *S
 
 The last parameter is the performing function that describes the particular test function or the whole test suite. You should run the performing function to allow test function or test suite execution.
 
+In our example, we run the performing function inside the closure that overrides the task local value and set the environment to the mocked instance. This technique allows us to run the test suite or test function and provide it with a mocked environment.
+
 ```swift
 @Test(.mockedEnvironment) func verifySomething() async throws {
     Environment.current // provides access to the mocked environment
@@ -104,4 +106,4 @@ The last parameter is the performing function that describes the particular test
 }
 ```
 
-In our example, we run the performing function inside the closure that overrides the task local value. This technique allows us to run the test suite or test function and provide it with a mocked environment. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+ Today, we learned how to use the new test scoping feature in Swift Testing framework, to provide reusable setup and teardown functionality. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
