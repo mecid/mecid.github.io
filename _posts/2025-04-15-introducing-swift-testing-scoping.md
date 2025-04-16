@@ -52,11 +52,11 @@ struct Environment {
 }
 
 extension Environment {
-    static var production: Environment {
+    private static var production: Environment {
         // production-ready environment
     }
     
-    static var mock: Environment {
+    private static var mock: Environment {
         // mocked environment
     }
 }
