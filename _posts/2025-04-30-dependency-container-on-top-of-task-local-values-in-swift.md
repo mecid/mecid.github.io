@@ -5,6 +5,8 @@ layout: post
 
 Task local values is the recent addition to the concurrency feature of the Swift language. This week, we will not only learn the basics of task local values, but also discuss the interesting usage where we will build the dependency injection container using this language feature.
 
+{% include friends.html %}
+
 Task local values is the new way to create a Task shared value. It is implicitly shared across child tasks and accessible both from the sync and async context.
 
 ```swift
