@@ -106,4 +106,4 @@ In our example, we run the performing function inside the closure that overrides
 }
 ```
 
- Today, we learned how to use the new test scoping feature in Swift Testing framework, to provide reusable setup and teardown functionality. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Today, we learned how to use the new test scoping feature in Swift Testing framework, to provide reusable setup and teardown functionality. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
