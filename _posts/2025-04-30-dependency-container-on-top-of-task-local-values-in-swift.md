@@ -49,7 +49,7 @@ func fetchData() async throws -> Data? {
 }
 ```
 
-Task local values are read-only when you try to access it directly. You can modify a task local value using the *withValue* function. The updated value will be available in the scope of the provided closure and implicitly shared across the async context of the current *Task*.
+Task local values are read-only when you try to access them directly. You can modify a task local value using the *withValue* function. The updated value will be available in the scope of the provided closure and implicitly shared across the async context of the current *Task*.
 
 You are not going to use task local values very often, but you can use them whenever you need to propagate some piece of state down into the hierarchy of an async task. In our example, we share a request to make logging of the request identifier easier in the world of the concurrent tasks.
 
