@@ -7,7 +7,7 @@ Task local values is the recent addition to the concurrency feature of the Swift
 
 {% include friends.html %}
 
-Task local values is the new way to create a Task shared value. It is implicitly shared across child tasks and accessible both from the sync and async context.
+Task local values is the new way to create a *Task* shared value. It is implicitly shared across child tasks and accessible both from the sync and async context.
 
 ```swift
 struct Request: Identifiable {
@@ -19,9 +19,9 @@ extension Request {
 }
 ```
 
-As you can see in the example above, we define the Request type with unique identifier. We also create an extension for the Request type that uses @TaskLocal macro to define a static property for the current Request instance. We always should provide a default value for the task local values or make it optional.
+As you can see in the example above, we define the *Request* type with unique identifier. We also create an extension for the *Request* type that uses *@TaskLocal* macro to define a static property for the current *Request* instance. We always should provide a default value for the task local values or make it optional.
 
-You can use @TaskLocal macro only with static properties because the main goal is to create a shared instance of the type implicitly available for the async tasks. It works very similar to the environment feature of SwiftUI allowing you to implicitly carry on data down to the view hierarchy.
+You can use *@TaskLocal* macro only with static properties because the main goal is to create a shared instance of the type implicitly available for the async tasks. It works very similar to the environment feature of SwiftUI allowing you to implicitly carry on data down to the view hierarchy.
 
 ```swift
 func fetchData() async throws -> Data? {
@@ -47,7 +47,7 @@ func fetchData() async throws -> Data? {
 }
 ```
 
-Task local values are read-only when you try to access it directly. You can modify a task local value using the withValue function. The updated value will be available in the scope of the provided closure and implicitly shared across the async context of the current Task.
+Task local values are read-only when you try to access it directly. You can modify a task local value using the *withValue* function. The updated value will be available in the scope of the provided closure and implicitly shared across the async context of the current *Task*.
 
 You are not going to use task local values very often, but you can use them whenever you need to propagate some piece of state down into the hierarchy of an async task. In our example, we share a request to make logging of the request identifier easier in the world of the concurrent tasks.
 
@@ -89,7 +89,7 @@ extension Dependencies {
 }
 ```
 
-As you can see in the example above, we define the Dependencies type holding the fetching statistics function. In the real world, you would have there much more service functions. We also define the production-ready and mocked version of our service function.
+As you can see in the example above, we define the *Dependencies* type holding the fetching statistics function. In the real world, you would have there much more service functions. We also define the production-ready and mocked version of our service function.
 
 ```swift
 extension Dependencies {
