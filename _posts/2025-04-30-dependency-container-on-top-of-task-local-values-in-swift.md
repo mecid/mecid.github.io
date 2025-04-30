@@ -107,4 +107,4 @@ Here we define the task local value for the active dependency container. By defa
 
 Inside the test target we want to avoid accessing the real APIs and use the mocked version to make our tests less flaky.
 
-Today, we learned the basics of the task local values and discussed how would we engage with it even more by building a dependency container using this feature.
+Today, we learned the basics of the task local values and discussed how would we engage with it even more by building a dependency container using this feature. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
