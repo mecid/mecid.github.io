@@ -91,7 +91,7 @@ extension Dependencies {
 }
 ```
 
-As you can see in the example above, we define the *Dependencies* type holding the fetching statistics function. In the real world, you would have there much more service functions. We also define the production-ready and mocked version of our service function.
+As you can see in the example above, we define the *Dependencies* type holding the fetching statistics function. In the real world, you would have much more service functions there. We also define the production-ready and mocked version of our service function.
 
 ```swift
 extension Dependencies {
