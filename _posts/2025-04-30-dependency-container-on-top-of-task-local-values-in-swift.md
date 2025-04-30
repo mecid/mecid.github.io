@@ -113,6 +113,6 @@ Here we define the task local value for the active dependency container. By defa
 }
 ```
 
-Inside the test target, we want to avoid accessing the real APIs and use the mocked version to make our tests less flaky.
+Inside the test target, we want to avoid accessing the real APIs and use the mocked version to make our tests less flaky. That's why we use the *withValue* function to replace the real service with the mocked one implicitly by providing the access via *active* property. 
 
 Today, we learned the basics of task local values and discussed how we would engage with it even more by building a dependency container using this feature. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
