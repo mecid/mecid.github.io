@@ -99,7 +99,7 @@ extension Dependencies {
 }
 ```
 
-Here we define the task local value for the active dependency container. By default we use the production-ready version of the dependency container. For the purpose of testing we can replace the production-ready container with mocked version implicitly using the withValue function.
+Here we define the task local value for the active dependency container. By default, we use the production-ready version of the dependency container. For the purpose of testing, we can replace the production-ready container with a mocked version implicitly using the withValue function.
 
 ```swift
 @Test func verifySomething() async throws {
