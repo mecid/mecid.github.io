@@ -21,7 +21,7 @@ extension Request {
 }
 ```
 
-As you can see in the example above, we define the *Request* type with unique identifier. We also create an extension for the *Request* type that uses *@TaskLocal* macro to define a static property for the current *Request* instance. We always should provide a default value for the task local values or make it optional.
+As you can see in the example above, we define the *Request* type with a unique identifier. We also create an extension for the *Request* type that uses the *@TaskLocal* macro to define a static property for the current *Request* instance. We should always provide a default value for the task local values or make them optional.
 
 You can use *@TaskLocal* macro only with static properties because the main goal is to create a shared instance of the type implicitly available for the async tasks. It works very similar to the environment feature of SwiftUI allowing you to implicitly carry on data down to the view hierarchy.
 
