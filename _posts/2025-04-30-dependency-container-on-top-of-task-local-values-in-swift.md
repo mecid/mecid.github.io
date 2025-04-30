@@ -2,6 +2,7 @@
 title: Dependency container on top of task local values in Swift
 layout: post
 category: Swift Language Features
+image: /public/swift.png
 ---
 
 Task local values is the recent addition to the concurrency feature of the Swift language. This week, we will not only learn the basics of task local values, but also discuss the interesting usage where we will build the dependency injection container using this language feature.
