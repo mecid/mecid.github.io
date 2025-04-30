@@ -78,7 +78,9 @@ extension Dependencies {
 
 extension Dependencies {
     static var mock: Dependencies {
-        let mockedStatistics: [HKStatistics] = []
+        let mockedStatistics: [HKStatistics] = [
+            // mocked value here
+        ]
         
         return .init(
             fetchStatistics: { _ in mockedStatistics }
@@ -101,6 +103,10 @@ Here we define the task local value for the active dependency container. By defa
 @Test func verifySomething() async throws {
     Dependencies.$active.withValue(.mock) {
         // Mocked environment activated
+        let interval: DateInterval = //...
+        let statistics = try await Dependencies.active.fetchStatistics(interval)
+        
+        #expect(statistics.count == 1)
     }
 }
 ```
