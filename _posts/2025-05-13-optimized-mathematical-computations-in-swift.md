@@ -1,6 +1,7 @@
 ---
 title: Optimized mathematical computations in Swift
 layout: post
+category: Swift Language Features
 ---
 
 I’m very passionate about my health routine and have built a bunch of health-related apps. Almost all of them are integrated with Apple Health and provide tons of additional calculations over the functionality that the Apple Health app gives us. Today, we will talk about the hidden gem of the on-device calculations - the Accelerate framework.
