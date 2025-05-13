@@ -73,4 +73,4 @@ extension vDSP {
 
 As you can see in the example above, we leverage the power of *mean*, *subtract*, and *rootMeanSquare* functions to calculate standard deviation in a very performant way.
 
-The Accelerate framework provides us with tons of useful functionality from building on-device machine learning to Fourier transformation. I highly recommend you check out the documentation to find useful stuff for your apps.
+The Accelerate framework provides us with tons of useful functionality from building on-device machine learning to Fourier transformation. I highly recommend you check out the documentation to find useful stuff for your apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
