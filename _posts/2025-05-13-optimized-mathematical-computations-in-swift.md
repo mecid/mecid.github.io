@@ -23,7 +23,7 @@ let values = [6,6,8,7,8,10,10.0]
 let sum = vDSP.sum(values)
 ```
 
-The second most common function I use is the mean function. Again, you can easily implement it in Swift using reduce and divide by count, but the performance is significantly different on large amounts of data.
+The second most common function I use is the *mean* function. Again, you can easily implement it in Swift using reduce and divide by count, but the performance is significantly different on large amounts of data.
 
 ```swift
 let values = [6,6,8,7,8,10,10.0]
