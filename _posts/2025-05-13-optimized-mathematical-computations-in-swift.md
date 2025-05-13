@@ -7,6 +7,8 @@ image: /public/swift.png
 
 I’m very passionate about my health routine and have built a bunch of health-related apps. Almost all of them are integrated with Apple Health and provide tons of additional calculations over the functionality that the Apple Health app gives us. Today, we will talk about the hidden gem of the on-device calculations - the Accelerate framework.
 
+{% include friends.html %}
+
 The Accelerate framework is a huge topic, and it deserves a series of posts to cover at least half of its functionality. I will start with the most common stuff that you might need in your apps. But first, let’s define what the Accelerate framework is. Apple introduced the Accelerate framework many years ago, so it is available almost on every version of Apple platforms. It is a high-performance and energy-efficient way of doing computations using the vector-processing capabilities of the device.
 
 The Accelerate framework contains a collection of APIs for digital signal processing called *vDSP*. It provides tons of highly optimized functions for operations on large data collections. Let’s start with the most basic one. How often do you find yourself writing code like this?
