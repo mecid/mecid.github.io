@@ -7,14 +7,14 @@ I’m very passionate about my health routine and have built a bunch of health-r
 
 The Accelerate framework is a huge topic, and it deserves a series of posts to cover at least half of its functionality. I will start with the most common stuff that you might need in your apps. But first, let’s define what the Accelerate framework is. Apple introduced the Accelerate framework many years ago, so it is available almost on every version of Apple platforms. It is a high-performance and energy-efficient way of doing computations using the vector-processing capabilities of the device.
 
-The Accelerate framework contains a collection of APIs for digital signal processing called vDSP. It provides tons of highly optimized functions for operations on large data collections. Let’s start with the most basic one. How often do you find yourself writing code like this?
+The Accelerate framework contains a collection of APIs for digital signal processing called *vDSP*. It provides tons of highly optimized functions for operations on large data collections. Let’s start with the most basic one. How often do you find yourself writing code like this?
 
 ```swift
 let values = [6,6,8,7,8,10,10.0]
 let sum = values.reduce(0.0, +)
 ```
 
-It might look simple and fast when you have 10-20 values, but what about millions of data points? We can leverage the power of vector-processing capabilities of the device by using the vDSP functions provided by the Accelerate framework.
+It might look simple and fast when you have 10-20 values, but what about millions of data points? We can leverage the power of vector-processing capabilities of the device by using the *vDSP* functions provided by the Accelerate framework.
 
 ```swift
 import Accelerate
@@ -37,7 +37,7 @@ let values = [6,6,8,7,8,10,10.0]
 let mean = vDSP.mean(values)
 ```
 
-The Accelerate framework provides us the standardDeviation function allowing us to calculate the standard deviation in a single line.
+The Accelerate framework provides us the *standardDeviation* function allowing us to calculate the standard deviation in a single line.
 
 ```swift
 let values = [6,6,8,7,8,10,10.0]
@@ -50,7 +50,7 @@ if sd > 0.5 {
 }
 ```
 
-The standardDeviation function is available only on the most recent platform version. But fortunately, we can implement it using other functions provided by the Accelerate framework. The standard deviation is the root mean square of the difference between values and the mean.
+The *standardDeviation* function is available only on the most recent platform version. But fortunately, we can implement it using other functions provided by the Accelerate framework. The standard deviation is the root mean square of the difference between values and the mean.
 
 ```swift
 extension vDSP {
@@ -67,6 +67,6 @@ extension vDSP {
 }
 ```
 
-As you can see in the example above, we leverage the power of mean, subtract, and rootMeanSquare functions to calculate standard deviation in a very performant way.
+As you can see in the example above, we leverage the power of *mean*, *subtract*, and *rootMeanSquare* functions to calculate standard deviation in a very performant way.
 
 The Accelerate framework provides us with tons of useful functionality from building on-device machine learning to Fourier transformation. I highly recommend you check out the documentation to find useful stuff for your apps.
