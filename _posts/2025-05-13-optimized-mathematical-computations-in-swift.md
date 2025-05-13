@@ -30,7 +30,9 @@ let values = [6,6,8,7,8,10,10.0]
 let mean = values.reduce(0.0, +) / Double(values.count)
 ```
 
-Let’s move forward to more advanced statistical analysis you might need. Standard deviation is a pretty useful metric not only in health apps, but also in the financial category. Standard deviation is a measure of how dispersed the data is in relation to the mean. For example, you might have an average sleep duration of 8 hours during the week, but you sleep about 6-7 hours in the first part of the week and 10 hours on weekends. It might look good, because in average you sleep about 8 hours, but it is not, because variation between your asleep duration is too big and you might need to improve your bedtime routine.
+Let’s move forward to more advanced statistical analysis you might need. Standard deviation is a pretty useful metric not only in health apps, but also in the financial category. Standard deviation is a measure of how dispersed the data is in relation to the mean.
+
+For example, you might have an average sleep duration of 8 hours during the week, but you sleep about 6-7 hours in the first part of the week and 10 hours on weekends. It might look good, because in average you sleep about 8 hours, but it is not, because variation between your asleep duration is too big and you might need to improve your bedtime routine.
 
 ```swift
 let values = [6,6,8,7,8,10,10.0]
