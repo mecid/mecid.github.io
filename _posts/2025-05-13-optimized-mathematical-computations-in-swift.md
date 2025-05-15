@@ -64,8 +64,8 @@ extension vDSP {
         }
         
         let mean = vDSP.mean(vector)
-        let subtractedMean = Array(repeating: mean, count: vector.count)
-        let differences = vDSP.subtract(vector, subtractedMean)
+        let meanVector = Array(repeating: mean, count: vector.count)
+        let differences = vDSP.subtract(vector, meanVector)
         return vDSP.rootMeanSquare(differences)
     }
 }
