@@ -165,3 +165,4 @@ First, I try to keep resources only inside the module that uses them. Feature mo
 2. [Microapps architecture in Swift. Feature modules.](/2022/01/19/microapps-architecture-in-swift-feature-modules/)
 3. Microapps architecture in Swift. Resources and localization.
 4. [Microapps architecture in Swift. Dependency Injection.](/2022/02/02/microapps-architecture-in-swift-dependency-injection/)
+5. [Microapps architecture in Swift. Scaling.](/2025/05/27/microapps-architecture-in-swift-scaling/)
