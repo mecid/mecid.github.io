@@ -2,6 +2,7 @@
 title: Microapps architecture in Swift. Scaling.
 layout: post
 category: Architecture
+image: /public/spm.jpg
 ---
 
 The primary goals of the microapps architecture are to maintain separation of concerns to enhance compile time, adhere to the single responsibility principle, and facilitate continuous delivery, allowing for the deployment of a feature without the need for the completion of other features.
