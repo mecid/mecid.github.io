@@ -51,3 +51,10 @@ let package = Package(
 While a single-package approach works well for small to mid-sized projects, it can become a bottleneck as the number of modules grows. For large and extra-large apps, transitioning to a feature-per-package strategy provides better separation, improved dependency control, and a smoother developer experience.
 
 As with any architecture, it’s important to balance simplicity and scalability, adapting your approach as the app evolves. Ultimately, the goal is to maintain a modular, testable, and continuously deliverable codebase — and this approach makes that possible, even at scale. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
+#### Continue reading the microapps series
+1. [Microapps architecture in Swift. SPM basics.](/2022/01/12/microapps-architecture-in-swift-spm-basics/)
+2. [Microapps architecture in Swift. Feature modules.](/2022/01/19/microapps-architecture-in-swift-feature-modules/)
+3. [Microapps architecture in Swift. Resources and localization.](/2022/01/26/microapps-architecture-in-swift-resources-and-localization/)
+4. [Microapps architecture in Swift. Dependency Injection.](/2022/02/02/microapps-architecture-in-swift-dependency-injection/)
+5. Microapps architecture in Swift. Scaling.
