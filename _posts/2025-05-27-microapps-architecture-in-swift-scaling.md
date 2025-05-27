@@ -7,6 +7,8 @@ image: /public/spm.jpg
 
 The primary goals of the microapps architecture are to maintain separation of concerns to enhance compile time, adhere to the single responsibility principle, and facilitate continuous delivery, allowing for the deployment of a feature without the need for the completion of other features.
 
+{% include friends.html %}
+
 Swift Package Manager became the heart of this approach because it allows us to easily create Swift packages in Xcode and maintain them. As we discussed in the first post of the series, as soon as I create a new project in Xcode, I also create a Swift Package inside the project where I will place all the feature code and keep my app target as tiny as possible.
 
 This approach worked great and served my indie apps for a long time. As always, it has both pros and cons. It is really simple to maintain a single package with a bunch of separate modules where you can clearly identify the dependency tree of the modules. Everything works fast and reliably as long as you have up to 20 packages.
