@@ -2,3 +2,17 @@
 title: Microapps architecture in Swift. Scaling.
 layout: post
 ---
+
+The primary goals of the microapps architecture are to maintain separation of concerns to enhance compile time, adhere to the single responsibility principle, and facilitate continuous delivery, allowing for the deployment of a feature without the need for the completion of other features.
+
+Swift Package Manager became the heart of this approach because it allows us to easily create Swift packages in Xcode and maintain them. As we discussed in the first post of the series, as soon as I create a new project in Xcode, I also create a Swift Package inside the project where I will place all the feature code and keep my app target as tiny as possible.
+
+This approach worked great and served my indie apps for a long time. As always, it has both pros and cons. It is really simple to maintain a single package with a bunch of separate modules where you can clearly identify the dependency tree of the modules. Everything works fast and reliably as long as you have up to 20 packages.
+
+Let’s talk about large and extra-large apps where you can have more than 100 modules. In this case, a single package containing all the codebase is not a good solution because your developer experience might go down very fast.
+
+Editing a single Package.swift file with hundreds of modules becomes a problem, and there are a bunch of reasons for that. First of all, Xcode can’t handle the dependency graph of such a huge package efficiently. Second, the Package.swift file becomes a real mess with thousands of lines of code that are really hard to navigate.
+
+Another approach I can suggest for large and extra-large apps is to use a package per feature, where you still use different modules inside a feature package to divide it into layers like domain, UI, etc. In this case, you will have a collection of packages for the app, where every feature lives in a single package.
+
+Whenever a feature A depends on a particular module of feature B, you can only connect that particular module. For example, you might have a Health package with a few modules for models, services, ui, etc. When you work on onboarding features, you might need a health authorization service, and this approach allows you to create a module in the Onboarding package that only depends on the service module of the Health package.
