@@ -19,7 +19,7 @@ Let’s talk about large and extra-large apps where you can have more than 100 m
 
 Editing a single Package.swift file with hundreds of modules becomes a problem, and there are a bunch of reasons for that. First of all, Xcode can’t handle the dependency graph of such a huge package efficiently. Second, the Package.swift file becomes a real mess with thousands of lines of code that are really hard to navigate.
 
-Another approach I can suggest for large and extra-large apps is to use a package per feature, where you still use different modules inside a feature package to divide it into layers like domain, UI, etc. In this case, you will have a collection of packages for the app, where every feature lives in a single package.
+Another approach I can suggest for large and extra-large apps is to use a package-per-feature, where you still use different modules inside a feature package to divide it into layers like domain, UI, etc. In this case, you will have a collection of packages for the app, where every feature lives in a single package.
 
 ```swift
 import PackageDescription
