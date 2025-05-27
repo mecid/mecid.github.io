@@ -15,6 +15,8 @@ Swift Package Manager became the heart of this approach because it allows us to 
 
 This approach worked great and served my indie apps for a long time. As always, it has both pros and cons. It is really simple to maintain a single package with a bunch of separate modules where you can clearly identify the dependency tree of the modules. Everything works fast and reliably as long as you have up to 20 packages.
 
+> To learn more about the basics of the microapps architecture, take a look at my ["Microapps architecture in Swift. SPM basics."](/2022/01/12/microapps-architecture-in-swift-spm-basics/) post.
+
 Let’s talk about large and extra-large apps where you can have more than 100 modules. In this case, a single package containing all the codebase is not a good solution because your developer experience might go down very fast.
 
 Editing a single Package.swift file with hundreds of modules becomes a problem, and there are a bunch of reasons for that. First of all, Xcode can’t handle the dependency graph of such a huge package efficiently. Second, the Package.swift file becomes a real mess with thousands of lines of code that are really hard to navigate.
