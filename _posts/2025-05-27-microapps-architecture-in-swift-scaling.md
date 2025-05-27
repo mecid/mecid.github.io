@@ -21,6 +21,8 @@ Editing a single Package.swift file with hundreds of modules becomes a problem, 
 
 Another approach I can suggest for large and extra-large apps is to use a package-per-feature, where you still use different modules inside a feature package to divide it into layers like domain, UI, etc. In this case, you will have a collection of packages for the app, where every feature lives in a single package.
 
+Whenever a feature A depends on a particular module of feature B, you can only connect that particular module. For example, you might have a Health package with a few modules for models, services, ui, etc. When you work on onboarding features, you might need a health authorization service, and this approach allows you to create a module in the Onboarding package that only depends on the service module of the Health package.
+
 ```swift
 import PackageDescription
 
@@ -43,8 +45,6 @@ let package = Package(
     ]
 )
 ```
-
-Whenever a feature A depends on a particular module of feature B, you can only connect that particular module. For example, you might have a Health package with a few modules for models, services, ui, etc. When you work on onboarding features, you might need a health authorization service, and this approach allows you to create a module in the Onboarding package that only depends on the service module of the Health package.
 
 While a single-package approach works well for small to mid-sized projects, it can become a bottleneck as the number of modules grows. For large and extra-large apps, transitioning to a feature-per-package strategy provides better separation, improved dependency control, and a smoother developer experience.
 
