@@ -13,7 +13,7 @@ Navigation stacks, tabs, inspectors, toolbars, everything is glassy, more rounde
 
 ![glassy-tabs](/public/glassy-tabs.png)
 
-While navigation stacks API didn’t change, the tab navigation provides us with a few new APIs allowing us to improve user experience respecting the new design language. If you still use old TabView APIs, it is a perfect time to refactor your tab navigation. While old APIs also get glassy transformations, the new ones allow us to craft them much better.
+While navigation stacks API didn’t change, the tab navigation provides us with a few new APIs allowing us to improve user experience respecting the new design language. If you still use old *TabView* APIs, it is a perfect time to refactor your tab navigation. While old APIs also get glassy transformations, the new ones allow us to craft them much better.
 
 ```swift
     private var tabNavigation: some View {
@@ -52,11 +52,11 @@ While navigation stacks API didn’t change, the tab navigation provides us with
     }
 ```
 
-As you can see in the example above, I use the new Tab API with role to move the search to the bottom of the screen and separate it from other tabs.
+As you can see in the example above, I use the new *Tab* API with role to move the search to the bottom of the screen and separate it from other tabs.
 
 ![glassy-tabs](/public/glassy-toolbar.png)
 
-Toolbars are also glassy now by default. You can see across the platform that many toolbars are splitted into groups. For this particular case, SwiftUI introduced the new ToolbarSpacer type, allowing us to split toolbars.
+Toolbars are also glassy now by default. You can see across the platform that many toolbars are splitted into groups. For this particular case, SwiftUI introduced the new *ToolbarSpacer* type, allowing us to split toolbars.
 
 ```swift
     @ToolbarContentBuilder private var toolbar: some ToolbarContent {
@@ -95,7 +95,7 @@ Toolbars are also glassy now by default. You can see across the platform that ma
     }
 ```
 
-Buttons also get the new GlassButtonStyle type that you can set via the buttonStyle view modifier.
+Buttons also get the new *GlassButtonStyle* type that you can set via the *buttonStyle* view modifier.
 
 ```swift
 Button {
@@ -106,7 +106,7 @@ Button {
 .buttonStyle(.glass)
 ```
 
-Whenever you create a custom view that you want to make glassy, there’s a special glassEffect view modifier.
+Whenever you create a custom view that you want to make glassy, there’s a special *glassEffect* view modifier.
 
 ```swift
 HStack {
@@ -115,7 +115,7 @@ HStack {
 .glassEffect() 
 ```
 
-Besides the new design APIs, we also gain long-awaited attributed string support in the TextEditor view. Another long-awaited feature was WebView that we also have this year.
+Besides the new design APIs, we also gain long-awaited attributed string support in the *TextEditor* view. Another long-awaited feature was *WebView* that we also have this year.
 
 ```swift
 import WebKit
@@ -132,9 +132,9 @@ struct BrowserView: View {
 }
 ```
 
-The new WebView allows us not only load web pages, but also observe them, customize user agent, etc.
+The new *WebView* allows us not only load web pages, but also observe them, customize user agent, etc.
 
-This is going to be a huge year for SwiftUI on macOS. As Apple noted there is a huge performance improvement for List and other scrollable views on macOS. Apple also introduced the new Instrument template making profiling your SwiftUI apps much easier.
+This is going to be a huge year for SwiftUI on macOS. As Apple noted there is a huge performance improvement for *List* and other scrollable views on macOS. Apple also introduced the new Instruments template making profiling your SwiftUI apps much easier.
 
 During next monthes, I will try to dig into new APIs and share with your more detailed overview of them. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
 
