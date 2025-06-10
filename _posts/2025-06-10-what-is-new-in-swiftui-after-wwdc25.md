@@ -5,6 +5,8 @@ layout: post
 
 The 25th World Wide Developers Conference is here, and it’s the perfect time to explore the most significant changes and additions to the SwiftUI framework. Let’s delve into all the exciting new features Apple has prepared for us this year.
 
+{% include friends.html %}
+
 Apple introduced the new design language called Liquid Glass. Thanks to the declarative nature of SwiftUI, we don’t need to modify our code significantly to redesign our apps and apply the new design concept. All you need is to build your app with Xcode 26, and you will get the new design of your app.
 
 Navigation stacks, tabs, inspectors, toolbars, everything is glassy, more rounded, and transparent now. While we may still need to make some adjustments here and there to enhance the user experience, the framework’s default settings are already quite impressive.
