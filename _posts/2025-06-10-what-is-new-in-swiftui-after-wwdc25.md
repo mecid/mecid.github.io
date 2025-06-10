@@ -13,25 +13,120 @@ Navigation stacks, tabs, inspectors, toolbars, everything is glassy, more rounde
 
 While navigation stacks API didn’t change, the tab navigation provides us with a few new APIs allowing us to improve user experience respecting the new design language. If you still use old TabView APIs, it is a perfect time to refactor your tab navigation. While old APIs also get glassy transformations, the new ones allow us to craft them much better.
 
-======================================================
+```swift
+    private var tabNavigation: some View {
+        TabView {
+            Tab("feed", systemImage: "ruler") {
+                feedTab
+            }
+            
+            Tab("insights", systemImage: "chart.xyaxis.line") {
+                NavigationStack {
+                    InsightsFeatureView()
+                        .navigationTitle("insights")
+                }
+            }
+            
+            Tab("awareness", systemImage: "text.book.closed") {
+                NavigationStack {
+                    AwarenessView()
+                        .navigationTitle("awareness")
+                }
+            }
+            
+            Tab("settings", systemImage: "ruler") {
+                NavigationStack {
+                    SettingsView(settings: settings)
+                        .navigationTitle("settings")
+                }
+            }
+            
+            Tab("search", systemImage: "magnifyingglass", role: .search) {
+                NavigationStack {
+                    SearchFeatureView(store: searchStore)
+                }
+            }
+        }
+    }
+```
 
 As you can see in the example above, I use the new Tab API with role to move the search to the bottom of the screen and separate it from other tabs.
 
 Toolbars are also glassy now by default. You can see across the platform that many toolbars are splitted into groups. For this particular case, SwiftUI introduced the new ToolbarSpacer type, allowing us to split toolbars.
 
-======================================================
+```swift
+    @ToolbarContentBuilder private var toolbar: some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            Button {
+                if isPro {
+                    sheetShown = .gpt
+                } else {
+                    unlockPro()
+                }
+            } label: {
+                Label("gpt", systemImage: "sparkles")
+            }
+            .popoverTip(FeedTip.gpt)
+        }
+        
+        ToolbarItemGroup(placement: .topBarTrailing) {
+            Button("editor", systemImage: "pencil") {
+                sheetShown = .editor
+            }
+            .keyboardShortcut("n")
+        }
+        
+        ToolbarSpacer(.fixed, placement: .topBarTrailing)
+        
+        ToolbarItemGroup(placement: .topBarTrailing) {
+            Button(LocalizedStringKey(HKQuantityType.bloodGlucose.identifier), systemImage: "carrot") {
+                sheetShown = .bloodGlucose
+            }
+            .buttonStyle(.glass)
+            
+            Button(LocalizedStringKey(HKQuantityType.bodyMass.identifier), systemImage: "scalemass") {
+                sheetShown = .bodyMass
+            }
+        }
+    }
+```
 
 Buttons also get the new GlassButtonStyle type that you can set via the buttonStyle view modifier.
 
-======================================================
+```swift
+Button {
+    // action
+} label: {
+    Label("add", systemImage: "plus")
+}
+.buttonStyle(.glass)
+```
 
 Whenever you create a custom view that you want to make glassy, there’s a special glassEffect view modifier.
 
-======================================================
+```swift
+HStack {
+   // views
+}
+.glassEffect() 
+```
 
 Besides the new design APIs, we also gain long-awaited attributed string support in the TextEditor view. Another long-awaited feature was WebView that we also have this year.
 
-======================================================
+```swift
+import WebKit
+
+struct BrowserView: View {
+    @State var page = WebPage()
+    
+    var body: some View {
+        WebView(page)
+            .onAppear {
+                page.load(URLRequest(url: URL(staticString: "https://google.com")))
+            }
+    }
+}
+```
 
 The new WebView allows us not only load web pages, but also observe them, customize user agent, etc.
 
