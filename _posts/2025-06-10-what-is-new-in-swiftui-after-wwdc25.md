@@ -11,6 +11,8 @@ Apple introduced the new design language called Liquid Glass. Thanks to the decl
 
 Navigation stacks, tabs, inspectors, toolbars, everything is glassy, more rounded, and transparent now. While we may still need to make some adjustments here and there to enhance the user experience, the framework’s default settings are already quite impressive.
 
+![glassy-tabs](/public/glassy-tabs.png)
+
 While navigation stacks API didn’t change, the tab navigation provides us with a few new APIs allowing us to improve user experience respecting the new design language. If you still use old TabView APIs, it is a perfect time to refactor your tab navigation. While old APIs also get glassy transformations, the new ones allow us to craft them much better.
 
 ```swift
@@ -51,6 +53,8 @@ While navigation stacks API didn’t change, the tab navigation provides us with
 ```
 
 As you can see in the example above, I use the new Tab API with role to move the search to the bottom of the screen and separate it from other tabs.
+
+![glassy-tabs](/public/glassy-toolbar.png)
 
 Toolbars are also glassy now by default. You can see across the platform that many toolbars are splitted into groups. For this particular case, SwiftUI introduced the new ToolbarSpacer type, allowing us to split toolbars.
 
