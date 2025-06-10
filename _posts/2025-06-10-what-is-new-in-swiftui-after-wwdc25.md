@@ -2,6 +2,7 @@
 title: What is new in SwiftUI after WWDC25
 layout: post
 category: Meta
+image: /public/wwdc25.jpg
 ---
 
 The 25th World Wide Developers Conference is here, and it’s the perfect time to explore the most significant changes and additions to the SwiftUI framework. Let’s delve into all the exciting new features Apple has prepared for us this year.
