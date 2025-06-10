@@ -35,4 +35,5 @@ The new WebView allows us not only load web pages, but also observe them, custom
 
 This is going to be a huge year for SwiftUI on macOS. As Apple noted there is a huge performance improvement for List and other scrollable views on macOS. Apple also introduced the new Instrument template making profiling your SwiftUI apps much easier.
 
-During next monthes, I will try to dig into new APIs and share with your more detailed overview of them. 
+During next monthes, I will try to dig into new APIs and share with your more detailed overview of them. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+
