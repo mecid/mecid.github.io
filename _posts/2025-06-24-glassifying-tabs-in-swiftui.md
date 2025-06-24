@@ -1,6 +1,7 @@
 ---
 title: Glassifying tabs in SwiftUI
 layout: post
+category: Mastering SwiftUI views
 ---
 
 One of the most important changes presented during WWDC 25 was the new design language used across all Apple platforms called Liquid Glass. Tabs play a significant role in the new design and provide new ways of interacting with them. This week, we will learn about new APIs that SwiftUI provides us to handle new tab interactions.
