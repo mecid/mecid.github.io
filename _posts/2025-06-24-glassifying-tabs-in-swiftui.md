@@ -75,7 +75,7 @@ The *Tab* type also provides us the *role* parameter which we can use to set a s
 
 ![glassy-tabs](/public/glassy-tabs.png)
 
-Most of my apps use tabs on iOS and watchOS while using sidebar navigation on macOS and iPadOS. SwiftUI simplifies this significantly by introducing the new *sidebarAdaptable* style. You don’t need manually create the sidebar, it automatically replace tabs with sidebar on iPadOS and macOS.
+Most of my apps use tabs on iOS and watchOS while using sidebar navigation on macOS and iPadOS. SwiftUI simplifies this significantly by introducing the new *sidebarAdaptable* style. You don’t need manually create the sidebar, it automatically replaces tabs with sidebar on iPadOS and macOS.
 
 ```swift
 struct ContentView: View {
