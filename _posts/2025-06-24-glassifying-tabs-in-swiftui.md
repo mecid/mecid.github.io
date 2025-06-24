@@ -145,4 +145,4 @@ struct ContentView: View {
 }
 ```
 
-Today we learned how to adapt the new Liquid Glass design language to the tab navigation which is the most popular way of structuring mobile apps.
+Today we learned how to adapt the new Liquid Glass design language to the tab navigation which is the most popular way of structuring mobile apps. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
