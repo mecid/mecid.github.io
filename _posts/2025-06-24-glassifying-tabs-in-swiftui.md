@@ -71,7 +71,7 @@ struct ContentView: View {
 }
 ```
 
-The *Tab* type also provides us the *role* parameter which we can use to set a specific role to the tab. At the moment, the only available instance of the *TabRole* type is the *search*. The search role allows the system to display search tab in a different way. For example, it is separated on iOS from all other tabs.
+The *Tab* type also provides us the *role* parameter which we can use to set a specific role on the tab. At the moment, the only available instance of the *TabRole* type is the *search*. The search role allows the system to display search tab in a different way. For example, it is separated on iOS from all other tabs.
 
 ![glassy-tabs](/public/glassy-tabs.png)
 
