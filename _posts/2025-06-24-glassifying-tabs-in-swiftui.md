@@ -25,7 +25,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we still use the old TabView, but instead of placing tab content inside the TabView we wrap it with Tab type. We can also programmatically control the tab selection by using TabView with Tab in pair.
+As you can see in the example above, we still use the old *TabView*, but instead of placing tab content inside the *TabView* we wrap it with *Tab* type. We can also programmatically control the tab selection by using *TabView* with *Tab* in pair.
 
 ```swift
 struct ContentView: View {
@@ -45,7 +45,7 @@ struct ContentView: View {
 }
 ```
 
-This way we can bind the tab selection to the selectedTabIndex which uses the SceneStorage property wrapper to rescue the selected tab while state restoration of the app.
+This way we can bind the tab selection to the *selectedTabIndex* which uses the *SceneStorage* property wrapper to rescue the selected tab while state restoration of the app.
 
 ```swift
 struct ContentView: View {
@@ -69,9 +69,9 @@ struct ContentView: View {
 }
 ```
 
-The Tab type also provides us the role parameter which we can use to set a specific role to the tab. At the moment, the only available instance of the TabRole type is the search. The search role allows the system to display search tab in a different way. For example, it is separated on iOS from all other tabs.
+The *Tab* type also provides us the *role* parameter which we can use to set a specific role to the tab. At the moment, the only available instance of the *TabRole* type is the *search*. The search role allows the system to display search tab in a different way. For example, it is separated on iOS from all other tabs.
 
-Most of my apps use tabs on iOS, watchOS while using sidebar navigation on macOS and iPadOS. SwiftUI simplifies this significantly by introducing the new sidebarAdaptable style. You don’t need manually create the sidebar, it automatically replace tabs with sidebar on iPadOS and macOS.
+Most of my apps use tabs on iOS, watchOS while using sidebar navigation on macOS and iPadOS. SwiftUI simplifies this significantly by introducing the new *sidebarAdaptable* style. You don’t need manually create the sidebar, it automatically replace tabs with sidebar on iPadOS and macOS.
 
 ```swift
 struct ContentView: View {
@@ -92,7 +92,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see, all you need to do is use the tabViewStyle view modifier with the sidebarAdaptable value. Another interesting design concept that the Liquid Glass introduced is the tab accessory view. Tab accessory view is displayed on top of tabs and is always visible. It is approachable for global status or global action. For example, it indicates the current playing song in Apple Music apps and controls to pause or skip it.
+As you can see, all you need to do is use the *tabViewStyle* view modifier with the *sidebarAdaptable* value. Another interesting design concept that the Liquid Glass introduced is the tab accessory view. Tab accessory view is displayed on top of tabs and is always visible. It is approachable for global status or global action. For example, it indicates the current playing song in Apple Music apps and controls to pause or skip it.
 
 ```swift
 struct ContentView: View {
@@ -118,7 +118,7 @@ struct ContentView: View {
 }
 ```
 
-SwiftUI provides the new tabViewBottomAccessory view modifier, allowing us to set up a tab accessory view. Another interesting interaction that Liquid Glass introduced is the tab minimization. So, you can minimize tabs and display only the current one while the user is scrolling the content. We can control the tab minimization behavior by using the new tabBarMinimizeBehavior view modifier.
+SwiftUI provides the new *tabViewBottomAccessory* view modifier, allowing us to set up a tab accessory view. Another interesting interaction that Liquid Glass introduced is the tab minimization. So, you can minimize tabs and display only the current one while the user is scrolling the content. We can control the tab minimization behavior by using the new *tabBarMinimizeBehavior* view modifier.
 
 ```swift
 struct ContentView: View {
