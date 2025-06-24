@@ -5,6 +5,8 @@ layout: post
 
 One of the most important changes presented during WWDC 25 was the new design language used across all Apple platforms called Liquid Glass. Tabs play a significant role in the new design and provide new ways of interacting with them. This week, we will learn about new APIs that SwiftUI provides us to handle new tab interactions.
 
+{% include friends.html %}
+
 SwiftUI introduced a slightly new API for managing tabs earlier. This year, that API was adopted to the new Liquid Glass design. You still can use the previous API, but in that case, you can’t take advantage of all the new interactions. So, I suggest you migrate to the new Tab API if you support iOS 18 and later.
 
 ```swift
