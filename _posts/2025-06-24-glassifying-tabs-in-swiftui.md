@@ -2,6 +2,7 @@
 title: Glassifying tabs in SwiftUI
 layout: post
 category: Mastering SwiftUI views
+image: /public/glassy-tabs.png
 ---
 
 One of the most important changes presented during WWDC 25 was the new design language used across all Apple platforms called Liquid Glass. Tabs play a significant role in the new design and provide new ways of interacting with them. This week, we will learn about new APIs that SwiftUI provides us to handle new tab interactions.
@@ -71,6 +72,8 @@ struct ContentView: View {
 ```
 
 The *Tab* type also provides us the *role* parameter which we can use to set a specific role to the tab. At the moment, the only available instance of the *TabRole* type is the *search*. The search role allows the system to display search tab in a different way. For example, it is separated on iOS from all other tabs.
+
+![glassy-tabs](/public/glassy-tabs.png)
 
 Most of my apps use tabs on iOS, watchOS while using sidebar navigation on macOS and iPadOS. SwiftUI simplifies this significantly by introducing the new *sidebarAdaptable* style. You don’t need manually create the sidebar, it automatically replace tabs with sidebar on iPadOS and macOS.
 
