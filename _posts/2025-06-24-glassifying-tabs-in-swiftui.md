@@ -55,15 +55,17 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selectedTabIndex) {
-            Tab("feed", systemImage: "list.star", value: 0) {
+            Tab("feed", systemImage: "ruler", value: 0) {
                 // content
             }
+            
+            // Other tabs
             
             Tab("search", systemImage: "magnifyingglass", value: 1, role: .search) {
                 // content
             }
             
-            Tab("settings", systemImage: "gear", value: 2) {
+            Tab("settings", systemImage: "ruler", value: 2) {
                 // content
             }
         }
