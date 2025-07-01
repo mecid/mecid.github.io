@@ -159,3 +159,5 @@ struct ToolsToolbar: ToolbarContent {
 SwiftUI introduced the new ToolbarSpacer type allowing us to split toolbar items and place the space between them. You can apply fixed or flexible spacing between toolbar items.
 
 ![glassy-toolbar](/public/glassy-toolbar-2.png)
+
+ Today, we learned how to make our toolbars supporting the new Liquid Glass design language. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
