@@ -75,7 +75,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see, we use the *labelStyle* view modifier with *toolbar* style. The *toolbar* style doesn’t come as the part of SwiftUI framework; instead, we create it manually.
+As you can see, we use the *labelStyle* view modifier with the *toolbar* style. The *toolbar* style doesn’t come as the part of SwiftUI framework; instead, we create it manually.
 
 ```swift
 struct ToolbarLabelStyle: LabelStyle {
