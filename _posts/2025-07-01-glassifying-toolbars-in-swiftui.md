@@ -5,7 +5,7 @@ image: /public/glassy-toolbar-2.png
 category: Mastering SwiftUI views
 ---
 
-Liquid Glass is the new design language Apple is using across all of its platforms. The look and feel of tabs were the major change that we covered last week. This week we will focus on another major change related to toolbars.
+Liquid Glass is the new design language Apple is using across all of its platforms. The look and feel of tabs were the major change that we covered last week. This week we will focus on another significant change related to toolbars.
 
 {% include friends.html %}
 
