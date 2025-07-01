@@ -7,6 +7,8 @@ category: Mastering SwiftUI views
 
 Liquid Glass is the new design language Apple is using across all of its platforms. The look and feel of tabs were the major change that we covered last week. This week we will focus on another major change related to toolbars.
 
+{% include friends.html %}
+
 Toolbars changed significantly in Liquid Glass. They have a new glassy background, they can be split into groups, etc. Fortunately, similar to the tabs API, the toolbar API doesn’t change a lot and takes the Liquid Glass look and feel without any code change. But you still can use the new APIs to fine-tune behaviour. 
 
 ```swift
