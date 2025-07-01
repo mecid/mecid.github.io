@@ -133,7 +133,7 @@ struct ContentView: View {
 
 Liquid Glass allows us to tint toolbar items using the *tint* view modifier and badge them using the *badge* view modifier. But use it wisely, it is not something you are going to use often, instead rely on toolbar placement API.
 
-The new Liquid Glass provides us the new toolbar grouping functionality. For example, you can group a bunch of secondary actions together by splitting them from primary action.
+The new Liquid Glass provides us the new toolbar grouping functionality. For example, you can group a bunch of secondary actions together by splitting them from the primary action.
 
 ```swift
 struct ToolsToolbar: ToolbarContent {
