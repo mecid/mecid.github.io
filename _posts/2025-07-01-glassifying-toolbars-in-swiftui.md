@@ -37,6 +37,8 @@ struct ContentView: View {
 
 As you can see in the example above, we use the same toolbar view modifier in pair with the ToolbarItem type. The new design language moves away from text-based toolbar items to symbol-based. So, remember to use buttons with both images and text labels.
 
+![glassy-toolbar](/public/glassy-toolbar-1.png)
+
 Whenever you support platforms for Liquid Glass, you may need to keep the old text-based toolbar items. You can easily achieve that by using the labelStyle view modifier.
 
 ```swift
@@ -151,3 +153,5 @@ struct ToolsToolbar: ToolbarContent {
 ```
 
 SwiftUI introduced the new ToolbarSpacer type allowing us to split toolbar items and place the space between them. You can apply fixed or flexible spacing between toolbar items.
+
+![glassy-toolbar](/public/glassy-toolbar-2.png)
