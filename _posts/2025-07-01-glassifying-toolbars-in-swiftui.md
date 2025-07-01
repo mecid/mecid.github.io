@@ -39,11 +39,11 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we use the same toolbar view modifier in pair with the ToolbarItem type. The new design language moves away from text-based toolbar items to symbol-based. So, remember to use buttons with both images and text labels.
+As you can see in the example above, we use the same *toolbar* view modifier in pair with the *ToolbarItem* type. The new design language moves away from text-based toolbar items to symbol-based. So, remember to use buttons with both images and text labels.
 
 ![glassy-toolbar](/public/glassy-toolbar-1.png)
 
-Whenever you support platforms for Liquid Glass, you may need to keep the old text-based toolbar items. You can easily achieve that by using the labelStyle view modifier.
+Whenever you support platforms for Liquid Glass, you may need to keep the old text-based toolbar items. You can easily achieve that by using the *labelStyle* view modifier.
 
 ```swift
 struct ContentView: View {
@@ -75,7 +75,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see, we use the labelStyle view modifier with toolbarStyle. The toolbarStyle doesn’t come as a part of SwiftUI framework; instead, we create it manually.
+As you can see, we use the *labelStyle* view modifier with *toolbar* style. The *toolbar* style doesn’t come as the part of SwiftUI framework; instead, we create it manually.
 
 ```swift
 struct ToolbarLabelStyle: LabelStyle {
@@ -97,7 +97,7 @@ extension LabelStyle where Self == ToolbarLabelStyle {
 
 It is pretty easy to define a custom label style. We check the availability of the Liquid Glass and apply necessary styling. We also mark the style as obsolete in iOS 26, which will be an error when you change the target of your project to iOS 26, so it becomes unnecessary and you can remove it.
 
-ToolbarItemPlacement become really important while adopting Liquid Glass, because it controls not only placement but also the way it looks. For example, we use the confirmationAction placement, and it applies the glassProminent button style.
+*ToolbarItemPlacement* become really important while adopting Liquid Glass, because it controls not only placement but also the way it looks. For example, we use the *confirmationAction* placement, and it applies the *glassProminent* button style.
 
 ```swift
 struct ContentView: View {
@@ -131,7 +131,7 @@ struct ContentView: View {
 }
 ```
 
-Liquid Glass allows us to tint toolbar items using the tint view modifier and badge them using the badge view modifier. But use it wisely, it is not something you are going to use often, instead rely on toolbar placement API.
+Liquid Glass allows us to tint toolbar items using the *tint* view modifier and badge them using the *badge* view modifier. But use it wisely, it is not something you are going to use often, instead rely on toolbar placement API.
 
 The new Liquid Glass provides us the new toolbar grouping functionality. For example, you can group a bunch of secondary actions together by splitting them from primary action.
 
@@ -156,7 +156,7 @@ struct ToolsToolbar: ToolbarContent {
 }
 ```
 
-SwiftUI introduced the new ToolbarSpacer type allowing us to split toolbar items and place the space between them. You can apply fixed or flexible spacing between toolbar items.
+SwiftUI introduced the new *ToolbarSpacer* type allowing us to split toolbar items and place the space between them. You can apply *fixed* or *flexible* spacing between toolbar items.
 
 ![glassy-toolbar](/public/glassy-toolbar-2.png)
 
