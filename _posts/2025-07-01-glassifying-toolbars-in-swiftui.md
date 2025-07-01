@@ -43,7 +43,7 @@ As you can see in the example above, we use the same *toolbar* view modifier in 
 
 ![glassy-toolbar](/public/glassy-toolbar-1.png)
 
-Whenever you support platforms for Liquid Glass, you may need to keep the old text-based toolbar items. You can easily achieve that by using the *labelStyle* view modifier.
+Whenever you support platforms before Liquid Glass, you may need to keep the old text-based toolbar items. You can easily achieve that by using the *labelStyle* view modifier.
 
 ```swift
 struct ContentView: View {
