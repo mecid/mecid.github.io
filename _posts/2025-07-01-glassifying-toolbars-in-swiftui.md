@@ -160,4 +160,4 @@ SwiftUI introduced the new *ToolbarSpacer* type allowing us to split toolbar ite
 
 ![glassy-toolbar](/public/glassy-toolbar-2.png)
 
- Today, we learned how to make our toolbars supporting the new Liquid Glass design language. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+ To wrap up, Liquid Glass marks a significant evolution in Apple’s design language, and toolbars are at the center of this transformation. With their new glassy appearance, grouped layouts, and symbolic button emphasis, toolbars now offer a more modern and visually cohesive experience across platforms. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
