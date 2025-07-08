@@ -82,4 +82,6 @@ struct IntegerView: View {
 
 Types annotated with the *Animatable* macro get conformance to the *Animatable* protocol automatically; you don’t need to conform manually. The macro doesn’t affect its conformance whenever the type already conforms to the *Animatable* protocol.
 
+> To learn more about the *Animatable* protocol in SwiftUI, take a look at my ["The magic of Animatable values in SwiftUI"](/2020/06/17/the-magic-of-animatable-values-in-swiftui/) post.
+
 The new *Animatable* macro is another great addition to SwiftUI that makes animations even easier to implement. With just a simple annotation, you can unlock smooth transitions for your view’s properties without manually conforming to the *Animatable* protocol. And when you need more control, the *AnimatableIgnored* macro lets you exclude properties from animation. 
