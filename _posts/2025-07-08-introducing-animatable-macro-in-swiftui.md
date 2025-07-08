@@ -34,7 +34,7 @@ struct ContentView: View {
 }
 ```
 
-As soon as you want to animate it from 0 to 100, you will notice that SwiftUI doesn’t know how to enumerate the value and simply animates text change. We need somehow to indicate that the number property should be enumerated to its new value. For this particular case, the SwiftUI framework introduced the *Animatable* protocol that we can use to mark animatable properties of a view type.
+As soon as you want to animate it from 0 to 100, you will notice that SwiftUI doesn’t know how to enumerate the value and simply animates text change. We need somehow to indicate that the *number* property should be enumerated to its new value. For this particular case, the SwiftUI framework introduced the *Animatable* protocol that we can use to mark animatable properties of a view type.
 
 ![video](/public/am.mp4)
 
