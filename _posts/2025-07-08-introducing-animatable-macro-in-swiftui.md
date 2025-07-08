@@ -51,7 +51,7 @@ struct IntegerView: View {
 }
 ```
 
-As you can see, there are a few changes on the *IntegerView*. First, we have added the *Animatable* macro. Second, we have changed the type of the number property from *Int* to *Float*. We need that because *Animatable* macro only works with types conforming to the *VectorArithmetic* protocol.
+As you can see, there are a few changes on the *IntegerView*. First, we have added the *Animatable* macro. Second, we have changed the type of the *number* property from *Int* to *Float*. We need that because *Animatable* macro only works with types conforming to the *VectorArithmetic* protocol.
 
 ```swift
 struct ContentView: View {
