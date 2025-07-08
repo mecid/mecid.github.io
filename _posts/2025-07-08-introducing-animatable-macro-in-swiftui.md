@@ -2,6 +2,7 @@
 title: Introducing Animatable macro in SwiftUI
 layout: post
 category: Interactions
+image: /public/swiftui.png
 ---
 
 Easy-peasy animations were always one of the strongest points of the SwiftUI framework. This time Apple makes them even easier by introducing a new *Animatable* macro. This week, we will learn when and how to use the new *Animatable* macro.
