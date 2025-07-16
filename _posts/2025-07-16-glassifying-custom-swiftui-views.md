@@ -57,7 +57,7 @@ struct CustomView: View {
                 .glassEffect(isEnabled ? .regular : .identity)
         }
         .toolbar {
-            Toggle("glass effect", isOn: $isEnabled)
+            Toggle("Glass Effect", isOn: $isEnabled)
         }
     }
 }
