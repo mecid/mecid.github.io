@@ -131,3 +131,4 @@ struct CustomView: View {
     }
 }
 ```
+Applying the glassEffect view modifier to custom views in SwiftUI is a powerful and simple way to embrace the Liquid Glass design language. With just one line of code, you can give your UI a modern, dynamic look that responds to its surroundings. 
