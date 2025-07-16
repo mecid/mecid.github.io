@@ -1,6 +1,7 @@
 ---
 title: Glassifying custom SwiftUI views
 layout: post
+image: /public/glass-clear.png
 ---
 We already talked about glassifying tabs and toolbars in SwiftUI. This week, we will continue the topic of the new Liquid Glass design language and will talk about applying this concept to custom views.
 
