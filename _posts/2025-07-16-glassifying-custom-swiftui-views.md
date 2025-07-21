@@ -88,7 +88,7 @@ struct CustomView: View {
 }
 ```
 
-The *tint* function blends into the glass the color you provide. There is also the *interactive* function on the *Glass* type, allowing us to make any of the provided styles more interactive. By default, all of them reflect the views behind, but whenever you apply the *interactive* function, it makes them even more aggressive to the content behind.
+The *tint* function blends into the glass the color you provide. There is also the *interactive* function on the *Glass* type, allowing us to make any of the provided styles more interactive. By default, all of them reflect the views behind, but whenever you apply the *interactive* function, it makes them even more aggressive to the content behind and handles gestures like tap and drag.
 
 ```swift
 struct CustomView: View {
