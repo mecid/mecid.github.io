@@ -108,7 +108,7 @@ The *spacing* parameter allows us to tune the spacing amount in the layout after
 
 ![glass-container-morphing](/public/glass-container-2.png)
 
-There is another option allowing us to combine glass shapes together without relying on spacing. The *glassEffectUnion* view modifier allows us to combine a set of glass effects with the same identifier. It might be useful whenever views have too big a distance between them to rely on the spacing parameter and you want to manually indicate that glass effects of these particular views must be combined.
+There is another option allowing us to combine glass shapes together without relying on spacing. The *glassEffectUnion* view modifier allows us to combine a set of glass effects with the same identifier. It might be useful whenever views have too big distance between them to rely on the spacing parameter and you want to manually indicate that glass effects of these particular views must be combined.
 
 ```swift
 struct ContentView: View {
