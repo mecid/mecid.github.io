@@ -133,3 +133,5 @@ struct ContentView: View {
 ```
 
 The glassEffectUnion view modifier combines glasses only when they have the same effect types, similar shapes, and identifiers. Keep this in mind when you try to combine glass effects manually.
+
+By using GlassEffectContainer, you enable interaction between multiple glass views, improving both the visual consistency and rendering performance. Parameters like spacing allow you to fine-tune morphing behavior, while glassEffectUnion gives you precise control over how distant views should visually merge. Together, these tools make it possible to create sophisticated glass-like UI elements that feel fluid, interactive, and polished—just the way SwiftUI intended.
