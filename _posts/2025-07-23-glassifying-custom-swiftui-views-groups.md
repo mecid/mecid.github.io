@@ -71,6 +71,8 @@ struct ContentView: View {
 }
 ```
 
+![glass-container-morphing](/public/glass-container-1.png)
+
 All the glass effects inside the *GlassEffectContainer* can interact with each other and reflect the light. *GlassEffectContainer* not only improves the performance of rendering multiple glass effects but also allows us to morph in and out shapes of glasses.
 
 There is a special *spacing* parameter on the *GlassEffectContainer* allowing you to control the distance between two glasses that will morph after this distance.
@@ -103,6 +105,8 @@ struct ContentView: View {
 ```
 
 The *spacing* parameter allows us to tune the spacing amount in the layout after which glass shapes should morph in or out. SwiftUI allows us to animate the morphing behavior easily, as many other properties of views.
+
+![glass-container-morphing](/public/glass-container-2.png)
 
 There is another option allowing us to combine glass shapes together without relying on spacing. The *glassEffectUnion* view modifier allows us to combine a set of glass effects with the same identifier. It might be useful whenever views have too big a distance between them to rely on the spacing parameter and you want to manually indicate that glass effects of these particular views must be combined.
 
