@@ -44,13 +44,7 @@ You can apply the glassEffect view modifier individually on a per-view basis. Un
 struct ContentView: View {
     var body: some View {
         ScrollView {
-            Color.red.frame(height: 300)
-            Color.yellow.frame(height: 300)
-            Color.green.frame(height: 300)
-            Color.black.frame(height: 300)
-            Color.orange.frame(height: 300)
-            Color.blue.frame(height: 300)
-            Color.brown.frame(height: 300)
+            // ...
         }
         .safeAreaInset(edge: .bottom) {
             GlassEffectContainer {
@@ -81,13 +75,7 @@ There is a special spacing parameter on the GlassEffectContainer allowing you to
 struct ContentView: View {
     var body: some View {
         ScrollView {
-            Color.red.frame(height: 300)
-            Color.yellow.frame(height: 300)
-            Color.green.frame(height: 300)
-            Color.black.frame(height: 300)
-            Color.orange.frame(height: 300)
-            Color.blue.frame(height: 300)
-            Color.brown.frame(height: 300)
+            // ...
         }
         .safeAreaInset(edge: .bottom) {
             GlassEffectContainer(spacing: 32) {
@@ -119,13 +107,7 @@ struct ContentView: View {
     @Namespace var tools
     var body: some View {
         ScrollView {
-            Color.red.frame(height: 300)
-            Color.yellow.frame(height: 300)
-            Color.green.frame(height: 300)
-            Color.black.frame(height: 300)
-            Color.orange.frame(height: 300)
-            Color.blue.frame(height: 300)
-            Color.brown.frame(height: 300)
+            // ...
         }
         .safeAreaInset(edge: .bottom) {
             GlassEffectContainer {
