@@ -2,6 +2,7 @@
 title: Glassifying custom SwiftUI views. Groups
 layout: post
 category: Mastering SwiftUI views
+image: /public/glass-container-2.png
 ---
 
 Glassifying custom views can be very easy using the *glassEffect* view modifier. It is a one-shot view modifier that handles everything for you. But things can become quite complicated when you try to glassify a group of views. Today, we will talk about glassifying groups of views in SwiftUI.
