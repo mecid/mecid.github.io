@@ -22,6 +22,8 @@ func startObservation() {
 
 While the Observation framework offers the *withObservationTracking* function, which allows us to manually monitor changes in an observable type, it still has some limitations. 
 
+> To learn more about Observation framework, take a look at my ["Mastering Observation framework in Swift"](/2023/10/03/mastering-observable-framework-in-swift/) post.
+
 First of all, you have to manually initiate recursive observation, because it only fires for the first change. Second, it doesn’t fit into the Swift Concurrency world, because you can’t use it as an async stream inside the asynchronous for loop. Fortunately, Apple fixed all of these by introducing the new *Observations* type. It is designed to work in pair with the *Observable* macro.
 
 ```swift
