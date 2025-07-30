@@ -4,7 +4,7 @@ layout: post
 category: Data Flow
 ---
 
-Apple introduced the Observation framework a few years ago. The Observation framework became the main tool for building observable models, replacing the Combine framework. This week, we will talk about a new piece of the framework called Observations.
+Apple introduced the Observation framework a few years ago. The Observation framework became the main tool for building observable models, replacing the Combine framework. This week, we will talk about a new piece of the framework called *Observations*.
 
 {% include friends.html %}
 
