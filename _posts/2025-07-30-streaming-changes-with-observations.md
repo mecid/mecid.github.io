@@ -24,7 +24,7 @@ While the Observation framework offers the *withObservationTracking* function, w
 
 > To learn more about Observation framework, take a look at my ["Mastering Observation framework in Swift"](/2023/10/03/mastering-observable-framework-in-swift/) post.
 
-First of all, you have to manually initiate recursive observation, because it only fires for the first change. Second, it doesn’t fit into the Swift Concurrency world, because you can’t use it as an async stream inside the asynchronous for loop. Fortunately, Apple fixed all of these by introducing the new *Observations* type. It is designed to work in pair with the *Observable* macro.
+First of all, you have to manually initiate recursive observation, because it only fires for the first change. Second, it doesn’t fit into the Swift Concurrency world, because you can’t use it as an async stream inside the asynchronous **for-loop**. Fortunately, Apple fixed all of these by introducing the new *Observations* type. It is designed to work in pair with the *Observable* macro.
 
 ```swift
 let store = Store() // Observable
@@ -47,11 +47,11 @@ for await state in streamOfStates {
 }
 ```
 
-The *Observations* type conforms to the *AsyncSequence* protocol, allowing us to use instances of this type inside asynchronous for loops. The closure that we use to initiate the instance of the *Observations* type implicitly observes all the properties of observable instances that you touch.
+The *Observations* type conforms to the *AsyncSequence* protocol, allowing us to use instances of this type inside asynchronous **for-loop**. The closure that we use to initiate the instance of the *Observations* type implicitly observes all the properties of observable instances that you touch.
 
 As you can see in the example below, we create a new state inside the closure. We touch the *items* and *isLoading* properties of the *Store* type conforming to the *Observable* protocol. 
 
-We observe instances of the *State* type within the async for loop. Whenever the *items* and *isLoading* properties change, it emits a new instance of the *State* type, which we asynchronously retrieve within the loop.
+We observe instances of the *State* type within the async **for-loop**. Whenever the *items* and *isLoading* properties change, it emits a new instance of the *State* type, which we asynchronously retrieve within the loop.
 
 The *Observations* type is intelligent enough to utilize transactional updates, which means it doesn’t emit a value for each change. It can group updates when you have changes in both the *items* and *isLoading* properties together.
 
