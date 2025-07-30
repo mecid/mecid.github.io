@@ -5,6 +5,8 @@ layout: post
 
 Apple introduced the Observation framework a few years ago. The Observation framework became the main tool for building observable models, replacing the Combine framework. This week, we will talk about a new piece of the framework called Observations.
 
+{% include friends.html %}
+
 The primary drawback of the Observation framework was its inability to convert observable types into asynchronous streams, allowing us to observe them in the same manner as we do with the *Publisher* in Combine.
 
 ```swift
