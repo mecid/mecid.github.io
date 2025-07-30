@@ -51,7 +51,7 @@ The *Observations* type conforms to the *AsyncSequence* protocol, allowing us to
 
 As you can see in the example below, we create a new state inside the closure. We touch the *items* and *isLoading* properties of the *Store* type conforming to the *Observable* protocol. 
 
-We observe instances of the *State* type within the async **for-loop**. Whenever the *items* and *isLoading* properties change, it emits a new instance of the *State* type, which we asynchronously retrieve within the loop.
+We observe emited instances of the *State* type within the async **for-loop**. Whenever the *items* and *isLoading* properties change, it emits a new instance of the *State* type, which we asynchronously retrieve within the loop.
 
 The *Observations* type is intelligent enough to utilize transactional updates, which means it doesn’t emit a value for each change. It can group updates when you have changes in both the *items* and *isLoading* properties together.
 
