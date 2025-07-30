@@ -72,4 +72,4 @@ for await items in store.stream(of: \.items) {
 }
 ```
 
-The introduction of the *Observations* type marks a significant improvement in Swift’s data observation capabilities, especially for developers embracing Swift Concurrency. It bridges the gap between reactive-style updates and modern asynchronous patterns, making it easier to build clean, efficient, and responsive UIs.
+The introduction of the *Observations* type marks a significant improvement in Swift’s data observation capabilities, especially for developers embracing Swift Concurrency. It bridges the gap between reactive-style updates and modern asynchronous patterns, making it easier to build clean, efficient, and responsive UIs. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
