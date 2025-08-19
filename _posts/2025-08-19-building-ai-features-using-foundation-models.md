@@ -7,6 +7,8 @@ image: /public/fm.png
 
 Apple introduced the brand-new Foundational Models framework, providing type-safe APIs for using Apple Intelligence models in your apps. This week, we will learn how to use this new framework while building AI features in your apps.
 
+{% include friends.html %}
+
 First of all, we should import the Foundation Models framework and check the availability on the device. Not every device supports Apple Intelligence features. So we should keep it in mind while building AI features.
 
 ```swift
