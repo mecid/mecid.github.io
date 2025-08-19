@@ -89,8 +89,10 @@ struct Intelligence {
         }
         
         let session = LanguageModelSession(instructions: instructions)
+        
         let seed = UInt64(Calendar.current.component(.dayOfYear, from: .now))
-        let options = GenerationOptions(sampling: .random(top: 10), temperature: 0.7)
+        let sampling = GenerationOptions.SamplingMode.random(top: 10, seed: seed)
+        let options = GenerationOptions(sampling: sampling, temperature: 0.7)
         
         let response = try await session.respond(to: input, options: options)
         return response.content
