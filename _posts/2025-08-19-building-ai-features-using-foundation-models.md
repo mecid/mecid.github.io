@@ -33,19 +33,15 @@ For this case, the SystemLanguageModel type provides us the availability propert
 import FoundationModels
 
 struct Intelligence {
-    public func generate(_ input: String) async -> String {
+    public func generate(_ input: String) async throws -> String {
         guard SystemLanguageModel.default.isAvailable else {
             return input
         }
         
         let session = LanguageModelSession()
         
-        do {
-            let response = try await session.respond(to: input)
-            return response.content
-        } catch {
-            return input
-        }
+        let response = try await session.respond(to: input)
+        return response.content
     }
 }
 ```
@@ -62,19 +58,15 @@ struct Intelligence {
         You are a healthy lifestyle coach. Write a recommendation. Keep it short, positive and inspiring. Respond only with the final recommendation, no explanations.
     """
     
-    public func generate(_ input: String) async -> String {
+    public func generate(_ input: String) async throws -> String {
         guard SystemLanguageModel.default.isAvailable else {
             return input
         }
         
         let session = LanguageModelSession(instructions: instructions)
         
-        do {
-            let response = try await session.respond(to: input)
-            return response.content
-        } catch {
-            return input
-        }
+        let response = try await session.respond(to: input)
+        return response.content
     }
 }
 ```
@@ -91,7 +83,7 @@ struct Intelligence {
         You are a healthy lifestyle coach. Write a recommendation. Keep it short, positive and inspiring. Respond only with the final recommendation, no explanations.
     """
     
-    public func generate(_ input: String) async -> String {
+    public func generate(_ input: String) async throws -> String {
         guard SystemLanguageModel.default.isAvailable else {
             return input
         }
@@ -100,12 +92,8 @@ struct Intelligence {
         let seed = UInt64(Calendar.current.component(.dayOfYear, from: .now))
         let options = GenerationOptions(sampling: .random(top: 10), temperature: 0.7)
         
-        do {
-            let response = try await session.respond(to: input, options: options)
-            return response.content
-        } catch {
-            return input
-        }
+        let response = try await session.respond(to: input, options: options)
+        return response.content
     }
 }
 ```
