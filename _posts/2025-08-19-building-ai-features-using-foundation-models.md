@@ -10,6 +10,17 @@ Apple introduced the brand-new Foundational Models framework, providing type-saf
 First of all, we should import the Foundation Models framework and check the availability on the device. Not every device supports Apple Intelligence features. So we should keep it in mind while building AI features.
 
 ```swift
+import FoundationModels
+
+struct Intelligence {
+    public func generate(_ input: String) async -> String {
+        guard SystemLanguageModel.default.isAvailable else {
+            return input
+        }
+        
+        // ...
+    }
+}
 ```
 
 Here we use the SystemLanguageModel type representing a text-only language model available on Apple platforms. We access the default instance of the model and use the isAvailable property.
@@ -19,6 +30,24 @@ Sometimes, it is not enough to check the isAvailable property and you want to kn
 For this case, the SystemLanguageModel type provides us the availability property which is the instance of the SystemLanguageModel.Availability type. You can use this property for more granular experience in your app. Now we can initiate language model session and chat with it.
 
 ```swift
+import FoundationModels
+
+struct Intelligence {
+    public func generate(_ input: String) async -> String {
+        guard SystemLanguageModel.default.isAvailable else {
+            return input
+        }
+        
+        let session = LanguageModelSession()
+        
+        do {
+            let response = try await session.respond(to: input)
+            return response.content
+        } catch {
+            return input
+        }
+    }
+}
 ```
 
 As you can see in the example above, we initiate a session using the LanguageModelSession type and call the respond function to get the text content returned by the model. That’s so easy!
@@ -26,6 +55,28 @@ As you can see in the example above, we initiate a session using the LanguageMod
 We are not going to build a chat, instead we will try to generate some recommendations using AI. In this case, we should provide some instructions to the model describing what we need from the model in the natural language. The prompt in this case, is a secondary input. For example, in my app I analyze food nutrients and try to give some advices.
 
 ```swift
+import FoundationModels
+
+struct Intelligence {
+    private let instructions = """
+        You are a healthy lifestyle coach. Write a recommendation. Keep it short, positive and inspiring. Respond only with the final recommendation, no explanations.
+    """
+    
+    public func generate(_ input: String) async -> String {
+        guard SystemLanguageModel.default.isAvailable else {
+            return input
+        }
+        
+        let session = LanguageModelSession(instructions: instructions)
+        
+        do {
+            let response = try await session.respond(to: input)
+            return response.content
+        } catch {
+            return input
+        }
+    }
+}
 ```
 
 In the example above, I define the Intelligence struct holding the generate function. This function takes the input and apply the instructions we passed to the model. For example, you can pass the “Reduce carbs” string to the generate function and it will write a nice recommendation for you.
@@ -33,6 +84,30 @@ In the example above, I define the Intelligence struct holding the generate func
 Now let’s talk about tuning the response of the model. The respond function allows us to pass an instance of the GenerationOptions type using the options parameter. The GenerationOptions type defines a few interesting properties.
 
 ```swift
+import FoundationModels
+
+struct Intelligence {
+    private let instructions = """
+        You are a healthy lifestyle coach. Write a recommendation. Keep it short, positive and inspiring. Respond only with the final recommendation, no explanations.
+    """
+    
+    public func generate(_ input: String) async -> String {
+        guard SystemLanguageModel.default.isAvailable else {
+            return input
+        }
+        
+        let session = LanguageModelSession(instructions: instructions)
+        let seed = UInt64(Calendar.current.component(.dayOfYear, from: .now))
+        let options = GenerationOptions(sampling: .random(top: 10), temperature: 0.7)
+        
+        do {
+            let response = try await session.respond(to: input, options: options)
+            return response.content
+        } catch {
+            return input
+        }
+    }
+}
 ```
 
 The temperature property allows us to control the creativity of the model. It is a numeric value from 0 to 1. There is no best value for this parameter and you should experiment to find which value fits your case.
