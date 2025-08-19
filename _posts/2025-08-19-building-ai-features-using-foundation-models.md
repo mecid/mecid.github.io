@@ -73,7 +73,7 @@ struct Intelligence {
 }
 ```
 
-In the example above, I define the *Intelligence* struct holding the *generate* function. This function takes the input and apply the instructions we passed to the model. For example, you can pass the “Reduce carbs” string to the generate function and it will write a nice recommendation for you.
+In the example above, I define the *Intelligence* struct holding the *generate* function. This function takes the input and apply the instructions we passed to the model. For example, you can pass the “Reduce carbs” string to the *generate* function and it will write a nice recommendation for you.
 
 Now let’s talk about tuning the response of the model. The *respond* function allows us to pass an instance of the *GenerationOptions* type using the *options* parameter. The *GenerationOptions* type defines a few interesting properties.
 
