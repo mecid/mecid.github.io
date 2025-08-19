@@ -2,6 +2,7 @@
 title: Building AI features using Foundation Models
 layout: post
 category: Foundation Models
+image: /public/fm.png
 ---
 
 Apple introduced the brand-new Foundational Models framework, providing type-safe APIs for using Apple Intelligence models in your apps. This week, we will learn how to use this new framework while building AI features in your apps.
