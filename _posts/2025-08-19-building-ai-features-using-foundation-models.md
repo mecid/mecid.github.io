@@ -25,11 +25,11 @@ struct Intelligence {
 }
 ```
 
-Here we use the SystemLanguageModel type representing a text-only language model available on Apple platforms. We access the default instance of the model and use the isAvailable property.
+Here we use the *SystemLanguageModel* type representing a text-only language model available on Apple platforms. We access the default instance of the model and use the *isAvailable* property.
 
-Sometimes, it is not enough to check the isAvailable property and you want to know exact the reason. For example, user can keep Apple Intelligence disabled and that’s why the SystemLanguageModel is not available. You can display an alert asking the user to turn on Apple Intelligence to access particular features.
+Sometimes, it is not enough to check the *isAvailable* property and you want to know exact the reason. For example, user can keep Apple Intelligence disabled and that’s why the *SystemLanguageModel* is not available. You can display an alert asking the user to turn on Apple Intelligence to access particular features.
 
-For this case, the SystemLanguageModel type provides us the availability property which is the instance of the SystemLanguageModel.Availability type. You can use this property for more granular experience in your app. Now we can initiate language model session and chat with it.
+For this case, the *SystemLanguageModel* type provides us the *availability* property which is the instance of the *SystemLanguageModel.Availability* type. You can use this property for more granular experience in your app. Now we can initiate language model session and chat with it.
 
 ```swift
 import FoundationModels
@@ -48,7 +48,7 @@ struct Intelligence {
 }
 ```
 
-As you can see in the example above, we initiate a session using the LanguageModelSession type and call the respond function to get the text content returned by the model. That’s so easy!
+As you can see in the example above, we initiate a session using the *LanguageModelSession* type and call the *respond* function to get the text content returned by the model. That’s so easy!
 
 We are not going to build a chat, instead we will try to generate some recommendations using AI. In this case, we should provide some instructions to the model describing what we need from the model in the natural language. The prompt in this case, is a secondary input. For example, in my app I analyze food nutrients and try to give some advices.
 
@@ -73,9 +73,9 @@ struct Intelligence {
 }
 ```
 
-In the example above, I define the Intelligence struct holding the generate function. This function takes the input and apply the instructions we passed to the model. For example, you can pass the “Reduce carbs” string to the generate function and it will write a nice recommendation for you.
+In the example above, I define the *Intelligence* struct holding the *generate* function. This function takes the input and apply the instructions we passed to the model. For example, you can pass the “Reduce carbs” string to the generate function and it will write a nice recommendation for you.
 
-Now let’s talk about tuning the response of the model. The respond function allows us to pass an instance of the GenerationOptions type using the options parameter. The GenerationOptions type defines a few interesting properties.
+Now let’s talk about tuning the response of the model. The *respond* function allows us to pass an instance of the *GenerationOptions* type using the *options* parameter. The *GenerationOptions* type defines a few interesting properties.
 
 ```swift
 import FoundationModels
@@ -102,9 +102,9 @@ struct Intelligence {
 }
 ```
 
-The temperature property allows us to control the creativity of the model. It is a numeric value from 0 to 1. There is no best value for this parameter and you should experiment to find which value fits your case.
+The *temperature* property allows us to control the creativity of the model. It is a numeric value from 0 to 1. There is no best value for this parameter and you should experiment to find which value fits your case.
 
-The sampling parameter allows us to control how the model chooses the final answer from multiple possible answers. For example, whenever you set it to greedy it always return the same answer for the same prompt. It might be useful for debugging purposes.
+The *sampling* parameter allows us to control how the model chooses the final answer from multiple possible answers. For example, whenever you set it to *greedy* it always return the same answer for the same prompt. It might be useful for debugging purposes.
 
 In my app, I don’t want to display different suggestions to the user on every launch of the app. Instead, I would like to display a unique recommendation on daily basis. So, whenever day changes it might use another recommendation for the same case. 
 
