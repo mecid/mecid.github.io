@@ -1,6 +1,7 @@
 ---
 title: Building AI features using Foundation Models. Structured Content.
 layout: post
+image: /public/fm.png
 ---
 
 Last week, we talked about the basics of Foundation Models, how to generate text content, and how to tune and control the output. This week, we will talk about simple and yet powerful structured content generation.
