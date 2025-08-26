@@ -5,6 +5,8 @@ layout: post
 
 Last week, we talked about the basics of Foundation Models, how to generate text content, and how to tune and control the output. This week, we will talk about simple and yet powerful structured content generation.
 
+{% include friends.html %}
+
 Generating text content using Foundation Models is easy-peasy. You can use it for many things like coaching, smart assistants, chats, etc.
 
 ```swift
