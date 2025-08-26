@@ -7,14 +7,79 @@ Last week, we talked about the basics of Foundation Models, how to generate text
 
 Generating text content using Foundation Models is easy-peasy. You can use it for many things like coaching, smart assistants, chats, etc.
 
+```swift
+import FoundationModels
 
+struct Intelligence {
+    public func generate(_ input: String) async throws -> String {
+        guard SystemLanguageModel.default.isAvailable else {
+            return input
+        }
+        
+        let session = LanguageModelSession()
+        
+        let response = try await session.respond(to: input)
+        return response.content
+    }
+}
+```
 
 Structured content generation works pretty much the same way; the only addition is the structure you provide that the Foundation Model should infer and return the result in the very same structure.
 
-
+```swift
+struct Intelligence {
+    private var recipeInstructions: String {
+    """
+    You are a professional nutritionist and chef specializing in healthy meal planning. Generate a recipe using provided ingredients.
+    """
+    
+    func generateRecipe(with ingredients: String) async throws -> Recipe {
+        let session = LanguageModelSession(instructions: recipeInstructions)
+        let recipe = try await session.respond(to: prompt, generating: Recipe.self)
+        return recipe.content
+    }
+}
+```
 
 As you can see in the example above, we use the *respond* function with the *prompt* and an additional parameter called *generating*. The *generating* parameter receives the type that Foundation Model should infer and return the instance. Now, let’s take a look at the *Recipe* type.
 
+```swift
+@Generable
+struct Recipe {
+    @Guide(description: "Shortened title for items, without numbers.")
+    let title: String
+
+    @Guide(description: "Total energy in kilocalories.")
+    let energy: Double
+
+    @Guide(description: "Total amount of protein in grams.")
+    let protein: Double
+
+    @Guide(description: "Total amount of carbohydrates in grams.")
+    let carbs: Double
+
+    @Guide(description: "Total amount of fiber in grams.")
+    let fiber: Double
+
+    @Guide(description: "Total amount of sugar in grams.")
+    let sugar: Double
+
+    @Guide(description: "Total amount of fat in grams.")
+    let fatTotal: Double
+
+    @Guide(description: "Total amount of saturated fat in grams.")
+    let fatSaturated: Double
+
+    @Guide(description: "Total weight of items in grams.")
+    let servingSize: Double
+
+    @Guide(description: "Ingredients, separated by commas.")
+    let ingredients: String?
+
+    @Guide(description: "Instructions, separated by newlines.")
+    let steps: String?
+}
+```
 
 In order to receive response in a structured format, you have to conform you response type to the *Generable* protocol. Swift simplifies this task by introducing the *Generable* macro that we use to annotate our type.
 
