@@ -13,7 +13,7 @@ As a big fan of trunk-based development, feature flags play a crucial role in my
 
 By default, any Xcode project has two configurations: Debug and Release. You can create as many as you need of them, and I always make duplicates for Release configuration named AppStore and TestFlight. This allows you to create custom Xcode schemes running one of the available configurations. Then we can use compilation conditions in code to understand which scheme is active now.
 
-Let’s start first by creating the Distribution enum defining our Xcode schemes.
+Let’s start first by creating the *Distribution* enum defining our Xcode schemes.
 
 ```swift
 public enum Distribution: Sendable {
@@ -35,7 +35,7 @@ extension Distribution {
 }
 ```
 
-As you can see in the example above, the Distribution type is pretty simple. We define the static current property that switches over compilation conditions to find the active one. Now, we can move on to the FeatureFlags type that should define features I’m working on at the moment or some configuration flags.
+As you can see in the example above, the *Distribution* type is pretty simple. We define the static *current* property that switches over compilation conditions to find the active one. Now, we can move on to the *FeatureFlags* type that should define features I’m working on at the moment or some configuration flags.
 
 ```swift
 public struct FeatureFlags: Sendable, Decodable {
@@ -62,7 +62,7 @@ public struct FeatureFlags: Sendable, Decodable {
 }
 ```
 
-The FeatureFlags type defines a bunch of properties that I switch on and off for different build types. As you can see, the init function takes an instance of the Distribution type, allowing me to pass the active distribution. 
+The *FeatureFlags* type defines a bunch of properties that I switch on and off for different build types. As you can see, the *init* function takes an instance of the *Distribution* type, allowing me to pass the active distribution. 
 
 While working in Xcode, I choose the debug configuration because it doesn’t contain too many compiler optimizations, builds fast and allows me to see what I’m working on. That’s why I turn on all the flags for debug condition.
 
@@ -74,7 +74,7 @@ extension EnvironmentValues {
 }
 ```
 
-The final step is to put an instance of the FeatureFlags type into the SwiftUI environment to share in the view hierarchy so my views cant disable or enable particular functionality.
+The final step is to put an instance of the *FeatureFlags* type into the SwiftUI environment to share in the view hierarchy so my views cant disable or enable particular functionality.
 
 ```swift
 @main
