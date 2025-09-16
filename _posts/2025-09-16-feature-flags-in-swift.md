@@ -90,4 +90,4 @@ struct CardioBotApp: App {
 
 Feature flags aren’t permanent. Treat them as temporary helpers - remove them when the feature is ready and proven. And if your project grows, consider making them remotely configurable to roll out or roll back features instantly. With this approach, you’ll keep your development process fast, safe, and ready for continuous delivery.
 
-When paired with trunk-based development, they let you merge work early and often without worrying about breaking production. You can hide incomplete features behind flags, test them safely in Debug and TestFlight builds, and enable them only when you’re confident they’re ready.
+When paired with trunk-based development, they let you merge work early and often without worrying about breaking production. You can hide incomplete features behind flags, test them safely in Debug and TestFlight builds, and enable them only when you’re confident they’re ready. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
