@@ -11,11 +11,52 @@ By default, any Xcode project has two configurations: Debug and Release. You can
 
 Let’s start first by creating the Distribution enum defining our Xcode schemes.
 
-======================================================
+```swift
+public enum Distribution: Sendable {
+    case debug
+    case appstore
+    case testflight
+}
+
+extension Distribution {
+    static var current: Self {
+        #if APPSTORE
+        return .appstore
+        #elseif TESTFLIGHT
+        return .testflight
+        #else
+        return .debug
+        #endif
+    }
+}
+```
 
 As you can see in the example above, the Distribution type is pretty simple. We define the static current property that switches over compilation conditions to find the active one. Now, we can move on to the FeatureFlags type that should define features I’m working on at the moment or some configuration flags.
 
-======================================================
+```swift
+public struct FeatureFlags: Sendable, Decodable {
+    public let requirePaywall: Bool
+    public let requireOnboarding: Bool
+    public let featureX: Bool
+
+    public init(distribution: Distribution) {
+        switch distribution {
+        case .debug:
+            self.requirePaywall = true
+            self.requireOnboarding = true
+            self.featureX = true
+        case .appstore:
+            self.requirePaywall = true
+            self.requireOnboarding = true
+            self.featureX = false
+        case .testflight:
+            self.requirePaywall = false
+            self.requireOnboarding = true
+            self.featureX = true
+        }
+    }
+}
+```
 
 The FeatureFlags type defines a bunch of properties that I switch on and off for different build types. As you can see, the init function takes an instance of the Distribution type, allowing me to pass the active distribution. 
 
@@ -23,11 +64,25 @@ While working in Xcode, I choose the debug configuration because it doesn’t co
 
 I would like to give access to all features, even paid features to my TestFlight users, so I can be sure that everything working well. That’s why I disable paywall for TestFlight users.
 
-======================================================
+```swift
+extension EnvironmentValues {
+    @Entry public var featureFlags = FeatureFlags(distribution: .debug)
+}
+```
 
 The final step is to put an instance of the FeatureFlags type into the SwiftUI environment to share in the view hierarchy so my views cant disable or enable particular functionality.
 
-======================================================
+```swift
+@main
+struct CardioBotApp: App {
+    var body: some Scene {
+        WindowGroup {
+            RootView()
+                .environment(\.featureFlags, FeatureFlags(distribution: .current))
+        }
+    }
+}
+```
 
 Feature flags aren’t permanent. Treat them as temporary helpers - remove them when the feature is ready and proven. And if your project grows, consider making them remotely configurable to roll out or roll back features instantly. With this approach, you’ll keep your development process fast, safe, and ready for continuous delivery.
 
