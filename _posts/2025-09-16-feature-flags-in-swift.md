@@ -1,6 +1,7 @@
 ---
 title: Feature flags in Swift
 layout: post
+image: /public/xcode-cloud.png
 ---
 
 Almost every project I work on has at least three build configurations: Debug, TestFlight, and App Store. These configurations differ not only in build settings but also in functionality. This week, we’ll learn how to implement feature flags in Swift, which allow us to toggle on and off specific functionalities under certain conditions.
