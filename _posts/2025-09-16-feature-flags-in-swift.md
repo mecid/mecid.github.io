@@ -74,7 +74,7 @@ extension EnvironmentValues {
 }
 ```
 
-The final step is to put an instance of the *FeatureFlags* type into the SwiftUI environment to share it in the view hierarchy so my views cant disable or enable particular functionality.
+The final step is to put an instance of the *FeatureFlags* type into the SwiftUI environment to share it in the view hierarchy so my views can disable or enable particular functionality.
 
 ```swift
 @main
