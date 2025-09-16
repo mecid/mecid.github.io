@@ -9,7 +9,7 @@ Almost every project I work on has at least three build configurations: Debug, T
 
 {% include friends.html %}
 
-As a big fan of trunk-based development, feature flags play a crucial role in my development approach. Almost every feature I’m working on recently has a feature flag enabling it in debug and TestFlight builds. While applying the trunk-based approach, I merge my branches even when the feature is not fully implemented, and that’s why I use feature flags to temporarily disable them.
+As a big fan of trunk-based development, feature flags play a crucial role in my development approach. Almost every feature I’m working on recently has a feature flag enabling it in debug and TestFlight builds. While applying the trunk-based approach, I merge my branches even when the feature is not fully implemented, that’s why I use feature flags to temporarily disable them.
 
 By default, any Xcode project has two configurations: Debug and Release. You can create as many as you need of them, and I always make duplicates for Release configuration named AppStore and TestFlight. This allows you to create custom Xcode schemes running one of the available configurations. Then we can use compilation conditions in code to understand which scheme is active now.
 
