@@ -9,7 +9,7 @@ We’ve already discussed the fundamental concepts of Foundation models and thei
 
 {% include friends.html %}
 
-We are already familiar with requesting and waiting for the results from Foundation models. However, there are examples where we require real-time experience, where the intermediate output is displayed while the model is processing.
+We are already familiar with requesting and waiting for the results from Foundation Models. However, there are examples where we require real-time experience, where the intermediate output is displayed while the model is processing.
 
 ```swift
 mport FoundationModels
@@ -36,9 +36,9 @@ import Playgrounds
 }
 ```
 
-As demonstrated in the example above, we define the Article type, which is annotated with the Generable macro. This macro enables us to receive the response from the Foundation model in a specific format defined by the type. So, the Foundation Model generates an instance of the Article type and populates its properties with the guided content.
+As demonstrated in the example above, we define the *Article* type, which is annotated with the *Generable* macro. This macro enables us to receive the response from the Foundation Model in a specific format defined by the type. So, the Foundation Model generates an instance of the *Article* type and populates its properties with the guided content.
 
-Here, we utilize the await keyword to wait for the final output. However, what if we desire to display the partial results and append additional content as soon as the Foundation model generates it? For this specific scenario, Apple introduced the Streaming API for Foundation Models.
+Here, we utilize the **await** keyword to wait for the final output. However, what if we desire to display the partial results and append additional content as soon as the Foundation Model generates it? For this specific scenario, Apple introduced the Streaming API for Foundation Models.
 
 ```swift
 import Playgrounds
@@ -54,11 +54,11 @@ import Playgrounds
 }
 ```
 
-As you can see, all we need to do is use the streamResponse function instead of the respond function. The streamResponse function returns us an instance of the ResponseStream conforming to the AsyncSequence protocol and emitting the partial results of the Article type.
+As you can see, all we need to do is use the *streamResponse* function instead of the *respond* function. The *streamResponse* function returns us an instance of the *ResponseStream* conforming to the *AsyncSequence* protocol and emitting the partial results of the *Article* type.
 
-We define the Article type as a plain structure with properties using the let constant. All the magic here is hidden behind the Generable annotation. It automatically defines the PartiallyGenerated type inside the Article type, which defines the same properties, making them optional.
+We define the *Article* type as a plain structure with properties using the **let** constant. All the magic here is hidden behind the *Generable* annotation. It automatically defines the *PartiallyGenerated* type inside the *Article* type, which defines the same properties, making them optional.
 
-The order you define properties in the Article type plays a huge role. The Foundation Model respects the order you define properties and generates the title first, then the body and tips at the end. So, you should display them in the order you define them to make the user experience nice and appealing.
+The order you define properties in the *Article* type plays a huge role. The Foundation Model respects the order you define properties and generates the title first, then the body and tips at the end. So, you should display them in the order you define them to make the user experience nice and appealing.
 
 ```swift
 import Playgrounds
@@ -77,6 +77,6 @@ import Playgrounds
 }
 ```
 
-You can always await the final result using the collect function on the ResponseStream type. It might be useful to collect the final results after the for loop.
+You can always await the final result using the *collect* function on the *ResponseStream* type. It might be useful to collect the final results after the for loop.
 
 Streaming transforms how we interact with Foundation Models, shifting from static responses to dynamic, real-time experiences. By leveraging the streamResponse API, we can progressively display model output as it’s generated — enhancing responsiveness and user engagement. 
