@@ -12,7 +12,7 @@ We’ve already discussed the fundamental concepts of Foundation Models and thei
 We are already familiar with requesting and waiting for the results from Foundation Models. However, there are examples where we require real-time experience, where the intermediate output is displayed while the model is processing.
 
 ```swift
-mport FoundationModels
+import FoundationModels
 
 @Generable struct Article {
     @Guide(description: "The title of the article")
