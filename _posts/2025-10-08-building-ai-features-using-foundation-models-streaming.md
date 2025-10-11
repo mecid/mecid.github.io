@@ -77,6 +77,6 @@ import Playgrounds
 }
 ```
 
-You can always await the final result using the *collect* function on the *ResponseStream* type. It might be useful to collect the final results after the for loop.
+You can always await the final result using the *collect* function on the *ResponseStream* type. It might be useful to collect the final results after iterating through the async sequence.
 
 Streaming transforms how we interact with Foundation Models, shifting from static responses to dynamic, real-time experiences. By leveraging the streamResponse API, we can progressively display model output as it’s generated — enhancing responsiveness and user engagement. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
