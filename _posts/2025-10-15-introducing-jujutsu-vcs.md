@@ -7,6 +7,8 @@ image: /public/jj.svg
 
 I’ve decided to share my experience with Jujutsu VCS, which is not a martial art but a Git-compatible version control system. I’ve switched to Jujutsu VCS for all my projects and can talk a lot about it.
 
+{% include friends.html %}
+
 First and foremost, I must emphasize that Jujutsu VCS is a Git-compatible version control system. This means you can use it with a Git repository, and nobody on your team will notice that you’re using it, even if they continue using Git.
 
 For the rest of the article, I will refer to Jujutsu VCS as JJ. To install JJ, follow these [instructions](https://jj-vcs.github.io/jj/latest/install-and-setup/). To start working with JJ, clone a Git repository or initialize an empty one using the following commands in the terminal.
