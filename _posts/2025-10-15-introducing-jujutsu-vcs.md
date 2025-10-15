@@ -33,9 +33,13 @@ Whenever you feel that you have finished work on the current change and want to 
 
 Changes simplify history manipulation. Rebase, squash, and split are very basic operations here. Here is the log of my repo. Assume that I want to create a change between the last two changes. Nothing could be easier.
 
+![jj-terminal](/public/jj1.png)
+
 > jj new -A px
 
 The -A argument means **after**, and it creates an empty change after the change with ID `px`. You can also use -B to create an empty change **before** `px`. The great thing about creating changes in between is that JJ automatically rebases subsequent changes. This is my favorite thing about JJ: it automatically runs a rebase when you change something in the history. JJ runs rebases in many situations, and it almost never results in conflicts.
+
+![jj-terminal](/public/jj2.png)
 
 > jj squash
 
