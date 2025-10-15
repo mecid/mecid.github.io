@@ -10,7 +10,9 @@ First and foremost, I must emphasize that it is a git-compatible version control
 For the rest of the article, I will refer to Jujutsu VCS as JJ. To install JJ follow these [instructions](https://jj-vcs.github.io/jj/latest/install-and-setup/). To start working with JJ you have to clone a git repository or init an empty one using next commands in terminal.
 
 > jj git clone repo_url
+
 or
+
 > jj git init
 
 Let’s talk about how JJ is different from git. In JJ we have changes instead of commits and they are mutable till you push them to the remote. It means you can easily move between changes and edit them. 
