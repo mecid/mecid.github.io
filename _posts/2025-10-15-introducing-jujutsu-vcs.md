@@ -63,6 +63,8 @@ Creating more than one change with the same parent is enough to start branching 
 
 > jj bookmark set new-feature
 
+> jj git push -b new-feature
+
 Finally, to delete a change, run:
 
 > jj abandon px
