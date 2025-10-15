@@ -49,7 +49,7 @@ The squash command is another simple, powerful tool: it appends the most recent 
 
 > jj squash --into px
 
-Use the --into argument to specify which change to squash into, and JJ will automatically rebase subsequent changes as needed.
+Use the into argument to specify which change to squash into, and JJ will automatically rebase subsequent changes as needed.
 
 > jj undo
 
