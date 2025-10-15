@@ -63,4 +63,4 @@ Finally, whenever you need to delete a change, you can run:
 
 It will remove the change and its code, then rebase the subsequent changes.
 
-JJ reimagines version control, making history manipulation effortless. It’s fully compatible with Git but offers a much more flexible and fluid workflow. I’ll share more advanced workflows—such as rebasing across branches—in future posts.
+JJ reimagines version control, making history manipulation effortless. It’s fully compatible with Git but offers a much more flexible and fluid workflow. I’ll share more advanced workflows—such as rebasing across branches—in future posts. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
