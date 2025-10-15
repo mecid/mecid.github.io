@@ -2,7 +2,7 @@
 title: Introducing Jujutsu VCS
 layout: post
 category: Meta
-image: /public/jj.svg
+image: /public/jj.png
 ---
 
 I’ve decided to share my experience with Jujutsu VCS — not a martial art, but a Git‑compatible version control system. I’ve switched to it for all my projects and have a lot to say.
