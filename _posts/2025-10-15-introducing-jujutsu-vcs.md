@@ -21,37 +21,37 @@ Instead of commiting your code, you create an empty change before you start writ
 
 Whenever you fill that you have finished work on the current change and want to create another one you can use following commands.
 
->> jj desc -m “describe the work you have done”
->> jj new 
+> jj desc -m “describe the work you have done”
+> jj new 
 
 Changes simplify the history manipulations. Rebase, squash, and split are very basic operations here. Here is the log of my repo. Assume that I want to create a change between last two changes. Nothing can be easier.
 
->> jj new -A px
+> jj new -A px
 
 The -A argument means after and it creates an empty change after the change with id px. You can also use -B to create an empty change before px. The great thing about creating changes in between that JJ automatically rebases next changes. This is my favorite thing about JJ, it automatically runs rebase when you change something in the history. JJ runs rebase in many situations and it almost never has conflicts.
 
->> jj squash
+> jj squash
 
 Squash is another simple and powerful tool in JJ appends the recent change to the previous change.
 
->> jj squash —into px
+> jj squash —into px
 
 You can use to into argument to specify change that you want to squash into and it will automatically rebase next changes as needed.
 
->> jj undo
+> jj undo
 
 Another great utility of the JJ is the undo command. You can always call undo to revert the most recent operation: snapshot, rebase, squash, merge, etc.
 
->> jj new master
->> jj new master
+> jj new master
+> jj new master
 
 It is enough to create more than one change with the same parent to start branching in JJ. Branches in JJ anonymous which means they don’t have names. It might be strange first, but it works really well. You can set a bookmark on the change to create a git-compatible branch.
 
->> jj bookmark set new-feature
+> jj bookmark set new-feature
 
 Finally, whenever you need to delete a change you can run 
 
->> jj abandon px
+> jj abandon px
 
 It will remove the change and its code then rebase the next changes.
 
