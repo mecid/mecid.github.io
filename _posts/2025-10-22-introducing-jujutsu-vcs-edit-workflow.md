@@ -21,6 +21,8 @@ Assume that you are working on a feature requiring new model type, some sort of 
 
 > jj new -m “introducing user master and details views”
 
+![jj-log](/public/jj3.png)
+
 Now we have three empty changes in the jj log. Let’s start populating them with the code. Let’s switch to the first change using the edit command.
 
 > jj edit r
