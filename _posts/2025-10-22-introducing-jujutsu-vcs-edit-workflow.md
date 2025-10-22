@@ -7,6 +7,8 @@ image: /public/jj.png
 
 The absence of a staging area and automatic rebases makes our usage of Jujutsu VCS slightly different from what we used to do in Git. There are several popular workflows within the Jujutsu VCS community. This week, I’ll discuss the workflow I use daily, which is called the edit workflow.
 
+{% include friends.html %}
+
 When you begin using Jujutsu VCS, the first thing you’ll notice is the absence of a staging area. Instead, it captures snapshots of your code every time you run the jj command in the terminal. This approach significantly differs from our workflows in Git.
 
 Constant snapshots and automatic rebases played a significant role in the development of the edit workflow. I’ve been utilizing this workflow since the first day and can’t express my gratitude enough. Here’s how we do it.
