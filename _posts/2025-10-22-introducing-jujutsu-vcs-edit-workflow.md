@@ -11,6 +11,8 @@ The absence of a staging area and automatic rebases makes our usage of Jujutsu V
 
 When you begin using Jujutsu VCS, the first thing you’ll notice is the absence of a staging area. Instead, it captures snapshots of your code every time you run the jj command in the terminal. This approach significantly differs from our workflows in Git.
 
+> To learn more about the basic of the Jujutsu VCS, take a look at my ["Introducing Jujutsu VCS"](/2025/10/15/introducing-jujutsu-vcs/) post.
+
 Constant snapshots and automatic rebases played a significant role in the development of the edit workflow. I’ve been utilizing this workflow since the first day and can’t express my gratitude enough. Here’s how we do it.
 
 Assume that you are working on a feature requiring new model type, some sort of state storage and the view part that manipulates models via storage. We plan the work and split it into a few changes. So, we create empty changes.
