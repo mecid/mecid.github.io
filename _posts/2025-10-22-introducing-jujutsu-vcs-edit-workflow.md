@@ -16,7 +16,9 @@ Constant snapshots and automatic rebases played a significant role in the develo
 Assume that you are working on a feature requiring new model type, some sort of state storage and the view part that manipulates models via storage. Usually, I plan my work and split it into a few changes. So, we create empty changes.
 
 > jj new -m “introducing user model”
+
 > jj new -m “introducing user storage”
+
 > jj new -m “introducing user master and details views”
 
 Now we have three empty changes in the jj log. Let’s start populating them with the code. Let’s switch to the first change using the edit command.
@@ -27,7 +29,9 @@ We can used edit command to switch to any mutable change in the log. As you can 
 
 > jj next —edit
 
-We employ the next command with the edit argument to navigate to the subsequent change in the tree. While we can still utilize the edit command with the specific identifier, I find the next command more convenient in this workflow. Whenever you move to the next change, jj executes rebase, and you’re working in the fresh state, encompassing all previous changes. Assume that, you forgot an entity while planing your changes and now you need to squeeze in a change. No worries, you can use the new command with particular positioning in the tree of changes.
+We employ the next command with the edit argument to navigate to the subsequent change in the tree. While we can still utilize the edit command with the specific identifier, I find the next command more convenient in this workflow. Whenever you move to the next change, jj executes rebase, and you’re working in the fresh state, encompassing all previous changes.
+
+Assume that, you forgot an entity while planing your changes and now you need to squeeze in a change. No worries, you can use the new command with particular positioning in the tree of changes.
 
 > jj new -A r -m “introducing user endpoint”
 
