@@ -13,7 +13,7 @@ When you begin using Jujutsu VCS, the first thing you’ll notice is the absence
 
 Constant snapshots and automatic rebases played a significant role in the development of the edit workflow. I’ve been utilizing this workflow since the first day and can’t express my gratitude enough. Here’s how we do it.
 
-Assume that you are working on a feature requiring new model type, some sort of state storage and the view part that manipulates models via storage. Usually, I plan my work and split it into a few changes. So, we create empty changes.
+Assume that you are working on a feature requiring new model type, some sort of state storage and the view part that manipulates models via storage. We plan the work and split it into a few changes. So, we create empty changes.
 
 > jj new -m “introducing user model”
 
