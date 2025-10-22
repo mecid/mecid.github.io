@@ -5,7 +5,7 @@ category: Meta
 image: /public/jj.png
 ---
 
-The absence of a staging area and automatic rebases makes our usage of Jujutsu VCS slightly different from what we used to do in Git. There are several popular workflows within the Jujutsu VCS community. This week, I’ll discuss the workflow I use daily, which is called the edit workflow.
+The absence of a staging area and automatic rebases makes our usage of Jujutsu VCS significantly different from what we used to do in Git. There are several popular workflows within the Jujutsu VCS community. This week, I’ll discuss the workflow I use daily, which is called the edit workflow.
 
 {% include friends.html %}
 
@@ -39,7 +39,7 @@ Assume that, you forgot an entity while planing your changes and now you need to
 
 > jj new -A r -m “introducing user endpoint”
 
-As you can see, we use the *new* command with **-A** argument allowing us to create a change after particular change. We can also use **-B** to create before a change. And don’t worry about the state of your changes, jj automatically makes rebases and you are always in the fresh state.
+As you can see, we use the *new* command with **-A** argument allowing us to create a change after particular change. We can also use **-B** to create before a change. And don’t worry about the state of your changes, jj automatically makes rebases and you are always in a fresh state.
 
 The final piece of this workflow is the **absorb** command. Imagine that you almost finished the work on your feature then requirements changes and a new property on the user model appeared. This addition requires modifications in almost every change you have been working recently.
 
