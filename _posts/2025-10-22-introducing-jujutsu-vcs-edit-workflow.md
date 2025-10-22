@@ -1,6 +1,7 @@
 ---
 title: Introducing Jujutsu VCS. Edit Workflow.
 layout: post
+category: Meta
 ---
 
 The absence of a staging area and automatic rebases makes our usage of Jujutsu VCS slightly different from what we used to do in Git. There are several popular workflows within the Jujutsu VCS community. This week, I’ll discuss the workflow I use daily, which is called the edit workflow.
