@@ -11,7 +11,7 @@ The absence of a staging area and automatic rebases makes our usage of Jujutsu V
 
 When you begin using Jujutsu VCS, the first thing you’ll notice is the absence of a staging area. Instead, it captures snapshots of your code every time you run the jj command in the terminal. This approach significantly differs from our workflows in Git.
 
-> To learn more about the basic of the Jujutsu VCS, take a look at my ["Introducing Jujutsu VCS"](/2025/10/15/introducing-jujutsu-vcs/) post.
+> To learn more about the basics of the Jujutsu VCS, take a look at my ["Introducing Jujutsu VCS"](/2025/10/15/introducing-jujutsu-vcs/) post.
 
 Constant snapshots and automatic rebases played a significant role in the development of the edit workflow. I’ve been utilizing this workflow since the first day and can’t express my gratitude enough. Here’s how we do it.
 
@@ -29,17 +29,17 @@ Now we have three empty changes in the jj log. Let’s start populating them wit
 
 > jj edit r
 
-We can used *edit* command to switch to any mutable change in the log. As you can see, we define the change using the short identifier indicated in the log. Now, we can express our user model. As soon as we finished our work on the user model we can move to the next part of the task and create user storage.
+We can use the *edit* command to switch to any mutable change in the log. As you can see, we define the change using the short identifier indicated in the log. Now, we can express our user model. As soon as we finished our work on the user model we can move to the next part of the task and create user storage.
 
 > jj next —edit
 
 We employ the **next** command with the *edit* argument to navigate to the subsequent change in the tree. While we can still utilize the *edit* command with the specific identifier, I find the *next* command more convenient in this workflow. Whenever you move to the next change, jj executes rebase, and you’re working in the fresh state, encompassing all previous changes.
 
-Assume that, you forgot an entity while planing your changes and now you need to squeeze in a change. No worries, you can use the **new** command with particular positioning in the tree of changes.
+Assume, you forgot an entity while planing your changes and now you need to squeeze in a change. No worries, you can use the **new** command with particular positioning in the tree of changes.
 
 > jj new -A r -m “introducing user endpoint”
 
-As you can see, we use the *new* command with **-A** argument allowing us to create a change after particular change. We can also use **-B** to create before a change. And don’t worry about the state of your changes, jj automatically makes rebases and you are always in a fresh state.
+As you can see, we use the *new* command with **-A** argument allowing us to create a change after a particular change. We can also use **-B** to create before a change. And don’t worry about the state of your changes, jj automatically makes rebases and you are always in a fresh state.
 
 The final piece of this workflow is the **absorb** command. Imagine that you almost finished the work on your feature then requirements changes and a new property on the user model appeared. This addition requires modifications in almost every change you have been working recently.
 
@@ -47,7 +47,7 @@ Instead of switching between changes using the *edit* command, we can create a n
 
 > jj new -m “Adding a new property to the user model to display in the user view”
 
-You add a new property on the user model, tune the user master and details view to render it. It would be much better to have these changes in previous changes. Fortunately, there is the *absorb* command.
+You add a new property to the user model, tune the user master and details view to render it. It would be much better to have these changes in previous changes. Fortunately, there is the *absorb* command.
 
 > jj absorb
 
