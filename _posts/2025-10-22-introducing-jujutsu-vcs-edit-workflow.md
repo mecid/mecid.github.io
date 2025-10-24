@@ -27,7 +27,7 @@ Assume that you are working on a feature requiring new model type, some sort of 
 
 Now we have three empty changes in the jj log. Let’s start populating them with the code. Let’s switch to the first change using the **edit** command.
 
-> jj edit r
+> jj edit rysqysmx
 
 We can use the *edit* command to switch to any mutable change in the log. As you can see, we define the change using the short identifier indicated in the log. Now, we can express our user model. As soon as we finished our work on the user model we can move to the next part of the task and create user storage.
 
