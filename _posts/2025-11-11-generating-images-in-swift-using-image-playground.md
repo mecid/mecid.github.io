@@ -2,6 +2,7 @@
 title: Generating images in Swift using Image Playground
 layout: post
 category: Foundation Models
+image: /public/fm.png
 ---
 
 I’m continuing to work on AI-generated content in my apps, and this time, we’ll focus on image generation. You might be familiar with the Image Playground app on your Apple devices, which also has a Swift API. This week, we’ll explore how to utilize the Image Playground framework to create image content within our apps.
