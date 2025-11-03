@@ -7,6 +7,8 @@ image: /public/fm.png
 
 I’m continuing to work on AI-generated content in my apps, and this time, we’ll focus on image generation. You might be familiar with the Image Playground app on your Apple devices, which also has a Swift API. This week, we’ll explore how to utilize the Image Playground framework to create image content within our apps.
 
+{% include friends.html %}
+
 Image Playground framework provides us a text-to-image functionality. The core of the framework is the ImageCreator type. Let’s take a look at how we can use it.
 
 ======================================================
