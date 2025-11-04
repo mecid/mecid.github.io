@@ -11,7 +11,29 @@ I’m continuing to work on AI-generated content in my apps, and this time, we�
 
 Image Playground framework provides us a text-to-image functionality. The core of the framework is the ImageCreator type. Let’s take a look at how we can use it.
 
-======================================================
+```swift
+import ImagePlayground
+
+public struct Eye {
+    public init() {}
+    
+    public func visualize(text: String) async throws -> CGImage? {
+        let creator = try await ImageCreator()
+
+        let images = creator.images(
+            for: [.text(text)],
+            style: .sketch,
+            limit: 1
+        )
+
+        for try await image in images {
+            return image.cgImage
+        }
+
+        return nil
+    }
+}
+```
 
 As you can see in the example above, we create an instance of the ImageCreator type. The initialize may throw an error if the running device doesn’t support image generation.
 
@@ -25,7 +47,27 @@ The images function returns an instance of AsyncSequence which emits the result 
 
 As I said before, we can mix and match multiple concepts to generate a single image. For example, you can provide a source image and some text.
 
-======================================================
+```swift
+public struct Eye {
+    public init() {}
+    
+    public func visualize(text: String, image: CGImage) async throws -> CGImage? {
+        let creator = try await ImageCreator()
+
+        let images = creator.images(
+            for: [.text(text), .image(image)],
+            style: .sketch,
+            limit: 1
+        )
+
+        for try await image in images {
+            return image.cgImage
+        }
+
+        return nil
+    }
+}
+```
 
 The ImagePlaygroundConcept type provides us a few static functions allowing us to create a concept. We already use the text and image. 
 
@@ -35,6 +77,32 @@ The extracted function become useful when you have a huge text like article and 
 
 Not all the styles might be available on your device. That’s why the ImageCreator type provides the static property called availableStyles. It is an array of the supported styles. You should always check if the selected style is available and use only available one.
 
-======================================================
+```swift
+public struct Eye {
+    public init() {}
+    
+    public func visualize(text: String) async throws -> CGImage? {
+        let creator = try await ImageCreator()
+
+        guard let availableStyle = creator.availableStyles.first else {
+            return nil
+        }
+
+        let style = !creator.availableStyles.contains(.animation) ? availableStyle : .animation
+
+        let images = creator.images(
+            for: [.text(text)],
+            style: style,
+            limit: 1
+        )
+
+        for try await image in images {
+            return image.cgImage
+        }
+
+        return nil
+    }
+}
+```
 
 The Image Playground framework brings Apple’s generative image capabilities right into Swift, making it surprisingly simple to create visuals from text, drawings, or even existing photos. With just a few lines of code, you can generate styled images and integrate them directly into your app’s experience.
