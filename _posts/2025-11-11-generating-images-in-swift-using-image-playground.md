@@ -105,4 +105,4 @@ public struct Eye {
 }
 ```
 
-The Image Playground framework brings Apple’s generative image capabilities right into Swift, making it surprisingly simple to create visuals from text, drawings, or even existing photos. With just a few lines of code, you can generate styled images and integrate them directly into your app’s experience.
+The Image Playground framework brings Apple’s generative image capabilities right into Swift, making it surprisingly simple to create visuals from text, drawings, or even existing photos. With just a few lines of code, you can generate styled images and integrate them directly into your app’s experience. I hope you enjoyed this one. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask any questions related to this post. Thanks for reading, and see you next week!
