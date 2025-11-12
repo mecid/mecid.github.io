@@ -41,7 +41,7 @@ Next, we create the concepts describing the image we want to generate. Here you 
 
 The final step is the call to the *images* function on an instance of the *ImageCreator* type. It requires a few parameters: *concepts*, *style* and *limit*.
 
-The *ImageCreator* type supports a set of styles: *animation*, *illustration* and *sketch*. You can choose the one you need. The *limit* parameter allows you to limit the number of results, in our example I ask only for a single image. Keep, in mind that system allows no more than 4 images.
+The *ImageCreator* type supports a set of styles: *animation*, *illustration* and *sketch*. You can choose the one you need. The *limit* parameter allows you to limit the number of results, in our example I ask only for a single image. Keep in mind that system allows no more than 4 images.
 
 The *images* function returns an instance of *AsyncSequence* which emits the result images one by one as soon as they become ready. That’s why we use here for loop to receive the images.
 
