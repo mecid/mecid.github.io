@@ -35,11 +35,11 @@ public struct Eye {
 }
 ```
 
-As you can see in the example above, we create an instance of the *ImageCreator* type. The initialize may throw an error if the running device doesn’t support image generation.
+As you can see in the example above, we create an instance of the *ImageCreator* type. The initializer may throw an error if the running device doesn’t support image generation.
 
 Next, we create the concepts describing the image we want to generate. Here you can be creative and use a combination of text and source image if needed.
 
-The final step is the call to the *images* function on instance of the *ImageCreator* type. It requires a few parameters: *concepts*, *style* and *limit*.
+The final step is the call to the *images* function on an instance of the *ImageCreator* type. It requires a few parameters: *concepts*, *style* and *limit*.
 
 The *ImageCreator* type supports a set of styles: *animation*, *illustration* and *sketch*. You can choose the one you need. The *limit* parameter allows you to limit the number of results, in our example I ask only for a single image. Keep, in mind that system allows no more than 4 images.
 
