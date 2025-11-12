@@ -73,7 +73,7 @@ The *ImagePlaygroundConcept* type provides us a few static functions allowing us
 
 There are also *drawing* and *extracted* functions. The *drawing* function allows us to provide an instance of the *PKDrawing* from the PencilKit framework.
 
-The *extracted* function become useful when you have a huge text like article and you can use it to generate the image for an article.
+The *extracted* function becomes useful when you have a huge text like article and you can use it to generate the image for an article.
 
 Not all the styles might be available on your device. That’s why the *ImageCreator* type provides the static property called *availableStyles*. It is an array of the supported styles. You should always check if the selected style is available and use only available one.
 
