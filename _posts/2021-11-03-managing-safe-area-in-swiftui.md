@@ -134,6 +134,8 @@ As you can see in the example above, the *safeAreaInset* view modifier has a bun
 3. *alignment* parameter applies the horizontal or vertical alignment.
 4. *content* is the *@ViewBuilder* closure that defines the content of the shifted safe area.
 
+Similar to the *safeAreaInset* view modifier, we have *safeAreaBar* view modifier which has the same signature and works almost the same way but also adds edge effect of the scrolling view.
+
 > To learn more about materials in SwiftUI, take a look at my dedicated ["Blur effect and materials in SwiftUI"](/2021/10/28/blur-effect-and-materials-in-swiftui/) post.
 
 #### Conclusion
