@@ -27,10 +27,25 @@ final class AppDelegate: NSObject, UIApplicationDelegate, MXMetricManagerSubscri
     nonisolated func didReceive(_ payloads: [MXMetricPayload]) {
         for payload in payloads {
             if let exitMetrics = payload.applicationExitMetrics?.backgroundExitData {
-                analytics?.logEvent("performance_abnormal_exit", value: exitMetrics.cumulativeAbnormalExitCount.formatted())
-                analytics?.logEvent("performance_cpu_exit", value: exitMetrics.cumulativeCPUResourceLimitExitCount.formatted())
-                analytics?.logEvent("performance_memory_exit", value: exitMetrics.cumulativeMemoryPressureExitCount.formatted())
-                analytics?.logEvent("performance_oom_exit", value: exitMetrics.cumulativeMemoryResourceLimitExitCount.formatted())
+                analytics?.logEvent(
+                    "performance_abnormal_exit",
+                    value: exitMetrics.cumulativeAbnormalExitCount.formatted()
+                )
+                
+                analytics?.logEvent(
+                    "performance_cpu_exit",
+                    value: exitMetrics.cumulativeCPUResourceLimitExitCount.formatted()
+                )
+                    
+                analytics?.logEvent(
+                    "performance_memory_exit",
+                    value: exitMetrics.cumulativeMemoryPressureExitCount.formatted()
+                )
+                
+                analytics?.logEvent(
+                    "performance_oom_exit",
+                    value: exitMetrics.cumulativeMemoryResourceLimitExitCount.formatted()
+                )
             }
         }
     }
