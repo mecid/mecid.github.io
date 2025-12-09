@@ -68,7 +68,7 @@ final class AppDelegate: NSObject, UIApplicationDelegate, MXMetricManagerSubscri
 
 As demonstrated in the example above, we utilize the shared instance of the *MXMetricManager* type to add a subscriber. Our *AppDelegate* type conforms to the *MXMetricManagerSubscriber* protocol, which includes two optional functions that enable us to receive metrics and diagnostics.
 
-The *MXMetricPayload* type contains a collection of properties that adhere to the *MXMetric* abstract class. For instance, it includes *applicationLaunchMetrics* and *applicationExitMetrics* properties that provide comprehensive details. In our instance, I log a few intriguing background terminations. This knowledge enables me to comprehend the reasons behind the system’s termination of the app.
+The *MXMetricPayload* type contains a collection of properties that extends the *MXMetric* abstract class. For instance, it includes *applicationLaunchMetrics* and *applicationExitMetrics* properties that provide comprehensive details. In our instance, I log a few intriguing background terminations. This knowledge enables me to comprehend the reasons behind the system’s termination of the app.
 
 The *MXDiagnosticPayload* type contains a collection of properties that extend the abstract *MXDiagnostic* class. For example, it includes *cpuExceptionDiagnostics* and *crashDiagnostics*. We use the *logCrash* function to extract valuable details and log them.
 
