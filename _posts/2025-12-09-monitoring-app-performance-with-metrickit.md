@@ -1,6 +1,7 @@
 ---
 title: Monitoring app performance with MetricKit
 layout: post
+image: /public/instruments.png
 ---
 
 Xcode Organizer provides access to essential performance metrics such as crashes, energy impact, hangs, launch time, memory consumption, and app terminations. However, it lacks sufficient information to resolve certain issues, particularly app terminations. To address this, Apple introduced the MetricKit framework, enabling us to collect comprehensive performance diagnostics and build a detailed performance dashboard.
