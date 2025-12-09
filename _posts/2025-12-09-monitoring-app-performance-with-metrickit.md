@@ -5,7 +5,7 @@ image: /public/instruments.png
 category: Meta
 ---
 
-Xcode Organizer provides access to essential performance metrics such as crashes, energy impact, hangs, launch time, memory consumption, and app terminations. However, it lacks sufficient information to resolve certain issues, particularly app terminations. To address this, Apple introduced the MetricKit framework, enabling us to collect comprehensive performance diagnostics and build a detailed performance dashboard.
+Xcode Organizer provides access to essential performance metrics such as crashes, energy impact, hangs, launch time, memory consumption, and app terminations. However, it lacks sufficient information to resolve certain issues, particularly app terminations. To address this, Apple introduced the MetricKit framework, enabling us to collect comprehensive diagnostics and build a detailed performance dashboard.
 
 {% include friends.html %}
 
