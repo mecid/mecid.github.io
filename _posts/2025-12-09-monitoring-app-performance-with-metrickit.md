@@ -7,11 +7,45 @@ Xcode Organizer provides access to essential performance metrics such as crashes
 
 To monitor app performance, we need to gather performance data and export it for analysis. The most straightforward way to achieve this is by using an analytics tool. Let’s begin building our app performance monitoring dashboard.
 
-======================================================
+```swift
+protocol Analytics {
+    func logEvent(_ name: String, value: String)
+    func logCrash(_ crash: MXCrashDiagnostic)
+}
+```
 
 Next, we have to import MetricKit and set up a subscription to receive data.
 
-======================================================
+```swift
+final class AppDelegate: NSObject, UIApplicationDelegate, MXMetricManagerSubscriber {
+    private var analytics: Analytics?
+
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        MXMetricManager.shared.add(self)
+    }
+
+    nonisolated func didReceive(_ payloads: [MXMetricPayload]) {
+        for payload in payloads {
+            if let exitMetrics = payload.applicationExitMetrics?.backgroundExitData {
+                analytics?.logEvent("performance_abnormal_exit", value: exitMetrics.cumulativeAbnormalExitCount.formatted())
+                analytics?.logEvent("performance_cpu_exit", value: exitMetrics.cumulativeCPUResourceLimitExitCount.formatted())
+                analytics?.logEvent("performance_memory_exit", value: exitMetrics.cumulativeMemoryPressureExitCount.formatted())
+                analytics?.logEvent("performance_oom_exit", value: exitMetrics.cumulativeMemoryResourceLimitExitCount.formatted())
+            }
+        }
+    }
+
+    nonisolated func didReceive(_ payloads: [MXDiagnosticPayload]) {
+        for payload in payloads {
+            if let crashes = payload.crashDiagnostics {
+                for crash in crashes {
+                    analytics?.logCrash(crash)
+                }
+            }
+        }
+    }
+}
+```
 
 As demonstrated in the example above, we utilize the shared instance of the MXMetricManager type to add a subscriber. Our AppDelegate type conforms to the MXMetricManagerSubscriber protocol, which includes two optional functions that enable us to receive metrics and diagnostics.
 
