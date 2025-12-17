@@ -18,11 +18,11 @@ Another great addition was the *Layout* protocol which provided us with a very l
 
 Nowadays, many system-oriented features of the apps require using the SwiftUI framework. The SwiftUI framework is the only way to build home screen, lock screen, live activity widgets, etc.
 
-* [What is new in SwiftUI after WWDC22](/2022/06/07/what-is-new-in-swiftui-after-wwdc22/)
+* [Tracking geometry changes in SwiftUI](/2024/08/13/tracking-geometry-changes-in-swiftui/)
+* [Mastering MapKit in SwiftUI. Basics.](/2023/11/28/mastering-mapkit-in-swiftui-basics/)
 * [Building custom layout in SwiftUI. Basics.](/2022/11/16/building-custom-layout-in-swiftui-basics/)
 * [Mastering NavigationStack in SwiftUI. Navigator Pattern.](/2022/06/15/mastering-navigationstack-in-swiftui-navigator-pattern/)
 * [Mastering NavigationStack in SwiftUI. Deep Linking.](/2022/06/21/mastering-navigationstack-in-swiftui-deep-linking/)
-* [What is new in SwiftUI after WWDC 23](/2023/06/06/what-is-new-in-swiftui-after-wwdc23/)
 
 #### Unidirectional flow
 Unidirectional flow means that all the data in the application follows the same pattern, making the logic of your app more predictable and easier to understand. The unidirectional flow pattern works great in conjunction with the idea of a single source of truth.
