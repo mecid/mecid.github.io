@@ -56,6 +56,7 @@ Usually, UI tests require much more effort than unit tests, and keeping the test
 * [Introducing Swift Testing. Lifecycle.](/2024/10/29/introducing-swift-testing-lifecycle/)
 * [Introducing Swift Testing. Traits.](/2024/11/05/introducing-swift-testing-traits/)
 * [Introducing Swift Testing. Parameterized Tests.](/2024/11/12/introducing-swift-testing-parameterized-tests/)
+* [Microapps architecture in Swift. Scaling.](/2025/05/27/microapps-architecture-in-swift-scaling/)
 
 #### Accessibility
 Last but not least is accessibility. Accessibility isn't a feature or a "nice to have." It's a necessity. First, I would like to mention that Apple has done a great job with the Accessibility framework. Most of the things are handled by the system without our action.
