@@ -42,6 +42,7 @@ Fortunately, modularization solves all of these problems. Swift Package Manager 
 * [Microapps architecture in Swift. Feature modules.](/2022/01/19/microapps-architecture-in-swift-feature-modules/)
 * [Microapps architecture in Swift. Dependency Injection.](/2022/02/02/microapps-architecture-in-swift-dependency-injection/)
 * [Microapps architecture in Swift. Resources and localization.](/2022/01/26/microapps-architecture-in-swift-resources-and-localization/)
+* [Microapps architecture in Swift. Scaling.](/2025/05/27/microapps-architecture-in-swift-scaling/)
 
 #### Testing
 As I said before, apps have become the primary source of income for many types of businesses around the world. We as developers, should take care of the stability and consistency of the apps. It is tough to achieve a good level of crash and bug-free sessions of the app without good test coverage.
@@ -56,7 +57,6 @@ Usually, UI tests require much more effort than unit tests, and keeping the test
 * [Introducing Swift Testing. Lifecycle.](/2024/10/29/introducing-swift-testing-lifecycle/)
 * [Introducing Swift Testing. Traits.](/2024/11/05/introducing-swift-testing-traits/)
 * [Introducing Swift Testing. Parameterized Tests.](/2024/11/12/introducing-swift-testing-parameterized-tests/)
-* [Microapps architecture in Swift. Scaling.](/2025/05/27/microapps-architecture-in-swift-scaling/)
 
 #### Accessibility
 Last but not least is accessibility. Accessibility isn't a feature or a "nice to have." It's a necessity. First, I would like to mention that Apple has done a great job with the Accessibility framework. Most of the things are handled by the system without our action.
