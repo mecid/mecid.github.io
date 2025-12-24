@@ -68,8 +68,7 @@ Don't hesitate to add a few lines of code to improve your app's user experience 
 * [Make your app accessible for everyone](/2018/07/09/make-your-app-accessible-for-everyone/)
 * [Accessibility in SwiftUI](/2019/09/10/accessibility-in-swiftui/)
 * [Dynamic Type in SwiftUI](/2019/10/09/dynamic-type-in-swiftui/)
-* [Custom accessibility content in SwiftUI](/2021/10/06/custom-accessibility-content-in-swiftui/)
-
+* [The power of accessibilityChildren view modifier in SwiftUI](/2022/05/25/the-power-of-accessibilityChildren-view-modifier-in-swiftui/)
 
 #### Conclusion
 I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Merry Christmas and Happy New Year!
