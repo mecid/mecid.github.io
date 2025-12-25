@@ -68,6 +68,7 @@ Don't hesitate to add a few lines of code to improve your app's user experience 
 * [Make your app accessible for everyone](/2018/07/09/make-your-app-accessible-for-everyone/)
 * [Accessibility in SwiftUI](/2019/09/10/accessibility-in-swiftui/)
 * [Dynamic Type in SwiftUI](/2019/10/09/dynamic-type-in-swiftui/)
+* [The power of accessibilityRepresentation view modifier in SwiftUI](/2021/09/01/the-power-of-accessibility-representation-view-modifier-in-swiftui/)
 * [The power of accessibilityChildren view modifier in SwiftUI](/2022/05/25/the-power-of-accessibilityChildren-view-modifier-in-swiftui/)
 
 #### Conclusion
