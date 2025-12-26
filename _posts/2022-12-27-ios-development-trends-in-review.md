@@ -30,8 +30,8 @@ Unidirectional flow means that all the data in the application follows the same 
 The single state for the whole module or even app makes it easier to debug and inspect. The single source of truth eliminates tons of bugs produced by creating multiple duplicates of the same piece of state across the app.
 
 * [Unidirectional flow in Swift](/2023/07/11/unidirectional-flow-in-swift/)
-* [Redux-like state container in SwiftUI. Basics.](/2019/09/18/redux-like-state-container-in-swiftui/)
 * [Functional core Imperative shell in Swift. Unidirectional Flow.](/2022/03/16/functional-core-imperative-shell-in-swift-unidirectional-flow/)
+* [Redux-like state container in SwiftUI. Basics.](/2019/09/18/redux-like-state-container-in-swiftui/)
 
 #### Modularization
 Mobile apps become bigger and bigger by providing a complete set of business features. Teams become larger, and the number of developers working on the product increases. This process often creates problems like increased compile time, merge conflicts, and violates the separation of concerns in the codebase.
