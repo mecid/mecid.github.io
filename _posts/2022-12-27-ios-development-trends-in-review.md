@@ -27,7 +27,7 @@ Nowadays, many system-oriented features of the apps require using the SwiftUI fr
 #### Unidirectional flow
 Unidirectional flow means that all the data in the application follows the same pattern, making the logic of your app more predictable and easier to understand. The unidirectional flow pattern works great in conjunction with the idea of a single source of truth.
 
-The single state for the whole app makes it easier to debug and inspect. The single source of truth eliminates tons of bugs produced by creating multiple duplicates of the same piece of state across the app.
+The single state for the whole module or even app makes it easier to debug and inspect. The single source of truth eliminates tons of bugs produced by creating multiple duplicates of the same piece of state across the app.
 
 * [Unidirectional flow in Swift](/2023/07/11/unidirectional-flow-in-swift/)
 * [Redux-like state container in SwiftUI. Basics.](/2019/09/18/redux-like-state-container-in-swiftui/)
