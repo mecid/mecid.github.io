@@ -5,7 +5,7 @@ category: Meta
 image: /public/jj.png
 ---
 
-I’ve decided to share my experience with Jujutsu VCS — not a martial art, but a Git‑compatible version control system. I’ve switched to it for all my projects and have a lot to say.
+I’ve been using Jujutsu VCS for a few months now, and it’s completely changed how I work with version control. No — it’s not a martial art — it’s a modern, Git-compatible version control system that blends the reliability of Git with a much more fluid and intuitive workflow.
 
 {% include friends.html %}
 
