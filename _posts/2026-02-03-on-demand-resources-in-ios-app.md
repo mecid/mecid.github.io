@@ -57,4 +57,4 @@ if let config = bundle.url(forResource: "Config", withExtension: "json") {
 
 On-Demand Resources are often associated with large assets, but as we’ve seen, they can also be a practical tool for improving the security posture of your iOS app. By moving sensitive data—such as API tokens—out of the main app binary and delivering them only when needed, you reduce the attack surface and make static analysis significantly harder. 
 
-Apple mentioned that On-demand resources is a legacy technology, so migrating to Background Assets is recommended. That's going to be the topic for the next week. I hope you enjoyed this one. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask any questions related to this post. Thanks for reading, and see you next week!
+Apple mentioned that on-demand resources is a legacy technology, so migrating to Background Assets is recommended. That's going to be the topic for the next week. I hope you enjoyed this one. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask any questions related to this post. Thanks for reading, and see you next week!
