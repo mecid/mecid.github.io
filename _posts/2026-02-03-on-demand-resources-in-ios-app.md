@@ -1,6 +1,8 @@
 ---
 title: On-demand resources in iOS app 
 layout: post
+category: Architecture
+image: /public/xcode-cloud.png
 ---
 
 On-Demand Resources allow you to ship a smaller initial app download and fetch additional assets like images, sounds, level data, ML models, and more only when a user requires them. This week, we’ll explore how to utilize on-demand resources to store secrets outside of the app binary. 
