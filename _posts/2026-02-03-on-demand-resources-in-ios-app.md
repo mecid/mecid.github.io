@@ -35,9 +35,9 @@ struct OnDemandResourcesService {
 }
 ```
 
-Let’s create a type that we can use to access our on-demand resources. Here we define the OnDemandResourcesService struct with the single access function. The access function initiates a resource request with the provided set of tags and returns a bundle that we can use to access our resources.
+Let’s create a type that we can use to access our on-demand resources. Here we define the *OnDemandResourcesService* struct with the single *access* function. The *access* function initiates a resource request with the provided set of tags and returns a bundle that we can use to access our resources.
 
-We use the conditionallyBeginAccessingResources function to check if we can access resources directly. If it returns false, we download them from the App Store using beginAccessingResources. If downloaded, it returns true, and we get the bundle to access resources almost immediately.
+We use the *conditionallyBeginAccessingResources* function to check if we can access resources directly. If it returns false, we download them from the App Store using *beginAccessingResources*. If downloaded, it returns true, and we get the bundle to access resources almost immediately.
 
 ```swift
 let resources = OnDemandResourcesService()
