@@ -13,12 +13,34 @@ First, we need to enable them in the build settings of our app target. There’s
 
 There are three types of tags: initial install tags, prefetched tags, and download-only tags. Initial install tags are downloaded from the App Store along with the app binary. Prefetched tags are downloaded as soon as the app binary is downloaded. Download-only tags are downloaded only when you request them using an API.
 
-======================================================
+```swift
+import Foundation
+
+struct OnDemandResourcesService {
+    func access(_ tags: Set<String>) async throws -> Bundle {
+        let request = NSBundleResourceRequest(tags: tags)
+
+        let isFetched = await request.conditionallyBeginAccessingResources()
+
+        if !isFetched {
+            try await request.beginAccessingResources()
+        }
+
+        return request.bundle
+    }
+}
+```
 
 Let’s create a type that we can use to access our on-demand resources. Here we define the OnDemandResourcesService struct with the single access function. The access function initiate a resource request with the provided set of tags and returns a bundle that we can use to access our resources.
 
 We use the conditionallyBeginAccessingResources function to check if we can access resources directly. If it returns false, we download them from the App Store using beginAccessingResources. If downloaded, it returns true, and we get the bundle to access resources almost immediately.
 
-======================================================
+```swift
+let resources = OnDemandResourcesService()
+let bundle = try await resources.access(["Config"])
+if let config = bundle.url(forResource: "Config", withExtension: "json") {
+    // decode your config and save to keychain
+}
+```
 
 On-Demand Resources are often associated with large assets, but as we’ve seen, they can also be a practical tool for improving the security posture of your iOS app. By moving sensitive data—such as API tokens—out of the main app binary and delivering them only when needed, you reduce the attack surface and make static analysis significantly harder. I hope you enjoyed this one. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask any questions related to this post. Thanks for reading, and see you next week!
