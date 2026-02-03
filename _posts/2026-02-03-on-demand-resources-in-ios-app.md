@@ -9,7 +9,7 @@ On-Demand Resources allow you to ship a smaller initial app download and fetch a
 
 {% include friends.html %}
 
-iOS handles downloading, caching, and eviction, providing a seamless streaming experience without the need for your own asset CDN logic. Most apps uses on-demand resources for large blobs like level data in games or ML models. But we can also leverage the power of on-demand resources to keep secrets outside of our binary.
+iOS handles downloading, caching, and eviction, providing a seamless streaming experience without the need for your own asset CDN logic. Most apps use on-demand resources for large blobs like level data in games or ML models. But we can also leverage the power of on-demand resources to keep secrets outside of our binary.
 
 For instance, we can fetch API tokens using on-demand resources and save them in the Keychain. This makes reverse engineering our app binary more challenging.
 
@@ -48,10 +48,11 @@ We use the *conditionallyBeginAccessingResources* function to check if we can ac
 ```swift
 let resource = OnDemandResource(tags: ["Config"])
 let bundle = try await resource.pin()
+defer { resource.unpin() }
+
 if let config = bundle.url(forResource: "Config", withExtension: "json") {
     // decode your config and save to Keychain
 }
-resource.unpin()
 ```
 
 On-Demand Resources are often associated with large assets, but as we’ve seen, they can also be a practical tool for improving the security posture of your iOS app. By moving sensitive data—such as API tokens—out of the main app binary and delivering them only when needed, you reduce the attack surface and make static analysis significantly harder. I hope you enjoyed this one. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask any questions related to this post. Thanks for reading, and see you next week!
