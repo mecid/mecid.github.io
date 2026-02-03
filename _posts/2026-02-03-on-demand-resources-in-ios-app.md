@@ -13,7 +13,7 @@ iOS handles downloading, caching, and eviction, providing a seamless streaming e
 
 For instance, we can fetch API tokens using on-demand resources and save them in the Keychain. This makes reverse engineering our app binary more challenging.
 
-First, we need to enable them in the build settings of our app target. There’s a key called “Enable On Demand Resources” that should be set to YES. Once that’s done, we can start associating app resources with tags. This will allow us to fetch a specific collection of resources later on by using those tags.
+First, we need to enable them in the build settings of our app target. There’s a key called “Enable On Demand Resources” that should be set to YES. Once that’s done, we can start associating app resources with tags in the Resource Tags section of app target settings. This will allow us to fetch a specific collection of resources later on by using those tags.
 
 There are three types of tags: initial install tags, prefetched tags, and download-only tags. Initial install tags are downloaded from the App Store along with the app binary. Prefetched tags are downloaded as soon as the app binary is downloaded. Download-only tags are downloaded only when you request them using an API.
 
