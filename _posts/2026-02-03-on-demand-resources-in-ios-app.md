@@ -9,7 +9,7 @@ On-Demand Resources allow you to ship a smaller initial app download and fetch a
 
 {% include friends.html %}
 
-iOS handles downloading, caching, and eviction, providing a seamless streaming experience without the need for your own asset CDN logic. Most of apps uses on-demand resources for large blobs like level data in games or ML models. But we can also leverage the power of on-demand resources to keep secrets outside of our binary.
+iOS handles downloading, caching, and eviction, providing a seamless streaming experience without the need for your own asset CDN logic. Most apps uses on-demand resources for large blobs like level data in games or ML models. But we can also leverage the power of on-demand resources to keep secrets outside of our binary.
 
 For instance, we can fetch API tokens using on-demand resources and save them in the Keychain. This makes reverse engineering our app binary more challenging.
 
@@ -18,7 +18,7 @@ First, we need to enable them in the build settings of our app target. There’s
 There are three types of tags: initial install tags, prefetched tags, and download-only tags. Initial install tags are downloaded from the App Store along with the app binary. Prefetched tags are downloaded as soon as the app binary is downloaded. Download-only tags are downloaded only when you request them using an API.
 
 ```swift
-actor OnDemandResource {
+final class OnDemandResource {
     private let request: NSBundleResourceRequest
 
     init(tags: Set<String>) {
@@ -43,11 +43,11 @@ actor OnDemandResource {
 
 Let’s create a type that we can use to access our on-demand resources. Here we define the *OnDemandResource* actor with two functions *pin* and *unpin*. The *pin* function initiates a resource request with the provided set of tags and returns a bundle that we can use to access our resources.
 
-We use the *conditionallyBeginAccessingResources* function to check if we can access resources directly. If it returns false, we download them from the App Store using *beginAccessingResources*. If downloaded, it returns true, and we get the bundle to access resources almost immediately. As soon as we finished using resource we should call *unpin* to allow system evict resources.
+We use the *conditionallyBeginAccessingResources* function to check if we can access resources directly. If it returns false, we download them from the App Store using *beginAccessingResources*. If downloaded, it returns true, and we get the bundle to access resources almost immediately. As soon as we finish using resource we should call *unpin* to allow system evict resources.
 
 ```swift
-let resource = OnDemandResource(["Config"])
-let bundle = try await resources.pin()
+let resource = OnDemandResource(tags: ["Config"])
+let bundle = try await resource.pin()
 if let config = bundle.url(forResource: "Config", withExtension: "json") {
     // decode your config and save to Keychain
 }
