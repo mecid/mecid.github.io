@@ -41,7 +41,7 @@ final class OnDemandResource {
 }
 ```
 
-Let’s create a type that we can use to access our on-demand resources. Here we define the *OnDemandResource* actor with two functions *pin* and *unpin*. The *pin* function initiates a resource request with the provided set of tags and returns a bundle that we can use to access our resources.
+Let’s create a type that we can use to access our on-demand resources. Here we define the *OnDemandResource* class with two functions *pin* and *unpin*. The *pin* function initiates a resource request with the provided set of tags and returns a bundle that we can use to access our resources.
 
 We use the *conditionallyBeginAccessingResources* function to check if we can access resources directly. If it returns false, we download them from the App Store using *beginAccessingResources*. If downloaded, it returns true, and we get the bundle to access resources almost immediately. As soon as we finish using resource we should call *unpin* to allow system evict resources.
 
@@ -55,7 +55,7 @@ if let config = bundle.url(forResource: "Config", withExtension: "json") {
 }
 ```
 
-On-Demand Resources are often associated with large assets, but as we’ve seen, they can also be a practical tool for improving the security posture of your iOS app. By moving sensitive data—such as API tokens—out of the main app binary and delivering them only when needed, you reduce the attack surface and make static analysis significantly harder. 
+On-demand Resources are often associated with large assets, but as we’ve seen, they can also be a practical tool for improving the security posture of your iOS app. By moving sensitive data—such as API tokens—out of the main app binary and delivering them only when needed, you reduce the attack surface and make static analysis significantly harder. 
 
 On-demand resources can be a useful defense-in-depth technique, but they should not be treated as a security boundary on their own. On-demand resources are not encrypted by default once downloaded to the device. A determined attacker with device access can still inspect cached resources.
 
