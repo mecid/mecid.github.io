@@ -1,6 +1,7 @@
 ---
 title: Agentic coding in Xcode
 layout: post
+category: Meta
 ---
 
 Apple has finally released Xcode 26.3, which now supports agentic coding. In this article, I’ll guide you through configuring Xcode 26.3 and utilizing the latest best practices when using agentic tools for building apps on Apple platforms.
