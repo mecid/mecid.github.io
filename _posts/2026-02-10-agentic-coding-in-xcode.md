@@ -5,6 +5,8 @@ layout: post
 
 Apple has finally released Xcode 26.3, which now supports agentic coding. In this article, I’ll guide you through configuring Xcode 26.3 and utilizing the latest best practices when using agentic tools for building apps on Apple platforms.
 
+{% include friends.html %}
+
 I assume you’re familiar with agentic coding tools like Codex or Claude Code. If not, they’re computer programs that allow you to share access to your codebase and engage in conversations with it to discuss your codebase, implement features, review solutions, and more.
 
 Xcode 26.3 fully supports agentic coding tools like Codex, Claude Code, or any other third-party providers. To activate these tools, you need an active subscription to one of them. You can do this by navigating to Xcode -> Settings -> Intelligence -> OpenAI -> Codex. A similar setup is available for Claud Code.
@@ -22,6 +24,7 @@ For instance, if you’ve already installed Codex on your working machine using 
 The same approach applies to the skills folder. Skills are reusable knowledge that you can share with your agentic coding tool. For instance, it could be a document on how to cook data flow in features or some best practices on building animations, and so on. These documents may not always be necessary in your workflow, but you might need to plug them in occasionally.
 
 > ~/Library/Developer/Xcode/CodingAssistant/codex/skills
+
 > ~/Library/Developer/Xcode/CodingAssistant/ClaudeAgentConfig/skills
 
 You can create symbolic links to these folders to share your skills and have a single source of them. I highly encourage you to install skills by Antoine van der Lee for SwiftUI and Swift Concurrency. It might be a game changing for you.
