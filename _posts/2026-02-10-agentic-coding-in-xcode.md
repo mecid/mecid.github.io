@@ -1,6 +1,7 @@
 ---
 title: Agentic coding in Xcode
 layout: post
+image: /public/agentic-coding.jpg
 category: Meta
 ---
 
