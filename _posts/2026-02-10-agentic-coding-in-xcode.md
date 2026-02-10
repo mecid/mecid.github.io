@@ -10,13 +10,13 @@ Apple has finally released Xcode 26.3, which now supports agentic coding. In thi
 
 I assume you’re familiar with agentic coding tools like Codex or Claude Code. If not, they’re computer programs that allow you to share access to your codebase and engage in conversations with it to discuss your codebase, implement features, review solutions, and more.
 
-Xcode 26.3 fully supports agentic coding tools like Codex, Claude Code, or any other third-party providers. To activate these tools, you need an active subscription to one of them. You can do this by navigating to Xcode -> Settings -> Intelligence -> OpenAI -> Codex. A similar setup is available for Claud Code.
+Xcode 26.3 fully supports agentic coding tools like Codex, Claude Code, or any other third-party providers. To activate these tools, you need an active subscription to one of them. You can do this by navigating to *Xcode -> Settings -> Intelligence -> OpenAI -> Codex*. A similar setup is available for Claud Code.
 
 Xcode not only enables the use of agentic coding tools but also provides a Model Context Protocol (MCP). The MCP allows access to Xcode features within the agentic coding tools. For instance, a coding agent can run a preview, compare it with your design requirements, or access the latest Apple documentation.
 
 Xcode 26.3 comes with bundled Codex and Claude Code instances which are a bit outdated now. But no worries, you can easily replace the bundled version of them with the recent one.
 
-For instance, if you’ve already installed Codex on your working machine using Brew (which I highly recommend), you can create a symbolic link to the directory where Xcode stores bundled versions.
+For instance, if you’ve already installed Codex on your working machine using *Brew* (which I highly recommend), you can create a symbolic link to the directory where Xcode stores bundled versions.
 
 > ln -sf $(which codex) ~/Library/Developer/Xcode/CodingAssistant/Agents/Versions/26.3/codex
 
