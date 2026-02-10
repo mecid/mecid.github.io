@@ -31,6 +31,12 @@ The same approach applies to the skills folder. Skills are reusable knowledge th
 
 You can create symbolic links to these folders to share your skills and have a single source of them. I highly encourage you to install skills by [Antoine van der Lee](https://github.com/AvdLee) for SwiftUI and Swift Concurrency. It might be a game changing for you.
 
+Configuration files can be adjusted to seamlessly integrate custom MCPs or tailor the default models to better align with your workflow and preferences.
+ 
+> ~/Library/Developer/Xcode/CodingAssistant/codex/config.toml
+
+> ~/Library/Developer/Xcode/CodingAssistant/ClaudeAgentConfig/.claude
+
 Agentic coding in Xcode 26.3 isn’t just a new checkbox in Settings — it’s a shift in how we build apps on Apple platforms. When you connect tools like Codex or Claude Code directly to Xcode and unlock MCP, your editor stops being just an IDE and starts becoming a collaborative environment.
 
 Your agent can reason about your codebase, access documentation, run previews, and align implementation with design intent — all within the same workflow. I hope you enjoyed this one. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask any questions related to this post. Thanks for reading, and see you next week!
