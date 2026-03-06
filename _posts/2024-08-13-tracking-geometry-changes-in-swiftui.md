@@ -60,7 +60,7 @@ struct ContentView: View {
             
                 // Scroll content here...
         }
-        .coordinateSpace(name: "scrollView")
+        .coordinateSpace(.named("scrollView"))
         .onChange(of: offset) {
             print(offset)
         }
@@ -87,7 +87,7 @@ struct ContentView: View {
             
                 // Scroll content here...
         }
-        .coordinateSpace(name: "scrollView")
+        .coordinateSpace(.named("scrollView"))
         .onChange(of: offset) {
             print(offset)
         }
