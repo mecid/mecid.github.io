@@ -8,7 +8,7 @@ My name is Majid Jabrayilov, and I am the founder of Majid Jabrayilov company. I
 You can contact me directly using the details below:
 * Phone: +994557142009
 * Email: cmecid@gmail.com
-* Post: D.Aliyeva 243, 75, Baku, Azerbaijan, AZ1010
+* Post: D.Aliyeva 243, 74, Baku, Azerbaijan, AZ1010
 
 I’m always open to new opportunities, collaborations, and meaningful conversations.
 
