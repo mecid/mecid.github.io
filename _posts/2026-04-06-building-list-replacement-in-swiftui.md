@@ -11,7 +11,7 @@ First of all, I should mention that over the last few years SwiftUI has signific
 
 ![cardiobot-new-design](/public/design-system.jpeg)
 
-You can see 4 screenshots here. The first two of them represent the current state of my CardioBot app. The next two screenshots are the result I want to achieve. As you might notice, I use a standard *List* at the very moment, and I really like how the app looks and feels now. But I’ve decided to reconsider my UI. I want to keep it simple and recognizable for iPhone users, but I would like to make the UI more fancy.
+You can see 4 screenshots here. The first two of them represent the current state of my [CardioBot](https://apps.apple.com/us/app/cardiobot-heart-rate-monitor/id1149412984?uo=4) app. The next two screenshots are the result I want to achieve. As you might notice, I use a standard *List* at the very moment, and I really like how the app looks and feels now. But I’ve decided to reconsider my UI. I want to keep it simple and recognizable for iPhone users, but I would like to make the UI more fancy.
 
 As you can see, my app displays different health metrics. It is not a uniform data set, and it doesn’t make any sense to use the *List* for recycling cells. I use multiple card types like *HeroCard*, *TintedCard*, and *RegularCard*. I can achieve a similar look and feel using List and list-specific view modifiers like *listRowBackground*, *listItemTint*, and *listRowInsets*. Unfortunately, these list-specific view modifiers don’t work outside of the *List* view, which requires additional styling outside the *List*.
 
