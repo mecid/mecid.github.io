@@ -181,3 +181,6 @@ public struct SummaryView: View {
 
 Here is the code from my app showing the usage of the new UI primitives we built earlier. As you can see, we have very similar usage to the List API, but also have precise control of look and feel which allows us to reuse these primitives on screens without sections just by removing SectionedSurface.
 
+Replacing List in SwiftUI is not about abandoning a powerful component—it’s about choosing the right tool for the job. While List remains an excellent choice for large, uniform datasets, modern SwiftUI gives us the flexibility to build something more tailored when our UI demands it.
+
+By leveraging ScrollView with lazy stacks and the Container View APIs, we can recreate—and even surpass—the capabilities of List. Custom primitives like ScrollingSurface, DividedCard, and SectionedSurface demonstrate how we can compose reusable building blocks that match our product’s design language while maintaining performance and clarity.
