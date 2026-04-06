@@ -13,19 +13,171 @@ As you can see, my app displays different health metrics. It is not a uniform da
 
 Fortunately, SwiftUI introduced Container View APIs that we can use to build List-replacement. Container View APIs allow us to decompose SwiftUI views, apply some changes, and compose again. So, we can use the Container View APIs to build reusable container views like List, Form, or anything super custom.
 
-======================================================
+```swift
+public struct ScrollingSurface<Content: View>: View {
+    public enum Direction {
+        case vertical(HorizontalAlignment)
+        case horizontal(VerticalAlignment)
+    }
+
+    let direction: Direction
+    let spacing: CGFloat?
+    let content: Content
+
+    public init(
+        _ direction: Direction = .vertical(.leading),
+        spacing: CGFloat? = nil,
+        @ViewBuilder content: () -> Content
+    ) {
+        self.spacing = spacing
+        self.direction = direction
+        self.content = content()
+    }
+
+    public var body: some View {
+        switch direction {
+        case .horizontal(let alignment):
+            ScrollView(.horizontal) {
+                LazyHStack(alignment: alignment, spacing: spacing) {
+                    content
+                }
+                .scrollTargetLayout()
+                .padding()
+            }
+        case .vertical(let alignment):
+            ScrollView(.vertical) {
+                LazyVStack(alignment: alignment, spacing: spacing) {
+                    content
+                }
+                .scrollTargetLayout()
+                .padding()
+            }
+        }
+    }
+}
+```
 
 Every screen in my app uses ScrollView with a lazy stack. So, I’ve created the ScrollingSurface type. As you can see, it is a simple wrapper around the ScrollView and LazyVStack or LazyHStack depending on the chosen direction. I will use the ScrollingSurface type as the root view on every screen of my app.
 
-======================================================
+```swift
+public struct DividedCard<Content: View>: View {
+    let content: Content
+
+    public init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    public var body: some View {
+        Group(subviews: content) { subviews in
+            if !subviews.isEmpty {
+                VStack(alignment: .leading) {
+                    ForEach(subviews) { subview in
+                        subview
+
+                        if subviews.last?.id != subview.id {
+                            Divider()
+                                .padding(.vertical, 8)
+                        }
+                    }
+                }
+                .padding()
+                .frame(maxWidth: .infinity, alignment: .topLeading)
+                .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 32))
+            }
+        }
+    }
+}
+```
+
 Next most important primitive for UI is the DividedCard. As you can see, it uses Group(subviews:) which is a part of SwiftUI Container View API. This initializer of the Group allows us to decompose the view passed with ViewBuilder closure.
 
 In the DividedCard, we decompose the passed view and add the divider after each child view. In the end, we wrap the whole view with a background with rounded corners to make it feel like a card. 
 
-======================================================
+```swift
+public struct SectionedSurface<Content: View>: View {
+    let content: Content
+
+    public init(@ViewBuilder content: () -> Content) {
+        self.content = content()
+    }
+
+    public var body: some View {
+        ForEach(sections: content) { section in
+            if !section.content.isEmpty {
+                section.header.padding(.top)
+                section.content
+                section.footer
+            }
+        }
+    }
+}
+```
 
 Another interesting UI primitive I built is the SectionedSurface. It uses ForEach(sections:) which allows us to extract all the sections from the passed view and filter out the sections without content and add some paddings to section headers.
 
-======================================================
+```swift
+public struct NavigationButtonStyle: ButtonStyle {
+    public func makeBody(configuration: Configuration) -> some View {
+        HStack {
+            configuration.label
+                .opacity(configuration.isPressed ? 0.7 : 1)
+            Spacer()
+            Image(systemName: "chevron.right")
+                .foregroundStyle(.tertiary)
+        }
+        .contentShape(.rect)
+    }
+}
+
+extension ButtonStyle where Self == NavigationButtonStyle {
+    public static var navigation: Self { .init() }
+}
+```
+
+One thing you can miss from using List view in SwiftUI is the styling of the NavigationLinks. List automatically adds the chevron on the trailing edge of the NavigationLinks. Fortunately, we can achieve that using a custom button style.
+
+```swift
+public struct SummaryView: View {
+    let summary: SummaryStore
+    
+    public var body: some View {
+        ScrollingSurface {
+            SectionedSurface {
+                coachSection
+                activitySection
+                recoverySection
+                vitalsSection
+                heartRateSection
+                alcoholicBeveragesSection
+            }
+        }
+        .buttonStyle(.navigation)
+    }
+    
+    @ViewBuilder private var activitySection: some View {
+        Section {
+            if !summary.metrics.workouts.isEmpty {
+                DividedCard {
+                    ForEach(summary.metrics.workouts, id: \.workout.uuid) { snapshot in
+                        NavigationLink {
+                            WorkoutDetailsView(snapshot: snapshot)
+                        } label: {
+                            WorkoutView(snapshot: snapshot)
+                        }
+                    }
+                }
+            }
+        } header: {
+            SectionHeader(
+                .horizontal,
+                title: Text("activitySection"),
+                systemImage: "figure.run"
+            )
+            .tint(.orange)
+        }
+    }
+}
+```
 
 Here is the code from my app showing the usage of the new UI primitives we built earlier. As you can see, we have very similar usage to the List API, but also have precise control of look and feel which allows us to reuse these primitives on screens without sections just by removing SectionedSurface.
+
