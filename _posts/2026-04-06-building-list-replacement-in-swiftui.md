@@ -97,7 +97,7 @@ Next most important primitive for UI is the *DividedCard* type. As you can see, 
 
 > To learn more about Container View APIs in SwiftUI, take a look at my dedicated ["Mastering container views in SwiftUI. Basics."](https://swiftwithmajid.com/2024/09/24/mastering-container-views-in-swiftui-basics/) post.
 
-In the *DividedCard*, we decompose the passed view and add the divider after each child view. In the end, we wrap the whole view with a background with rounded corners to make it feel like a card. 
+In the *DividedCard* view, we decompose the passed view and add the divider after each child view. In the end, we wrap the whole view with a background with rounded corners to make it feel like a card. 
 
 ```swift
 public struct SectionedSurface<Content: View>: View {
