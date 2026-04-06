@@ -15,7 +15,7 @@ You can see 4 screenshots here. The first two of them represent the current stat
 
 As you can see, my app displays different health metrics. It is not a uniform data set, and it doesn’t make any sense to use the *List* for recycling cells. I use multiple card types like *HeroCard*, *TintedCard*, and *RegularCard*. I can achieve a similar look and feel using List and list-specific view modifiers like *listRowBackground*, *listItemTint*, and *listRowInsets*. Unfortunately, these list-specific view modifiers don’t work outside of the *List* view, which requires additional styling outside the *List*.
 
-Fortunately, SwiftUI introduced Container View APIs that we can use to build List-replacement. Container View APIs allow us to decompose SwiftUI views, apply some changes, and compose again. So, we can use the Container View APIs to build reusable container views like *List*, *Form*, or anything super custom.
+Fortunately, SwiftUI introduced Container View APIs that we can use to build a List-replacement. Container View APIs allow us to decompose SwiftUI views, apply some changes, and compose again. So, we can use the Container View APIs to build reusable container views like *List*, *Form*, or anything super custom.
 
 ```swift
 public struct ScrollingSurface<Content: View>: View {
