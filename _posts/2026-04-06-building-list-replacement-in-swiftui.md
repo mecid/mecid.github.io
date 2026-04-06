@@ -1,6 +1,7 @@
 ---
 title: Building List replacement in SwiftUI
 layout: post
+category: View Composition
 --- 
 
 Whenever you consider creating a scrollable screen in SwiftUI, you might think of using a *List*. However, it’s not always the best choice. Lists are great for displaying uniform data. For anything else, a *ScrollView* with a lazy stack is almost always the best option. This week, we will learn how to build a custom scrollable container in SwiftUI with precise control of look and feel.
