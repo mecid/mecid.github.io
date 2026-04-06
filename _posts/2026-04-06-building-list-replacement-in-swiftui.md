@@ -2,3 +2,30 @@
 title: Building List replacement in SwiftUI
 layout: post
 --- 
+
+Whenever you consider creating a scrollable screen in SwiftUI, you might think of using a List. However, it’s not always the best choice. Lists are great for displaying uniform data. For anything else, a ScrollView with a lazy stack is almost always the best option. This week, we will learn how to build a custom scrollable container in SwiftUI with precise control of look and feel.
+
+First of all, I should mention that over the last few years SwiftUI has significantly improved the performance of ScrollView in pairs with lazy stacks. So, if you are not displaying hundreds of thousands of uniform data like mailboxes or to-do lists, the ScrollView is a way to go.
+
+You can see 4 screenshots here. The first two of them represent the current state of my CardioBot app. The next two screenshots are the result I want to achieve. As you might notice, I use a standard List at the very moment, and I really like how the app looks and feels now. But I’ve decided to reconsider my UI. I want to keep it simple and recognizable for iPhone users, but I would like to make the UI more fancy.
+
+As you can see, my app displays different health metrics. It is not a uniform data set, and it doesn’t make any sense to use the List for recycling cells. I use multiple card types like HeroCard, TintedCard, and RegularCard. I can achieve a similar look and feel using List and list-specific view modifiers like listRowBackground, listItemTint, and listRowInsets. Unfortunately, these list-specific view modifiers don’t work outside of the List view, which requires additional styling outside the List.
+
+Fortunately, SwiftUI introduced Container View APIs that we can use to build List-replacement. Container View APIs allow us to decompose SwiftUI views, apply some changes, and compose again. So, we can use the Container View APIs to build reusable container views like List, Form, or anything super custom.
+
+======================================================
+
+Every screen in my app uses ScrollView with a lazy stack. So, I’ve created the ScrollingSurface type. As you can see, it is a simple wrapper around the ScrollView and LazyVStack or LazyHStack depending on the chosen direction. I will use the ScrollingSurface type as the root view on every screen of my app.
+
+======================================================
+Next most important primitive for UI is the DividedCard. As you can see, it uses Group(subviews:) which is a part of SwiftUI Container View API. This initializer of the Group allows us to decompose the view passed with ViewBuilder closure.
+
+In the DividedCard, we decompose the passed view and add the divider after each child view. In the end, we wrap the whole view with a background with rounded corners to make it feel like a card. 
+
+======================================================
+
+Another interesting UI primitive I built is the SectionedSurface. It uses ForEach(sections:) which allows us to extract all the sections from the passed view and filter out the sections without content and add some paddings to section headers.
+
+======================================================
+
+Here is the code from my app showing the usage of the new UI primitives we built earlier. As you can see, we have very similar usage to the List API, but also have precise control of look and feel which allows us to reuse these primitives on screens without sections just by removing SectionedSurface.
