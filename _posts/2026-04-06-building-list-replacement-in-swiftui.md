@@ -93,7 +93,7 @@ public struct DividedCard<Content: View>: View {
 }
 ```
 
-Next most important primitive for UI is the *DividedCard*. As you can see, it uses **Group(subviews:)** which is a part of SwiftUI Container View API. This initializer of the *Group* allows us to decompose the view passed with *ViewBuilder* closure.
+Next most important primitive for UI is the *DividedCard* type. As you can see, it uses **Group(subviews:)** which is a part of SwiftUI Container View API. This initializer of the *Group* allows us to decompose the view passed with *ViewBuilder* closure.
 
 > To learn more about Container View APIs in SwiftUI, take a look at my dedicated ["Mastering container views in SwiftUI. Basics."](https://swiftwithmajid.com/2024/09/24/mastering-container-views-in-swiftui-basics/) post.
 
