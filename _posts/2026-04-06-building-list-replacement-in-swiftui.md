@@ -7,6 +7,8 @@ image: /public/container.png
 
 Whenever you consider creating a scrollable screen in SwiftUI, you might think of using a *List*. However, it’s not always the best choice. Lists are great for displaying uniform data. For anything else, a *ScrollView* with a lazy stack is almost always the best option. This week, we will learn how to build a custom scrollable container in SwiftUI with precise control of look and feel.
 
+{% include friends.html %}
+
 First of all, I should mention that over the last few years SwiftUI has significantly improved the performance of *ScrollView* in pairs with lazy stacks. So, if you are not displaying hundreds of thousands of uniform data like mailboxes or to-do lists, the *ScrollView* is a way to go.
 
 ![cardiobot-new-design](/public/design-system.jpeg)
