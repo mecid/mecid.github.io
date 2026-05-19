@@ -9,21 +9,84 @@ Usually, my apps support two of the most recent platform versions, and it is eas
 
 So, you should keep in mind every custom type or function you build to cover functionality on older platforms, because you might need to delete them in a year as soon as you bump the minimal platform version. Or, you can make the compiler remind you about that code. This week, we will talk about a way to make the compiler help us in identifying dead code in our codebase.
 
-=======================================================
+```swift
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            Text("Hello, world!")
+                .navigationTitle("Content")
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("cancel", systemImage: "xmark") {}
+                    }
+
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("done", systemImage: "checkmark") {}
+                    }
+                }
+        }
+    }
+}
+```
 
 Let’s take a look at a simple example above. We set up two toolbar items. We want to achieve a symbol-only look and feel on iOS 26 and a text-only look and feel on iOS 18. For these particular cases, I’ve introduced the ToolbarLabelStyle type.
 
-=======================================================
+```swift
+struct ToolbarLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        if #available(iOS 26, *) {
+            Label(configuration)
+                .labelStyle(.iconOnly)
+        } else {
+            Label(configuration)
+                .labelStyle(.titleOnly)
+        }
+    }
+}
+
+extension LabelStyle where Self == ToolbarLabelStyle {
+    static var toolbar: Self { .init() }
+}
+
+struct ContentView: View {
+    var body: some View {
+        NavigationStack {
+            Text("Hello, world!")
+                .navigationTitle("Content")
+                .toolbar {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("cancel", systemImage: "xmark") {}
+                    }
+
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button("done", systemImage: "checkmark") {}
+                    }
+                }
+                .labelStyle(.toolbar)
+        }
+    }
+}
+```
 
 As you can see in the example above, we easily solve this by introducing ToolbarLabelStyle type. It checks the availability of the platform and applies the correct styling for our labels. The code looks and feels very natural, but it will become dead code when I bump the target version to iOS 26. How to find this type of code in my codebase? It might be in so many places where I use similar solutions.
 
-=======================================================
+```swift
+extension LabelStyle where Self == ToolbarLabelStyle {
+    @available(iOS, deprecated: 26, obsoleted: 27, message: "You don't need .toolbar anymore")
+    static var toolbar: Self { .init() }
+}
+```
 
 Fortunately, we can use availability annotations. We annotate our toolbar property with the availability annotation, which deprecates and obsoletes the usage of the toolbar property. You are curious about what it means? 
 
 As soon as you bump the target of your app to iOS 26, all the usage of the toolbar property will be marked as warnings by the compiler with the message we put in the annotation. Whenever you bump the target to iOS 27 (in the future), the compiler will produce an error because this code is already obsolete.
 
-=======================================================
+```swift
+extension LabelStyle where Self == ToolbarLabelStyle {
+    @available(iOS, obsoleted: 26, message: "You don't need .toolbar anymore")
+    static var toolbar: Self { .init() }
+}
+```
 
 You can be more aggressive and instead of deprecating your code, make it obsolete for iOS 26. In this case, you will get compiler errors instead of warnings. Sometimes, it might be blocking you from some work, so I highly encourage you to deprecate first, then obsolete. But you should always take care of compiler warnings to not accumulate a technical debt.
 
