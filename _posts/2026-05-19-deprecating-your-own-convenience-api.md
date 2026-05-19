@@ -81,6 +81,8 @@ extension LabelStyle where Self == ToolbarLabelStyle {
 
 Fortunately, we can use availability annotations. We annotate our toolbar property with the availability annotation, which deprecates and obsoletes the usage of the toolbar property. You are curious about what it means? 
 
+> To learn more about availability annotation, take a look at my ["API availability in Swift"](/2023/05/17/api-availability-in-swift/) post.
+
 As soon as you bump the target of your app to iOS 26, all the usage of the toolbar property will be marked as warnings by the compiler with the message we put in the annotation. Whenever you bump the target to iOS 27 (in the future), the compiler will produce an error because this code is already obsolete.
 
 ```swift
