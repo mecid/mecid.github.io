@@ -72,7 +72,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we easily solve this by introducing *ToolbarLabelStyle* type. It checks the availability of the platform and applies the correct styling for our labels. The code looks and feels very natural, but it will become dead code when I bump the target version to iOS 26. How to find this type of code in my codebase? It might be in so many places where I use similar solutions.
+As you can see in the example above, we easily solve this by introducing *ToolbarLabelStyle* type. It checks the availability of the platform and applies the correct styling to our labels. The code looks and feels very natural, but it will become dead code when I bump the target version to iOS 26. How to find this type of code in my codebase? It might be in so many places where I use similar solutions.
 
 ```swift
 extension LabelStyle where Self == ToolbarLabelStyle {
