@@ -26,3 +26,5 @@ As soon as you bump the target of your app to iOS 26, all the usage of the toolb
 =======================================================
 
 You can be more aggressive and instead of deprecating your code, make it obsolete for iOS 26. In this case, you will get compiler errors instead of warnings. Sometimes, it might be blocking you from some work, so I highly encourage you to deprecate first, then obsolete. But you should always take care of compiler warnings to not accumulate a technical debt.
+
+I really like this approach because it keeps the codebase honest. We can freely build ergonomic wrappers for older platforms while still having a clear path to remove them later. And the best part is that the compiler does all the reminding for us.
