@@ -5,7 +5,7 @@ category: Swift Language Features
 image: /public/swift.png
 ---
 
-Almost after every major update of iOS, we got new APIs that we use on the most recent platform but can’t use on the previous one. Usually, I solve this kind of thing by introducing my own convenience code that runs new APIs on the available versions and my custom implementation on old platform versions.
+Almost after every major update of iOS, we got new APIs that we use on the most recent platform but can’t use on the previous one. Usually, I solve this kind of thing by introducing my own convenience code that runs new APIs on the available versions and my custom implementation or stubs on old platform versions.
 
 {% include friends.html %}
 
