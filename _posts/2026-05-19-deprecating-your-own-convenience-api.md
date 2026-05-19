@@ -33,7 +33,7 @@ struct ContentView: View {
 }
 ```
 
-Let’s take a look at a simple example above. We set up two toolbar items. We want to achieve a symbol-only look and feel on iOS 26 and a text-only look and feel on iOS 18. For these particular cases, I’ve introduced the ToolbarLabelStyle type.
+Let’s take a look at a simple example above. We set up two toolbar items. We want to achieve a symbol-only look and feel on iOS 26 and a text-only look and feel on iOS 18. For these particular cases, I’ve introduced the *ToolbarLabelStyle* type.
 
 ```swift
 struct ToolbarLabelStyle: LabelStyle {
@@ -72,7 +72,7 @@ struct ContentView: View {
 }
 ```
 
-As you can see in the example above, we easily solve this by introducing ToolbarLabelStyle type. It checks the availability of the platform and applies the correct styling for our labels. The code looks and feels very natural, but it will become dead code when I bump the target version to iOS 26. How to find this type of code in my codebase? It might be in so many places where I use similar solutions.
+As you can see in the example above, we easily solve this by introducing *ToolbarLabelStyle* type. It checks the availability of the platform and applies the correct styling for our labels. The code looks and feels very natural, but it will become dead code when I bump the target version to iOS 26. How to find this type of code in my codebase? It might be in so many places where I use similar solutions.
 
 ```swift
 extension LabelStyle where Self == ToolbarLabelStyle {
@@ -81,11 +81,11 @@ extension LabelStyle where Self == ToolbarLabelStyle {
 }
 ```
 
-Fortunately, we can use availability annotations. We annotate our toolbar property with the availability annotation, which deprecates and obsoletes the usage of the toolbar property. You are curious about what it means? 
+Fortunately, we can use *availability* annotations. We annotate our *toolbar* property with the *availability* annotation, which deprecates and obsoletes the usage of the *toolbar* property. You are curious about what it means? 
 
 > To learn more about availability annotation, take a look at my ["API availability in Swift"](/2023/05/17/api-availability-in-swift/) post.
 
-As soon as you bump the target of your app to iOS 26, all the usage of the toolbar property will be marked as warnings by the compiler with the message we put in the annotation. Whenever you bump the target to iOS 27 (in the future), the compiler will produce an error because this code is already obsolete.
+As soon as you bump the target of your app to iOS 26, all the usage of the *toolbar* property will be marked as warnings by the compiler with the message we put in the annotation. Whenever you bump the target to iOS 27 (in the future), the compiler will produce an error because this code is already obsolete.
 
 ```swift
 extension LabelStyle where Self == ToolbarLabelStyle {
