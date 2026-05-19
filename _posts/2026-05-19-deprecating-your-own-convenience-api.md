@@ -5,6 +5,8 @@ layout: post
 
 Almost after every major update of iOS, we got new APIs that we use on the most recent platform but can’t use on the previous one. Usually, I solve this kind of thing by introducing my own convenience code that runs new APIs on the available versions and my custom implementation on old platform versions.
 
+{% include friends.html %}
+
 Usually, my apps support two of the most recent platform versions, and it is easy to maintain. But now, we have iOS 26 and iOS 18, and they differ a lot in many small details. For example, in iOS 26, toolbar items are displayed as SF Symbols or any other similar image, but on iOS 18, we used to display text-based buttons. It is easy to solve, but it creates code that will be dead in a year when the new iOS version arrives.
 
 So, you should keep in mind every custom type or function you build to cover functionality on older platforms, because you might need to delete them in a year as soon as you bump the minimal platform version. Or, you can make the compiler remind you about that code. This week, we will talk about a way to make the compiler help us in identifying dead code in our codebase.
