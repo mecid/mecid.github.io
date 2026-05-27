@@ -7,6 +7,8 @@ image: /public/swift.png
 
 You may think about **defer** keyword as one of the most ambiguous language features in Swift, but it is very useful in some cases. You can use it deliberately, and it will give you safety. This week we will talk about some best practices of using defer in Swift.
 
+{% include friends.html %}
+
 *Defer* keyword in Swift allows you to run a block of code at the end of the current scope. What does current scope mean? Usually, it is the nearest curly braces pair. Let’s take a look at a few examples.
 
 ```swift
