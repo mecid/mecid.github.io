@@ -1,5 +1,5 @@
 ---
-title: Swift defer: Clean Up Before You Leave
+title: Swift Defer. Clean up before you leave.
 layout: post
 ---
 
