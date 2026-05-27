@@ -1,6 +1,7 @@
 ---
 title: Swift Defer. Clean up before you leave.
 layout: post
+category: Swift Language Features
 ---
 
 You may think about **defer** keyword as one of the most ambiguous language features in Swift, but it is very useful in some cases. You can use it deliberately, and it will give you safety. This week we will talk about some best practices of using defer in Swift.
