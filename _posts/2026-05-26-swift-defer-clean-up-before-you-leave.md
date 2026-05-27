@@ -5,7 +5,7 @@ category: Swift Language Features
 image: /public/swift.png
 ---
 
-You may think about **defer** keyword as one of the most ambiguous language features in Swift, but it is very useful in some cases. You can use it deliberately, and it will give you safety. This week we will talk about some best practices of using defer in Swift.
+You may think about **defer** keyword as one of the most ambiguous language features in Swift, but it is very useful in some cases. You can use it deliberately, and it will give you safety. This week we will talk about some best practices of using *defer* in Swift.
 
 {% include friends.html %}
 
@@ -48,9 +48,7 @@ func foo() {
 
 Here I try to show where *defer* blocks should execute. Every closing curly brace is closing some scope, and this is exactly the place where *defer* blocks run.
 
-So, you can place *defer* blocks anywhere in the scope, but they will run at the end of the scope. Why might we need so ambiguous behaviour? We used to read and understand the code line by line, but *defer* blocks are different.
-
-I’m sure you don’t need to use *defer* blocks often, but there are some cases where they shine.
+So, you can place *defer* blocks anywhere in the scope, but they will run at the end of the scope. Why might we need so ambiguous behaviour? We used to read and understand the code line by line, but *defer* blocks are different. I’m sure you don’t need to use *defer* blocks often, but there are some cases where they shine.
 
 ```swift
 func fetch(_ epg: URL) async throws {
@@ -88,7 +86,7 @@ func fetch(_ epg: URL) async throws {
 }
 ```
 
-By using a *defer* block, you can create a file and define a *defer* block that deletes it. You can place it right below the file creation, but it will execute at the end of the scope.
+You can create a file and define a *defer* block that deletes it. You can place it right below the file creation, but it will execute at the end of the scope.
 
 ```swift
 for await handler in await health.observe(
