@@ -109,3 +109,5 @@ for await handler in await health.observe(
 ```
 
 Let me show you another example. Here we use HealthKit observation API, that requires you to call a completion handler as soon as you finish your processing. This is another interesting usage of a *defer* block, because you define it at the start of the scope, but it will run in the end right after you finish all your processing.
+
+The *defer* keyword is not something you need every day, but it is a great tool for making cleanup code safer and easier to reason about. Whenever you create a temporary resource, acquire a lock, change some state, or receive a completion handler that must be called later, *defer* allows you to describe the cleanup right next to the setup. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
