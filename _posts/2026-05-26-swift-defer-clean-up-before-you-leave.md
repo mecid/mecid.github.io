@@ -55,6 +55,7 @@ func fetch(_ epg: URL) async throws {
     let uuid = UUID()
     let (data, _) = try await URLSession.shared.data(from: epg)
     let url = URL.temporaryDirectory.appending(path: uuid.uuidString)
+    try data.write(to: url)
 
     guard let parser = XMLParser(contentsOf: url) else {
         return
@@ -73,6 +74,7 @@ func fetch(_ epg: URL) async throws {
     let uuid = UUID()
     let (data, _) = try await URLSession.shared.data(from: epg)
     let url = URL.temporaryDirectory.appending(path: uuid.uuidString)
+    try data.write(to: url)
     
     defer {
         try? FileManager.default.removeItem(at: url)
