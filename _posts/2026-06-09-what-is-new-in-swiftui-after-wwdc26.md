@@ -11,7 +11,7 @@ Platforms State of the Union has just been published, and we have a lot of new A
 
 Liquid Glass design gained a few changes here and there, and fortunately, SwiftUI adopts many of them automatically. You don’t need to write additional code for things like glass tint, as they are automatically applied to your app’s user interface.
 
-SwiftUI also introduces a new prominent tab role. You can use the prominent role for trailing-separated tabs, similar to search.
+SwiftUI also introduces a new *prominent* tab role. You can use the *prominent* role for trailing-separated tabs, similar to search.
 
 ```swift
 TabView {
@@ -38,7 +38,7 @@ TabView {
 }
 ```
 
-You can finally use the swipeActions view modifier with any view container, including List, ScrollView, lazy stacks, and even custom layouts. There is no need to use List only to support swipe actions anymore. All you need is the new swipeActionsContainer view modifier.
+You can finally use the *swipeActions* view modifier with any view container, including *List*, *ScrollView*, lazy stacks, and even custom layouts. There is no need to use *List* only to support swipe actions anymore. All you need is the new *swipeActionsContainer* view modifier.
 
 ```swift
 ScrollView {
@@ -56,7 +56,7 @@ ScrollView {
 .swipeActionsContainer()
 ```
 
-Reordering via drag and drop is easier than before with the new reorderContainer view modifier. It also works with List, ScrollView, lazy stacks, and custom layouts. Just apply the reorderable view modifier and handle the reordering action.
+Reordering via drag and drop is easier than before with the new *reorderContainer* view modifier. It also works with *List*, *ScrollView*, lazy stacks, and custom layouts. Just apply the *reorderable* view modifier and handle the reordering action.
 
 ```swift
 struct ContentView: View {
@@ -99,7 +99,7 @@ struct ContentView: View {
 }
 ```
 
-AsyncImage also receives a performance improvement by introducing caching. You can even control the cache by configuring a custom URLSession with a specific cache size.
+*AsyncImage* also receives a performance improvement by introducing caching. You can even control the cache by configuring a custom *URLSession* with a specific cache size.
 
 ```swift
  let customCache = URLCache(
