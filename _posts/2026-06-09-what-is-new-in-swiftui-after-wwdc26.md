@@ -2,6 +2,7 @@
 title: What is new in SwiftUI after WWDC26
 layout: post
 category: Meta
+image: /public/wwdc26.png
 ---
 
 Platforms State of the Union has just been published, and we have a lot of new APIs to learn, explore, and use to build new features and apps. Let’s start with the most important framework for our apps. This week, we will look at what WWDC26 brings to the new iteration of SwiftUI.
