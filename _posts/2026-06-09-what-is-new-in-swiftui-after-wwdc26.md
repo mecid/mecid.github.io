@@ -128,7 +128,7 @@ struct RootView: View {
     var body: some View {
         ContentView()
             .toolbar {
-                ToolbarItem {
+                ToolbarItem(placement: .topBarPinnedTrailing) {
                     SecondaryControl()
                 }
                 
