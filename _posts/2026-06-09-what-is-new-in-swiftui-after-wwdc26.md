@@ -7,6 +7,8 @@ image: /public/wwdc26.png
 
 Platforms State of the Union has just been published, and we have a lot of new APIs to learn, explore, and use to build new features and apps. Let’s start with the most important framework for our apps. This week, we will look at what WWDC26 brings to the new iteration of SwiftUI.
 
+{% include friends.html %}
+
 Liquid Glass design gained a few changes here and there, and fortunately, SwiftUI adopts many of them automatically. You don’t need to write additional code for things like glass tint, as they are automatically applied to your app’s user interface.
 
 SwiftUI also introduces a new prominent tab role. You can use the prominent role for trailing-separated tabs, similar to search.
