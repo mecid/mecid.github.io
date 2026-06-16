@@ -5,6 +5,8 @@ layout: post
 
 Swipe actions were a primary reason for using *List* in SwiftUI. As you may recall, I’ve mentioned several times that a scroll view paired with lazy stacks is the preferred approach in most scenarios, except when swipe actions are required. 
 
+{% include friends.html %}
+
 The *swipeActionsContainer* view modifier allows us to use swipe actions without *List*. This week, we will learn how to use *swipeActionsContainer* view modifier to attach swipe actions inside scroll view, lazy stacks, and even custom layouts.
 
 ```swift
