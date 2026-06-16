@@ -2,6 +2,7 @@
 title: Swipe actions outside of List in SwiftUI 
 layout: post
 category: Mastering SwiftUI views
+image: /public/swipe-action.png
 ---
 
 Swipe actions were a primary reason for using *List* in SwiftUI. As you may recall, I’ve mentioned several times that a scroll view paired with lazy stacks is the preferred approach in most scenarios, except when swipe actions are required. 
