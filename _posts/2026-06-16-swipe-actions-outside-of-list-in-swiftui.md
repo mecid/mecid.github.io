@@ -60,7 +60,7 @@ Here is another example where we attach the *swipeActions* view modifier to the 
 
 The *swipeActionsContainer* view modifier is crucial and works like a swipe actions enabler. It also controls a few things. For example, it enables only one row’s swipe actions to be revealed at a time. It tracks the scrolling events and dismisses any open actions. It also dismisses actions while tapping outside the active row.
 
-List doesn’t need *swipeActionsContainer* view modifier because it does that job automatically, but anything else than List needs the *swipeActionsContainer* view modifier attached.
+*List* doesn’t need *swipeActionsContainer* view modifier because it does that job automatically, but anything else than *List* needs the *swipeActionsContainer* view modifier attached.
 
 ```swift
 public struct FlowLayout: Layout {
