@@ -97,4 +97,4 @@ struct ContentView: View {
 
 Here is another example where we attach the *swipeActions* to the custom layout. I’m sure there is no reason to use flow layout with swipe actions, but you should know that you can use it with any custom layout as soon as you modify it with the *swipeActionsContainer* view modifier.
 
-This is a small but very important improvement because it removes one more reason to reach for *List* when we don’t actually need it. We can keep full control over layout, styling, and performance while still providing native swipe interactions where they make sense.
+This is a small but very important improvement because it removes one more reason to reach for *List* when we don’t actually need it. We can keep full control over layout, styling, and performance while still providing native swipe interactions where they make sense. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
