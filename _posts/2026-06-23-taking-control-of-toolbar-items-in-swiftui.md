@@ -1,5 +1,5 @@
 ---
-title: Taking Control of Toolbar Items in SwiftUI
+title: Taking control of toolbar items in SwiftUI
 layout: post
 category: Mastering SwiftUI views
 image: /public/glassy-toolbar.png
