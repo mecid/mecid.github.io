@@ -5,6 +5,8 @@ layout: post
 
 I already wrote about Toolbar APIs a few times because it is one of the most important and highly used APIs in SwiftUI. Toolbars play a crucial role, especially with the recent update to the design language where we have a content layer and the UI controls layer above it. This week, we will talk about new APIs allowing us to control toolbar appearance even more.
 
+{% include friends.html %}
+
 Let’s start with a simple example showing us why we need these new APIs.
 Toolbar API is highly declarative and adaptive, but sometimes you might need more control over it. For example, here is a toolbar with a bunch of items inside it. It may look and feel really different on macOS, iOS and iPadOS.
 
