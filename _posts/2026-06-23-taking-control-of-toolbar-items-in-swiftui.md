@@ -33,4 +33,4 @@ SwiftUI also introduces the topBarPinnedTrailing placement of toolbar item allow
 
 The final addition to the Toolbar API is the toolbarMinimizeBehavior view modifier allowing us to minimize toolbars while scrolling up or down. You can minimize tab, bottom, window and navigation bars with it.
 
-With new modifiers SwiftUI gives us a much better balance between system-driven adaptation and explicit control. We can now decide which actions are more important, which items should always stay visible, which groups should intentionally live in the overflow menu, and how toolbars should react to scrolling.
+With new modifiers SwiftUI gives us a much better balance between system-driven adaptation and explicit control. We can now decide which actions are more important, which items should always stay visible, which groups should intentionally live in the overflow menu, and how toolbars should react to scrolling. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
