@@ -57,4 +57,4 @@ The *Attachment* type provides us with a few ways to instantiate it using a URL,
 
 At the end we get an instance of the *PlateClassification* type as the result from the model and can use it in the app to display nutritional information.
 
-Multimodal input makes Foundation Models much more useful for building real-world features. We are no longer limited to describing the world to the model with text — we can simply give it an image or another file and ask it to reason about its contents.
+Multimodal input makes Foundation Models much more useful for building real-world features. We are no longer limited to describing the world to the model with text — we can simply give it an image or another file and ask it to reason about its contents. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
