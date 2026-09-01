@@ -32,6 +32,8 @@ import FoundationModels
 
 As you can see, we defined the *PlateClassification* with a bunch of boolean properties and the title property. This is all we want to get as a result from the model. The next step is to provide the instructions and the image to the Foundation Model.
 
+We will use the *LanguageModelSession* type to instantiate a language model. Then we will use a new overload of the *respond* function allowing us to build a prompt using the *PromptBuilder* result builder. It looks similar to the well-known *ViewBuilder* from SwiftUI.
+
 ```swift
 func classifyPlate(imageURL: URL) async throws -> PlateClassification {
     let session = LanguageModelSession()
@@ -42,8 +44,6 @@ func classifyPlate(imageURL: URL) async throws -> PlateClassification {
     return result.content
 }
 ```
-
-Here we use the *LanguageModelSession* type to instantiate a language model. Then we use a new overload of the *respond* function allowing us to build a prompt using the *PromptBuilder* result builder. It looks similar to the well-known *ViewBuilder* from SwiftUI.
 
 The *PromptBuilder* type works with any type conforming to the *PromptRepresentable* protocol. And the framework provides us with a lot of conformances out of the box, like *String*, *Array*, *Optionals*, our *Generable* types, and the most important, the new *Attachment* type.
 
