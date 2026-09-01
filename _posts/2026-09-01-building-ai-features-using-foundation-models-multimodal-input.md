@@ -2,6 +2,7 @@
 title: Building AI features using Foundation Models. Multimodal input.
 layout: post
 category: Foundation Models
+image: /public/fm.png
 ---
 
 One of the most eagerly anticipated additions to Foundation Models was the ability to input images. I was almost certain that we would receive this feature during this WWDC, and fortunately, we did. This week, we will learn how to utilize the multimodal input capability in Foundation Models.
