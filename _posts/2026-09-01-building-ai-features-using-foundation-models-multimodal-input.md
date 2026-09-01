@@ -9,11 +9,39 @@ I’ve been working on a plate scanner app, a simple app where you capture your 
 
 Let’s start with the PlateClassification type, which is the definition of output that we want to get from the Foundation Model. We will use a well-known generable macro.
 
-=======================================================
+```swift
+import FoundationModels
+
+@Generable struct PlateClassification {
+    @Guide(description: "The title of the meal")
+    let title: String
+
+    @Guide(description: "Inludes sugar")
+    let sugar: Bool
+
+    @Guide(description: "Includes protein")
+    let protein: Bool
+
+    @Guide(description: "Includes fiber")
+    let fiber: Bool
+
+    @Guide(description: "Includes saturated fat")
+    let saturatedFat: Bool
+}
+```
 
 As you can see, we defined the PlateClassification with a bunch of boolean properties and the title property. This is all we want to get as a result from the model. The next step is to provide the instructions and the image to the Foundation Model.
 
-=======================================================
+```swift
+func classifyPlate(imageURL: URL) async throws -> PlateClassification {
+    let session = LanguageModelSession()
+    let result = try await session.respond(generating: PlateClassification.self) {
+        "Classify the following meal and provide nutritional information"
+        Attachment(imageURL: imageURL)
+    }
+    return result.content
+}
+```
 
 Here we use the old LanguageModelSession type to instantiate a language model. Then we use a new overload of the respond function allowing us to build a prompt using the PromptBuilder result builder. It looks similar to the well-known ViewBuilder from SwiftUI.
 
