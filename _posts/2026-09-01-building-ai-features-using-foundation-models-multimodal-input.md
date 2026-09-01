@@ -11,7 +11,7 @@ One of the most eagerly anticipated additions to Foundation Models was the abili
 
 I’ve been working on a plate scanner app, a simple app where you capture your plate and it gives you some sort of food analysis, without numbers and calories. This app is a perfect fit for multimodal usage of Foundation Models.
 
-Let’s start with the *PlateClassification* type, which is the definition of output that we want to get from the Foundation Model. We will use a well-known generable macro.
+Let’s start with the *PlateClassification* type, which is the definition of output that we want to get from the Foundation Model. We will use a well-known *Generable* macro.
 
 ```swift
 import FoundationModels
