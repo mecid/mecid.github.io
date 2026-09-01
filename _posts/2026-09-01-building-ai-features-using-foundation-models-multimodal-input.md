@@ -36,6 +36,8 @@ import FoundationModels
 
 As you can see, we defined the *PlateClassification* with a bunch of boolean properties and the title property. This is all we want to get as a result from the model. The next step is to provide the instructions and the image to the Foundation Model.
 
+> To learn more about structured content in Foundation Models take a look at my dedicated ["Building AI features using Foundation Models. Structured Content."](/2025/08/26/building-ai-features-using-foundation-models-structured-content/) post.
+
 We will use the *LanguageModelSession* type to instantiate a language model. Then we will use a new overload of the *respond* function allowing us to build a prompt using the *PromptBuilder* result builder. It looks similar to the well-known *ViewBuilder* from SwiftUI.
 
 ```swift
