@@ -7,6 +7,8 @@ image: /public/fm.png
 
 One of the most eagerly anticipated additions to Foundation Models was the ability to input images. I was almost certain that we would receive this feature during this WWDC, and fortunately, we did. This week, we will learn how to utilize the multimodal input capability in Foundation Models.
 
+{% include friends.html %}
+
 I’ve been working on a plate scanner app, a simple app where you capture your plate and it gives you some sort of food analysis, without numbers and calories. This app is a perfect fit for multimodal usage of Foundation Models.
 
 Let’s start with the *PlateClassification* type, which is the definition of output that we want to get from the Foundation Model. We will use a well-known generable macro.
