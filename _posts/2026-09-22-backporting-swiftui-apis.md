@@ -96,6 +96,6 @@ extension View {
 
 ```
 
-Instead, let’s use the availability annotation that will make a compiler warning or error when the app is ready for using the new APIs. Here, we use a ported prefix instead of a dedicated namespace type in pair with an availability annotation, allowing us to be notified and easily find all the obsoleted functions in the future.
+Instead, let’s use the availability annotation that will make a compiler warning or error when the app is ready for using the new APIs. Here, we use a **ported** prefix instead of a dedicated namespace type in pair with an availability annotation, allowing us to be notified and easily find all the obsoleted functions in the future.
 
-Backporting new SwiftUI APIs allows us to adopt the latest platform features without immediately raising the deployment target of the entire app. Depending on the API, a backport can simply hide an availability check or provide a custom implementation that mimics the new behavior on older versions.  I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
+Backporting new SwiftUI APIs allows us to adopt the latest platform features without immediately raising the deployment target of the entire app. Depending on the API, a backport can simply hide an availability check or provide a custom implementation that mimics the new behavior on older versions. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
