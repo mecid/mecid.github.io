@@ -1,6 +1,7 @@
 ---
 title: Backporting SwiftUI APIs
 layout: post
+category: Mastering SwiftUI views
 ---
 
 Usually, we don’t see many new APIs in intermediate releases like 27.1, but this time is different. Apple introduced several new iPhone Duo-related APIs in the 27.1 release. This week, we will learn how to use all of these new APIs without bumping your project's target version.
