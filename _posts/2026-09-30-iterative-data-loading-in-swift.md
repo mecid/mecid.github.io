@@ -7,6 +7,8 @@ category: Architecture
 
 How to deal with complex features that might need 40–50 async requests to populate the screen? How might we arrange these requests to prevent overwhelming the Cooperative Thread Pool, or how could we refine concurrent tasks? This week, we will talk about the iterative data loading approach that I use in my CardioBot app.
 
+{% include friends.html %}
+
 Let’s talk a bit about today screen of my CardioBot app, it runs in average 40-50 HealthKit requests to build a representation of your recent health data. It fetches and analyze your activity, sleep, workouts, recovery, vitals, etc. 
 
 =======================================================
