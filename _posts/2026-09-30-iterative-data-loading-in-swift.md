@@ -35,4 +35,4 @@ Another point: you should keep in mind that AsyncIterator should return nil when
 
 As you can see in the example above, we use the for await to iterate over the AsyncSequence and update the state on every iteration. This way, we keep our feature updating on every step of data loading. We can go further and tune our MetricsSequence to start loading data with the particular step. For example, it might be a section visible to the user at the very moment.
 
-Running dozens of asynchronous requests at once might look like the simplest solution, but it doesn’t necessarily provide the best user experience. In data-heavy screens, how and when we deliver the results can be just as important as how quickly we fetch them.
+Running dozens of asynchronous requests at once might look like the simplest solution, but it doesn’t necessarily provide the best user experience. In data-heavy screens, how and when we deliver the results can be just as important as how quickly we fetch them. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
