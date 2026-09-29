@@ -64,7 +64,7 @@ struct MetricsService {
 }
 ```
 
-Assume that we run fifty HealthKit queries using **async let**; what does it mean for our app? Will it run all of them concurrently? No, Swift defines a Cooperative Thread Pool where our asynchronous tasks run.
+Assume that we run 50 HealthKit queries using **async let**; what does it mean for our app? Will it run all of them concurrently? No, Swift defines a Cooperative Thread Pool where our asynchronous tasks run.
 
 The number of threads in the pool is usually limited to your CPU’s cores, which prevents thread explosion. So, it means Swift will allocate a lot of memory for 50 asynchronous tasks, but pushes them step by step by limiting the concurrent count.
 
