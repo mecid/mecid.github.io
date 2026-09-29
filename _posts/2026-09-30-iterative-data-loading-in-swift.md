@@ -108,6 +108,7 @@ struct MetricsSequence: AsyncSequence {
                 snapshot.hrv = await fetchHRV(inside: interval)
             case .restingHeartRate:
                 snapshot.restingHeartRate = await fetchRestingHeartRate(inside: interval)
+	    // ...
             default:
                 return nil
             }
