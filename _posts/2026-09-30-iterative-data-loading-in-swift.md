@@ -129,7 +129,9 @@ As you can see in the example above, we introduce the *MetricsSequence* type con
 
 We also define the *Step* enum representing our steps of loading, and this is the place where you can group your data loading in sections or keep them ungrouped. We conform *Step* enum to the *CaseIterable* protocol, it allows us to get all cases in an array and create an iterator over this array.
 
-The real work happens inside the *next* function of our *Iterator* type. We check the current step, run async helper functions for the particular step, mutate our instance of the *MetricsSnapshot* and return the accumulated result. Keep in mind that we have a bunch of *async let* statements inside helper functions. 
+The real work happens inside the *next* function of our *Iterator* type. We check the current step, run async helper functions for the particular step, mutate our instance of the *MetricsSnapshot* and return the accumulated result. 
+
+We can return partial instance of *MetricsSnapshot* and accumulate it later in the feature, but I decided to accumulate it inside the sequence because it fits better my case. Keep in mind that we have a bunch of *async let* statements inside helper functions. 
 
 Take a look at how we handle Cooperative Cancellation and return *nil* whenever the task is already cancelled. You should keep in mind that *AsyncIterator* should return *nil* when there is nothing more to return; *nil* means end of the sequence. That’s why we return *nil* in the default case when there is no remaining step to fetch.
 
