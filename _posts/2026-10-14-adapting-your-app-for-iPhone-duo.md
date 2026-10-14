@@ -1,6 +1,7 @@
 ---
 title: Adapting your app for iPhone Duo
 layout: post
+image: /public/sidebarAdaptable.png
 ---
 
 iPhone Duo became the first folding iPhone providing us with two displays of different sizes and aspect ratios. This week, we will talk about adapting our apps to different screen sizes using simple techniques that Apple UI frameworks provide us.
