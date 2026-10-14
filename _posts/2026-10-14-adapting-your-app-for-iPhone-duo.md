@@ -26,6 +26,8 @@ struct RootView: View {
 }
 ```
 
+![sidebar-adaptable](/public/sidebarAdaptable.png)
+
 As you can see in the example above, we use *sidebarAdaptable* style on *TabView* which will use a two-pane sidebar when the horizontal size class is regular and collapse in the standalone *TabView* in a compact size class.
 *NavigationSplitView* also adapts to size classes by displaying a single-pane navigation in compact mode and switching to multi-pane navigation in a regular horizontal size class.
 
