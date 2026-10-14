@@ -6,6 +6,8 @@ image: /public/sidebarAdaptable.png
 
 iPhone Duo became the first folding iPhone providing us with two displays of different sizes and aspect ratios. This week, we will talk about adapting our apps to different screen sizes using simple techniques that Apple UI frameworks provide us.
 
+{% include friends.html %}
+
 As soon as you adapt the app to iPad you have almost done the biggest part of the job. Let’s think that we start from scratch and didn’t adapt our app to the iPad layout yet. First of all, you should never use screen bounds or device idioms. All you need is size classes that you should observe and adapt to.
 
 Size classes can be regular or compact; for example, iPhone has a compact horizontal size class in portrait mode, whereas iPhone Duo has a compact horizontal size class in the folded state and a regular horizontal size class in the unfolded state.
