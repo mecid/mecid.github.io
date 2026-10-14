@@ -11,7 +11,17 @@ Size classes can be regular or compact; for example, iPhone has a compact horizo
 
 Most of your apps use TabView or NavigationSplitView as the root navigation components. Fortunately, both of them adapt to the regular horizontal size class.
 
-=======================================================
+```swift
+struct RootView: View {
+    var body: some View {
+        TabView {
+	  // tabs
+	}
+	.tabViewStyle(.sidebarAdaptable)
+        .defaultTabBarPlacement(.sidebar)
+    }
+}
+```
 
 As you can see in the example above, we use sidebarAdaptable style on TabView which will use a two-pane sidebar when the horizontal size class is regular and collapse in the standalone TabView in a compact size class.
 NavigationSplitView also adapts to size classes by displaying a single-pane navigation in compact mode and switching to multi-pane navigation in a regular horizontal size class.
@@ -20,7 +30,22 @@ We also use the defaultTabBarPlacement view modifier, allowing us to set the def
 
 Another technique that we might need to use in our apps is dynamic layout switching. For example, it might be useful while transitioning from the folded to the unfolded state of iPhone Duo.
 
-=======================================================
+```swift
+public struct FoodDetailsView: View {
+    @Environment(\.horizontalSizeClass) private var horizontalSize
+
+    public var body: some View {
+        let layout = horizontalSize == .compact ?
+        AnyLayout(VStackLayout()) :
+        AnyLayout(HStackLayout())
+
+	layout {
+	  // your content here
+	}
+    }
+}
+
+```
 
 As you can see, we use AnyLayout type, allowing us to switch layouts without losing structured identity and allowing smooth and animatable transitions between states.
 
