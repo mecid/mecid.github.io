@@ -56,4 +56,4 @@ Xcode provides you with the App Resizability skill that your agent can use to ma
 
 Adapting your app for iPhone Duo doesn’t require reinventing your UI. By embracing size classes, adaptive navigation components, and flexible layouts, you can build interfaces that naturally adjust between folded and unfolded states.
 
-The best part is that these techniques aren’t specific to iPhone Duo. They make your app more flexible across the entire Apple ecosystem, from iPhone and iPad to Mac. With SwiftUI doing most of the heavy lifting, supporting a new form factor becomes less about writing device-specific code and more about building truly adaptive interfaces.
+The best part is that these techniques aren’t specific to iPhone Duo. They make your app more flexible across the entire Apple ecosystem, from iPhone and iPad to Mac. With SwiftUI doing most of the heavy lifting, supporting a new form factor becomes less about writing device-specific code and more about building truly adaptive interfaces. I hope you enjoy the post. Feel free to follow me on [Twitter](https://twitter.com/mecid) and ask your questions related to this post. Thanks for reading, and see you next week!
